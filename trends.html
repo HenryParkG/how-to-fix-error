@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Expert-curated repository of software errors, root causes, and best-practice solutions. Updated daily by Advanced AI.">
+    <title>ErrorLog | The Professional Bug-Fix Encyclopedia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- [ADSENSE] 승인 후 여기에 애드센스 코드를 넣으세요 -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="/" class="logo">Error<span class="highlight">Log</span></a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="/solutions.html">Solutions</a>
+                <a href="/pages/about.html">About</a>
+                <a href="https://github.com/HenryParkG" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 8rem;">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Latest <span class="gradient-text">Tech Trends</span></h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem;">
+            Curated insights on the hottest GitHub repositories and developer discussions.
+        </p>
+
+        <!-- No Category Filters needed for Trends -->
+
+        <div class="posts-grid" id="postsGrid">
+            <!-- Posts injected here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ErrorLog</h4>
+                <div class="footer-links">
+                    <a href="/pages/about.html">About Us</a>
+                    <a href="/solutions.html">Browse Solutions</a>
+                    <a href="/pages/terms.html">Terms of Service</a>
+                    <a href="/pages/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Project Network</h4>
+                <div class="footer-links">
+                    <a href="https://henryparkg.github.io/econ-gravity/index.html" target="_blank">
+                        <i class="fa-solid fa-earth-americas"></i> Econ Gravity <span
+                            style="font-size:0.7rem; border:1px solid #555; padding:1px 4px; border-radius:3px;">Visualizer</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-links">
+                    <a href="https://github.com/HenryParkG" target="_blank"><i class="fa-brands fa-github"></i>
+                        GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 ErrorLog. Open Knowledge Initiative.</p>
+        </div>
+    </footer>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Data & Logic -->
+    <script src="/data/index.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
