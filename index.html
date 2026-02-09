@@ -5,31 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Automated repository of programming errors, bugs, and their solutions.">
-    <title>ErrorLog | Automated Bug Fix Repository</title>
+    <title>ErrorLog | AI-Driven Bug Fix Repository</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="background-glow"></div>
-
     <header class="glass-header">
-        <div class="container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-bug-slash"></i>
-                <span>Error<span class="highlight">Log</span></span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#recent" class="active">Recent Fixes</a></li>
-                    <li><a href="https://github.com/HenryParkG/how-to-fix-error" target="_blank" class="github-btn"><i
-                                class="fa-brands fa-github"></i> GitHub</a></li>
-                </ul>
+        <div class="container header-content">
+            <a href="#" class="logo">Error<span class="highlight">Log</span></a>
+            <nav class="footer-links" style="margin-bottom: 0;"> <!-- Reusing link styles -->
+                <a href="#recent">Recent</a>
+                <a href="https://github.com/HenryParkG/how-to-fix-error" target="_blank"><i
+                        class="fa-brands fa-github"></i> GitHub</a>
             </nav>
         </div>
     </header>
@@ -37,51 +31,54 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Programming Errors <br><span class="gradient-text">Solved Automatically</span></h1>
-                    <p>A comprehensive database of bugs, exceptions, and their resolutions. Documented and deployed via
-                        automation.</p>
-                    <div class="search-bar glass-panel">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="searchInput" placeholder="Search error codes, messages, or languages...">
-                    </div>
+                <h1>Programming Errors <br><span class="gradient-text">Solved Automatically</span></h1>
+                <p>A senior-level knowledge base of bugs, root causes, and best-practice solutions. Deployed via AI
+                    automation.</p>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search error codes, messages, or tags...">
                 </div>
             </div>
         </section>
 
-        <section id="recent" class="posts-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Latest Entries</h2>
-                    <div class="filter-tags">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="python">Python</button>
-                        <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                    </div>
+        <section id="recent" class="container">
+            <div class="section-header">
+                <h2>Browse Solutions</h2>
+                <div class="filter-tags">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                    <button class="filter-btn" data-filter="react">React</button>
+                    <button class="filter-btn" data-filter="css">CSS</button>
                 </div>
-                <div class="posts-grid" id="postsGrid">
-                    <!-- Posts will be injected here -->
-                </div>
+            </div>
+
+            <div class="posts-grid" id="postsGrid">
+                <!-- Data injected by JS -->
             </div>
         </section>
     </main>
 
-    <footer class="glass-footer">
+    <footer>
         <div class="container">
-            <p>&copy; 2024 ErrorLog. Open Source Project by HenryParkG.</p>
+            <div class="footer-links">
+                <a href="pages/terms.html">Terms of Service</a>
+                <a href="pages/privacy.html">Privacy Policy</a>
+                <a href="https://github.com/HenryParkG" target="_blank">Creator</a>
+            </div>
+            <p>&copy; 2024 ErrorLog. Open Source Project for developers.</p>
         </div>
     </footer>
 
+    <!-- Detail Modal -->
     <div id="postModal" class="modal">
-        <div class="modal-content glass-panel">
+        <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div id="modalBody"></div>
         </div>
     </div>
 
-    <!-- 데이터 파일 로드 (로컬에서도 작동하는 JS 방식) -->
     <script src="data/index.js"></script>
-    <!-- 동작 로직 로드 -->
     <script src="script.js"></script>
 </body>
 
