@@ -6,6 +6,7 @@ import google.generativeai as genai
 import re
 import argparse
 import urllib.request
+import time
 
 from dotenv import load_dotenv
 
@@ -43,6 +44,27 @@ def get_github_trending():
     except Exception as e:
         print(f"⚠️ GitHub API Error: {e}")
         return []
+
+def generate_with_retry(model, prompt, retries=3):
+    """Wraps model.generate_content with rate limit handling"""
+    for attempt in range(retries):
+        try:
+            return model.generate_content(prompt)
+        except Exception as e:
+            err_msg = str(e)
+            if "429" in err_msg or "quota" in err_msg.lower() or "limit" in err_msg.lower():
+                wait_time = 60 # Default wait
+                # Extract wait time from error message if possible
+                match = re.search(r"retry in (\d+(\.\d+)?)s", err_msg)
+                if match:
+                    wait_time = float(match.group(1)) + 2 # Add buffer
+                
+                print(f"⏳ Rate-limited. Waiting {wait_time:.1f}s before retry ({attempt+1}/{retries})...")
+                time.sleep(wait_time)
+            else:
+                raise e # Re-raise other errors
+    
+    raise Exception("Max retries exceeded")
 
 def get_autonomous_topics(count=1):
     # 1. GitHub Trending Topic (Always 1)
@@ -90,7 +112,7 @@ def get_autonomous_topics(count=1):
     print(f"🧠 AI is brainstorming {count} unique error topics...")
     ai_topics = []
     try:
-        response = model.generate_content(prompt)
+        response = generate_with_retry(model, prompt)
         text = response.text.strip()
         if text.startswith("```json"): text = text[7:]
         if text.startswith("```"): text = text[3:]
@@ -136,7 +158,7 @@ def generate_and_save(topic):
 
     print(f"🤖 Generating: '{topic}'...")
     try:
-        response = model.generate_content(prompt)
+        response = generate_with_retry(model, prompt)
         clean_text = response.text.strip()
         if clean_text.startswith("```json"): clean_text = clean_text[7:]
         if clean_text.startswith("```"): clean_text = clean_text[3:]
