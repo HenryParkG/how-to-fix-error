@@ -181,8 +181,45 @@
                          <div class="rich-text">${post.verification}</div>
                     </section>
                 </div>
+
+                <div class="related-articles" style="margin-top: 5rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+                    <h3 style="margin-bottom: 2rem;">Related Solutions</h3>
+                    <div id="relatedGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <!-- Injected by script -->
+                    </div>
+                </div>
             `;
+
+            renderRelated(post);
         };
+
+        function renderRelated(currentPost) {
+            const grid = document.getElementById('relatedGrid');
+            if (!grid || !window.postsIndex) return;
+
+            // 같은 카테고리(language)의 다른 글 3개 추출
+            const related = window.postsIndex
+                .filter(p => p.id !== currentPost.id && p.language === currentPost.language)
+                .slice(0, 3);
+
+            if (related.length === 0) {
+                // 관련 글이 없으면 최신 글 3개
+                related.push(...window.postsIndex.filter(p => p.id !== currentPost.id).slice(0, 3));
+            }
+
+            related.forEach(p => {
+                const card = document.createElement('a');
+                card.href = `/post.html?id=${p.id}`;
+                card.className = 'post-card';
+                card.style.padding = '1.2rem';
+                card.style.textDecoration = 'none';
+                card.innerHTML = `
+                    <span style="font-size:0.7rem; color:var(--primary-color);">${p.language}</span>
+                    <h4 style="margin:0.5rem 0; font-size:1rem; color:white; line-height:1.4;">${p.title}</h4>
+                `;
+                grid.appendChild(card);
+            });
+        }
 
         function escapeHtml(text) {
             return text.toString().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

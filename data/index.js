@@ -1,5 +1,21 @@
 var postsIndex = [
     {
+        "id": 1770616697,
+        "title": "The Container Permission Paradox: UID/GID Mismatch",
+        "slug": "uid-gid-mismatch-non-root-containers",
+        "language": "Docker",
+        "code": "PermissionDenied",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/uid-gid-mismatch-non-root-containers.js",
+        "tags": [
+            "docker",
+            "security",
+            "volumes",
+            "chown",
+            "uid-gid"
+        ]
+    },
+    {
         "id": 1770610168,
         "title": "The Double-Charge Trap: Idempotency Key Failure",
         "slug": "the-double-charge-trap-idempotency-key-failure",

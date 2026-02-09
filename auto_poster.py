@@ -148,6 +148,35 @@ def update_index_file(new_entries):
         print(f"✅ Index updated with {len(new_entries)} items.")
     except Exception as e: print(f"❌ Index failure: {e}")
 
+def update_sitemap():
+    """Generates/Updates sitemap.xml for SEO"""
+    base_url = "https://how-to-fix-error.vercel.app" # Replace with your actual domain
+    
+    if not os.path.exists(INDEX_FILE): return
+
+    with open(INDEX_FILE, 'r', encoding='utf-8') as f:
+        content = f.read()
+        match = re.search(r'(?:const|var) postsIndex = (\[.*\]);', content, re.DOTALL)
+        if not match: return
+        posts = json.loads(match.group(1))
+
+    sitemap_content = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        f'  <url><loc>{base_url}/</loc><priority>1.0</priority></url>',
+        f'  <url><loc>{base_url}/pages/about.html</loc><priority>0.5</priority></url>'
+    ]
+
+    for p in posts:
+        loc = f"{base_url}/post.html?id={p['id']}"
+        sitemap_content.append(f'  <url><loc>{loc}</loc><lastmod>{p["date"]}</lastmod><priority>0.8</priority></url>')
+
+    sitemap_content.append('</urlset>')
+
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(sitemap_content))
+    print(f"✅ Sitemap.xml updated successfully!")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--count", type=int, default=1)
@@ -173,3 +202,6 @@ if __name__ == "__main__":
     
     if new_entries:
         update_index_file(new_entries)
+        update_sitemap()
+
+
