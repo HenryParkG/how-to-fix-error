@@ -5,6 +5,7 @@ import datetime
 import google.generativeai as genai
 import re
 import argparse
+import urllib.request
 
 from dotenv import load_dotenv
 
@@ -18,10 +19,38 @@ if not GEMINI_API_KEY:
     print("❌ Error: GEMINI_API_KEY not found in .env or environment.")
     sys.exit(1)
 
+import random
+
 INDEX_FILE = "data/index.js"
 POSTS_DIR = "data/posts"
 
+def get_github_trending():
+    """Fetches trending repositories from GitHub Search API (last 7 days, most stars)"""
+    try:
+        date_query = (datetime.datetime.now() - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+        url = f"https://api.github.com/search/repositories?q=created:>{date_query}&sort=stars&order=desc"
+        
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+            
+        trends = []
+        for repo in data.get('items', [])[:3]:
+            trends.append(f"Analyze the trending GitHub repository '{repo['full_name']}' ({repo['description']}). Explain why it's popular and how to use it.")
+            
+        print(f"🔥 Found {len(trends)} trending repos on GitHub!")
+        return trends
+    except Exception as e:
+        print(f"⚠️ GitHub API Error: {e}")
+        return []
+
 def get_autonomous_topics(count=1):
+    # 50% chance to pick a GitHub Trending topic instead of random error
+    if random.random() > 0.5:
+        trends = get_github_trending()
+        if trends:
+            return trends[:count]
+
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-flash-latest')
     
