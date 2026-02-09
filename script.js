@@ -83,14 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleSearch(query) {
         const lowerQuery = query.toLowerCase();
         const filtered = data.filter(post => {
-            // 카테고리 필터 (부분 일치로 변경)
-            const langMatch = currentFilter === 'all' || post.language.toLowerCase().includes(currentFilter);
-            if (!langMatch) return false;
+            // Exclude Tech Trends from Solutions page
+            const tags = (post.tags || []).map(t => t.toLowerCase());
+            if (tags.includes('tech trend')) return false;
 
-            // 검색어 필터
-            return post.title.toLowerCase().includes(lowerQuery) ||
+            const matchCat = currentFilter === 'all' ||
+                post.language.toLowerCase() === currentFilter ||
+                (post.tags && post.tags.map(t => t.toLowerCase()).includes(currentFilter));
+
+            const matchSearch = post.title.toLowerCase().includes(lowerQuery) ||
                 post.code.toLowerCase().includes(lowerQuery) ||
-                post.tags.some(t => t.toLowerCase().includes(lowerQuery));
+                post.language.toLowerCase().includes(lowerQuery);
+
+            return matchCat && matchSearch;
         });
         renderPosts(filtered);
     }

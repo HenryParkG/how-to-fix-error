@@ -58,7 +58,9 @@ var postsIndex = [
             "AI",
             "Cloud",
             "FinOps",
-            "Smart Contracts"
+            "Smart Contracts",
+            "Tech Trend",
+            "GitHub"
         ]
     },
     {

@@ -146,15 +146,23 @@ def get_autonomous_topics(count=1):
         ai_topics = ["Common Python TypeError"] * count
 
     # Combine: AI Topics + 1 GitHub Topic
-    final_topics = ai_topics + github_topics
+    final_topics = [{'text': t, 'type': 'error'} for t in ai_topics] + \
+                   [{'text': t, 'type': 'trend'} for t in github_topics]
+                   
     print(f"✅ Final Topics Selected: {len(ai_topics)} Errors + {len(github_topics)} GitHub Trend")
     return final_topics
 
-def generate_and_save(topic):
-    # Model configuration is handled inside generate_smart
+def generate_and_save(topic_obj):
+    # Retrieve text and type
+    if isinstance(topic_obj, dict):
+        topic_text = topic_obj['text']
+        topic_type = topic_obj['type']
+    else:
+        topic_text = topic_obj
+        topic_type = 'error' # Default
 
     prompt = f"""
-    Write a clear, expert-level technical article for developers about: "{topic}".
+    Write a clear, expert-level technical article for developers about: "{topic_text}".
     
     [STRICT JSON FORMAT REQUIRED]
     {{
@@ -177,7 +185,7 @@ def generate_and_save(topic):
     3. Respond ONLY with the JSON.
     """
 
-    print(f"🤖 Generating: '{topic}'...")
+    print(f"🤖 Generating ({topic_type}): '{topic_text[:30]}...'...")
     try:
         response = generate_smart(prompt)
         clean_text = response.text.strip()
@@ -194,13 +202,22 @@ def generate_and_save(topic):
         os.makedirs(target_dir, exist_ok=True)
         
         # Ensure all fields exist
-        post_data['title'] = post_data.get('title', topic)
-        post_data['slug'] = post_data.get('slug', re.sub(r'[^a-z0-9]', '-', topic.lower()))
+        post_data['title'] = post_data.get('title', topic_text)
+        post_data['slug'] = post_data.get('slug', re.sub(r'[^a-z0-9]', '-', topic_text.lower()))
         post_data['language'] = post_data.get('language', 'General')
         post_data['code'] = post_data.get('code', 'Error')
         post_data['date'] = date_str
         post_data['id'] = int(now.timestamp()) + hash(post_data['title']) % 1000
-        
+
+        # FORCE TAGS BASED ON TYPE
+        if topic_type == 'trend':
+            post_data.setdefault('tags', [])
+            if "Tech Trend" not in post_data['tags']: post_data['tags'].append("Tech Trend")
+            if "GitHub" not in post_data['tags']: post_data['tags'].append("GitHub")
+        else:
+            post_data.setdefault('tags', [])
+            if "Error Fix" not in post_data['tags']: post_data['tags'].append("Error Fix")
+
         filename = f"{post_data['slug']}.js"
         file_path = os.path.join(target_dir, filename)
         
@@ -209,7 +226,7 @@ def generate_and_save(topic):
             
         return post_data, file_path
     except Exception as e:
-        print(f"❌ Failed for {topic}: {e}")
+        print(f"❌ Failed for {topic_text}: {e}")
         return None, None
 
 def update_index_file(new_entries):
