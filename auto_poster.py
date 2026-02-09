@@ -45,12 +45,16 @@ def get_github_trending():
         return []
 
 def get_autonomous_topics(count=1):
-    # 50% chance to pick a GitHub Trending topic instead of random error
-    if random.random() > 0.5:
+    # 1. GitHub Trending Topic (Always 1)
+    github_topics = []
+    try:
         trends = get_github_trending()
         if trends:
-            return trends[:count]
+            github_topics = [trends[0]] # Top 1 trend
+    except Exception as e:
+        print(f"⚠️ GitHub trend fetch failed: {e}")
 
+    # 2. AI Error Topics (Count requested via args)
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-flash-latest')
     
@@ -83,7 +87,8 @@ def get_autonomous_topics(count=1):
     Provide JSON: {{"topics": ["...", ...]}}
     """
     
-    print(f"🧠 AI is brainstorming {count} unique topics...")
+    print(f"🧠 AI is brainstorming {count} unique error topics...")
+    ai_topics = []
     try:
         response = model.generate_content(prompt)
         text = response.text.strip()
@@ -91,10 +96,15 @@ def get_autonomous_topics(count=1):
         if text.startswith("```"): text = text[3:]
         if text.endswith("```"): text = text[:-3]
         data = json.loads(text)
-        return data['topics'][:count]
+        ai_topics = data.get("topics", [])[:count]
     except Exception as e:
         print(f"❌ Brainstorming failed: {e}")
-        return ["Common Programming Pitfall"] * count
+        ai_topics = ["Common Python TypeError"] * count
+
+    # Combine: AI Topics + 1 GitHub Topic
+    final_topics = ai_topics + github_topics
+    print(f"✅ Final Topics Selected: {len(ai_topics)} Errors + {len(github_topics)} GitHub Trend")
+    return final_topics
 
 def generate_and_save(topic):
     genai.configure(api_key=GEMINI_API_KEY)
