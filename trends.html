@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Expert-curated repository of software errors, root causes, and best-practice solutions. Updated daily by Advanced AI.">
-    <title>ErrorLog | The Professional Bug-Fix Encyclopedia</title>
+        content="AI-curated insights on the hottest GitHub repositories and developer discussions. Updated daily.">
+    <title>Tech Trends | ErrorLog</title>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,9 +19,6 @@
     <!-- Main Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-    <!-- [ADSENSE] 승인 후 여기에 애드센스 코드를 넣으세요 -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -41,8 +38,6 @@
         <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem;">
             Curated insights on the hottest GitHub repositories and developer discussions.
         </p>
-
-        <!-- No Category Filters needed for Trends -->
 
         <div class="posts-grid" id="postsGrid">
             <!-- Posts injected here -->
@@ -84,16 +79,55 @@
         </div>
     </footer>
 
-    <div id="postModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
-    <!-- Data & Logic -->
+    <!-- Data & Trends Logic (Standalone) -->
     <script src="/data/index.js"></script>
-    <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('postsGrid');
+            if (!grid) return;
+
+            function renderTrends() {
+                grid.innerHTML = '';
+
+                // Filter ONLY Tech Trends (Must have 'Tech Trend' or 'GitHub' tag and NOT 'Error Fix')
+                const filtered = (window.postsIndex || []).filter(post => {
+                    const tags = (post.tags || []).map(t => t.toLowerCase());
+                    const hasTrend = tags.includes('tech trend') || tags.includes('github');
+                    const isError = tags.includes('error fix');
+                    return hasTrend && !isError;
+                });
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = '<p style="text-align:center; grid-column:1/-1; padding:4rem; color:grey;">No trends found yet. Check back later!</p>';
+                    return;
+                }
+
+                filtered.forEach((post, index) => {
+                    const card = document.createElement('a');
+                    card.className = 'post-card';
+                    card.href = `/post.html?id=${post.id}`;
+                    card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.05}s`;
+
+                    card.innerHTML = `
+                        <div class="post-icon" style="color: #bf00ff;"><i class="fa-solid fa-fire"></i></div>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span class="post-lang">${post.language}</span>
+                                <span class="post-date">${post.date}</span>
+                            </div>
+                            <h3 class="post-title">${post.title}</h3>
+                            <div class="post-tags">
+                                ${(post.tags || []).filter(t => t !== 'Tech Trend').slice(0, 2).map(t => `<span>#${t}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            renderTrends();
+        });
+    </script>
 </body>
 
 </html>

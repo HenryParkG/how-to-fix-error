@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. 초기 데이터 설정
     if (window.postsIndex) {
         data = [...window.postsIndex];
-        renderPosts(data);
+        handleSearch(""); // 초기 로드 시에도 필터 적용 (트렌드 배제)
     }
 
     // 2. 카테고리 필터 이벤트 연동
