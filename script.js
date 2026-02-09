@@ -88,24 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadPost(meta) {
-        modalBody.innerHTML = '<div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> 로딩 중...</div>';
-        modal.style.display = 'flex';
-        modal.classList.add('show');
-
-        // .json 파일은 fetch, .js 파일은 script 삽입
-        if (meta.path.endsWith('.json')) {
-            fetch(meta.path)
-                .then(r => r.json())
-                .then(d => renderModalContent(d))
-                .catch(() => {
-                    modalBody.innerHTML = '<div class="error-msg">로컬 보안 정책으로 인해 상세 내용을 가져올 수 없습니다. <b>GitHub Pages</b>에서 확인해주세요.</div>';
-                });
-        } else {
-            const script = document.createElement('script');
-            script.src = meta.path;
-            script.onload = () => script.remove();
-            document.body.appendChild(script);
-        }
+        // 모달 대신 전용 상세 페이지로 이동 (SEO & AdSense 최적화)
+        window.location.href = `/post.html?id=${meta.id}`;
     }
 
     function renderModalContent(post) {
