@@ -35,10 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. 검색 이벤트 연동
+    // 3. 검색 및 필터 초기화
     searchInput?.addEventListener('input', (e) => {
         handleSearch(e.target.value);
     });
+
+    // URL 파라미터(search=...)가 있으면 자동 검색 실행
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialQuery = urlParams.get('search');
+    if (initialQuery && searchInput) {
+        searchInput.value = initialQuery;
+        handleSearch(initialQuery);
+    }
 
     function renderPosts(posts) {
         if (!postsGrid) return;

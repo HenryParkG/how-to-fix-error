@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErrorLog | Developer's Knowledge Hub</title>
     <meta name="description"
-        content="Expert-curated repository of software errors, root causes, and best-practice solutions. Updated daily by Advanced AI.">
-    <title>ErrorLog | The Professional Bug-Fix Encyclopedia</title>
+        content="The ultimate developer reference for bug fixes, tech trends, and best practices. updated daily by AI.">
 
-    <!-- Fonts & Icons -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,8 +20,132 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <!-- [ADSENSE] 승인 후 여기에 애드센스 코드를 넣으세요 -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+    <style>
+        .hero-hub {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero-hub h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hub-search {
+            max-width: 700px;
+            margin: 2rem auto 4rem;
+            position: relative;
+        }
+
+        .hub-search input {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .hub-search input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+        }
+
+        .hub-search i {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .latest-ticker {
+            margin-top: 6rem;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 3rem;
+        }
+
+        .ticker-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: 0.2s;
+        }
+
+        .ticker-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .ticker-lang {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            border: 1px solid var(--glass-border);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,72 +153,57 @@
         <div class="container header-content">
             <a href="/" class="logo">Error<span class="highlight">Log</span></a>
             <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="/solutions.html">Solutions</a>
                 <a href="/pages/about.html">About</a>
-                <a href="#recent">Solutions</a>
                 <a href="https://github.com/HenryParkG/how-to-fix-error" target="_blank"><i
                         class="fa-brands fa-github"></i></a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Master the <span class="gradient-text">Art of Debugging</span></h1>
-                <p>Granular solutions for real-world programming errors across the entire tech stack.</p>
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="searchInput" placeholder="Search by error type, language, or tags...">
-                </div>
-            </div>
-            <!-- [ADSENSE] Hero 하단 광고 자리 -->
-            <div class="ad-placeholder" style="margin-top: 2rem; opacity: 0.3; font-size: 0.8rem;">[AD SPACE]</div>
-        </section>
+    <main class="container">
+        <section class="hero-hub">
+            <h1>Where <span class="gradient-text">Developers</span><br>Find Answers</h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Expert-curated solutions for cryptic errors, outdated docs, and tricky bugs.
+                Powered by AI, verified by the community.
+            </p>
 
-        <section id="recent" class="container">
-            <div class="filter-wrapper">
-                <div class="filter-group">
-                    <span class="filter-label">General</span>
-                    <div class="filter-tags">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                    </div>
-                </div>
+            <form class="hub-search" action="/solutions.html" method="GET">
+                <input type="text" name="search" placeholder="Search error codes, frameworks, or problems...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
 
-                <div class="filter-group">
-                    <span class="filter-label">Frontend</span>
-                    <div class="filter-tags">
-                        <button class="filter-btn" data-filter="react">React</button>
-                        <button class="filter-btn" data-filter="vue">Vue</button>
-                        <button class="filter-btn" data-filter="next.js">Next.js</button>
-                        <button class="filter-btn" data-filter="typescript">TypeScript</button>
-                        <button class="filter-btn" data-filter="css">CSS/Styles</button>
-                    </div>
-                </div>
+            <div class="feature-grid">
+                <a href="/solutions.html" class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bug-slash"></i></div>
+                    <h3>Error Solutions</h3>
+                    <p>Browser our massive database of 100+ common programming errors across React, Python, Docker, and
+                        more.</p>
+                </a>
 
-                <div class="filter-group">
-                    <span class="filter-label">Backend</span>
-                    <div class="filter-tags">
-                        <button class="filter-btn" data-filter="python">Python</button>
-                        <button class="filter-btn" data-filter="node.js">Node.js</button>
-                        <button class="filter-btn" data-filter="go">Go</button>
-                        <button class="filter-btn" data-filter="rust">Rust</button>
-                        <button class="filter-btn" data-filter="java">Java/Spring</button>
-                    </div>
-                </div>
+                <a href="#" class="feature-card" style="opacity: 0.6; cursor: not-allowed;">
+                    <div class="feature-icon" style="color: #bf00ff;"><i class="fa-solid fa-newspaper"></i></div>
+                    <h3>Tech Trends <span
+                            style="font-size:0.7rem; border:1px solid white; padding:2px 4px; border-radius:4px; margin-left:5px;">SOON</span>
+                    </h3>
+                    <p>Stay ahead with AI-curated summaries of the hottest discussions from Reddit, Hacker News, and
+                        StackOverflow.</p>
+                </a>
 
-                <div class="filter-group">
-                    <span class="filter-label">Infra/DB</span>
-                    <div class="filter-tags">
-                        <button class="filter-btn" data-filter="docker">Docker</button>
-                        <button class="filter-btn" data-filter="kubernetes">K8s</button>
-                        <button class="filter-btn" data-filter="sql">SQL/DB</button>
-                        <button class="filter-btn" data-filter="aws">AWS</button>
-                    </div>
-                </div>
+                <a href="/pages/about.html" class="feature-card">
+                    <div class="feature-icon" style="color: #00ccff;"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Powered</h3>
+                    <p>Learn how our intelligent agents analyze logs and generate verified fixes automatically every
+                        day.</p>
+                </a>
             </div>
 
-            <div class="posts-grid" id="postsGrid">
-                <!-- Data injected by JS -->
+            <div class="latest-ticker">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);">Latest Fixes</h3>
+                <div class="ticker-list" id="latestList">
+                    <!-- JS Injected -->
+                </div>
             </div>
         </section>
     </main>
@@ -111,16 +220,27 @@
         </div>
     </footer>
 
-    <div id="postModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
-    <!-- Data & Logic -->
     <script src="/data/index.js"></script>
-    <script src="/script.js"></script>
+    <script>
+        // Load latest 3 posts for the ticker
+        document.addEventListener('DOMContentLoaded', () => {
+            const list = document.getElementById('latestList');
+            if (window.postsIndex && list) {
+                const latest = window.postsIndex.slice(0, 3);
+                latest.forEach(p => {
+                    const item = document.createElement('a');
+                    item.href = `/post.html?id=${p.id}`;
+                    item.className = 'ticker-item';
+                    item.innerHTML = `
+                        <span class="ticker-lang">${p.language}</span>
+                        <span style="flex-grow:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${p.title}</span>
+                        <span style="font-size:0.8rem; color:grey;">${p.date}</span>
+                    `;
+                    list.appendChild(item);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

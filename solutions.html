@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Expert-curated repository of software errors, root causes, and best-practice solutions. Updated daily by Advanced AI.">
+    <title>ErrorLog | The Professional Bug-Fix Encyclopedia</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- [ADSENSE] 승인 후 여기에 애드센스 코드를 넣으세요 -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="/" class="logo">Error<span class="highlight">Log</span></a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="/solutions.html">Solutions</a>
+                <a href="/pages/about.html">About</a>
+                <a href="https://github.com/HenryParkG/how-to-fix-error" target="_blank"><i
+                        class="fa-brands fa-github"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Master the <span class="gradient-text">Art of Debugging</span></h1>
+                <p>Granular solutions for real-world programming errors across the entire tech stack.</p>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search by error type, language, or tags...">
+                </div>
+            </div>
+            <!-- [ADSENSE] Hero 하단 광고 자리 -->
+            <div class="ad-placeholder" style="margin-top: 2rem; opacity: 0.3; font-size: 0.8rem;">[AD SPACE]</div>
+        </section>
+
+        <section id="recent" class="container">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label">General</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Frontend</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="react">React</button>
+                        <button class="filter-btn" data-filter="vue">Vue</button>
+                        <button class="filter-btn" data-filter="next.js">Next.js</button>
+                        <button class="filter-btn" data-filter="typescript">TypeScript</button>
+                        <button class="filter-btn" data-filter="css">CSS/Styles</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Backend</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="node.js">Node.js</button>
+                        <button class="filter-btn" data-filter="go">Go</button>
+                        <button class="filter-btn" data-filter="rust">Rust</button>
+                        <button class="filter-btn" data-filter="java">Java/Spring</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Infra/DB</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="docker">Docker</button>
+                        <button class="filter-btn" data-filter="kubernetes">K8s</button>
+                        <button class="filter-btn" data-filter="sql">SQL/DB</button>
+                        <button class="filter-btn" data-filter="aws">AWS</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="posts-grid" id="postsGrid">
+                <!-- Data injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/pages/about.html">About Us</a>
+                <a href="/pages/terms.html">Terms</a>
+                <a href="/pages/privacy.html">Privacy</a>
+                <a href="https://github.com/HenryParkG" target="_blank">Creator</a>
+            </div>
+            <p>&copy; 2024 ErrorLog. Open Encyclopedia for Developers.</p>
+        </div>
+    </footer>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Data & Logic -->
+    <script src="/data/index.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
