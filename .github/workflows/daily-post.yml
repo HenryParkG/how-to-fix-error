@@ -25,25 +25,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install google-generativeai python-dotenv
 
-      - name: Generate Post
+      - name: Generate Post (Autonomous Mode)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # topics.txt 파일 존재 및 내용 확인
-          if [ ! -s topics.txt ]; then
-            echo "::warning::No topics found in topics.txt"
-            exit 0
-          fi
-          
-          # 첫 번째 줄(주제) 읽기
-          TOPIC=$(head -n 1 topics.txt)
-          echo "Processing topic: $TOPIC"
-          
-          # 포스팅 생성 스크립트 실행
-          python auto_poster.py "$TOPIC"
-          
-          # 성공 시 해당 주제 삭제 (임시 파일 사용)
-          tail -n +2 topics.txt > topics.txt.tmp && mv topics.txt.tmp topics.txt
+          # 인자 없이 실행하면 AI가 알아서 주제 선정
+          python auto_poster.py
           
           # Git 사용자 설정
           git config --global user.name "GitHub Actions Bot"
@@ -51,6 +38,5 @@ jobs:
           
           # 변경사항 커밋 및 푸시
           git add data/
-          git add topics.txt
-          git commit -m "📝 Auto-post: $TOPIC" || echo "No changes to commit"
+          git commit -m "🤖 Auto-brainstormed & Post: Autonomous Daily Update" || echo "No changes to commit"
           git push
