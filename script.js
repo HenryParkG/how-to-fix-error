@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleSearch(query) {
         const lowerQuery = query.toLowerCase();
         const filtered = data.filter(post => {
-            // Exclude Tech Trends from Solutions page
             const tags = (post.tags || []).map(t => t.toLowerCase());
-            if (tags.includes('tech trend')) return false;
+            const isTrend = tags.includes('tech trend') || tags.includes('github');
+            if (isTrend) return false;
 
             const matchCat = currentFilter === 'all' ||
                 post.language.toLowerCase() === currentFilter ||
