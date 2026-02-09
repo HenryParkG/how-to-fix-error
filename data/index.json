@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1770599878,
+        "title": "The Subtle Pitfall: Debugging 'undefined' is not a function in React useEffect Cleanup",
+        "slug": "react-useeffect-undefined-is-not-a-function-cleanup-fix",
+        "language": "JavaScript (React Hooks)",
+        "code": "TypeError: 'undefined' is not a function",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/react-useeffect-undefined-is-not-a-function-cleanup-fix.json",
+        "tags": [
+            "React Hooks",
+            "useEffect",
+            "TypeError",
+            "JavaScript",
+            "Cleanup Functions",
+            "Debugging"
+        ]
+    },
+    {
+        "id": 1,
+        "title": "ModuleNotFoundError 해결 방법",
+        "slug": "modulenotfounderror-intro",
+        "language": "Python",
+        "code": "ModuleNotFoundError",
+        "date": "2024-06-01",
+        "month": "2024-06",
+        "path": "data/posts/2024-06/modulenotfounderror.json",
+        "tags": [
+            "python",
+            "pip"
+        ]
+    }
+]

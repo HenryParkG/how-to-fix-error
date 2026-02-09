@@ -1,12 +1,6 @@
-// script.js
+// script.js (Refactored)
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if postsData is loaded from data/posts.js
-    if (typeof postsData === 'undefined') {
-        console.error('Data file not loaded properly.');
-        return;
-    }
-
+document.addEventListener('DOMContentLoaded', async () => {
     const postsGrid = document.getElementById('postsGrid');
     const searchInput = document.getElementById('searchInput');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -14,40 +8,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modalBody');
     const closeModal = document.querySelector('.close-modal');
 
+    let postsIndex = []; // Holds lightweight metadata
     let currentFilter = 'all';
 
-    // Initial Render
-    renderPosts(postsData);
+    // 1. Load the Index
+    try {
+        const response = await fetch('data/index.json');
+        if (!response.ok) throw new Error("Failed to load index.");
+        postsIndex = await response.json();
+
+        // Sort by date desc
+        postsIndex.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        renderPosts(postsIndex);
+    } catch (err) {
+        console.error(err);
+        postsGrid.innerHTML = `<div class="error-msg">Failed to load error database. Please try again later.</div>`;
+    }
 
     // Event Listeners
     searchInput.addEventListener('input', (e) => handleSearch(e.target.value));
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active button state
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // Filter logic
-            const filter = btn.getAttribute('data-filter');
-            currentFilter = filter;
-            handleSearch(searchInput.value); // Re-apply search with new filter
+            currentFilter = btn.getAttribute('data-filter');
+            handleSearch(searchInput.value);
         });
     });
 
     closeModal.addEventListener('click', () => {
         modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300); // Wait for transition
+        setTimeout(() => modal.style.display = 'none', 300);
     });
 
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
+            setTimeout(() => modal.style.display = 'none', 300);
         }
     });
 
@@ -56,21 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         postsGrid.innerHTML = '';
 
         if (posts.length === 0) {
-            postsGrid.innerHTML = `<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-secondary);">
-                <i class="fa-solid fa-ghost" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                <p>No error solutions found matching your criteria.</p>
-            </div>`;
+            postsGrid.innerHTML = `<div class="no-results">No error solutions found.</div>`;
             return;
         }
 
         posts.forEach((post, index) => {
             const card = document.createElement('div');
             card.classList.add('post-card');
-            // Staggered animation delay
             card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
-            card.style.opacity = '0'; // Start invisible for animation
+            card.style.opacity = '0';
 
-            // Generate HTML for card
+            // Generate Card HTML (using metadata)
             card.innerHTML = `
                 <div class="card-header">
                     <span class="lang-badge" style="color: ${getLangColor(post.language)}">${post.language}</span>
@@ -79,112 +74,107 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="card-content">
                     <span class="error-code">${post.code}</span>
                     <h3>${post.title}</h3>
-                    <p>${post.description}</p>
+                    <p class="meta-desc">Click to view detailed analysis & solution...</p>
                 </div>
                 <div class="card-footer">
                     <div class="date">
                         <i class="fa-regular fa-calendar"></i>
                         <span>${post.date}</span>
                     </div>
-                    <div class="views">
-                        <i class="fa-regular fa-eye"></i>
-                        <span>${post.views}</span>
-                    </div>
                 </div>
             `;
 
-            card.addEventListener('click', () => openModal(post));
+            // On click, fetch full content
+            card.addEventListener('click', () => loadAndOpenPost(post));
             postsGrid.appendChild(card);
         });
+    }
+
+    async function loadAndOpenPost(meta) {
+        // Show loading state in modal?
+        modalBody.innerHTML = `<div class="loading">Loading content...</div>`;
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+
+        try {
+            const res = await fetch(meta.path);
+            if (!res.ok) throw new Error("Content not found");
+            const fullPost = await res.json();
+
+            renderModalContent(fullPost);
+        } catch (e) {
+            modalBody.innerHTML = `<div class="error">Failed to load details.</div>`;
+        }
+    }
+
+    function renderModalContent(post) {
+        // Updated for richer content structure
+        modalBody.innerHTML = `
+            <div class="modal-header">
+                <span class="lang-badge" style="color: ${getLangColor(post.language)}">${post.language}</span>
+                <h2>${post.title}</h2>
+                <div class="tags-container">
+                    ${post.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
+                </div>
+            </div>
+            
+            <div class="modal-main-content">
+                <section class="analysis-section">
+                    <h3>🧐 Analysis</h3>
+                    <p>${post.analysis}</p>
+                </section>
+
+                <section class="cause-section">
+                    <h3>❌ The Problem (Root Cause)</h3>
+                    <p>${post.root_cause}</p>
+                    <div class="code-block bug">
+                        <pre><code>${escapeHtml(post.bad_code)}</code></pre>
+                    </div>
+                </section>
+                
+                <section class="solution-section">
+                    <h3>✅ The Solution (Best Practice)</h3>
+                    <p>${post.solution_desc}</p>
+                    <div class="code-block fix">
+                        <pre><code>${escapeHtml(post.good_code)}</code></pre>
+                    </div>
+                </section>
+
+                <section class="verification-section">
+                     <h3>🛡️ Verification & Tips</h3>
+                     <p>${post.verification}</p>
+                </section>
+            </div>
+        `;
     }
 
     function handleSearch(query) {
         const lowerQuery = query.toLowerCase();
 
-        const filtered = postsData.filter(post => {
-            // Check language filter
-            if (currentFilter !== 'all' && post.language.toLowerCase() !== currentFilter) {
-                return false;
-            }
+        const filtered = postsIndex.filter(post => {
+            if (currentFilter !== 'all' && post.language.toLowerCase() !== currentFilter) return false;
 
-            // Check search query
-            const matchesTitle = post.title.toLowerCase().includes(lowerQuery);
-            const matchesCode = post.code.toLowerCase().includes(lowerQuery);
-            const matchesTags = post.tags && post.tags.some(tag => tag.toLowerCase().includes(lowerQuery));
-
-            return matchesTitle || matchesCode || matchesTags;
+            return post.title.toLowerCase().includes(lowerQuery) ||
+                post.code.toLowerCase().includes(lowerQuery) ||
+                post.tags.some(t => t.toLowerCase().includes(lowerQuery));
         });
 
         renderPosts(filtered);
     }
 
-    function openModal(post) {
-        modalBody.innerHTML = `
-            <div class="modal-header">
-                <span class="lang-badge" style="color: ${getLangColor(post.language)}; margin-bottom: 1rem; display: inline-block;">${post.language}</span>
-                <h2>${post.title}</h2>
-                <span class="error-code">${post.code}</span>
-            </div>
-            
-            <div class="modal-main-content">
-                <p style="margin-top: 1rem; line-height: 1.6; color: #ccc;">${post.description}</p>
-                
-                <h3 style="margin-top: 2rem; color: #ff6b6b;">The Problem</h3>
-                <div class="code-block">
-                    <pre><code>${escapeHtml(post.snippet)}</code></pre>
-                </div>
-                
-                <div class="solution-section">
-                    <h3>The Solution</h3>
-                    <p style="margin-bottom: 1rem;">${post.solution}</p>
-                    <div class="code-block" style="border-color: var(--primary-color);">
-                        <pre><code>${escapeHtml(post.fix)}</code></pre>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        modal.style.display = 'flex';
-        // Force reflow
-        void modal.offsetWidth;
-        modal.classList.add('show');
-    }
-
-    // Helper: Escape HTML to preventing injection (basic)
     function escapeHtml(text) {
         if (!text) return '';
-        return text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+        return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
-    // Helper: Get color based on language
     function getLangColor(lang) {
         switch (lang.toLowerCase()) {
             case 'javascript': return '#f7df1e';
             case 'python': return '#3776ab';
             case 'c++': return '#00599c';
-            case 'react': return '#61dafb';
+            case 'java': return '#b07219';
+            case 'korean': return '#ff6b6b';
             default: return '#ffffff';
         }
     }
-
-    // Define keyframes for animation dynamically
-    const styleSheet = document.createElement("style");
-    styleSheet.innerText = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(styleSheet);
 });

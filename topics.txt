@@ -1,0 +1,10 @@
+Java NullPointerException definition and fix
+Python IndentationError guide
+React "cannot update a component while rendering a different component"
+JavaScript "unexpected token < in JSON at position 0"
+C++ Segmentation Fault debugging
+Python "ImportError: cannot import name"
+Docker "standard_init_linux.go:228: exec user process caused: exec format error"
+Git "fatal: refusing to merge unrelated histories"
+CSS "z-index not working"
+SQL "syntax error near to"
