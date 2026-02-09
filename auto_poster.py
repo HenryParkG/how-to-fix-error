@@ -45,26 +45,49 @@ def get_github_trending():
         print(f"⚠️ GitHub API Error: {e}")
         return []
 
-def generate_with_retry(model, prompt, retries=3):
-    """Wraps model.generate_content with rate limit handling"""
-    for attempt in range(retries):
+# Priority list of models to try (Latest -> Older)
+# Priority list of models to try (Latest -> Older)
+MODELS_TO_TRY = [
+    "gemini-3-pro-preview",
+    "gemini-3-flash-preview",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-pro",
+    "gemini-2.0-flash-exp",
+    "gemini-1.5-pro",
+    "gemini-1.5-flash"
+]
+
+def generate_smart(prompt):
+    """Tries generation with multiple models before giving up."""
+    genai.configure(api_key=GEMINI_API_KEY)
+    
+    last_error = None
+    
+    for model_name in MODELS_TO_TRY:
         try:
-            return model.generate_content(prompt)
+            print(f"🤖 Trying model: {model_name}...")
+            model = genai.GenerativeModel(model_name)
+            response = model.generate_content(prompt)
+            return response
         except Exception as e:
             err_msg = str(e)
             if "429" in err_msg or "quota" in err_msg.lower() or "limit" in err_msg.lower():
-                wait_time = 60 # Default wait
-                # Extract wait time from error message if possible
-                match = re.search(r"retry in (\d+(\.\d+)?)s", err_msg)
-                if match:
-                    wait_time = float(match.group(1)) + 2 # Add buffer
-                
-                print(f"⏳ Rate-limited. Waiting {wait_time:.1f}s before retry ({attempt+1}/{retries})...")
-                time.sleep(wait_time)
+                print(f"⚠️ {model_name} hit rate limit. Switching to next model...")
+                last_error = e
+                continue # Try next model immediately
             else:
-                raise e # Re-raise other errors
-    
-    raise Exception("Max retries exceeded")
+                # If it's not a rate limit (e.g., bad request), fail immediately or log?
+                # For safety, we treat it as failure of this model and try next.
+                print(f"❌ {model_name} error: {e}")
+                last_error = e
+                continue
+
+    # If all models fail, raise the last error
+    raise Exception(f"All models exhausted. Last error: {last_error}")
+
+# No longer used, but kept for reference or removed? Removing to keep specific.
+
 
 def get_autonomous_topics(count=1):
     # 1. GitHub Trending Topic (Always 1)
@@ -77,8 +100,7 @@ def get_autonomous_topics(count=1):
         print(f"⚠️ GitHub trend fetch failed: {e}")
 
     # 2. AI Error Topics (Count requested via args)
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-flash-latest')
+    # Model configuration is handled inside generate_smart
     
     existing_titles = []
     if os.path.exists(INDEX_FILE):
@@ -112,7 +134,7 @@ def get_autonomous_topics(count=1):
     print(f"🧠 AI is brainstorming {count} unique error topics...")
     ai_topics = []
     try:
-        response = generate_with_retry(model, prompt)
+        response = generate_smart(prompt)
         text = response.text.strip()
         if text.startswith("```json"): text = text[7:]
         if text.startswith("```"): text = text[3:]
@@ -129,8 +151,7 @@ def get_autonomous_topics(count=1):
     return final_topics
 
 def generate_and_save(topic):
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-flash-latest')
+    # Model configuration is handled inside generate_smart
 
     prompt = f"""
     Write a clear, expert-level technical article for developers about: "{topic}".
@@ -158,7 +179,7 @@ def generate_and_save(topic):
 
     print(f"🤖 Generating: '{topic}'...")
     try:
-        response = generate_with_retry(model, prompt)
+        response = generate_smart(prompt)
         clean_text = response.text.strip()
         if clean_text.startswith("```json"): clean_text = clean_text[7:]
         if clean_text.startswith("```"): clean_text = clean_text[3:]

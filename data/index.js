@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1770622460,
+        "title": "Stale-While-Revalidate: Next.js API Cache Invalidation Woes",
+        "slug": "nextjs-api-stale-while-revalidate-invalidation",
+        "language": "Next.js (React)",
+        "code": "CacheInvalidationIssue",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/nextjs-api-stale-while-revalidate-invalidation.js",
+        "tags": [
+            "nextjs",
+            "api-routes",
+            "caching",
+            "stale-while-revalidate",
+            "invalidation"
+        ]
+    },
+    {
+        "id": 1770622392,
+        "title": "Unbounded Bloom Filter: High-Cardinality Memory Leaks",
+        "slug": "unbounded-bloom-filter-memory-leaks",
+        "language": "General Algorithm/Data Structures",
+        "code": "MemoryLeak",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/unbounded-bloom-filter-memory-leaks.js",
+        "tags": [
+            "bloom filter",
+            "high cardinality",
+            "memory leak",
+            "data structures"
+        ]
+    },
+    {
+        "id": 1770622781,
+        "title": "Nested @Transactional ReadOnly Fails",
+        "slug": "nested-transactional-readonly-failure",
+        "language": "Java/Spring",
+        "code": "Propagation.NESTED",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/nested-transactional-readonly-failure.js",
+        "tags": [
+            "spring",
+            "transactional",
+            "readonly",
+            "propagation"
+        ]
+    },
+    {
+        "id": 1770622897,
+        "title": "ClawRouter: Slash LLM Costs with Smart Routing",
+        "slug": "clawrouter-llm-cost-optimization",
+        "language": "Python, Docker",
+        "code": "CostOptimization",
+        "date": "2026-02-09",
+        "path": "data/posts/2026-02/clawrouter-llm-cost-optimization.js",
+        "tags": [
+            "LLM",
+            "AI",
+            "Cloud",
+            "FinOps",
+            "Smart Contracts"
+        ]
+    },
+    {
         "id": 1770616697,
         "title": "The Container Permission Paradox: UID/GID Mismatch",
         "slug": "uid-gid-mismatch-non-root-containers",
