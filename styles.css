@@ -380,26 +380,60 @@ body {
 footer {
     border-top: 1px solid var(--glass-border);
     padding: 4rem 0 2rem;
-    text-align: center;
     color: var(--text-secondary);
+    background: #080a0f;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Outfit', sans-serif;
 }
 
 .footer-links {
     display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
 }
 
 .footer-links a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
 }
 
 /* Animations */
