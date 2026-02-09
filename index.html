@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Automated repository of programming errors, bugs, and their solutions.">
-    <title>ErrorLog | AI-Driven Bug Fix Repository</title>
+    <meta name="description" content="Advanced AI-Driven Bug Fix Repository with granular categories.">
+    <title>ErrorLog | Expert Bug-Fix Database</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,8 @@
     <header class="glass-header">
         <div class="container header-content">
             <a href="#" class="logo">Error<span class="highlight">Log</span></a>
-            <nav class="footer-links" style="margin-bottom: 0;"> <!-- Reusing link styles -->
-                <a href="#recent">Recent</a>
+            <nav class="footer-links" style="margin-bottom: 0;">
+                <a href="#recent">Solutions</a>
                 <a href="https://github.com/HenryParkG/how-to-fix-error" target="_blank"><i
                         class="fa-brands fa-github"></i> GitHub</a>
             </nav>
@@ -31,25 +31,55 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Programming Errors <br><span class="gradient-text">Solved Automatically</span></h1>
-                <p>A senior-level knowledge base of bugs, root causes, and best-practice solutions. Deployed via AI
-                    automation.</p>
+                <h1>Master the <span class="gradient-text">Art of Debugging</span></h1>
+                <p>Granular solutions for real-world programming errors across the entire tech stack.</p>
                 <div class="search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="searchInput" placeholder="Search error codes, messages, or tags...">
+                    <input type="text" id="searchInput" placeholder="Search by error type, language, or tags...">
                 </div>
             </div>
         </section>
 
         <section id="recent" class="container">
-            <div class="section-header">
-                <h2>Browse Solutions</h2>
-                <div class="filter-tags">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="python">Python</button>
-                    <button class="filter-btn" data-filter="javascript">JavaScript</button>
-                    <button class="filter-btn" data-filter="react">React</button>
-                    <button class="filter-btn" data-filter="css">CSS</button>
+            <!-- 세분화된 필터 시스템 -->
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label">General</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Frontend</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="react">React</button>
+                        <button class="filter-btn" data-filter="vue">Vue</button>
+                        <button class="filter-btn" data-filter="next.js">Next.js</button>
+                        <button class="filter-btn" data-filter="typescript">TypeScript</button>
+                        <button class="filter-btn" data-filter="css">CSS/Styles</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Backend</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="python">Python</button>
+                        <button class="filter-btn" data-filter="node.js">Node.js</button>
+                        <button class="filter-btn" data-filter="go">Go</button>
+                        <button class="filter-btn" data-filter="rust">Rust</button>
+                        <button class="filter-btn" data-filter="java">Java/Spring</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Infra/DB</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="docker">Docker</button>
+                        <button class="filter-btn" data-filter="kubernetes">K8s</button>
+                        <button class="filter-btn" data-filter="sql">SQL/DB</button>
+                        <button class="filter-btn" data-filter="aws">AWS</button>
+                    </div>
                 </div>
             </div>
 
@@ -62,15 +92,14 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="pages/terms.html">Terms of Service</a>
-                <a href="pages/privacy.html">Privacy Policy</a>
-                <a href="https://github.com/HenryParkG" target="_blank">Creator</a>
+                <a href="pages/terms.html">Terms</a>
+                <a href="pages/privacy.html">Privacy</a>
+                <a href="https://github.com/HenryParkG" target="_blank">GitHub</a>
             </div>
-            <p>&copy; 2024 ErrorLog. Open Source Project for developers.</p>
+            <p>&copy; 2024 ErrorLog. Automatically Updated by AI.</p>
         </div>
     </footer>
 
-    <!-- Detail Modal -->
     <div id="postModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>

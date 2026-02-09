@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             currentFilter = btn.getAttribute('data-filter');
             handleSearch(searchInput?.value || "");
+
+            // 필터 클릭 시 목록 상단으로 부드럽게 이동
+            window.scrollTo({ top: document.getElementById('recent').offsetTop - 50, behavior: 'smooth' });
         });
     });
 
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         postsGrid.innerHTML = '';
 
         if (posts.length === 0) {
-            postsGrid.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+            postsGrid.innerHTML = '<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-secondary);">검색 결과가 없습니다.</div>';
             return;
         }
 
@@ -53,13 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
                 <div class="card-header">
-                    <span class="lang-badge" data-lang="${post.language.toLowerCase()}">${post.language}</span>
+                    <span class="lang-badge">${post.language}</span>
                     <div class="status-indicator"></div>
                 </div>
                 <div class="card-content">
                     <span class="error-code">${post.code}</span>
                     <h3>${post.title}</h3>
-                    <p class="meta-desc">Click to read analysis & solution...</p>
                 </div>
                 <div class="card-footer">
                     <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>

@@ -4,6 +4,7 @@ import json
 import datetime
 import google.generativeai as genai
 import re
+import argparse
 
 from dotenv import load_dotenv
 
@@ -20,10 +21,7 @@ if not GEMINI_API_KEY:
 INDEX_FILE = "data/index.js"
 POSTS_DIR = "data/posts"
 
-# ==========================================
-# 🧠 AI 자율 주제 선정 (Ver 3.6)
-# ==========================================
-def get_autonomous_topic():
+def get_autonomous_topics(count=1):
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-flash-latest')
     
@@ -37,15 +35,26 @@ def get_autonomous_topic():
                     data = json.loads(match.group(1))
                     existing_titles = [post['title'] for post in data]
         except Exception as e:
-            print(f"⚠️ Warning: Could not read index for brainstorming: {e}")
+            print(f"⚠️ Warning: Index read failed: {e}")
 
     prompt = f"""
-    You are a Tech Trend Bot. Already covered topics: {existing_titles}
-    Pick ONE specific, high-value programming error that developers struggle with. 
-    Respond in strict JSON format: {{"topic": "..."}}
+    You are a Tech Analyst for 'ErrorLog'. Pick {count} high-value, unique programming errors.
+    Already covered: {existing_titles}
+    
+    [Categories to target]
+    - Frontend: React, Next.js, Vue, TypeScript, CSS/UI
+    - Backend: Node.js, Python, Go, Rust, Java/Spring
+    - Infra/DB: Docker, Kubernetes, AWS, SQL, NoSQL
+    
+    [Rules]
+    - Topics must be conceptually different from existing ones.
+    - Provide topics from varying categories to maintain variety.
+    - Pick specific, real-world issues.
+    
+    Provide JSON: {{"topics": ["...", ...]}}
     """
     
-    print("🧠 AI is brainstorming a new topic...")
+    print(f"🧠 AI is brainstorming {count} unique topics...")
     try:
         response = model.generate_content(prompt)
         text = response.text.strip()
@@ -53,100 +62,114 @@ def get_autonomous_topic():
         if text.startswith("```"): text = text[3:]
         if text.endswith("```"): text = text[:-3]
         data = json.loads(text)
-        return data['topic']
+        return data['topics'][:count]
     except Exception as e:
-        print(f"❌ Failed to brainstorm: {e}")
-        return "Python UnboundLocalError"
+        print(f"❌ Brainstorming failed: {e}")
+        return ["Common Programming Pitfall"] * count
 
-# ==========================================
-# 🤖 Gemini 모델 설정
-# ==========================================
-def generate_high_quality_post(error_topic):
+def generate_and_save(topic):
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel('gemini-flash-latest')
 
     prompt = f"""
-    Act as a Senior Software Engineer. Explain "{error_topic}".
-    Provide the output in STRICT JSON format with: title, slug, language, code, tags, analysis, root_cause, bad_code, solution_desc, good_code, verification.
-    IMPORTANT: Respond ONLY with the JSON. Do NOT use markdown code blocks.
+    Write a clear, expert-level technical article for developers about: "{topic}".
+    
+    [STRICT JSON FORMAT REQUIRED]
+    {{
+        "title": "Short, punchy title (Max 60 chars)",
+        "slug": "url-friendly-slug",
+        "language": "Specific Tech Stack (e.g., 'Go', 'React', 'Docker')",
+        "code": "Error type only (e.g., 'DataRace', 'ReadinessProbeFailure'). MAX 30 CHARS.",
+        "tags": ["tag1", "tag2"],
+        "analysis": "Detailed technical explanation in HTML <p> tags.",
+        "root_cause": "The core reason why this fails.",
+        "bad_code": "Snippet showing the BUG.",
+        "solution_desc": "Explanation of the fix.",
+        "good_code": "Snippet showing the FIXED/BEST PRACTICE code.",
+        "verification": "How to test the fix."
+    }}
+    
+    IMPORTANT: 
+    1. The 'code' field MUST be very short (1-3 words). 
+    2. Do NOT include markdown styling like '#' inside JSON values.
+    3. Respond ONLY with the JSON.
     """
 
-    print(f"🤖 Senior Engineer AI is analyzing: '{error_topic}'...")
+    print(f"🤖 Generating: '{topic}'...")
     try:
         response = model.generate_content(prompt)
         clean_text = response.text.strip()
         if clean_text.startswith("```json"): clean_text = clean_text[7:]
         if clean_text.startswith("```"): clean_text = clean_text[3:]
         if clean_text.endswith("```"): clean_text = clean_text[:-3]
-        return json.loads(clean_text)
-    except Exception as e:
-        print(f"❌ Failed to generate content: {e}")
-        return None
-
-# ==========================================
-# 📝 파일 저장 로직 (Ver 3.6 - JS Wrapper 방식)
-# ==========================================
-def save_post(post_data):
-    try:
-        now = datetime.datetime.now()
-        year_month = now.strftime("%Y-%m")
-        date_str = now.strftime("%Y-%m-%d")
         
-        target_dir = os.path.join(POSTS_DIR, year_month)
+        post_data = json.loads(clean_text)
+        
+        # Metadata & Resilience
+        now = datetime.datetime.now()
+        date_str = now.strftime("%Y-%m-%d")
+        target_dir = os.path.join(POSTS_DIR, now.strftime("%Y-%m"))
         os.makedirs(target_dir, exist_ok=True)
         
-        # 확장자를 .js로 변경 (CORS 대책)
+        # Ensure all fields exist
+        post_data['title'] = post_data.get('title', topic)
+        post_data['slug'] = post_data.get('slug', re.sub(r'[^a-z0-9]', '-', topic.lower()))
+        post_data['language'] = post_data.get('language', 'General')
+        post_data['code'] = post_data.get('code', 'Error')
+        post_data['date'] = date_str
+        post_data['id'] = int(now.timestamp()) + hash(post_data['title']) % 1000
+        
         filename = f"{post_data['slug']}.js"
         file_path = os.path.join(target_dir, filename)
         
-        post_data['date'] = date_str
-        post_data['id'] = int(now.timestamp())
-        
-        # 데이터를 window.onPostDataLoaded 호출로 감싸서 저장 (JSONP 방식)
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=False)});")
             
-        print(f"✅ Post content (JS mode) saved to: {file_path}")
-        
-        index_entry = {
-            "id": post_data['id'],
-            "title": post_data['title'],
-            "slug": post_data['slug'],
-            "language": post_data['language'],
-            "code": post_data['code'],
-            "date": date_str,
-            "path": file_path.replace("\\", "/"),
-            "tags": post_data['tags']
-        }
-        
-        update_index_file(index_entry)
-        return True
-        
+        return post_data, file_path
     except Exception as e:
-        print(f"❌ Failed to save post: {e}")
-        return False
+        print(f"❌ Failed for {topic}: {e}")
+        return None, None
 
-def update_index_file(new_entry):
+def update_index_file(new_entries):
     try:
         data = []
         if os.path.exists(INDEX_FILE):
-            with open(INDEX_FILE, 'r', encoding='utf-8') as f:
-                content = f.read()
-                match = re.search(r'(?:const|var) postsIndex = (\[.*\]);', content, re.DOTALL)
-                if match:
-                    try:
-                        data = json.loads(match.group(1))
-                    except: data = []
+             with open(INDEX_FILE, 'r', encoding='utf-8') as f:
+                  content = f.read()
+                  match = re.search(r'(?:const|var) postsIndex = (\[.*\]);', content, re.DOTALL)
+                  if match:
+                       data = json.loads(match.group(1))
         
-        data.insert(0, new_entry)
+        for entry in reversed(new_entries):
+            data.insert(0, entry)
+            
         with open(INDEX_FILE, 'w', encoding='utf-8') as f:
             f.write(f"var postsIndex = {json.dumps(data, indent=4, ensure_ascii=False)};")
-        print("✅ Index file updated successfully!")
-    except Exception as e:
-        print(f"❌ Failed to update index: {e}")
+        print(f"✅ Index updated with {len(new_entries)} items.")
+    except Exception as e: print(f"❌ Index failure: {e}")
 
 if __name__ == "__main__":
-    topic = sys.argv[1] if len(sys.argv) >= 2 else get_autonomous_topic()
-    post_data = generate_high_quality_post(topic)
-    if post_data and save_post(post_data):
-        print("\n🎉 Article Publishing Complete!")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--count", type=int, default=1)
+    parser.add_argument("--topic", type=str, default=None)
+    args = parser.parse_args()
+
+    topics = [args.topic] if args.topic else get_autonomous_topics(args.count)
+    new_entries = []
+    
+    for t in topics:
+        p_data, f_path = generate_and_save(t)
+        if p_data:
+            new_entries.append({
+                "id": p_data['id'],
+                "title": p_data['title'],
+                "slug": p_data['slug'],
+                "language": p_data['language'],
+                "code": p_data['code'],
+                "date": p_data['date'],
+                "path": f_path.replace("\\", "/"),
+                "tags": p_data.get('tags', [])
+            })
+    
+    if new_entries:
+        update_index_file(new_entries)
