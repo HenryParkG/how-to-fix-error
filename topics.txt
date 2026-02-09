@@ -1,4 +1,3 @@
-JavaScript "unexpected token < in JSON at position 0"
 C++ Segmentation Fault debugging
 Python "ImportError: cannot import name"
 Docker "standard_init_linux.go:228: exec user process caused: exec format error"
