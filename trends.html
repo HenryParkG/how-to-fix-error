@@ -111,24 +111,29 @@
                 }
 
                 filtered.forEach((post, index) => {
-                    const card = document.createElement('a');
+                    const card = document.createElement('div');
                     card.className = 'post-card';
-                    card.href = `/post.html?id=${post.id}`;
                     card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.05}s`;
 
                     card.innerHTML = `
-                        <div class="post-icon" style="color: #bf00ff;"><i class="fa-solid fa-fire"></i></div>
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <span class="post-lang">${post.language}</span>
-                                <span class="post-date">${post.date}</span>
-                            </div>
-                            <h3 class="post-title">${post.title}</h3>
-                            <div class="post-tags">
-                                ${(post.tags || []).filter(t => t !== 'Tech Trend').slice(0, 2).map(t => `<span>#${t}</span>`).join('')}
+                        <div class="card-header">
+                            <span class="lang-badge" style="color: var(--secondary-color);">${post.language}</span>
+                            <div class="status-indicator" style="background: var(--secondary-color); box-shadow: 0 0 10px var(--secondary-color);"></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="error-code" style="background: rgba(191, 0, 255, 0.1); color: var(--secondary-color); border: 1px solid rgba(191, 0, 255, 0.2);">
+                                <i class="fa-solid fa-bolt"></i> Trending Now
+                            </span>
+                            <h3>${post.title}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>
+                            <div class="tags-container" style="display:inline-flex; gap:5px; margin-left:10px;">
+                                ${(post.tags || []).filter(t => t !== 'Tech Trend' && t !== 'GitHub').slice(0, 1).map(t => `<span class="tag" style="font-size:0.7rem; margin:0;">#${t}</span>`).join('')}
                             </div>
                         </div>
                     `;
+                    card.onclick = () => window.location.href = `/post.html?id=${post.id}`;
                     grid.appendChild(card);
                 });
             }
