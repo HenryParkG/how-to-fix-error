@@ -1,5 +1,39 @@
 var postsIndex = [
     {
+        "id": 1770684341,
+        "title": "The Inode Ghost: Disk Space Errors When Storage is Free",
+        "slug": "inode-exhaustion-no-space-left-on-device",
+        "language": "Docker / Linux Kernel",
+        "code": "ENOSPC Inode Exhaustion",
+        "date": "2026-02-10",
+        "path": "data/posts/2026-02/inode-exhaustion-no-space-left-on-device.js",
+        "tags": [
+            "Linux",
+            "Docker",
+            "DevOps",
+            "Storage",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770683955,
+        "title": "Inside Vouch: Trust Management by Mitchell Hashimoto",
+        "slug": "vouch-trust-management-guide",
+        "language": "Go",
+        "code": "SybilResistance",
+        "date": "2026-02-10",
+        "path": "data/posts/2026-02/vouch-trust-management-guide.js",
+        "tags": [
+            "Go",
+            "Security",
+            "Community",
+            "GraphTheory",
+            "Tech Trend",
+            "GitHub"
+        ]
+    },
+    {
         "id": 1770622460,
         "title": "Stale-While-Revalidate: Next.js API Cache Invalidation Woes",
         "slug": "nextjs-api-stale-while-revalidate-invalidation",
