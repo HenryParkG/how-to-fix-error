@@ -1,5 +1,38 @@
 var postsIndex = [
     {
+        "id": 1770766606,
+        "title": "The Kafka Rebalance Storm: Fixing Infinite Consumer Loops",
+        "slug": "kafka-rebalance-storm-heartbeat-fix",
+        "language": "Java (Apache Kafka)",
+        "code": "CommitFailedException",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/kafka-rebalance-storm-heartbeat-fix.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Reliability",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770766719,
+        "title": "Understanding mitchellh/vouch: Cryptographic Trust Graphs",
+        "slug": "mitchellh-vouch-technical-analysis",
+        "language": "Go",
+        "code": "SybilAttack",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/mitchellh-vouch-technical-analysis.js",
+        "tags": [
+            "Go",
+            "Security",
+            "CLI",
+            "WebOfTrust",
+            "Tech Trend",
+            "GitHub"
+        ]
+    },
+    {
         "id": 1770684341,
         "title": "The Inode Ghost: Disk Space Errors When Storage is Free",
         "slug": "inode-exhaustion-no-space-left-on-device",
