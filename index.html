@@ -327,31 +327,54 @@
             }, 'google_translate_element');
         }
 
-        function toggleLanguage() {
-            const select = document.querySelector('.goog-te-combo');
-            const current = document.getElementById('currentLang');
-
-            if (!select) {
-                console.warn("Google Translate widget not ready yet.");
-                alert("Translation widget is loading... please try again in a moment.");
-                return;
+        // 쿠키 설정 함수
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
             }
-
-            if (select) {
-                // If current is showing EN, switch to Korean
-                if (current.innerText === 'EN') {
-                    select.value = 'ko';
-                    current.innerText = 'KO';
-                } else {
-                    select.value = 'en';
-                    current.innerText = 'EN';
-                }
-
-                // Trigger change events for Google to detect update
-                select.dispatchEvent(new Event('change'));
-                select.dispatchEvent(new Event('input'));
-            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
         }
+
+        // 쿠키 가져오기 함수
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function toggleLanguage() {
+            const currentLang = getCookie('googtrans');
+            const toggleText = document.getElementById('currentLang');
+
+            // 쿠키에 /ko가 포함되어 있으면 현재 한국어 상태
+            if (currentLang && currentLang.includes('/ko')) {
+                // -> 영어(원본)로 전환 (/en/en)
+                setCookie('googtrans', '/en/en', 1);
+            } else {
+                // -> 한국어로 전환 (/en/ko)
+                setCookie('googtrans', '/en/ko', 1);
+            }
+            window.location.reload(); // 새로고침하여 적용
+        }
+
+        // 페이지 로드 시 버튼 텍스트 동기화
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentLang = getCookie('googtrans');
+            const toggleText = document.getElementById('currentLang');
+            if (currentLang && currentLang.includes('/ko')) {
+                toggleText.innerText = 'KO';
+            } else {
+                toggleText.innerText = 'EN';
+            }
+        });
     </script>
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
