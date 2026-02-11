@@ -331,15 +331,25 @@
             const select = document.querySelector('.goog-te-combo');
             const current = document.getElementById('currentLang');
 
+            if (!select) {
+                console.warn("Google Translate widget not ready yet.");
+                alert("Translation widget is loading... please try again in a moment.");
+                return;
+            }
+
             if (select) {
-                if (select.value === 'ko') {
-                    select.value = 'en';
-                    current.innerText = 'EN';
-                } else {
+                // If current is showing EN, switch to Korean
+                if (current.innerText === 'EN') {
                     select.value = 'ko';
                     current.innerText = 'KO';
+                } else {
+                    select.value = 'en';
+                    current.innerText = 'EN';
                 }
+
+                // Trigger change events for Google to detect update
                 select.dispatchEvent(new Event('change'));
+                select.dispatchEvent(new Event('input'));
             }
         }
     </script>
