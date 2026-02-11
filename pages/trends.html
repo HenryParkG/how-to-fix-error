@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Main Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
 </head>
 
 <body>
@@ -26,8 +26,8 @@
         <div class="container header-content">
             <a href="/" class="logo">Error<span class="highlight">Log</span></a>
             <nav class="nav-links">
-                <a href="/solutions.html">Solutions</a>
-                <a href="/trends.html">Trends</a>
+                <a href="/pages/solutions.html">Solutions</a>
+                <a href="/pages/trends.html">Trends</a>
                 <a href="/pages/about.html">About</a>
                 <a href="https://stackoverflow.com" target="_blank" title="Stack Overflow"><i
                         class="fa-brands fa-stack-overflow"></i></a>
@@ -58,7 +58,7 @@
                 <h4>ErrorLog</h4>
                 <div class="footer-links">
                     <a href="/pages/about.html">About Us</a>
-                    <a href="/solutions.html">Browse Solutions</a>
+                    <a href="/pages/solutions.html">Browse Solutions</a>
                     <a href="/pages/terms.html">Terms of Service</a>
                     <a href="/pages/privacy.html">Privacy Policy</a>
                 </div>
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                     `;
-                    card.onclick = () => window.location.href = `/post.html?id=${post.id}`;
+                    card.onclick = () => window.location.href = `/pages/post.html?id=${post.id}`;
                     grid.appendChild(card);
                 });
             }

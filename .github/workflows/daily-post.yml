@@ -32,7 +32,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           # --count 3 를 사용하여 한 번에 3개 주제 선정 및 생성
-          python auto_poster.py --count 3
+          python scripts/auto_poster.py --count 3
 
       - name: Commit and Push Changes
         run: |

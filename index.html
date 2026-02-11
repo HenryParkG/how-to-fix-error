@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Main Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
 
     <style>
         .hero-hub {
@@ -153,8 +153,8 @@
         <div class="container header-content">
             <a href="/" class="logo">Error<span class="highlight">Log</span></a>
             <nav class="nav-links">
-                <a href="/solutions.html">Solutions</a>
-                <a href="/trends.html">Trends</a>
+                <a href="/pages/solutions.html">Solutions</a>
+                <a href="/pages/trends.html">Trends</a>
                 <a href="/pages/about.html">About</a>
                 <a href="https://stackoverflow.com" target="_blank" title="Stack Overflow"><i
                         class="fa-brands fa-stack-overflow"></i></a>
@@ -176,20 +176,20 @@
                 Powered by AI, verified by the community.
             </p>
 
-            <form class="hub-search" action="/solutions.html" method="GET">
+            <form class="hub-search" action="/pages/solutions.html" method="GET">
                 <input type="text" name="search" placeholder="Search error codes, frameworks, or problems...">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
 
             <div class="feature-grid">
-                <a href="/solutions.html" class="feature-card">
+                <a href="/pages/solutions.html" class="feature-card">
                     <div class="feature-icon"><i class="fa-solid fa-bug-slash"></i></div>
                     <h3>Error Solutions</h3>
                     <p>Browser our massive database of 100+ common programming errors across React, Python, Docker, and
                         more.</p>
                 </a>
 
-                <a href="/trends.html" class="feature-card">
+                <a href="/pages/trends.html" class="feature-card">
                     <div class="feature-icon" style="color: #bf00ff;"><i class="fa-solid fa-newspaper"></i></div>
                     <h3>Tech Trends</h3>
                     <p>Stay ahead with AI-curated summaries of the hottest discussions from Reddit, Hacker News, and
@@ -219,7 +219,7 @@
                 <h4>ErrorLog</h4>
                 <div class="footer-links">
                     <a href="/pages/about.html">About Us</a>
-                    <a href="/solutions.html">Browse Solutions</a>
+                    <a href="/pages/solutions.html">Browse Solutions</a>
                     <a href="/pages/terms.html">Terms of Service</a>
                     <a href="/pages/privacy.html">Privacy Policy</a>
                 </div>
@@ -260,7 +260,7 @@
                 const latest = window.postsIndex.slice(0, 3);
                 latest.forEach(p => {
                     const item = document.createElement('a');
-                    item.href = `/post.html?id=${p.id}`;
+                    item.href = `/pages/post.html?id=${p.id}`;
                     item.className = 'ticker-item';
                     item.innerHTML = `
                         <span class="ticker-lang">${p.language}</span>

@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadPost(meta) {
         // 모달 대신 전용 상세 페이지로 이동 (SEO & AdSense 최적화)
-        window.location.href = `/post.html?id=${meta.id}`;
+        window.location.href = `/pages/post.html?id=${meta.id}`;
     }
 
     function renderModalContent(post) {
