@@ -9,6 +9,53 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
+
+    <style>
+        /* Google Translate Hidden Element */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        .goog-tooltip,
+        .goog-tooltip:hover {
+            display: none !important;
+        }
+
+        .goog-text-highlight {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        #google_translate_element {
+            display: none;
+        }
+
+        /* Language Toggle Button */
+        .lang-toggle {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: 0.3s;
+            margin-left: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary-color);
+        }
+    </style>
 </head>
 
 <body class="legal-page">
@@ -27,6 +74,12 @@
                         class="fa-brands fa-y-combinator"></i></a>
                 <a href="https://github.com/HenryParkG" target="_blank" title="GitHub"><i
                         class="fa-brands fa-github"></i></a>
+
+                <!-- Google Translate Widget -->
+                <div id="google_translate_element"></div>
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <i class="fa-solid fa-earth-asia"></i> <span id="currentLang">EN</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -92,6 +145,19 @@
         </div>
     </footer>
     <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+        }
+        function setCookie(n, v, d) { var e = ""; if (d) { var dt = new Date(); dt.setTime(dt.getTime() + (d * 24 * 60 * 60 * 1000)); e = "; expires=" + dt.toUTCString(); } document.cookie = n + "=" + (v || "") + e + "; path=/"; }
+        function getCookie(n) { var ne = n + "="; var ca = document.cookie.split(';'); for (var i = 0; i < ca.length; i++) { var c = ca[i]; while (c.charAt(0) == ' ') c = c.substring(1, c.length); if (c.indexOf(ne) == 0) return c.substring(ne.length, c.length); } return null; }
+        function toggleLanguage() { const c = getCookie('googtrans'); if (c && c.includes('/ko')) { setCookie('googtrans', '/en/en', 1); } else { setCookie('googtrans', '/en/ko', 1); } window.location.reload(); }
+        document.addEventListener('DOMContentLoaded', () => { const c = getCookie('googtrans'); const t = document.getElementById('currentLang'); if (c && c.includes('/ko')) { t.innerText = 'KO'; } else { t.innerText = 'EN'; } });
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
