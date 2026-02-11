@@ -12,12 +12,14 @@
 
     <style>
         /* Google Translate Hidden Element */
+        /* Google Translate Banner: Allow it to show and push body down */
         .goog-te-banner-frame.skiptranslate {
-            display: none !important;
+            display: block !important;
         }
 
         body {
-            top: 0px !important;
+            top: auto !important;
+            position: static !important;
         }
 
         .goog-tooltip,
