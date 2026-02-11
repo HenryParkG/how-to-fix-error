@@ -231,6 +231,7 @@ def generate_and_save(topic_obj):
         post_data['code'] = post_data.get('code', 'Error')
         post_data['date'] = date_str
         post_data['id'] = int(now.timestamp()) + hash(post_data['title']) % 1000
+        post_data['type'] = topic_type  # Save content type for frontend rendering
 
         # FORCE TAGS BASED ON TYPE
         if topic_type == 'trend':
