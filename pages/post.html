@@ -182,10 +182,14 @@
                         <div class="code-block bug"><pre><code>${escapeHtml(post.bad_code)}</code></pre></div>
                     </section>
                     
+                // fixed code section
                     <section class="content-section">
                         <h3 style="color: var(--primary-color);"><i class="fa-solid fa-circle-check"></i> Solution</h3>
                         <div class="rich-text">${post.solution_desc}</div>
-                        <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> Fixed Code</div>
+                        <div class="code-header" style="margin-top:2rem; display: flex; justify-content: space-between; align-items: center;">
+                            <span><i class="fa-solid fa-wand-magic-sparkles"></i> Fixed Code</span>
+                            <button onclick="copyCode(this)" class="copy-btn" title="Copy Code"><i class="fa-regular fa-copy"></i></button>
+                        </div>
                         <div class="code-block fix"><pre><code>${escapeHtml(post.good_code)}</code></pre></div>
                     </section>
 
@@ -203,38 +207,50 @@
                 </div>
             `;
 
-            renderRelated(post);
+            // Related Articles 렌더링
+            const grid = document.getElementById('relatedGrid');
+            if (grid && window.postsIndex) {
+                const related = window.postsIndex
+                    .filter(p => p.id !== post.id && p.language === post.language)
+                    .slice(0, 3);
+
+                if (related.length === 0) {
+                    // 같은 언어가 없으면 그냥 최신글
+                    const recent = window.postsIndex.filter(p => p.id !== post.id).slice(0, 3);
+                    related.push(...recent);
+                }
+
+                related.forEach(p => {
+                    const card = document.createElement('a');
+                    card.href = `/pages/post.html?id=${p.id}`;
+                    card.className = 'post-card';
+                    card.style.padding = '1.5rem';
+                    card.style.textDecoration = 'none';
+                    card.style.background = 'rgba(255,255,255,0.02)';
+                    card.innerHTML = `
+                        <span class="lang-tag" style="font-size:0.75rem; margin-bottom:0.5rem; display:inline-block;">${p.language}</span>
+                        <h4 style="margin:0.5rem 0; font-size:1.1rem; color:white; line-height:1.4;">${p.title}</h4>
+                        <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:1rem;">${p.date}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
         };
 
-        function renderRelated(currentPost) {
-            const grid = document.getElementById('relatedGrid');
-            if (!grid || !window.postsIndex) return;
-
-            // 같은 카테고리(language)의 다른 글 3개 추출
-            const related = window.postsIndex
-                .filter(p => p.id !== currentPost.id && p.language === currentPost.language)
-                .slice(0, 3);
-
-            if (related.length === 0) {
-                // 관련 글이 없으면 최신 글 3개
-                related.push(...window.postsIndex.filter(p => p.id !== currentPost.id).slice(0, 3));
-            }
-
-            related.forEach(p => {
-                const card = document.createElement('a');
-                card.href = `/pages/post.html?id=${p.id}`;
-                card.className = 'post-card';
-                card.style.padding = '1.2rem';
-                card.style.textDecoration = 'none';
-                card.innerHTML = `
-                    <span style="font-size:0.7rem; color:var(--primary-color);">${p.language}</span>
-                    <h4 style="margin:0.5rem 0; font-size:1rem; color:white; line-height:1.4;">${p.title}</h4>
-                `;
-                grid.appendChild(card);
+        // 코드 복사 함수
+        window.copyCode = (btn) => {
+            const codeBlock = btn.parentElement.nextElementSibling.querySelector('code');
+            const text = codeBlock.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = btn.querySelector('i');
+                const originalClass = icon.className;
+                icon.className = 'fa-solid fa-check';
+                setTimeout(() => icon.className = 'fa-regular fa-copy', 2000);
             });
-        }
+        };
 
         function escapeHtml(text) {
+            if (!text) return '';
             return text.toString().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         }
 
