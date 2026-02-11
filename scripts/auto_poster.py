@@ -161,29 +161,52 @@ def generate_and_save(topic_obj):
         topic_text = topic_obj
         topic_type = 'error' # Default
 
-    prompt = f"""
-    Write a clear, expert-level technical article for developers about: "{topic_text}".
-    
-    [STRICT JSON FORMAT REQUIRED]
-    {{
-        "title": "Short, punchy title (Max 60 chars)",
-        "slug": "url-friendly-slug",
-        "language": "Specific Tech Stack (e.g., 'Go', 'React', 'Docker')",
-        "code": "Error type only (e.g., 'DataRace', 'ReadinessProbeFailure'). MAX 30 CHARS.",
-        "tags": ["tag1", "tag2"],
-        "analysis": "Detailed technical explanation in HTML <p> tags.",
-        "root_cause": "The core reason why this fails.",
-        "bad_code": "Snippet showing the BUG.",
-        "solution_desc": "Explanation of the fix.",
-        "good_code": "Snippet showing the FIXED/BEST PRACTICE code.",
-        "verification": "How to test the fix."
-    }}
-    
-    IMPORTANT: 
-    1. The 'code' field MUST be very short (1-3 words). 
-    2. Do NOT include markdown styling like '#' inside JSON values.
-    3. Respond ONLY with the JSON.
-    """
+    if topic_type == 'trend':
+        prompt = f"""
+        Write a clear, expert-level 'Tech Trend' article for developers about this GitHub repository/trend: "{topic_text}".
+        Focus on WHY it is trending, WHAT problem it solves, and HOW to use it. Do NOT write it as a bug fix.
+
+        [STRICT JSON FORMAT REQUIRED]
+        {{
+            "title": "Short, punchy title (Max 60 chars)",
+            "slug": "url-friendly-slug",
+            "language": "Primary Language/Tech (e.g., 'Python', 'Rust')",
+            "code": "Trend",
+            "tags": ["Tech Trend", "GitHub"],
+            "analysis": "Detailed explanation of what this tool/repo is and why it's popular right now. Use HTML <p> tags.",
+            "root_cause": "Key Features: List the main features or innovations.",
+            "bad_code": "Example usage snippet (Show how to install or start using it).",
+            "solution_desc": "Use Cases: When should a developer use this?",
+            "good_code": "Advanced usage example or configuration snippet.",
+            "verification": "Future Outlook: Why this matters for the industry."
+        }}
+        
+        IMPORTANT: Respond ONLY with the JSON.
+        """
+    else:
+        prompt = f"""
+        Write a clear, expert-level technical article for developers about: "{topic_text}".
+        
+        [STRICT JSON FORMAT REQUIRED]
+        {{
+            "title": "Short, punchy title (Max 60 chars)",
+            "slug": "url-friendly-slug",
+            "language": "Specific Tech Stack (e.g., 'Go', 'React', 'Docker')",
+            "code": "Error type only (e.g., 'DataRace', 'ReadinessProbeFailure'). MAX 30 CHARS.",
+            "tags": ["tag1", "tag2"],
+            "analysis": "Detailed technical explanation in HTML <p> tags.",
+            "root_cause": "The core reason why this fails.",
+            "bad_code": "Snippet showing the BUG.",
+            "solution_desc": "Explanation of the fix.",
+            "good_code": "Snippet showing the FIXED/BEST PRACTICE code.",
+            "verification": "How to test the fix."
+        }}
+        
+        IMPORTANT: 
+        1. The 'code' field MUST be very short (1-3 words). 
+        2. Do NOT include markdown styling like '#' inside JSON values.
+        3. Respond ONLY with the JSON.
+        """
 
     print(f"🤖 Generating ({topic_type}): '{topic_text[:30]}...'...")
     try:
