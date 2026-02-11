@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/solutions", "destination": "/pages/solutions.html" },
+    { "source": "/trends", "destination": "/pages/trends.html" },
+    { "source": "/about", "destination": "/pages/about.html" },
+    { "source": "/privacy", "destination": "/pages/privacy.html" },
+    { "source": "/terms", "destination": "/pages/terms.html" },
+    { "source": "/post", "destination": "/pages/post.html" }
+  ]
+}
