@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1770803230,
+        "title": "Mapping Explosion: Preventing Elasticsearch Index Bloat",
+        "slug": "elasticsearch-mapping-explosion-prevention",
+        "language": "Elasticsearch / Lucene",
+        "code": "LimitExceededException",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/elasticsearch-mapping-explosion-prevention.js",
+        "tags": [
+            "Elasticsearch",
+            "Performance",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770803265,
+        "title": "The Event Loop Blackout: The JSON.parse Performance Trap",
+        "slug": "event-loop-blackout-json-parse-nodejs",
+        "language": "Node.js",
+        "code": "EventLoopBlocking",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/event-loop-blackout-json-parse-nodejs.js",
+        "tags": [
+            "Node.js",
+            "Performance",
+            "Event Loop",
+            "Scalability",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770803151,
+        "title": "React Context Value Trap: Stopping Re-render Storms",
+        "slug": "react-context-anonymous-object-re-renders",
+        "language": "React",
+        "code": "ReferentialIdentityMismatch",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/react-context-anonymous-object-re-renders.js",
+        "tags": [
+            "React",
+            "Performance",
+            "Hooks",
+            "ContextAPI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770803324,
+        "title": "Vouch: Rethinking Community Trust with Mitchell Hashimoto",
+        "slug": "vouch-trust-management-system-analysis",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/vouch-trust-management-system-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Security",
+            "Community Management"
+        ]
+    },
+    {
         "id": 1770793176,
         "title": "Kubernetes DNS Latency: The Silent ndots:5 Penalty",
         "slug": "k8s-dns-ndots-latency-spike",
