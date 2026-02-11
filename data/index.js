@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1770793176,
+        "title": "Kubernetes DNS Latency: The Silent ndots:5 Penalty",
+        "slug": "k8s-dns-ndots-latency-spike",
+        "language": "Kubernetes Networking",
+        "code": "DNSResolutionLatency",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/k8s-dns-ndots-latency-spike.js",
+        "tags": [
+            "Kubernetes",
+            "DNS",
+            "CoreDNS",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770793122,
+        "title": "PostgreSQL TXID Wraparound: The High-Write Silent Shutdown",
+        "slug": "postgresql-transaction-id-wraparound-guide",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/postgresql-transaction-id-wraparound-guide.js",
+        "tags": [
+            "postgresql",
+            "database",
+            "devops",
+            "performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770792887,
+        "title": "The CSS-in-JS Injection Bottleneck",
+        "slug": "css-in-js-runtime-injection-bottleneck",
+        "language": "React",
+        "code": "RuntimeStyleInjection",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/css-in-js-runtime-injection-bottleneck.js",
+        "tags": [
+            "Performance",
+            "React",
+            "CSS-in-JS",
+            "WebPerf",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770793361,
+        "title": "Vouch: Mitchell Hashimoto’s Web of Trust Engine",
+        "slug": "mitchellh-vouch-community-trust-system",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/mitchellh-vouch-community-trust-system.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Identity",
+            "Community Management"
+        ]
+    },
+    {
         "id": 1770786431,
         "title": "How dns.lookup Paralyzes High-Concurrency Node.js Apps",
         "slug": "nodejs-dns-lookup-thread-starvation",
