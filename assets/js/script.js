@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderModalContent(post) {
+        // 관련 게시물 찾기
+        const related = getRelatedPosts(post);
+        
         modalBody.innerHTML = `
             <div class="modal-header">
                 <span class="lang-tag">${post.language}</span>
@@ -129,7 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <section class="content-section sol">
                     <h3><i class="fa-solid fa-circle-check"></i> Solution</h3>
                     <div class="rich-text">${post.solution_desc}</div>
-                    <div class="code-header"><i class="fa-solid fa-wand-magic-sparkles"></i> Fixed Code</div>
+                    <div class="code-header" style="justify-content: space-between; display: flex;">
+                        <span><i class="fa-solid fa-wand-magic-sparkles"></i> Fixed Code</span>
+                        <button onclick="copyCode(this)" class="copy-btn" title="Copy Code"><i class="fa-regular fa-copy"></i></button>
+                    </div>
                     <div class="code-block fix"><pre><code>${escapeHtml(post.good_code)}</code></pre></div>
                 </section>
 
@@ -137,8 +143,45 @@ document.addEventListener('DOMContentLoaded', () => {
                      <h3><i class="fa-solid fa-shield-halved"></i> Verification & Tips</h3>
                      <div class="rich-text">${post.verification}</div>
                 </section>
+
+                ${related.length > 0 ? `
+                <section class="content-section related">
+                    <h3 style="margin-top:2rem; border-top:1px solid var(--glass-border); padding-top:1rem;">
+                        <i class="fa-solid fa-link"></i> Related Error Fixes
+                    </h3>
+                    <div class="related-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-top:1rem;">
+                        ${related.map(p => `
+                            <a href="/pages/post.html?id=${p.id}" class="related-card" style="text-decoration:none; color:inherit; background:rgba(255,255,255,0.03); padding:1rem; border-radius:8px; border:1px solid var(--glass-border); transition:0.2s;">
+                                <div style="font-size:0.8rem; color:var(--primary-color); margin-bottom:0.5rem;">${p.language}</div>
+                                <div style="font-weight:600; font-size:0.9rem; line-height:1.4;">${p.title}</div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </section>
+                ` : ''}
             </div>
         `;
+    }
+
+    // 전역 함수로 등록 (onclick 작동용)
+    window.copyCode = (btn) => {
+        const codeBlock = btn.parentElement.nextElementSibling.querySelector('code');
+        const text = codeBlock.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const icon = btn.querySelector('i');
+            icon.className = 'fa-solid fa-check';
+            setTimeout(() => icon.className = 'fa-regular fa-copy', 2000);
+        });
+    };
+
+    function getRelatedPosts(currentPost) {
+        if (!window.postsIndex) return [];
+        // 같은 언어이거나 태그가 하나라도 겹치는 글 (자기 자신 제외)
+        return window.postsIndex
+            .filter(p => p.id !== currentPost.id)
+            .filter(p => p.language === currentPost.language || 
+                        (p.tags && currentPost.tags && p.tags.some(t => currentPost.tags.includes(t))))
+            .slice(0, 3); // 최대 3개
     }
 
     function escapeHtml(text) {
