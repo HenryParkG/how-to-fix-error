@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1770786431,
+        "title": "How dns.lookup Paralyzes High-Concurrency Node.js Apps",
+        "slug": "nodejs-dns-lookup-thread-starvation",
+        "language": "Node.js",
+        "code": "ThreadPoolStarvation",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/nodejs-dns-lookup-thread-starvation.js",
+        "tags": [
+            "Node.js",
+            "libuv",
+            "Performance",
+            "DNS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770786289,
+        "title": "The Phantom OOM: Heap and Cgroup Memory Misalignment",
+        "slug": "phantom-oom-heap-cgroup-misalignment",
+        "language": "Java / Docker",
+        "code": "OOMKilled",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/phantom-oom-heap-cgroup-misalignment.js",
+        "tags": [
+            "Kubernetes",
+            "JVM",
+            "Docker",
+            "SRE",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770786572,
+        "title": "Index Intersection: The Hidden Optimizer Deadlock",
+        "slug": "index-intersection-optimizer-deadlock",
+        "language": "MySQL / InnoDB",
+        "code": "IndexMergeDeadlock",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/index-intersection-optimizer-deadlock.js",
+        "tags": [
+            "SQL",
+            "Databases",
+            "InnoDB",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770786144,
+        "title": "Vouch: Mitchell Hashimoto’s New Web-of-Trust System",
+        "slug": "mitchellh-vouch-community-trust-management",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/mitchellh-vouch-community-trust-management.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Security",
+            "Community Management"
+        ]
+    },
+    {
         "id": 1770773787,
         "title": "The Serverless Death Spiral: Database Pool Exhaustion",
         "slug": "serverless-db-connection-death-spiral",
