@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1770773787,
+        "title": "The Serverless Death Spiral: Database Pool Exhaustion",
+        "slug": "serverless-db-connection-death-spiral",
+        "language": "Node.js / PostgreSQL",
+        "code": "ConnectionLimitExceeded",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/serverless-db-connection-death-spiral.js",
+        "tags": [
+            "Serverless",
+            "AWS Lambda",
+            "PostgreSQL",
+            "Scalability",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770773652,
+        "title": "The Typed Nil Trap: Why if err != nil Returns True",
+        "slug": "go-typed-nil-error-trap",
+        "language": "Go",
+        "code": "TypedNilInterface",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/go-typed-nil-error-trap.js",
+        "tags": [
+            "go",
+            "golang",
+            "interfaces",
+            "error-handling",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770773285,
+        "title": "The Stacking Context Trap: Why z-index: 9999 Fails",
+        "slug": "css-stacking-context-trap",
+        "language": "CSS",
+        "code": "StackingContextMismatch",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/css-stacking-context-trap.js",
+        "tags": [
+            "CSS",
+            "Frontend",
+            "WebDev",
+            "UI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770773594,
+        "title": "Analyzing mitchellh/vouch: Scalable Community Trust",
+        "slug": "mitchellh-vouch-technical-analysis",
+        "language": "Go",
+        "code": "UnauthorizedAccess",
+        "date": "2026-02-11",
+        "path": "data/posts/2026-02/mitchellh-vouch-technical-analysis.js",
+        "tags": [
+            "Go",
+            "Cryptography",
+            "Decentralized",
+            "Security",
+            "Tech Trend",
+            "GitHub"
+        ]
+    },
+    {
         "id": 1770766606,
         "title": "The Kafka Rebalance Storm: Fixing Infinite Consumer Loops",
         "slug": "kafka-rebalance-storm-heartbeat-fix",

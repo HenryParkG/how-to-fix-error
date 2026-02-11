@@ -1,22 +1,22 @@
 window.onPostDataLoaded({
-    "title": "Understanding mitchellh/vouch: Cryptographic Trust Graphs",
+    "title": "Analyzing mitchellh/vouch: Scalable Community Trust",
     "slug": "mitchellh-vouch-technical-analysis",
     "language": "Go",
-    "code": "SybilAttack",
+    "code": "UnauthorizedAccess",
     "tags": [
         "Go",
+        "Cryptography",
+        "Decentralized",
         "Security",
-        "CLI",
-        "WebOfTrust",
         "Tech Trend",
         "GitHub"
     ],
-    "analysis": "<p>mitchellh/vouch represents a shift towards cryptographic social proof for community management. By leveraging SSH keys—already ubiquitous among developers—it allows for the creation of a 'Web of Trust' where membership is earned through a chain of explicit endorsements. Its popularity stems from the Mitchell Hashimoto pedigree and the elegant solution it provides to the problem of community 'Eternal September'. It converts social capital into a machine-readable, verifiable format that can be integrated into CI/CD, Discord bots, or automated gatekeepers.</p><p>Technically, it uses Ed25519 signatures to sign 'vouches' (JSON blobs). These vouches can be chained, allowing a community to define a 'root of trust' and a 'max depth'. If a user can prove a path from the root to themselves via signatures, they are granted access. This decentralizes the moderation burden while maintaining high barriers to entry for bad actors.</p>",
-    "root_cause": "Traditional access control lists (ACLs) and invite codes rely on central authority and lack transitive cryptographic verification, making them vulnerable to automated spam and identity spoofing at scale.",
-    "bad_code": "func GrantAccess(user string, inviteCode string) {\n  // Problem: Invite codes are easily shared or leaked\n  // No cryptographic proof of identity or relationship\n  if db.IsValid(inviteCode) {\n    db.AddMember(user)\n  }\n}",
-    "solution_desc": "Use 'vouch' to generate and verify signed cryptographic claims. A user creates a vouch for another by signing the recipient's identity with their SSH private key. The system then validates the signature chain against a known public key (the root).",
-    "good_code": "// 1. Sign a vouch for a new user (via CLI)\nvouch sign --key ~/.ssh/id_ed25519 --for github:newuser --output newuser.vouch\n\n// 2. Verify the trust chain in a Go application\n// Using the vouch library to check a path to the root\nimport \"github.com/mitchellh/vouch/lib/vouch\"\n\nfunc VerifyUser(vouchPath string) bool {\n    root := vouch.LoadPublicKey(\"root.pub\")\n    return vouch.VerifyChain(vouchPath, root, 3) // Max depth of 3\n}",
-    "verification": "Execute 'vouch check' with a valid trust root and a vouch file. Ensure the command returns exit code 0 for valid chains and non-zero for untrusted or expired vouches.",
+    "analysis": "<p>The <code>vouch</code> repository by Mitchell Hashimoto is a minimalist community trust management system designed to replace centralized gatekeeping. It implements a decentralized web of trust where identity and permissioning are derived from a directed acyclic graph (DAG) of cryptographic signatures. Instead of a central server approving users, existing members use their private keys to 'vouch' for new participants, creating a verifiable chain of custody.</p><p>The project has gained significant traction because it solves the 'Sybil attack' problem for private communities using simple, portable tools. It leverages Ed25519 for high-speed signature verification and SQLite for efficient local storage of the trust graph. Developers are adopting it for its 'zero-infrastructure' approach to identity, making it ideal for gating access to mailing lists, SSH servers, or private Git repositories without relying on third-party OAuth providers.</p>",
+    "root_cause": "Traditional access control lists (ACLs) are centralized and do not scale socially, leading to maintenance bottlenecks and single points of failure in community moderation.",
+    "bad_code": "func IsTrusted(pubKey string) bool {\n  // Insecure: Hardcoded whitelist or unverified strings\n  allowed := []string{\"pk_user1\", \"pk_user2\"}\n  for _, k := range allowed {\n    if k == pubKey { return true }\n  }\n  return false\n}",
+    "solution_desc": "Use a transitive trust graph. A user is granted access if a cryptographic path of signatures exists from a trusted root identity to the target user's public key.",
+    "good_code": "// Logic representing vouch's graph-based verification\nfunc Verify(root *Identity, target *Identity, store *GraphStore) bool {\n  path := store.FindShortestPath(root.PublicKey, target.PublicKey)\n  if path == nil { return false }\n  return path.AllSignaturesValid()\n}",
+    "verification": "Execute 'vouch verify --root <root_key_path> <target_key>'. The CLI will return a success exit code only if a valid signature chain is found in the local SQLite database.",
     "date": "2026-02-11",
-    "id": 1770766719
+    "id": 1770773594
 });
