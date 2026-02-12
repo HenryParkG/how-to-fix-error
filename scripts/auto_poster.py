@@ -165,7 +165,7 @@ def generate_smart(prompt):
         "slug": "url-friendly-slug",
         "language": "Tech Stack (e.g. Rust, Kafka)",
         "code": "ErrorType (Short)",
-        "tags": ["Tag1", "Tag2"],
+        "tags": ["Tag1", "Tag2", "REQUIRED_CATEGORY_TAG"],
         "analysis": "Deep technical analysis (Use HTML <p>).",
         "root_cause": "The specific technical reason for failure.",
         "bad_code": "The buggy code snippet.",
@@ -174,13 +174,20 @@ def generate_smart(prompt):
         "verification": "How to verify the fix."
     }}
 
+    [IMPORTANT: TAGGING RULES]
+    You MUST include at least one of these exact tags in the "tags" array, based on the topic:
+    - Frontend: "React", "Vue", "Next.js", "TypeScript", "CSS"
+    - Backend: "Python", "Node.js", "Go", "Rust", "Java"
+    - Infra: "Docker", "Kubernetes", "SQL", "AWS"
+    (Example: If topic is 'Kafka', add "Java" or "Go" or "SQL" depending on context, or at least "Backend" if none match. But prefer the list above.)
+
     [FORMAT for 'Tech Trend' (Topic 3)]
     {{
         "title": "Trend Title",
         "slug": "url-friendly-slug",
         "language": "Tech Stack",
         "code": "Trend",
-        "tags": ["Tech Trend", "GitHub"],
+        "tags": ["Tech Trend", "GitHub", "CATEGORY_TAG"],
         "analysis": "Why is this trending? (HTML <p>)",
         "root_cause": "Key Features & Innovations",
         "bad_code": "Installation / Quick Start Command",
