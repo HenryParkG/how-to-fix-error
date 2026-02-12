@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1770859934,
+        "title": "TCP TIME_WAIT: Solving Ephemeral Port Exhaustion",
+        "slug": "tcp-time-wait-meltdown-port-exhaustion",
+        "language": "Go / Linux",
+        "code": "EADDRNOTAVAIL",
+        "date": "2026-02-12",
+        "path": "data/posts/2026-02/tcp-time-wait-meltdown-port-exhaustion.js",
+        "tags": [
+            "Networking",
+            "Performance",
+            "Microservices",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770859360,
+        "title": "Solving ResizeObserver Loop Limit Exceeded",
+        "slug": "solve-resizeobserver-loop-limit",
+        "language": "JavaScript",
+        "code": "Loop Limit Exceeded",
+        "date": "2026-02-12",
+        "path": "data/posts/2026-02/solve-resizeobserver-loop-limit.js",
+        "tags": [
+            "Web APIs",
+            "DOM",
+            "Performance",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770859189,
+        "title": "Metaspace Leaks: Dynamic Proxies and Silent OOMs",
+        "slug": "java-metaspace-leak-dynamic-proxies",
+        "language": "Java",
+        "code": "MetaspaceOOM",
+        "date": "2026-02-12",
+        "path": "data/posts/2026-02/java-metaspace-leak-dynamic-proxies.js",
+        "tags": [
+            "JVM",
+            "MemoryManagement",
+            "ReflectProxy",
+            "Java8Plus",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1770859784,
+        "title": "CodePilot: The Visual Power-Up for Claude Code",
+        "slug": "codepilot-claude-code-gui-electron",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-12",
+        "path": "data/posts/2026-02/codepilot-claude-code-gui-electron.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI Tools",
+            "Claude Code"
+        ]
+    },
+    {
         "id": 1770803230,
         "title": "Mapping Explosion: Preventing Elasticsearch Index Bloat",
         "slug": "elasticsearch-mapping-explosion-prevention",
