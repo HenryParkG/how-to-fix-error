@@ -89,18 +89,17 @@ def generate_smart(prompt):
 # No longer used, but kept for reference or removed? Removing to keep specific.
 
 
-def get_autonomous_topics(count=1):
-    # 1. GitHub Trending Topic (Always 1)
+    # 1. GitHub Trending Topic (Always 1) - Keep existing logic
     github_topics = []
     try:
         trends = get_github_trending()
         if trends:
-            github_topics = [trends[0]] # Top 1 trend
+            github_topics = [{'text': trends[0], 'type': 'trend'}] # Top 1 trend
     except Exception as e:
         print(f"⚠️ GitHub trend fetch failed: {e}")
 
-    # 2. AI Error Topics (Count requested via args)
-    # Model configuration is handled inside generate_smart
+    # 2. AI Error Topics (Brainstorming)
+    count = 3 # Fixed to 3 errors + 1 trend
     
     existing_titles = []
     if os.path.exists(INDEX_FILE):
@@ -114,144 +113,145 @@ def get_autonomous_topics(count=1):
         except Exception as e:
             print(f"⚠️ Warning: Index read failed: {e}")
 
-    prompt = f"""
-    You are a Tech Analyst for 'ErrorLog'. Pick {count} high-value, unique programming errors.
-    Already covered: {existing_titles}
+    # Diversified Categories
+    prompt_topics = f"""
+    You are a Senior Tech Editor for 'ErrorLog'. Pick {count} high-value, complex, and DIVERSE programming errors.
+    Already covered: {existing_titles[:20]}...
     
-    [Categories to target]
-    - Frontend: React, Next.js, Vue, TypeScript, CSS/UI
-    - Backend: Node.js, Python, Go, Rust, Java/Spring
-    - Infra/DB: Docker, Kubernetes, AWS, SQL, NoSQL
-    
+    [Target Categories - MIX THEM UP]
+    1. **System & Lower Level**: Rust (Borrow Checker), C++20 (Coroutines), Go (Goroutines), Zig, eBPF, Linux Kernel
+    2. **Data & AI Engineering**: Kafka (Rebalancing), Spark (OOM), PyTorch (CUDA/Quantization), Airflow (DAGs), Vector DBs
+    3. **Microservices & Cloud Native**: Kubernetes (CrashLoopBackOff), Istio (Sidecar), gRPC, Terraform (State lock), AWS Lambda (Cold start)
+    4. **Niche & Functional**: Elixir (OTP), Haskell (Monads), OCaml, Scala (Akka), WebAssembly
+    5. **Advanced Web/Mobile**: Next.js (Hydration), React Native (Bridge), Flutter (Skia), WebGL/WebGPU
+    6. **Database Internals**: PostgreSQL (Vacuum/Wraparound), Redis (Fork), Elasticsearch (Sharding), MongoDB (WiredTiger)
+
     [Rules]
-    - Topics must be conceptually different from existing ones.
-    - Provide topics from varying categories to maintain variety.
-    - Pick specific, real-world issues.
+    - Do NOT pick generic "Syntax Error" or "NullPointer". Pick specific, hard-to-debug architectural or runtime issues.
+    - Topics must be from different categories (e.g., 1 System, 1 AI, 1 DB).
+    - Provide topics as a clean list of strings.
     
-    Provide JSON: {{"topics": ["...", ...]}}
+    Provide JSON: {{"topics": ["Topic 1", "Topic 2", "Topic 3"]}}
     """
     
-    print(f"🧠 AI is brainstorming {count} unique error topics...")
-    ai_topics = []
+    print(f"🧠 Brainstorming {count} diverse error topics...")
+    ai_error_topics = []
     try:
-        response = generate_smart(prompt)
+        response = generate_smart(prompt_topics)
         text = response.text.strip()
         if text.startswith("```json"): text = text[7:]
         if text.startswith("```"): text = text[3:]
         if text.endswith("```"): text = text[:-3]
         data = json.loads(text)
-        ai_topics = data.get("topics", [])[:count]
+        ai_error_topics = [{'text': t, 'type': 'error'} for t in data.get("topics", [])[:count]]
     except Exception as e:
         print(f"❌ Brainstorming failed: {e}")
-        ai_topics = ["Common Python TypeError"] * count
+        ai_error_topics = [{'text': "Complex Rust Lifetime Error", 'type': 'error'}] * count
 
-    # Combine: AI Topics + 1 GitHub Topic
-    final_topics = [{'text': t, 'type': 'error'} for t in ai_topics] + \
-                   [{'text': t, 'type': 'trend'} for t in github_topics]
-                   
-    print(f"✅ Final Topics Selected: {len(ai_topics)} Errors + {len(github_topics)} GitHub Trend")
-    return final_topics
+    # Combine Topics
+    all_topics = ai_error_topics + github_topics
+    print(f"✅ Selected Topics: {[t['text'][:30] for t in all_topics]}")
 
-def generate_and_save(topic_obj):
-    # Retrieve text and type
-    if isinstance(topic_obj, dict):
-        topic_text = topic_obj['text']
-        topic_type = topic_obj['type']
-    else:
-        topic_text = topic_obj
-        topic_type = 'error' # Default
+    # 3. Batch Content Generation
+    prompt_content = f"""
+    You are an expert developer. Write 4 detailed technical articles based on these topics:
+    {json.dumps([t['text'] for t in all_topics])}
 
-    if topic_type == 'trend':
-        prompt = f"""
-        Write a clear, expert-level 'Tech Trend' article for developers about this GitHub repository/trend: "{topic_text}".
-        Focus on WHY it is trending, WHAT problem it solves, and HOW to use it. Do NOT write it as a bug fix.
+    The last topic (index 3) is a 'Tech Trend'. The first 3 are 'Error Fixes'.
+    
+    [FORMAT for 'Error Fix' (Topics 0, 1, 2)]
+    {{
+        "title": "Technical Title (Max 60 chars)",
+        "slug": "url-friendly-slug",
+        "language": "Tech Stack (e.g. Rust, Kafka)",
+        "code": "ErrorType (Short)",
+        "tags": ["Tag1", "Tag2"],
+        "analysis": "Deep technical analysis (Use HTML <p>).",
+        "root_cause": "The specific technical reason for failure.",
+        "bad_code": "The buggy code snippet.",
+        "solution_desc": "How to fix it architecturally.",
+        "good_code": "The fixed code snippet.",
+        "verification": "How to verify the fix."
+    }}
 
-        [STRICT JSON FORMAT REQUIRED]
-        {{
-            "title": "Short, punchy title (Max 60 chars)",
-            "slug": "url-friendly-slug",
-            "language": "Primary Language/Tech (e.g., 'Python', 'Rust')",
-            "code": "Trend",
-            "tags": ["Tech Trend", "GitHub"],
-            "analysis": "Detailed explanation of what this tool/repo is and why it's popular right now. Use HTML <p> tags.",
-            "root_cause": "Key Features: List the main features or innovations.",
-            "bad_code": "Example usage snippet (Show how to install or start using it).",
-            "solution_desc": "Use Cases: When should a developer use this?",
-            "good_code": "Advanced usage example or configuration snippet.",
-            "verification": "Future Outlook: Why this matters for the industry."
-        }}
-        
-        IMPORTANT: Respond ONLY with the JSON.
-        """
-    else:
-        prompt = f"""
-        Write a clear, expert-level technical article for developers about: "{topic_text}".
-        
-        [STRICT JSON FORMAT REQUIRED]
-        {{
-            "title": "Short, punchy title (Max 60 chars)",
-            "slug": "url-friendly-slug",
-            "language": "Specific Tech Stack (e.g., 'Go', 'React', 'Docker')",
-            "code": "Error type only (e.g., 'DataRace', 'ReadinessProbeFailure'). MAX 30 CHARS.",
-            "tags": ["tag1", "tag2"],
-            "analysis": "Detailed technical explanation in HTML <p> tags.",
-            "root_cause": "The core reason why this fails.",
-            "bad_code": "Snippet showing the BUG.",
-            "solution_desc": "Explanation of the fix.",
-            "good_code": "Snippet showing the FIXED/BEST PRACTICE code.",
-            "verification": "How to test the fix."
-        }}
-        
-        IMPORTANT: 
-        1. The 'code' field MUST be very short (1-3 words). 
-        2. Do NOT include markdown styling like '#' inside JSON values.
-        3. Respond ONLY with the JSON.
-        """
+    [FORMAT for 'Tech Trend' (Topic 3)]
+    {{
+        "title": "Trend Title",
+        "slug": "url-friendly-slug",
+        "language": "Tech Stack",
+        "code": "Trend",
+        "tags": ["Tech Trend", "GitHub"],
+        "analysis": "Why is this trending? (HTML <p>)",
+        "root_cause": "Key Features & Innovations",
+        "bad_code": "Installation / Quick Start Command",
+        "solution_desc": "Best Use Cases & When to adopt",
+        "good_code": "Code Example / Usage Pattern",
+        "verification": "Future Outlook"
+    }}
 
-    print(f"🤖 Generating ({topic_type}): '{topic_text[:30]}...'...")
+    IMPORTANT:
+    - Return a SINGLE JSON ARRAY containing 4 objects: `[ {{...}}, {{...}}, {{...}}, {{...}} ]`
+    - Ensure valid JSON.
+    - Do NOT wrap in markdown blocks if possible, just raw JSON.
+    """
+
+    print(f"✍️  Generating content for {len(all_topics)} posts in one go...")
+    generated_posts = []
     try:
-        response = generate_smart(prompt)
+        response = generate_smart(prompt_content)
         clean_text = response.text.strip()
         if clean_text.startswith("```json"): clean_text = clean_text[7:]
         if clean_text.startswith("```"): clean_text = clean_text[3:]
         if clean_text.endswith("```"): clean_text = clean_text[:-3]
         
-        post_data = json.loads(clean_text)
-        
-        # Metadata & Resilience
-        now = datetime.datetime.now()
-        date_str = now.strftime("%Y-%m-%d")
-        target_dir = os.path.join(POSTS_DIR, now.strftime("%Y-%m"))
-        os.makedirs(target_dir, exist_ok=True)
-        
-        # Ensure all fields exist
-        post_data['title'] = post_data.get('title', topic_text)
-        post_data['slug'] = post_data.get('slug', re.sub(r'[^a-z0-9]', '-', topic_text.lower()))
-        post_data['language'] = post_data.get('language', 'General')
-        post_data['code'] = post_data.get('code', 'Error')
-        post_data['date'] = date_str
-        post_data['id'] = int(now.timestamp()) + hash(post_data['title']) % 1000
-        post_data['type'] = topic_type  # Save content type for frontend rendering
-
-        # FORCE TAGS BASED ON TYPE
-        if topic_type == 'trend':
-            post_data.setdefault('tags', [])
-            if "Tech Trend" not in post_data['tags']: post_data['tags'].append("Tech Trend")
-            if "GitHub" not in post_data['tags']: post_data['tags'].append("GitHub")
-        else:
-            post_data.setdefault('tags', [])
-            if "Error Fix" not in post_data['tags']: post_data['tags'].append("Error Fix")
-
-        filename = f"{post_data['slug']}.js"
-        file_path = os.path.join(target_dir, filename)
-        
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=False)});")
-            
-        return post_data, file_path
+        generated_posts = json.loads(clean_text)
     except Exception as e:
-        print(f"❌ Failed for {topic_text}: {e}")
-        return None, None
+        print(f"❌ Content generation failed: {e}")
+        return
+
+    # 4. Save Files
+    saved_files = []
+    for i, post_data in enumerate(generated_posts):
+        try:
+            # Determine type based on index (Last one is trend)
+            # Or trust the AI's structure if it matches
+            topic_type = 'trend' if i == len(generated_posts) - 1 else 'error' 
+            
+            # Additional processing
+            now = datetime.datetime.now()
+            date_str = now.strftime("%Y-%m-%d")
+            post_data['date'] = date_str
+            post_data['id'] = int(now.timestamp()) + i # Unique ID
+            post_data['type'] = topic_type
+            
+            # Post-processing tags
+            post_data.setdefault('tags', [])
+            if topic_type == 'trend':
+                if "Tech Trend" not in post_data['tags']: post_data['tags'].append("Tech Trend")
+            else:
+                if "Error Fix" not in post_data['tags']: post_data['tags'].append("Error Fix")
+
+            # Save
+            target_dir = os.path.join(POSTS_DIR, now.strftime("%Y-%m"))
+            os.makedirs(target_dir, exist_ok=True)
+            
+            filename = f"{post_data['slug']}.js"
+            file_path = os.path.join(target_dir, filename)
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=False)});")
+            
+            saved_files.append(post_data)
+            print(f"✅ Saved: {filename}")
+
+        except Exception as e:
+            print(f"⚠️ Failed to save post {i}: {e}")
+
+    # Update Index
+    if saved_files:
+        update_index_file(saved_files)
+        update_sitemap()
+
 
 def update_index_file(new_entries):
     try:
@@ -301,31 +301,15 @@ def update_sitemap():
         f.write('\n'.join(sitemap_content))
     print(f"✅ Sitemap.xml updated successfully!")
 
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--count", type=int, default=1)
-    parser.add_argument("--topic", type=str, default=None)
+    # args.count is now fixed to 4 inside the function, but we can keep arg for compatibility or ignore it.
     args = parser.parse_args()
 
-    topics = [args.topic] if args.topic else get_autonomous_topics(args.count)
-    new_entries = []
-    
-    for t in topics:
-        p_data, f_path = generate_and_save(t)
-        if p_data:
-            new_entries.append({
-                "id": p_data['id'],
-                "title": p_data['title'],
-                "slug": p_data['slug'],
-                "language": p_data['language'],
-                "code": p_data['code'],
-                "date": p_data['date'],
-                "path": f_path.replace("\\", "/"),
-                "tags": p_data.get('tags', [])
-            })
-    
-    if new_entries:
-        update_index_file(new_entries)
-        update_sitemap()
+    print("🚀 Starting Batch Auto-Poster...")
+    get_autonomous_topics(4) # Call the function (which now does everything)
+    print("✅ Batch process completed.")
 
 
