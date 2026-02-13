@@ -309,14 +309,13 @@ def update_sitemap():
     print(f"✅ Sitemap.xml updated successfully!")
 
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # args.count is now fixed to 4 inside the function, but we can keep arg for compatibility or ignore it.
+    parser.add_argument("--count", type=int, default=4, help="Number of posts to generate (Default: 4)")
     args = parser.parse_args()
 
-    print("🚀 Starting Batch Auto-Poster...")
-    get_autonomous_topics(4) # Call the function (which now does everything)
+    print(f"🚀 Starting Batch Auto-Poster (Count: {args.count})...")
+    get_autonomous_topics(args.count) # Pass the count argument
     print("✅ Batch process completed.")
 
 
