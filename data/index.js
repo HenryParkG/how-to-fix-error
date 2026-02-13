@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Rust Async Cancellation: Preventing Resource Leaks",
+        "slug": "rust-async-cancellation-resource-leaks",
+        "language": "Rust",
+        "code": "AsyncCancellation",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Rust's async ecosystem, futures can be dropped at any <code>.await</code> point, often due to a <code>tokio::select!</code> branch finishing first or a timeout triggering. If your code assumes that execution will always reach the line after an await, you risk leaving resources in an inconsistent state or leaking memory. This is particularly dangerous when manually managing state outside of RAII guards.</p>",
+        "root_cause": "The runtime drops the Future object, causing its stack-allocated variables to be dropped immediately, which may bypass manual cleanup logic that was expected to run after the await point.",
+        "bad_code": "async fn process_data(mutex: Arc<Mutex<State>>) {\n    let mut state = mutex.lock().await;\n    state.busy = true;\n    // If cancelled here, 'busy' remains true forever\n    do_io().await;\n    state.busy = false;\n}",
+        "solution_desc": "Utilize RAII (Resource Acquisition Is Initialization) by creating a guard object that implements the Drop trait to ensure cleanup happens regardless of how the future terminates.",
+        "good_code": "struct StateGuard<'a>(&'a Mutex<State>);\nimpl Drop for StateGuard<'_> {\n    fn drop(&mut self) { self.0.lock_blocking().busy = false; }\n}\n\nasync fn process_fixed(mutex: Arc<Mutex<State>>) {\n    let mut state = mutex.lock().await;\n    state.busy = true;\n    let _guard = StateGuard(&mutex);\n    do_io().await;\n    // _guard handles cleanup on success or cancellation\n}",
+        "verification": "Use 'tokio-test' to wrap the future in a timeout and assert the state of the resource after the timeout occurs.",
+        "date": "2026-02-13",
+        "id": 1770965368,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Kafka Poison Pill Consumer Rebalancing",
+        "slug": "kafka-poison-pill-rebalance-fix",
+        "language": "Kafka",
+        "code": "ConsumerTimeout",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>A 'Poison Pill' is a record that fails consistently during processing. In Kafka, if a message causes the consumer to hang or crash repeatedly, the consumer fails to send heartbeats or exceeds <code>max.poll.interval.ms</code>. This triggers a group rebalance, shifting the problematic record to another consumer, which then also crashes, leading to a 'rebalance storm' that halts the entire pipeline.</p>",
+        "root_cause": "The consumer processing logic lacks an isolated error boundary or a Dead Letter Queue (DLQ) mechanism, causing processing time to exceed the maximum allowed poll interval.",
+        "bad_code": "while (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // If this throws an unhandled exception or hangs,\n        // the whole group rebalances.\n        processHeavyLogic(record.value());\n    }\n}",
+        "solution_desc": "Implement a try-catch block within the loop to catch exceptions, send failed records to a Dead Letter Topic (DLT), and commit the offset to move forward.",
+        "good_code": "for (ConsumerRecord<String, String> record : records) {\n    try {\n        processHeavyLogic(record.value());\n    } catch (Exception e) {\n        sendToDeadLetterQueue(record);\n        consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(record.offset() + 1)));\n    }\n}",
+        "verification": "Produce a malformed message to the topic and observe if the consumer group remains 'STABLE' while the message moves to the DLT.",
+        "date": "2026-02-13",
+        "id": 1770965369,
+        "type": "error"
+    },
+    {
+        "title": "WebGPU Alignment: Fixing Uniform Buffer Padding",
+        "slug": "webgpu-alignment-uniform-buffer-fix",
+        "language": "TypeScript",
+        "code": "MemoryAlignment",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>WebGPU follows the WGSL <code>std140</code> and <code>std430</code> layout rules for uniform and storage buffers. A common trap occurs when developers pass a flat <code>Float32Array</code> from JavaScript that doesn't account for the 16-byte alignment required for vectors like <code>vec3</code> or <code>vec4</code>. This results in the GPU reading garbage data or shifted values from the buffer.</p>",
+        "root_cause": "The memory layout in JavaScript (densely packed) does not match the GPU's requirement where certain types must start at offsets that are multiples of 16 bytes.",
+        "bad_code": "const bufferData = new Float32Array([\n    1.0, 0.0, 0.0, // position (vec3)\n    1.0,           // scale (f32) - Mistakenly packed right after\n]);\n// GPU expects vec3 to occupy 16 bytes, not 12.",
+        "solution_desc": "Manually pad the data structure in JavaScript to ensure every vec3 is followed by 4 bytes of padding, or use a 16-byte stride for all elements in the uniform block.",
+        "good_code": "const bufferData = new Float32Array([\n    1.0, 0.0, 0.0, 0.0, // position (vec3) + 4 bytes padding\n    1.0, 0.0, 0.0, 0.0  // scale (f32) + 12 bytes padding\n]);\n// Total 32 bytes, matching WGSL std140 layout requirements.",
+        "verification": "Use a GPU debugger like Spector.js or Chrome's WebGPU Inspector to verify the buffer contents match the expected struct layout.",
+        "date": "2026-02-13",
+        "id": 1770965370,
+        "type": "error"
+    },
+    {
+        "title": "OpenClaw Use Cases: Automating Life with AI",
+        "slug": "openclaw-usecases-trending-repo",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>The 'awesome-openclaw-usecases' repository is trending because it provides a practical bridge between Large Language Models (LLMs) and real-world automation. As developers move from 'chatting' with AI to 'acting' with AI, OpenClaw offers a standardized way to define agentic workflows. Its popularity stems from the community-driven collection of scripts that automate repetitive tasks like email sorting, web research, and system maintenance.</p>",
+        "root_cause": "Modular Agent Architecture, Multi-LLM Support, and Extensible Action Plugins.",
+        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install -r requirements.txt",
+        "solution_desc": "Ideal for developers building personal assistants, automated DevOps pipelines, or researchers needing to orchestrate complex tool-use sequences without writing boilerplate glue code.",
+        "good_code": "from openclaw import Agent\n\n# Define a use case for automated news summarization\nagent = Agent(role=\"Researcher\")\nagent.add_tool(\"web_search\")\n\nagent.run(\"Find the top 3 news about Rust 1.75 and email them to me.\")",
+        "verification": "Expect a surge in 'Agentic Workflow' implementations and tighter integration with local LLM runners like Ollama.",
+        "date": "2026-02-13",
+        "id": 1770965371,
+        "type": "trend"
+    },
+    {
         "id": 1770859934,
         "title": "TCP TIME_WAIT: Solving Ephemeral Port Exhaustion",
         "slug": "tcp-time-wait-meltdown-port-exhaustion",
