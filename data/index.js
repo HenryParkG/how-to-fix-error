@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "eBPF Verifier: Navigating the 1-Million Instruction Limit",
+        "slug": "ebpf-verifier-instruction-limit-fix",
+        "language": "C / Go",
+        "code": "VerifierExhaustion",
+        "tags": [
+            "Go",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>The eBPF verifier is a sophisticated static analyzer that ensures BPF programs are safe to run in the kernel. However, it operates on a 'complexity' budget. For every branch in your code, the verifier must explore the state. While modern kernels have increased the limit to 1 million processed instructions, complex logic—especially loops and heavy unrolling—can quickly exceed this threshold, causing the loader to fail with 'program too complex'.</p>",
+        "root_cause": "The verifier performs a depth-first search of all possible execution paths. Large programs with many conditional branches or unrolled loops create a state explosion where the total number of instructions 'verified' exceeds 1,000,000, even if the actual binary is small.",
+        "bad_code": "#define LOOP_SIZE 512\n\nSEC(\"socket\")\nint handle_packet(struct __sk_buff *skb) {\n    // Unrolling a large loop causes the verifier to track state for every iteration\n    #pragma clang loop unroll(full)\n    for (int i = 0; i < LOOP_SIZE; i++) {\n        // Complex logic inside a branch\n        if (data_end > data + i) {\n            process_byte(data[i]);\n        }\n    }\n    return 1;\n}",
+        "solution_desc": "Break the program into smaller, sub-verifiable units using BPF-to-BPF function calls (__noinline). This forces the verifier to analyze the function once in isolation rather than unrolling its state into the main program's path. Alternatively, use tail calls to transition to a new program context, resetting the instruction count.",
+        "good_code": "__noinline\nstatic int process_data(struct __sk_buff *skb, int offset) {\n    // Isolated logic for the verifier\n    return 0;\n}\n\nSEC(\"socket\")\nint handle_packet(struct __sk_buff *skb) {\n    for (int i = 0; i < 10; i++) {\n        process_data(skb, i);\n    }\n    return 1;\n}",
+        "verification": "Use 'bpftool prog load' and check if the verifier log shows successful completion without 'processed XXX instructions, stack depth YYY' errors.",
+        "date": "2026-02-13",
+        "id": 1770975346,
+        "type": "error"
+    },
+    {
+        "title": "Fixing PyTorch CUDA Memory Fragmentation OOM",
+        "slug": "pytorch-cuda-fragmentation-oom-fix",
+        "language": "Python",
+        "code": "CUDA_OOM",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ],
+        "analysis": "<p>CUDA Out-of-Memory (OOM) errors in PyTorch often occur even when 'nvidia-smi' shows significant free memory. This is usually due to fragmentation within PyTorch's caching allocator. When the allocator cannot find a contiguous block of memory large enough for a new tensor, it triggers an OOM, despite the sum of small free holes being sufficient.</p>",
+        "root_cause": "The PyTorch allocator keeps blocks of memory in a cache to avoid expensive CUDA malloc calls. Over time, frequent allocations and deletions of varying sizes create 'holes'. If the largest contiguous hole is smaller than the requested size, the allocation fails.",
+        "bad_code": "import torch\n\n# Repeatedly creating and deleting tensors of varying sizes\nfor i in range(1000):\n    x = torch.randn(1024, 1024, device='cuda')\n    y = torch.randn(i % 500 + 1, 1024, device='cuda')\n    del x, y # Small holes are left behind",
+        "solution_desc": "Use the environment variable 'PYTORCH_CUDA_ALLOC_CONF' to set 'max_split_size_mb'. This prevents the allocator from creating large blocks that cannot be split, effectively reducing the size of potential fragments. Additionally, periodic calls to torch.cuda.empty_cache() can help defragment, though it comes with a performance penalty.",
+        "good_code": "import os\n# Set before importing torch or running script\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"max_split_size_mb:128\"\n\nimport torch\n# Clear cache manually if fragmentation is detected\ntorch.cuda.empty_cache()",
+        "verification": "Run 'torch.cuda.memory_summary()' to inspect the 'segment_size' vs 'active_size' and ensure the 'max_split_size_mb' is effectively reducing large block retention.",
+        "date": "2026-02-13",
+        "id": 1770975347,
+        "type": "error"
+    },
+    {
+        "title": "Solving Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-selective-receive-mailbox-fix",
+        "language": "Elixir",
+        "code": "MailboxCongestion",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Elixir/Erlang, 'selective receive' occurs when you use a receive block that only matches specific patterns while ignoring others. If a process receives a high volume of messages that don't match the current receive pattern, those messages accumulate in the process mailbox. Every subsequent receive call must scan through these ignored messages, leading to O(N) complexity per scan and eventual process exhaustion.</p>",
+        "root_cause": "The BEAM virtual machine scans the mailbox from oldest to newest. If the first message doesn't match the pattern, it's skipped and the next is checked. If thousands of messages are skipped, CPU usage spikes and the process becomes unresponsive.",
+        "bad_code": "def loop(state) do\n  receive do\n    {:priority, msg} -> \n       handle_priority(msg)\n       loop(state)\n    # If other messages arrive, they stay in the mailbox\n    # and are scanned every time we look for :priority\n  end\nend",
+        "solution_desc": "Avoid manual 'receive' blocks inside GenServers. Instead, rely on the GenServer's native 'handle_info/2' callbacks. GenServers are designed to consume the mailbox sequentially. If you need priority, implement a separate priority queue structure or use multiple processes to isolate different message types.",
+        "good_code": "def handle_info({:priority, msg}, state) do\n  handle_priority(msg)\n  {:noreply, state}\nend\n\ndef handle_info(_other, state) do\n  # Always match and discard or handle unknown messages\n  {:noreply, state}\nend",
+        "verification": "Check 'Process.info(pid, :message_queue_len)' in the observer or IEx shell to ensure the mailbox is not growing indefinitely.",
+        "date": "2026-02-13",
+        "id": 1770975348,
+        "type": "error"
+    },
+    {
+        "title": "OpenClaw: Revolutionizing Automated Web Workflows",
+        "slug": "openclaw-trending-github-repository",
+        "language": "Python / Node.js",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>The 'hesamsheikh/awesome-openclaw-usecases' repository is trending as it provides a community-driven collection of practical applications for OpenClaw. OpenClaw is an emerging framework designed to simplify web automation by combining LLMs with headless browser drivers. It effectively solves the 'brittle selector' problem by allowing agents to understand web elements semantically rather than relying on hardcoded XPaths.</p>",
+        "root_cause": "OpenClaw features include self-healing automation scripts, natural language browsing commands, and the ability to handle complex multi-step web interactions (like solving captchas or navigating dynamic SPAs) that traditional tools like Selenium struggle with.",
+        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install openclaw",
+        "solution_desc": "OpenClaw is best adopted for data scraping from dynamic websites, automated regression testing of UI components, and building AI agents that can perform tasks like 'Book a flight on site X'. Use the examples in the 'awesome' repo to jumpstart your implementation.",
+        "good_code": "from openclaw import ClawAgent\n\nagent = ClawAgent(api_key=\"YOUR_LLM_KEY\")\nagent.browse(\"https://example.com\")\nagent.do(\"Extract all product prices and save to CSV\")",
+        "verification": "The project is expected to grow as more developers integrate local LLMs (like Llama 3) to reduce the cost of autonomous web agents.",
+        "date": "2026-02-13",
+        "id": 1770975349,
+        "type": "trend"
+    },
+    {
         "title": "Rust Async Cancellation: Preventing Resource Leaks",
         "slug": "rust-async-cancellation-resource-leaks",
         "language": "Rust",
