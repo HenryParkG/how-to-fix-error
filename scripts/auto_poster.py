@@ -89,6 +89,8 @@ def generate_smart(prompt):
 # No longer used, but kept for reference or removed? Removing to keep specific.
 
 
+
+def get_autonomous_topics(count=1):
     # 1. GitHub Trending Topic (Always 1) - Keep existing logic
     github_topics = []
     try:
