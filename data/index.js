@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Haskell Space Leaks: Fixing Thunk Accumulation",
+        "slug": "haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "tags": [
+            "Backend",
+            "Haskell",
+            "MemoryManagement",
+            "Error Fix"
+        ],
+        "analysis": "<p>Haskell's lazy evaluation is a double-edged sword. While it allows for infinite data structures and modular code, it frequently leads to 'space leaks' where the runtime builds up a massive chain of unevaluated computations known as thunks. Instead of storing the result of a calculation (like an integer), the heap stores the recipe to calculate it, which consumes significantly more memory and can eventually lead to a stack overflow or OOM (Out of Memory) error during evaluation.</p>",
+        "root_cause": "The use of non-strict functions (like foldl) on large data structures, causing the accumulation of unevaluated expressions in the heap instead of immediate reduction to Weak Head Normal Form (WHNF).",
+        "bad_code": "sumList :: [Int] -> Int\nsumList xs = foldl (\\acc x -> acc + x) 0 xs\n-- This builds a thunk: (((0 + x1) + x2) + x3) ...",
+        "solution_desc": "Replace lazy folds with strict variants (foldl') and utilize 'Bang Patterns' to force evaluation of accumulator arguments at each step, ensuring the heap stores values rather than thunks.",
+        "good_code": "import Data.List (foldl')\n\nsumListStrict :: [Int] -> Int\nsumListStrict xs = foldl' (\\acc x -> acc + x) 0 xs\n-- foldl' forces evaluation of the accumulator at each step.",
+        "verification": "Run the program with GHC's profiling tools: 'ghc -prof -fprof-auto -rtsopts' and analyze the heap profile using '+RTS -hc'.",
+        "date": "2026-02-14",
+        "id": 1771043297,
+        "type": "error"
+    },
+    {
+        "title": "PostgreSQL TXID Wraparound: Rescuing Forced Read-Only DBs",
+        "slug": "postgresql-txid-wraparound-rescue",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "tags": [
+            "Infra",
+            "SQL",
+            "PostgreSQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (TXID) counter. When this counter reaches approximately 2 billion transactions, the system risks 'wraparound' where old transactions appear to be in the future. To prevent data corruption, PostgreSQL enters a safety-critical forced read-only mode. Once this threshold is crossed, the database will refuse to accept any WRITE commands until a manual intervention cleans up the old transaction IDs through a process called freezing.</p>",
+        "root_cause": "The Autovacuum daemon failed to keep up with the transaction volume, or a long-running transaction/replication slot prevented the 'relfrozenxid' from advancing, leading to counter exhaustion.",
+        "bad_code": "-- Symptom: Database logs show:\n-- ERROR: database is shut down to avoid wraparound failures\n-- HINT: Stop the postmaster and vacuum that database in single-user mode.",
+        "solution_desc": "Shut down the database and restart in single-user mode to run a manual VACUUM FREEZE. Alternatively, if the DB is still responsive, identify the oldest tables and run an aggressive VACUUM specifically on them while increasing autovacuum worker priority.",
+        "good_code": "-- 1. Find oldest tables\nSELECT relname, age(relfrozenxid) FROM pg_class WHERE relkind = 'r' ORDER BY 2 DESC;\n\n-- 2. Force aggressive freezing\nVACUUM FREEZE VERBOSE table_name;",
+        "verification": "Monitor the 'age(relfrozenxid)' for all databases. Ensure it drops significantly below the 'autovacuum_freeze_max_age' setting.",
+        "date": "2026-02-14",
+        "id": 1771043298,
+        "type": "error"
+    },
+    {
+        "title": "HNSW Recall Drift: Fixing Index Staleness",
+        "slug": "hnsw-recall-drift-vector-search",
+        "language": "Python",
+        "code": "RecallDrift",
+        "tags": [
+            "Backend",
+            "Python",
+            "MachineLearning",
+            "Error Fix"
+        ],
+        "analysis": "<p>Hierarchical Navigable Small Worlds (HNSW) is a leading algorithm for Approximate Nearest Neighbor (ANN) search. However, in high-throughput environments where vectors are frequently updated or deleted, the graph topology degrades—a phenomenon known as 'Recall Drift'. As nodes are removed, the optimized paths through the multi-layered graph become fragmented, leading to lower search accuracy (recall) despite high query latency.</p>",
+        "root_cause": "Incremental updates and 'soft deletes' in HNSW graphs lead to suboptimal entry points and broken edges, as the graph is not globally re-optimized after individual mutations.",
+        "bad_code": "import hnswlib\n# Repeatedly updating vectors without maintenance\nfor i in range(1000000):\n    index.add_items(new_vector, i)\n    index.mark_deleted(i-100) # Recall drops over time",
+        "solution_desc": "Implement a periodic index rebuild strategy or use 'tombstone' cleanup. In systems like Milvus or Pinecone, this involves triggering a compaction or merging segments. Adjusting 'efSearch' dynamically can temporarily mitigate drift at the cost of latency.",
+        "good_code": "# Solution: Periodic Re-indexing or tuning efConstruction\nindex.init_index(max_elements=N, ef_construction=200, M=16)\n# If recall < threshold, trigger full rebuild into a shadow index\nif current_recall < 0.90:\n    new_index.add_items(all_vectors)\n    swap_indices(index, new_index)",
+        "verification": "Measure recall by comparing HNSW results against a Brute Force (Flat) search baseline using a sample query set.",
+        "date": "2026-02-14",
+        "id": 1771043299,
+        "type": "error"
+    },
+    {
+        "title": "Trend: Awesome OpenClaw Use-cases for Automation",
+        "slug": "awesome-openclaw-usecases-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>The 'awesome-openclaw-usecases' repository is trending because it provides a community-curated collection of practical implementations for OpenClaw, a powerful open-source framework for web automation and data extraction. As web platforms become more complex with shadow DOMs and heavy SPAs, developers are moving away from simple scrapers toward structured, resilient automation patterns. This repo serves as the 'blueprints' for building sophisticated digital assistants and data miners.</p>",
+        "root_cause": "High-extensibility, pre-configured selectors for popular sites, and seamless integration with containerized headless browsers.",
+        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases && npm install",
+        "solution_desc": "OpenClaw is best used for automated lead generation, monitoring price changes across e-commerce platforms, and automating repetitive UI tasks that lack official APIs. Adopt it when you need a 'human-like' browsing interaction that is easily maintainable via TypeScript.",
+        "good_code": "import { OpenClaw } from 'openclaw-core';\n\nconst scenario = new OpenClaw({\n  target: 'https://example.com',\n  action: async (page) => {\n    await page.click('#login-btn');\n    return await page.extractData('.product-list');\n  }\n});",
+        "verification": "The project is expected to grow as more AI-integrated extraction templates are added, potentially becoming the standard library for open-source RPA (Robotic Process Automation).",
+        "date": "2026-02-14",
+        "id": 1771043300,
+        "type": "trend"
+    },
+    {
         "title": "C++20 Coroutines: Solving the Dangling Promise Trap",
         "slug": "cpp20-coroutines-dangling-promise-fix",
         "language": "C++",
