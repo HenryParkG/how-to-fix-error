@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Go Runtime: Fixing Preemption Deadlocks",
+        "slug": "go-runtime-preemption-deadlocks",
+        "language": "Go",
+        "code": "Deadlock",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Go versions prior to 1.14, the scheduler was strictly cooperative, meaning a goroutine had to reach a function call (a safe-point) to be preempted. Even with non-cooperative preemption introduced in 1.14 via signals (SIGURG), certain tight loops—especially those performing heavy mathematical operations or memory-intensive tasks without function calls—can still hang the scheduler. This prevents the Garbage Collector (GC) from starting, leading to a Stop-The-World (STW) deadlock where the entire application freezes because one goroutine refuses to yield the processor.</p>",
+        "root_cause": "The Go scheduler cannot find a safe-point to inject a preemption signal in a loop that lacks function calls or stack-growth checks.",
+        "bad_code": "func busyLoop() {\n\tfor i := 0; i < 1e15; i++ {\n\t\t// Tight loop with no function calls\n\t\t// Go scheduler may fail to preempt this effectively\n\t\t_ = i * i\n\t}\n}",
+        "solution_desc": "Manually invoke the scheduler using runtime.Gosched() inside the loop or refactor the logic to include function calls that trigger stack-bound checks. Ensure you are using Go 1.14+ to take advantage of asynchronous preemption, but remain cautious of system call boundaries.",
+        "good_code": "func busyLoopFixed() {\n\tfor i := 0; i < 1e15; i++ {\n\t\tif i%1000000 == 0 {\n\t\t\truntime.Gosched() // Explicitly yield the processor\n\t\t}\n\t\t_ = i * i\n\t}\n}",
+        "verification": "Use 'go tool trace' to monitor goroutine preemption and check for long STW pauses in GC logs.",
+        "date": "2026-02-14",
+        "id": 1771060971,
+        "type": "error"
+    },
+    {
+        "title": "Triton: Solving GPU Starvation in Multi-Model Batching",
+        "slug": "triton-gpu-starvation-fix",
+        "language": "Python",
+        "code": "Starvation",
+        "tags": [
+            "Python",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Triton Inference Server's dynamic batcher is designed to maximize throughput by grouping requests. However, in a multi-model environment sharing a single GPU, a 'noisy neighbor' effect can occur. If one high-traffic model saturates the dynamic batcher, its requests occupy all available execution slots on the GPU instance group. This leads to starvation for smaller models, which remain stuck in the scheduler queue despite having valid requests, significantly increasing tail latency (P99).</p>",
+        "root_cause": "Improper configuration of max_queue_delay_microseconds and missing priority levels in the model configuration file.",
+        "bad_code": "dynamic_batching {\n  max_batch_size: 32\n  # Missing max_queue_delay_microseconds\n  # Smaller models are starved by high-volume ones\n}",
+        "solution_desc": "Implement explicit 'max_queue_delay_microseconds' to force batch execution even if not full, and use 'priority_levels' within the Triton scheduler to ensure fair resource distribution across different models.",
+        "good_code": "dynamic_batching {\n  max_batch_size: 32\n  max_queue_delay_microseconds: 5000\n  priority_levels: 2\n  default_priority_level: 1\n}\ninstance_group [\n  {\n    count: 2\n    kind: KIND_GPU\n  }\n]",
+        "verification": "Analyze the 'nv_inference_queue_duration_us' metric per model in Prometheus to ensure even distribution.",
+        "date": "2026-02-14",
+        "id": 1771060972,
+        "type": "error"
+    },
+    {
+        "title": "Istio: Fixing Envoy HoL Blocking in gRPC-Web",
+        "slug": "istio-envoy-hol-blocking",
+        "language": "Kubernetes",
+        "code": "HoLBlocking",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ],
+        "analysis": "<p>When using Istio to manage gRPC-Web traffic, Envoy acts as a translator between HTTP/1.1 (client-side) and HTTP/2 (upstream). Head-of-Line (HoL) blocking occurs when a long-lived gRPC stream (like a notification feed) consumes a connection slot, and the downstream Envoy buffer fills up. Due to default TCP settings and circuit breaker limits, subsequent requests are queued behind the stalled stream, causing significant latency for short-lived RPC calls.</p>",
+        "root_cause": "Default Envoy circuit breaker limits on 'max_requests_per_connection' and insufficient 'http2_max_concurrent_streams' settings.",
+        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: grpc-service\nspec:\n  host: grpc-service.default.svc.cluster.local\n  # Missing trafficPolicy to handle streaming concurrency",
+        "solution_desc": "Tune the DestinationRule trafficPolicy to allow higher concurrency and adjust the connection pool settings to prevent single-stream saturation from blocking the entire connection.",
+        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: grpc-service\nspec:\n  host: grpc-service.default.svc.cluster.local\n  trafficPolicy:\n    connectionPool:\n      http:\n        http2MaxRequestsPerConnection: 1000\n        maxRequestsPerConnection: 100\n        maxConcurrentStreams: 1024",
+        "verification": "Check Envoy stats using 'istioctl dashboard envoy' and monitor 'upstream_rq_pending_overflow'.",
+        "date": "2026-02-14",
+        "id": 1771060973,
+        "type": "error"
+    },
+    {
+        "title": "Awesome OpenClaw: Scaling Automation Use Cases",
+        "slug": "awesome-openclaw-usecases-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>The 'hesamsheikh/awesome-openclaw-usecases' repository is quickly becoming the definitive collection for developers using OpenClaw, an emerging framework for high-level automation. It is trending because it provides battle-tested 'recipes' for complex tasks like multi-stage web scraping, UI testing, and workflow synchronization that are typically difficult to script from scratch. The community-driven nature allows for rapid updates to deal with evolving anti-bot measures and UI changes in popular platforms.</p>",
+        "root_cause": "Modular Architecture & Community Recipes",
+        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install -r requirements.txt",
+        "solution_desc": "Ideal for enterprise RPA (Robotic Process Automation), complex data extraction pipelines, and cross-platform UI regression testing where traditional Selenium or Playwright setups are too rigid.",
+        "good_code": "from openclaw import ClawClient\n\n# Example pattern from the awesome-list\nclient = ClawClient(api_key=\"your_key\")\nusecase = client.load_recipe(\"ecommerce/product-sync\")\nusecase.execute(params={\"target\": \"amazon\"})",
+        "verification": "As the ecosystem grows, expect tighter integrations with LLMs (Large Language Models) to allow natural language command processing within OpenClaw workflows.",
+        "date": "2026-02-14",
+        "id": 1771060974,
+        "type": "trend"
+    },
+    {
         "title": "Zig Alignment: Fixing UB in Custom Allocators",
         "slug": "zig-memory-alignment-ub-fix",
         "language": "Zig",
