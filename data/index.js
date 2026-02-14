@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Zig Alignment: Fixing UB in Custom Allocators",
+        "slug": "zig-memory-alignment-ub-fix",
+        "language": "Zig",
+        "code": "AlignmentError",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Zig, memory alignment is a first-class citizen. Unlike C where misaligned access might just be a performance penalty on some architectures, Zig treats alignment mismatches as Undefined Behavior (UB) during safety-checked builds. When implementing custom allocators, developers often manage a raw <code>[]u8</code> buffer. The error occurs when casting a pointer from this buffer to a structured type without ensuring the address satisfies the type's <code>@alignOf</code> requirement.</p>",
+        "root_cause": "The allocator returns a pointer at an arbitrary offset that is not a multiple of the requested type's alignment, causing a CPU trap or invalid data read.",
+        "bad_code": "fn alloc(self: *Self, len: usize, ptr_align: u8) ![]u8 {\n    const start = self.offset;\n    self.offset += len;\n    // BUG: This does not ensure 'start' is a multiple of 'ptr_align'\n    return self.buffer[start..self.offset];\n}",
+        "solution_desc": "Use the `std.mem.alignForward` utility to move the current offset to the next valid memory address that satisfies the alignment requirement before slicing the buffer.",
+        "good_code": "fn alloc(self: *Self, len: usize, ptr_align: u8) ![]u8 {\n    const aligned_start = std.mem.alignForward(self.offset, ptr_align);\n    const end = aligned_start + len;\n    if (end > self.buffer.len) return error.OutOfMemory;\n    self.offset = end;\n    return self.buffer[aligned_start..end];\n}",
+        "verification": "Compile with `zig build-exe -O Debug` and run. Zig's Safety-Check will trigger a panic if `@ptrCast` is used on an incorrectly aligned address.",
+        "date": "2026-02-14",
+        "id": 1771050875,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Airflow Zombie Tasks in Celery Executors",
+        "slug": "airflow-zombie-tasks-fix",
+        "language": "Python",
+        "code": "ZombieTask",
+        "tags": [
+            "Python",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Zombie tasks in Apache Airflow occur when the Airflow database thinks a task is 'running', but the process on the Celery worker is no longer reporting heartbeats. This often happens in containerized environments where the worker process is killed by the OOM killer or network partitions prevent the worker from updating the metadata database. The scheduler eventually detects the lack of heartbeats and marks the task as failed, but not before wasting significant queue time.</p>",
+        "root_cause": "Mismatch between Celery's visibility timeout and Airflow's scheduler heartbeat threshold, leading to tasks being orphaned without cleanup.",
+        "bad_code": "[scheduler]\njob_heartbeat_threshold = 30\n\n# CELERY CONFIG (default visibility_timeout is too low)\nbroker_transport_options = {'visibility_timeout': 3600}",
+        "solution_desc": "Increase the `visibility_timeout` for the Celery broker to exceed the longest expected task duration and synchronize the `scheduler_zombie_task_threshold` to allow for brief network spikes.",
+        "good_code": "[scheduler]\nscheduler_zombie_task_threshold = 300\njob_heartbeat_threshold = 60\n\n# Celery Config in airflow.cfg\ncelery_config_options = {\n    'broker_transport_options': {'visibility_timeout': 21600} \n}",
+        "verification": "Monitor the `airflow_scheduler_zombies` metric in Prometheus and verify that 'zombie' logs in the scheduler logs correlate with successful task state transitions.",
+        "date": "2026-02-14",
+        "id": 1771050876,
+        "type": "error"
+    },
+    {
+        "title": "Next.js Hydration: Solving Server-Client Divergence",
+        "slug": "nextjs-hydration-mismatch-fix",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ],
+        "analysis": "<p>Hydration mismatch occurs when the pre-rendered HTML from the server doesn't match the first render in the browser. This is common in Next.js when using dynamic values like <code>window.innerWidth</code>, <code>localStorage</code>, or <code>new Date()</code> directly in the JSX. React detects the discrepancy and is forced to discard the server HTML, leading to slower page loads and potential UI flickering.</p>",
+        "root_cause": "Accessing browser-only APIs or non-deterministic data during the initial render pass of a component.",
+        "bad_code": "export default function Component() {\n  const isMobile = window.innerWidth < 768; // Error: window is not defined on server\n  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>;\n}",
+        "solution_desc": "Use a `useEffect` hook to update the state only after the component has mounted on the client, ensuring the initial server-side render remains consistent.",
+        "good_code": "import { useState, useEffect } from 'react';\n\nexport default function Component() {\n  const [isMobile, setIsMobile] = useState(false);\n\n  useEffect(() => {\n    setIsMobile(window.innerWidth < 768);\n  }, []);\n\n  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>;\n}",
+        "verification": "Check the browser console for 'Hydration failed' warnings. Use React DevTools to ensure the DOM nodes are not being recreated on load.",
+        "date": "2026-02-14",
+        "id": 1771050877,
+        "type": "error"
+    },
+    {
+        "title": "OpenClaw Use Cases: Automating Life with AI Agents",
+        "slug": "openclaw-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>The 'awesome-openclaw-usecases' repository is gaining traction because it bridges the gap between raw LLM capabilities and practical desktop automation. OpenClaw provides a standardized way for AI agents to 'see' and 'interact' with any UI, and this community collection provides the recipes. It's popular because it democratizes Robotic Process Automation (RPA) by replacing complex legacy scripting with natural language instructions and computer vision.</p>",
+        "root_cause": "Community-driven modularity, cross-platform UI interaction via Python, and seamless integration with OpenAI/Anthropic APIs.",
+        "bad_code": "pip install openclaw\ngit clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git",
+        "solution_desc": "Ideal for automating repetitive tasks like invoice data entry, cross-app testing, and personal productivity workflows where traditional APIs are unavailable.",
+        "good_code": "from openclaw import Agent\n\n# Example: Automating a search in a custom desktop app\nagent = Agent(model=\"gpt-4-vision\")\nagent.run(\"Open the CRM app, find customer 'John Doe' and export his last invoice to PDF.\")",
+        "verification": "The project is seeing increased contributions in the 'Workflow' directory, suggesting a shift toward enterprise-level agentic automation.",
+        "date": "2026-02-14",
+        "id": 1771050878,
+        "type": "trend"
+    },
+    {
         "title": "Haskell Space Leaks: Fixing Thunk Accumulation",
         "slug": "haskell-space-leaks-thunk-accumulation",
         "language": "Haskell",
