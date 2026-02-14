@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "C++20 Coroutines: Solving the Dangling Promise Trap",
+        "slug": "cpp20-coroutines-dangling-promise-fix",
+        "language": "C++",
+        "code": "Lifetime Error",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++20",
+            "Error Fix"
+        ],
+        "analysis": "<p>C++20 coroutines introduce a complex relationship between the coroutine frame, the promise object, and the returned handle. A 'Dangling Promise' occurs when a coroutine is suspended, but the object managing the coroutine's lifetime (like a Task or Future wrapper) is destroyed before the coroutine resumes or completes.</p><p>Unlike high-level languages, C++ does not provide automatic garbage collection for coroutine frames. If the caller drops the handle while the coroutine is awaiting an external event, the promise object may be deallocated, leading to Use-After-Free (UAF) when the execution eventually resumes.</p>",
+        "root_cause": "The coroutine handle is stored in a temporary object that goes out of scope while the coroutine is suspended at an 'initial_suspend' or 'yield' point, causing the underlying promise to be destroyed.",
+        "bad_code": "Task<int> get_data() {\n    auto result = co_await fetch_remote();\n    co_return result;\n}\n\n// Caller usage\nvoid fire_and_forget() {\n    get_data(); // Temporary Task object destroyed immediately!\n}",
+        "solution_desc": "Implement a proper RAII wrapper that manages the coroutine_handle. Ensure that the coroutine's 'initial_suspend' returns 'std::suspend_always' and that the lifecycle of the Task object is tied to the completion of the coroutine via a reference-counted handle or by awaiting it properly.",
+        "good_code": "template<typename T>\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{handle_type::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ... handle result ...\n    };\n    using handle_type = std::coroutine_handle<promise_type>;\n    handle_type h_;\n    ~Task() { if(h_) h_.destroy(); }\n};\n\n// Correct usage\nauto my_task = get_data(); \n// Now 'my_task' holds the handle alive.",
+        "verification": "Compile with AddressSanitizer (-fsanitize=address). The fix will show 0 memory leaks or UAF errors when the caller scope exits.",
+        "date": "2026-02-14",
+        "id": 1771031661,
+        "type": "error"
+    },
+    {
+        "title": "Spark Data Skew: Fixing Salted Key Shuffle OOM",
+        "slug": "spark-data-skew-salted-key-oom",
+        "language": "Scala",
+        "code": "OOM (Out of Memory)",
+        "tags": [
+            "Java",
+            "Backend",
+            "Spark",
+            "Error Fix"
+        ],
+        "analysis": "<p>In distributed processing, data skew occurs when a small number of keys contain the vast majority of the data. During a Join or GroupBy operation, Spark hashes keys to determine their destination partition. If one key (e.g., 'null' or a generic category) is massive, a single executor will be overwhelmed with data, leading to a Shuffle OOM.</p><p>The Salted Key technique redistributes this concentrated data by appending a random suffix to the skewed key, breaking the single large partition into multiple smaller ones.</p>",
+        "root_cause": "Uneven distribution of records across partitions causing a single JVM executor to exceed its heap memory limit during the shuffle phase.",
+        "bad_code": "val df1 = spark.table(\"large_sales\") // Skewed on 'store_id'\nval df2 = spark.table(\"stores\")\n\n// This join fails if store_id '101' has 50% of all rows\nval joined = df1.join(df2, \"store_id\")",
+        "solution_desc": "Apply 'salting' to the skewed key in the large table by adding a random integer. In the small table (dimension table), explode the records so each original key matches every possible salt value, ensuring the join can still complete.",
+        "good_code": "val saltNum = 10\nval df1Salted = df1.withColumn(\"salt\", (rand * saltNum).cast(\"int\"))\n    .withColumn(\"join_key\", concat($\"store_id\", lit(\"_\"), $\"salt\"))\n\nval df2Exploded = df2.withColumn(\"salt\", explode(array((0 until saltNum).map(lit): _*)))\n    .withColumn(\"join_key\", concat($\"store_id\", lit(\"_\"), $\"salt\"))\n\nval result = df1Salted.join(df2Exploded, \"join_key\")",
+        "verification": "Monitor the Spark UI. Look for 'Max' vs 'Median' task duration in the 'Stages' tab. Salted joins should show uniform task times across all executors.",
+        "date": "2026-02-14",
+        "id": 1771031662,
+        "type": "error"
+    },
+    {
+        "title": "Redis Replication: Fixing Client Buffer Eviction Loops",
+        "slug": "redis-replication-buffer-eviction-fix",
+        "language": "Redis",
+        "code": "Sync Failure",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Redis Master-Slave replication involves a synchronization phase where the Master sends a bulk RDB file followed by a stream of write commands stored in the replication buffer. If the Master receives high write volume during this sync, the replication buffer (a subset of the Client Output Buffer) can exceed its hard limit.</p><p>When this happens, Redis terminates the connection to the slave. The slave reconnects, triggers a full resync, and the cycle repeats indefinitely, consuming CPU and IO while never completing the sync.</p>",
+        "root_cause": "The 'client-output-buffer-limit slave' threshold is too low to accommodate the 'write delta' accumulated during the initial RDB transfer.",
+        "bad_code": "# Default settings often too small for high-throughput\nclient-output-buffer-limit slave 256mb 64mb 60",
+        "solution_desc": "Increase the 'client-output-buffer-limit slave' settings. Adjust the hard limit (immediate disconnect) and soft limit (disconnect after N seconds) to account for your maximum expected write throughput during the time it takes to transfer an RDB file.",
+        "good_code": "# Increase hard limit to 1GB and soft limit to 512MB for 120s\nCONFIG SET client-output-buffer-limit \"slave 1024mb 512mb 120\"\n\n# Also check repl-backlog-size for partial resyncs\nCONFIG SET repl-backlog-size 256mb",
+        "verification": "Check Redis logs for 'Client id=... scheduled to be closed ASAP for overcoming of output buffer limits'. If the message disappears and 'synchronized with master' appears, the fix is successful.",
+        "date": "2026-02-14",
+        "id": 1771031663,
+        "type": "error"
+    },
+    {
+        "title": "Exploring Awesome-OpenClaw: Modernizing Retro Logic",
+        "slug": "awesome-openclaw-usecases-trend",
+        "language": "C++ / Lua",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>OpenClaw is an open-source reimplementation of the classic 1997 platformer 'Captain Claw'. The 'hesamsheikh/awesome-openclaw-usecases' repository is trending because it acts as a centralized knowledge base for the engine's new scripting capabilities. As retro-gaming enthusiasts move away from closed binaries, OpenClaw provides a cross-platform (C++/SDL2) alternative.</p><p>The popularity stems from the community's desire to extend the original game with HD resolutions, custom levels, and modern scripting logic that was impossible in the original 90s engine. It bridges the gap between nostalgia and modern software extensibility.</p>",
+        "root_cause": "Extensible Level Logic, Modern Resolution Support, Cross-Platform Compatibility, and Lua Scripting Integration.",
+        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases",
+        "solution_desc": "This repository is best used for developers looking to implement custom game mechanics (like new enemy AI or physics interactions) within the OpenClaw engine. It serves as a blueprint for modders and game preservationists.",
+        "good_code": "-- Example Use Case: Custom Logic for a Jump Pad\nfunction OnTouch(player)\n    if player:GetVelocityY() > 0 then\n        player:SetVelocityY(-800)\n        PlaySound(\"STRENGTH_UP\")\n    end\nend",
+        "verification": "As the project matures, expect integration with more advanced rendering backends (Vulkan) and a surge in community-created 'Total Conversion' mods.",
+        "date": "2026-02-14",
+        "id": 1771031664,
+        "type": "trend"
+    },
+    {
         "title": "eBPF Verifier: Navigating the 1-Million Instruction Limit",
         "slug": "ebpf-verifier-instruction-limit-fix",
         "language": "C / Go",
