@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Kafka Rebalance Storms in High-Latency Streams",
+        "slug": "kafka-rebalance-heartbeat-timeouts",
+        "language": "Java",
+        "code": "REBALANCE_STORM",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Kafka rebalance storms occur when consumer group members are repeatedly kicked out and rejoined, halting all processing. In high-latency stream processing, this is usually triggered because the processing logic within the poll loop takes longer than the maximum allowed interval.</p><p>When the consumer fails to call <code>poll()</code> within the <code>max.poll.interval.ms</code>, the coordinator assumes the consumer has failed. This triggers a group-wide rebalance. The 'storm' happens because the rebalance itself adds overhead, causing other consumers to also timeout, creating a vicious cycle of instability.</p>",
+        "root_cause": "The processing time per batch exceeds 'max.poll.interval.ms', or the heartbeat thread is starved due to high GC pressure or CPU saturation.",
+        "bad_code": "properties.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\n// Heavy processing inside the poll loop\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // This 10-second task multiplied by 100 records = 1000s\n        // Overrides the 300s max.poll.interval.ms\n        processHeavyTask(record);\n    }\n}",
+        "solution_desc": "Decouple the heartbeat from the processing logic. Increase the poll interval to accommodate the worst-case processing time and reduce the number of records fetched per poll to ensure completion within the heartbeat window.",
+        "good_code": "properties.put(\"max.poll.records\", \"10\"); // Process fewer records\nproperties.put(\"max.poll.interval.ms\", \"600000\"); // Increase to 10 mins\nproperties.put(\"session.timeout.ms\", \"45000\"); // Heartbeat timeout\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    processRecords(records); // Logic now fits within 10 minutes\n}",
+        "verification": "Monitor the 'join-rate' and 'rebalance-latency' metrics in JMX. If rebalances drop to zero during high-load periods, the configuration is stable.",
+        "date": "2026-02-15",
+        "id": 1771118455,
+        "type": "error"
+    },
+    {
+        "title": "Solving Rust Async Memory Violations with Pinning",
+        "slug": "rust-async-pinning-self-referential-structs",
+        "language": "Rust",
+        "code": "ASYNC_PIN_VIOLATION",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Rust's async/await generates state machines that often contain self-referential pointers. If an async Future is moved in memory after it has been initialized, these internal pointers become dangling, leading to undefined behavior or memory safety violations.</p><p>The <code>Pin</code> wrapper guarantees that the data it points to will not be moved until it is dropped. This is critical for any structure that stores a reference to its own fields, a common pattern in compiled async blocks where local variables are captured across yield points.</p>",
+        "root_cause": "Attempting to poll a Future that contains internal references after it has been moved across a thread boundary or re-allocated without a Pin wrapper.",
+        "bad_code": "struct MyFuture {\n    data: String,\n    ptr: *const String,\n}\n\n// Moving this struct would invalidate 'ptr'\nfn create_future() -> MyFuture {\n    let mut f = MyFuture { data: \"test\".into(), ptr: std::ptr::null() };\n    f.ptr = &f.data;\n    f\n}",
+        "solution_desc": "Use the `Pin` type to wrap the data, typically on the heap using `Box::pin`. This ensures the memory address remains constant even if the pointer to the box itself is moved.",
+        "good_code": "use std::pin::Pin;\nuse std::marker::PhantomPinned;\n\nstruct MyFuture {\n    data: String,\n    ptr: *const String,\n    _pin: PhantomPinned,\n}\n\nfn create_pinned_future() -> Pin<Box<MyFuture>> {\n    let res = MyFuture {\n        data: \"test\".into(),\n        ptr: std::ptr::null(),\n        _pin: PhantomPinned,\n    };\n    let mut boxed = Box::pin(res);\n    let slice = &boxed.data as *const String;\n    // Safety: data is pinned in the box\n    unsafe { boxed.as_mut().get_unchecked_mut().ptr = slice; }\n    boxed\n}",
+        "verification": "Run the code through 'Miri' using `cargo miri run`. Miri will detect undefined behavior related to pointer invalidation and move violations.",
+        "date": "2026-02-15",
+        "id": 1771118456,
+        "type": "error"
+    },
+    {
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Infra",
+        "code": "CACHE_EVICTION_STALL",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>In MongoDB, the WiredTiger storage engine manages a cache for data pages. When write volume is extremely high, the rate of 'dirty' pages can exceed the background eviction capability. When dirty pages reach a critical threshold (usually 20%), WiredTiger forces application threads to perform eviction themselves.</p><p>This is known as a 'cache pressure stall.' Application latency spikes from milliseconds to seconds because the threads meant to handle queries are busy writing data to disk to free up space in the cache.</p>",
+        "root_cause": "The write throughput exceeds the underlying I/O capacity or the eviction worker threads are not aggressive enough for the workload.",
+        "bad_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 1 # Too small for high-write volume\n# Default eviction settings usually fail at >20k ops/sec",
+        "solution_desc": "Increase the cache size to reduce the frequency of eviction, and tune the eviction triggers to start cleaning earlier. This prevents the 'application-thread-eviction' panic state.",
+        "good_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16\n      configString: \"eviction_target=70,eviction_trigger=90,eviction_dirty_target=5,eviction_dirty_trigger=15\"",
+        "verification": "Use `db.serverStatus().wiredTiger.cache` and check 'tracked dirty pages in the cache'. If it stays below the 'eviction_dirty_trigger', stalls will not occur.",
+        "date": "2026-02-15",
+        "id": 1771118457,
+        "type": "error"
+    },
+    {
+        "title": "PeonPing: Warcraft III Alerts for Modern IDEs",
+        "slug": "peon-ping-warcraft-iii-notifications",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>PeonPing is a trending utility that bridges the gap between nostalgic gaming and modern developer productivity. It provides Warcraft III Peon voice notifications (like 'Work complete!' and 'Something needs doing!') for terminal-based tasks and AI coding agents like Claude Code or Codex.</p><p>The tool is exploding in popularity because it solves 'terminal babysitting' fatigue. Developers often lose focus while waiting for long-running builds or AI agents to finish complex tasks. PeonPing provides an unmistakable audio cue that brings the developer back to the task exactly when needed.</p>",
+        "root_cause": "Audio feedback for CLI tasks, nostalgic appeal for Warcraft fans, and seamless integration with the growing ecosystem of AI-driven coding agents.",
+        "bad_code": "npm install -g peon-ping\n# or use directly via npx\nnpx peon-ping --help",
+        "solution_desc": "Use PeonPing for any long-running asynchronous task in your workflow. It is particularly effective for AI agents, CI/CD pipelines, and large project compilations.",
+        "good_code": "# Wrap your command to hear 'Work complete!' when done\npeon-ping -c \"claude code --task 'refactor this module'\"\n\n# Use in a shell script for builds\nnpm run build && peon-ping --ready",
+        "verification": "As AI agents become more autonomous, 'ambient status notifications' via audio will likely become a standard part of the developer toolchain.",
+        "date": "2026-02-15",
+        "id": 1771118458,
+        "type": "trend"
+    },
+    {
         "title": "Go Runtime: Fixing Preemption Deadlocks",
         "slug": "go-runtime-preemption-deadlocks",
         "language": "Go",
