@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "C++20 Coroutines: Fixing Use-After-Free in Promises",
+        "slug": "cpp20-coroutines-fix-uaf-promise-lifecycle",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "tags": [
+            "Node.js",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>In C++20 coroutines, the lifecycle of the promise object and the coroutine frame are tightly coupled. A frequent source of Use-After-Free (UAF) errors occurs when a coroutine handle is managed by an asynchronous executor that outlives the scope where the handle was created. If the coroutine reaches its <code>final_suspend</code> point and is configured to automatically destroy itself (via <code>std::suspend_never</code>), any subsequent attempt by the caller or a monitoring thread to access the promise object results in undefined behavior. This is particularly dangerous in high-concurrency environments where race conditions determine whether the frame still exists.</p>",
+        "root_cause": "The coroutine reaches final_suspend and returns std::suspend_never, causing the coroutine frame to be deallocated automatically while a handle or pointer to the promise is still being accessed by the calling context.",
+        "bad_code": "struct Task {\n    struct promise_type {\n        std::suspend_never final_suspend() noexcept { return {}; }\n        // ... other methods\n    };\n};\n\n// Caller side\nauto handle = my_coroutine();\n// Coroutine finishes internally and destroys frame\nstd::cout << handle.promise().result; // CRASH: UAF",
+        "solution_desc": "Configure the coroutine to always suspend at the final point. This transfers ownership of the frame destruction to the holder of the coroutine handle, ensuring the promise remains valid until the caller explicitly calls .destroy().",
+        "good_code": "struct Task {\n    struct promise_type {\n        // Prevents automatic destruction of the frame\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ...\n    };\n    ~Task() { if (handle) handle.destroy(); }\n    std::coroutine_handle<promise_type> handle;\n};",
+        "verification": "Compile with AddressSanitizer (-fsanitize=address). Run the asynchronous flow; the sanitizer should no longer report invalid memory access on the promise object during teardown.",
+        "date": "2026-02-15",
+        "id": 1771137627,
+        "type": "error"
+    },
+    {
+        "title": "Ray: Solving Plasma Object Store Fragmentation",
+        "slug": "ray-plasma-object-store-fragmentation-fix",
+        "language": "Python",
+        "code": "Memory Fragmentation",
+        "tags": [
+            "Python",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Ray utilizes the Plasma Object Store for shared-memory management across distributed workers. In high-throughput task graphs, particularly those involving many small, varying-sized tensors or dataframes, the underlying dlmalloc-based allocator suffers from external fragmentation. Because Plasma objects are immutable and often pinned during execution, the allocator cannot easily move them to consolidate free space. This leads to 'Out of Memory' (OOM) errors even when the system reports significant aggregate free memory, as no single contiguous block is large enough for new allocations.</p>",
+        "root_cause": "Plasma's lack of a compaction mechanism combined with pinning of immutable objects leads to holes in shared memory that cannot be filled by new large object allocations.",
+        "bad_code": "# High fragmentation pattern\nfor data in large_stream:\n    # Creating thousands of tiny objects in shared memory\n    ray.put(data.small_chunk())\n# Eventually ray.put fails even if RAM is free",
+        "solution_desc": "Implement object batching to reduce the number of individual allocations and enable Ray's 'Object Spilling' feature to move cold objects to disk, effectively clearing fragmented blocks.",
+        "good_code": "import ray\n# Configuration to handle fragmentation\nray.init(_system_config={\n    \"object_spilling_threshold\": 0.8,\n    \"min_spilling_size\": 100 * 1024 * 1024\n})\n\n# Batch small objects into a single large object\nbatched_data = [d.small_chunk() for d in large_stream]\nray.put(batched_data)",
+        "verification": "Monitor the Ray dashboard's memory view. Check 'External Fragmentation' metrics in Plasma. The fix is verified if 'Object Store Full' errors vanish under the same throughput.",
+        "date": "2026-02-15",
+        "id": 1771137628,
+        "type": "error"
+    },
+    {
+        "title": "WebGPU: Fixing Sync Hazards in Compute Pass Barriers",
+        "slug": "webgpu-compute-pass-synchronization-hazards",
+        "language": "TypeScript",
+        "code": "Race Condition",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Next.js",
+            "Error Fix"
+        ],
+        "analysis": "<p>WebGPU operates on an asynchronous command queue model. A synchronization hazard occurs when a storage buffer is modified in one Compute Pass and read in a subsequent operation without ensuring the GPU has completed the write. While WebGPU provides some automatic resource tracking, hazards specifically arise when using multiple <code>dispatchWorkgroups</code> calls within the same pass that depend on each other's output, or when crossing pass boundaries without declaring the appropriate usage transitions in the bind group layouts.</p>",
+        "root_cause": "Implicit synchronization fails when a buffer is bound with 'read-write' storage usage across multiple dispatches that have data dependencies, without intermediate memory barriers or pipeline stalls.",
+        "bad_code": "const pass = commandEncoder.beginComputePass();\npass.setPipeline(pipelineA);\npass.dispatchWorkgroups(64);\n// Hazard: pipelineB reads output from A immediately\npass.setPipeline(pipelineB);\npass.dispatchWorkgroups(64);\npass.end();",
+        "solution_desc": "Split the operations into distinct compute passes or use storage textures with appropriate memory barriers. WebGPU guarantees that work within a single pass is finished before the next pass begins if there is a dependency in the command buffer sequence.",
+        "good_code": "const pass1 = commandEncoder.beginComputePass();\npass1.setPipeline(pipelineA);\npass1.dispatchWorkgroups(64);\npass1.end(); \n\n// Ending the pass ensures writes are visible to the next pass\nconst pass2 = commandEncoder.beginComputePass();\npass2.setPipeline(pipelineB);\npass2.dispatchWorkgroups(64);\npass2.end();",
+        "verification": "Use the 'WebGPU Inspector' extension or Chrome's 'GPU Internals'. Look for validation errors regarding Read-After-Write (RAW) hazards. Ensure data consistency in the final buffer readback.",
+        "date": "2026-02-15",
+        "id": 1771137629,
+        "type": "error"
+    },
+    {
+        "title": "PeonPing: Stop Babysitting Your AI Terminal",
+        "slug": "peon-ping-warcraft-notifications-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>PeonPing is trending because it solves a modern developer frustration: the 'AI Wait'. As tools like Claude Code and Aider take over complex refactoring tasks, developers find themselves staring at the terminal waiting for 'Work Complete'. PeonPing injects nostalgic Warcraft III Peon voice lines (and others) into your CLI workflow. It's not just a meme; it's a productivity enhancer that allows developers to context-switch away from the terminal and return exactly when the 'Peon' announces that the task is finished.</p>",
+        "root_cause": "CLI integration, support for Claude Code/Aider, and an MCP (Model Context Protocol) server for direct AI trigger control.",
+        "bad_code": "npm install -g peon-ping\n# or use the MCP server directly",
+        "solution_desc": "Best used in conjunction with long-running CLI tools, build scripts, or AI-driven coding agents. It helps maintain flow state by providing audio cues for task completion.",
+        "good_code": "# Use in your terminal\nclaude code \"refactor the auth logic\" && peon-ping --voice peon\n\n# Or configure as an MCP server in Claude Desktop\n{ \"mcpServers\": { \"peon-ping\": { \"command\": \"npx\", \"args\": [\"-y\", \"peon-ping\"] } } }",
+        "verification": "The project is expanding with custom soundboard support and deep integration for IDE-based terminal wrappers like VS Code and JetBrains.",
+        "date": "2026-02-15",
+        "id": 1771137630,
+        "type": "trend"
+    },
+    {
         "title": "Fixing eBPF Verifier State Explosion in Trace Programs",
         "slug": "ebpf-verifier-state-explosion-fix",
         "language": "C/eBPF",
