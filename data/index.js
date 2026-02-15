@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing eBPF Verifier State Explosion in Trace Programs",
+        "slug": "ebpf-verifier-state-explosion-fix",
+        "language": "C/eBPF",
+        "code": "Verifier Limit Exceeded",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>eBPF programs must pass a verifier to ensure kernel safety. When writing complex tracing programs with nested loops or extensive conditional branching, the verifier attempts to explore every possible execution path. This often leads to 'state explosion,' where the number of verified instructions exceeds the kernel's complexity limit (typically 1 million instructions), causing the program to fail to load.</p>",
+        "root_cause": "The verifier's path exploration complexity grows exponentially with nested branches, failing when the total states stored or instructions processed exceed BPF_COMPLEXITY_LIMIT_STATES.",
+        "bad_code": "SEC(\"tp/syscalls/sys_enter_execve\")\nint handle_execve(void *ctx) {\n    struct task_struct *task = (struct task_struct *)bpf_get_current_task();\n    #pragma unroll\n    for (int i = 0; i < 64; i++) {\n        if (task->comm[i] == '\\0') break;\n        // Complex logic per character leads to state explosion\n        do_expensive_check(task->comm[i]);\n    }\n    return 0;\n}",
+        "solution_desc": "Refactor the logic to use BPF subprograms (function calls) or the `bpf_loop` helper introduced in newer kernels. Subprograms allow the verifier to verify functions independently, while `bpf_loop` provides a bounded iteration mechanism that the verifier treats as a single state transition.",
+        "good_code": "static int check_char(unsigned int i, void *ctx) {\n    char *comm = ctx;\n    if (comm[i] == '\\0') return 1;\n    do_expensive_check(comm[i]);\n    return 0;\n}\n\nSEC(\"tp/syscalls/sys_enter_execve\")\nint handle_execve(void *ctx) {\n    struct task_struct *task = (struct task_struct *)bpf_get_current_task();\n    bpf_loop(64, check_char, task->comm, 0);\n    return 0;\n}",
+        "verification": "Use `bpftool prog load` and check the 'verified_insns' count; ensure it stays well below the 1M limit.",
+        "date": "2026-02-15",
+        "id": 1771131000,
+        "type": "error"
+    },
+    {
+        "title": "Solving PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError: NCCL Timeout",
+        "tags": [
+            "Python",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Distributed Data Parallel (DDP) deadlocks frequently occur during multi-node training when one process rank enters a collective communication call (like all_reduce) that others never reach. This is common in scenarios with conditional logic in the forward pass or when using datasets with uneven sample distributions across ranks.</p>",
+        "root_cause": "Mismatched execution paths across ranks where one rank finishes its loop early or skips a gradient synchronization step while others wait.",
+        "bad_code": "def train():\n    for data in dataloader:\n        # If rank 0 has 10 batches and rank 1 has 9,\n        # rank 0 will wait forever for rank 1 on the 10th batch\n        outputs = model(data)\n        loss = loss_fn(outputs, targets)\n        loss.backward()\n        optimizer.step()",
+        "solution_desc": "Use the `join()` context manager provided by PyTorch DDP to handle uneven inputs. This allows processes that finish early to remain 'active' and participate in the remaining collective communications required by other ranks.",
+        "good_code": "from torch.nn.parallel import DistributedDataParallel as DDP\n\nmodel = DDP(model_instance, device_ids=[rank])\nwith model.join():\n    for data in dataloader:\n        optimizer.zero_grad()\n        outputs = model(data)\n        loss = loss_fn(outputs, targets)\n        loss.backward()\n        optimizer.step()",
+        "verification": "Set `export NCCL_DEBUG=INFO` and verify that all ranks complete the final epoch without timing out.",
+        "date": "2026-02-15",
+        "id": 1771131001,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Selective Receive Starvation in Elixir OTP",
+        "slug": "elixir-otp-selective-receive-fix",
+        "language": "Elixir",
+        "code": "GenServer Mailbox Bloat",
+        "tags": [
+            "Go",
+            "Node.js",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Elixir/Erlang, 'selective receive' occurs when a process uses a `receive` block with a pattern that doesn't match the oldest messages in its mailbox. The VM must scan every message in the mailbox until it finds a match. In high-throughput GenServers, this causes O(N) overhead per message, leading to severe latency and eventual process crashes due to memory exhaustion.</p>",
+        "root_cause": "The mailbox grows indefinitely with non-matching messages, forcing the Erlang scheduler to traverse thousands of items for every single matching operation.",
+        "bad_code": "def loop(state) do\n  receive do\n    {:priority, msg} -> \n      handle_msg(msg, state)\n      loop(state)\n    # Missing catch-all causes non-priority messages to rot in mailbox\n  end\nend",
+        "solution_desc": "Migrate logic to a standard `GenServer` behavior where `handle_info/2` processes messages in the order they arrive. If priority is needed, implement an internal priority queue within the state rather than relying on mailbox scanning.",
+        "good_code": "def handle_info({:priority, msg}, state) do\n  handle_msg(msg, state)\n  {:noreply, state}\nend\n\ndef handle_info(_unknown, state) do\n  # Always consume unknown messages to keep mailbox clean\n  {:noreply, state}\nend",
+        "verification": "Use `:erlang.process_info(pid, :message_queue_len)` to monitor mailbox size under high load.",
+        "date": "2026-02-15",
+        "id": 1771131002,
+        "type": "error"
+    },
+    {
+        "title": "Peon-ping: WC3 Audio Alerts for Modern IDEs",
+        "slug": "peon-ping-github-trend",
+        "language": "TypeScript/Node.js",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ],
+        "analysis": "<p>Peon-ping is trending because it solves the 'terminal babysitting' problem. Developers running long tasks—like Claude Code refactors, heavy builds, or AI generations—often switch tabs and lose focus. By playing iconic Warcraft III Peon sounds ('Work complete!', 'Jobs done!') when a command finishes, it provides a nostalgic yet highly functional productivity loop.</p>",
+        "root_cause": "Audio Notification CLI Wrapper with Nostalgia Factor",
+        "bad_code": "npm install -g peon-ping",
+        "solution_desc": "Integrate Peon-ping into your workflow when using 'Claude Code' or long-running shell scripts. It's best used to prevent context-switching fatigue by allowing you to step away from your terminal physically or mentally.",
+        "good_code": "# Use with Claude Code\nclaude code \"Refactor the auth module\" && peon-ping\n\n# Use with slow builds\nnpm run build; peon-ping --sound=\"jobs-done\"",
+        "verification": "Increasingly adopted by AI engineers; look for future integrations with VS Code Task Runner and broader sound packs.",
+        "date": "2026-02-15",
+        "id": 1771131003,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Kafka Rebalance Storms in High-Latency Streams",
         "slug": "kafka-rebalance-heartbeat-timeouts",
         "language": "Java",
