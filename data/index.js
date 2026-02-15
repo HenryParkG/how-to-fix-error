@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Solving RCU Stall Warnings in RT Kernels",
+        "slug": "linux-kernel-rcu-stall-preemption",
+        "language": "C / Kernel",
+        "code": "RCU_STALL_WARN",
+        "tags": [
+            "Docker",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Linux kernels configured with CONFIG_PREEMPT_RT, Read-Copy Update (RCU) stall warnings occur when a grace period is delayed for too long. Unlike standard kernels, the Real-Time patch changes RCU callbacks to run in kthread context, making them susceptible to priority inversion or starvation from high-priority RT tasks. This is particularly frequent in embedded systems where a tight loop in an RT thread starves the RCU kthreads (rcu_preempt or rcu_sched), preventing them from acknowledging quiescent states.</p>",
+        "root_cause": "An RT thread running at a high priority (99) enters a CPU-intensive loop without reaching a quiescent state or yielding, preventing the RCU grace period kthread from running on that CPU.",
+        "bad_code": "void rt_task_loop(void) {\n    while (data_pending) {\n        // High priority RT task spinning\n        process_data_packet(next_packet());\n        // No voluntary preemption point\n    }\n}",
+        "solution_desc": "Insert voluntary preemption points using rcu_read_unlock() followed by a rescheduling call or ensure the RCU grace period kthread has its priority boosted to match or exceed the spinning task to allow it to progress.",
+        "good_code": "void rt_task_loop(void) {\n    while (data_pending) {\n        rcu_read_lock();\n        process_data_packet(next_packet());\n        rcu_read_unlock();\n        // Allow RCU grace period kthreads to run\n        cond_resched(); \n    }\n}",
+        "verification": "Check dmesg for 'INFO: rcu_preempt self-detected stall on CPU' logs and use 'cyclictest' to ensure latency remains within bounds.",
+        "date": "2026-02-15",
+        "id": 1771147409,
+        "type": "error"
+    },
+    {
+        "title": "Solving HNSW Index Fragmentation in Vector DBs",
+        "slug": "hnsw-index-fragmentation-fix",
+        "language": "Rust / Python",
+        "code": "HNSW_RECALL_DROP",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>HNSW (Hierarchical Navigable Small World) indices are sensitive to high-churn environments where 'upserts' (update + insert) are frequent. Standard HNSW implementations handle deletions by marking nodes as 'deleted' (tombstoning). Over time, these tombstones fragment the graph, forcing the search algorithm to traverse dead links, which increases latency and significantly degrades recall accuracy as the 'entry points' to lower layers become sparse.</p>",
+        "root_cause": "Accumulated 'tombstoned' nodes in the HNSW graph layers leading to disconnected components or inefficient search paths that fail to reach the true nearest neighbors.",
+        "bad_code": "for record in stream:\n    # High churn: constant updates to the same IDs\n    vector_db.upsert(id=record.id, vector=record.embedding)\n    # No maintenance logic for index health",
+        "solution_desc": "Implement a background compaction strategy that periodically triggers a 'shrink' or 'rebuild' phase. Newer engines use 'In-place Link Repair' to reconnect neighbors of deleted nodes during idle cycles or utilize a dynamic HNSW variant that replaces deleted nodes with fresh inserts immediately.",
+        "good_code": "def maintenance_loop(index):\n    if index.tombstone_ratio() > 0.2:\n        # Trigger background rebuilding of the graph\n        index.recompact(target_utilization=0.9)\n        # Or use a provider that supports dynamic link repair\n        index.optimize(parallel=True)",
+        "verification": "Monitor the 'Recall@10' metric against a ground truth set; if it drops below 0.95 during heavy updates, compaction is required.",
+        "date": "2026-02-15",
+        "id": 1771147410,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Space Leaks in Lazy Stream Graphs",
+        "slug": "haskell-lazy-stream-space-leak",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "tags": [
+            "Go",
+            "Backend",
+            "Node.js",
+            "Error Fix"
+        ],
+        "analysis": "<p>Haskell's lazy evaluation is powerful for processing infinite streams, but it often leads to space leaks when a reference to the 'head' of a stream is retained while the 'tail' is consumed. This prevents the Garbage Collector (GC) from reclaiming memory of processed elements because the original pointer still views the entire graph as potentially needed. In complex stream graphs, this manifests as a slow, linear increase in heap usage until an OOM (Out Of Memory) occurs.</p>",
+        "root_cause": "Holding a reference to an unevaluated thunk (lazy value) in a scope that outlives the consumption of that stream, specifically during nested folds or shared stream references.",
+        "bad_code": "processStream :: [Int] -> (Int, Int)\nprocessStream xs = (sum xs, length xs)\n-- Problem: sum consumes xs but xs is kept alive to calculate length",
+        "solution_desc": "Use strict data structures or fold the stream into a single pass using a strict pair (Tup2) or BangPatterns. This ensures that as elements are consumed, they are immediately reduced to values and their memory is freed.",
+        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessStream :: [Int] -> (Int, Int)\nprocessStream = foldl' (\\(!s, !l) x -> (s + x, l + 1)) (0, 0)\n-- Strict fold ensures stream is consumed and discarded in one pass",
+        "verification": "Run the binary with RTS options '+RTS -hc' to generate a heap profile and ensure the 'active' memory curve is flat.",
+        "date": "2026-02-15",
+        "id": 1771147411,
+        "type": "error"
+    },
+    {
+        "title": "PeonPing: WC3 Audio Alerts for AI Agents",
+        "slug": "peon-ping-warcraft-notifications",
+        "language": "TypeScript / Go",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>PeonPing has surged in popularity among developers using AI coding agents like Claude Code or large-scale build pipelines. As these tools perform autonomous multi-step tasks that can take minutes, developers suffer from 'terminal babysitting'—constantly checking if a task is finished. PeonPing solves this by providing nostalgic Warcraft III Orc Peon voice alerts ('Work complete!') when a CLI process finishes, turning a boring wait into a playful, audible notification.</p>",
+        "root_cause": "Key Features: Cross-platform CLI support; Native piping (command | peon); Built-in 'Peon', 'Human', and 'Undead' voice packs; Seamless integration with IDE terminals and AI agents.",
+        "bad_code": "go install github.com/PeonPing/peon-ping@latest\n# Or for Node users\nnpm install -g peon-ping",
+        "solution_desc": "Best used in long-running CI/CD scripts, large npm installs, or when running autonomous AI agents that handle multiple file edits. It reduces cognitive load by allowing the developer to switch contexts (e.g., browse the web) while waiting for the 'Work complete!' audio cue.",
+        "good_code": "# Use it with any command\nclaude-code --fix-bugs | peon-ping\n\n# Or as a standalone alert after a build\nnpm run build && peon-ping --voice peon\n\n# Custom alias in .zshrc\nalias alert='peon-ping'",
+        "verification": "The project is currently trending on GitHub due to its crossover appeal between gaming nostalgia and productivity optimization for the 'AI Agent' era.",
+        "date": "2026-02-15",
+        "id": 1771147412,
+        "type": "trend"
+    },
+    {
         "title": "C++20 Coroutines: Fixing Use-After-Free in Promises",
         "slug": "cpp20-coroutines-fix-uaf-promise-lifecycle",
         "language": "C++",
