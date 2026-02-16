@@ -1,5 +1,89 @@
 var postsIndex = [
     {
+        "title": "Fixing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "Critical Failure",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) system, allowing for approximately 4 billion transactions. To manage this, it utilizes a circular buffer where IDs wrap around. When the difference between the oldest frozen transaction and the current XID reaches a critical threshold (usually 2 billion), the database enters a read-only safety mode to prevent data corruption. In high-throughput clusters, autovacuum often cannot keep up with the volume of writes, causing the <code>datfrozenxid</code> to age dangerously.</p>",
+        "root_cause": "The autovacuum worker is throttled or incorrectly configured, preventing it from 'freezing' old tuples faster than new transaction IDs are consumed, eventually hitting the autovacuum_freeze_max_age limit.",
+        "bad_code": "-- Default settings often too conservative for high-write loads\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2; \nALTER SYSTEM SET autovacuum_freeze_max_age = 200000000;",
+        "solution_desc": "Aggressively tune autovacuum parameters to trigger freezing more frequently and increase the throughput of the vacuum process by reducing cost-based delays.",
+        "good_code": "-- Increase worker count and reduce cost delay to speed up freezing\nALTER SYSTEM SET autovacuum_max_workers = 6;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 1000;\nALTER SYSTEM SET autovacuum_freeze_max_age = 500000000;\n-- Target specific high-churn tables\nALTER TABLE high_volume_table SET (autovacuum_vacuum_scale_factor = 0.01);",
+        "verification": "Monitor XID age using: SELECT datname, age(datfrozenxid) FROM pg_database WHERE datname = 'your_db';",
+        "date": "2026-02-16",
+        "id": 1771217705,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Istio 503 Downstream Connection Resets",
+        "slug": "istio-503-downstream-resets",
+        "language": "Kubernetes",
+        "code": "503 UC",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>In cross-region service meshes, 503 'UC' (Upstream Connection) errors or downstream resets often occur due to race conditions between Envoy's keep-alive timers and the application's idle timeouts. When a request travels across regions, latency increases the window where a downstream proxy sends a request on a connection that the upstream has already decided to close, resulting in a reset before the response headers are sent.</p>",
+        "root_cause": "Mismatch between the application's Keep-Alive timeout and Envoy's 'connection_idle_timeout'. If the application closes the connection first without Envoy knowing, Envoy fails the request.",
+        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nspec:\n  host: my-service\n  # Missing connectionPool settings results in default idle timeouts",
+        "solution_desc": "Configure the DestinationRule to ensure Envoy's idle timeout is shorter than the application's timeout, and implement retry logic for connection resets in the VirtualService.",
+        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nspec:\n  host: my-service\n  trafficPolicy:\n    connectionPool:\n      http:\n        idleTimeout: 30s\n        maxRetries: 3\n---\n# VirtualService Retry\nretryOn: \"reset,connect-failure,refused-stream\"",
+        "verification": "Check Envoy logs for 'response_flags: UC' and verify the 'upstream_cx_destroy_remote_with_active_rq' metric.",
+        "date": "2026-02-16",
+        "id": 1771217706,
+        "type": "error"
+    },
+    {
+        "title": "Solving React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>React Native's JavaScript Interface (JSI) allows synchronous communication between C++ and JavaScript. However, memory leaks occur when C++ HostObjects hold persistent references to <code>jsi::Value</code> or <code>jsi::Object</code> without accounting for the JavaScript garbage collector. If a C++ object outlives the JS engine's context or holds a circular reference back to JS, the memory is never reclaimed.</p>",
+        "root_cause": "Storing jsi::Value or jsi::Object directly in C++ class members instead of using jsi::WeakObject or failing to clear global references in the JSI Runtime's teardown phase.",
+        "bad_code": "class MyHostObject : public jsi::HostObject {\n  jsi::Value callback_; // Leak: Persistent reference prevents GC\n  MyHostObject(jsi::Value&& cb) : callback_(std::move(cb)) {}\n};",
+        "solution_desc": "Use <code>jsi::WeakObject</code> for long-lived JS references within C++ HostObjects or manually manage the lifecycle by nullifying references via a cleanup method called from the JS side.",
+        "good_code": "class MyHostObject : public jsi::HostObject {\n  std::unique_ptr<jsi::WeakObject> weakCallback_;\n  void setCallback(jsi::Runtime& rt, const jsi::Object& cb) {\n    weakCallback_ = std::make_unique<jsi::WeakObject>(rt, cb);\n  }\n  // Check lock() before calling\n};",
+        "verification": "Use Xcode Memory Graph or Android Studio Profiler to look for growing instances of 'HostObject' after repetitive native module calls.",
+        "date": "2026-02-16",
+        "id": 1771217707,
+        "type": "error"
+    },
+    {
+        "title": "Zeroclaw: Stealth Web Automation Done Right",
+        "slug": "zeroclaw-labs-stealth-automation",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend",
+            "Python"
+        ],
+        "analysis": "<p>Zeroclaw is rapidly trending in the web automation community because it addresses the 'cat-and-mouse' game of bot detection. Unlike standard Selenium or Playwright implementations, Zeroclaw modifies the browser engine at a deeper level to eliminate 'leaks' like <code>navigator.webdriver</code> and inconsistent TLS fingerprints. It is designed for high-performance data extraction where Cloudflare, Akamai, and Datadome are present, offering a 'human-like' footprint out of the box.</p>",
+        "root_cause": "Key innovations include advanced TLS/JA3 fingerprint spoofing, Canvas/WebGL noise generation, and synchronized event-loop handling to prevent timing-based detection.",
+        "bad_code": "pip install zeroclaw\nzeroclaw install-deps",
+        "solution_desc": "Best used for enterprise-grade scrapers, automated market intelligence, and testing security perimeters against sophisticated bot behaviors.",
+        "good_code": "from zeroclaw import StealthBrowser\n\nwith StealthBrowser(headless=True) as browser:\n    page = browser.new_page(fingerprint_profile='macos_chrome_115')\n    page.goto('https://target-site.com')\n    print(page.content())",
+        "verification": "The project is positioned to lead the next generation of 'unblockable' scrapers, likely forcing bot-mitigation providers to move toward behavioral AI analysis rather than fingerprinting.",
+        "date": "2026-02-16",
+        "id": 1771217708,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Zig Alignment Crashes in Comptime Packed Structs",
         "slug": "zig-alignment-crashes-packed-structs",
         "language": "Zig",
