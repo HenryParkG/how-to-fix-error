@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "eBPF: Solving Verifier Complexity Limits",
+        "slug": "ebpf-verifier-complexity-limits-fix",
+        "language": "Go",
+        "code": "VerifierError",
+        "tags": [
+            "Go",
+            "Infra",
+            "eBPF",
+            "Error Fix"
+        ],
+        "analysis": "<p>When developing complex eBPF programs for large-scale observability, developers often hit the 'limit of instructions processed' error. The eBPF verifier traverses all possible execution paths to ensure safety. In complex programs with many branches or loops, the state space explodes, exceeding the 1-million instruction limit (on newer kernels) or 4096 (on older ones), even if the actual bytecode is small.</p>",
+        "root_cause": "The verifier's state pruning fails to merge states effectively when code contains complex conditional logic or bounded loops that are unrolled, leading to an exponential increase in the number of verified paths.",
+        "bad_code": "for (int i = 0; i < MAX_ENTRIES; i++) {\n    struct data_t *val = bpf_map_lookup_elem(&my_map, &i);\n    if (val) {\n        // Complex logic with multiple branches\n        if (val->flag) { /* ... */ }\n        else { /* ... */ }\n    }\n}",
+        "solution_desc": "Refactor the program to use tail calls or BPF-to-BPF function calls with the '__noinline' attribute to break the program into smaller, independently verified chunks. Alternatively, use 'bpf_loop' (Kernel 5.17+) to reduce the verification cost of loops.",
+        "good_code": "static __noinline int process_element(int index) {\n    struct data_t *val = bpf_map_lookup_elem(&my_map, &index);\n    if (!val) return 0;\n    // Logic isolated in a function\n    return 0;\n}\n\n// In main prog:\nbpf_loop(MAX_ENTRIES, process_element, NULL, 0);",
+        "verification": "Run 'bpftool prog load' with the 'visual' flag or check 'verifier_log' to ensure the instruction count is within limits.",
+        "date": "2026-02-16",
+        "id": 1771235199,
+        "type": "error"
+    },
+    {
+        "title": "PyTorch: Fixing Distributed Deadlocks",
+        "slug": "pytorch-distributed-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ],
+        "analysis": "<p>Distributed training in PyTorch using the NCCL backend often encounters collective communication deadlocks. This typically happens when one rank (GPU) fails to reach a collective operation (like all_reduce or barrier) while others wait indefinitely. This is common in heterogeneous environments or when using uneven data splits across ranks.</p>",
+        "root_cause": "A mismatch in the sequence of collective operations across different ranks, or a silent failure in one node that prevents it from reaching the synchronization point, causing the entire cluster to hang.",
+        "bad_code": "def train(rank, world_size):\n    dist.init_process_group(\"nccl\", rank=rank, world_size=world_size)\n    if rank == 0:\n        # Some rank-specific heavy logic\n        do_expensive_op()\n    # Deadlock if rank 0 is late or fails\n    dist.all_reduce(tensor)",
+        "solution_desc": "Set an explicit 'timeout' in 'init_process_group' and enable 'NCCL_ASYNC_ERROR_HANDLING'. Use 'join()' context managers for DistributedDataParallel to handle uneven inputs across ranks gracefully.",
+        "good_code": "import datetime\ndist.init_process_group(\n    backend=\"nccl\",\n    timeout=datetime.timedelta(seconds=1800),\n    init_method=\"env://\"\n)\n# Use Join context for uneven data\nwith model.join():\n    optimizer.step()",
+        "verification": "Set export NCCL_DEBUG=INFO and NCCL_ASYNC_ERROR_HANDLING=1 to log and catch timeout exceptions in the training loop.",
+        "date": "2026-02-16",
+        "id": 1771235200,
+        "type": "error"
+    },
+    {
+        "title": "MongoDB: WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-fix",
+        "language": "SQL",
+        "code": "CacheStall",
+        "tags": [
+            "SQL",
+            "Infra",
+            "MongoDB",
+            "Error Fix"
+        ],
+        "analysis": "<p>Under heavy write pressure, MongoDB performance can plummet due to WiredTiger cache eviction stalls. When the percentage of 'dirty' data in the cache exceeds specific thresholds, WiredTiger forces application threads to perform eviction themselves, leading to massive latency spikes and throughput drops.</p>",
+        "root_cause": "The rate of incoming writes exceeds the background eviction threads' ability to persist data to disk, causing the 'eviction_dirty_trigger' (default 20%) to be hit.",
+        "bad_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16\n# No custom eviction tuning for high-throughput write workloads",
+        "solution_desc": "Increase the number of eviction worker threads and lower the 'eviction_trigger' to start background eviction earlier. Also, ensure disk I/O bandwidth matches the write volume to prevent the eviction queue from backing up.",
+        "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction_threads_min=4,eviction_threads_max=12,eviction_dirty_target=5,eviction_dirty_trigger=10\"\n})",
+        "verification": "Monitor 'wiredTiger.cache.eviction walks abandoned' and 'cache dirty percentage' using 'db.serverStatus().wiredTiger.cache'.",
+        "date": "2026-02-16",
+        "id": 1771235201,
+        "type": "error"
+    },
+    {
+        "title": "zeroclaw: Hardware Interfacing Done Right",
+        "slug": "zeroclaw-hardware-abstraction-trend",
+        "language": "Rust",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ],
+        "analysis": "<p>Zeroclaw is gaining massive traction on GitHub as a high-performance, Rust-based framework for hardware-level interaction and input synthesis. Unlike traditional high-level APIs, Zeroclaw operates with near-zero latency and provides a clean, memory-safe interface for kernel-mode drivers, making it a favorite for system developers and performance enthusiasts.</p>",
+        "root_cause": "Safety-first Rust implementation, Kernel-mode abstraction layers, and sub-millisecond polling rate support for HID devices.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\ncargo build --release",
+        "solution_desc": "Zeroclaw is best used in scenarios requiring high-precision input handling, low-latency device emulation, or developing custom drivers where safety and speed are non-negotiable.",
+        "good_code": "use zeroclaw::prelude::*;\n\nfn main() {\n    let mut driver = ZeroClaw::init().expect(\"Failed to init\");\n    driver.move_mouse(100, 100).unwrap();\n    println!(\"Stealthy movement executed\");\n}",
+        "verification": "The project is rapidly expanding its support for various DMA (Direct Memory Access) hardware and is expected to become the standard for stealthy hardware abstraction.",
+        "date": "2026-02-16",
+        "id": 1771235202,
+        "type": "trend"
+    },
+    {
         "title": "Rust: Fixing Async Cancellation Safety in select! Blocks",
         "slug": "rust-async-cancellation-safety-select",
         "language": "Rust",
