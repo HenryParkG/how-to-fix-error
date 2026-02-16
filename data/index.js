@@ -1,5 +1,89 @@
 var postsIndex = [
     {
+        "title": "Fixing Zig Alignment Crashes in Comptime Packed Structs",
+        "slug": "zig-alignment-crashes-packed-structs",
+        "language": "Zig",
+        "code": "SIGBUS",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Zig, <code>packed struct</code> types are essential for memory-mapped I/O and binary protocol parsing. However, when generating these structs using <code>comptime</code> logic, developers often encounter alignment-induced crashes (SIGBUS or unaligned access traps). This occurs because packed structs have a default alignment of 1, but CPU instructions for multi-byte types (like u32 or u64) often require 4 or 8-byte alignment. When the Zig compiler generates code to access a field within a packed struct via a pointer, it may use instructions that assume standard alignment, leading to hardware-level faults on architectures like ARM or RISC-V.</p>",
+        "root_cause": "Packed structs override the natural alignment of their members to ensure zero padding. If a pointer to a member is cast or passed to a function expecting natural alignment, the CPU executes an aligned-load instruction on an unaligned address.",
+        "bad_code": "const Header = packed struct {\n    magic: u8,\n    version: u32, // Offset 1, unaligned\n};\n\nfn process(val: *const u32) void {\n    _ = val.*;\n}\n\n// Crash occurs here on some CPUs\nprocess(&header.version);",
+        "solution_desc": "Use the `@alignCast` builtin or ensure the pointer is marked as `*align(1) const u32`. Alternatively, use `@bitCast` to copy the packed data into a naturally aligned stack variable before processing.",
+        "good_code": "const Header = packed struct {\n    magic: u8,\n    version: u32,\n};\n\nfn process(val: *align(1) const u32) void {\n    const safe_val = val.*; // Compiler uses unaligned load\n    _ = safe_val;\n}\n\n// Or bitCast the whole struct to a non-packed version\nconst AlignedHeader = struct { magic: u8, version: u32 };\nconst aligned = @bitCast(AlignedHeader, header);",
+        "verification": "Run the binary through 'zig test' on an ARM64 target or use QEMU with alignment check enabled to verify no SIGBUS is raised.",
+        "date": "2026-02-16",
+        "id": 1771204674,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Spark Executor OOMs in Skewed AQE Joins",
+        "slug": "spark-oom-skewed-data-aqe",
+        "language": "Scala",
+        "code": "java.lang.OutOfMemoryError",
+        "tags": [
+            "Java",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Spark's Adaptive Query Execution (AQE) is designed to handle data skew dynamically by splitting large partitions. However, in high-throughput pipelines, skewed keys can still cause specific executors to exceed their heap limits during the Shuffle Exchange phase. This typically happens when the skew exceeds the default <code>spark.sql.adaptive.skewJoin.skewedPartitionFactor</code>, or when the 'split' partitions are still too large to fit in the execution memory fraction, leading to a 'Fetch Failed' error or a hard JVM OOM.</p>",
+        "root_cause": "Data skew where a single key's volume exceeds the available executor memory per core, coupled with AQE thresholds that are too conservative to trigger partition splitting.",
+        "bad_code": "val df = spark.read.parquet(\"huge_data.parquet\")\n// Default config often fails on 10x skew\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\ndf.join(otherDf, \"skewed_id\").write.save(\"output\")",
+        "solution_desc": "Explicitly lower the skew join thresholds to make AQE more aggressive and increase the min/max partition sizes. Also, ensure 'spark.sql.adaptive.advisoryPartitionSizeInBytes' is tuned relative to executor memory.",
+        "good_code": "// Tuning AQE for aggressive skew handling\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"2\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"128MB\")\nspark.conf.set(\"spark.sql.adaptive.advisoryPartitionSizeInBytes\", \"64MB\")",
+        "verification": "Monitor the Spark UI 'SQL' tab to ensure 'skew join' nodes appear in the physical plan and check that 'Peak Execution Memory' per task is stabilized.",
+        "date": "2026-02-16",
+        "id": 1771204675,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Redis Replication Buffer Bloat in Resharding",
+        "slug": "redis-replication-buffer-bloat-resharding",
+        "language": "C",
+        "code": "OOM-Kill",
+        "tags": [
+            "Docker",
+            "Go",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>During Redis Cluster resharding, the <code>MIGRATE</code> command moves keys between shards. Under heavy write load, the source node's replication buffer for its replicas can grow uncontrollably. This is because the <code>MIGRATE</code> command is a blocking operation on the main thread, and while it processes, incoming writes are buffered. If the resharding involves large keys (e.g., massive HASH or SET types), the buffer eventually exceeds <code>client-output-buffer-limit slave</code>, causing replica disconnection and a subsequent 'sync-storm' that can crash the node.</p>",
+        "root_cause": "High-latency key migration blocking the main thread while high-frequency writes fill the output buffer, exceeding the hard limit for replicas.",
+        "bad_code": "# Default conservative limits in redis.conf\nclient-output-buffer-limit replica 256mb 64mb 60\n# Standard resharding command\nredis-cli --cluster reshard <host>:<port>",
+        "solution_desc": "Temporarily increase the replication buffer limits during maintenance and use the <code>ASYNC</code> flag for the MIGRATE command (available in Redis 4.0+). Additionally, implement pipeline-based resharding to reduce the time the main thread is blocked.",
+        "good_code": "# Increase buffer limits dynamically before resharding\nCONFIG SET client-output-buffer-limit \"replica 1gb 512mb 60\"\n\n# Use ASYNC migration if scripting custom resharding\n# MIGRATE host port key destination-db timeout [COPY] [REPLACE] [ASYNC]",
+        "verification": "Use 'INFO Clients' to monitor 'client_recent_max_output_buffer' and ensure 'slaves' disconnection count remains zero during the resharding process.",
+        "date": "2026-02-16",
+        "id": 1771204676,
+        "type": "error"
+    },
+    {
+        "title": "Analyze Zeroclaw: Blazing Fast Web Data Extraction",
+        "slug": "zeroclaw-labs-github-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python"
+        ],
+        "analysis": "<p>Zeroclaw is rapidly trending on GitHub as the 'claw done right' solution for the LLM era. Unlike traditional crawlers that struggle with modern SPA (Single Page Application) rendering and bot detection, Zeroclaw leverages a Rust-based core to orchestrate headless browser instances with minimal overhead. It is popular because it bridges the gap between simple HTTP scrapers (which fail on JS-heavy sites) and heavy Playwright/Puppeteer setups. It features built-in 'smart-extract' capabilities that use local small language models (SLMs) to clean HTML into structured JSON on the fly.</p>",
+        "root_cause": "Distributed architecture, JS-rendering by default, and baked-in proxy rotation with fingerprint randomization.",
+        "bad_code": "curl -sSL https://zeroclaw.io/install.sh | sh\n# or\npip install zeroclaw",
+        "solution_desc": "Best used for building massive datasets for RAG (Retrieval-Augmented Generation) or fine-tuning LLMs where data cleanliness and extraction speed are the primary bottlenecks.",
+        "good_code": "import zeroclaw\n\n# Blazing fast parallel clawing\nresults = zeroclaw.claw(\n    urls=[\"https://docs.example.com\"],\n    schema={\"title\": \"string\", \"content\": \"markdown\"},\n    render_js=True\n)\nprint(results[0].content)",
+        "verification": "As LLMs require fresher data, Zeroclaw's ability to provide 'clean' web-scale data will likely make it a standard tool in AI data engineering stacks.",
+        "date": "2026-02-16",
+        "id": 1771204677,
+        "type": "trend"
+    },
+    {
         "title": "Solving RCU Stall Warnings in RT Kernels",
         "slug": "linux-kernel-rcu-stall-preemption",
         "language": "C / Kernel",
