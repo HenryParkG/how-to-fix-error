@@ -1,5 +1,89 @@
 var postsIndex = [
     {
+        "title": "Rust: Fixing Async Cancellation Safety in select! Blocks",
+        "slug": "rust-async-cancellation-safety-select",
+        "language": "Rust",
+        "code": "AsyncCancellationError",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Rust's asynchronous ecosystem, particularly with the <code>tokio::select!</code> macro, cancellation safety is a critical concern. When <code>select!</code> is used, all branches are polled. As soon as one branch completes, all other branches are immediately dropped. If a future is dropped at an <code>await</code> point where it was holding state or midway through an I/O operation, that data is permanently lost. This is particularly dangerous when performing operations like <code>TcpStream::read</code> into a temporary buffer within the <code>select!</code> block.</p>",
+        "root_cause": "The future in a non-completing select! branch is dropped. If that future was responsible for an atomic operation or held partially read data in its internal state, that state is discarded without a chance to recover.",
+        "bad_code": "loop {\n    let mut buf = [0u8; 1024];\n    tokio::select! {\n        res = socket.read(&mut buf) => {\n            process(res?);\n        }\n        _ = timeout => {\n            return Err(Error::Timeout);\n        }\n    }\n}",
+        "solution_desc": "To ensure cancellation safety, state must be preserved across iterations. Instead of using a local buffer inside the loop, move the future itself outside the loop or use a persistent buffer/wrapper that handles partial reads (like `tokio_util::codec`). Using `Box::pin` on the future allows it to be resumed even if the `select!` block restarts.",
+        "good_code": "let mut reader = tokio_util::codec::FramedRead::new(socket, BytesCodec::new());\nloop {\n    tokio::select! {\n        frame = reader.next() => {\n            if let Some(res) = frame { process(res?); }\n        }\n        _ = timeout => {\n            return Err(Error::Timeout);\n        }\n    }\n}",
+        "verification": "Use 'tokio-test' to simulate partial reads and ensure that dropping the future between reads doesn't result in data loss.",
+        "date": "2026-02-16",
+        "id": 1771224884,
+        "type": "error"
+    },
+    {
+        "title": "Kafka: Fixing Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms-fix",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "tags": [
+            "Java",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Rebalance storms occur in Kafka clusters with high partition counts when the group coordinator triggers frequent reassignments. This typically happens because a consumer takes too long to process a batch, exceeding the <code>max.poll.interval.ms</code>, or due to network flakiness exceeding <code>session.timeout.ms</code>. In 'Eager' rebalancing, the entire group stops processing, leading to massive latency spikes and cascading failures as the 'stop-the-world' effect prevents heartbeat signals from being sent.</p>",
+        "root_cause": "The default Eager Rebalance protocol requires all consumers to revoke their partitions before any can be reassigned, combined with aggressive timeout settings in high-latency environments.",
+        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, RangeAssignor.class.getName());\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\"); // 5 mins too short for heavy tasks",
+        "solution_desc": "Switch to the Cooperative Sticky Assignor to allow 'Incremental Cooperative Rebalancing'. This allows consumers to keep their partitions during a rebalance if they aren't being moved. Additionally, increase the poll interval to account for worst-case processing times and tune heartbeat settings to distinguish between application lag and network failure.",
+        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, CooperativeStickyAssignor.class.getName());\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"900000\"); // 15 mins\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\");",
+        "verification": "Monitor the 'join-rate' and 'rebalance-latency-avg' metrics in JMX; rebalance times should drop from seconds to milliseconds.",
+        "date": "2026-02-16",
+        "id": 1771224885,
+        "type": "error"
+    },
+    {
+        "title": "OCaml: Fixing Parallel GC Domain Contention",
+        "slug": "ocaml-multicore-gc-contention",
+        "language": "OCaml",
+        "code": "GCPriorityContention",
+        "tags": [
+            "Backend",
+            "OCaml",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>In OCaml 5 (Multicore), domains share a global major heap but have domain-local minor heaps. When any domain triggers a minor collection, it must synchronize with all other domains—a 'stop-the-world' event. If one domain is performing heavy allocation while others are performing compute-intensive tasks without hitting allocation points (safepoints), the allocator domain stalls waiting for others to synchronize, leading to severe performance degradation in parallel workloads.</p>",
+        "root_cause": "High minor heap allocation rates combined with infrequent safepoint polling in compute-heavy loops, causing the parallel collector to wait on 'lazy' domains.",
+        "bad_code": "let compute_heavy_task () = \n  for i = 1 to 1_000_000_000 do\n    (* Tight loop with no allocation - doesn't hit GC safepoints frequently *)\n    ignore(i * i)\n  done",
+        "solution_desc": "Increase the minor heap size to reduce the frequency of collections and manually insert <code>Domain.cpu_relax()</code> or ensure the loop performs occasional allocations to trigger safepoint checks. Use Domain-Local Storage (DLS) to reduce shared state access and avoid unnecessary global heap promotions.",
+        "good_code": "let compute_heavy_task () = \n  for i = 1 to 1_000_000_000 do\n    if i mod 1000 = 0 then Out_channel.flush stdout; (* Indirectly hits safepoint *)\n    ignore(i * i)\n  done\n(* Tune with: OCAMLRUNPARAM='s=128M' *)",
+        "verification": "Profile using 'ocaml-eventlog-trace' to visualize GC pause times and identify domains causing synchronization delays.",
+        "date": "2026-02-16",
+        "id": 1771224886,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing Zeroclaw: High-Performance Browser Automation",
+        "slug": "zeroclaw-labs-analysis",
+        "language": "TypeScript/Rust",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Rust"
+        ],
+        "analysis": "<p>Zeroclaw is rapidly trending on GitHub as the 'modern successor' to Puppeteer and Playwright for stealth-based web scraping. It solves the primary pain point of browser automation: detection. By implementing a custom browser engine wrapper that spoofs hardware fingerprints at the driver level (rather than just JavaScript injection), it bypasses advanced anti-bot measures like Akamai and Cloudflare Turnstile with significantly higher success rates.</p>",
+        "root_cause": "Kernel-level fingerprint spoofing, TLS/JA3 fingerprint randomization, and built-in residential proxy rotation logic.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw && npm install",
+        "solution_desc": "Zeroclaw is best used for high-scale data extraction where traditional Playwright/Selenium scripts are getting blocked. It should be adopted when 'headless: true' detection prevents access to public data. Its architecture relies on a Rust-based core for performance and a TypeScript API for ease of use.",
+        "good_code": "import { zeroclaw } from 'zeroclaw';\n\nconst browser = await zeroclaw.launch({\n  stealth: true,\n  fingerprint: 'random',\n  region: 'US'\n});\nconst page = await browser.newPage();\nawait page.goto('https://target-site.com');",
+        "verification": "The project is expected to become the industry standard for 'unblockable' scraping, with future updates focusing on AI-driven CAPTCHA solving.",
+        "date": "2026-02-16",
+        "id": 1771224887,
+        "type": "trend"
+    },
+    {
         "title": "Fixing PostgreSQL Transaction ID Wraparound",
         "slug": "postgres-txid-wraparound-fix",
         "language": "SQL",
