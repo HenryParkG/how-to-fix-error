@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Linux Kernel RCU Stall Warnings in IO Workloads",
+        "slug": "linux-kernel-rcu-stall-io-fix",
+        "language": "C",
+        "code": "RCU_STALL_ERROR",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>Read-Copy-Update (RCU) stall warnings occur when a CPU fails to pass through a quiescent state for an extended period. In high-performance I/O environments, intensive interrupt processing or long-running softirqs can monopolize a CPU core, preventing it from reporting its RCU state to the grace-period kthread. This leads to system latency spikes or kernel panics if the watchdog timer expires.</p>",
+        "root_cause": "Intensive disk or network I/O causing 'heavy' softirq processing on a single core, combined with insufficient RCU grace period frequency.",
+        "bad_code": "# Default conservative settings in /etc/sysctl.conf\nkernel.rcu_cpu_stall_timeout = 21\n# No RCU offloading configured in boot params\nGRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"",
+        "solution_desc": "Offload RCU callback processing to specific 'housekeeping' cores and increase the stall timeout. Use the 'rcu_nocbs' kernel parameter to move RCU work away from performance-critical I/O cores.",
+        "good_code": "# Update GRUB to offload RCU (e.g., cores 1-7 on an 8-core system)\nGRUB_CMDLINE_LINUX_DEFAULT=\"rcu_nocbs=1-7 rcu_cpu_stall_timeout=60\"\n\n# Or via sysctl for immediate (non-offload) relief\nsysctl -w kernel.rcu_cpu_stall_timeout=60",
+        "verification": "Check dmesg for 'rcu_preempt detected stalls' and monitor /proc/interrupts to ensure balanced distribution.",
+        "date": "2026-02-17",
+        "id": 1771321165,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Istio Envoy Sidecar Resource Exhaustion",
+        "slug": "istio-envoy-sidecar-oom-fix",
+        "language": "Go",
+        "code": "ENVOY_OOM_EXIT",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>In large multicluster service meshes, every Envoy sidecar, by default, receives configuration updates for every service and endpoint in the entire mesh via the xDS protocol. As the number of clusters grows, the memory footprint of the Envoy process scales linearly, eventually leading to OOM (Out Of Memory) kills on sidecar containers even if the application itself is idling.</p>",
+        "root_cause": "Unrestricted xDS discovery scope in large-scale multicluster meshes leading to massive configuration payloads (CDS/EDS).",
+        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: Sidecar\nmetadata:\n  name: default\n  namespace: production\nspec:\n  # Missing egress configuration: defaults to global discovery\n  workloadSelector:\n    labels:\n      app: my-app",
+        "solution_desc": "Implement the Istio 'Sidecar' resource to explicitly limit the egress discovery scope. Only import services that the specific workload actually needs to communicate with, reducing configuration overhead by orders of magnitude.",
+        "good_code": "apiVersion: networking.istio.io/v1beta1\nkind: Sidecar\nmetadata:\n  name: localized-discovery\nspec:\n  egress:\n  - hosts:\n    - \"./*\" # Current namespace\n    - \"istio-system/*\"\n    - \"shared-services/*.svc.cluster.local\"",
+        "verification": "Run 'istioctl proxy-config clusters <pod-name>' to verify the reduced list of endpoints and monitor memory usage in Grafana.",
+        "date": "2026-02-17",
+        "id": 1771321166,
+        "type": "error"
+    },
+    {
+        "title": "Solving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound",
+        "language": "SQL",
+        "code": "XID_WRAPAROUND",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) counter. When it reaches approximately 2 billion transactions, the system must 'freeze' old transactions to prevent them from appearing to be in the future. In high-write environments, if autovacuum cannot keep up with the rate of XID consumption, the database will eventually enter read-only mode to prevent data corruption.</p>",
+        "root_cause": "Autovacuum settings being too conservative to handle high transaction throughput, or long-running transactions blocking the vacuum process.",
+        "bad_code": "-- Default settings in postgresql.conf often insufficient for high volume\nautovacuum_vacuum_scale_factor = 0.2\nautovacuum_freeze_max_age = 200000000\nmaintenance_work_mem = 64MB",
+        "solution_desc": "Aggressively tune autovacuum parameters to trigger more frequent cleanups and allocate more memory for vacuum workers to ensure they complete faster.",
+        "good_code": "-- Optimized for high-write environments\nALTER SYSTEM SET autovacuum_freeze_max_age = 1000000000;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 1000;\nALTER SYSTEM SET maintenance_work_mem = '1GB';\n-- Force vacuum on a specific table\nVACUUM FREEZE VERBOSE high_volume_table;",
+        "verification": "Monitor 'age(datfrozenxid)' via SQL queries. Ensure the value stays well below 2 billion.",
+        "date": "2026-02-17",
+        "id": 1771321167,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing ZeroClaw: The Fast Autonomous AI Infrastructure",
+        "slug": "zeroclaw-ai-infrastructure-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>zeroclaw-labs/zeroclaw is trending due to its 'swap-anything' philosophy in the AI agent space. Unlike bloated frameworks, ZeroClaw focuses on low-latency, autonomous infrastructure that allows developers to swap LLMs (OpenAI, Anthropic, Local Llama) and vector stores instantly. It addresses the 'vendor lock-in' fear while providing a high-performance execution layer for autonomous assistants that can run on edge devices or scaled cloud environments.</p>",
+        "root_cause": "Key Features: 1. Modular Architecture (Swappable LLMs/Tools). 2. Minimal Footprint (No heavy dependencies). 3. High Concurrency (Async-first design). 4. Agentic Autonomy (Built-in tool-calling loops).",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -e .",
+        "solution_desc": "Best used for building low-latency customer support bots, local coding assistants, or autonomous DevOps agents where you need to switch between expensive GPT-4 models and cheap local models (via Ollama) based on task complexity.",
+        "good_code": "from zeroclaw import ZeroClawAgent\n\nagent = ZeroClawAgent(\n    provider=\"openai\",\n    model=\"gpt-4-turbo\",\n    tools=[\"web_search\", \"code_exec\"]\n)\n\n# Fully autonomous loop\nresponse = agent.run(\"Analyze the latest commit in this repo.\")",
+        "verification": "ZeroClaw represents a shift toward 'AI Infrastructure' over 'AI Wrappers.' Expect widespread adoption in edge computing and private AI deployments.",
+        "date": "2026-02-17",
+        "id": 1771321168,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Zig Allocator Memory Corruption",
         "slug": "zig-manual-allocator-memory-corruption",
         "language": "Zig",
