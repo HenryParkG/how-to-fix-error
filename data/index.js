@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "C++20: Fixing Use-After-Free in Coroutine Promises",
+        "slug": "cpp20-coroutine-promise-use-after-free",
+        "language": "Backend",
+        "code": "Memory Management",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ],
+        "analysis": "<p>In C++20 coroutines, the promise object is stored within the coroutine state. A common 'Use-After-Free' (UAF) occurs when the coroutine finishes execution and destroys its state while an external caller still holds a reference to the promise or data owned by it. This often happens because the coroutine's lifetime is managed by a handle that is implicitly destroyed when the coroutine reaches its final suspension point, yet the caller attempts to access result data stored in the promise after the coroutine has resumed and completed.</p>",
+        "root_cause": "The coroutine state (and thus the promise) is destroyed automatically when control flow passes through the final suspension point if the coroutine is not configured to suspend there.",
+        "bad_code": "struct Task {\n  struct promise_type {\n    std::string result;\n    std::suspend_never final_suspend() noexcept { return {}; }\n    // ... other methods\n  };\n};\n\nTask my_coro() { co_return \"data\"; }\n\n// Caller site\nauto& data = handle.promise().result; // UAF if coro finished",
+        "solution_desc": "Configure the coroutine to use std::suspend_always for final_suspend(). This ensures the coroutine state remains alive until the caller explicitly calls handle.destroy(). This allows safe access to the promise data before manual cleanup.",
+        "good_code": "struct promise_type {\n  std::string result;\n  // Suspend at the end to keep the promise alive\n  std::suspend_always final_suspend() noexcept { return {}; }\n  // ...\n};\n\n// Caller must manually destroy\nif (handle.done()) {\n  process(handle.promise().result);\n  handle.destroy();\n}",
+        "verification": "Compile with Clang/GCC using -fsanitize=address. Run the test suite; if the heap-use-after-free error is gone, the lifetime management is correct.",
+        "date": "2026-02-17",
+        "id": 1771291038,
+        "type": "error"
+    },
+    {
+        "title": "Solving Task Scheduling Latency in Large Airflow DAGs",
+        "slug": "airflow-task-scheduling-latency-fix",
+        "language": "Python",
+        "code": "Latency/Perf",
+        "tags": [
+            "Python",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ],
+        "analysis": "<p>As Airflow deployments scale to thousands of DAGs, the scheduler often experiences 'starvation' where tasks remain in a 'queued' or 'scheduled' state for minutes. This is typically caused by the Scheduler loop spending too much time parsing DAG files (DAG Processing) or being bottlenecked by the metadata database. When the processing time exceeds the heartbeat interval, the scheduler becomes unresponsive to new task instances.</p>",
+        "root_cause": "Top-level code in DAG files (e.g., dynamic task generation via DB queries) causes the DagFileProcessor to hang, blocking the scheduling loop.",
+        "bad_code": "# BAD: Database call at top-level\nlines = db.session.query(Table).all()\nwith DAG('my_dag') as dag:\n    for line in lines:\n        BashOperator(task_id=f'task_{line.id}', ...)",
+        "solution_desc": "Optimize DAG parsing by removing top-level dynamic logic. Increase the number of parsing processes and tune the 'scheduler__min_file_process_interval'. Use Airflow Variables or environment variables instead of direct DB hits for dynamic generation.",
+        "good_code": "# GOOD: Use a static source or cached config\nimport json\nwith open('dag_config.json') as f:\n    configs = json.load(f)\n\nwith DAG('my_dag') as dag:\n    for cfg in configs:\n        BashOperator(task_id=f'task_{cfg[\"id\"]}', ...)",
+        "verification": "Monitor the 'dag_processing.total_parse_time' metric in StatsD. Latency is resolved when parse time is consistently below 30 seconds.",
+        "date": "2026-02-17",
+        "id": 1771291039,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Elasticsearch Fielddata Circuit Breaker Trips",
+        "slug": "elasticsearch-fielddata-breaker-fix",
+        "language": "Java",
+        "code": "CircuitBreakerException",
+        "tags": [
+            "Java",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>Elasticsearch uses 'Fielddata' to perform aggregations and sorting on 'text' fields. Unlike 'keyword' fields that use disk-based doc_values, fielddata is loaded into the JVM heap. On large datasets, multiple aggregations can quickly exhaust the heap, triggering the 'Fielddata Circuit Breaker' to prevent an OutOfMemoryError. This leads to 429 errors or failed queries across the cluster.</p>",
+        "root_cause": "Performing terms aggregations on 'text' fields instead of 'keyword' fields, forcing ES to load inverted indices into RAM.",
+        "bad_code": "PUT /my_index/_mapping\n{\n  \"properties\": {\n    \"category\": {\n      \"type\": \"text\",\n      \"fielddata\": true\n    }\n  }\n}",
+        "solution_desc": "Disable fielddata on text fields and use multi-fields to define a 'keyword' sub-field. Keyword fields use doc_values (on-disk columnar storage), which are memory-efficient and do not rely on the fielddata circuit breaker.",
+        "good_code": "PUT /my_index/_mapping\n{\n  \"properties\": {\n    \"category\": {\n      \"type\": \"text\",\n      \"fields\": {\n        \"raw\": { \"type\": \"keyword\" }\n      }\n    }\n  }\n}\n// Aggregate on category.raw instead",
+        "verification": "Run 'GET /_nodes/stats/breaker' and verify that fielddata 'tripped' counts have stopped incrementing after updating the mapping.",
+        "date": "2026-02-17",
+        "id": 1771291040,
+        "type": "error"
+    },
+    {
+        "title": "ZeroClaw: The High-Speed Autonomous AI Infrastructure",
+        "slug": "zeroclaw-labs-ai-infrastructure-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI engineering community as a lightweight, 'no-bloat' alternative to frameworks like LangChain. It focuses on 'autonomous AI infrastructure,' allowing developers to deploy agents that can swap models, vector stores, and tools with zero friction. Its popularity stems from its 'Fast and Small' philosophy—providing a tiny footprint for edge deployment while maintaining full autonomy for complex task planning.</p>",
+        "root_cause": "Modular Agent Architecture, Multi-Provider Support (Ollama, OpenAI, Anthropic), and Native Support for Tool-Calling.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install .",
+        "solution_desc": "ZeroClaw is best used for high-performance agentic workflows where latency is critical, such as real-time customer support or local autonomous agents operating on edge devices.",
+        "good_code": "from zeroclaw.agent import Agent\n\nagent = Agent(\n    role=\"Researcher\",\n    provider=\"openai\",\n    tools=[\"web_search\", \"file_writer\"]\n)\n\nagent.run(\"Analyze the latest trends in LLM quantization.\")",
+        "verification": "The project is set to dominate the 'Agentic Workflow' niche as more developers pivot from monolithic frameworks to specialized, fast, and swappable AI primitives.",
+        "date": "2026-02-17",
+        "id": 1771291041,
+        "type": "trend"
+    },
+    {
         "title": "eBPF: Solving Verifier Complexity Limits",
         "slug": "ebpf-verifier-complexity-limits-fix",
         "language": "Go",
