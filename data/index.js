@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Data Races in Go Atomic Pointer Swaps",
+        "slug": "go-atomic-pointer-data-race-fix",
+        "language": "Go",
+        "code": "DataRace",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ],
+        "analysis": "<p>In lock-free state management, developers often use <code>atomic.Pointer</code> or <code>atomic.Value</code> to swap state objects. However, a common pitfall occurs when the developer swaps the pointer but continues to read from or modify the old pointer reference without proper synchronization, or fails to treat the state as immutable. This leads to intermittent data races where one goroutine is writing to a struct field while another is reading the 'old' version that it still holds a reference to.</p>",
+        "root_cause": "The race occurs because Go's atomic operations only guarantee the atomicity of the pointer swap itself, not the memory reachable through that pointer. If the underlying data is mutated after being 'published' or while still being accessed by readers, thread safety is violated.",
+        "bad_code": "type Config struct { QueryLimit int }\nvar globalCfg atomic.Pointer[Config]\n\n// Goroutine 1: Update\ncfg := globalCfg.Load()\ncfg.QueryLimit = 100 // RACE: Mutation of shared object\n\n// Goroutine 2: Read\nlimit := globalCfg.Load().QueryLimit",
+        "solution_desc": "Implement a Copy-on-Write (CoW) pattern. Always treat the object held by the atomic pointer as immutable. To update, load the current pointer, create a deep copy, modify the copy, and then use Compare-And-Swap (CAS) or a simple Swap to publish the new version.",
+        "good_code": "type Config struct { QueryLimit int }\nvar globalCfg atomic.Pointer[Config]\n\nfunc UpdateConfig(newLimit int) {\n    for {\n        oldCfg := globalCfg.Load()\n        newCfg := *oldCfg // Shallow copy (ensure deep copy if nested)\n        newCfg.QueryLimit = newLimit\n        if globalCfg.CompareAndSwap(oldCfg, &newCfg) {\n            break\n        }\n    }\n}",
+        "verification": "Run tests using the Go Race Detector: `go test -race ./...`. Verify that concurrent reads and writes no longer trigger warnings.",
+        "date": "2026-02-17",
+        "id": 1771303689,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Milvus HNSW Recall Degradation",
+        "slug": "milvus-hnsw-recall-degradation-fix",
+        "language": "Python",
+        "code": "RecallLoss",
+        "tags": [
+            "Python",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>Users of Milvus often observe a significant drop in search recall (accuracy) when performing heavy concurrent upserts on HNSW-indexed collections. This happens because the HNSW (Hierarchical Navigable Small World) graph construction is optimized for batch builds. During high-concurrency upserts, the background compaction and index-building threads can create fragmented segments with suboptimal graph connectivity, leading to 'isolated islands' in the vector space that the search algorithm cannot reach.</p>",
+        "root_cause": "Small segment sizes and low 'efConstruction' values during incremental indexing. When segments are too small, the graph connectivity is sparse; when merged, the global graph structure is not re-optimized sufficiently.",
+        "bad_code": "collection.create_index(\n    field_name=\"vector\",\n    index_params={\n        \"index_type\": \"HNSW\",\n        \"metric_type\": \"L2\",\n        \"params\": {\"M\": 8, \"efConstruction\": 40}\n    }\n)",
+        "solution_desc": "Increase the 'M' (max degree of nodes) and 'efConstruction' (entry factor) to ensure denser graph connectivity. Additionally, trigger a manual compaction or set a larger 'segment.maxSize' in the Milvus configuration to ensure larger, more coherent HNSW graphs are built during the merging phase.",
+        "good_code": "index_params = {\n    \"index_type\": \"HNSW\",\n    \"metric_type\": \"L2\",\n    \"params\": {\n        \"M\": 32, \n        \"efConstruction\": 256 // Higher values improve recall significantly\n    }\n}\ncollection.create_index(\"vector\", index_params)\n# Ensure search ef is also tuned\nsearch_params = {\"metric_type\": \"L2\", \"params\": {\"ef\": 128}}",
+        "verification": "Perform a benchmark using the `ANN-Benchmarks` tool or a custom script comparing recall against a Ground Truth set before and after the parameter adjustment.",
+        "date": "2026-02-17",
+        "id": 1771303690,
+        "type": "error"
+    },
+    {
+        "title": "Identifying Haskell Thunk Leaks in Streaming",
+        "slug": "haskell-thunk-leak-streaming-fix",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Java",
+            "Error Fix"
+        ],
+        "analysis": "<p>Haskell's lazy evaluation is powerful but dangerous in high-concurrency streaming pipelines (e.g., using Conduit or Pipes). A thunk leak occurs when a stateful transformation accumulates unevaluated expressions (thunks) in memory instead of reducing them to values. In a streaming context, this causes memory usage to grow linearly with the number of processed items, eventually leading to an OOM (Out of Memory) crash or excessive GC pressure.</p>",
+        "root_cause": "The use of lazy state containers or lazy folds (like `foldl`) within a streaming loop. The runtime stores the calculation 'recipe' rather than the result, creating a chain of references that cannot be garbage collected.",
+        "bad_code": "import Data.Conduit\nimport qualified Data.Conduit.List as CL\n\n-- Lazy accumulator in a stream\nsumStream = CL.sourceList [1..1000000] $$ CL.fold (\\acc x -> acc + x) 0",
+        "solution_desc": "Force strict evaluation at each step of the pipeline. Use strict variants of folds (e.g., `foldl'`) and apply BangPatterns (`!`) to data constructors or function arguments to ensure that values are reduced to Weak Head Normal Form (WHNF) immediately.",
+        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.Conduit\nimport qualified Data.Conduit.List as CL\nimport Data.List (foldl')\n\n-- Use CL.fold' (strict version) or manual strictness\nsumStreamStrict = CL.sourceList [1..1000000] $$ CL.fold' (\\acc x -> \n    let !next = acc + x in next) 0",
+        "verification": "Profile the application using GHC's heap profiling: `ghc -prof -fprof-auto -rtsopts` and run with `+RTS -hc`. Check the `.hp` file to ensure the 'Stale' or 'Thunk' memory categories are not growing.",
+        "date": "2026-02-17",
+        "id": 1771303691,
+        "type": "error"
+    },
+    {
+        "title": "Zeroclaw: The Future of Autonomous AI Infra",
+        "slug": "zeroclaw-autonomous-ai-infrastructure",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>Zeroclaw is rapidly trending on GitHub because it addresses the 'Bloatware' problem in AI agent frameworks. Unlike LangChain or CrewAI, which often feel heavy and abstract, Zeroclaw focuses on a 'deploy-anywhere' philosophy with a minimal footprint. It provides a modular infrastructure for fully autonomous agents that can swap LLMs, vector databases, and tools with zero friction. Its popularity stems from the industry's shift from simple RAG (Retrieval-Augmented Generation) to 'Agentic' workflows that require low latency and high reliability.</p>",
+        "root_cause": "Lightweight modularity, provider-agnostic design (swap OpenAI for local Llama in one line), and built-in support for long-running autonomous loops.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\nnpm install && npm run build",
+        "solution_desc": "Ideal for edge computing, local-first AI applications, and microservices where you need an AI agent to perform complex tasks without the overhead of a massive dependency tree.",
+        "good_code": "import { ZeroClaw } from 'zeroclaw';\n\nconst agent = new ZeroClaw({\n  model: 'gpt-4o',\n  tools: ['web-search', 'file-exec'],\n  autonomous: true\n});\n\nawait agent.run('Research the latest trends in Rust systems programming and summarize.');",
+        "verification": "With its focus on performance and 'swappability,' Zeroclaw is positioned to become the 'Nginx' of AI agent deployments, providing the plumbing that lets developers focus on agent logic rather than infrastructure glue.",
+        "date": "2026-02-17",
+        "id": 1771303692,
+        "type": "trend"
+    },
+    {
         "title": "C++20: Fixing Use-After-Free in Coroutine Promises",
         "slug": "cpp20-coroutine-promise-use-after-free",
         "language": "Backend",
