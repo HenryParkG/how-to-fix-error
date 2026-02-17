@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Zig Allocator Memory Corruption",
+        "slug": "zig-manual-allocator-memory-corruption",
+        "language": "Zig",
+        "code": "MemoryCorruption",
+        "tags": [
+            "Rust",
+            "Zig",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Zig, memory management is explicit, and standard allocators like <code>std.heap.FixedBufferAllocator</code> or <code>std.heap.ArenaAllocator</code> are not thread-safe by default. When multiple threads attempt to allocate or free memory from the same instance concurrently, the internal state (like the current pointer offset) becomes corrupted. This leads to overlapping memory regions, double frees, or illegal instruction crashes that are notoriously difficult to debug without a thread sanitizer.</p>",
+        "root_cause": "Concurrent mutation of the allocator's internal offset or free-list pointers without atomic synchronization or mutex locking.",
+        "bad_code": "var buf: [1024]u8 = undefined;\nvar fba = std.heap.FixedBufferAllocator.init(&buf);\nconst allocator = fba.allocator();\n\n// Running in parallel threads\nconst ptr = try allocator.alloc(u8, 128);",
+        "solution_desc": "Wrap the base allocator in a thread-safe wrapper or use the GeneralPurposeAllocator with thread safety enabled. Alternatively, use a Mutex to synchronize access to the allocation calls.",
+        "good_code": "var gpa = std.heap.GeneralPurposeAllocator(.{ .thread_safe = true }){};\nconst allocator = gpa.allocator();\n\n// Or wrap a specific allocator\nvar arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\n// Use a Mutex if sharing across threads manually\nmutex.lock();\ndefer mutex.unlock();\nconst data = try arena.allocator().alloc(u8, 128);",
+        "verification": "Compile with '-fsanitize=thread' and run high-concurrency stress tests to ensure no race conditions are reported.",
+        "date": "2026-02-17",
+        "id": 1771310897,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "tags": [
+            "Go",
+            "Elixir",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Elixir GenServers process messages sequentially from a mailbox. In high-pressure pipelines, if the producer's throughput exceeds the GenServer's processing speed, the mailbox grows unboundedly. This consumes system memory and increases latency significantly. Since standard <code>GenServer.cast/2</code> is fire-and-forget, the producer has no signal to slow down, leading to eventually crashing the node due to Out-Of-Memory (OOM) errors.</p>",
+        "root_cause": "Lack of backpressure mechanisms in an asynchronous producer-consumer pattern where processing time > message arrival rate.",
+        "bad_code": "def handle_info({:data, payload}, state) {\n  # Slow processing logic\n  Process.sleep(100)\n  {:noreply, state}\n}\n\n# Producer\nEnum.each(1..10000, fn i -> send(pid, {:data, i}) end)",
+        "solution_desc": "Replace raw GenServer messaging with GenStage or Broadway to implement demand-based flow control. For simpler cases, use <code>GenServer.call/3</code> to force a synchronous wait, effectively throttling the producer.",
+        "good_code": "def handle_call({:process, payload}, _from, state) do\n  # Process synchronously to apply backpressure\n  result = perform_work(payload)\n  {:reply, :ok, state}\nend\n\n# Better: Use GenStage for demand-driven pipelines\ndef handle_demand(demand, state) do\n  events = fetch_events(demand)\n  {:noreply, events, state}\nend",
+        "verification": "Monitor process queue lengths using ':observer.start' or 'Process.info(pid, :message_queue_len)' under load.",
+        "date": "2026-02-17",
+        "id": 1771310898,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Redis CoW Memory Bloat during Snapshots",
+        "slug": "redis-cow-memory-bloat-snapshots",
+        "language": "Redis",
+        "code": "OOMKilled",
+        "tags": [
+            "Docker",
+            "Redis",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Redis uses <code>fork()</code> to create a point-in-time snapshot (RDB) for persistence. This relies on the OS 'Copy-on-Write' (CoW) mechanism. While child and parent share the same physical memory pages initially, any write to the parent during the snapshot forces the OS to duplicate the page. In environments with 'Transparent Huge Pages' (THP) enabled, the OS copies 2MB pages instead of 4KB, leading to massive memory usage spikes that can trigger the OOM killer.</p>",
+        "root_cause": "High write volume during BGSAVE combined with Transparent Huge Pages (THP) causing excessive memory page duplication.",
+        "bad_code": "# Default Linux settings often have THP enabled\ncat /sys/kernel/mm/transparent_hugepage/enabled\n# Output: [always] madvise never",
+        "solution_desc": "Disable Transparent Huge Pages at the OS level and ensure 'vm.overcommit_memory' is set to 1. This reduces the granularity of memory duplication during the fork process.",
+        "good_code": "# Disable THP\necho never > /sys/kernel/mm/transparent_hugepage/enabled\necho never > /sys/kernel/mm/transparent_hugepage/defrag\n\n# Set sysctl\nsysctl vm.overcommit_memory=1",
+        "verification": "Check 'INFO Persistence' and monitor 'mem_fragmentation_ratio' and RSS during a 'BGSAVE' command.",
+        "date": "2026-02-17",
+        "id": 1771310899,
+        "type": "error"
+    },
+    {
+        "title": "ZeroClaw: The Rise of Autonomous AI Infrastructure",
+        "slug": "zeroclaw-autonomous-ai-infrastructure",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>ZeroClaw is trending on GitHub because it fills the gap between heavy AI frameworks and lightweight execution environments. It provides a 'deploy anywhere' infrastructure for autonomous agents, focusing on extreme speed and modularity. Unlike other LLM wrappers, ZeroClaw is designed to be hardware-agnostic and fully autonomous, allowing users to swap models (OpenAI, Anthropic, or Local LLMs) without changing the core agent logic. Its popularity stems from its low-latency design and the 'fully autonomous' architecture which reduces human-in-the-loop overhead.</p>",
+        "root_cause": "Modular Agent Architecture, Low-Latency execution, and Local-First deployment capabilities.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install -e .",
+        "solution_desc": "Use ZeroClaw when you need to deploy autonomous agents on edge devices or highly scalable cloud environments where resource efficiency and model-interchangeability are critical.",
+        "good_code": "from zeroclaw import Agent, Swarm\n\n# Initialize an autonomous agent\nagent = Agent(role=\"Researcher\", goal=\"Analyze market trends\")\n\n# Create a swarm for complex tasks\nswarm = Swarm(agents=[agent], task=\"Deep Research on AI\")\nswarm.run()",
+        "verification": "ZeroClaw is positioned to become a standard for 'Agentic Ops,' moving AI from simple chatbots to integrated autonomous services.",
+        "date": "2026-02-17",
+        "id": 1771310900,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Data Races in Go Atomic Pointer Swaps",
         "slug": "go-atomic-pointer-data-race-fix",
         "language": "Go",
