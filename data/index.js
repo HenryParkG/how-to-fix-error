@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing eBPF Verifier Complexity in Packet Inspection",
+        "slug": "ebpf-verifier-complexity-dpi-fix",
+        "language": "Go / C",
+        "code": "BPF_COMPLEXITY_LIMIT",
+        "tags": [
+            "Go",
+            "Backend",
+            "eBPF",
+            "Error Fix"
+        ],
+        "analysis": "<p>Deep Packet Inspection (DPI) in eBPF often involves traversing multiple protocol layers. As the complexity of the packet parsing logic increases—especially with nested loops or extensive branching to handle various protocols—the eBPF verifier's state tracking exceeds the 1-million instruction limit. This results in the program being rejected during load time, despite the logic being valid C code.</p>",
+        "root_cause": "The verifier performs a depth-first search of all possible execution paths. Unrolled loops and deep conditional branching for protocol headers cause the 'complexity' (number of states explored) to explode beyond the kernel's safety thresholds.",
+        "bad_code": "for (int i = 0; i < MAX_HEADERS; i++) {\n    struct hdr *h = data + offset;\n    if (h > data_end) break;\n    if (h->type == TYPE_X) { /* Complex Logic */ }\n    offset += sizeof(*h);\n}",
+        "solution_desc": "Refactor the parser to use BPF-to-BPF function calls. This allows the verifier to verify functions individually rather than exploring every permutation of a monolithic main function. Additionally, use bounded loops (available in newer kernels) to avoid forced unrolling.",
+        "good_code": "static __noinline int parse_header(struct __sk_buff *skb, u32 offset) {\n    /* Modularized logic reduces state branching per function */\n    return process_logic(skb, offset);\n}\n\n// In main program\n#pragma unroll\nfor (int i = 0; i < 5; i++) {\n    res = parse_header(skb, offset);\n}",
+        "verification": "Run 'bpftool prog load' and check 'xlated' instructions; ensure 'verifier_stats' shows complexity well below the 1M limit.",
+        "date": "2026-02-18",
+        "id": 1771390144,
+        "type": "error"
+    },
+    {
+        "title": "Fixing React Native JSI Bridge Congestion",
+        "slug": "react-native-jsi-telemetry-congestion",
+        "language": "TypeScript / C++",
+        "code": "JSI_OVERLOAD",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>High-frequency telemetry (e.g., 60Hz sensor data) passed via the JavaScript Interface (JSI) can cause 'bridge congestion.' While JSI is faster than the legacy bridge, synchronous calls from C++ to JS still block the JavaScript thread's event loop. When telemetry events arrive faster than the JS engine can process them, UI frames drop and the app becomes unresponsive.</p>",
+        "root_cause": "Directly invoking JS callback functions from a high-frequency C++ thread without batching or throttling, leading to a saturated JS execution queue.",
+        "bad_code": "void onSensorData(double value) {\n  jsCallback.call(*runtime, jsi::Value(value));\n}",
+        "solution_desc": "Implement a C++ buffering layer that accumulates telemetry data and flushes it to JavaScript in batches synchronized with the display's refresh rate (using a RequestAnimationFrame-like pattern) or at a fixed interval.",
+        "good_code": "void onSensorData(double value) {\n  std::lock_guard<std::mutex> lock(queueMutex);\n  dataBuffer.push_back(value);\n  if (dataBuffer.size() > 30) {\n    flushToJS(); // Batch update every 30 samples\n  }\n}",
+        "verification": "Use React Native Profiler and Perf Monitor; observe if 'JS FPS' stabilizes at 60 despite high incoming data rates.",
+        "date": "2026-02-18",
+        "id": 1771390145,
+        "type": "error"
+    },
+    {
+        "title": "Solving PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "pytorch-ddp-deadlock-heterogeneous",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "tags": [
+            "Python",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>When running DistributedDataParallel (DDP) across a cluster with GPUs of varying speeds or interconnect bandwidths, 'all_reduce' operations can deadlock. If one rank finishes its forward pass significantly slower than others, the NCCL watchdog might time out, or the faster ranks might enter a state where they wait indefinitely for the straggler, causing a cluster-wide hang.</p>",
+        "root_cause": "Imbalanced computation-to-communication ratios across nodes and lack of a 'Join' context manager to handle uneven batch sizes or processing speeds.",
+        "bad_code": "model = DDP(model, device_ids=[rank])\nfor data, target in loader:\n    output = model(data)\n    loss = criterion(output, target)\n    loss.backward()",
+        "solution_desc": "Wrap the training loop with the 'dist.join' context manager to handle trailing processes and set a realistic NCCL_TIMEOUT. Additionally, ensure 'find_unused_parameters=False' to reduce overhead if the graph is static.",
+        "good_code": "from torch.distributed.algorithms.join import Join\nmodel = DDP(model, device_ids=[rank])\nwith Join([model]):\n    for data, target in loader:\n        optimizer.zero_grad()\n        loss = model(data).sum()\n        loss.backward()\n        optimizer.step()",
+        "verification": "Monitor logs for 'NCCL INFO Call to all_reduce completed' and ensure training completes without 'Watchdog timeout' errors.",
+        "date": "2026-02-18",
+        "id": 1771390146,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing ZeroClaw: The Fast, Autonomous AI Infra",
+        "slug": "zeroclaw-labs-ai-infra-analysis",
+        "language": "Python / Rust",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction because it addresses the 'deployment friction' of autonomous agents. Unlike heavy frameworks, ZeroClaw focuses on a small, modular footprint that allows developers to swap LLM backends (OpenAI, Anthropic, or local Llama) seamlessly while maintaining high-speed execution. It provides a standardized 'infrastructure' layer for agents to interact with environments, making it the 'Docker' for AI assistants.</p>",
+        "root_cause": "Modular Plugin Architecture, Low Latency Runtime, and Environment-Agnostic Deployment.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cd zeroclaw && pip install -e .",
+        "solution_desc": "ZeroClaw is best used for edge AI applications, private local-first autonomous assistants, and microservices where a lightweight agentic loop is required without the overhead of LangChain or AutoGPT.",
+        "good_code": "from zeroclaw.core import Agent\n\nagent = Agent(model='gpt-4', tools=['browser', 'terminal'])\nagent.run('Optimize the database queries in /src')",
+        "verification": "With the rise of local LLMs and 'AI on Edge', ZeroClaw is positioned to become the go-to orchestration layer for hardware-constrained autonomous systems.",
+        "date": "2026-02-18",
+        "id": 1771390147,
+        "type": "trend"
+    },
+    {
         "title": "Resolving Rust Pinning Violations in Async Structures",
         "slug": "rust-pinning-violations-async",
         "language": "Rust",
