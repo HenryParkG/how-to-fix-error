@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Haskell Space Leaks in Stream Processing",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Rust",
+        "code": "HeapOverflow",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-throughput Haskell stream processing, lazy evaluation often becomes a double-edged sword. While it allows for modularity and infinite streams, it can lead to 'thunk' accumulation. A thunk is a deferred computation that resides in the heap until its value is explicitly required. In a streaming context, if a cumulative state (like a counter or a sum) is updated lazily, the program stores the formula for the update rather than the result, eventually exhausting available memory and causing a crash.</p>",
+        "root_cause": "The use of lazy accumulators (like foldl) in recursive stream processing which creates long chains of unevaluated expressions (thunks) in the heap.",
+        "bad_code": "import Data.List (foldl)\n\n-- Processing a high-throughput stream of integers\nprocessStream :: [Int] -> Int\nprocessStream = foldl (+) 0",
+        "solution_desc": "Replace lazy folds with strict versions (foldl') and ensure that data structures used for state are 'strict' in their fields. Use the BangPatterns extension to force evaluation at specific points.",
+        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\n-- foldl' forces evaluation of the accumulator at each step\nprocessStrictStream :: [Int] -> Int\nprocessStrictStream = foldl' (+) 0",
+        "verification": "Compile with GHC profiling enabled (-prof -auto-all) and run with +RTS -hc to generate a heap profile graph, ensuring a flat memory line.",
+        "date": "2026-02-18",
+        "id": 1771407583,
+        "type": "error"
+    },
+    {
+        "title": "Resolving HNSW Index Fragmentation in Vector DBs",
+        "slug": "hnsw-index-fragmentation-fix",
+        "language": "SQL",
+        "code": "LatencySpike",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Hierarchical Navigable Small World (HNSW) indexes are the gold standard for vector similarity search, but they struggle with 'heavy incremental updates'. When vectors are frequently updated or deleted, the graph structure becomes fragmented. 'Tombstoning' deleted nodes leaves gaps in the search path, forcing the engine to traverse longer, sub-optimal routes, which increases P99 latency and degrades recall accuracy over time.</p>",
+        "root_cause": "Logical deletions in the HNSW graph lead to disconnected components and high-degree 'ghost' nodes that aren't physically removed until a full rebuild.",
+        "bad_code": "-- High frequency incremental updates causing fragmentation\nUPDATE vector_table \nSET embedding = '[0.12, 0.45, ...]' \nWHERE id = 101; -- Repeated thousands of times",
+        "solution_desc": "Implement a 'Compaction' strategy or use a DB engine that supports automatic graph re-balancing. Architecturally, move to a 'buffer-and-merge' approach where updates are batched and the index is rebuilt or optimized during low-traffic windows.",
+        "good_code": "-- Optimize/Vacuum the index to remove tombstoned nodes\nVACUUM (ANALYZE, VERBOSE) vector_table;\n-- Or trigger index rebuild\nREINDEX INDEX idx_hnsw_embedding;",
+        "verification": "Monitor 'Index Efficiency' metrics and perform 'Recall' testing against a ground-truth set before and after the index optimization.",
+        "date": "2026-02-18",
+        "id": 1771407584,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Go Scheduler Starvation in Numerical Loops",
+        "slug": "go-runtime-scheduler-starvation",
+        "language": "Go",
+        "code": "ThreadLock",
+        "tags": [
+            "Go",
+            "Backend",
+            "Node.js",
+            "Error Fix"
+        ],
+        "analysis": "<p>Go's runtime uses a cooperative/preemptive scheduler. However, tight numerical loops that do not contain function calls or system calls can sometimes prevent the scheduler from preempting the goroutine. If a G (goroutine) is stuck in a heavy calculation on a P (processor), other goroutines (like those handling HTTP health checks or GC) may starve, leading to application hangs despite low CPU utilization on other cores.</p>",
+        "root_cause": "The Go 1.14+ asynchronous preemption relies on stack checks or signals; extremely tight loops without function calls can occasionally bypass these points.",
+        "bad_code": "func tightLoop() {\n    for i := 0; i < 1e12; i++ {\n        // Pure numerical work with no function calls\n        res += i * i\n    }\n}",
+        "solution_desc": "Manually yield the processor using 'runtime.Gosched()' or introduce a function call within the loop to allow the scheduler to insert a preemption point.",
+        "good_code": "import \"runtime\"\n\nfunc looseLoop() {\n    for i := 0; i < 1e12; i++ {\n        res += i * i\n        if i%1000000 == 0 {\n            runtime.Gosched() // Explicitly yield to other goroutines\n        }\n    }\n}",
+        "verification": "Run the application with GODEBUG=schedtrace=1000 and observe if all 'P' threads are making progress under load.",
+        "date": "2026-02-18",
+        "id": 1771407585,
+        "type": "error"
+    },
+    {
+        "title": "ZeroClaw: Next-Gen Autonomous AI Infrastructure",
+        "slug": "zeroclaw-labs-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction on GitHub because it addresses the complexity of deploying autonomous AI agents. Unlike monolithic frameworks, ZeroClaw offers a modular, 'swap-anything' architecture. It allows developers to plug in different LLMs (OpenAI, Anthropic, Llama) and vector stores while providing a lightweight footprint suitable for edge deployment. Its focus on 'Fast, Small, and Fully Autonomous' resonates with the shift from centralized AI toward distributed, local-first agents.</p>",
+        "root_cause": "Modular Plugin System, Low-latency Agent Execution, and Multi-LLM Orchestration.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cd zeroclaw && npm install",
+        "solution_desc": "ZeroClaw is ideal for building local AI assistants, automated DevOps agents, or private enterprise knowledge bots where data privacy and low latency are critical. Use it when you need a framework that doesn't lock you into a specific AI provider.",
+        "good_code": "import { ZeroClaw } from 'zeroclaw-core';\n\nconst agent = new ZeroClaw({\n  model: 'gpt-4o',\n  tools: ['web-search', 'shell-exec'],\n  autonomous: true\n});\n\nawait agent.run(\"Optimize the Nginx config for this server\");",
+        "verification": "As AI moves toward 'Small Language Models' (SLMs), ZeroClaw is positioned to become the standard 'glue' for edge-based autonomous operations.",
+        "date": "2026-02-18",
+        "id": 1771407586,
+        "type": "trend"
+    },
+    {
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
         "slug": "cpp20-coroutine-frame-lifetime-violations",
         "language": "C++",
