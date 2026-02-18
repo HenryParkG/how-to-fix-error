@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
+        "slug": "cpp20-coroutine-frame-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "tags": [
+            "Rust",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-concurrency networking, C++20 coroutines are often used to manage asynchronous I/O via <code>co_await</code>. A critical issue arises when references or pointers to local variables are passed into an asynchronous operation. If the coroutine suspends and the underlying operation outlives the coroutine frame (e.g., due to a cancellation or premature destruction), the resumed coroutine or the completion handler will access a dangling pointer. This is particularly frequent in network buffers where the lifetime of the <code>std::string</code> or <code>vector</code> used for receiving data is tied to a scope that closes before the I/O finishes.</p>",
+        "root_cause": "The coroutine frame or local scope variables are destroyed while an asynchronous operation still holds a reference to them, typically due to improper use of references in 'fire-and-forget' tasks or incorrect shared_ptr ownership.",
+        "bad_code": "task<void> start_read(tcp::socket& socket) {\n    char buffer[1024]; // Local stack-like buffer in coroutine frame\n    auto bytes = co_await socket.async_read_some(asio::buffer(buffer));\n    process(buffer, bytes);\n}",
+        "solution_desc": "Ensure that the buffer's lifetime is managed by a shared state or move the buffer into the coroutine frame's heap-allocated portion using a member variable in a class-based coroutine or by passing a shared_ptr to the async operation.",
+        "good_code": "task<void> start_read(tcp::socket& socket) {\n    auto buffer = std::make_shared<std::vector<char>>(1024);\n    // Capture shared_ptr to extend lifetime until completion\n    auto bytes = co_await socket.async_read_some(asio::buffer(*buffer));\n    process(buffer->data(), bytes);\n}",
+        "verification": "Use AddressSanitizer (ASan) with 'detect_stack_use_after_return=1' and run stress tests under high network load to catch invalid memory access.",
+        "date": "2026-02-18",
+        "id": 1771397579,
+        "type": "error"
+    },
+    {
+        "title": "Resolving WiredTiger Cache Eviction Contention in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-eviction-contention",
+        "language": "MongoDB",
+        "code": "CacheContention",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>High-throughput MongoDB clusters often hit a 'performance cliff' when the WiredTiger cache becomes full. When dirty pages exceed the <code>eviction_trigger</code>, application threads are forced to participate in eviction (application-side eviction), which leads to massive latency spikes and lock contention. In clusters with high write-concurrency, the eviction threads cannot keep up, causing the global WiredTiger tick to stall and blocking all I/O operations until the cache pressure is relieved.</p>",
+        "root_cause": "Mismatch between the rate of data ingress and the WiredTiger eviction thread capacity, combined with default settings that allow too much dirty data to accumulate before aggressive eviction kicks in.",
+        "bad_code": "// Default configuration under heavy 100k+ OPS load\nstorage.wiredTiger.engineConfig.cacheSizeGB: 16\n// No custom eviction tuning, leading to default 20% dirty trigger",
+        "solution_desc": "Tune the WiredTiger engine to use more background eviction threads and lower the dirty page triggers. This forces the database to start cleaning the cache earlier and more aggressively without stalling user queries.",
+        "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction=(threads_min=4,threads_max=20),eviction_dirty_trigger=5,eviction_dirty_target=3\"\n});",
+        "verification": "Monitor 'wiredtiger.cache.tracked dirty bytes in the cache' and 'app threads page eviction' using mongostat or Cloud Manager.",
+        "date": "2026-02-18",
+        "id": 1771397580,
+        "type": "error"
+    },
+    {
+        "title": "Debugging Spark Broadcast Hash Join OOMs under Skew",
+        "slug": "spark-broadcast-hash-join-oom-data-skew",
+        "language": "Scala/Spark",
+        "code": "OutOfMemoryError",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>Spark's Broadcast Hash Join (BHJ) is efficient for joining a small table with a large one by broadcasting the small table to all executors. However, when the join key in the 'small' table is heavily skewed (many rows with the same key), the resulting hash map on the executor exceeds the allocated execution memory. Even if the total table size is below <code>spark.sql.autoBroadcastJoinThreshold</code>, the deserialized in-memory object can be significantly larger, leading to Java Heap Space OOMs.</p>",
+        "root_cause": "Data skew leads to a specific hash bucket in the broadcast relation growing beyond the available executor memory during the building of the In-Memory Hash Table.",
+        "bad_code": "// Forcing broadcast on a skewed table\nval joinedDF = largeDF.join(broadcast(skewedSmallDF), \"user_id\")",
+        "solution_desc": "Disable BHJ for the specific query using a hint or increase the partition count and use a SortMergeJoin. Alternatively, implement 'salting' to break up the skewed keys into smaller chunks that can be handled across multiple tasks.",
+        "good_code": "// Use Skew Hint (Spark 3.0+) or Salting\nval joinedDF = largeDF.hint(\"skew\", \"user_id\").join(skewedSmallDF, \"user_id\")\n// Or force SortMergeJoin\nspark.conf.set(\"spark.sql.autoBroadcastJoinThreshold\", -1)",
+        "verification": "Check the Spark UI Storage tab for 'Size in Memory' of the broadcasted relation and verify that the join strategy changed to 'SortMergeJoin' in the SQL tab.",
+        "date": "2026-02-18",
+        "id": 1771397581,
+        "type": "error"
+    },
+    {
+        "title": "Analyze the Trending ZeroClaw AI Assistant Infrastructure",
+        "slug": "zeroclaw-labs-zeroclaw-analysis",
+        "language": "Python/Rust",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>Zeroclaw is rapidly trending due to its 'low-abstraction' approach to AI agent orchestration. Unlike heavy frameworks like LangChain, Zeroclaw focuses on raw performance and 'fully autonomous' capabilities. It is designed for developers who need to deploy AI assistants at the edge or within resource-constrained environments. Its modular architecture allows developers to 'swap anything'—from the LLM provider to the vector database—without rewriting the core agent logic, which is a major pain point in the current AI ecosystem.</p>",
+        "root_cause": "Modular Plugin System, Minimal Overhead, and Native Support for Local/Cloud Hybrid Inference.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -r requirements.txt\npython setup.py install",
+        "solution_desc": "Best used for autonomous DevOps agents, real-time customer support bots, and low-latency IoT AI processing where framework overhead must be minimized.",
+        "good_code": "from zeroclaw.core import Assistant\nfrom zeroclaw.tools import CodeInterpreter\n\nassistant = Assistant(model=\"llama-3\", tools=[CodeInterpreter()])\nassistant.deploy(target=\"lambda-edge\")\nassistant.chat(\"Optimize this SQL query.\")",
+        "verification": "Zeroclaw is positioned to become the 'Standard Library' for autonomous agent deployment, likely integrating deeper with Rust-based inference engines in 2024.",
+        "date": "2026-02-18",
+        "id": 1771397582,
+        "type": "trend"
+    },
+    {
         "title": "Fixing eBPF Verifier Complexity in Packet Inspection",
         "slug": "ebpf-verifier-complexity-dpi-fix",
         "language": "Go / C",
