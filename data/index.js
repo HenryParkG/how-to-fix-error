@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Resolving Rust Pinning Violations in Async Structures",
+        "slug": "rust-pinning-violations-async",
+        "language": "Rust",
+        "code": "PinViolation",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Rust, self-referential structures are inherently dangerous because moving the structure in memory invalidates internal pointers. This is a common issue when building manual Future implementations or complex async state machines.</p><p>The <code>Pin</code> wrapper guarantees that the data it points to will not be moved until it is dropped, ensuring that self-references remain valid. Violations occur when developers attempt to access fields mutably without satisfying the Unpin trait or failing to use <code>project()</code> correctly.</p>",
+        "root_cause": "Moving a self-referential struct after pointers to its fields have been created, leading to dangling pointers and undefined behavior.",
+        "bad_code": "struct SelfRef {\n    data: String,\n    ptr: *const String,\n}\n\nimpl SelfRef {\n    fn new(txt: &str) -> Self {\n        let mut s = SelfRef { data: txt.to_string(), ptr: std::ptr::null() };\n        s.ptr = &s.data; // Pointer to internal field\n        s\n    }\n} // If this is moved, 'ptr' becomes invalid.",
+        "solution_desc": "Use the Pin<P> type along with PhantomPinned to mark the struct as !Unpin. Use the 'pin-project' crate to safely handle field projection.",
+        "good_code": "use std::pin::Pin;\nuse std::marker::PhantomPinned;\n\nstruct SelfRef {\n    data: String,\n    ptr: *const String,\n    _pin: PhantomPinned,\n}\n\nimpl SelfRef {\n    fn new(txt: &str) -> Pin<Box<Self>> {\n        let res = SelfRef {\n            data: txt.to_string(),\n            ptr: std::ptr::null(),\n            _pin: PhantomPinned,\n        };\n        let mut boxed = Box::pin(res);\n        let data_ptr = &boxed.data as *const String;\n        unsafe {\n            let mut_ref: Pin<&mut SelfRef> = boxed.as_mut();\n            Pin::get_unchecked_mut(mut_ref).ptr = data_ptr;\n        }\n        boxed\n    }\n}",
+        "verification": "Compile with 'cargo check'. Use 'miri' to detect undefined behavior in pointers during runtime execution.",
+        "date": "2026-02-18",
+        "id": 1771377548,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storms-latency",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Rebalance storms occur in high-latency pipelines when a consumer takes longer to process a batch of records than the configured <code>max.poll.interval.ms</code>. This causes the broker to assume the consumer has failed, kicking it out of the group.</p><p>As the consumer rejoins, it triggers a rebalance for the entire group, pausing all other consumers. If multiple consumers are struggling with latency, this creates a recursive 'storm' where the group never reaches a stable state.</p>",
+        "root_cause": "Processing time per batch exceeds 'max.poll.interval.ms', or heartbeats are blocked by long-running synchronous operations in the main poll loop.",
+        "bad_code": "Properties props = new Properties();\nprops.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // CRITICAL ERROR: Synchronous heavy processing (e.g., 10 min API call)\n        processRemoteData(record);\n    }\n}",
+        "solution_desc": "Increase 'max.poll.interval.ms' to account for worst-case latency, or decouple processing from the poll loop using an internal worker queue and manual offsets.",
+        "good_code": "Properties props = new Properties();\nprops.put(\"max.poll.interval.ms\", \"900000\"); // Increase to 15 mins\nprops.put(\"max.poll.records\", \"10\"); // Reduce batch size\n\n// Alternative: Parallel processing with manual heartbeating\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    if (!records.isEmpty()) {\n        processInParallel(records); // Logic ensures poll() is called frequently\n    }\n}",
+        "verification": "Monitor 'kafka_consumer_group_rebalance_rate_total' in Prometheus. If stable, the rate should drop to near zero after deployment.",
+        "date": "2026-02-18",
+        "id": 1771377549,
+        "type": "error"
+    },
+    {
+        "title": "Fixing WGSL Uniform Buffer Alignment Hazards",
+        "slug": "webgpu-wgsl-alignment-hazards",
+        "language": "TypeScript",
+        "code": "AlignmentError",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ],
+        "analysis": "<p>WebGPU and WGSL have strict memory layout rules for Uniform Buffers. A common pitfall is the difference between JavaScript's Float32Array packing and WGSL's 16-byte alignment requirement for structures and certain vectors (like vec3).</p><p>When these don't match, the GPU reads garbage data or shifts indices, leading to distorted geometry or flickering. For instance, a <code>vec3</code> in WGSL is treated as having the same alignment as a <code>vec4</code>.</p>",
+        "root_cause": "Failing to account for the 16-byte alignment requirement (std140-like) in WGSL, specifically with vec3 and mixed-type structs.",
+        "bad_code": "// WGSL side\nstruct Config {\n    color: vec3<f32>,\n    intensity: f32,\n}\n\n// JS side - Tightly packed (4 + 1 = 5 floats)\nconst bufferData = new Float32Array([\n    1.0, 0.0, 0.0, // color\n    0.5            // intensity\n]);",
+        "solution_desc": "Manually pad your TypedArrays in JavaScript to match the 16-byte (4-float) alignment requirement of WGSL vec3/vec4 structures.",
+        "good_code": "// WGSL side\nstruct Config {\n    color: vec3<f32>,\n    _pad: f32,\n    intensity: f32,\n    _pad2: vec3<f32>,\n}\n\n// JS side - Padded for 16-byte alignment (vec3 + 1 float padding)\nconst bufferData = new Float32Array([\n    1.0, 0.0, 0.0, 0.0, // color + padding\n    0.5, 0.0, 0.0, 0.0  // intensity + padding\n]);",
+        "verification": "Use the 'WebGPU Inspector' browser extension to inspect buffer memory. Ensure the byte offsets in the GPU buffer match your JS object offsets.",
+        "date": "2026-02-18",
+        "id": 1771377550,
+        "type": "error"
+    },
+    {
+        "title": "ZeroClaw: Lightweight Fully Autonomous AI Infrastructure",
+        "slug": "zeroclaw-ai-agent-infrastructure",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI engineering community due to its 'swap-anything' philosophy. Unlike heavy frameworks that lock you into specific LLM providers, ZeroClaw treats the LLM, the memory layer, and the tool-calling interface as hot-swappable components.</p><p>It is designed for speed and low-resource environments, making it ideal for edge deployment where typical LangChain-based agents might be too bloated. Its rise is driven by the shift from simple RAG to 'Agentic Workflows' where the AI autonomously plans and executes shell commands or API calls.</p>",
+        "root_cause": "Key Features: High-performance core, provider-agnostic architecture, built-in tool execution sandbox, and a tiny footprint suitable for 'deploy anywhere' scenarios.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -e .",
+        "solution_desc": "Best used for building local automation agents, autonomous DevOps assistants, or embedded AI tools that need to run without high-latency cloud dependencies.",
+        "good_code": "from zeroclaw import Agent\n\nagent = Agent(provider=\"openai\", model=\"gpt-4-turbo\")\nagent.add_tool(\"terminal\", description=\"Execute shell commands\")\n\nresponse = agent.run(\"Find the largest log file in /var/log and summarize it.\")\nprint(response.output)",
+        "verification": "The project is moving toward a decentralized agentic protocol, potentially allowing Zeroclaw agents to discover and collaborate with each other across different network nodes.",
+        "date": "2026-02-18",
+        "id": 1771377551,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Linux Kernel RCU Stall Warnings in IO Workloads",
         "slug": "linux-kernel-rcu-stall-io-fix",
         "language": "C",
