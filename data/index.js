@@ -1,5 +1,91 @@
 var postsIndex = [
     {
+        "title": "Fixing eBPF Verifier State-Space Explosion",
+        "slug": "ebpf-verifier-state-space-explosion",
+        "language": "C / BPF",
+        "code": "VerifierError",
+        "tags": [
+            "Rust",
+            "Backend",
+            "eBPF",
+            "C",
+            "Error Fix"
+        ],
+        "analysis": "<p>When developing complex network filters (XDP/TC), developers often encounter the 'BPF program is too large' or 'infinite loop detected' errors. This is usually not about the binary size, but the state-space explosion during the verifier's path exploration. The verifier attempts to traverse every possible execution branch to ensure safety, and with high cyclomatic complexity, it exceeds the 1-million instruction complexity limit.</p>",
+        "root_cause": "The verifier evaluates every branch of conditional logic. If a program has many branches or loops with large bounds, the total number of states to explore grows exponentially, hitting the complexity limit (BPF_COMPLEXITY_LIMIT_INSNS).",
+        "bad_code": "for (int i = 0; i < MAX_ITER; i++) {\n    if (data + offset > data_end) break;\n    // Complex nested logic here\n    if (payload[i] == 0x01) { /* ... */ }\n    else if (payload[i] == 0x02) { /* ... */ }\n    // ... more branches\n}",
+        "solution_desc": "To fix this, utilize the 'bpf_loop' helper (available in kernels 5.17+) or use tail calls to break the program into smaller, independently verified chunks. Additionally, using function calls (without __always_inline) in newer kernels allows the verifier to check the function once rather than at every call site.",
+        "good_code": "static int process_packet(__u32 index, void *ctx) {\n    // Logic for a single iteration\n    return 0;\n}\n\n// In main BPF program\nbpf_loop(MAX_ITER, process_packet, &cb_data, 0);",
+        "verification": "Run 'bpftool prog load' and check the 'verifier_stats' for the 'insns_processed' count. It should be significantly lower than the 1M limit.",
+        "date": "2026-02-19",
+        "id": 1771493860,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Kafka Sticky Assignor Partition Imbalance",
+        "slug": "kafka-sticky-assignor-imbalance-fix",
+        "language": "Java",
+        "code": "ConsumerImbalance",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ],
+        "analysis": "<p>The StickyAssignor in Kafka is designed to preserve partition-to-consumer mappings to minimize overhead during rebalances. However, a known issue occurs during rapid scaling or rolling restarts where certain consumers become 'greedy,' holding onto old partitions while others remain idle, leading to severe throughput skew.</p>",
+        "root_cause": "The original StickyAssignor lacks global knowledge during incremental updates, causing it to prioritize 'stickiness' over 'balance' when generation IDs are incremented rapidly without full state reconciliation.",
+        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    StickyAssignor.class.getName());",
+        "solution_desc": "Upgrade to the 'CooperativeStickyAssignor'. Unlike the eager StickyAssignor, the cooperative version supports incremental rebalancing, allowing consumers to keep their partitions during the rebalance process while gradually shifting them to achieve global balance without a 'stop-the-world' event.",
+        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    \"org.apache.kafka.clients.consumer.CooperativeStickyAssignor\");\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\");",
+        "verification": "Monitor the 'records-lag-max' and 'assigned-partitions' metrics via JMX. After a rebalance, the distribution should converge to a mean variance of < 1 partition.",
+        "date": "2026-02-19",
+        "id": 1771493861,
+        "type": "error"
+    },
+    {
+        "title": "Fixing React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "C++",
+            "Error Fix"
+        ],
+        "analysis": "<p>React Native's JavaScript Interface (JSI) allows for high-performance synchronous communication between C++ and JS. However, manual memory management is required. Leaks frequently occur when C++ objects hold onto jsi::Value or jsi::Object references across asynchronous thread boundaries without releasing them back to the JS garbage collector.</p>",
+        "root_cause": "Holding a jsi::Value inside a C++ lambda or class member that outlives the JS runtime context, or failing to use jsi::Persistent to manage references that need to persist across multiple bridge calls.",
+        "bad_code": "void MyModule::logData(jsi::Runtime& rt, jsi::Object& obj) {\n  // Problem: Capturing raw reference in a thread\n  std::thread([&rt, &obj]() {\n    auto val = obj.getProperty(rt, \"id\"); \n  }).detach();\n}",
+        "solution_desc": "Use 'jsi::Persistent' to wrap objects that need to live outside the current scope and ensure they are explicitly reset. Alternatively, ensure all JSI interactions happen on the JS thread and use the move constructor for JSI objects to transfer ownership correctly.",
+        "good_code": "void MyModule::logData(jsi::Runtime& rt, const jsi::Value& val) {\n  auto sharedVal = std::make_shared<jsi::Persistent<jsi::Value>>(rt, val);\n  jsCallInvoker_->invokeAsync([this, sharedVal]() {\n     // Access via sharedVal->get(rt)\n     sharedVal.reset(); // Explicitly release\n  });\n}",
+        "verification": "Use Xcode Memory Graph or Android Studio Profiler to track the 'jsi::Pointer' count. The allocation should return to baseline after the module action completes.",
+        "date": "2026-02-19",
+        "id": 1771493862,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing Zeroclaw: Fast Autonomous AI Infra",
+        "slug": "zeroclaw-ai-infra-trend-analysis",
+        "language": "Python / TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ],
+        "analysis": "<p>Zeroclaw-labs/zeroclaw is trending because it solves the 'heavyweight' problem of modern AI frameworks. While LangChain and AutoGPT are feature-rich, they are often slow and difficult to deploy in resource-constrained environments. Zeroclaw provides a minimalist, fully autonomous infrastructure that focuses on 'swappability'—allowing developers to switch between LLMs (OpenAI, Anthropic, Local Llama) with zero configuration changes.</p>",
+        "root_cause": "Key features include: 1. Native support for local-first deployment. 2. A modular 'Tool-Call' engine that is 5x faster than traditional agentic loops. 3. Zero-dependency core for easy integration into existing enterprise stacks.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw && pip install -e .",
+        "solution_desc": "Best used for building low-latency autonomous assistants, edge-computing AI agents, or specialized micro-agents that handle specific DevOps or coding tasks without the overhead of a full agent orchestrator.",
+        "good_code": "from zeroclaw import Agent\n\nagent = Agent(provider=\"ollama\", model=\"llama3\")\nagent.register_tool(lambda x: x * 2)\nagent.run(\"Double the number 21 and tell me the result.\")",
+        "verification": "The project is rapidly gaining traction in the 'Small Language Model' (SLM) community. Expect Zeroclaw to become the standard for mobile and edge-based autonomous agents in 2024.",
+        "date": "2026-02-19",
+        "id": 1771493863,
+        "type": "trend"
+    },
+    {
         "title": "Resolving OCaml 5.0 Multicore GC Contention",
         "slug": "ocaml-5-multicore-gc-contention-fix",
         "language": "OCaml",
