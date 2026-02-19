@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Zig Comptime Memory Exhaustion",
+        "slug": "fixing-zig-comptime-memory-exhaustion",
+        "language": "Zig",
+        "code": "ComptimeOOM",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Metaprogramming",
+            "Error Fix"
+        ],
+        "analysis": "<p>Zig's <code>comptime</code> allows for powerful generic programming, but it executes at compile time, meaning the compiler's memory footprint scales with the complexity of the generated types. In deep generic template expansion, specifically recursive type generation, the compiler memoizes every intermediate state. This leads to exponential memory growth during the semantic analysis phase, often crashing the build process on machines with less than 32GB of RAM.</p>",
+        "root_cause": "Infinite or excessively deep recursion in comptime functions that generate unique anonymous structs for every iteration, filling the compiler's type memoization table.",
+        "bad_code": "fn GenerateLinkedList(comptime depth: usize) type {\n    if (depth == 0) return struct { val: i32 };\n    return struct {\n        val: i32,\n        next: GenerateLinkedList(depth - 1),\n    };\n}\n\n// Usage that triggers OOM\nconst HugeList = GenerateLinkedList(10000);",
+        "solution_desc": "Instead of generating nested anonymous structs recursively, use a flat array-based approach or Type Erasure where possible. If recursion is necessary, use an iterative approach with a single container type to prevent the creation of thousands of unique type signatures.",
+        "good_code": "fn GenerateLinkedList(comptime depth: usize) type {\n    return struct {\n        nodes: [depth]struct { val: i32 },\n        pub fn next(self: *@This(), index: usize) ?*struct{val: i32} {\n            if (index >= depth) return null;\n            return &self.nodes[index];\n        }\n    };\n}\n\nconst OptimizedList = GenerateLinkedList(10000);",
+        "verification": "Run `zig build` and monitor the memory usage of the `zig` process. The memory should remain stable and not exceed 1-2GB for large expansions.",
+        "date": "2026-02-19",
+        "id": 1771463933,
+        "type": "error"
+    },
+    {
+        "title": "Resolving CUDA Memory Fragmentation in 4-bit LLMs",
+        "slug": "cuda-memory-fragmentation-4bit-llm",
+        "language": "Python",
+        "code": "CudaOutOfMemory",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "PyTorch",
+            "Error Fix"
+        ],
+        "analysis": "<p>When running 4-bit quantized LLMs (using bitsandbytes or AutoGPTQ), memory fragmentation occurs because the CUDA allocator struggles with the varying sizes of de-quantized activation tensors and the fixed-size quantized weights. This 'External Fragmentation' means that while total free memory is sufficient, there is no single contiguous block large enough for the next allocation, resulting in a false OOM error.</p>",
+        "root_cause": "Frequent allocation and deallocation of small intermediate tensors during 4-bit dequantization combined with the default PyTorch caching allocator behavior.",
+        "bad_code": "import torch\nfrom transformers import AutoModelForCausalLM\n\n# Standard loading often fails during long context generation\nmodel = AutoModelForCausalLM.from_pretrained(\n    \"model_path\", \n    load_in_4bit=True, \n    device_map=\"auto\"\n)\n# Running inference on 4k+ tokens triggers fragmentation OOM",
+        "solution_desc": "Configure the PyTorch CUDA allocator to use 'expandable_segments'. This feature, introduced in recent PyTorch versions, allows the allocator to map memory into contiguous virtual address spaces even if the physical segments are non-contiguous, effectively eliminating external fragmentation for LLM workloads.",
+        "good_code": "import os\nimport torch\n\n# Enable expandable segments to prevent fragmentation\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"expandable_segments:True\"\n\nmodel = AutoModelForCausalLM.from_pretrained(\n    \"model_path\", \n    load_in_4bit=True, \n    device_map=\"auto\"\n)\n# Fragments are now virtually contiguous",
+        "verification": "Check `torch.cuda.memory_summary()` after long inference runs. The 'Max Reserved' should be significantly closer to 'Max Allocated' than before the fix.",
+        "date": "2026-02-19",
+        "id": 1771463934,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Flutter Skia Shader Jitter",
+        "slug": "flutter-skia-shader-jitter-fix",
+        "language": "Dart",
+        "code": "UiJank",
+        "tags": [
+            "TypeScript",
+            "Flutter",
+            "Mobile",
+            "Error Fix"
+        ],
+        "analysis": "<p>Flutter apps on high-refresh rate displays (120Hz+) often experience 'jank' during the first animation of a specific UI element. This is caused by the Skia rendering engine compiling the required GLSL/Metal shaders on the UI thread at the exact moment they are needed. On 120Hz displays, the frame budget is only 8.3ms; shader compilation can take 20-50ms, causing noticeable dropped frames.</p>",
+        "root_cause": "Just-in-time (JIT) shader compilation on the raster thread during animation execution.",
+        "bad_code": "// No specific code triggers this, but complex UI like:\nreturn Scaffold(\n  body: AnimatedContainer(\n    duration: Duration(milliseconds: 300),\n    decoration: BoxDecoration(\n      gradient: LinearGradient(colors: [Colors.red, Colors.blue]), // Triggers shader comp\n    ),\n  ),\n);",
+        "solution_desc": "The industry-standard solution is to perform 'Shader Warmup'. You must capture the Skia Shading Language (SkSL) signatures during a profiling session and bundle them with the application. Alternatively, switch to the 'Impeller' rendering engine which pre-compiles shaders during the app build phase.",
+        "good_code": "/* Step 1: Run app in profiling mode and trigger animations */\n// flutter run --profile --cache-sksl --purge-old-cache\n\n/* Step 2: Build with the generated sksl bundle */\n// flutter build apk --bundle-sksl-path flutter_01.sksl.json\n\n/* Alternative for New Flutter versions: Enable Impeller in Info.plist */\n// <key>FLTEnableImpeller</key>\n// <true/>",
+        "verification": "Use the Flutter DevTools Performance overlay. The 'Raster' bar should stay consistently below the 8.3ms line during transitions on 120Hz devices.",
+        "date": "2026-02-19",
+        "id": 1771463935,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing Zeroclaw: High-Performance Autonomous AI",
+        "slug": "zeroclaw-labs-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>Zeroclaw (zeroclaw-labs/zeroclaw) is trending because it addresses the 'bloat' issue in existing AI agent frameworks like LangChain. It provides a lean, low-latency infrastructure for autonomous agents that can be deployed on edge devices or scaled in the cloud. Its 'swap anything' philosophy allows developers to replace LLM providers, vector stores, and toolsets without rewriting core logic, making it highly attractive for production-grade AI applications.</p>",
+        "root_cause": "Minimalist abstraction layers, native support for fast tool-calling protocols, and a focus on sub-100ms internal overhead.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install -e .",
+        "solution_desc": "Ideal for developers building autonomous voice assistants, edge-based automation, or high-throughput RAG pipelines where framework latency is a bottleneck. Adopt it when you need modularity without the overhead of heavy dependencies.",
+        "good_code": "from zeroclaw import Assistant\n\n# Simple, modular initialization\nassistant = Assistant(\n    model=\"gpt-4o\",\n    tools=[\"web_search\", \"python_exec\"],\n    autonomous=True\n)\n\nassistant.run(\"Analyze the current market trends for Zig and report back.\")",
+        "verification": "As AI moves toward 'Agentic Workflows', Zeroclaw is positioned to become the 'Flask' to LangChain's 'Django', offering the speed and flexibility required for the next generation of autonomous apps.",
+        "date": "2026-02-19",
+        "id": 1771463936,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Haskell Space Leaks in Stream Processing",
         "slug": "haskell-lazy-evaluation-space-leaks",
         "language": "Rust",
