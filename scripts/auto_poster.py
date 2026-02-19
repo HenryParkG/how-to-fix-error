@@ -248,7 +248,8 @@ def get_autonomous_topics(count=1):
             file_path = os.path.join(target_dir, filename)
             
             with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=False)});")
+                # Use ensure_ascii=True for maximum JS compatibility (escapes unicode)
+                f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=True)});")
             
             saved_files.append(post_data)
             print(f"✅ Saved: {filename}")

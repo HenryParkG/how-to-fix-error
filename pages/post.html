@@ -219,119 +219,132 @@
     <script>
         // 상세 데이터가 로드되었을 때 실행되는 함수 (Ver 4.5)
         window.onPostDataLoaded = (post) => {
-            document.title = `${post.title} | ErrorLog`;
-            const article = document.getElementById('postDetail');
+            try {
+                // Validate post data
+                if (!post || !post.title) throw new Error("Invalid post data structure");
 
-            // 렌더링 분기: 트렌드 vs 오류 해결
-            let contentHtml = '';
+                document.title = `${post.title} | ErrorLog`;
+                const article = document.getElementById('postDetail');
 
-            if (post.type === 'trend') {
-                // [트렌드 포맷]
-                contentHtml = `
-                    <section class="content-section">
-                        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Analysis</h3>
-                        <div class="rich-text">${post.analysis}</div>
-                    </section>
+                // 렌더링 분기: 트렌드 vs 오류 해결
+                let contentHtml = '';
 
-                    <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
-
-                    <section class="content-section">
-                        <h3 style="color: #bf00ff;"><i class="fa-solid fa-star"></i> Key Features</h3>
-                        <div class="rich-text">${post.root_cause}</div>
-                        <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-terminal"></i> Installation / Quick Start</div>
-                        <div class="code-block" style="border-left: 4px solid #bf00ff;"><pre><code>${escapeHtml(post.bad_code)}</code></pre></div>
-                    </section>
-
-                    <section class="content-section">
-                        <h3 style="color: #00ccff;"><i class="fa-solid fa-lightbulb"></i> Use Cases</h3>
-                        <div class="rich-text">${post.solution_desc}</div>
-                        <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-code"></i> Code Example</div>
-                        <div class="code-block fixed"><pre><code>${escapeHtml(post.good_code)}</code></pre></div>
-                    </section>
-                `;
-            } else {
-                // [기존: 오류 해결 포맷]
-                contentHtml = `
-                    <section class="content-section">
-                        <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Analysis</h3>
-                        <div class="rich-text">${post.analysis}</div>
-                    </section>
-
-                    <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
-
-                    <section class="content-section">
-                        <h3 style="color: #ff5f5f;"><i class="fa-solid fa-circle-xmark"></i> Root Cause</h3>
-                        <div class="rich-text">${post.root_cause}</div>
-                        <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-bug"></i> Buggy Code</div>
-                        <div class="code-block bug"><pre><code>${escapeHtml(post.bad_code)}</code></pre></div>
-                    </section>
-
-                    <section class="content-section">
-                        <h3 style="color: var(--primary-color);"><i class="fa-solid fa-circle-check"></i> Solution</h3>
-                        <div class="rich-text">${post.solution_desc}</div>
-                        <div class="code-header" style="margin-top:2rem; display: flex; justify-content: space-between; align-items: center;">
-                            <span><i class="fa-solid fa-file-code"></i> Fixed Code</span>
-                            <button onclick="copyCode(this)" class="copy-btn" title="Copy Code"><i class="fa-regular fa-copy"></i></button>
-                        </div>
-                        <div class="code-block fixed"><pre><code>${escapeHtml(post.good_code)}</code></pre></div>
-                    </section>
-                `;
-            }
-
-            article.innerHTML = `
-                <div class="post-article-header">
-                    <div class="post-meta-top">
-                        <span class="lang-tag" style="background: rgba(0,255,157,0.1); padding: 2px 8px; border-radius: 4px; color: var(--primary-color);">${post.language}</span>
-                        <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>
-                    </div>
-                    <h1>${post.title}</h1>
-                    <div class="tags-container">${(post.tags || []).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
-                </div>
-
-                <div class="article-body">
-                    ${contentHtml}
-                    
-                    <div class="verification-box">
-                        <h4><i class="fa-solid fa-shield-halved"></i> Verified</h4>
-                        <p>${post.verification}</p>
-                    </div>
-                </div>
-
-                <div class="related-articles" style="margin-top: 5rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
-                    <h3 style="margin-bottom: 2rem;">Related Solutions</h3>
-                    <div id="relatedGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <!-- Injected by script -->
-                    </div>
-                </div>
-            `;
-
-            // Related Articles 렌더링
-            const grid = document.getElementById('relatedGrid');
-            if (grid && window.postsIndex) {
-                const related = window.postsIndex
-                    .filter(p => p.id !== post.id && p.language === post.language)
-                    .slice(0, 3);
-
-                if (related.length === 0) {
-                    // 같은 언어가 없으면 그냥 최신글
-                    const recent = window.postsIndex.filter(p => p.id !== post.id).slice(0, 3);
-                    related.push(...recent);
+                if (post.type === 'trend') {
+                    // [트렌드 포맷]
+                    contentHtml = `
+                        <section class="content-section">
+                            <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Analysis</h3>
+                            <div class="rich-text">${post.analysis || 'Analysis pending...'}</div>
+                        </section>
+    
+                        <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
+    
+                        <section class="content-section">
+                            <h3 style="color: #bf00ff;"><i class="fa-solid fa-star"></i> Key Features</h3>
+                            <div class="rich-text">${post.root_cause || 'Features pending...'}</div>
+                            <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-terminal"></i> Installation / Quick Start</div>
+                            <div class="code-block" style="border-left: 4px solid #bf00ff;"><pre><code>${escapeHtml(post.bad_code || '# No install instructions')}</code></pre></div>
+                        </section>
+    
+                        <section class="content-section">
+                            <h3 style="color: #00ccff;"><i class="fa-solid fa-lightbulb"></i> Use Cases</h3>
+                            <div class="rich-text">${post.solution_desc || 'Use cases pending...'}</div>
+                            <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-code"></i> Code Example</div>
+                            <div class="code-block fixed"><pre><code>${escapeHtml(post.good_code || '// No example code')}</code></pre></div>
+                        </section>
+                    `;
+                } else {
+                    // [기존: 오류 해결 포맷]
+                    contentHtml = `
+                        <section class="content-section">
+                            <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Analysis</h3>
+                            <div class="rich-text">${post.analysis || 'Analysis pending...'}</div>
+                        </section>
+    
+                        <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
+    
+                        <section class="content-section">
+                            <h3 style="color: #ff5f5f;"><i class="fa-solid fa-circle-xmark"></i> Root Cause</h3>
+                            <div class="rich-text">${post.root_cause || 'Root cause pending...'}</div>
+                            <div class="code-header" style="margin-top:2rem;"><i class="fa-solid fa-bug"></i> Buggy Code</div>
+                            <div class="code-block bug"><pre><code>${escapeHtml(post.bad_code || '// No buggy code')}</code></pre></div>
+                        </section>
+    
+                        <section class="content-section">
+                            <h3 style="color: var(--primary-color);"><i class="fa-solid fa-circle-check"></i> Solution</h3>
+                            <div class="rich-text">${post.solution_desc || 'Solution pending...'}</div>
+                            <div class="code-header" style="margin-top:2rem; display: flex; justify-content: space-between; align-items: center;">
+                                <span><i class="fa-solid fa-file-code"></i> Fixed Code</span>
+                                <button onclick="copyCode(this)" class="copy-btn" title="Copy Code"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                            <div class="code-block fixed"><pre><code>${escapeHtml(post.good_code || '// No fixed code')}</code></pre></div>
+                        </section>
+                    `;
                 }
 
-                related.forEach(p => {
-                    const card = document.createElement('a');
-                    card.href = `/pages/post.html?id=${p.id}`;
-                    card.className = 'post-card';
-                    card.style.padding = '1.5rem';
-                    card.style.textDecoration = 'none';
-                    card.style.background = 'rgba(255,255,255,0.02)';
-                    card.innerHTML = `
-                        <span class="lang-tag" style="font-size:0.75rem; margin-bottom:0.5rem; display:inline-block;">${p.language}</span>
-                        <h4 style="margin:0.5rem 0; font-size:1.1rem; color:white; line-height:1.4;">${p.title}</h4>
-                        <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:1rem;">${p.date}</div>
-                    `;
-                    grid.appendChild(card);
-                });
+                article.innerHTML = `
+                    <div class="post-article-header">
+                        <div class="post-meta-top">
+                            <span class="lang-tag" style="background: rgba(0,255,157,0.1); padding: 2px 8px; border-radius: 4px; color: var(--primary-color);">${post.language}</span>
+                            <span><i class="fa-regular fa-calendar"></i> ${post.date}</span>
+                        </div>
+                        <h1>${post.title}</h1>
+                        <div class="tags-container">${(post.tags || []).map(t => `<span class="tag">#${t}</span>`).join('')}</div>
+                    </div>
+    
+                    <div class="article-body">
+                        ${contentHtml}
+                        
+                        <div class="verification-box">
+                            <h4><i class="fa-solid fa-shield-halved"></i> Verified</h4>
+                            <p>${post.verification || 'Verified by ErrorLog AI.'}</p>
+                        </div>
+                    </div>
+    
+                    <div class="related-articles" style="margin-top: 5rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+                        <h3 style="margin-bottom: 2rem;">Related Solutions</h3>
+                        <div id="relatedGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+                            <!-- Injected by script -->
+                        </div>
+                    </div>
+                `;
+
+                // Related Articles 렌더링
+                const grid = document.getElementById('relatedGrid');
+                if (grid && window.postsIndex) {
+                    const related = window.postsIndex
+                        .filter(p => p.id !== post.id && p.language === post.language)
+                        .slice(0, 3);
+
+                    if (related.length === 0) {
+                        // 같은 언어가 없으면 그냥 최신글
+                        const recent = window.postsIndex.filter(p => p.id !== post.id).slice(0, 3);
+                        related.push(...recent);
+                    }
+
+                    related.forEach(p => {
+                        const card = document.createElement('a');
+                        card.href = `/pages/post.html?id=${p.id}`;
+                        card.className = 'post-card';
+                        card.style.padding = '1.5rem';
+                        card.style.textDecoration = 'none';
+                        card.style.background = 'rgba(255,255,255,0.02)';
+                        card.innerHTML = `
+                            <span class="lang-tag" style="font-size:0.75rem; margin-bottom:0.5rem; display:inline-block;">${p.language}</span>
+                            <h4 style="margin:0.5rem 0; font-size:1.1rem; color:white; line-height:1.4;">${p.title}</h4>
+                            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:1rem;">${p.date}</div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+            } catch (e) {
+                console.error("Rendering Error:", e);
+                document.getElementById('postDetail').innerHTML = `
+                    <div class="ad-box" style="border-color: #ff5f5f; color: #ff5f5f;">
+                        <h3>Rendering Error</h3>
+                        <p>We encountered an issue displaying this article.</p>
+                        <small>${e.message}</small>
+                    </div>`;
             }
         };
 
@@ -361,7 +374,19 @@
             if (meta) {
                 const script = document.createElement('script');
                 // 상세 데이터는 /data/posts/.. 에 있는 .js 파일임
-                script.src = meta.path.startsWith('/') ? meta.path : '/' + meta.path;
+                // Add cache busting to prevent stale data issues
+                const basePath = meta.path.startsWith('/') ? meta.path : '/' + meta.path;
+                script.src = `${basePath}?v=${new Date().getTime()}`;
+
+                script.onerror = () => {
+                    document.getElementById('postDetail').innerHTML = `
+                        <div class="ad-box" style="border-color: #ff5f5f; color: #ff5f5f;">
+                            <i class="fa-solid fa-triangle-exclamation"></i> 
+                            Failed to load post data.<br>
+                            <span style="font-size:0.8em; color:var(--text-secondary);">Error loading: ${meta.path}</span>
+                        </div>`;
+                };
+
                 document.body.appendChild(script);
             } else {
                 document.getElementById('postDetail').innerHTML = 'Post not found.';
