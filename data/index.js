@@ -1,5 +1,85 @@
 var postsIndex = [
     {
+        "title": "Resolving OCaml 5.0 Multicore GC Contention",
+        "slug": "ocaml-5-multicore-gc-contention-fix",
+        "language": "OCaml",
+        "code": "GC_STALL",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In OCaml 5.0, the introduction of parallelism via Domains changed the garbage collection landscape. While the minor heap is now domain-local, the shared major heap requires careful synchronization. High-throughput applications often experience performance degradation when multiple domains perform rapid allocations, leading to 'Stop-the-World' major GC cycles that stall parallel execution. This contention is exacerbated when domain-local allocation buffers (DLABs) are frequently exhausted.</p>",
+        "root_cause": "Excessive allocation of short-lived objects in the major heap by multiple domains, triggering frequent global synchronization barriers.",
+        "bad_code": "let run_parallel_work () =\n  let domains = Array.init 4 (fun _ -> \n    Domain.spawn (fun () -> \n      (* Rapidly allocating large arrays in a loop *)\n      for _ = 1 to 1000000 do\n        ignore (Array.make 1024 0.0)\n      done))\n  in\n  Array.iter Domain.join domains",
+        "solution_desc": "Utilize the Domainslib.Task pool to manage work distribution and reduce allocation pressure by recycling buffers or using domain-local state to avoid major heap pollution.",
+        "good_code": "let run_optimized_work () =\n  let pool = Task.setup_pool ~num_domains:4 ()\n  in\n  Task.run pool (fun () ->\n    Task.parallel_for pool ~start:1 ~finish:4 ~body:(fun _ ->\n      (* Use a pre-allocated buffer per domain to reduce GC pressure *)\n      let buffer = Array.make 1024 0.0 in\n      for _ = 1 to 1000000 do\n        compute_on buffer\n      done));\n  Task.teardown_pool pool",
+        "verification": "Run the application with OCAMLRUNPARAM='v=0x400' to monitor GC stats and ensure major GC cycles are minimized.",
+        "date": "2026-02-19",
+        "id": 1771483915,
+        "type": "error"
+    },
+    {
+        "title": "Fixing WebGPU Resource Synchronization Races",
+        "slug": "webgpu-resource-sync-race-fix",
+        "language": "TypeScript",
+        "code": "SYNC_RACE",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>WebGPU operates with an explicit synchronization model. A common error occurs when a Compute Shader writes to a GPUBuffer that is subsequently read by a Render Pipeline in the same command submission. Without a proper memory barrier or correct usage of pipeline stages, the GPU may attempt to read the buffer before the compute write has finished, resulting in flickering or incorrect data visualization.</p>",
+        "root_cause": "Missing storage-to-vertex buffer barriers and incorrect command encoder pass ordering.",
+        "bad_code": "const commandEncoder = device.createCommandEncoder();\nconst computePass = commandEncoder.beginComputePass();\ncomputePass.setPipeline(computePipeline);\ncomputePass.dispatchWorkgroups(64);\ncomputePass.end();\n\nconst renderPass = commandEncoder.beginRenderPass(renderPassDesc);\n// Race condition: render pass reads buffer while compute might still be writing\nrenderPass.setVertexBuffer(0, storageBuffer);\nrenderPass.draw(3);\nrenderPass.end();",
+        "solution_desc": "Ensure that the buffer usage includes both STORAGE and VERTEX/INDEX flags, and use a single command encoder to strictly sequence the passes. WebGPU implicitly handles transitions between passes in a single encoder, but the buffer must be declared with appropriate usage flags.",
+        "good_code": "const storageBuffer = device.createBuffer({\n  size: 65536,\n  usage: GPUBufferUsage.STORAGE | GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST\n});\n\nconst commandEncoder = device.createCommandEncoder();\nconst computePass = commandEncoder.beginComputePass();\ncomputePass.setPipeline(computePipeline);\ncomputePass.setBindGroup(0, bindGroup);\ncomputePass.dispatchWorkgroups(64);\ncomputePass.end();\n\n// The implementation automatically inserts a barrier here\nconst renderPass = commandEncoder.beginRenderPass(renderPassDesc);\nrenderPass.setPipeline(renderPipeline);\nrenderPass.setVertexBuffer(0, storageBuffer);\nrenderPass.draw(1000);\nrenderPass.end();\n\ndevice.queue.submit([commandEncoder.finish()]);",
+        "verification": "Use the browser's WebGPU inspection tools or the 'WebGPU Error Scope' to check for validation errors related to resource contention.",
+        "date": "2026-02-19",
+        "id": 1771483916,
+        "type": "error"
+    },
+    {
+        "title": "Debugging Terraform State Lock Deadlocks",
+        "slug": "terraform-state-lock-deadlock",
+        "language": "HCL",
+        "code": "TF_LOCK_ERROR",
+        "tags": [
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>In concurrent CI/CD environments, Terraform uses a locking mechanism (e.g., DynamoDB for AWS S3 backend) to prevent multiple processes from modifying state simultaneously. A deadlock or 'ghost lock' occurs when a CI runner crashes or is terminated mid-apply, leaving the LockID in the database. Subsequent runs fail with a 423 Locked error, even though no process is actually running.</p>",
+        "root_cause": "Interrupted CI/CD jobs failing to release DynamoDB LockID records during the 'terraform apply' phase.",
+        "bad_code": "jobs:\n  terraform:\n    runs-on: ubuntu-latest\n    steps:\n      - run: terraform apply -auto-approve # No timeout or error handling",
+        "solution_desc": "Implement a lock timeout in the Terraform command and use a 'trap' or 'always' cleanup step in CI to force-unlock or alert when locks persist longer than expected.",
+        "good_code": "jobs:\n  terraform:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Terraform Apply\n        run: terraform apply -lock-timeout=3m -auto-approve\n      - name: Force Unlock (Manual Intervention)\n        if: failure()\n        run: | \n          LOCK_ID=$(terraform output -raw lock_id || echo \"none\")\n          if [ \"$LOCK_ID\" != \"none\" ]; then\n            terraform force-unlock -force $LOCK_ID\n          fi",
+        "verification": "Check the DynamoDB 'LockID' table to ensure entries are deleted after the workflow completes or fails.",
+        "date": "2026-02-19",
+        "id": 1771483917,
+        "type": "error"
+    },
+    {
+        "title": "Analyze ZeroClaw: The High-Speed AI Infrastructure",
+        "slug": "zeroclaw-labs-ai-infrastructure-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI community due to its 'zero-overhead' philosophy. Unlike LangChain or AutoGPT, which introduce heavy abstractions, ZeroClaw provides a thin, high-performance layer for autonomous agents. It focuses on modularity, allowing developers to swap LLM providers (OpenAI, Anthropic, or Local Llama) without refactoring the core agent logic. Its tiny footprint makes it ideal for edge deployment and high-concurrency agent swarms.</p>",
+        "root_cause": "Key Features: Sub-100ms internal latency, plug-and-play LLM adapters, and a fully autonomous 'loop' architecture that minimizes token overhead.",
+        "bad_code": "pip install zeroclaw-labs\nzeroclaw init my-agent",
+        "solution_desc": "Best used for real-time autonomous systems, such as automated trading bots, local-first RAG applications, and specialized micro-agents where latency is critical.",
+        "good_code": "from zeroclaw import Agent, ModelType\n\n# Define a tiny, autonomous researcher agent\nagent = Agent(\n    name=\"Researcher\",\n    model=ModelType.LLAMA_3_LOCAL,\n    autonomous=True\n)\n\nagent.run(\"Analyze the current market trends for HBM memory.\")",
+        "verification": "ZeroClaw is positioned to become the 'Standard Library' for developers who find current AI frameworks too bloated for production-scale autonomy.",
+        "date": "2026-02-19",
+        "id": 1771483918,
+        "type": "trend"
+    },
+    {
         "title": "Debugging Kubernetes CFS Bandwidth Throttling",
         "slug": "k8s-cfs-throttling-latency",
         "language": "Kubernetes",
