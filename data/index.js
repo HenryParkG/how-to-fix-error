@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Debugging Kubernetes CFS Bandwidth Throttling",
+        "slug": "k8s-cfs-throttling-latency",
+        "language": "Kubernetes",
+        "code": "CPU Throttling",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Kubernetes uses Completely Fair Scheduler (CFS) quotas to enforce CPU limits. However, many developers encounter significant tail latency (p99) even when the average CPU utilization is well below the limit. This happens because the Linux kernel checks usage over very short periods (usually 100ms). If a multi-threaded application consumes its entire quota in the first 10ms of that window, it is throttled for the remaining 90ms, causing massive latency spikes despite appearing 'idle' on average metrics.</p>",
+        "root_cause": "The CFS quota mechanism enforces limits per period. High-concurrency runtimes (Go, Java) can burst across many cores simultaneously, exhausting the quota in a fraction of the enforcement interval.",
+        "bad_code": "resources:\n  limits:\n    cpu: \"200m\"\n  requests:\n    cpu: \"200m\"",
+        "solution_desc": "Increase the CPU limit to allow for bursts or enable the CPU Burst feature in newer Linux kernels (5.14+). Alternatively, remove limits and rely on requests and CPU shares if the node is not overcommitted.",
+        "good_code": "resources:\n  limits:\n    cpu: \"1000m\" # Higher headroom for bursts\n  requests:\n    cpu: \"200m\"",
+        "verification": "Monitor the Prometheus metric 'container_cpu_cfs_throttled_periods_total'. A rising count indicates the fix is still needed.",
+        "date": "2026-02-19",
+        "id": 1771476491,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Elixir OTP Process Mailbox Overflow",
+        "slug": "elixir-otp-mailbox-overflow",
+        "language": "Go",
+        "code": "Mailbox Overflow",
+        "tags": [
+            "Go",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-throughput Elixir/Erlang applications, the 'Share Nothing' architecture relies on message passing. If a GenServer receives messages faster than its 'handle_info' or 'handle_call' callbacks can process them, the process mailbox grows indefinitely. This leads to increased memory consumption and eventually triggers the Out Of Memory (OOM) killer, as Erlang processes do not have a default limit on mailbox size.</p>",
+        "root_cause": "Lack of backpressure in the producer-consumer pipeline, causing a bottlenecked GenServer to accumulate unhandled messages in its private heap.",
+        "bad_code": "def handle_cast({:process_data, data}, state) do\n  # Slow synchronous work here\n  :timer.sleep(100)\n  {:noreply, state}\nend",
+        "solution_desc": "Implement backpressure using GenStage or Broadway. This ensures the producer only sends messages when the consumer has signaled demand (pull-based model).",
+        "good_code": "defmodule MyConsumer do\n  use GenStage\n  def handle_events(events, _from, state) do\n    Enum.each(events, &process_data/1)\n    {:noreply, [], state}\n  end\nend",
+        "verification": "Use ':observer.start()' or 'Process.info(pid, :message_queue_len)' to verify the queue length remains stable under load.",
+        "date": "2026-02-19",
+        "id": 1771476492,
+        "type": "error"
+    },
+    {
+        "title": "Fixing PostgreSQL Transaction ID (XID) Wraparound",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "XID Wraparound",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses a 32-bit integer for Transaction IDs (XIDs), providing roughly 4 billion IDs. When the counter approaches this limit, the database must 'freeze' old transactions to reuse IDs. If high write volume outpaces the Autovacuum process, the database will eventually shut down and enter read-only mode to prevent data corruption, a state known as XID Wraparound failure.</p>",
+        "root_cause": "Autovacuum settings are too conservative for high-write workloads, preventing the background process from cleaning and freezing tuples fast enough.",
+        "bad_code": "autovacuum_vacuum_scale_factor = 0.2\nautovacuum_freeze_max_age = 200000000",
+        "solution_desc": "Tune autovacuum to trigger more aggressively by reducing the scale factor and increasing the vacuum cost limit. Manually run VACUUM FREEZE on the largest tables if the age is critical.",
+        "good_code": "ALTER TABLE large_table SET (autovacuum_vacuum_scale_factor = 0.01);\nSET autovacuum_vacuum_cost_limit = 1000;",
+        "verification": "Run 'SELECT datname, age(datfrozenxid) FROM pg_database;' and ensure the age is decreasing toward 0.",
+        "date": "2026-02-19",
+        "id": 1771476493,
+        "type": "error"
+    },
+    {
+        "title": "ZeroClaw: The Autonomous AI Assistant Infrastructure",
+        "slug": "zeroclaw-ai-assistant-infra",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI community because it provides a lightweight, modular infrastructure for deploying fully autonomous agents. Unlike bloated frameworks, ZeroClaw focuses on a 'swap-anything' architecture, allowing developers to plug in different LLMs, vector stores, and tools without rewriting the core logic. Its ability to run on edge devices while maintaining complex reasoning capabilities makes it a favorite for local-first AI developers.</p>",
+        "root_cause": "Features include sub-second tool invocation, native support for multi-agent orchestration, and a zero-dependency core that simplifies containerized deployments.",
+        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw && cd zeroclaw && pip install .",
+        "solution_desc": "Ideal for building privacy-focused personal assistants, automated DevOps agents, or any application requiring autonomous decision-making without high cloud overhead.",
+        "good_code": "from zeroclaw import Assistant\n\nagent = Assistant(model='gpt-4o', tools=['web_search', 'shell'])\nagent.run(\"Analyze my local logs and summarize errors.\")",
+        "verification": "The project is positioned to become the 'Docker for AI Agents,' with a roadmap focusing on decentralized agent-to-agent communication protocols.",
+        "date": "2026-02-19",
+        "id": 1771476494,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Zig Comptime Memory Exhaustion",
         "slug": "fixing-zig-comptime-memory-exhaustion",
         "language": "Zig",
