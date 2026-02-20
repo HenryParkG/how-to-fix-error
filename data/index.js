@@ -1,5 +1,87 @@
 var postsIndex = [
     {
+        "title": "Fixing Go Scheduler Starvation in Tight CGO Loops",
+        "slug": "fix-go-scheduler-cgo-starvation",
+        "language": "Go",
+        "code": "Runtime Starvation",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>When a Goroutine enters a CGO call, the Go runtime relinquishes control of the OS thread (M) to the C code. While the runtime marks this thread as 'in syscall', a tight loop in CGO that executes frequently—but for very short durations—can prevent the Go scheduler from preempting the Goroutine. This leads to 'scheduler starvation' where other Goroutines on the same P (Processor) are blocked from executing, causing latency spikes and decreased throughput.</p>",
+        "root_cause": "The Go scheduler relies on cooperative preemption points (like function calls or I/O). In a tight loop calling CGO, the transition between Go and C happens so fast that the background sysmon thread may not detect a long-running syscall, yet the Goroutine never reaches a Go-land preemption point to allow other tasks to run.",
+        "bad_code": "package main\n\n/*\n#include <unistd.h>\nvoid fast_c_call() {}\n*/\nimport \"C\"\n\nfunc main() {\n    // This tight loop can starve the scheduler\n    for {\n        C.fast_c_call()\n    }\n}",
+        "solution_desc": "To fix this, manually invoke the Go scheduler using runtime.Gosched() within the loop to yield the processor. Alternatively, if the C code is computationally expensive and long-running, use runtime.LockOSThread() to ensure the Goroutine stays on its own dedicated thread, or move the logic into a separate worker pool to avoid saturating the primary execution context.",
+        "good_code": "package main\n\nimport (\n    \"runtime\"\n)\n\n/*\n#include <unistd.h>\nvoid fast_c_call() {}\n*/\nimport \"C\"\n\nfunc main() {\n    for {\n        C.fast_c_call()\n        // Explicitly yield to let other goroutines run\n        runtime.Gosched()\n    }\n}",
+        "verification": "Use 'go tool trace' to visualize processor utilization. If starvation occurs, you will see long gaps in P utilization despite active Goroutines. After the fix, P utilization should show more frequent context switching.",
+        "date": "2026-02-20",
+        "id": 1771580108,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXID Exhaustion",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses 32-bit transaction IDs (TXIDs). Because these IDs are finite (~4 billion), the database must 'freeze' old transaction IDs to recycle them. In high-write volume clusters, if the autovacuum process cannot keep up with the rate of new transactions, the database will eventually reach the 'wraparound' threshold. At this point, PostgreSQL forces a shutdown to prevent data corruption, as new transactions would overlap with old, unfrozen ones.</p>",
+        "root_cause": "The autovacuum worker is throttled by default or blocked by long-running transactions/orphaned prepared transactions, preventing the 'relfrozenxid' (the horizon of frozen transactions) from advancing.",
+        "bad_code": "-- Default settings often insufficient for 10k+ writes/sec\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2; -- 20% is too high for large tables\nALTER SYSTEM SET autovacuum_cost_limit = 200; -- Too slow for high-write loads",
+        "solution_desc": "Lower the autovacuum scale factors to trigger vacuuming more frequently on large tables and increase the cost limit to allow vacuuming to work faster. Additionally, identify and terminate long-standing idle transactions that block the frozen horizon.",
+        "good_code": "-- Aggressive autovacuum tuning for high-volume clusters\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.01;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 2000;\nALTER SYSTEM SET autovacuum_max_workers = 10;\n\n-- Query to find tables closest to wraparound:\nSELECT relname, age(relfrozenxid) FROM pg_class WHERE relkind = 'r' ORDER BY 2 DESC LIMIT 10;",
+        "verification": "Monitor the 'age(relfrozenxid)' for all tables. The value should stay well below 200 million. Use Prometheus pg_stat_activity metrics to alert when any table age exceeds 500 million.",
+        "date": "2026-02-20",
+        "id": 1771580109,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "Mailbox Overflow",
+        "tags": [
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>Elixir processes have a single mailbox. When using 'selective receive' (manual receive blocks inside a GenServer callback), the Erlang VM must scan the entire mailbox to find a matching message. If the GenServer receives a high volume of messages that do not match the selective pattern, those messages accumulate, and every subsequent scan becomes an O(N) operation, eventually leading to process crashes or extreme CPU spikes.</p>",
+        "root_cause": "Implementing a manual 'receive' block inside a 'handle_info' or 'handle_call' that waits for a specific message, forcing the BEAM to traverse potentially thousands of unrelated messages already in the queue.",
+        "bad_code": "def handle_info(:start_task, state) do\n  send(self(), :sub_task)\n  # BAD: Selective receive inside a GenServer callback\n  receive do\n    :sub_task -> \n      do_work()\n  end\n  {:noreply, state}\nend",
+        "solution_desc": "Never use manual 'receive' blocks inside GenServer callbacks. Instead, rely on the standard GenServer message handling loop. Use state to track the progress of multi-step operations and handle each step as a separate 'handle_info' or 'handle_cast' callback.",
+        "good_code": "def handle_info(:start_task, state) do\n  send(self(), :sub_task)\n  {:noreply, %{state | status: :pending}}\nend\n\ndef handle_info(:sub_task, %{status: :pending} = state) do\n  do_work()\n  {:noreply, %{state | status: :idle}}\nend",
+        "verification": "Check process mailbox size using ':erlang.process_info(pid, :message_queue_len)'. If the length grows continuously while CPU usage is high, selective receive is the likely culprit.",
+        "date": "2026-02-20",
+        "id": 1771580110,
+        "type": "error"
+    },
+    {
+        "title": "ClawWork: The AI Agent Coworker Taking Over GitHub",
+        "slug": "hkuds-clawwork-ai-coworker-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork (OpenClaw) has exploded in popularity by positioning itself as more than just a chatbot; it is a full-fledged 'AI Coworker'. Its viral claim of earning $10K in 7 hours highlights its efficiency in automating complex, multi-step workflows like bug bounty hunting, automated coding, and data mining. It leverages the latest advances in 'Computer Use' (like Claude 3.5 Sonnet's capability) to interact with local environments and browsers as a human would.</p>",
+        "root_cause": "Key innovations include its Multi-Agent Collaboration framework, where different AI roles (Architect, Coder, Reviewer) work together, and its robust 'Tool-Use' layer that allows the AI to execute shell commands and browse the web securely.",
+        "bad_code": "# Installation is straightforward via Python\ngit clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\npython main.py --task \"Fix issues in my local repo\"",
+        "solution_desc": "ClawWork is best used for high-complexity tasks that require feedback loops—such as fixing failing CI/CD pipelines, performing market research with browser navigation, or generating complex codebases from scratch. It is recommended for developers looking to automate the 'to-do list' aspects of their engineering work.",
+        "good_code": "from clawwork import Agent\n\n# Defining a task for the AI coworker\nagent = Agent(role=\"Security Researcher\")\nagent.run(\"Audit the ./src directory for SQL injection and draft a report.\")",
+        "verification": "The project is rapidly evolving. Watch for upcoming integrations with VS Code extensions and more specialized 'Worker' templates for various industries (Legal, DevOps, Finance).",
+        "date": "2026-02-20",
+        "id": 1771580111,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Zig SIMD Memory Alignment Faults",
         "slug": "zig-simd-memory-alignment-faults",
         "language": "Zig",
