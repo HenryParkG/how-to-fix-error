@@ -1,5 +1,89 @@
 var postsIndex = [
     {
+        "title": "Fixing C++20 Coroutine Promise Object Leaks",
+        "slug": "cpp20-coroutine-promise-leaks-fix",
+        "language": "Rust",
+        "code": "MemoryLeak",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-throughput C++20 runtimes, coroutine state is typically allocated on the heap. A common issue arises when the coroutine handle's ownership is ambiguous. If a coroutine reaches its <code>final_suspend</code> point and returns <code>std::suspend_always</code>, the coroutine frame is not automatically destroyed. Failure to call <code>.destroy()</code> on the handle results in a persistent memory leak that accumulates rapidly under high load.</p>",
+        "root_cause": "The coroutine frame is not reclaimed because the promise_type's final_suspend prevents automatic destruction, and the owner fails to call destroy().",
+        "bad_code": "struct Task {\n  struct promise_type {\n    std::suspend_always final_suspend() noexcept { return {}; }\n    // ... other methods\n  };\n  // Handle is lost or never destroyed\n  std::coroutine_handle<promise_type> _h;\n};",
+        "solution_desc": "Implement a RAII wrapper for the coroutine handle that ensures destroy() is called in the destructor, and ensure the final_suspend logic aligns with your memory management strategy.",
+        "good_code": "struct Task {\n  ~Task() { if (_h) _h.destroy(); }\n  Task(Task&& other) : _h(std::exchange(other._h, {})) {}\n  struct promise_type {\n    std::suspend_always final_suspend() noexcept { return {}; }\n    Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n  };\n  std::coroutine_handle<promise_type> _h;\n};",
+        "verification": "Monitor process RSS memory usage and use Valgrind or AddressSanitizer (ASan) to detect leaked coroutine frames.",
+        "date": "2026-02-20",
+        "id": 1771550069,
+        "type": "error"
+    },
+    {
+        "title": "Fixing PyTorch DDP Gradient Bucket Deadlocks",
+        "slug": "pytorch-ddp-gradient-deadlocks",
+        "language": "Python",
+        "code": "RuntimeError",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ],
+        "analysis": "<p>Distributed Data Parallel (DDP) in PyTorch synchronizes gradients by grouping them into buckets and performing All-Reduce operations. If your model's forward pass has conditional logic where certain parameters are used on Rank 0 but not on Rank 1, the gradient reduction order differs. This causes ranks to wait indefinitely for buckets that will never be filled, leading to a cluster-wide deadlock.</p>",
+        "root_cause": "Inconsistent parameter usage across different distributed ranks during the forward pass, leading to out-of-sync gradient reduction buckets.",
+        "bad_code": "def forward(self, x, rank):\n    if rank == 0:\n        return self.layer1(x)\n    else:\n        return self.layer2(x) # Deadlock: Rank 0/1 wait for different buckets",
+        "solution_desc": "Set 'find_unused_parameters=True' in the DDP wrapper or ensure all parameters participate in the graph. Alternatively, use static graphs if possible to pre-calculate buckets.",
+        "good_code": "model = DistributedDataParallel(\n    model, \n    device_ids=[rank], \n    find_unused_parameters=True\n)",
+        "verification": "Check if training proceeds past the first backward pass across all ranks without hanging.",
+        "date": "2026-02-20",
+        "id": 1771550070,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating Redis CoW Memory Bloat in RDB",
+        "slug": "redis-cow-memory-bloat-fix",
+        "language": "Go",
+        "code": "OOMKiller",
+        "tags": [
+            "Docker",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ],
+        "analysis": "<p>When Redis triggers a background save (BGSAVE), it forks a child process. Linux uses Copy-on-Write (CoW) to manage memory. However, if 'Transparent Huge Pages' (THP) is enabled, the kernel copies 2MB chunks instead of 4KB pages even for tiny writes. This leads to massive memory amplification during the snapshotting period, often triggering the OOM Killer.</p>",
+        "root_cause": "Transparent Huge Pages (THP) causing excessive memory duplication during the fork-based RDB snapshotting process.",
+        "bad_code": "# Current system state often defaults to:\ncat /sys/kernel/mm/transparent_hugepage/enabled\n# Output: [always] madvise never",
+        "solution_desc": "Disable Transparent Huge Pages at the OS level and ensure 'overcommit_memory' is set to 1 to allow the fork to succeed without over-allocating physical RAM.",
+        "good_code": "echo never > /sys/kernel/mm/transparent_hugepage/enabled\necho never > /sys/kernel/mm/transparent_hugepage/defrag\nsysctl vm.overcommit_memory=1",
+        "verification": "Compare the 'mem_fragmentation_ratio' and 'used_memory_peak' during RDB snapshots before and after the change.",
+        "date": "2026-02-20",
+        "id": 1771550071,
+        "type": "error"
+    },
+    {
+        "title": "ClawWork: The AI Coworker Scaling OpenClaw",
+        "slug": "clawwork-ai-coworker-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ],
+        "analysis": "<p>ClawWork (HKUDS/ClawWork) is a trending multi-agent framework designed to turn LLMs into 'AI Coworkers'. Unlike standard chatbots, it focuses on 'Agentic Workflows' where the AI can autonomously operate browsers, debug code, and handle financial transactions. Its viral success ($10k in 7 hours) highlights a shift from AI as an assistant to AI as an autonomous revenue-generating agent.</p>",
+        "root_cause": "Advanced Multi-Agent orchestration, integrated browser/terminal tools, and a focus on task-completion-as-a-service.",
+        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env",
+        "solution_desc": "Ideal for automating complex, multi-step business processes like data extraction, automated testing, and software development tasks requiring environment interaction.",
+        "good_code": "from clawwork import Agent\n\nworker = Agent(role=\"Researcher\")\nworker.run(\"Find the top 5 trending AI repos and summarize their READMEs\")",
+        "verification": "The project is rapidly evolving with high community involvement; expect tight integration with Claude 3.5 Sonnet and GPT-4o models.",
+        "date": "2026-02-20",
+        "id": 1771550072,
+        "type": "trend"
+    },
+    {
         "title": "Fixing eBPF Verifier State-Space Explosion",
         "slug": "ebpf-verifier-state-space-explosion",
         "language": "C / BPF",
