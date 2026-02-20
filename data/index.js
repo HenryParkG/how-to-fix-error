@@ -1,5 +1,87 @@
 var postsIndex = [
     {
+        "title": "Fixing Linux Kernel RCU Stall Warnings in Containers",
+        "slug": "fixing-linux-kernel-rcu-stalls-containers",
+        "language": "C",
+        "code": "RCU_STALL",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>RCU (Read-Copy-Update) stall warnings occur when a grace period fails to complete within a specified timeout. In high-density container environments, this is frequently triggered by CPU overcommitment or 'Steal Time' from the hypervisor. When the Linux scheduler cannot grant enough cycles to the RCU callback threads, the kernel assumes a deadlock or a hung processor, leading to log spam or kernel panics.</p>",
+        "root_cause": "Excessive vCPU contention and interrupt masking in multi-tenant environments preventing RCU grace periods from advancing.",
+        "bad_code": "# Default settings often too aggressive for overcommitted cloud nodes\nkernel.rcu_cpu_stall_timeout = 21\n# No offloading of RCU callbacks\nGRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"",
+        "solution_desc": "Increase the stall timeout via sysctl and offload RCU callback processing to specific 'nocb' CPUs to reduce interference with application threads.",
+        "good_code": "# Increase timeout to 60 seconds\nsysctl -w kernel.rcu_cpu_stall_timeout=60\n\n# Offload RCU in GRUB for CPUs 1-15\nGRUB_CMDLINE_LINUX_DEFAULT=\"rcu_nocbs=1-15\"",
+        "verification": "Check dmesg for 'rcu_preempt detected stalls' after applying sysctl and verify /sys/module/rcutree/parameters/rcu_cpu_stall_timeout.",
+        "date": "2026-02-20",
+        "id": 1771562601,
+        "type": "error"
+    },
+    {
+        "title": "Diagnosing Haskell Space Leaks in Lazy Pipelines",
+        "slug": "diagnosing-haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "SPACE_LEAK",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ],
+        "analysis": "<p>Haskell's lazy evaluation strategy can lead to 'space leaks' where the runtime builds up a massive chain of unevaluated expressions, known as thunks. In high-throughput data pipelines, these thunks consume the heap until the process hits an Out-Of-Memory (OOM) error, even if the actual data being processed is small. This is particularly common when using lazy folds on long-lived state.</p>",
+        "root_cause": "Accumulation of unevaluated thunks in the heap due to non-strict evaluation of recursive accumulators.",
+        "bad_code": "-- Standard lazy fold builds a massive thunk\nsumList :: [Int] -> Int\nsumList = foldl (\\acc x -> acc + x) 0",
+        "solution_desc": "Switch to strict evaluation using the strict version of fold (foldl') and use BangPatterns to force evaluation of the accumulator at each step.",
+        "good_code": "import Data.List (foldl')\n\n-- foldl' forces the evaluation of the accumulator\nsumListStrict :: [Int] -> Int\nsumListStrict = foldl' (\\acc x -> acc + x) 0",
+        "verification": "Run the program with GHC profiling enabled (+RTS -s) and monitor the 'Total Memory In Use' metric.",
+        "date": "2026-02-20",
+        "id": 1771562602,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Go",
+        "code": "CACHE_STALL",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>MongoDB's WiredTiger storage engine uses a cache to manage data pages. Under heavy write pressure, the percentage of 'dirty' pages can exceed the eviction trigger. When this happens, WiredTiger forces application threads to assist with eviction, leading to massive latency spikes (stalls). This is often misdiagnosed as disk I/O bottlenecks when it is actually a cache tuning issue.</p>",
+        "root_cause": "The rate of data ingress exceeds the capacity of background eviction threads, triggering application-level stalls.",
+        "bad_code": "// Default config allows dirty pages to reach 20% before aggressive eviction\nstorage.wiredTiger.engineConfig.configString: \"\"\n// Application side doesn't account for backpressure",
+        "solution_desc": "Lower the eviction triggers and targets to start background eviction earlier, ensuring that dirty pages never reach the threshold that triggers application-level stalls.",
+        "good_code": "db.adminCommand({\n  setParameter: 1,\n  wiredTigerEngineRuntimeConfig: \"eviction_target=70,eviction_trigger=80,eviction_dirty_target=5,eviction_dirty_trigger=10\"\n})",
+        "verification": "Monitor the 'wiredTiger.cache.tracked dirty bytes in the cache' metric using mongostat or Atlas metrics.",
+        "date": "2026-02-20",
+        "id": 1771562603,
+        "type": "error"
+    },
+    {
+        "title": "ClawWork: Why OpenClaw is Trending and How to Use It",
+        "slug": "clawwork-ai-coworker-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork (OpenClaw) is trending because it bridges the gap between AI chat and autonomous engineering. It gained notoriety by demonstrating a $10,000 earning capability in just 7 hours through automated task completion on bounty platforms. Unlike simple wrappers, ClawWork utilizes a sophisticated 'Agent-Coworker' architecture that integrates directly with IDEs and terminal environments to solve complex tickets autonomously.</p>",
+        "root_cause": "Key Features: Multi-agent coordination, real-time environment feedback loops, and an integrated 'Economic Brain' for task prioritization and execution.",
+        "bad_code": "# Quick Start\ngit clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork && pip install -r requirements.txt\nexport OPENAI_API_KEY='your_key'",
+        "solution_desc": "Best for automating repetitive PR fixes, migrating legacy codebases, and managing open-source issue triaging where autonomous context-gathering is required.",
+        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(role=\"Software Engineer\")\nagent.run_task(\"Refactor the authentication module to use JWT instead of sessions\")",
+        "verification": "The future of ClawWork points toward 'Autonomous DevOps' where agents handle the entire CI/CD feedback loop without human intervention.",
+        "date": "2026-02-20",
+        "id": 1771562604,
+        "type": "trend"
+    },
+    {
         "title": "Fixing C++20 Coroutine Promise Object Leaks",
         "slug": "cpp20-coroutine-promise-leaks-fix",
         "language": "Rust",
