@@ -1,5 +1,87 @@
 var postsIndex = [
     {
+        "title": "Fixing Zig SIMD Memory Alignment Faults",
+        "slug": "zig-simd-memory-alignment-faults",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>When performing manual SIMD vectorization in Zig using <code>@Vector</code>, the CPU requires data to be aligned to specific byte boundaries (e.g., 16, 32, or 64 bytes depending on the instruction set like AVX2 or NEON). If a pointer to a generic array is cast to a vector pointer without ensuring these alignment constraints, the program will trigger a memory alignment fault (SIGBUS or EXC_I386_GPFLT), especially on architectures that do not support unaligned loads for specific SIMD intrinsics.</p>",
+        "root_cause": "The specific technical reason for failure is the use of `@ptrCast` on a slice with the default alignment (usually 1 or 8) to a SIMD vector type that expects stricter hardware-level alignment.",
+        "bad_code": "const data: []u8 = get_raw_buffer();\nconst vec_ptr: *const @Vector(16, u8) = @ptrCast(data.ptr);\n// This crashes if data.ptr is not 16-byte aligned\nconst vec = vec_ptr.*;",
+        "solution_desc": "To fix this, you must ensure the source memory is explicitly aligned during allocation or use `@alignCast` to inform the compiler of the alignment. For runtime-checked safety, use `std.mem.alignPointer`. Architecturally, it is better to use `std.heap.page_allocator` or a custom allocator that guarantees the required alignment for SIMD operations.",
+        "good_code": "const data: []u8 = try allocator.allocAdvanced(u8, 16, size, .at_least);\ndefer allocator.free(data);\n\n// Use @alignCast to safely treat the pointer as aligned\nconst aligned_ptr: [*]align(16) u8 = @alignCast(data.ptr);\nconst vec: @Vector(16, u8) = aligned_ptr[0..16].*;",
+        "verification": "Compile with `zig build-exe` and run through `valgrind --tool=memcheck` or use Zig's built-in safety checks in `Debug` mode to ensure no alignment panics occur.",
+        "date": "2026-02-20",
+        "id": 1771569848,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating HNSW Graph Decay in Vector DBs",
+        "slug": "hnsw-index-connectivity-decay",
+        "language": "Python",
+        "code": "RecallDrop",
+        "tags": [
+            "Python",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>Hierarchical Navigable Small World (HNSW) indexes are highly efficient for ANN search but suffer from 'graph decay' during incremental updates. When vectors are deleted or updated, the edges connecting nodes in the multi-layered graph are removed. Without a repair mechanism, this creates 'island' nodes or reduces the path diversity, leading to a significant drop in search recall over time despite the index containing the correct data.</p>",
+        "root_cause": "Standard HNSW implementations often perform 'soft deletes' or simple edge removal without re-evaluating the M-closest neighbors for orphaned nodes, leading to a fragmented graph topology.",
+        "bad_code": "import hnswlib\nindex = hnswlib.Index(space='l2', dim=128)\nindex.init_index(max_elements=10000)\n\n# Frequent updates lead to decay\nfor i in range(1000):\n    index.mark_deleted(i)\n    index.add_items(new_vector, i)",
+        "solution_desc": "Implement a 'Repair-on-Update' strategy or periodic background compaction. Instead of just marking nodes as deleted, use a library that supports dynamic edge re-linking or trigger a partial rebuild of the affected neighborhood. For production systems, tracking the 'Mean Connectivity' metric helps determine when to trigger a full index optimization.",
+        "good_code": "# Use a managed approach with edge repair\ndef update_vector(index, id, vector):\n    # Some implementations support explicit repair\n    # If not, use a threshold-based rebuild\n    index.mark_deleted(id)\n    index.add_items(vector, id)\n    \n    if index.get_deleted_count() > index.get_capacity() * 0.2:\n        # Rebuild index to restore global connectivity\n        index.compact_and_repair()",
+        "verification": "Monitor the Recall@K metric against a golden dataset after 10,000 incremental updates. If recall stays within 1% of the initial state, the mitigation is successful.",
+        "date": "2026-02-20",
+        "id": 1771569849,
+        "type": "error"
+    },
+    {
+        "title": "Fixing gRPC Stream Window Exhaustion in Istio",
+        "slug": "grpc-istio-window-exhaustion",
+        "language": "Go",
+        "code": "StreamStall",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>In an Istio service mesh, gRPC communication relies on HTTP/2 flow control. Each stream has a 'window size' (buffer) that limits how much data can be in flight. If a consumer is slow or if Envoy's default buffer settings (usually 64KB) are too small for high-bandwidth streams, the window becomes exhausted. The sender receives a 'Window Update' delay, causing the stream to hang or latency to spike despite low CPU usage.</p>",
+        "root_cause": "The mismatch between the application's gRPC InitialWindowSize and Envoy's default `initial_stream_window_size` in the Istio sidecar ingress/egress listeners.",
+        "bad_code": "// Default Istio Ingress or Sidecar without tuning\napiVersion: networking.istio.io/v1alpha3\nkind: Gateway\nspec:\n  selector:\n    istio: ingressgateway\n  servers:\n  - port:\n      number: 80\n      name: grpc\n      protocol: GRPC",
+        "solution_desc": "Apply an `EnvoyFilter` to increase the HTTP/2 window sizes for the specific workload. This allows more data to be buffered in the sidecar proxy before requiring an ACK from the receiving application, effectively 'fattening the pipe' for high-throughput gRPC streams.",
+        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: EnvoyFilter\nspec:\n  configPatches:\n  - applyTo: HTTP_PROTOCOL_OPTIONS\n    patch:\n      operation: MERGE\n      value:\n        http2_protocol_options:\n          initial_stream_window_size: 1048576 # 1MB\n          initial_connection_window_size: 1048576",
+        "verification": "Check Envoy statistics using `kubectl exec -it [POD] -c istio-proxy -- pilot-agent request GET stats | grep 'http2.pending_send_window'`. A non-zero, stable value indicates healthy flow.",
+        "date": "2026-02-20",
+        "id": 1771569850,
+        "type": "error"
+    },
+    {
+        "title": "ClawWork: The AI Coworker Revolution",
+        "slug": "clawwork-ai-coworker-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork (OpenClaw) is trending due to its 'AI Coworker' paradigm, moving beyond simple chat interfaces to an autonomous agent capable of executing complex workflows. The repository gained massive traction after demonstrating a '$10k earned in 7 hours' use case, which highlighted the tool's ability to automate freelance tasks, bug hunting, and web-based operations. Built by the University of Hong Kong's Data Science Lab, it leverages LLMs to navigate browsers and IDEs with human-like reasoning.</p>",
+        "root_cause": "Key Features & Innovations: 1. Autonomous Task Decomposition (breaking complex goals into sub-tasks). 2. Multi-modal Web Interaction (seeing and clicking like a human). 3. Built-in Sandbox for safe code execution. 4. Economic Integration (ability to handle 'bounties' or paid tasks).",
+        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env # Add your LLM API Key",
+        "solution_desc": "Best Use Cases: Automating repetitive front-end testing, data scraping behind complex authentication, and assisting in high-volume open-source contributions. It is best adopted by startups looking to scale operations without increasing head-count for routine digital tasks.",
+        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(role=\"Software Engineer\")\nagent.run(\"Research the latest Zig SIMD trends and write a demo script.\")\n# ClawWork navigates GitHub, tests code, and saves the output.",
+        "verification": "The future outlook suggests ClawWork will evolve into a 'Plugin' architecture where users can share 'Skills' (pre-recorded workflow patterns), potentially creating a marketplace for autonomous agent behaviors.",
+        "date": "2026-02-20",
+        "id": 1771569851,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Linux Kernel RCU Stall Warnings in Containers",
         "slug": "fixing-linux-kernel-rcu-stalls-containers",
         "language": "C",
