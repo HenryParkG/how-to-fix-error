@@ -1,5 +1,86 @@
 var postsIndex = [
     {
+        "title": "Fixing Rust Pinning Violations in Async Futures",
+        "slug": "rust-pinning-violations-async-futures",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Rust's async ecosystem, self-referential structures are a common source of memory unsafety. When an async block is compiled, the compiler generates a state machine. If this machine contains references to its own fields (self-referential), moving the future in memory invalidates those internal pointers, leading to undefined behavior.</p><p>The <code>Pin</code> wrapper was introduced to guarantee that the data it points to will not be moved until it is dropped, ensuring that internal references remains valid throughout the future's lifecycle.</p>",
+        "root_cause": "Moving a self-referential async future after it has started execution, which invalidates internal pointers used by the generated state machine.",
+        "bad_code": "async fn self_reference() {\n    let mut x = 5;\n    let y = &x;\n    // If this future is moved after this point, 'y' becomes a dangling pointer\n    pending!();\n    println!(\"{}\", y);\n}\n\n// Error: Cannot move out of a future that is not Unpin\nlet mut fut = self_reference();\nlet mut boxed_fut = fut; // Move occurs here",
+        "solution_desc": "To safely handle futures that might be self-referential, use Box::pin to allocate the future on the heap. This pins the data to a stable memory address. Once pinned, the pointer to the data can be moved, but the data itself remains stationary.",
+        "good_code": "use std::pin::Pin;\n\nasync fn self_reference() {\n    let x = 5;\n    let y = &x;\n    tokio::task::yield_now().await;\n    println!(\"{}\", y);\n}\n\n#[tokio::main]\nasync fn main() {\n    // Pin the future to the heap\n    let fut = Box::pin(self_reference());\n    fut.await;\n}",
+        "verification": "Run the code with 'cargo check'. Use tools like Miri to detect memory access violations in unsafe blocks or pinning logic.",
+        "date": "2026-02-21",
+        "id": 1771636332,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Spark Broadcast Join Skew in Petabyte Shuffles",
+        "slug": "spark-broadcast-join-data-skew",
+        "language": "Java",
+        "code": "DataSkewOOM",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Broadcast joins are a powerful optimization in Apache Spark designed to eliminate expensive shuffles by sending a small table to every executor. However, in multi-petabyte workloads, if the 'small' table exceeds memory limits or the join keys are heavily skewed, executors will throw OutOfMemory (OOM) errors or experience 'straggler' tasks that stall the entire pipeline.</p><p>The primary challenge is that Spark's broadcast threshold is static by default, failing to account for data expansion during decompression or skewed key distribution.</p>",
+        "root_cause": "The broadcasted table is too large for the executor's memory overhead, or a single join key has a disproportionately high frequency, causing one executor to process significantly more data than others.",
+        "bad_code": "import org.apache.spark.sql.functions.broadcast\n\n// Forcing a broadcast join on a table that might exceed 10MB default\n// or has highly skewed keys\nval joinedDf = largeDf.join(broadcast(potentiallyLargeDf), \"join_key\")\njoinedDf.write.parquet(\"/output/path\")",
+        "solution_desc": "Increase the broadcast threshold carefully, but more importantly, use Adaptive Query Execution (AQE) to handle skew. If skew is persistent, 'salt' the join keys by appending a random integer to the key in the large table and replicating the small table keys to match.",
+        "good_code": "// 1. Enable Adaptive Query Execution\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\")\n\n// 2. Manual Salting for extreme cases\nimport org.apache.spark.sql.functions.{concat, lit, rand}\n\nval saltedLargeDf = largeDf.withColumn(\"salted_key\", concat($\"join_key\", lit(\"_\"), (rand() * 10).cast(\"int\")))\nval explodedSmallDf = smallDf.withColumn(\"salt\", explode(array((0 until 10).map(lit): _*)))\n    .withColumn(\"salted_key\", concat($\"join_key\", lit(\"_\"), $\"salt\"))\n\nval joinedDf = saltedLargeDf.join(explodedSmallDf, \"salted_key\")",
+        "verification": "Monitor the Spark UI 'Stages' tab. Check for uniform task duration and verify that 'Skew' is mitigated via the AQE 'SortMergeJoin' metrics.",
+        "date": "2026-02-21",
+        "id": 1771636333,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating ClickHouse MergeTree Part Bloat in Upserts",
+        "slug": "clickhouse-mergetree-part-bloat",
+        "language": "SQL",
+        "code": "TooManyParts",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>ClickHouse is designed for high-speed analytical inserts, but high-frequency upserts in <code>ReplacingMergeTree</code> engines can lead to 'Part Bloat'. Every INSERT creates a new data part. If the background merge process cannot keep up with the rate of small insertions, the part count grows exponentially, eventually hitting the <code>parts_to_throw_insert</code> limit and blocking all writes.</p><p>This is particularly common in streaming workloads where individual events are upserted as they arrive.</p>",
+        "root_cause": "High-frequency, low-volume INSERT statements creating more data parts per second than the background merge threads can combine.",
+        "bad_code": "-- Application pseudo-code making frequent small inserts\nINSERT INTO my_table (id, version, data) VALUES (1, 123, 'info');\n-- (1 second later)\nINSERT INTO my_table (id, version, data) VALUES (1, 124, 'updated_info');",
+        "solution_desc": "Implement a buffering layer. Instead of direct inserts, use a <code>Buffer</code> engine table or an external queue (like Kafka) to batch records. Increase the <code>max_insert_block_size</code> and tune the <code>merge_with_ttl_timeout</code> to encourage more aggressive merging.",
+        "good_code": "-- 1. Create the destination ReplacingMergeTree\nCREATE TABLE target_table (id UInt64, version UInt64, data String)\nENGINE = ReplacingMergeTree(version) ORDER BY id;\n\n-- 2. Create a Buffer table to collect data in memory\nCREATE TABLE target_table_buffer AS target_table\nENGINE = Buffer(currentDatabase(), 'target_table', 16, 10, 60, 10000, 100000, 1000000, 10000000);\n\n-- 3. Application inserts into the BUFFER table instead\nINSERT INTO target_table_buffer (id, version, data) VALUES (...);",
+        "verification": "Query 'system.parts' to monitor the 'active' part count. It should remain stable even under high write load.",
+        "date": "2026-02-21",
+        "id": 1771636334,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing ClawWork: The AI Coworker Scaling to $10K Profits",
+        "slug": "clawwork-ai-coworker-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork (OpenClaw) has exploded on GitHub due to its promise of an autonomous 'AI Coworker'. Unlike simple chat interfaces, ClawWork integrates directly with your local development environment to perform multi-step tasks. The project gained viral traction by demonstrating a 'coworker' capability that successfully executed freelance tasks, allegedly earning $10,000 in a 7-hour stress test.</p><p>It leverages a multi-agent orchestration framework where different LLM instances handle planning, coding, and debugging in a closed loop.</p>",
+        "root_cause": "Integration of Long-Chain Reasoning, Tool-use (Browser/Terminal), and Autonomous Self-Correction loops that reduce the need for constant human prompting.",
+        "bad_code": "# Install ClawWork via pip\npip install clawwork\n\n# Initialize a project and start the coworker agent\nclawwork init --project my-web-app\nclawwork start \"Build a dashboard using Next.js and integrate Stripe\"",
+        "solution_desc": "ClawWork is best used for 'Greenfield' project scaffolding, complex refactoring across multiple files, and automating end-to-end testing cycles where manual intervention is usually high.",
+        "good_code": "from clawwork import CoworkerAgent\n\n# Define a specialized agent for a specific repository context\nagent = CoworkerAgent(\n    role=\"Backend Engineer\",\n    tools=[\"terminal\", \"file_editor\", \"browser\"],\n    model=\"claude-3-5-sonnet\"\n)\n\n# Execute a complex cross-file task\nagent.run(\"Refactor the authentication logic to use JWT instead of sessions across all routes.\")",
+        "verification": "The project is moving toward a 'Model-Agnostic' future. Watch for upcoming integrations with VS Code extensions and improved local-first privacy layers.",
+        "date": "2026-02-21",
+        "id": 1771636335,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Go Scheduler Starvation in Tight CGO Loops",
         "slug": "fix-go-scheduler-cgo-starvation",
         "language": "Go",
