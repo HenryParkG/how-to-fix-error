@@ -1,5 +1,86 @@
 var postsIndex = [
     {
+        "title": "Fix Haskell Space Leaks in State Monad Transformers",
+        "slug": "haskell-statet-space-leak-fix",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In long-running Haskell applications, use of the lazy StateT transformer often leads to massive memory consumption. This occurs because the state updates are not evaluated immediately, but are instead stored as a chain of thunks (unevaluated expressions) in memory.</p><p>As the application runs, this chain grows indefinitely. When the state is finally demanded, the program may crash with a Stack Overflow or exhaust system RAM while trying to evaluate the massive nested expression.</p>",
+        "root_cause": "The default State transformer in Control.Monad.State is lazy in the state. Even if the Monad itself is strict, the value being stored in the state remains unevaluated unless explicitly forced, leading to thunk build-up.",
+        "bad_code": "import Control.Monad.State\n\n-- Lazy state modification builds thunks\nrunTask :: StateT Int IO ()\nrunTask = do\n    modify (+ 1) -- This builds a thunk: ((0 + 1) + 1)...\n    runTask",
+        "solution_desc": "Switch to the strict version of the State transformer and use the strict modification function (modify'). For complex data types, ensure the state is forced to Normal Form using DeepSeq.",
+        "good_code": "import Control.Monad.State.Strict\nimport Control.DeepSeq\n\n-- Use strict modify' and force evaluation\nrunTask :: StateT Int IO ()\nrunTask = do\n    modify' (+ 1) -- Evaluates immediately\n    runTask",
+        "verification": "Monitor memory usage using GHC profiling (+RTS -hc). The heap graph should show a flat line instead of a linear growth (sawtooth pattern).",
+        "date": "2026-02-21",
+        "id": 1771665722,
+        "type": "error"
+    },
+    {
+        "title": "Fix 4-bit LoRA Gradient Vanishing",
+        "slug": "lora-4bit-gradient-vanishing",
+        "language": "Python",
+        "code": "GradientVanishing",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>When fine-tuning Large Language Models using 4-bit NormalFloat (NF4) quantization via LoRA, users often observe that the loss stops decreasing early or the gradients become zero. This is primarily caused by the precision mismatch between the 4-bit frozen weights and the 16-bit/32-bit adapter weights.</p><p>The gradient signals can become too small to represent in low-precision formats, or they are effectively 'masked' by the quantization constants during the dequantization step in the backward pass.</p>",
+        "root_cause": "Under-scaled LoRA weights relative to the quantized base weights and improper optimizer settings that fail to track small updates in a 4-bit quantized landscape.",
+        "bad_code": "from peft import LoraConfig\n\n# Standard config often causes vanishing gradients in 4-bit\nconfig = LoraConfig(\n    r=8, \n    lora_alpha=16, \n    target_modules=[\"q_proj\"], \n    lora_dropout=0.05\n)",
+        "solution_desc": "Increase the lora_alpha to ensure higher weight scaling, target more modules (all linear layers), and use a high-precision optimizer like paged_adamw_32bit.",
+        "good_code": "from peft import LoraConfig\n\nconfig = LoraConfig(\n    r=16,\n    lora_alpha=32, # Higher alpha for stronger signal\n    target_modules=[\"q_proj\", \"v_proj\", \"k_proj\", \"o_proj\"],\n    lora_dropout=0.1,\n    bias=\"none\"\n)\n# Use bitsandbytes Paged AdamW 32-bit",
+        "verification": "Check WandB or TensorBoard logs for 'grad_norm'. A healthy run should show non-zero gradient norms consistently across steps.",
+        "date": "2026-02-21",
+        "id": 1771665723,
+        "type": "error"
+    },
+    {
+        "title": "Fix RocksDB Write Stalls Under Compaction Debt",
+        "slug": "rocksdb-compaction-write-stalls",
+        "language": "Go",
+        "code": "PerformanceStall",
+        "tags": [
+            "Go",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>RocksDB write stalls occur when the incoming write rate exceeds the background compaction speed. In high-throughput environments, the Level 0 (L0) files accumulate faster than the background threads can merge them into Level 1.</p><p>When the number of L0 files reaches a hard limit, RocksDB intentionally throttles or stops all writes to prevent an unmanageable read amplification, causing latency spikes in the application layer.</p>",
+        "root_cause": "Insufficient background compaction threads and conservative 'soft_pending_compaction_bytes_limit' settings that trigger write-slowing mechanisms too early.",
+        "bad_code": "// Default options lead to stalls under heavy load\nopts := gorocksdb.NewDefaultOptions()\nopts.SetWriteBufferSize(64 * 1024 * 1024)\nopts.SetMaxWriteBufferNumber(2)",
+        "solution_desc": "Increase background threads, tune L0 triggers, and set a higher pending compaction bytes limit to allow the engine to absorb temporary write bursts.",
+        "good_code": "opts := gorocksdb.NewDefaultOptions()\nopts.SetMaxBackgroundCompactions(4)\nopts.SetLevel0SlowdownWritesTrigger(20)\nopts.SetLevel0StopWritesTrigger(36)\nopts.SetSoftPendingCompactionBytesLimit(64 * 1024 * 1024 * 1024) // 64GB",
+        "verification": "Check RocksDB statistics for 'stall_micros' and monitor the number of L0 files using the 'rocksdb.num-files-at-level0' property.",
+        "date": "2026-02-21",
+        "id": 1771665724,
+        "type": "error"
+    },
+    {
+        "title": "Analyze ClawWork: The AI Coworker Trend",
+        "slug": "clawwork-ai-coworker-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork is trending due to its 'Computer Use' capabilities, allowing LLMs to interact directly with GUIs like a human coworker. It gained massive traction after demonstrating $10k in earnings through automated task execution in a short window.</p><p>Unlike standard agents that use APIs, ClawWork uses vision and mouse/keyboard control, making it compatible with any legacy software or website without integration requirements.</p>",
+        "root_cause": "Visual-Action Loop and Multi-Modal Foundation Models",
+        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt",
+        "solution_desc": "Ideal for complex workflows involving multiple desktop apps (e.g., extracting data from Excel to a custom CRM) where no API exists.",
+        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(model=\"claude-3-5-sonnet\")\nagent.run(\"Open Chrome, find the latest BTC price, and email it to my boss.\")",
+        "verification": "ClawWork represents the shift from 'Chatbots' to 'Action-bots', signaling a future where AI agents manage entire local workstations.",
+        "date": "2026-02-21",
+        "id": 1771665725,
+        "type": "trend"
+    },
+    {
         "title": "Fixing C++20 Coroutine Frame Leakage",
         "slug": "cpp20-coroutine-frame-leakage-fix",
         "language": "C++",
