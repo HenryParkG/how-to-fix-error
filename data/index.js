@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing eBPF Tail Call Stack Overflow in XDP Pipelines",
+        "slug": "fix-ebpf-tail-call-stack-overflow-xdp",
+        "language": "Go",
+        "code": "BPF_STACK_LIMIT_EXCEEDED",
+        "tags": [
+            "Go",
+            "Infra",
+            "Networking",
+            "Error Fix"
+        ],
+        "analysis": "<p>When chaining multiple eBPF programs using tail calls in high-throughput XDP pipelines, developers often encounter a 'Stack limit exceeded' error or a verifier rejection. In eBPF, each program is limited to a 512-byte stack. While tail calls are designed to replace the current program's stack frame with the target's, cumulative stack usage or deep nesting can trigger safety checks in the Linux kernel JIT compiler.</p><p>This is particularly problematic in complex packet processors (e.g., Load Balancers) where each stage (parsing, routing, filtering) declares its own local variables on the stack.</p>",
+        "root_cause": "Each tail call in a chain might not fully release the stack memory of the caller in older kernels or when specific compiler optimizations prevent the jump from being a pure tail-call, leading to stack overflow across program boundaries.",
+        "bad_code": "SEC(\"xdp\")\nint xdp_processor(struct xdp_md *ctx) {\n    struct hdr_metadata meta = {0};\n    char buffer[256]; // Heavy stack usage\n    // ... processing logic ...\n    bpf_tail_call(ctx, &jmp_table, NEXT_PROG);\n    return XDP_PASS;\n}",
+        "solution_desc": "Utilize a Per-CPU Array Map as a 'scratch buffer' to store large data structures instead of the stack. This keeps stack usage minimal (just a pointer) across tail calls.",
+        "good_code": "struct { \n    __uint(type, BPF_MAP_TYPE_PERCPU_ARRAY);\n    __uint(max_entries, 1);\n    __type(key, uint32_t);\n    __type(value, struct hdr_metadata);\n} scratch_map SEC(\".maps\");\n\nSEC(\"xdp\")\nint xdp_processor(struct xdp_md *ctx) {\n    uint32_t key = 0;\n    struct hdr_metadata *meta = bpf_map_lookup_elem(&scratch_map, &key);\n    if (!meta) return XDP_ABORTED;\n    // Use meta-> instead of stack local variables\n    bpf_tail_call(ctx, &jmp_table, NEXT_PROG);\n    return XDP_PASS;\n}",
+        "verification": "Run 'bpftool prog load' and check 'ulimit -l' to ensure memory lock limits are sufficient; verify the program passes the BPF Verifier without 'combined stack size' errors.",
+        "date": "2026-02-21",
+        "id": 1771647833,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storms-massive-partitions",
+        "language": "Java",
+        "code": "REBALANCE_IN_PROGRESS",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>In clusters managing thousands of partitions, consumer group rebalancing can become a performance nightmare known as a 'Rebalance Storm'. When a single consumer experiences a GC pause or network blip, the Eager Rebalance protocol forces every consumer in the group to stop processing, commit offsets, and wait for a new assignment. At scale, the overhead of re-assigning thousands of partitions exceeds the heartbeat timeout, causing a recursive loop of failures.</p>",
+        "root_cause": "The default Eager Rebalance protocol causes a 'stop-the-world' event, and when partitions are numerous, the metadata exchange exceeds session timeouts, triggering immediate subsequent rebalances.",
+        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    RangeAssignor.class.getName());\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"10000\");\n// Lacks static membership and uses eager assignment",
+        "solution_desc": "Switch to the CooperativeStickyAssignor to enable Incremental Cooperative Rebalancing. Additionally, implement Static Membership by setting a group.instance.id to prevent rebalances during transient restarts.",
+        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    CooperativeStickyAssignor.class.getName());\nproperties.put(ConsumerConfig.GROUP_INSTANCE_ID_CONFIG, \"consumer-node-1\");\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\");\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\");",
+        "verification": "Monitor the 'rebalance-latency-avg' and 'rebalance-total' metrics in JMX; confirm that individual pod restarts do not trigger group-wide 'PreparingRebalance' logs.",
+        "date": "2026-02-21",
+        "id": 1771647834,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating WebGPU Buffer Map Contention",
+        "slug": "webgpu-buffer-map-contention-visualization",
+        "language": "TypeScript",
+        "code": "GPU_BUFFER_MAP_ERROR",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Next.js",
+            "Error Fix"
+        ],
+        "analysis": "<p>Real-time visualizations using WebGPU often require frequent data transfers between the CPU and GPU. Developers frequently hit errors where 'buffer is not in the unmapped state' when calling mapAsync. This contention happens because the CPU attempts to write to a buffer while the GPU is still executing a command buffer that references it, or because multiple map requests are queued simultaneously.</p>",
+        "root_cause": "Attempting to map a GPUBuffer for CPU access before the GPU has finished executing previous commands that use that buffer, or failing to unmap before the next draw call.",
+        "bad_code": "async function updateBuffer(data: Float32Array) {\n    await buffer.mapAsync(GPUMapMode.WRITE);\n    new Float32Array(buffer.getMappedRange()).set(data);\n    buffer.unmap();\n    // Error: mapAsync called while buffer is in 'mapping' state\n}",
+        "solution_desc": "Implement a staging buffer ring or 'double buffering'. Write data to a separate 'MAP_WRITE' buffer, then use 'copyBufferToBuffer' to move data to the 'GPU_READ' buffer. This decouples CPU writes from GPU execution.",
+        "good_code": "const stagingBuffer = device.createBuffer({\n    size: dataSize, usage: GPUBufferUsage.MAP_WRITE | GPUBufferUsage.COPY_SRC\n});\nasync function update() {\n    await stagingBuffer.mapAsync(GPUMapMode.WRITE);\n    new Float32Array(stagingBuffer.getMappedRange()).set(data);\n    stagingBuffer.unmap();\n\n    const commandEncoder = device.createCommandEncoder();\n    commandEncoder.copyBufferToBuffer(stagingBuffer, 0, gpuBuffer, 0, dataSize);\n    device.queue.submit([commandEncoder.finish()]);\n}",
+        "verification": "Use Chrome DevTools 'WebGPU' tab to monitor buffer states and ensure 'Validation Errors' count remains zero during high-frequency updates.",
+        "date": "2026-02-21",
+        "id": 1771647835,
+        "type": "error"
+    },
+    {
+        "title": "Analyze GitHub Trend: HKUDS/ClawWork AI Coworker",
+        "slug": "clawwork-openclaw-ai-coworker-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>HKUDS/ClawWork is making waves as 'OpenClaw', a framework designed to transform LLMs into autonomous coworkers. It recently gained massive attention for the claim of earning $10,000 in 7 hours through automated task execution. It stands out because it doesn't just 'chat'; it interacts with environments to complete high-value digital labor like bounty hunting, automated coding, and data arbitrage.</p>",
+        "root_cause": "ClawWork utilizes a Hierarchical Agentic Architecture that combines long-term memory with a 'Tool-Tree' execution model, allowing the AI to browse the web and use local terminal tools with higher success rates than standard GPT-4 wrappers.",
+        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env # Add API Keys",
+        "solution_desc": "Best used for repetitive high-complexity tasks: automated bug fixing in large codebases, multi-step market research, or managing software bounty submissions. Adopt it when you need a 'loop' rather than a 'response'.",
+        "good_code": "from clawwork import OpenClaw\n\nagent = OpenClaw(role=\"Security Researcher\")\nagent.assign_task(\"Find and fix vulnerabilities in this repo: [URL]\")\nagent.run(max_budget=50.0) # Set a cost cap for tokens",
+        "verification": "The project represents the shift from 'Generative AI' to 'Agentic AI', where the ROI is measured in completed tasks rather than generated text tokens.",
+        "date": "2026-02-21",
+        "id": 1771647836,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Rust Pinning Violations in Async Futures",
         "slug": "rust-pinning-violations-async-futures",
         "language": "Rust",
