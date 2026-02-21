@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing C++20 Coroutine Frame Leakage",
+        "slug": "cpp20-coroutine-frame-leakage-fix",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "tags": [
+            "C++",
+            "Backend",
+            "High-Performance",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-concurrency network runtimes, C++20 coroutines allocate state on the heap via a 'coroutine frame'. A common failure occurs when the coroutine is suspended indefinitely (e.g., waiting on a socket that closes) and the coroutine handle is never destroyed. Unlike traditional stack-based functions, the frame is not automatically reclaimed unless the coroutine runs to completion or <code>handle.destroy()</code> is explicitly called.</p>",
+        "root_cause": "The coroutine promise_type lacks RAII management for the coroutine_handle, leading to heap-allocated frames remaining in memory when tasks are cancelled or timed out before reaching their final suspension point.",
+        "bad_code": "task<void> handle_client(socket s) {\n    auto data = co_await s.read(); \n    // If socket closes here, the handle is often lost\n    co_return;\n}\n\n// Caller usage\nauto t = handle_client(s);\nt.resume(); // No cleanup if t is dropped",
+        "solution_desc": "Implement a Move-Only Task wrapper that encapsulates the std::coroutine_handle. Use the destructor of the wrapper to call handle.destroy() if the handle is valid and the coroutine is not at its final state.",
+        "good_code": "template<typename T>\nstruct Task {\n    ~Task() {\n        if (handle && !handle.done()) handle.destroy();\n    }\n    Task(Task&& other) : handle(std::exchange(other.handle, {})) {}\n    std::coroutine_handle<promise_type> handle;\n};",
+        "verification": "Monitor memory usage using Valgrind or ASAN (AddressSanitizer) with 'leak detection' enabled while simulating high connection churn and frequent timeouts.",
+        "date": "2026-02-21",
+        "id": 1771655539,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating PyTorch CUDA Allocator Fragmentation",
+        "slug": "pytorch-cuda-allocator-fragmentation",
+        "language": "Python",
+        "code": "OutOfMemory",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>During LLM fine-tuning, the PyTorch Caching Allocator often encounters fragmentation. This occurs when the allocator keeps many small, non-contiguous free blocks that cannot be merged to satisfy a large allocation request (like a large attention matrix), resulting in a 'CUDA Out of Memory' (OOM) error even when total free memory appears sufficient.</p>",
+        "root_cause": "Frequent allocations of varying sizes and the use of activation checkpointing create interleaved free and occupied blocks that the default caching strategy fails to consolidate efficiently.",
+        "bad_code": "import torch\n# Default settings often lead to fragmentation in LLMs\nmodel = AutoModelForCausalLM.from_pretrained('huge-llm')\nfor batch in loader:\n    loss = model(batch).loss\n    loss.backward()",
+        "solution_desc": "Configure the CUDA allocator via environment variables to use 'expandable_segments'. This allows the allocator to use virtual memory management to maintain contiguous address spaces, significantly reducing fragmentation.",
+        "good_code": "import os\nimport torch\n\n# Enable expandable segments to prevent fragmentation\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"expandable_segments:True\"\n\n# Optional: periodically clear cache for extreme cases\ntorch.cuda.empty_cache()",
+        "verification": "Use torch.cuda.memory_summary() to inspect the 'Fraction of blocked memory' and 'Max split size' before and after applying the configuration.",
+        "date": "2026-02-21",
+        "id": 1771655540,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java",
+        "code": "SplitBrain",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ],
+        "analysis": "<p>In distributed systems running on unreliable network topologies, an Akka cluster can partition into sub-clusters. If both sides of the partition decide to 'down' the other, you end up with two independent leaders. This is the 'Split-Brain' scenario, which can lead to data corruption in persistent actors or dual-execution of singleton services.</p>",
+        "root_cause": "Relying on the deprecated 'auto-down-unreachable-after' setting or failing to implement a deterministic Split Brain Resolver (SBR) strategy that ensures only one side of a partition survives.",
+        "bad_code": "akka {\n  cluster {\n    # DANGEROUS: Leads to split-brain\n    auto-down-unreachable-after = 10s\n  }\n}",
+        "solution_desc": "Disable auto-downing and implement the 'Split Brain Resolver' using a 'keep-majority' or 'static-quorum' strategy. This ensures that only the partition containing the majority of nodes remains active.",
+        "good_code": "akka.cluster {\n  downing-provider-class = \"akka.cluster.sbr.SplitBrainResolverProvider\"\n  split-brain-resolver {\n    active-strategy = \"keep-majority\"\n    keep-majority {\n      role = \"\"\n    }\n  }\n}",
+        "verification": "Perform a network partition test using 'iptables' to block communication between nodes and verify that only one partition remains as 'Up' while the other is terminated.",
+        "date": "2026-02-21",
+        "id": 1771655541,
+        "type": "error"
+    },
+    {
+        "title": "ClawWork: The AI Coworker Scaling OpenClaw",
+        "slug": "clawwork-ai-coworker-guide",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>ClawWork (HKUDS/ClawWork) has exploded on GitHub due to its promise of turning AI into a functional 'coworker' rather than just a chatbot. The project gained massive traction after claims of earning $10K in 7 hours via automated tasks. It leverages OpenClaw, a framework designed to orchestrate LLM agents to perform end-to-end software engineering, including coding, debugging, and task management.</p>",
+        "root_cause": "Key innovations include a specialized multi-agent architecture for software tasks, high-context memory management, and a focus on 'Autonomous Earning'—integrating with platforms to solve bounties automatically.",
+        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\nexport OPENAI_API_KEY='your_key'",
+        "solution_desc": "Best for software agencies and individual developers looking to automate repetitive coding chores, handle PR reviews autonomously, or participate in algorithmic trading/bounty hunting where speed and 24/7 operation are critical.",
+        "good_code": "from clawwork.core import ClawCoworker\n\nworker = ClawCoworker(role=\"Senior Dev\")\n# Assign a complex engineering task\nworker.execute(\"Refactor the authentication module to use JWT and add unit tests\")",
+        "verification": "The project represents a shift toward 'Agentic Workflows' where the AI has write-access to the environment. Future outlook predicts deep integration with IDEs and CI/CD pipelines as standard tooling.",
+        "date": "2026-02-21",
+        "id": 1771655542,
+        "type": "trend"
+    },
+    {
         "title": "Fixing eBPF Tail Call Stack Overflow in XDP Pipelines",
         "slug": "fix-ebpf-tail-call-stack-overflow-xdp",
         "language": "Go",
