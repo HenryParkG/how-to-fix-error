@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing BEAM Scheduler Collapse with Dirty NIFs",
+        "slug": "elixir-beam-scheduler-collapse-dirty-nifs",
+        "language": "Elixir",
+        "code": "SchedulerCollapse",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In the Erlang BEAM VM, schedulers are designed for non-blocking, asynchronous operations. When a Native Implemented Function (NIF) performs heavy CPU-bound computation, it hijacks the scheduler thread. Since BEAM expects NIFs to return within 1 millisecond, a long-running NIF causes 'scheduler collapse,' where other processes assigned to that scheduler starve, leading to system-wide latency spikes and heartbeat failures in distributed clusters.</p>",
+        "root_cause": "Executing CPU-intensive C code synchronously on a standard BEAM scheduler, preventing the VM from performing process switching and garbage collection.",
+        "bad_code": "static ERL_NIF_TERM heavy_compute(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {\n    // This blocks the scheduler thread for 500ms\n    long_running_task();\n    return enif_make_int(env, 1);\n}\n\nstatic ErlNifFunc nif_funcs[] = {\n    {\"heavy_compute\", 1, heavy_compute}\n};",
+        "solution_desc": "Architecturally, long-running NIFs must be flagged as 'Dirty'. This tells the BEAM to offload the execution to a separate pool of dirty CPU schedulers, preserving the responsiveness of the main scheduler threads.",
+        "good_code": "static ERL_NIF_TERM heavy_compute(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {\n    long_running_task();\n    return enif_make_int(env, 1);\n}\n\nstatic ErlNifFunc nif_funcs[] = {\n    // Use ERL_NIF_DIRTY_JOB_CPU_BOUND flag\n    {\"heavy_compute\", 1, heavy_compute, ERL_NIF_DIRTY_JOB_CPU_BOUND}\n};",
+        "verification": "Use ':observer.start()' and monitor 'Load Charts'. Verify that scheduler utilization is distributed and that the dirty CPU scheduler pool is handling the NIF workload without impacting UI responsiveness or process reductions.",
+        "date": "2026-02-22",
+        "id": 1771735526,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating Flutter Raster Jank via Shader Warmup",
+        "slug": "flutter-raster-jank-skia-shaders",
+        "language": "Dart",
+        "code": "RasterJank",
+        "tags": [
+            "Flutter",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Flutter uses the Skia engine (or Impeller) for rendering. A common issue is 'jank' during the first execution of an animation. This occurs because the Raster thread must compile Skia Shaders (SkSL) into machine code for the GPU. This Just-In-Time (JIT) compilation can take longer than the 16ms frame budget, causing visible stuttering even on high-end hardware.</p>",
+        "root_cause": "Synchronous shader compilation on the Raster thread during the first frame of a complex animation or transition.",
+        "bad_code": "void main() {\n  // Standard initialization without shader pre-caching\n  runApp(const MyApp());\n}\n\n// Any complex CustomPainter or Opacity widget will trigger JIT compilation\nWidget build(BuildContext context) {\n  return AnimatedOpacity(opacity: 1.0, child: ComplexCanvas());\n}",
+        "solution_desc": "Capture the required shaders during a training run and bundle them as an SkSL JSON file. This allows the Flutter engine to perform 'warmup'—compiling the shaders during app startup rather than during the animation.",
+        "good_code": "// 1. Run app to capture: flutter run --bundle-sksl-path shaders.sksl.json\n// 2. Build with captured shaders:\n// flutter build apk --bundle-sksl-path shaders.sksl.json\n\n// No specific code change required in Dart, but ensuring SkSL bundle is included in assets.",
+        "verification": "Run the app with 'flutter run --trace-skia'. Open DevTools and verify the 'Raster' thread no longer shows red bars (frame misses) during the specific animation sequence.",
+        "date": "2026-02-22",
+        "id": 1771735527,
+        "type": "error"
+    },
+    {
+        "title": "Fixing Go GC Pacing in High-Throughput Systems",
+        "slug": "go-gc-pacing-memory-intensive-systems",
+        "language": "Go",
+        "code": "GCPacingError",
+        "tags": [
+            "Go",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ],
+        "analysis": "<p>In memory-intensive Go services, the Garbage Collector (GC) pacer might fail to keep up with high allocation rates. If the heap grows faster than the GC can scan it, the system experiences 'GC Assist'—where worker goroutines are forced to help with collection, causing a drastic drop in application throughput and increased tail latency (P99).</p>",
+        "root_cause": "The default GOGC=100 setting is too aggressive for large heaps, leading to frequent cycles, while the lack of a memory limit causes the pacer to ignore the physical RAM boundaries of the container.",
+        "bad_code": "func main() {\n    // No memory limits or GC tuning in a high-allocation loop\n    for {\n        data := make([]byte, 1024 * 1024) // Rapid allocation\n        process(data)\n    }\n}",
+        "solution_desc": "Set a soft memory limit using 'debug.SetMemoryLimit' (introduced in Go 1.19) and tune 'GOGC' to balance CPU overhead versus memory usage. This allows the pacer to be more predictable under load.",
+        "good_code": "import \"runtime/debug\"\n\nfunc main() {\n    // Set memory limit to 90% of container RAM (e.g., 2GB)\n    debug.SetMemoryLimit(1.8 * 1024 * 1024 * 1024)\n    \n    // Increase GOGC to reduce cycle frequency if RAM allows\n    // os.Setenv(\"GOGC\", \"200\") \n    \n    startHighThroughputEngine()\n}",
+        "verification": "Monitor GC statistics using 'GODEBUG=gctrace=1'. Ensure that 'GC Assist' time in the trace is minimized and that the heap stabilizes below the set memory limit without OOM kills.",
+        "date": "2026-02-22",
+        "id": 1771735528,
+        "type": "error"
+    },
+    {
+        "title": "Visual Explainer: AI-Powered Technical Visualization",
+        "slug": "visual-explainer-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'context collapse' problem in modern engineering. It utilizes LLM agents to ingest raw technical artifacts—like git diffs, architectural docs, or JSON data—and transforms them into high-fidelity, interactive HTML pages. This bridges the gap between dense code changes and human-readable summaries, making it essential for complex PR reviews and system audits.</p>",
+        "root_cause": "Agentic Workflows + Visual DSLs: It uses prompt templates to guide LLMs in generating structured UI components (D3.js, Mermaid, Tailwind) that visualize logical flow and data changes.",
+        "bad_code": "git clone https://github.com/nicobailon/visual-explainer\ncd visual-explainer\nnpm install\ncp .env.example .env # Add OpenAI/Anthropic API Key",
+        "solution_desc": "Adopt this tool for 'High-Stakes Reviews' where code impact is non-obvious. Use it to generate visual diffs for database migrations, state machine changes, or complex cloud infrastructure refactors.",
+        "good_code": "// Example CLI Usage pattern:\n// npx visual-explainer analyze-diff \\\n//   --input ./pr-42.diff \\\n//   --template \"architecture-impact\" \\\n//   --output ./report.html",
+        "verification": "The project represents a shift toward 'Self-Explaining Systems'. Future iterations are expected to integrate directly into GitHub Actions, automatically appending visual reports to every Pull Request.",
+        "date": "2026-02-22",
+        "id": 1771735529,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Zig Multi-Threaded Use-After-Free Errors",
         "slug": "fixing-zig-multi-threaded-uaf",
         "language": "Zig",
