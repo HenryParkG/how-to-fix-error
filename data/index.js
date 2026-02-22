@@ -1,5 +1,89 @@
 var postsIndex = [
     {
+        "title": "Fixing eBPF Verifier State Explosion in Complex XDP Programs",
+        "slug": "fixing-ebpf-verifier-state-explosion-xdp",
+        "language": "C / eBPF",
+        "code": "BPF_VERIFIER_ERR",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ],
+        "analysis": "<p>When developing high-performance XDP programs, developers often encounter 'State Explosion' where the BPF verifier exhausts its complexity limit (1 million instructions) or state limit. This typically occurs because the verifier explores every possible branch combination to ensure safety. In complex packet parsing or multi-tenant filtering, the number of logical paths grows exponentially, leading the verifier to prune states inefficiently or reject the program entirely despite the logic being sound.</p>",
+        "root_cause": "Excessive branching and deep function call chains cause the verifier's state-tracking engine to hit its limit before it can prove program termination and memory safety.",
+        "bad_code": "for (int i = 0; i < MAX_HEADERS; i++) {\n    struct hdr *h = data + offset;\n    if (h + 1 > data_end) break;\n    if (h->type == TYPE_A) { /* complex logic */ }\n    else if (h->type == TYPE_B) { /* more complex logic */ }\n    // ... 10 more branches\n    offset += sizeof(struct hdr);\n}",
+        "solution_desc": "Refactor the logic to use BPF tail calls to split the program into smaller, independently verified chunks, or use the `bpf_loop` helper (available in kernels 5.17+) to reduce the instruction count compared to manual loop unrolling.",
+        "good_code": "static __always_inline int handle_hdr(struct xdp_md *ctx) {\n    // Specific logic for one header\n}\n\nSEC(\"xdp\")\nint xdp_prog(struct xdp_md *ctx) {\n    // Use tail calls to jump to specific logic handlers\n    bpf_tail_call(ctx, &jmp_table, hdr_type);\n    return XDP_PASS;\n}",
+        "verification": "Run `bpftool prog load` and check the 'insns processed' count in the verifier log; it should be significantly lower than the 1M limit.",
+        "date": "2026-02-22",
+        "id": 1771752200,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Kafka Transactional Producer 'Zombie' Fencing",
+        "slug": "kafka-transactional-producer-zombie-fencing",
+        "language": "Java / Kafka",
+        "code": "ProducerFencedException",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ],
+        "analysis": "<p>Kafka's Exactly-Once Semantics (EOS) rely on the <code>transactional.id</code> to identify producers. A 'Zombie' producer scenario occurs when a producer is partitioned from the cluster, a new producer starts with the same ID, and the original producer attempts to commit a transaction after the partition heals. Kafka fences the older producer by incrementing the producer epoch, resulting in a <code>ProducerFencedException</code>. If not handled, this leads to data inconsistency or application crashes during recovery cycles.</p>",
+        "root_cause": "Multiple producer instances sharing the same 'transactional.id' simultaneously, or long GC pauses causing the broker to expire the producer session and increment the epoch.",
+        "bad_code": "properties.put(\"transactional.id\", \"static-id-123\");\nKafkaProducer<String, String> producer = new KafkaProducer<>(properties);\ntry {\n    producer.beginTransaction();\n    producer.send(record);\n    producer.commitTransaction();\n} catch (Exception e) {\n    // Generic handling fails to address fencing\n    log.error(\"Error\", e);\n}",
+        "solution_desc": "Ensure <code>transactional.id</code> is unique per application instance (e.g., using hostname or pod UID). Catch <code>ProducerFencedException</code> specifically to gracefully shut down the 'zombie' instance, as it can no longer safely participate in transactions.",
+        "good_code": "properties.put(\"transactional.id\", System.getenv(\"HOSTNAME\") + \"-tx-id\");\nproducer.initTransactions();\ntry {\n    producer.beginTransaction();\n    producer.send(record);\n    producer.commitTransaction();\n} catch (ProducerFencedException | OutOfOrderSequenceException | AuthorizationException e) {\n    producer.close(); // Irrecoverable; must close and terminate\n} catch (KafkaException e) {\n    producer.abortTransaction(); // Recoverable\n}",
+        "verification": "Simulate a network partition and verify that the fenced producer logs the specific exception and terminates rather than retrying indefinitely.",
+        "date": "2026-02-22",
+        "id": 1771752201,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating WebGPU Buffer Alignment Faults",
+        "slug": "webgpu-buffer-alignment-faults-compute",
+        "language": "WGSL / TypeScript",
+        "code": "GPUValidationError",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Next.js",
+            "Error Fix"
+        ],
+        "analysis": "<p>WebGPU imposes strict memory alignment requirements for buffers, particularly when using uniform buffers or storage buffers with dynamic offsets. A common error occurs when the CPU-side data layout (e.g., a Float32Array) does not match the WGSL structure alignment rules (std140/std430). For instance, a <code>vec3<f32></code> in WGSL is treated as a 16-byte object, but developers often provide only 12 bytes in TypeScript, causing subsequent fields to align incorrectly and triggering validation errors or silent data corruption.</p>",
+        "root_cause": "Mismatch between TypeScript array packing and WebGPU's mandatory 16-byte alignment for specific vector types and 256-byte alignment for uniform buffer offsets.",
+        "bad_code": "// TS Side: Total 24 bytes\nconst data = new Float32Array([\n    1.0, 2.0, 3.0, // vec3\n    4.0, 5.0, 6.0  // vec3\n]);\n\n// WGSL Side:\nstruct Params {\n    v1: vec3<f32>,\n    v2: vec3<f32>,\n};",
+        "solution_desc": "Manually pad the TypeScript data to match the 16-byte alignment (4 floats) required for <code>vec3</code>. Alternatively, use a helper library like <code>gpu-buffer-utils</code> or always use <code>vec4</code> to ensure natural alignment.",
+        "good_code": "// TS Side: Pad to 32 bytes (16 bytes per vec3)\nconst data = new Float32Array([\n    1.0, 2.0, 3.0, 0.0, // vec3 + padding\n    4.0, 5.0, 6.0, 0.0  // vec3 + padding\n]);\n\n// Or use @align(16) in WGSL struct definitions",
+        "verification": "Check the browser's developer console for 'Offset is not a multiple of 256' or 'Buffer size does not match structure' validation errors.",
+        "date": "2026-02-22",
+        "id": 1771752202,
+        "type": "error"
+    },
+    {
+        "title": "Visual Explainer: The Future of Agentic Observability",
+        "slug": "visual-explainer-agent-rich-html",
+        "language": "Python / TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ],
+        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'black box' problem of AI Agents. While frameworks like LangChain or AutoGPT handle the logic, explaining the *why* and *how* to end-users remains difficult. Visual-explainer provides a standardized set of skills and prompt templates that allow agents to generate sophisticated HTML visualizations—ranging from architecture diagrams to plan audits—directly within their workflow, making agent reasoning transparent and professional.</p>",
+        "root_cause": "Rich UI generation (Diffs, Gantt-style plans, Data Tables) via LLM-driven templating and specialized Agent skills.",
+        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer && npm install",
+        "solution_desc": "Adopt this tool when building customer-facing AI agents or internal tools where 'chain-of-thought' logs are too messy. It is best used for code review agents, project management bots, and data analysis assistants that need to provide summary recaps.",
+        "good_code": "from visual_explainer import ExplainerAgent\n\n# Integrate as a tool in your agent loop\nexplainer = ExplainerAgent(template=\"architecture_overview\")\nhtml_output = explainer.generate(data=agent_state_json)\n\nwith open(\"report.html\", \"w\") as f:\n    f.write(html_output)",
+        "verification": "The project is positioned to become the 'D3.js for LLMs', potentially being integrated into major agentic frameworks as a default visualization layer.",
+        "date": "2026-02-22",
+        "id": 1771752203,
+        "type": "trend"
+    },
+    {
         "title": "Fixing Rust Async Cancellation Safety in Tokio Select",
         "slug": "rust-async-cancellation-safety-tokio",
         "language": "Rust",
