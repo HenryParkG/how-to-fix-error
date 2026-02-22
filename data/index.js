@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Rust Async Cancellation Safety in Tokio Select",
+        "slug": "rust-async-cancellation-safety-tokio",
+        "language": "Rust",
+        "code": "CancellationSafety",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Tokio",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Rust's async ecosystem, cancellation safety is a critical but often overlooked concept. When using <code>tokio::select!</code>, the branches that do not complete are immediately dropped. If a future is dropped while it holds intermediate state (like data read from a socket but not yet processed), that data is lost forever. This is particularly dangerous in network protocols where a partial read can desynchronize the stream.</p>",
+        "root_cause": "The tokio::select! macro drops the futures of all branches that did not finish. If a future is not 'cancellation safe', dropping it mid-execution results in the loss of any state that wasn't persisted outside the future.",
+        "bad_code": "loop {\n    tokio::select! {\n        res = socket.read(&mut buf) => {\n            process(res?);\n        }\n        _ = timeout(Duration::from_secs(1)) => {\n            println!(\"Timed out\");\n        }\n    }\n}",
+        "solution_desc": "To ensure cancellation safety, move the stateful operation (like reading from a stream) outside the select loop or use a persistent buffer. For network streams, use a 'framed' approach or manually manage a buffer that survives across loop iterations by pinning the future.",
+        "good_code": "let mut reader = BufReader::new(socket);\nloop {\n    let read_fut = reader.fill_buf();\n    pin_mut!(read_fut);\n    tokio::select! {\n        res = read_fut => {\n            let amt = res?.len();\n            process(&res?);\n            reader.consume(amt);\n        }\n        _ = timeout => { /* ... */ }\n    }\n}",
+        "verification": "Use loom for concurrency testing or write a unit test that drops the future halfway through a multi-step process and verify that the internal state is preserved.",
+        "date": "2026-02-22",
+        "id": 1771742236,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Spark Data Skew OOMs in Petabyte Joins",
+        "slug": "spark-data-skew-oom-shuffle-joins",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>Data skew occurs when a small number of join keys account for a disproportionately large amount of data. During a Shuffle Hash Join, Spark hashes keys to specific partitions. If one key (e.g., 'null' or a default value) has billions of rows, a single executor's memory will be overwhelmed, leading to the dreaded 'Executor OOM' while other executors remain idle.</p>",
+        "root_cause": "Uneven distribution of data across partitions causes specific executors to exceed their JVM heap memory limits during the shuffle phase of a join operation.",
+        "bad_code": "val joinedDF = largeDF.join(skewedDF, \"user_id\")\njoinedDF.write.parquet(\"output/path\")",
+        "solution_desc": "Implement 'Salting'. Add a random integer suffix to the join key in the skewed table and replicate the other table's records with all possible salt values. Alternatively, leverage Spark 3.0+ Adaptive Query Execution (AQE) with skew join hints.",
+        "good_code": "import org.apache.spark.sql.functions._\nval salt = floor(rand() * 10)\nval skewedSalted = skewedDF.withColumn(\"salted_id\", concat($\"user_id\", lit(\"_\"), salt))\nval largeSalted = largeDF.withColumn(\"salt\", explode(array((0 until 10).map(lit): _*)))\n  .withColumn(\"salted_id\", concat($\"user_id\", lit(\"_\"), $\"salt\"))\nlargeSalted.join(skewedSalted, \"salted_id\")",
+        "verification": "Check the Spark UI 'Stages' tab to ensure that the Max Task Duration and Shuffle Read Size are balanced across all executors.",
+        "date": "2026-02-22",
+        "id": 1771742237,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ],
+        "analysis": "<p>PostgreSQL uses 32-bit transaction IDs (XIDs). When the counter reaches 2 billion, the database must 'wrap around'. If old transactions aren't 'frozen' via VACUUM, the database enters read-only mode to prevent data corruption. In high-transaction clusters, autovacuum may not keep up, leading to imminent downtime.</p>",
+        "root_cause": "The relfrozenxid of a table lags too far behind the current XID because autovacuum workers are too slow, being throttled, or blocked by long-running transactions.",
+        "bad_code": "-- Current settings likely too conservative for high load:\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2;\nALTER SYSTEM SET autovacuum_cost_limit = 200;",
+        "solution_desc": "Aggressively tune autovacuum parameters to trigger more frequent cleanups and increase the speed of the vacuum workers. Identify and kill long-running transactions or abandoned replication slots that block xmin advancement.",
+        "good_code": "ALTER TABLE large_table SET (autovacuum_vacuum_scale_factor = 0.01);\nALTER SYSTEM SET autovacuum_cost_limit = 2000;\nALTER SYSTEM SET maintenance_work_mem = '2GB';\n-- Monitor with:\nSELECT datname, age(datfrozenxid) FROM pg_database;",
+        "verification": "Monitor the 'age' of the oldest transaction ID using pg_database. If age(datfrozenxid) starts decreasing after a VACUUM FREEZE, the risk is mitigated.",
+        "date": "2026-02-22",
+        "id": 1771742238,
+        "type": "error"
+    },
+    {
+        "title": "Visual Explainer: The Future of LLM-Driven Code Reviews",
+        "slug": "nicobailon-visual-explainer-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'wall of text' problem inherent in LLM responses. By providing specialized agent skills and prompt templates, it forces AI models to generate structured HTML/Tailwind components instead of markdown. This allows developers to see visual diffs, architecture diagrams, and project audits directly in a browser-rendered format.</p>",
+        "root_cause": "Key Features: Skill-based prompt templates (e.g., 'Plan Auditor', 'Visual Diff'), local-first architecture using TypeScript, and high-quality Tailwind HTML generation for instant rendering of complex logic.",
+        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer\nnpm install\ncp .env.example .env # Add your Anthropic/OpenAI API key",
+        "solution_desc": "Use visual-explainer when you need to communicate complex changes to stakeholders or perform deep code audits. It is best used as a wrapper for LLM outputs to generate interactive reports rather than just reading raw terminal logs or chat messages.",
+        "good_code": "import { VisualExplainer } from 'visual-explainer';\n\nconst report = await VisualExplainer.generate({\n  skill: 'architecture-overview',\n  input: './src/core-engine',\n  outputFormat: 'html'\n});\n// Generates a rich HTML page with interactive diagrams.",
+        "verification": "The project is quickly evolving toward a CLI tool that integrates with CI/CD pipelines to provide visual summaries of PRs, likely becoming a standard for AI-assisted documentation.",
+        "date": "2026-02-22",
+        "id": 1771742239,
+        "type": "trend"
+    },
+    {
         "title": "Fixing BEAM Scheduler Collapse with Dirty NIFs",
         "slug": "elixir-beam-scheduler-collapse-dirty-nifs",
         "language": "Elixir",
