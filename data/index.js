@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Fixing Zig Multi-Threaded Use-After-Free Errors",
+        "slug": "fixing-zig-multi-threaded-uaf",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ],
+        "analysis": "<p>In Zig, manual memory management becomes exponentially complex in multi-threaded environments. The core issue often arises when using the <code>std.heap.GeneralPurposeAllocator</code> (GPA) across threads. While the GPA can be configured for thread-safety, it does not prevent logic-based Use-After-Free (UAF) where one thread deallocates an object while another thread still holds a reference to that memory address.</p><p>Multi-threaded allocators require strict ownership semantics. In high-performance Zig applications, developers often pass pointers to child threads without considering the lifecycle of the parent scope, leading to segmentation faults or silent data corruption when the parent thread cleans up its arena prematurely.</p>",
+        "root_cause": "A racing condition where the owner thread calls 'deinit()' on an ArenaAllocator or 'free()' on a pointer while a worker thread is still performing operations on that memory block.",
+        "bad_code": "const std = @import(\"std\");\n\nfn worker(ptr: *u32) void {\n    std.time.sleep(10 * std.time.ms_per_s);\n    std.debug.print(\"Value: {d}\\n\", .{ptr.*}); // UAF: parent might have freed this\n}\n\npub fn main() !void {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    const allocator = gpa.allocator();\n    \n    const data = try allocator.create(u32);\n    data.* = 42;\n    \n    const thread = try std.Thread.spawn(.{}, worker, .{data});\n    allocator.destroy(data); // Bug: premature destruction\n    thread.join();\n}",
+        "solution_desc": "Implement a reference-counting wrapper or use an atomic flag to ensure memory is only freed after all threads have completed their tasks. Alternatively, use a thread-safe Pool allocator for objects with uniform lifetimes.",
+        "good_code": "const std = @import(\"std\");\n\nconst SharedData = struct {\n    value: u32,\n    ref_count: std.atomic.Value(usize),\n    allocator: std.mem.Allocator,\n\n    fn release(self: *SharedData) void {\n        if (self.ref_count.fetchSub(1, .SeqCst) == 1) {\n            self.allocator.destroy(self);\n        }\n    }\n};\n\nfn worker(data: *SharedData) void {\n    defer data.release();\n    std.debug.print(\"Value: {d}\\n\", .{data.value});\n}\n\npub fn main() !void {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    const allocator = gpa.allocator();\n    \n    var data = try allocator.create(SharedData);\n    data.* = .{ .value = 42, .ref_count = std.atomic.Value(usize).init(2), .allocator = allocator };\n    \n    const thread = try std.Thread.spawn(.{}, worker, .{data});\n    data.release();\n    thread.join();\n}",
+        "verification": "Compile with '-Doptimize=Debug' to enable GPA leak and double-free detection. Use 'valgrind --tool=memcheck' to verify no invalid reads occur during thread execution.",
+        "date": "2026-02-22",
+        "id": 1771723085,
+        "type": "error"
+    },
+    {
+        "title": "Resolving HNSW Index Corruption in Vector Databases",
+        "slug": "hnsw-index-corruption-fix",
+        "language": "Go",
+        "code": "Data Corruption",
+        "tags": [
+            "Go",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ],
+        "analysis": "<p>Hierarchical Navigable Small World (HNSW) graphs are the gold standard for vector similarity searches. However, during high-concurrency upserts, the graph structure is prone to corruption. This typically manifests as 'orphaned nodes' or broken bidirectional links between layers.</p><p>The complexity of HNSW lies in its multi-layered linked-list-like structure. When multiple threads attempt to rebalance the 'M' (max neighbors) of a node simultaneously, or when a node is deleted while being used as an entry point for another search, the pointers in the adjacency list can point to invalid memory or create infinite loops in the graph traversal.</p>",
+        "root_cause": "Insufficient locking granularity during the 'SelectNeighbors' and 'Link' phases of HNSW upserts, causing race conditions in the graph's adjacency list.",
+        "bad_code": "func (idx *HNSW) Insert(vector []float32) {\n    neighbors := idx.searchLayer(vector, idx.entryPoint, idx.L)\n    // CRITICAL BUG: No lock while modifying neighbor connections\n    for _, n := range neighbors {\n        n.connections = append(n.connections, newNode)\n        if len(n.connections) > idx.M {\n            n.shrinkConnections()\n        }\n    }\n}",
+        "solution_desc": "Implement fine-grained Mutex locking on a per-node basis or use a Read-Write Lock (RWLock) during the neighbor rebalancing phase. Ensure that node deletions use a 'tombstone' strategy rather than immediate removal to maintain graph integrity during active searches.",
+        "good_code": "type Node struct {\n    sync.RWMutex\n    connections []uint32\n    vector      []float32\n}\n\nfunc (idx *HNSW) Insert(newNodeID uint32, vector []float32) {\n    targetNodes := idx.searchLayer(vector)\n    for _, targetID := range targetNodes {\n        targetNode := idx.nodes[targetID]\n        targetNode.Lock() // Acquire per-node lock\n        targetNode.connections = append(targetNode.connections, newNodeID)\n        if len(targetNode.connections) > idx.M {\n            targetNode.pruneConnections(idx.M)\n        }\n        targetNode.Unlock()\n    }\n}",
+        "verification": "Run a concurrency test with 100+ goroutines performing simultaneous upserts and deletions. Use a graph integrity checker to verify that all nodes are reachable and that 'M' constraints are satisfied.",
+        "date": "2026-02-22",
+        "id": 1771723086,
+        "type": "error"
+    },
+    {
+        "title": "Mitigating React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ],
+        "analysis": "<p>The JavaScript Interface (JSI) allows React Native to bridge C++ and JavaScript without serialization overhead. However, when handling high-frequency event streams (e.g., 120Hz sensor data or real-time audio processing), developers often leak memory by failing to manage the lifecycle of <code>jsi::Value</code> objects inside the C++ host functions.</p><p>Because JSI bypasses the standard React Native bridge, the JavaScript Garbage Collector (GC) cannot automatically track C++ allocations that hold references to JS objects. If a C++ function creates a <code>jsi::Object</code> or <code>jsi::String</code> on every frame without explicitly clearing it or using a <code>jsi::Scope</code>, the memory footprint will grow linearly until the app crashes.</p>",
+        "root_cause": "Capturing 'jsi::Value' or 'jsi::Object' in long-lived C++ lambdas or global variables, preventing the JS engine from garbage collecting the underlying objects.",
+        "bad_code": "/* C++ JSI Module */\njv::Value getEvent(jsi::Runtime& rt) {\n    // BUG: Creating a new object on every call in a high-frequency stream\n    // without ensuring the previous ones are cleaned up by the JS GC\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"timestamp\", jsi::Value(12345));\n    return jsi::Value(rt, obj);\n}",
+        "solution_desc": "Use <code>jsi::Scope</code> to manage temporary values and prefer passing typed arrays (ArrayBuffers) for high-frequency data to minimize the creation of JS objects. If data must persist, use <code>jsi::WeakObject</code> to allow the GC to collect the object when it's no longer used in JavaScript.",
+        "good_code": "/* C++ JSI Module with Scope Management */\njv::Value getEvent(jsi::Runtime& rt) {\n    jsi::Scope scope(rt);\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"data\", jsi::String::createFromUtf8(rt, \"payload\"));\n    \n    // Return value is automatically moved out of scope\n    return jsi::Value(rt, obj);\n}\n\n// Better approach for high frequency:\nvoid updateBuffer(jsi::Runtime& rt, jsi::ArrayBuffer& buffer) {\n    uint8_t* raw = buffer.data(rt);\n    // Modify raw memory directly instead of creating JS objects\n}",
+        "verification": "Monitor the 'Heap Size' using Chrome DevTools or Flipper. Use 'adb shell dumpsys meminfo' to check for growth in the 'Native Heap' versus 'JS Heap' while the event stream is active.",
+        "date": "2026-02-22",
+        "id": 1771723087,
+        "type": "error"
+    },
+    {
+        "title": "Analyzing the nicobailon/visual-explainer Trend",
+        "slug": "visual-explainer-github-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ],
+        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending due to its unique approach to 'AI-assisted observability.' While LLMs are great at generating code, they often struggle to explain complex architectural changes or data flows in a way that is human-digestible. This project bridges that gap by providing a specialized 'Agent Skill' and prompt templates that force LLMs to output structured HTML visualizations rather than just markdown text.</p><p>It is becoming popular among developers who use AI agents (like AutoGPT or custom LangChain agents) to perform code audits, as it transforms dense diffs into interactive visual recaps, making the review process significantly faster and more accurate.</p>",
+        "root_cause": "Key Features & Innovations: 1. Pre-built prompt templates for visual diff reviews. 2. Automated generation of interactive architecture overviews. 3. Rich HTML layout templates for data tables and project recaps. 4. Seamless integration with LLM agents as a pluggable skill.",
+        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer\nnpm install",
+        "solution_desc": "Best Use Cases: Complex PR reviews where visual impact is high; Onboarding new developers using AI-generated 'architecture maps'; High-level project recaps for non-technical stakeholders after a sprint.",
+        "good_code": "import { VisualExplainer } from 'visual-explainer';\n\nconst agent = new Agent();\nagent.use(VisualExplainer.asSkill({\n  template: 'architecture-overview',\n  outputFormat: 'html'\n}));\n\n// The agent now produces a rich HTML page explaining the system architecture",
+        "verification": "Future Outlook: Expect more tools to follow this 'Visual-First' AI response pattern. The repository is likely to expand into SVG-based flowcharts and real-time visualization of LLM reasoning steps.",
+        "date": "2026-02-22",
+        "id": 1771723088,
+        "type": "trend"
+    },
+    {
         "title": "Fix Haskell Space Leaks in State Monad Transformers",
         "slug": "haskell-statet-space-leak-fix",
         "language": "Haskell",
