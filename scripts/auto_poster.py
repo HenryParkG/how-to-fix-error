@@ -49,8 +49,7 @@ def get_github_trending():
 # Priority list of models to try (Latest -> Older)
 # Priority list of models to try (Latest -> Older)
 MODELS_TO_TRY = [
-    "gemini-3-pro-preview",
-    "gemini-3-flash-preview",
+    "gemini-3.1-pro-preview",
     "gemini-2.5-flash",
     "gemini-2.5-pro",
     "gemini-2.0-flash-exp",
@@ -251,8 +250,20 @@ def get_autonomous_topics(count=1):
                 # Use ensure_ascii=True for maximum JS compatibility (escapes unicode)
                 f.write(f"window.onPostDataLoaded({json.dumps(post_data, indent=4, ensure_ascii=True)});")
             
-            saved_files.append(post_data)
-            print(f"✅ Saved: {filename}")
+            # Construct a lightweight meta dict for index.js
+            meta = {
+                'id': post_data['id'],
+                'title': post_data['title'],
+                'slug': post_data['slug'],
+                'language': post_data['language'],
+                'code': post_data['code'],
+                'date': post_data['date'],
+                'path': file_path.replace("\\", "/"), # Ensure forward slashes for URLs
+                'tags': post_data.get('tags', [])
+            }
+            
+            saved_files.append(meta)
+            print(f"✅ Saved & Indexed: {filename}")
 
         except Exception as e:
             print(f"⚠️ Failed to save post {i}: {e}")

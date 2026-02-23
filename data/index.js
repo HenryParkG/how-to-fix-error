@@ -1,5 +1,123 @@
 var postsIndex = [
     {
+        "id": 1771811397,
+        "title": "Fixing HNSW Recall Decay in Vector DBs",
+        "slug": "hnsw-recall-decay-fix",
+        "language": "Go",
+        "code": "SearchRecallError",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/hnsw-recall-decay-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771811398,
+        "title": "Solving OCaml 5 Multicore GC Contention",
+        "slug": "ocaml-5-gc-contention-fix",
+        "language": "Rust",
+        "code": "RuntimeLatencySpike",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/ocaml-5-gc-contention-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771811399,
+        "title": "Fixing Next.js RSC Payload Bloat",
+        "slug": "nextjs-rsc-payload-bloat",
+        "language": "Next.js",
+        "code": "PayloadSizeWarning",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/nextjs-rsc-payload-bloat.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771811400,
+        "title": "OpenPlanter: The Open-Source Green Thumb",
+        "slug": "openplanter-trending-repo",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/openplanter-trending-repo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
+        "title": "Resolving Haskell Space Leaks in High-Throughput Pipelines",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak (OOM)",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ],
+        "date": "2026-02-23",
+        "id": 1771811128,
+        "path": "data/posts/2026-02/haskell-lazy-evaluation-space-leaks.js"
+    },
+    {
+        "title": "Mitigating PyTorch CUDA Fragmentation in LLM Serving",
+        "slug": "pytorch-cuda-fragmentation-llm",
+        "language": "Python",
+        "code": "CUDA OOM (Fragmented)",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ],
+        "date": "2026-02-23",
+        "id": 1771811129,
+        "path": "data/posts/2026-02/pytorch-cuda-fragmentation-llm.js"
+    },
+    {
+        "title": "Fixing Istio Envoy Sidecar Memory Bloat",
+        "slug": "istio-envoy-memory-bloat-fix",
+        "language": "Go",
+        "code": "Envoy OOMKilled",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Istio",
+            "Error Fix"
+        ],
+        "date": "2026-02-23",
+        "id": 1771811130,
+        "path": "data/posts/2026-02/istio-envoy-memory-bloat-fix.js"
+    },
+    {
+        "title": "OpenPlanter: The Next Frontier in Automated IoT Farming",
+        "slug": "shinmegamiboson-openplanter-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ],
+        "date": "2026-02-23",
+        "id": 1771811131,
+        "path": "data/posts/2026-02/shinmegamiboson-openplanter-analysis.js"
+    },
+    {
         "title": "Mitigating NCCL Collective Timeouts in LLM Training",
         "slug": "mitigate-nccl-timeout-llm-training",
         "language": "Python",
@@ -10,15 +128,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In distributed multi-node LLM training, NCCL (NVIDIA Collective Communications Library) timeouts often manifest as cryptic 'Watchdog' errors or hung processes during the <code>all_reduce</code> phase. These failures are typically triggered by network jitter, inconsistent GPU clock speeds across nodes, or CPU-side bottlenecks that prevent timely participation in collective operations. When one node lags, the entire ring waits, eventually exceeding the default 30-minute timeout window.</p>",
-        "root_cause": "The root cause is usually a combination of 'NCCL_SOCKET_IFNAME' misconfiguration causing traffic to route over slow interfaces, and the lack of 'NCCL_ASYNC_ERROR_HANDLING' causing the training loop to hang indefinitely rather than failing fast and recovering.",
-        "bad_code": "import torch.distributed as dist\n\n# Basic initialization without error handling or timeout tuning\ndist.init_process_group(\n    backend='nccl',\n    init_method='env://',\n    world_size=64,\n    rank=my_rank\n)",
-        "solution_desc": "Set NCCL-specific environment variables to force the correct network interface and enable asynchronous error handling. Additionally, provide an explicit, shorter timeout duration and implement a robust initialization check to ensure all nodes are reachable before starting the compute-heavy loop.",
-        "good_code": "import os\nimport datetime\nimport torch.distributed as dist\n\n# Force high-speed interface (e.g., Infiniband or 100G Eth)\nos.environ['NCCL_SOCKET_IFNAME'] = 'eth0'\nos.environ['NCCL_ASYNC_ERROR_HANDLING'] = '1'\nos.environ['NCCL_IB_DISABLE'] = '0'  # Enable IB if available\n\ndist.init_process_group(\n    backend='nccl',\n    timeout=datetime.timedelta(seconds=1800),\n    init_method='env://',\n    world_size=64,\n    rank=my_rank\n)",
-        "verification": "Run the training script with 'NCCL_DEBUG=INFO' and verify that 'ncclNet' logs show the correct interface and that 'all_reduce' operations complete within the expected latency profile.",
         "date": "2026-02-23",
         "id": 1771809436,
-        "type": "error"
+        "path": "data/posts/2026-02/mitigate-nccl-timeout-llm-training.js"
     },
     {
         "title": "Resolving Silent K8s OOMKills in cgroup v2",
@@ -31,15 +143,9 @@ var postsIndex = [
             "Docker",
             "Error Fix"
         ],
-        "analysis": "<p>With the industry shift to cgroup v2, Kubernetes users have reported 'silent' OOMKills where pods disappear without the standard Exit Code 137 in the main container logs. This occurs because cgroup v2 manages memory pressure via <code>memory.max</code> and <code>memory.high</code> differently than v1's <code>memory.limit_in_bytes</code>. The discrepancy often results in the kernel killing a process within a sub-container or a sidecar without triggering the Kubelet's top-level event recorder accurately.</p>",
-        "root_cause": "The kernel's OOM killer in cgroup v2 may target processes based on 'Pressure Stall Information' (PSI) before the Kubelet realizes the limit has been breached, leading to a race condition where the pod is terminated before the reason is logged to the API server.",
-        "bad_code": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: memory-hog\nspec:\n  containers:\n  - name: app\n    image: app:latest\n    resources:\n      limits:\n        memory: \"2Gi\" # No memory reservation or swap tuning",
-        "solution_desc": "Implement 'MemoryQoS' feature gates in Kubernetes to leverage cgroup v2's 'memory.min' and 'memory.low' for better protection. Also, ensure the node's Kubelet configuration includes 'memoryThrottlingFactor' and monitor 'memory.events' within the cgroup filesystem to catch 'oom_kill' counts that don't reach the K8s event bus.",
-        "good_code": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: memory-hog-fixed\nspec:\n  containers:\n  - name: app\n    image: app:latest\n    resources:\n      requests:\n        memory: \"1.5Gi\"\n      limits:\n        memory: \"2Gi\"\n  # Ensure Kubelet is configured with --feature-gates=\"MemoryQoS=true\"",
-        "verification": "Check '/sys/fs/cgroup/memory.events' inside the container. If 'oom_kill' is non-zero but K8s reports 'Completed', the cgroup v2 discrepancy is confirmed and mitigated by setting requests closer to limits.",
         "date": "2026-02-23",
         "id": 1771809437,
-        "type": "error"
+        "path": "data/posts/2026-02/k8s-silent-oomkill-cgroup-v2.js"
     },
     {
         "title": "Fixing C++20 Coroutine Frame Leaks",
@@ -52,15 +158,9 @@ var postsIndex = [
             "Rust",
             "Error Fix"
         ],
-        "analysis": "<p>In high-throughput networking applications, C++20 coroutines are used to manage thousands of concurrent sockets. However, a common pitfall is the 'leaked coroutine frame.' Unlike traditional functions, coroutines allocate a frame on the heap. If the <code>promise_type</code> does not correctly handle <code>final_suspend</code> or if the <code>coroutine_handle</code> is never destroyed by the caller after completion, the memory associated with the coroutine state is never reclaimed.</p>",
-        "root_cause": "The failure occurs when the 'final_suspend' method returns 'std::suspend_always' but the calling event loop fails to call 'handle.destroy()', or when an exception escapes the coroutine body without reaching the promise's 'unhandled_exception' logic.",
-        "bad_code": "struct Task {\n    struct promise_type {\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ... other methods\n    };\n    std::coroutine_handle<promise_type> handle;\n    ~Task() { } // Handle is leaked!\n};",
-        "solution_desc": "Implement a RAII (Resource Acquisition Is Initialization) wrapper for the <code>coroutine_handle</code>. Ensure the destructor calls <code>.destroy()</code> if the handle is valid. Furthermore, the <code>final_suspend</code> should return <code>std::suspend_always</code> to allow the caller to clean up, or the wrapper must be designed to relinquish ownership correctly.",
-        "good_code": "struct Task {\n    struct promise_type { /* ... */ };\n    std::coroutine_handle<promise_type> handle;\n    \n    ~Task() {\n        if (handle) handle.destroy();\n    }\n    Task(Task&& other) : handle(other.handle) { other.handle = nullptr; }\n    // Disable copying to prevent double-destroy\n    Task(const Task&) = delete;\n};",
-        "verification": "Use Valgrind or AddressSanitizer (ASAN) to monitor heap allocations. Run a loop creating 1,000,000 coroutines; memory usage should remain flat if frames are correctly destroyed.",
         "date": "2026-02-23",
         "id": 1771809438,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutine-frame-leak-fix.js"
     },
     {
         "title": "OpenPlanter: The Future of Automated IoT Agriculture",
@@ -72,15 +172,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>OpenPlanter is rapidly gaining traction in the GitHub community as a premier open-source hardware and software stack for automated precision agriculture. It leverages Python-based edge logic to manage soil moisture, nutrient delivery, and lighting cycles. Its popularity stems from the intersection of 'Right to Repair' and 'Smart Farming,' allowing hobbyists and small-scale farmers to bypass expensive, proprietary agricultural tech silos with a modular, DIY approach.</p>",
-        "root_cause": "Key Features & Innovations: 1. Modular Driver System for various NPK sensors. 2. Real-time monitoring via a FastAPI-based dashboard. 3. Edge-first processing reducing reliance on cloud latency. 4. Integrated CAD files for 3D-printable structural components.",
-        "bad_code": "git clone https://github.com/ShinMegamiBoson/OpenPlanter.git\ncd OpenPlanter\npip install -r requirements.txt\npython main.py --simulate",
-        "solution_desc": "Best Use Cases: Small-scale greenhouses, urban indoor farming, and educational IoT projects. Adopt when you need a customizable automation layer that integrates with standard Home Assistant setups via MQTT.",
-        "good_code": "from openplanter.sensors import MoistureSensor\nfrom openplanter.actuators import Pump\n\n# Quick logic to automate watering\nif MoistureSensor('soil_1').read() < 30:\n    Pump('main_valve').activate(duration=5)\n    print(\"Watering cycle initiated via OpenPlanter.\")",
-        "verification": "The project is expanding into AI-driven crop yield prediction. Expect future releases to integrate computer vision for pest detection using lightweight TensorFlow models on Raspberry Pi.",
         "date": "2026-02-23",
         "id": 1771809439,
-        "type": "trend"
+        "path": "data/posts/2026-02/openplanter-iot-agriculture-trend.js"
     },
     {
         "title": "Fixing eBPF Verifier State Explosion in Complex XDP Programs",
@@ -93,15 +187,9 @@ var postsIndex = [
             "Kubernetes",
             "Error Fix"
         ],
-        "analysis": "<p>When developing high-performance XDP programs, developers often encounter 'State Explosion' where the BPF verifier exhausts its complexity limit (1 million instructions) or state limit. This typically occurs because the verifier explores every possible branch combination to ensure safety. In complex packet parsing or multi-tenant filtering, the number of logical paths grows exponentially, leading the verifier to prune states inefficiently or reject the program entirely despite the logic being sound.</p>",
-        "root_cause": "Excessive branching and deep function call chains cause the verifier's state-tracking engine to hit its limit before it can prove program termination and memory safety.",
-        "bad_code": "for (int i = 0; i < MAX_HEADERS; i++) {\n    struct hdr *h = data + offset;\n    if (h + 1 > data_end) break;\n    if (h->type == TYPE_A) { /* complex logic */ }\n    else if (h->type == TYPE_B) { /* more complex logic */ }\n    // ... 10 more branches\n    offset += sizeof(struct hdr);\n}",
-        "solution_desc": "Refactor the logic to use BPF tail calls to split the program into smaller, independently verified chunks, or use the `bpf_loop` helper (available in kernels 5.17+) to reduce the instruction count compared to manual loop unrolling.",
-        "good_code": "static __always_inline int handle_hdr(struct xdp_md *ctx) {\n    // Specific logic for one header\n}\n\nSEC(\"xdp\")\nint xdp_prog(struct xdp_md *ctx) {\n    // Use tail calls to jump to specific logic handlers\n    bpf_tail_call(ctx, &jmp_table, hdr_type);\n    return XDP_PASS;\n}",
-        "verification": "Run `bpftool prog load` and check the 'insns processed' count in the verifier log; it should be significantly lower than the 1M limit.",
         "date": "2026-02-22",
         "id": 1771752200,
-        "type": "error"
+        "path": "data/posts/2026-02/fixing-ebpf-verifier-state-explosion-xdp.js"
     },
     {
         "title": "Resolving Kafka Transactional Producer 'Zombie' Fencing",
@@ -114,15 +202,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>Kafka's Exactly-Once Semantics (EOS) rely on the <code>transactional.id</code> to identify producers. A 'Zombie' producer scenario occurs when a producer is partitioned from the cluster, a new producer starts with the same ID, and the original producer attempts to commit a transaction after the partition heals. Kafka fences the older producer by incrementing the producer epoch, resulting in a <code>ProducerFencedException</code>. If not handled, this leads to data inconsistency or application crashes during recovery cycles.</p>",
-        "root_cause": "Multiple producer instances sharing the same 'transactional.id' simultaneously, or long GC pauses causing the broker to expire the producer session and increment the epoch.",
-        "bad_code": "properties.put(\"transactional.id\", \"static-id-123\");\nKafkaProducer<String, String> producer = new KafkaProducer<>(properties);\ntry {\n    producer.beginTransaction();\n    producer.send(record);\n    producer.commitTransaction();\n} catch (Exception e) {\n    // Generic handling fails to address fencing\n    log.error(\"Error\", e);\n}",
-        "solution_desc": "Ensure <code>transactional.id</code> is unique per application instance (e.g., using hostname or pod UID). Catch <code>ProducerFencedException</code> specifically to gracefully shut down the 'zombie' instance, as it can no longer safely participate in transactions.",
-        "good_code": "properties.put(\"transactional.id\", System.getenv(\"HOSTNAME\") + \"-tx-id\");\nproducer.initTransactions();\ntry {\n    producer.beginTransaction();\n    producer.send(record);\n    producer.commitTransaction();\n} catch (ProducerFencedException | OutOfOrderSequenceException | AuthorizationException e) {\n    producer.close(); // Irrecoverable; must close and terminate\n} catch (KafkaException e) {\n    producer.abortTransaction(); // Recoverable\n}",
-        "verification": "Simulate a network partition and verify that the fenced producer logs the specific exception and terminates rather than retrying indefinitely.",
         "date": "2026-02-22",
         "id": 1771752201,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-transactional-producer-zombie-fencing.js"
     },
     {
         "title": "Mitigating WebGPU Buffer Alignment Faults",
@@ -135,15 +217,9 @@ var postsIndex = [
             "Next.js",
             "Error Fix"
         ],
-        "analysis": "<p>WebGPU imposes strict memory alignment requirements for buffers, particularly when using uniform buffers or storage buffers with dynamic offsets. A common error occurs when the CPU-side data layout (e.g., a Float32Array) does not match the WGSL structure alignment rules (std140/std430). For instance, a <code>vec3<f32></code> in WGSL is treated as a 16-byte object, but developers often provide only 12 bytes in TypeScript, causing subsequent fields to align incorrectly and triggering validation errors or silent data corruption.</p>",
-        "root_cause": "Mismatch between TypeScript array packing and WebGPU's mandatory 16-byte alignment for specific vector types and 256-byte alignment for uniform buffer offsets.",
-        "bad_code": "// TS Side: Total 24 bytes\nconst data = new Float32Array([\n    1.0, 2.0, 3.0, // vec3\n    4.0, 5.0, 6.0  // vec3\n]);\n\n// WGSL Side:\nstruct Params {\n    v1: vec3<f32>,\n    v2: vec3<f32>,\n};",
-        "solution_desc": "Manually pad the TypeScript data to match the 16-byte alignment (4 floats) required for <code>vec3</code>. Alternatively, use a helper library like <code>gpu-buffer-utils</code> or always use <code>vec4</code> to ensure natural alignment.",
-        "good_code": "// TS Side: Pad to 32 bytes (16 bytes per vec3)\nconst data = new Float32Array([\n    1.0, 2.0, 3.0, 0.0, // vec3 + padding\n    4.0, 5.0, 6.0, 0.0  // vec3 + padding\n]);\n\n// Or use @align(16) in WGSL struct definitions",
-        "verification": "Check the browser's developer console for 'Offset is not a multiple of 256' or 'Buffer size does not match structure' validation errors.",
         "date": "2026-02-22",
         "id": 1771752202,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-buffer-alignment-faults-compute.js"
     },
     {
         "title": "Visual Explainer: The Future of Agentic Observability",
@@ -156,15 +232,9 @@ var postsIndex = [
             "Python",
             "TypeScript"
         ],
-        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'black box' problem of AI Agents. While frameworks like LangChain or AutoGPT handle the logic, explaining the *why* and *how* to end-users remains difficult. Visual-explainer provides a standardized set of skills and prompt templates that allow agents to generate sophisticated HTML visualizations—ranging from architecture diagrams to plan audits—directly within their workflow, making agent reasoning transparent and professional.</p>",
-        "root_cause": "Rich UI generation (Diffs, Gantt-style plans, Data Tables) via LLM-driven templating and specialized Agent skills.",
-        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer && npm install",
-        "solution_desc": "Adopt this tool when building customer-facing AI agents or internal tools where 'chain-of-thought' logs are too messy. It is best used for code review agents, project management bots, and data analysis assistants that need to provide summary recaps.",
-        "good_code": "from visual_explainer import ExplainerAgent\n\n# Integrate as a tool in your agent loop\nexplainer = ExplainerAgent(template=\"architecture_overview\")\nhtml_output = explainer.generate(data=agent_state_json)\n\nwith open(\"report.html\", \"w\") as f:\n    f.write(html_output)",
-        "verification": "The project is positioned to become the 'D3.js for LLMs', potentially being integrated into major agentic frameworks as a default visualization layer.",
         "date": "2026-02-22",
         "id": 1771752203,
-        "type": "trend"
+        "path": "data/posts/2026-02/visual-explainer-agent-rich-html.js"
     },
     {
         "title": "Fixing Rust Async Cancellation Safety in Tokio Select",
@@ -177,15 +247,9 @@ var postsIndex = [
             "Tokio",
             "Error Fix"
         ],
-        "analysis": "<p>In Rust's async ecosystem, cancellation safety is a critical but often overlooked concept. When using <code>tokio::select!</code>, the branches that do not complete are immediately dropped. If a future is dropped while it holds intermediate state (like data read from a socket but not yet processed), that data is lost forever. This is particularly dangerous in network protocols where a partial read can desynchronize the stream.</p>",
-        "root_cause": "The tokio::select! macro drops the futures of all branches that did not finish. If a future is not 'cancellation safe', dropping it mid-execution results in the loss of any state that wasn't persisted outside the future.",
-        "bad_code": "loop {\n    tokio::select! {\n        res = socket.read(&mut buf) => {\n            process(res?);\n        }\n        _ = timeout(Duration::from_secs(1)) => {\n            println!(\"Timed out\");\n        }\n    }\n}",
-        "solution_desc": "To ensure cancellation safety, move the stateful operation (like reading from a stream) outside the select loop or use a persistent buffer. For network streams, use a 'framed' approach or manually manage a buffer that survives across loop iterations by pinning the future.",
-        "good_code": "let mut reader = BufReader::new(socket);\nloop {\n    let read_fut = reader.fill_buf();\n    pin_mut!(read_fut);\n    tokio::select! {\n        res = read_fut => {\n            let amt = res?.len();\n            process(&res?);\n            reader.consume(amt);\n        }\n        _ = timeout => { /* ... */ }\n    }\n}",
-        "verification": "Use loom for concurrency testing or write a unit test that drops the future halfway through a multi-step process and verify that the internal state is preserved.",
         "date": "2026-02-22",
         "id": 1771742236,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-async-cancellation-safety-tokio.js"
     },
     {
         "title": "Resolving Spark Data Skew OOMs in Petabyte Joins",
@@ -198,15 +262,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>Data skew occurs when a small number of join keys account for a disproportionately large amount of data. During a Shuffle Hash Join, Spark hashes keys to specific partitions. If one key (e.g., 'null' or a default value) has billions of rows, a single executor's memory will be overwhelmed, leading to the dreaded 'Executor OOM' while other executors remain idle.</p>",
-        "root_cause": "Uneven distribution of data across partitions causes specific executors to exceed their JVM heap memory limits during the shuffle phase of a join operation.",
-        "bad_code": "val joinedDF = largeDF.join(skewedDF, \"user_id\")\njoinedDF.write.parquet(\"output/path\")",
-        "solution_desc": "Implement 'Salting'. Add a random integer suffix to the join key in the skewed table and replicate the other table's records with all possible salt values. Alternatively, leverage Spark 3.0+ Adaptive Query Execution (AQE) with skew join hints.",
-        "good_code": "import org.apache.spark.sql.functions._\nval salt = floor(rand() * 10)\nval skewedSalted = skewedDF.withColumn(\"salted_id\", concat($\"user_id\", lit(\"_\"), salt))\nval largeSalted = largeDF.withColumn(\"salt\", explode(array((0 until 10).map(lit): _*)))\n  .withColumn(\"salted_id\", concat($\"user_id\", lit(\"_\"), $\"salt\"))\nlargeSalted.join(skewedSalted, \"salted_id\")",
-        "verification": "Check the Spark UI 'Stages' tab to ensure that the Max Task Duration and Shuffle Read Size are balanced across all executors.",
         "date": "2026-02-22",
         "id": 1771742237,
-        "type": "error"
+        "path": "data/posts/2026-02/spark-data-skew-oom-shuffle-joins.js"
     },
     {
         "title": "Mitigating PostgreSQL Transaction ID Wraparound",
@@ -219,15 +277,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses 32-bit transaction IDs (XIDs). When the counter reaches 2 billion, the database must 'wrap around'. If old transactions aren't 'frozen' via VACUUM, the database enters read-only mode to prevent data corruption. In high-transaction clusters, autovacuum may not keep up, leading to imminent downtime.</p>",
-        "root_cause": "The relfrozenxid of a table lags too far behind the current XID because autovacuum workers are too slow, being throttled, or blocked by long-running transactions.",
-        "bad_code": "-- Current settings likely too conservative for high load:\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2;\nALTER SYSTEM SET autovacuum_cost_limit = 200;",
-        "solution_desc": "Aggressively tune autovacuum parameters to trigger more frequent cleanups and increase the speed of the vacuum workers. Identify and kill long-running transactions or abandoned replication slots that block xmin advancement.",
-        "good_code": "ALTER TABLE large_table SET (autovacuum_vacuum_scale_factor = 0.01);\nALTER SYSTEM SET autovacuum_cost_limit = 2000;\nALTER SYSTEM SET maintenance_work_mem = '2GB';\n-- Monitor with:\nSELECT datname, age(datfrozenxid) FROM pg_database;",
-        "verification": "Monitor the 'age' of the oldest transaction ID using pg_database. If age(datfrozenxid) starts decreasing after a VACUUM FREEZE, the risk is mitigated.",
         "date": "2026-02-22",
         "id": 1771742238,
-        "type": "error"
+        "path": "data/posts/2026-02/postgresql-transaction-id-wraparound-fix.js"
     },
     {
         "title": "Visual Explainer: The Future of LLM-Driven Code Reviews",
@@ -239,15 +291,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'wall of text' problem inherent in LLM responses. By providing specialized agent skills and prompt templates, it forces AI models to generate structured HTML/Tailwind components instead of markdown. This allows developers to see visual diffs, architecture diagrams, and project audits directly in a browser-rendered format.</p>",
-        "root_cause": "Key Features: Skill-based prompt templates (e.g., 'Plan Auditor', 'Visual Diff'), local-first architecture using TypeScript, and high-quality Tailwind HTML generation for instant rendering of complex logic.",
-        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer\nnpm install\ncp .env.example .env # Add your Anthropic/OpenAI API key",
-        "solution_desc": "Use visual-explainer when you need to communicate complex changes to stakeholders or perform deep code audits. It is best used as a wrapper for LLM outputs to generate interactive reports rather than just reading raw terminal logs or chat messages.",
-        "good_code": "import { VisualExplainer } from 'visual-explainer';\n\nconst report = await VisualExplainer.generate({\n  skill: 'architecture-overview',\n  input: './src/core-engine',\n  outputFormat: 'html'\n});\n// Generates a rich HTML page with interactive diagrams.",
-        "verification": "The project is quickly evolving toward a CLI tool that integrates with CI/CD pipelines to provide visual summaries of PRs, likely becoming a standard for AI-assisted documentation.",
         "date": "2026-02-22",
         "id": 1771742239,
-        "type": "trend"
+        "path": "data/posts/2026-02/nicobailon-visual-explainer-github-trend.js"
     },
     {
         "title": "Fixing BEAM Scheduler Collapse with Dirty NIFs",
@@ -260,15 +306,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In the Erlang BEAM VM, schedulers are designed for non-blocking, asynchronous operations. When a Native Implemented Function (NIF) performs heavy CPU-bound computation, it hijacks the scheduler thread. Since BEAM expects NIFs to return within 1 millisecond, a long-running NIF causes 'scheduler collapse,' where other processes assigned to that scheduler starve, leading to system-wide latency spikes and heartbeat failures in distributed clusters.</p>",
-        "root_cause": "Executing CPU-intensive C code synchronously on a standard BEAM scheduler, preventing the VM from performing process switching and garbage collection.",
-        "bad_code": "static ERL_NIF_TERM heavy_compute(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {\n    // This blocks the scheduler thread for 500ms\n    long_running_task();\n    return enif_make_int(env, 1);\n}\n\nstatic ErlNifFunc nif_funcs[] = {\n    {\"heavy_compute\", 1, heavy_compute}\n};",
-        "solution_desc": "Architecturally, long-running NIFs must be flagged as 'Dirty'. This tells the BEAM to offload the execution to a separate pool of dirty CPU schedulers, preserving the responsiveness of the main scheduler threads.",
-        "good_code": "static ERL_NIF_TERM heavy_compute(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[]) {\n    long_running_task();\n    return enif_make_int(env, 1);\n}\n\nstatic ErlNifFunc nif_funcs[] = {\n    // Use ERL_NIF_DIRTY_JOB_CPU_BOUND flag\n    {\"heavy_compute\", 1, heavy_compute, ERL_NIF_DIRTY_JOB_CPU_BOUND}\n};",
-        "verification": "Use ':observer.start()' and monitor 'Load Charts'. Verify that scheduler utilization is distributed and that the dirty CPU scheduler pool is handling the NIF workload without impacting UI responsiveness or process reductions.",
         "date": "2026-02-22",
         "id": 1771735526,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-beam-scheduler-collapse-dirty-nifs.js"
     },
     {
         "title": "Mitigating Flutter Raster Jank via Shader Warmup",
@@ -281,15 +321,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>Flutter uses the Skia engine (or Impeller) for rendering. A common issue is 'jank' during the first execution of an animation. This occurs because the Raster thread must compile Skia Shaders (SkSL) into machine code for the GPU. This Just-In-Time (JIT) compilation can take longer than the 16ms frame budget, causing visible stuttering even on high-end hardware.</p>",
-        "root_cause": "Synchronous shader compilation on the Raster thread during the first frame of a complex animation or transition.",
-        "bad_code": "void main() {\n  // Standard initialization without shader pre-caching\n  runApp(const MyApp());\n}\n\n// Any complex CustomPainter or Opacity widget will trigger JIT compilation\nWidget build(BuildContext context) {\n  return AnimatedOpacity(opacity: 1.0, child: ComplexCanvas());\n}",
-        "solution_desc": "Capture the required shaders during a training run and bundle them as an SkSL JSON file. This allows the Flutter engine to perform 'warmup'—compiling the shaders during app startup rather than during the animation.",
-        "good_code": "// 1. Run app to capture: flutter run --bundle-sksl-path shaders.sksl.json\n// 2. Build with captured shaders:\n// flutter build apk --bundle-sksl-path shaders.sksl.json\n\n// No specific code change required in Dart, but ensuring SkSL bundle is included in assets.",
-        "verification": "Run the app with 'flutter run --trace-skia'. Open DevTools and verify the 'Raster' thread no longer shows red bars (frame misses) during the specific animation sequence.",
         "date": "2026-02-22",
         "id": 1771735527,
-        "type": "error"
+        "path": "data/posts/2026-02/flutter-raster-jank-skia-shaders.js"
     },
     {
         "title": "Fixing Go GC Pacing in High-Throughput Systems",
@@ -302,15 +336,9 @@ var postsIndex = [
             "Docker",
             "Error Fix"
         ],
-        "analysis": "<p>In memory-intensive Go services, the Garbage Collector (GC) pacer might fail to keep up with high allocation rates. If the heap grows faster than the GC can scan it, the system experiences 'GC Assist'—where worker goroutines are forced to help with collection, causing a drastic drop in application throughput and increased tail latency (P99).</p>",
-        "root_cause": "The default GOGC=100 setting is too aggressive for large heaps, leading to frequent cycles, while the lack of a memory limit causes the pacer to ignore the physical RAM boundaries of the container.",
-        "bad_code": "func main() {\n    // No memory limits or GC tuning in a high-allocation loop\n    for {\n        data := make([]byte, 1024 * 1024) // Rapid allocation\n        process(data)\n    }\n}",
-        "solution_desc": "Set a soft memory limit using 'debug.SetMemoryLimit' (introduced in Go 1.19) and tune 'GOGC' to balance CPU overhead versus memory usage. This allows the pacer to be more predictable under load.",
-        "good_code": "import \"runtime/debug\"\n\nfunc main() {\n    // Set memory limit to 90% of container RAM (e.g., 2GB)\n    debug.SetMemoryLimit(1.8 * 1024 * 1024 * 1024)\n    \n    // Increase GOGC to reduce cycle frequency if RAM allows\n    // os.Setenv(\"GOGC\", \"200\") \n    \n    startHighThroughputEngine()\n}",
-        "verification": "Monitor GC statistics using 'GODEBUG=gctrace=1'. Ensure that 'GC Assist' time in the trace is minimized and that the heap stabilizes below the set memory limit without OOM kills.",
         "date": "2026-02-22",
         "id": 1771735528,
-        "type": "error"
+        "path": "data/posts/2026-02/go-gc-pacing-memory-intensive-systems.js"
     },
     {
         "title": "Visual Explainer: AI-Powered Technical Visualization",
@@ -322,15 +350,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending because it solves the 'context collapse' problem in modern engineering. It utilizes LLM agents to ingest raw technical artifacts—like git diffs, architectural docs, or JSON data—and transforms them into high-fidelity, interactive HTML pages. This bridges the gap between dense code changes and human-readable summaries, making it essential for complex PR reviews and system audits.</p>",
-        "root_cause": "Agentic Workflows + Visual DSLs: It uses prompt templates to guide LLMs in generating structured UI components (D3.js, Mermaid, Tailwind) that visualize logical flow and data changes.",
-        "bad_code": "git clone https://github.com/nicobailon/visual-explainer\ncd visual-explainer\nnpm install\ncp .env.example .env # Add OpenAI/Anthropic API Key",
-        "solution_desc": "Adopt this tool for 'High-Stakes Reviews' where code impact is non-obvious. Use it to generate visual diffs for database migrations, state machine changes, or complex cloud infrastructure refactors.",
-        "good_code": "// Example CLI Usage pattern:\n// npx visual-explainer analyze-diff \\\n//   --input ./pr-42.diff \\\n//   --template \"architecture-impact\" \\\n//   --output ./report.html",
-        "verification": "The project represents a shift toward 'Self-Explaining Systems'. Future iterations are expected to integrate directly into GitHub Actions, automatically appending visual reports to every Pull Request.",
         "date": "2026-02-22",
         "id": 1771735529,
-        "type": "trend"
+        "path": "data/posts/2026-02/visual-explainer-github-trend.js"
     },
     {
         "title": "Fixing Zig Multi-Threaded Use-After-Free Errors",
@@ -343,15 +365,9 @@ var postsIndex = [
             "Zig",
             "Error Fix"
         ],
-        "analysis": "<p>In Zig, manual memory management becomes exponentially complex in multi-threaded environments. The core issue often arises when using the <code>std.heap.GeneralPurposeAllocator</code> (GPA) across threads. While the GPA can be configured for thread-safety, it does not prevent logic-based Use-After-Free (UAF) where one thread deallocates an object while another thread still holds a reference to that memory address.</p><p>Multi-threaded allocators require strict ownership semantics. In high-performance Zig applications, developers often pass pointers to child threads without considering the lifecycle of the parent scope, leading to segmentation faults or silent data corruption when the parent thread cleans up its arena prematurely.</p>",
-        "root_cause": "A racing condition where the owner thread calls 'deinit()' on an ArenaAllocator or 'free()' on a pointer while a worker thread is still performing operations on that memory block.",
-        "bad_code": "const std = @import(\"std\");\n\nfn worker(ptr: *u32) void {\n    std.time.sleep(10 * std.time.ms_per_s);\n    std.debug.print(\"Value: {d}\\n\", .{ptr.*}); // UAF: parent might have freed this\n}\n\npub fn main() !void {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    const allocator = gpa.allocator();\n    \n    const data = try allocator.create(u32);\n    data.* = 42;\n    \n    const thread = try std.Thread.spawn(.{}, worker, .{data});\n    allocator.destroy(data); // Bug: premature destruction\n    thread.join();\n}",
-        "solution_desc": "Implement a reference-counting wrapper or use an atomic flag to ensure memory is only freed after all threads have completed their tasks. Alternatively, use a thread-safe Pool allocator for objects with uniform lifetimes.",
-        "good_code": "const std = @import(\"std\");\n\nconst SharedData = struct {\n    value: u32,\n    ref_count: std.atomic.Value(usize),\n    allocator: std.mem.Allocator,\n\n    fn release(self: *SharedData) void {\n        if (self.ref_count.fetchSub(1, .SeqCst) == 1) {\n            self.allocator.destroy(self);\n        }\n    }\n};\n\nfn worker(data: *SharedData) void {\n    defer data.release();\n    std.debug.print(\"Value: {d}\\n\", .{data.value});\n}\n\npub fn main() !void {\n    var gpa = std.heap.GeneralPurposeAllocator(.{}){};\n    const allocator = gpa.allocator();\n    \n    var data = try allocator.create(SharedData);\n    data.* = .{ .value = 42, .ref_count = std.atomic.Value(usize).init(2), .allocator = allocator };\n    \n    const thread = try std.Thread.spawn(.{}, worker, .{data});\n    data.release();\n    thread.join();\n}",
-        "verification": "Compile with '-Doptimize=Debug' to enable GPA leak and double-free detection. Use 'valgrind --tool=memcheck' to verify no invalid reads occur during thread execution.",
         "date": "2026-02-22",
         "id": 1771723085,
-        "type": "error"
+        "path": "data/posts/2026-02/fixing-zig-multi-threaded-uaf.js"
     },
     {
         "title": "Resolving HNSW Index Corruption in Vector Databases",
@@ -364,15 +380,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Hierarchical Navigable Small World (HNSW) graphs are the gold standard for vector similarity searches. However, during high-concurrency upserts, the graph structure is prone to corruption. This typically manifests as 'orphaned nodes' or broken bidirectional links between layers.</p><p>The complexity of HNSW lies in its multi-layered linked-list-like structure. When multiple threads attempt to rebalance the 'M' (max neighbors) of a node simultaneously, or when a node is deleted while being used as an entry point for another search, the pointers in the adjacency list can point to invalid memory or create infinite loops in the graph traversal.</p>",
-        "root_cause": "Insufficient locking granularity during the 'SelectNeighbors' and 'Link' phases of HNSW upserts, causing race conditions in the graph's adjacency list.",
-        "bad_code": "func (idx *HNSW) Insert(vector []float32) {\n    neighbors := idx.searchLayer(vector, idx.entryPoint, idx.L)\n    // CRITICAL BUG: No lock while modifying neighbor connections\n    for _, n := range neighbors {\n        n.connections = append(n.connections, newNode)\n        if len(n.connections) > idx.M {\n            n.shrinkConnections()\n        }\n    }\n}",
-        "solution_desc": "Implement fine-grained Mutex locking on a per-node basis or use a Read-Write Lock (RWLock) during the neighbor rebalancing phase. Ensure that node deletions use a 'tombstone' strategy rather than immediate removal to maintain graph integrity during active searches.",
-        "good_code": "type Node struct {\n    sync.RWMutex\n    connections []uint32\n    vector      []float32\n}\n\nfunc (idx *HNSW) Insert(newNodeID uint32, vector []float32) {\n    targetNodes := idx.searchLayer(vector)\n    for _, targetID := range targetNodes {\n        targetNode := idx.nodes[targetID]\n        targetNode.Lock() // Acquire per-node lock\n        targetNode.connections = append(targetNode.connections, newNodeID)\n        if len(targetNode.connections) > idx.M {\n            targetNode.pruneConnections(idx.M)\n        }\n        targetNode.Unlock()\n    }\n}",
-        "verification": "Run a concurrency test with 100+ goroutines performing simultaneous upserts and deletions. Use a graph integrity checker to verify that all nodes are reachable and that 'M' constraints are satisfied.",
         "date": "2026-02-22",
         "id": 1771723086,
-        "type": "error"
+        "path": "data/posts/2026-02/hnsw-index-corruption-fix.js"
     },
     {
         "title": "Mitigating React Native JSI Memory Leaks",
@@ -385,15 +395,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>The JavaScript Interface (JSI) allows React Native to bridge C++ and JavaScript without serialization overhead. However, when handling high-frequency event streams (e.g., 120Hz sensor data or real-time audio processing), developers often leak memory by failing to manage the lifecycle of <code>jsi::Value</code> objects inside the C++ host functions.</p><p>Because JSI bypasses the standard React Native bridge, the JavaScript Garbage Collector (GC) cannot automatically track C++ allocations that hold references to JS objects. If a C++ function creates a <code>jsi::Object</code> or <code>jsi::String</code> on every frame without explicitly clearing it or using a <code>jsi::Scope</code>, the memory footprint will grow linearly until the app crashes.</p>",
-        "root_cause": "Capturing 'jsi::Value' or 'jsi::Object' in long-lived C++ lambdas or global variables, preventing the JS engine from garbage collecting the underlying objects.",
-        "bad_code": "/* C++ JSI Module */\njv::Value getEvent(jsi::Runtime& rt) {\n    // BUG: Creating a new object on every call in a high-frequency stream\n    // without ensuring the previous ones are cleaned up by the JS GC\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"timestamp\", jsi::Value(12345));\n    return jsi::Value(rt, obj);\n}",
-        "solution_desc": "Use <code>jsi::Scope</code> to manage temporary values and prefer passing typed arrays (ArrayBuffers) for high-frequency data to minimize the creation of JS objects. If data must persist, use <code>jsi::WeakObject</code> to allow the GC to collect the object when it's no longer used in JavaScript.",
-        "good_code": "/* C++ JSI Module with Scope Management */\njv::Value getEvent(jsi::Runtime& rt) {\n    jsi::Scope scope(rt);\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"data\", jsi::String::createFromUtf8(rt, \"payload\"));\n    \n    // Return value is automatically moved out of scope\n    return jsi::Value(rt, obj);\n}\n\n// Better approach for high frequency:\nvoid updateBuffer(jsi::Runtime& rt, jsi::ArrayBuffer& buffer) {\n    uint8_t* raw = buffer.data(rt);\n    // Modify raw memory directly instead of creating JS objects\n}",
-        "verification": "Monitor the 'Heap Size' using Chrome DevTools or Flipper. Use 'adb shell dumpsys meminfo' to check for growth in the 'Native Heap' versus 'JS Heap' while the event stream is active.",
         "date": "2026-02-22",
         "id": 1771723087,
-        "type": "error"
+        "path": "data/posts/2026-02/react-native-jsi-memory-leaks.js"
     },
     {
         "title": "Analyzing the nicobailon/visual-explainer Trend",
@@ -405,15 +409,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>The 'nicobailon/visual-explainer' repository is trending due to its unique approach to 'AI-assisted observability.' While LLMs are great at generating code, they often struggle to explain complex architectural changes or data flows in a way that is human-digestible. This project bridges that gap by providing a specialized 'Agent Skill' and prompt templates that force LLMs to output structured HTML visualizations rather than just markdown text.</p><p>It is becoming popular among developers who use AI agents (like AutoGPT or custom LangChain agents) to perform code audits, as it transforms dense diffs into interactive visual recaps, making the review process significantly faster and more accurate.</p>",
-        "root_cause": "Key Features & Innovations: 1. Pre-built prompt templates for visual diff reviews. 2. Automated generation of interactive architecture overviews. 3. Rich HTML layout templates for data tables and project recaps. 4. Seamless integration with LLM agents as a pluggable skill.",
-        "bad_code": "git clone https://github.com/nicobailon/visual-explainer.git\ncd visual-explainer\nnpm install",
-        "solution_desc": "Best Use Cases: Complex PR reviews where visual impact is high; Onboarding new developers using AI-generated 'architecture maps'; High-level project recaps for non-technical stakeholders after a sprint.",
-        "good_code": "import { VisualExplainer } from 'visual-explainer';\n\nconst agent = new Agent();\nagent.use(VisualExplainer.asSkill({\n  template: 'architecture-overview',\n  outputFormat: 'html'\n}));\n\n// The agent now produces a rich HTML page explaining the system architecture",
-        "verification": "Future Outlook: Expect more tools to follow this 'Visual-First' AI response pattern. The repository is likely to expand into SVG-based flowcharts and real-time visualization of LLM reasoning steps.",
         "date": "2026-02-22",
         "id": 1771723088,
-        "type": "trend"
+        "path": "data/posts/2026-02/visual-explainer-github-analysis.js"
     },
     {
         "title": "Fix Haskell Space Leaks in State Monad Transformers",
@@ -425,15 +423,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In long-running Haskell applications, use of the lazy StateT transformer often leads to massive memory consumption. This occurs because the state updates are not evaluated immediately, but are instead stored as a chain of thunks (unevaluated expressions) in memory.</p><p>As the application runs, this chain grows indefinitely. When the state is finally demanded, the program may crash with a Stack Overflow or exhaust system RAM while trying to evaluate the massive nested expression.</p>",
-        "root_cause": "The default State transformer in Control.Monad.State is lazy in the state. Even if the Monad itself is strict, the value being stored in the state remains unevaluated unless explicitly forced, leading to thunk build-up.",
-        "bad_code": "import Control.Monad.State\n\n-- Lazy state modification builds thunks\nrunTask :: StateT Int IO ()\nrunTask = do\n    modify (+ 1) -- This builds a thunk: ((0 + 1) + 1)...\n    runTask",
-        "solution_desc": "Switch to the strict version of the State transformer and use the strict modification function (modify'). For complex data types, ensure the state is forced to Normal Form using DeepSeq.",
-        "good_code": "import Control.Monad.State.Strict\nimport Control.DeepSeq\n\n-- Use strict modify' and force evaluation\nrunTask :: StateT Int IO ()\nrunTask = do\n    modify' (+ 1) -- Evaluates immediately\n    runTask",
-        "verification": "Monitor memory usage using GHC profiling (+RTS -hc). The heap graph should show a flat line instead of a linear growth (sawtooth pattern).",
         "date": "2026-02-21",
         "id": 1771665722,
-        "type": "error"
+        "path": "data/posts/2026-02/haskell-statet-space-leak-fix.js"
     },
     {
         "title": "Fix 4-bit LoRA Gradient Vanishing",
@@ -445,15 +437,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>When fine-tuning Large Language Models using 4-bit NormalFloat (NF4) quantization via LoRA, users often observe that the loss stops decreasing early or the gradients become zero. This is primarily caused by the precision mismatch between the 4-bit frozen weights and the 16-bit/32-bit adapter weights.</p><p>The gradient signals can become too small to represent in low-precision formats, or they are effectively 'masked' by the quantization constants during the dequantization step in the backward pass.</p>",
-        "root_cause": "Under-scaled LoRA weights relative to the quantized base weights and improper optimizer settings that fail to track small updates in a 4-bit quantized landscape.",
-        "bad_code": "from peft import LoraConfig\n\n# Standard config often causes vanishing gradients in 4-bit\nconfig = LoraConfig(\n    r=8, \n    lora_alpha=16, \n    target_modules=[\"q_proj\"], \n    lora_dropout=0.05\n)",
-        "solution_desc": "Increase the lora_alpha to ensure higher weight scaling, target more modules (all linear layers), and use a high-precision optimizer like paged_adamw_32bit.",
-        "good_code": "from peft import LoraConfig\n\nconfig = LoraConfig(\n    r=16,\n    lora_alpha=32, # Higher alpha for stronger signal\n    target_modules=[\"q_proj\", \"v_proj\", \"k_proj\", \"o_proj\"],\n    lora_dropout=0.1,\n    bias=\"none\"\n)\n# Use bitsandbytes Paged AdamW 32-bit",
-        "verification": "Check WandB or TensorBoard logs for 'grad_norm'. A healthy run should show non-zero gradient norms consistently across steps.",
         "date": "2026-02-21",
         "id": 1771665723,
-        "type": "error"
+        "path": "data/posts/2026-02/lora-4bit-gradient-vanishing.js"
     },
     {
         "title": "Fix RocksDB Write Stalls Under Compaction Debt",
@@ -466,15 +452,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>RocksDB write stalls occur when the incoming write rate exceeds the background compaction speed. In high-throughput environments, the Level 0 (L0) files accumulate faster than the background threads can merge them into Level 1.</p><p>When the number of L0 files reaches a hard limit, RocksDB intentionally throttles or stops all writes to prevent an unmanageable read amplification, causing latency spikes in the application layer.</p>",
-        "root_cause": "Insufficient background compaction threads and conservative 'soft_pending_compaction_bytes_limit' settings that trigger write-slowing mechanisms too early.",
-        "bad_code": "// Default options lead to stalls under heavy load\nopts := gorocksdb.NewDefaultOptions()\nopts.SetWriteBufferSize(64 * 1024 * 1024)\nopts.SetMaxWriteBufferNumber(2)",
-        "solution_desc": "Increase background threads, tune L0 triggers, and set a higher pending compaction bytes limit to allow the engine to absorb temporary write bursts.",
-        "good_code": "opts := gorocksdb.NewDefaultOptions()\nopts.SetMaxBackgroundCompactions(4)\nopts.SetLevel0SlowdownWritesTrigger(20)\nopts.SetLevel0StopWritesTrigger(36)\nopts.SetSoftPendingCompactionBytesLimit(64 * 1024 * 1024 * 1024) // 64GB",
-        "verification": "Check RocksDB statistics for 'stall_micros' and monitor the number of L0 files using the 'rocksdb.num-files-at-level0' property.",
         "date": "2026-02-21",
         "id": 1771665724,
-        "type": "error"
+        "path": "data/posts/2026-02/rocksdb-compaction-write-stalls.js"
     },
     {
         "title": "Analyze ClawWork: The AI Coworker Trend",
@@ -486,15 +466,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork is trending due to its 'Computer Use' capabilities, allowing LLMs to interact directly with GUIs like a human coworker. It gained massive traction after demonstrating $10k in earnings through automated task execution in a short window.</p><p>Unlike standard agents that use APIs, ClawWork uses vision and mouse/keyboard control, making it compatible with any legacy software or website without integration requirements.</p>",
-        "root_cause": "Visual-Action Loop and Multi-Modal Foundation Models",
-        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt",
-        "solution_desc": "Ideal for complex workflows involving multiple desktop apps (e.g., extracting data from Excel to a custom CRM) where no API exists.",
-        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(model=\"claude-3-5-sonnet\")\nagent.run(\"Open Chrome, find the latest BTC price, and email it to my boss.\")",
-        "verification": "ClawWork represents the shift from 'Chatbots' to 'Action-bots', signaling a future where AI agents manage entire local workstations.",
         "date": "2026-02-21",
         "id": 1771665725,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-trend.js"
     },
     {
         "title": "Fixing C++20 Coroutine Frame Leakage",
@@ -507,15 +481,9 @@ var postsIndex = [
             "High-Performance",
             "Error Fix"
         ],
-        "analysis": "<p>In high-concurrency network runtimes, C++20 coroutines allocate state on the heap via a 'coroutine frame'. A common failure occurs when the coroutine is suspended indefinitely (e.g., waiting on a socket that closes) and the coroutine handle is never destroyed. Unlike traditional stack-based functions, the frame is not automatically reclaimed unless the coroutine runs to completion or <code>handle.destroy()</code> is explicitly called.</p>",
-        "root_cause": "The coroutine promise_type lacks RAII management for the coroutine_handle, leading to heap-allocated frames remaining in memory when tasks are cancelled or timed out before reaching their final suspension point.",
-        "bad_code": "task<void> handle_client(socket s) {\n    auto data = co_await s.read(); \n    // If socket closes here, the handle is often lost\n    co_return;\n}\n\n// Caller usage\nauto t = handle_client(s);\nt.resume(); // No cleanup if t is dropped",
-        "solution_desc": "Implement a Move-Only Task wrapper that encapsulates the std::coroutine_handle. Use the destructor of the wrapper to call handle.destroy() if the handle is valid and the coroutine is not at its final state.",
-        "good_code": "template<typename T>\nstruct Task {\n    ~Task() {\n        if (handle && !handle.done()) handle.destroy();\n    }\n    Task(Task&& other) : handle(std::exchange(other.handle, {})) {}\n    std::coroutine_handle<promise_type> handle;\n};",
-        "verification": "Monitor memory usage using Valgrind or ASAN (AddressSanitizer) with 'leak detection' enabled while simulating high connection churn and frequent timeouts.",
         "date": "2026-02-21",
         "id": 1771655539,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutine-frame-leakage-fix.js"
     },
     {
         "title": "Mitigating PyTorch CUDA Allocator Fragmentation",
@@ -528,15 +496,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>During LLM fine-tuning, the PyTorch Caching Allocator often encounters fragmentation. This occurs when the allocator keeps many small, non-contiguous free blocks that cannot be merged to satisfy a large allocation request (like a large attention matrix), resulting in a 'CUDA Out of Memory' (OOM) error even when total free memory appears sufficient.</p>",
-        "root_cause": "Frequent allocations of varying sizes and the use of activation checkpointing create interleaved free and occupied blocks that the default caching strategy fails to consolidate efficiently.",
-        "bad_code": "import torch\n# Default settings often lead to fragmentation in LLMs\nmodel = AutoModelForCausalLM.from_pretrained('huge-llm')\nfor batch in loader:\n    loss = model(batch).loss\n    loss.backward()",
-        "solution_desc": "Configure the CUDA allocator via environment variables to use 'expandable_segments'. This allows the allocator to use virtual memory management to maintain contiguous address spaces, significantly reducing fragmentation.",
-        "good_code": "import os\nimport torch\n\n# Enable expandable segments to prevent fragmentation\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"expandable_segments:True\"\n\n# Optional: periodically clear cache for extreme cases\ntorch.cuda.empty_cache()",
-        "verification": "Use torch.cuda.memory_summary() to inspect the 'Fraction of blocked memory' and 'Max split size' before and after applying the configuration.",
         "date": "2026-02-21",
         "id": 1771655540,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-cuda-allocator-fragmentation.js"
     },
     {
         "title": "Resolving Akka Cluster Split-Brain Scenarios",
@@ -549,15 +511,9 @@ var postsIndex = [
             "Kubernetes",
             "Error Fix"
         ],
-        "analysis": "<p>In distributed systems running on unreliable network topologies, an Akka cluster can partition into sub-clusters. If both sides of the partition decide to 'down' the other, you end up with two independent leaders. This is the 'Split-Brain' scenario, which can lead to data corruption in persistent actors or dual-execution of singleton services.</p>",
-        "root_cause": "Relying on the deprecated 'auto-down-unreachable-after' setting or failing to implement a deterministic Split Brain Resolver (SBR) strategy that ensures only one side of a partition survives.",
-        "bad_code": "akka {\n  cluster {\n    # DANGEROUS: Leads to split-brain\n    auto-down-unreachable-after = 10s\n  }\n}",
-        "solution_desc": "Disable auto-downing and implement the 'Split Brain Resolver' using a 'keep-majority' or 'static-quorum' strategy. This ensures that only the partition containing the majority of nodes remains active.",
-        "good_code": "akka.cluster {\n  downing-provider-class = \"akka.cluster.sbr.SplitBrainResolverProvider\"\n  split-brain-resolver {\n    active-strategy = \"keep-majority\"\n    keep-majority {\n      role = \"\"\n    }\n  }\n}",
-        "verification": "Perform a network partition test using 'iptables' to block communication between nodes and verify that only one partition remains as 'Up' while the other is terminated.",
         "date": "2026-02-21",
         "id": 1771655541,
-        "type": "error"
+        "path": "data/posts/2026-02/akka-cluster-split-brain-fix.js"
     },
     {
         "title": "ClawWork: The AI Coworker Scaling OpenClaw",
@@ -569,15 +525,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>ClawWork (HKUDS/ClawWork) has exploded on GitHub due to its promise of turning AI into a functional 'coworker' rather than just a chatbot. The project gained massive traction after claims of earning $10K in 7 hours via automated tasks. It leverages OpenClaw, a framework designed to orchestrate LLM agents to perform end-to-end software engineering, including coding, debugging, and task management.</p>",
-        "root_cause": "Key innovations include a specialized multi-agent architecture for software tasks, high-context memory management, and a focus on 'Autonomous Earning'—integrating with platforms to solve bounties automatically.",
-        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\nexport OPENAI_API_KEY='your_key'",
-        "solution_desc": "Best for software agencies and individual developers looking to automate repetitive coding chores, handle PR reviews autonomously, or participate in algorithmic trading/bounty hunting where speed and 24/7 operation are critical.",
-        "good_code": "from clawwork.core import ClawCoworker\n\nworker = ClawCoworker(role=\"Senior Dev\")\n# Assign a complex engineering task\nworker.execute(\"Refactor the authentication module to use JWT and add unit tests\")",
-        "verification": "The project represents a shift toward 'Agentic Workflows' where the AI has write-access to the environment. Future outlook predicts deep integration with IDEs and CI/CD pipelines as standard tooling.",
         "date": "2026-02-21",
         "id": 1771655542,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-guide.js"
     },
     {
         "title": "Fixing eBPF Tail Call Stack Overflow in XDP Pipelines",
@@ -590,15 +540,9 @@ var postsIndex = [
             "Networking",
             "Error Fix"
         ],
-        "analysis": "<p>When chaining multiple eBPF programs using tail calls in high-throughput XDP pipelines, developers often encounter a 'Stack limit exceeded' error or a verifier rejection. In eBPF, each program is limited to a 512-byte stack. While tail calls are designed to replace the current program's stack frame with the target's, cumulative stack usage or deep nesting can trigger safety checks in the Linux kernel JIT compiler.</p><p>This is particularly problematic in complex packet processors (e.g., Load Balancers) where each stage (parsing, routing, filtering) declares its own local variables on the stack.</p>",
-        "root_cause": "Each tail call in a chain might not fully release the stack memory of the caller in older kernels or when specific compiler optimizations prevent the jump from being a pure tail-call, leading to stack overflow across program boundaries.",
-        "bad_code": "SEC(\"xdp\")\nint xdp_processor(struct xdp_md *ctx) {\n    struct hdr_metadata meta = {0};\n    char buffer[256]; // Heavy stack usage\n    // ... processing logic ...\n    bpf_tail_call(ctx, &jmp_table, NEXT_PROG);\n    return XDP_PASS;\n}",
-        "solution_desc": "Utilize a Per-CPU Array Map as a 'scratch buffer' to store large data structures instead of the stack. This keeps stack usage minimal (just a pointer) across tail calls.",
-        "good_code": "struct { \n    __uint(type, BPF_MAP_TYPE_PERCPU_ARRAY);\n    __uint(max_entries, 1);\n    __type(key, uint32_t);\n    __type(value, struct hdr_metadata);\n} scratch_map SEC(\".maps\");\n\nSEC(\"xdp\")\nint xdp_processor(struct xdp_md *ctx) {\n    uint32_t key = 0;\n    struct hdr_metadata *meta = bpf_map_lookup_elem(&scratch_map, &key);\n    if (!meta) return XDP_ABORTED;\n    // Use meta-> instead of stack local variables\n    bpf_tail_call(ctx, &jmp_table, NEXT_PROG);\n    return XDP_PASS;\n}",
-        "verification": "Run 'bpftool prog load' and check 'ulimit -l' to ensure memory lock limits are sufficient; verify the program passes the BPF Verifier without 'combined stack size' errors.",
         "date": "2026-02-21",
         "id": 1771647833,
-        "type": "error"
+        "path": "data/posts/2026-02/fix-ebpf-tail-call-stack-overflow-xdp.js"
     },
     {
         "title": "Resolving Kafka Consumer Group Rebalance Storms",
@@ -611,15 +555,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>In clusters managing thousands of partitions, consumer group rebalancing can become a performance nightmare known as a 'Rebalance Storm'. When a single consumer experiences a GC pause or network blip, the Eager Rebalance protocol forces every consumer in the group to stop processing, commit offsets, and wait for a new assignment. At scale, the overhead of re-assigning thousands of partitions exceeds the heartbeat timeout, causing a recursive loop of failures.</p>",
-        "root_cause": "The default Eager Rebalance protocol causes a 'stop-the-world' event, and when partitions are numerous, the metadata exchange exceeds session timeouts, triggering immediate subsequent rebalances.",
-        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    RangeAssignor.class.getName());\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"10000\");\n// Lacks static membership and uses eager assignment",
-        "solution_desc": "Switch to the CooperativeStickyAssignor to enable Incremental Cooperative Rebalancing. Additionally, implement Static Membership by setting a group.instance.id to prevent rebalances during transient restarts.",
-        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    CooperativeStickyAssignor.class.getName());\nproperties.put(ConsumerConfig.GROUP_INSTANCE_ID_CONFIG, \"consumer-node-1\");\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\");\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\");",
-        "verification": "Monitor the 'rebalance-latency-avg' and 'rebalance-total' metrics in JMX; confirm that individual pod restarts do not trigger group-wide 'PreparingRebalance' logs.",
         "date": "2026-02-21",
         "id": 1771647834,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-rebalance-storms-massive-partitions.js"
     },
     {
         "title": "Mitigating WebGPU Buffer Map Contention",
@@ -632,15 +570,9 @@ var postsIndex = [
             "Next.js",
             "Error Fix"
         ],
-        "analysis": "<p>Real-time visualizations using WebGPU often require frequent data transfers between the CPU and GPU. Developers frequently hit errors where 'buffer is not in the unmapped state' when calling mapAsync. This contention happens because the CPU attempts to write to a buffer while the GPU is still executing a command buffer that references it, or because multiple map requests are queued simultaneously.</p>",
-        "root_cause": "Attempting to map a GPUBuffer for CPU access before the GPU has finished executing previous commands that use that buffer, or failing to unmap before the next draw call.",
-        "bad_code": "async function updateBuffer(data: Float32Array) {\n    await buffer.mapAsync(GPUMapMode.WRITE);\n    new Float32Array(buffer.getMappedRange()).set(data);\n    buffer.unmap();\n    // Error: mapAsync called while buffer is in 'mapping' state\n}",
-        "solution_desc": "Implement a staging buffer ring or 'double buffering'. Write data to a separate 'MAP_WRITE' buffer, then use 'copyBufferToBuffer' to move data to the 'GPU_READ' buffer. This decouples CPU writes from GPU execution.",
-        "good_code": "const stagingBuffer = device.createBuffer({\n    size: dataSize, usage: GPUBufferUsage.MAP_WRITE | GPUBufferUsage.COPY_SRC\n});\nasync function update() {\n    await stagingBuffer.mapAsync(GPUMapMode.WRITE);\n    new Float32Array(stagingBuffer.getMappedRange()).set(data);\n    stagingBuffer.unmap();\n\n    const commandEncoder = device.createCommandEncoder();\n    commandEncoder.copyBufferToBuffer(stagingBuffer, 0, gpuBuffer, 0, dataSize);\n    device.queue.submit([commandEncoder.finish()]);\n}",
-        "verification": "Use Chrome DevTools 'WebGPU' tab to monitor buffer states and ensure 'Validation Errors' count remains zero during high-frequency updates.",
         "date": "2026-02-21",
         "id": 1771647835,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-buffer-map-contention-visualization.js"
     },
     {
         "title": "Analyze GitHub Trend: HKUDS/ClawWork AI Coworker",
@@ -652,15 +584,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork is making waves as 'OpenClaw', a framework designed to transform LLMs into autonomous coworkers. It recently gained massive attention for the claim of earning $10,000 in 7 hours through automated task execution. It stands out because it doesn't just 'chat'; it interacts with environments to complete high-value digital labor like bounty hunting, automated coding, and data arbitrage.</p>",
-        "root_cause": "ClawWork utilizes a Hierarchical Agentic Architecture that combines long-term memory with a 'Tool-Tree' execution model, allowing the AI to browse the web and use local terminal tools with higher success rates than standard GPT-4 wrappers.",
-        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env # Add API Keys",
-        "solution_desc": "Best used for repetitive high-complexity tasks: automated bug fixing in large codebases, multi-step market research, or managing software bounty submissions. Adopt it when you need a 'loop' rather than a 'response'.",
-        "good_code": "from clawwork import OpenClaw\n\nagent = OpenClaw(role=\"Security Researcher\")\nagent.assign_task(\"Find and fix vulnerabilities in this repo: [URL]\")\nagent.run(max_budget=50.0) # Set a cost cap for tokens",
-        "verification": "The project represents the shift from 'Generative AI' to 'Agentic AI', where the ROI is measured in completed tasks rather than generated text tokens.",
         "date": "2026-02-21",
         "id": 1771647836,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-openclaw-ai-coworker-analysis.js"
     },
     {
         "title": "Fixing Rust Pinning Violations in Async Futures",
@@ -672,15 +598,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In Rust's async ecosystem, self-referential structures are a common source of memory unsafety. When an async block is compiled, the compiler generates a state machine. If this machine contains references to its own fields (self-referential), moving the future in memory invalidates those internal pointers, leading to undefined behavior.</p><p>The <code>Pin</code> wrapper was introduced to guarantee that the data it points to will not be moved until it is dropped, ensuring that internal references remains valid throughout the future's lifecycle.</p>",
-        "root_cause": "Moving a self-referential async future after it has started execution, which invalidates internal pointers used by the generated state machine.",
-        "bad_code": "async fn self_reference() {\n    let mut x = 5;\n    let y = &x;\n    // If this future is moved after this point, 'y' becomes a dangling pointer\n    pending!();\n    println!(\"{}\", y);\n}\n\n// Error: Cannot move out of a future that is not Unpin\nlet mut fut = self_reference();\nlet mut boxed_fut = fut; // Move occurs here",
-        "solution_desc": "To safely handle futures that might be self-referential, use Box::pin to allocate the future on the heap. This pins the data to a stable memory address. Once pinned, the pointer to the data can be moved, but the data itself remains stationary.",
-        "good_code": "use std::pin::Pin;\n\nasync fn self_reference() {\n    let x = 5;\n    let y = &x;\n    tokio::task::yield_now().await;\n    println!(\"{}\", y);\n}\n\n#[tokio::main]\nasync fn main() {\n    // Pin the future to the heap\n    let fut = Box::pin(self_reference());\n    fut.await;\n}",
-        "verification": "Run the code with 'cargo check'. Use tools like Miri to detect memory access violations in unsafe blocks or pinning logic.",
         "date": "2026-02-21",
         "id": 1771636332,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-pinning-violations-async-futures.js"
     },
     {
         "title": "Resolving Spark Broadcast Join Skew in Petabyte Shuffles",
@@ -693,15 +613,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Broadcast joins are a powerful optimization in Apache Spark designed to eliminate expensive shuffles by sending a small table to every executor. However, in multi-petabyte workloads, if the 'small' table exceeds memory limits or the join keys are heavily skewed, executors will throw OutOfMemory (OOM) errors or experience 'straggler' tasks that stall the entire pipeline.</p><p>The primary challenge is that Spark's broadcast threshold is static by default, failing to account for data expansion during decompression or skewed key distribution.</p>",
-        "root_cause": "The broadcasted table is too large for the executor's memory overhead, or a single join key has a disproportionately high frequency, causing one executor to process significantly more data than others.",
-        "bad_code": "import org.apache.spark.sql.functions.broadcast\n\n// Forcing a broadcast join on a table that might exceed 10MB default\n// or has highly skewed keys\nval joinedDf = largeDf.join(broadcast(potentiallyLargeDf), \"join_key\")\njoinedDf.write.parquet(\"/output/path\")",
-        "solution_desc": "Increase the broadcast threshold carefully, but more importantly, use Adaptive Query Execution (AQE) to handle skew. If skew is persistent, 'salt' the join keys by appending a random integer to the key in the large table and replicating the small table keys to match.",
-        "good_code": "// 1. Enable Adaptive Query Execution\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\")\n\n// 2. Manual Salting for extreme cases\nimport org.apache.spark.sql.functions.{concat, lit, rand}\n\nval saltedLargeDf = largeDf.withColumn(\"salted_key\", concat($\"join_key\", lit(\"_\"), (rand() * 10).cast(\"int\")))\nval explodedSmallDf = smallDf.withColumn(\"salt\", explode(array((0 until 10).map(lit): _*)))\n    .withColumn(\"salted_key\", concat($\"join_key\", lit(\"_\"), $\"salt\"))\n\nval joinedDf = saltedLargeDf.join(explodedSmallDf, \"salted_key\")",
-        "verification": "Monitor the Spark UI 'Stages' tab. Check for uniform task duration and verify that 'Skew' is mitigated via the AQE 'SortMergeJoin' metrics.",
         "date": "2026-02-21",
         "id": 1771636333,
-        "type": "error"
+        "path": "data/posts/2026-02/spark-broadcast-join-data-skew.js"
     },
     {
         "title": "Mitigating ClickHouse MergeTree Part Bloat in Upserts",
@@ -713,15 +627,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>ClickHouse is designed for high-speed analytical inserts, but high-frequency upserts in <code>ReplacingMergeTree</code> engines can lead to 'Part Bloat'. Every INSERT creates a new data part. If the background merge process cannot keep up with the rate of small insertions, the part count grows exponentially, eventually hitting the <code>parts_to_throw_insert</code> limit and blocking all writes.</p><p>This is particularly common in streaming workloads where individual events are upserted as they arrive.</p>",
-        "root_cause": "High-frequency, low-volume INSERT statements creating more data parts per second than the background merge threads can combine.",
-        "bad_code": "-- Application pseudo-code making frequent small inserts\nINSERT INTO my_table (id, version, data) VALUES (1, 123, 'info');\n-- (1 second later)\nINSERT INTO my_table (id, version, data) VALUES (1, 124, 'updated_info');",
-        "solution_desc": "Implement a buffering layer. Instead of direct inserts, use a <code>Buffer</code> engine table or an external queue (like Kafka) to batch records. Increase the <code>max_insert_block_size</code> and tune the <code>merge_with_ttl_timeout</code> to encourage more aggressive merging.",
-        "good_code": "-- 1. Create the destination ReplacingMergeTree\nCREATE TABLE target_table (id UInt64, version UInt64, data String)\nENGINE = ReplacingMergeTree(version) ORDER BY id;\n\n-- 2. Create a Buffer table to collect data in memory\nCREATE TABLE target_table_buffer AS target_table\nENGINE = Buffer(currentDatabase(), 'target_table', 16, 10, 60, 10000, 100000, 1000000, 10000000);\n\n-- 3. Application inserts into the BUFFER table instead\nINSERT INTO target_table_buffer (id, version, data) VALUES (...);",
-        "verification": "Query 'system.parts' to monitor the 'active' part count. It should remain stable even under high write load.",
         "date": "2026-02-21",
         "id": 1771636334,
-        "type": "error"
+        "path": "data/posts/2026-02/clickhouse-mergetree-part-bloat.js"
     },
     {
         "title": "Analyzing ClawWork: The AI Coworker Scaling to $10K Profits",
@@ -733,15 +641,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork (OpenClaw) has exploded on GitHub due to its promise of an autonomous 'AI Coworker'. Unlike simple chat interfaces, ClawWork integrates directly with your local development environment to perform multi-step tasks. The project gained viral traction by demonstrating a 'coworker' capability that successfully executed freelance tasks, allegedly earning $10,000 in a 7-hour stress test.</p><p>It leverages a multi-agent orchestration framework where different LLM instances handle planning, coding, and debugging in a closed loop.</p>",
-        "root_cause": "Integration of Long-Chain Reasoning, Tool-use (Browser/Terminal), and Autonomous Self-Correction loops that reduce the need for constant human prompting.",
-        "bad_code": "# Install ClawWork via pip\npip install clawwork\n\n# Initialize a project and start the coworker agent\nclawwork init --project my-web-app\nclawwork start \"Build a dashboard using Next.js and integrate Stripe\"",
-        "solution_desc": "ClawWork is best used for 'Greenfield' project scaffolding, complex refactoring across multiple files, and automating end-to-end testing cycles where manual intervention is usually high.",
-        "good_code": "from clawwork import CoworkerAgent\n\n# Define a specialized agent for a specific repository context\nagent = CoworkerAgent(\n    role=\"Backend Engineer\",\n    tools=[\"terminal\", \"file_editor\", \"browser\"],\n    model=\"claude-3-5-sonnet\"\n)\n\n# Execute a complex cross-file task\nagent.run(\"Refactor the authentication logic to use JWT instead of sessions across all routes.\")",
-        "verification": "The project is moving toward a 'Model-Agnostic' future. Watch for upcoming integrations with VS Code extensions and improved local-first privacy layers.",
         "date": "2026-02-21",
         "id": 1771636335,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-github-trend.js"
     },
     {
         "title": "Fixing Go Scheduler Starvation in Tight CGO Loops",
@@ -754,15 +656,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>When a Goroutine enters a CGO call, the Go runtime relinquishes control of the OS thread (M) to the C code. While the runtime marks this thread as 'in syscall', a tight loop in CGO that executes frequently—but for very short durations—can prevent the Go scheduler from preempting the Goroutine. This leads to 'scheduler starvation' where other Goroutines on the same P (Processor) are blocked from executing, causing latency spikes and decreased throughput.</p>",
-        "root_cause": "The Go scheduler relies on cooperative preemption points (like function calls or I/O). In a tight loop calling CGO, the transition between Go and C happens so fast that the background sysmon thread may not detect a long-running syscall, yet the Goroutine never reaches a Go-land preemption point to allow other tasks to run.",
-        "bad_code": "package main\n\n/*\n#include <unistd.h>\nvoid fast_c_call() {}\n*/\nimport \"C\"\n\nfunc main() {\n    // This tight loop can starve the scheduler\n    for {\n        C.fast_c_call()\n    }\n}",
-        "solution_desc": "To fix this, manually invoke the Go scheduler using runtime.Gosched() within the loop to yield the processor. Alternatively, if the C code is computationally expensive and long-running, use runtime.LockOSThread() to ensure the Goroutine stays on its own dedicated thread, or move the logic into a separate worker pool to avoid saturating the primary execution context.",
-        "good_code": "package main\n\nimport (\n    \"runtime\"\n)\n\n/*\n#include <unistd.h>\nvoid fast_c_call() {}\n*/\nimport \"C\"\n\nfunc main() {\n    for {\n        C.fast_c_call()\n        // Explicitly yield to let other goroutines run\n        runtime.Gosched()\n    }\n}",
-        "verification": "Use 'go tool trace' to visualize processor utilization. If starvation occurs, you will see long gaps in P utilization despite active Goroutines. After the fix, P utilization should show more frequent context switching.",
         "date": "2026-02-20",
         "id": 1771580108,
-        "type": "error"
+        "path": "data/posts/2026-02/fix-go-scheduler-cgo-starvation.js"
     },
     {
         "title": "Mitigating PostgreSQL Transaction ID Wraparound",
@@ -775,15 +671,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses 32-bit transaction IDs (TXIDs). Because these IDs are finite (~4 billion), the database must 'freeze' old transaction IDs to recycle them. In high-write volume clusters, if the autovacuum process cannot keep up with the rate of new transactions, the database will eventually reach the 'wraparound' threshold. At this point, PostgreSQL forces a shutdown to prevent data corruption, as new transactions would overlap with old, unfrozen ones.</p>",
-        "root_cause": "The autovacuum worker is throttled by default or blocked by long-running transactions/orphaned prepared transactions, preventing the 'relfrozenxid' (the horizon of frozen transactions) from advancing.",
-        "bad_code": "-- Default settings often insufficient for 10k+ writes/sec\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2; -- 20% is too high for large tables\nALTER SYSTEM SET autovacuum_cost_limit = 200; -- Too slow for high-write loads",
-        "solution_desc": "Lower the autovacuum scale factors to trigger vacuuming more frequently on large tables and increase the cost limit to allow vacuuming to work faster. Additionally, identify and terminate long-standing idle transactions that block the frozen horizon.",
-        "good_code": "-- Aggressive autovacuum tuning for high-volume clusters\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.01;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 2000;\nALTER SYSTEM SET autovacuum_max_workers = 10;\n\n-- Query to find tables closest to wraparound:\nSELECT relname, age(relfrozenxid) FROM pg_class WHERE relkind = 'r' ORDER BY 2 DESC LIMIT 10;",
-        "verification": "Monitor the 'age(relfrozenxid)' for all tables. The value should stay well below 200 million. Use Prometheus pg_stat_activity metrics to alert when any table age exceeds 500 million.",
         "date": "2026-02-20",
         "id": 1771580109,
-        "type": "error"
+        "path": "data/posts/2026-02/postgres-txid-wraparound-mitigation.js"
     },
     {
         "title": "Resolving Elixir GenServer Mailbox Congestion",
@@ -795,15 +685,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>Elixir processes have a single mailbox. When using 'selective receive' (manual receive blocks inside a GenServer callback), the Erlang VM must scan the entire mailbox to find a matching message. If the GenServer receives a high volume of messages that do not match the selective pattern, those messages accumulate, and every subsequent scan becomes an O(N) operation, eventually leading to process crashes or extreme CPU spikes.</p>",
-        "root_cause": "Implementing a manual 'receive' block inside a 'handle_info' or 'handle_call' that waits for a specific message, forcing the BEAM to traverse potentially thousands of unrelated messages already in the queue.",
-        "bad_code": "def handle_info(:start_task, state) do\n  send(self(), :sub_task)\n  # BAD: Selective receive inside a GenServer callback\n  receive do\n    :sub_task -> \n      do_work()\n  end\n  {:noreply, state}\nend",
-        "solution_desc": "Never use manual 'receive' blocks inside GenServer callbacks. Instead, rely on the standard GenServer message handling loop. Use state to track the progress of multi-step operations and handle each step as a separate 'handle_info' or 'handle_cast' callback.",
-        "good_code": "def handle_info(:start_task, state) do\n  send(self(), :sub_task)\n  {:noreply, %{state | status: :pending}}\nend\n\ndef handle_info(:sub_task, %{status: :pending} = state) do\n  do_work()\n  {:noreply, %{state | status: :idle}}\nend",
-        "verification": "Check process mailbox size using ':erlang.process_info(pid, :message_queue_len)'. If the length grows continuously while CPU usage is high, selective receive is the likely culprit.",
         "date": "2026-02-20",
         "id": 1771580110,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-genserver-mailbox-congestion.js"
     },
     {
         "title": "ClawWork: The AI Agent Coworker Taking Over GitHub",
@@ -815,15 +699,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork (OpenClaw) has exploded in popularity by positioning itself as more than just a chatbot; it is a full-fledged 'AI Coworker'. Its viral claim of earning $10K in 7 hours highlights its efficiency in automating complex, multi-step workflows like bug bounty hunting, automated coding, and data mining. It leverages the latest advances in 'Computer Use' (like Claude 3.5 Sonnet's capability) to interact with local environments and browsers as a human would.</p>",
-        "root_cause": "Key innovations include its Multi-Agent Collaboration framework, where different AI roles (Architect, Coder, Reviewer) work together, and its robust 'Tool-Use' layer that allows the AI to execute shell commands and browse the web securely.",
-        "bad_code": "# Installation is straightforward via Python\ngit clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\npython main.py --task \"Fix issues in my local repo\"",
-        "solution_desc": "ClawWork is best used for high-complexity tasks that require feedback loops—such as fixing failing CI/CD pipelines, performing market research with browser navigation, or generating complex codebases from scratch. It is recommended for developers looking to automate the 'to-do list' aspects of their engineering work.",
-        "good_code": "from clawwork import Agent\n\n# Defining a task for the AI coworker\nagent = Agent(role=\"Security Researcher\")\nagent.run(\"Audit the ./src directory for SQL injection and draft a report.\")",
-        "verification": "The project is rapidly evolving. Watch for upcoming integrations with VS Code extensions and more specialized 'Worker' templates for various industries (Legal, DevOps, Finance).",
         "date": "2026-02-20",
         "id": 1771580111,
-        "type": "trend"
+        "path": "data/posts/2026-02/hkuds-clawwork-ai-coworker-analysis.js"
     },
     {
         "title": "Fixing Zig SIMD Memory Alignment Faults",
@@ -835,15 +713,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>When performing manual SIMD vectorization in Zig using <code>@Vector</code>, the CPU requires data to be aligned to specific byte boundaries (e.g., 16, 32, or 64 bytes depending on the instruction set like AVX2 or NEON). If a pointer to a generic array is cast to a vector pointer without ensuring these alignment constraints, the program will trigger a memory alignment fault (SIGBUS or EXC_I386_GPFLT), especially on architectures that do not support unaligned loads for specific SIMD intrinsics.</p>",
-        "root_cause": "The specific technical reason for failure is the use of `@ptrCast` on a slice with the default alignment (usually 1 or 8) to a SIMD vector type that expects stricter hardware-level alignment.",
-        "bad_code": "const data: []u8 = get_raw_buffer();\nconst vec_ptr: *const @Vector(16, u8) = @ptrCast(data.ptr);\n// This crashes if data.ptr is not 16-byte aligned\nconst vec = vec_ptr.*;",
-        "solution_desc": "To fix this, you must ensure the source memory is explicitly aligned during allocation or use `@alignCast` to inform the compiler of the alignment. For runtime-checked safety, use `std.mem.alignPointer`. Architecturally, it is better to use `std.heap.page_allocator` or a custom allocator that guarantees the required alignment for SIMD operations.",
-        "good_code": "const data: []u8 = try allocator.allocAdvanced(u8, 16, size, .at_least);\ndefer allocator.free(data);\n\n// Use @alignCast to safely treat the pointer as aligned\nconst aligned_ptr: [*]align(16) u8 = @alignCast(data.ptr);\nconst vec: @Vector(16, u8) = aligned_ptr[0..16].*;",
-        "verification": "Compile with `zig build-exe` and run through `valgrind --tool=memcheck` or use Zig's built-in safety checks in `Debug` mode to ensure no alignment panics occur.",
         "date": "2026-02-20",
         "id": 1771569848,
-        "type": "error"
+        "path": "data/posts/2026-02/zig-simd-memory-alignment-faults.js"
     },
     {
         "title": "Mitigating HNSW Graph Decay in Vector DBs",
@@ -856,15 +728,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Hierarchical Navigable Small World (HNSW) indexes are highly efficient for ANN search but suffer from 'graph decay' during incremental updates. When vectors are deleted or updated, the edges connecting nodes in the multi-layered graph are removed. Without a repair mechanism, this creates 'island' nodes or reduces the path diversity, leading to a significant drop in search recall over time despite the index containing the correct data.</p>",
-        "root_cause": "Standard HNSW implementations often perform 'soft deletes' or simple edge removal without re-evaluating the M-closest neighbors for orphaned nodes, leading to a fragmented graph topology.",
-        "bad_code": "import hnswlib\nindex = hnswlib.Index(space='l2', dim=128)\nindex.init_index(max_elements=10000)\n\n# Frequent updates lead to decay\nfor i in range(1000):\n    index.mark_deleted(i)\n    index.add_items(new_vector, i)",
-        "solution_desc": "Implement a 'Repair-on-Update' strategy or periodic background compaction. Instead of just marking nodes as deleted, use a library that supports dynamic edge re-linking or trigger a partial rebuild of the affected neighborhood. For production systems, tracking the 'Mean Connectivity' metric helps determine when to trigger a full index optimization.",
-        "good_code": "# Use a managed approach with edge repair\ndef update_vector(index, id, vector):\n    # Some implementations support explicit repair\n    # If not, use a threshold-based rebuild\n    index.mark_deleted(id)\n    index.add_items(vector, id)\n    \n    if index.get_deleted_count() > index.get_capacity() * 0.2:\n        # Rebuild index to restore global connectivity\n        index.compact_and_repair()",
-        "verification": "Monitor the Recall@K metric against a golden dataset after 10,000 incremental updates. If recall stays within 1% of the initial state, the mitigation is successful.",
         "date": "2026-02-20",
         "id": 1771569849,
-        "type": "error"
+        "path": "data/posts/2026-02/hnsw-index-connectivity-decay.js"
     },
     {
         "title": "Fixing gRPC Stream Window Exhaustion in Istio",
@@ -877,15 +743,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>In an Istio service mesh, gRPC communication relies on HTTP/2 flow control. Each stream has a 'window size' (buffer) that limits how much data can be in flight. If a consumer is slow or if Envoy's default buffer settings (usually 64KB) are too small for high-bandwidth streams, the window becomes exhausted. The sender receives a 'Window Update' delay, causing the stream to hang or latency to spike despite low CPU usage.</p>",
-        "root_cause": "The mismatch between the application's gRPC InitialWindowSize and Envoy's default `initial_stream_window_size` in the Istio sidecar ingress/egress listeners.",
-        "bad_code": "// Default Istio Ingress or Sidecar without tuning\napiVersion: networking.istio.io/v1alpha3\nkind: Gateway\nspec:\n  selector:\n    istio: ingressgateway\n  servers:\n  - port:\n      number: 80\n      name: grpc\n      protocol: GRPC",
-        "solution_desc": "Apply an `EnvoyFilter` to increase the HTTP/2 window sizes for the specific workload. This allows more data to be buffered in the sidecar proxy before requiring an ACK from the receiving application, effectively 'fattening the pipe' for high-throughput gRPC streams.",
-        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: EnvoyFilter\nspec:\n  configPatches:\n  - applyTo: HTTP_PROTOCOL_OPTIONS\n    patch:\n      operation: MERGE\n      value:\n        http2_protocol_options:\n          initial_stream_window_size: 1048576 # 1MB\n          initial_connection_window_size: 1048576",
-        "verification": "Check Envoy statistics using `kubectl exec -it [POD] -c istio-proxy -- pilot-agent request GET stats | grep 'http2.pending_send_window'`. A non-zero, stable value indicates healthy flow.",
         "date": "2026-02-20",
         "id": 1771569850,
-        "type": "error"
+        "path": "data/posts/2026-02/grpc-istio-window-exhaustion.js"
     },
     {
         "title": "ClawWork: The AI Coworker Revolution",
@@ -897,15 +757,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork (OpenClaw) is trending due to its 'AI Coworker' paradigm, moving beyond simple chat interfaces to an autonomous agent capable of executing complex workflows. The repository gained massive traction after demonstrating a '$10k earned in 7 hours' use case, which highlighted the tool's ability to automate freelance tasks, bug hunting, and web-based operations. Built by the University of Hong Kong's Data Science Lab, it leverages LLMs to navigate browsers and IDEs with human-like reasoning.</p>",
-        "root_cause": "Key Features & Innovations: 1. Autonomous Task Decomposition (breaking complex goals into sub-tasks). 2. Multi-modal Web Interaction (seeing and clicking like a human). 3. Built-in Sandbox for safe code execution. 4. Economic Integration (ability to handle 'bounties' or paid tasks).",
-        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env # Add your LLM API Key",
-        "solution_desc": "Best Use Cases: Automating repetitive front-end testing, data scraping behind complex authentication, and assisting in high-volume open-source contributions. It is best adopted by startups looking to scale operations without increasing head-count for routine digital tasks.",
-        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(role=\"Software Engineer\")\nagent.run(\"Research the latest Zig SIMD trends and write a demo script.\")\n# ClawWork navigates GitHub, tests code, and saves the output.",
-        "verification": "The future outlook suggests ClawWork will evolve into a 'Plugin' architecture where users can share 'Skills' (pre-recorded workflow patterns), potentially creating a marketplace for autonomous agent behaviors.",
         "date": "2026-02-20",
         "id": 1771569851,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-analysis.js"
     },
     {
         "title": "Fixing Linux Kernel RCU Stall Warnings in Containers",
@@ -918,15 +772,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>RCU (Read-Copy-Update) stall warnings occur when a grace period fails to complete within a specified timeout. In high-density container environments, this is frequently triggered by CPU overcommitment or 'Steal Time' from the hypervisor. When the Linux scheduler cannot grant enough cycles to the RCU callback threads, the kernel assumes a deadlock or a hung processor, leading to log spam or kernel panics.</p>",
-        "root_cause": "Excessive vCPU contention and interrupt masking in multi-tenant environments preventing RCU grace periods from advancing.",
-        "bad_code": "# Default settings often too aggressive for overcommitted cloud nodes\nkernel.rcu_cpu_stall_timeout = 21\n# No offloading of RCU callbacks\nGRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"",
-        "solution_desc": "Increase the stall timeout via sysctl and offload RCU callback processing to specific 'nocb' CPUs to reduce interference with application threads.",
-        "good_code": "# Increase timeout to 60 seconds\nsysctl -w kernel.rcu_cpu_stall_timeout=60\n\n# Offload RCU in GRUB for CPUs 1-15\nGRUB_CMDLINE_LINUX_DEFAULT=\"rcu_nocbs=1-15\"",
-        "verification": "Check dmesg for 'rcu_preempt detected stalls' after applying sysctl and verify /sys/module/rcutree/parameters/rcu_cpu_stall_timeout.",
         "date": "2026-02-20",
         "id": 1771562601,
-        "type": "error"
+        "path": "data/posts/2026-02/fixing-linux-kernel-rcu-stalls-containers.js"
     },
     {
         "title": "Diagnosing Haskell Space Leaks in Lazy Pipelines",
@@ -938,15 +786,9 @@ var postsIndex = [
             "Rust",
             "Error Fix"
         ],
-        "analysis": "<p>Haskell's lazy evaluation strategy can lead to 'space leaks' where the runtime builds up a massive chain of unevaluated expressions, known as thunks. In high-throughput data pipelines, these thunks consume the heap until the process hits an Out-Of-Memory (OOM) error, even if the actual data being processed is small. This is particularly common when using lazy folds on long-lived state.</p>",
-        "root_cause": "Accumulation of unevaluated thunks in the heap due to non-strict evaluation of recursive accumulators.",
-        "bad_code": "-- Standard lazy fold builds a massive thunk\nsumList :: [Int] -> Int\nsumList = foldl (\\acc x -> acc + x) 0",
-        "solution_desc": "Switch to strict evaluation using the strict version of fold (foldl') and use BangPatterns to force evaluation of the accumulator at each step.",
-        "good_code": "import Data.List (foldl')\n\n-- foldl' forces the evaluation of the accumulator\nsumListStrict :: [Int] -> Int\nsumListStrict = foldl' (\\acc x -> acc + x) 0",
-        "verification": "Run the program with GHC profiling enabled (+RTS -s) and monitor the 'Total Memory In Use' metric.",
         "date": "2026-02-20",
         "id": 1771562602,
-        "type": "error"
+        "path": "data/posts/2026-02/diagnosing-haskell-space-leaks-lazy-evaluation.js"
     },
     {
         "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
@@ -959,15 +801,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>MongoDB's WiredTiger storage engine uses a cache to manage data pages. Under heavy write pressure, the percentage of 'dirty' pages can exceed the eviction trigger. When this happens, WiredTiger forces application threads to assist with eviction, leading to massive latency spikes (stalls). This is often misdiagnosed as disk I/O bottlenecks when it is actually a cache tuning issue.</p>",
-        "root_cause": "The rate of data ingress exceeds the capacity of background eviction threads, triggering application-level stalls.",
-        "bad_code": "// Default config allows dirty pages to reach 20% before aggressive eviction\nstorage.wiredTiger.engineConfig.configString: \"\"\n// Application side doesn't account for backpressure",
-        "solution_desc": "Lower the eviction triggers and targets to start background eviction earlier, ensuring that dirty pages never reach the threshold that triggers application-level stalls.",
-        "good_code": "db.adminCommand({\n  setParameter: 1,\n  wiredTigerEngineRuntimeConfig: \"eviction_target=70,eviction_trigger=80,eviction_dirty_target=5,eviction_dirty_trigger=10\"\n})",
-        "verification": "Monitor the 'wiredTiger.cache.tracked dirty bytes in the cache' metric using mongostat or Atlas metrics.",
         "date": "2026-02-20",
         "id": 1771562603,
-        "type": "error"
+        "path": "data/posts/2026-02/mongodb-wiredtiger-cache-eviction-stalls.js"
     },
     {
         "title": "ClawWork: Why OpenClaw is Trending and How to Use It",
@@ -979,15 +815,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>HKUDS/ClawWork (OpenClaw) is trending because it bridges the gap between AI chat and autonomous engineering. It gained notoriety by demonstrating a $10,000 earning capability in just 7 hours through automated task completion on bounty platforms. Unlike simple wrappers, ClawWork utilizes a sophisticated 'Agent-Coworker' architecture that integrates directly with IDEs and terminal environments to solve complex tickets autonomously.</p>",
-        "root_cause": "Key Features: Multi-agent coordination, real-time environment feedback loops, and an integrated 'Economic Brain' for task prioritization and execution.",
-        "bad_code": "# Quick Start\ngit clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork && pip install -r requirements.txt\nexport OPENAI_API_KEY='your_key'",
-        "solution_desc": "Best for automating repetitive PR fixes, migrating legacy codebases, and managing open-source issue triaging where autonomous context-gathering is required.",
-        "good_code": "from clawwork import ClawAgent\n\nagent = ClawAgent(role=\"Software Engineer\")\nagent.run_task(\"Refactor the authentication module to use JWT instead of sessions\")",
-        "verification": "The future of ClawWork points toward 'Autonomous DevOps' where agents handle the entire CI/CD feedback loop without human intervention.",
         "date": "2026-02-20",
         "id": 1771562604,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-github-trend.js"
     },
     {
         "title": "Fixing C++20 Coroutine Promise Object Leaks",
@@ -1000,15 +830,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>In high-throughput C++20 runtimes, coroutine state is typically allocated on the heap. A common issue arises when the coroutine handle's ownership is ambiguous. If a coroutine reaches its <code>final_suspend</code> point and returns <code>std::suspend_always</code>, the coroutine frame is not automatically destroyed. Failure to call <code>.destroy()</code> on the handle results in a persistent memory leak that accumulates rapidly under high load.</p>",
-        "root_cause": "The coroutine frame is not reclaimed because the promise_type's final_suspend prevents automatic destruction, and the owner fails to call destroy().",
-        "bad_code": "struct Task {\n  struct promise_type {\n    std::suspend_always final_suspend() noexcept { return {}; }\n    // ... other methods\n  };\n  // Handle is lost or never destroyed\n  std::coroutine_handle<promise_type> _h;\n};",
-        "solution_desc": "Implement a RAII wrapper for the coroutine handle that ensures destroy() is called in the destructor, and ensure the final_suspend logic aligns with your memory management strategy.",
-        "good_code": "struct Task {\n  ~Task() { if (_h) _h.destroy(); }\n  Task(Task&& other) : _h(std::exchange(other._h, {})) {}\n  struct promise_type {\n    std::suspend_always final_suspend() noexcept { return {}; }\n    Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n  };\n  std::coroutine_handle<promise_type> _h;\n};",
-        "verification": "Monitor process RSS memory usage and use Valgrind or AddressSanitizer (ASan) to detect leaked coroutine frames.",
         "date": "2026-02-20",
         "id": 1771550069,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutine-promise-leaks-fix.js"
     },
     {
         "title": "Fixing PyTorch DDP Gradient Bucket Deadlocks",
@@ -1021,15 +845,9 @@ var postsIndex = [
             "AI",
             "Error Fix"
         ],
-        "analysis": "<p>Distributed Data Parallel (DDP) in PyTorch synchronizes gradients by grouping them into buckets and performing All-Reduce operations. If your model's forward pass has conditional logic where certain parameters are used on Rank 0 but not on Rank 1, the gradient reduction order differs. This causes ranks to wait indefinitely for buckets that will never be filled, leading to a cluster-wide deadlock.</p>",
-        "root_cause": "Inconsistent parameter usage across different distributed ranks during the forward pass, leading to out-of-sync gradient reduction buckets.",
-        "bad_code": "def forward(self, x, rank):\n    if rank == 0:\n        return self.layer1(x)\n    else:\n        return self.layer2(x) # Deadlock: Rank 0/1 wait for different buckets",
-        "solution_desc": "Set 'find_unused_parameters=True' in the DDP wrapper or ensure all parameters participate in the graph. Alternatively, use static graphs if possible to pre-calculate buckets.",
-        "good_code": "model = DistributedDataParallel(\n    model, \n    device_ids=[rank], \n    find_unused_parameters=True\n)",
-        "verification": "Check if training proceeds past the first backward pass across all ranks without hanging.",
         "date": "2026-02-20",
         "id": 1771550070,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-ddp-gradient-deadlocks.js"
     },
     {
         "title": "Mitigating Redis CoW Memory Bloat in RDB",
@@ -1042,15 +860,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>When Redis triggers a background save (BGSAVE), it forks a child process. Linux uses Copy-on-Write (CoW) to manage memory. However, if 'Transparent Huge Pages' (THP) is enabled, the kernel copies 2MB chunks instead of 4KB pages even for tiny writes. This leads to massive memory amplification during the snapshotting period, often triggering the OOM Killer.</p>",
-        "root_cause": "Transparent Huge Pages (THP) causing excessive memory duplication during the fork-based RDB snapshotting process.",
-        "bad_code": "# Current system state often defaults to:\ncat /sys/kernel/mm/transparent_hugepage/enabled\n# Output: [always] madvise never",
-        "solution_desc": "Disable Transparent Huge Pages at the OS level and ensure 'overcommit_memory' is set to 1 to allow the fork to succeed without over-allocating physical RAM.",
-        "good_code": "echo never > /sys/kernel/mm/transparent_hugepage/enabled\necho never > /sys/kernel/mm/transparent_hugepage/defrag\nsysctl vm.overcommit_memory=1",
-        "verification": "Compare the 'mem_fragmentation_ratio' and 'used_memory_peak' during RDB snapshots before and after the change.",
         "date": "2026-02-20",
         "id": 1771550071,
-        "type": "error"
+        "path": "data/posts/2026-02/redis-cow-memory-bloat-fix.js"
     },
     {
         "title": "ClawWork: The AI Coworker Scaling OpenClaw",
@@ -1063,15 +875,9 @@ var postsIndex = [
             "TypeScript",
             "Python"
         ],
-        "analysis": "<p>ClawWork (HKUDS/ClawWork) is a trending multi-agent framework designed to turn LLMs into 'AI Coworkers'. Unlike standard chatbots, it focuses on 'Agentic Workflows' where the AI can autonomously operate browsers, debug code, and handle financial transactions. Its viral success ($10k in 7 hours) highlights a shift from AI as an assistant to AI as an autonomous revenue-generating agent.</p>",
-        "root_cause": "Advanced Multi-Agent orchestration, integrated browser/terminal tools, and a focus on task-completion-as-a-service.",
-        "bad_code": "git clone https://github.com/HKUDS/ClawWork.git\ncd ClawWork\npip install -r requirements.txt\ncp .env.example .env",
-        "solution_desc": "Ideal for automating complex, multi-step business processes like data extraction, automated testing, and software development tasks requiring environment interaction.",
-        "good_code": "from clawwork import Agent\n\nworker = Agent(role=\"Researcher\")\nworker.run(\"Find the top 5 trending AI repos and summarize their READMEs\")",
-        "verification": "The project is rapidly evolving with high community involvement; expect tight integration with Claude 3.5 Sonnet and GPT-4o models.",
         "date": "2026-02-20",
         "id": 1771550072,
-        "type": "trend"
+        "path": "data/posts/2026-02/clawwork-ai-coworker-analysis.js"
     },
     {
         "title": "Fixing eBPF Verifier State-Space Explosion",
@@ -1085,15 +891,9 @@ var postsIndex = [
             "C",
             "Error Fix"
         ],
-        "analysis": "<p>When developing complex network filters (XDP/TC), developers often encounter the 'BPF program is too large' or 'infinite loop detected' errors. This is usually not about the binary size, but the state-space explosion during the verifier's path exploration. The verifier attempts to traverse every possible execution branch to ensure safety, and with high cyclomatic complexity, it exceeds the 1-million instruction complexity limit.</p>",
-        "root_cause": "The verifier evaluates every branch of conditional logic. If a program has many branches or loops with large bounds, the total number of states to explore grows exponentially, hitting the complexity limit (BPF_COMPLEXITY_LIMIT_INSNS).",
-        "bad_code": "for (int i = 0; i < MAX_ITER; i++) {\n    if (data + offset > data_end) break;\n    // Complex nested logic here\n    if (payload[i] == 0x01) { /* ... */ }\n    else if (payload[i] == 0x02) { /* ... */ }\n    // ... more branches\n}",
-        "solution_desc": "To fix this, utilize the 'bpf_loop' helper (available in kernels 5.17+) or use tail calls to break the program into smaller, independently verified chunks. Additionally, using function calls (without __always_inline) in newer kernels allows the verifier to check the function once rather than at every call site.",
-        "good_code": "static int process_packet(__u32 index, void *ctx) {\n    // Logic for a single iteration\n    return 0;\n}\n\n// In main BPF program\nbpf_loop(MAX_ITER, process_packet, &cb_data, 0);",
-        "verification": "Run 'bpftool prog load' and check the 'verifier_stats' for the 'insns_processed' count. It should be significantly lower than the 1M limit.",
         "date": "2026-02-19",
         "id": 1771493860,
-        "type": "error"
+        "path": "data/posts/2026-02/ebpf-verifier-state-space-explosion.js"
     },
     {
         "title": "Fixing Kafka Sticky Assignor Partition Imbalance",
@@ -1106,15 +906,9 @@ var postsIndex = [
             "Kafka",
             "Error Fix"
         ],
-        "analysis": "<p>The StickyAssignor in Kafka is designed to preserve partition-to-consumer mappings to minimize overhead during rebalances. However, a known issue occurs during rapid scaling or rolling restarts where certain consumers become 'greedy,' holding onto old partitions while others remain idle, leading to severe throughput skew.</p>",
-        "root_cause": "The original StickyAssignor lacks global knowledge during incremental updates, causing it to prioritize 'stickiness' over 'balance' when generation IDs are incremented rapidly without full state reconciliation.",
-        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    StickyAssignor.class.getName());",
-        "solution_desc": "Upgrade to the 'CooperativeStickyAssignor'. Unlike the eager StickyAssignor, the cooperative version supports incremental rebalancing, allowing consumers to keep their partitions during the rebalance process while gradually shifting them to achieve global balance without a 'stop-the-world' event.",
-        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    \"org.apache.kafka.clients.consumer.CooperativeStickyAssignor\");\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\");",
-        "verification": "Monitor the 'records-lag-max' and 'assigned-partitions' metrics via JMX. After a rebalance, the distribution should converge to a mean variance of < 1 partition.",
         "date": "2026-02-19",
         "id": 1771493861,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-sticky-assignor-imbalance-fix.js"
     },
     {
         "title": "Fixing React Native JSI Memory Leaks",
@@ -1128,15 +922,9 @@ var postsIndex = [
             "C++",
             "Error Fix"
         ],
-        "analysis": "<p>React Native's JavaScript Interface (JSI) allows for high-performance synchronous communication between C++ and JS. However, manual memory management is required. Leaks frequently occur when C++ objects hold onto jsi::Value or jsi::Object references across asynchronous thread boundaries without releasing them back to the JS garbage collector.</p>",
-        "root_cause": "Holding a jsi::Value inside a C++ lambda or class member that outlives the JS runtime context, or failing to use jsi::Persistent to manage references that need to persist across multiple bridge calls.",
-        "bad_code": "void MyModule::logData(jsi::Runtime& rt, jsi::Object& obj) {\n  // Problem: Capturing raw reference in a thread\n  std::thread([&rt, &obj]() {\n    auto val = obj.getProperty(rt, \"id\"); \n  }).detach();\n}",
-        "solution_desc": "Use 'jsi::Persistent' to wrap objects that need to live outside the current scope and ensure they are explicitly reset. Alternatively, ensure all JSI interactions happen on the JS thread and use the move constructor for JSI objects to transfer ownership correctly.",
-        "good_code": "void MyModule::logData(jsi::Runtime& rt, const jsi::Value& val) {\n  auto sharedVal = std::make_shared<jsi::Persistent<jsi::Value>>(rt, val);\n  jsCallInvoker_->invokeAsync([this, sharedVal]() {\n     // Access via sharedVal->get(rt)\n     sharedVal.reset(); // Explicitly release\n  });\n}",
-        "verification": "Use Xcode Memory Graph or Android Studio Profiler to track the 'jsi::Pointer' count. The allocation should return to baseline after the module action completes.",
         "date": "2026-02-19",
         "id": 1771493862,
-        "type": "error"
+        "path": "data/posts/2026-02/react-native-jsi-memory-leak-fix.js"
     },
     {
         "title": "Analyzing Zeroclaw: Fast Autonomous AI Infra",
@@ -1149,15 +937,9 @@ var postsIndex = [
             "Python",
             "Backend"
         ],
-        "analysis": "<p>Zeroclaw-labs/zeroclaw is trending because it solves the 'heavyweight' problem of modern AI frameworks. While LangChain and AutoGPT are feature-rich, they are often slow and difficult to deploy in resource-constrained environments. Zeroclaw provides a minimalist, fully autonomous infrastructure that focuses on 'swappability'—allowing developers to switch between LLMs (OpenAI, Anthropic, Local Llama) with zero configuration changes.</p>",
-        "root_cause": "Key features include: 1. Native support for local-first deployment. 2. A modular 'Tool-Call' engine that is 5x faster than traditional agentic loops. 3. Zero-dependency core for easy integration into existing enterprise stacks.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw && pip install -e .",
-        "solution_desc": "Best used for building low-latency autonomous assistants, edge-computing AI agents, or specialized micro-agents that handle specific DevOps or coding tasks without the overhead of a full agent orchestrator.",
-        "good_code": "from zeroclaw import Agent\n\nagent = Agent(provider=\"ollama\", model=\"llama3\")\nagent.register_tool(lambda x: x * 2)\nagent.run(\"Double the number 21 and tell me the result.\")",
-        "verification": "The project is rapidly gaining traction in the 'Small Language Model' (SLM) community. Expect Zeroclaw to become the standard for mobile and edge-based autonomous agents in 2024.",
         "date": "2026-02-19",
         "id": 1771493863,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-ai-infra-trend-analysis.js"
     },
     {
         "title": "Resolving OCaml 5.0 Multicore GC Contention",
@@ -1169,15 +951,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In OCaml 5.0, the introduction of parallelism via Domains changed the garbage collection landscape. While the minor heap is now domain-local, the shared major heap requires careful synchronization. High-throughput applications often experience performance degradation when multiple domains perform rapid allocations, leading to 'Stop-the-World' major GC cycles that stall parallel execution. This contention is exacerbated when domain-local allocation buffers (DLABs) are frequently exhausted.</p>",
-        "root_cause": "Excessive allocation of short-lived objects in the major heap by multiple domains, triggering frequent global synchronization barriers.",
-        "bad_code": "let run_parallel_work () =\n  let domains = Array.init 4 (fun _ -> \n    Domain.spawn (fun () -> \n      (* Rapidly allocating large arrays in a loop *)\n      for _ = 1 to 1000000 do\n        ignore (Array.make 1024 0.0)\n      done))\n  in\n  Array.iter Domain.join domains",
-        "solution_desc": "Utilize the Domainslib.Task pool to manage work distribution and reduce allocation pressure by recycling buffers or using domain-local state to avoid major heap pollution.",
-        "good_code": "let run_optimized_work () =\n  let pool = Task.setup_pool ~num_domains:4 ()\n  in\n  Task.run pool (fun () ->\n    Task.parallel_for pool ~start:1 ~finish:4 ~body:(fun _ ->\n      (* Use a pre-allocated buffer per domain to reduce GC pressure *)\n      let buffer = Array.make 1024 0.0 in\n      for _ = 1 to 1000000 do\n        compute_on buffer\n      done));\n  Task.teardown_pool pool",
-        "verification": "Run the application with OCAMLRUNPARAM='v=0x400' to monitor GC stats and ensure major GC cycles are minimized.",
         "date": "2026-02-19",
         "id": 1771483915,
-        "type": "error"
+        "path": "data/posts/2026-02/ocaml-5-multicore-gc-contention-fix.js"
     },
     {
         "title": "Fixing WebGPU Resource Synchronization Races",
@@ -1189,15 +965,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>WebGPU operates with an explicit synchronization model. A common error occurs when a Compute Shader writes to a GPUBuffer that is subsequently read by a Render Pipeline in the same command submission. Without a proper memory barrier or correct usage of pipeline stages, the GPU may attempt to read the buffer before the compute write has finished, resulting in flickering or incorrect data visualization.</p>",
-        "root_cause": "Missing storage-to-vertex buffer barriers and incorrect command encoder pass ordering.",
-        "bad_code": "const commandEncoder = device.createCommandEncoder();\nconst computePass = commandEncoder.beginComputePass();\ncomputePass.setPipeline(computePipeline);\ncomputePass.dispatchWorkgroups(64);\ncomputePass.end();\n\nconst renderPass = commandEncoder.beginRenderPass(renderPassDesc);\n// Race condition: render pass reads buffer while compute might still be writing\nrenderPass.setVertexBuffer(0, storageBuffer);\nrenderPass.draw(3);\nrenderPass.end();",
-        "solution_desc": "Ensure that the buffer usage includes both STORAGE and VERTEX/INDEX flags, and use a single command encoder to strictly sequence the passes. WebGPU implicitly handles transitions between passes in a single encoder, but the buffer must be declared with appropriate usage flags.",
-        "good_code": "const storageBuffer = device.createBuffer({\n  size: 65536,\n  usage: GPUBufferUsage.STORAGE | GPUBufferUsage.VERTEX | GPUBufferUsage.COPY_DST\n});\n\nconst commandEncoder = device.createCommandEncoder();\nconst computePass = commandEncoder.beginComputePass();\ncomputePass.setPipeline(computePipeline);\ncomputePass.setBindGroup(0, bindGroup);\ncomputePass.dispatchWorkgroups(64);\ncomputePass.end();\n\n// The implementation automatically inserts a barrier here\nconst renderPass = commandEncoder.beginRenderPass(renderPassDesc);\nrenderPass.setPipeline(renderPipeline);\nrenderPass.setVertexBuffer(0, storageBuffer);\nrenderPass.draw(1000);\nrenderPass.end();\n\ndevice.queue.submit([commandEncoder.finish()]);",
-        "verification": "Use the browser's WebGPU inspection tools or the 'WebGPU Error Scope' to check for validation errors related to resource contention.",
         "date": "2026-02-19",
         "id": 1771483916,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-resource-sync-race-fix.js"
     },
     {
         "title": "Debugging Terraform State Lock Deadlocks",
@@ -1209,15 +979,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>In concurrent CI/CD environments, Terraform uses a locking mechanism (e.g., DynamoDB for AWS S3 backend) to prevent multiple processes from modifying state simultaneously. A deadlock or 'ghost lock' occurs when a CI runner crashes or is terminated mid-apply, leaving the LockID in the database. Subsequent runs fail with a 423 Locked error, even though no process is actually running.</p>",
-        "root_cause": "Interrupted CI/CD jobs failing to release DynamoDB LockID records during the 'terraform apply' phase.",
-        "bad_code": "jobs:\n  terraform:\n    runs-on: ubuntu-latest\n    steps:\n      - run: terraform apply -auto-approve # No timeout or error handling",
-        "solution_desc": "Implement a lock timeout in the Terraform command and use a 'trap' or 'always' cleanup step in CI to force-unlock or alert when locks persist longer than expected.",
-        "good_code": "jobs:\n  terraform:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Terraform Apply\n        run: terraform apply -lock-timeout=3m -auto-approve\n      - name: Force Unlock (Manual Intervention)\n        if: failure()\n        run: | \n          LOCK_ID=$(terraform output -raw lock_id || echo \"none\")\n          if [ \"$LOCK_ID\" != \"none\" ]; then\n            terraform force-unlock -force $LOCK_ID\n          fi",
-        "verification": "Check the DynamoDB 'LockID' table to ensure entries are deleted after the workflow completes or fails.",
         "date": "2026-02-19",
         "id": 1771483917,
-        "type": "error"
+        "path": "data/posts/2026-02/terraform-state-lock-deadlock.js"
     },
     {
         "title": "Analyze ZeroClaw: The High-Speed AI Infrastructure",
@@ -1229,15 +993,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI community due to its 'zero-overhead' philosophy. Unlike LangChain or AutoGPT, which introduce heavy abstractions, ZeroClaw provides a thin, high-performance layer for autonomous agents. It focuses on modularity, allowing developers to swap LLM providers (OpenAI, Anthropic, or Local Llama) without refactoring the core agent logic. Its tiny footprint makes it ideal for edge deployment and high-concurrency agent swarms.</p>",
-        "root_cause": "Key Features: Sub-100ms internal latency, plug-and-play LLM adapters, and a fully autonomous 'loop' architecture that minimizes token overhead.",
-        "bad_code": "pip install zeroclaw-labs\nzeroclaw init my-agent",
-        "solution_desc": "Best used for real-time autonomous systems, such as automated trading bots, local-first RAG applications, and specialized micro-agents where latency is critical.",
-        "good_code": "from zeroclaw import Agent, ModelType\n\n# Define a tiny, autonomous researcher agent\nagent = Agent(\n    name=\"Researcher\",\n    model=ModelType.LLAMA_3_LOCAL,\n    autonomous=True\n)\n\nagent.run(\"Analyze the current market trends for HBM memory.\")",
-        "verification": "ZeroClaw is positioned to become the 'Standard Library' for developers who find current AI frameworks too bloated for production-scale autonomy.",
         "date": "2026-02-19",
         "id": 1771483918,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-ai-infrastructure-analysis.js"
     },
     {
         "title": "Debugging Kubernetes CFS Bandwidth Throttling",
@@ -1250,15 +1008,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Kubernetes uses Completely Fair Scheduler (CFS) quotas to enforce CPU limits. However, many developers encounter significant tail latency (p99) even when the average CPU utilization is well below the limit. This happens because the Linux kernel checks usage over very short periods (usually 100ms). If a multi-threaded application consumes its entire quota in the first 10ms of that window, it is throttled for the remaining 90ms, causing massive latency spikes despite appearing 'idle' on average metrics.</p>",
-        "root_cause": "The CFS quota mechanism enforces limits per period. High-concurrency runtimes (Go, Java) can burst across many cores simultaneously, exhausting the quota in a fraction of the enforcement interval.",
-        "bad_code": "resources:\n  limits:\n    cpu: \"200m\"\n  requests:\n    cpu: \"200m\"",
-        "solution_desc": "Increase the CPU limit to allow for bursts or enable the CPU Burst feature in newer Linux kernels (5.14+). Alternatively, remove limits and rely on requests and CPU shares if the node is not overcommitted.",
-        "good_code": "resources:\n  limits:\n    cpu: \"1000m\" # Higher headroom for bursts\n  requests:\n    cpu: \"200m\"",
-        "verification": "Monitor the Prometheus metric 'container_cpu_cfs_throttled_periods_total'. A rising count indicates the fix is still needed.",
         "date": "2026-02-19",
         "id": 1771476491,
-        "type": "error"
+        "path": "data/posts/2026-02/k8s-cfs-throttling-latency.js"
     },
     {
         "title": "Resolving Elixir OTP Process Mailbox Overflow",
@@ -1271,15 +1023,9 @@ var postsIndex = [
             "Docker",
             "Error Fix"
         ],
-        "analysis": "<p>In high-throughput Elixir/Erlang applications, the 'Share Nothing' architecture relies on message passing. If a GenServer receives messages faster than its 'handle_info' or 'handle_call' callbacks can process them, the process mailbox grows indefinitely. This leads to increased memory consumption and eventually triggers the Out Of Memory (OOM) killer, as Erlang processes do not have a default limit on mailbox size.</p>",
-        "root_cause": "Lack of backpressure in the producer-consumer pipeline, causing a bottlenecked GenServer to accumulate unhandled messages in its private heap.",
-        "bad_code": "def handle_cast({:process_data, data}, state) do\n  # Slow synchronous work here\n  :timer.sleep(100)\n  {:noreply, state}\nend",
-        "solution_desc": "Implement backpressure using GenStage or Broadway. This ensures the producer only sends messages when the consumer has signaled demand (pull-based model).",
-        "good_code": "defmodule MyConsumer do\n  use GenStage\n  def handle_events(events, _from, state) do\n    Enum.each(events, &process_data/1)\n    {:noreply, [], state}\n  end\nend",
-        "verification": "Use ':observer.start()' or 'Process.info(pid, :message_queue_len)' to verify the queue length remains stable under load.",
         "date": "2026-02-19",
         "id": 1771476492,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-otp-mailbox-overflow.js"
     },
     {
         "title": "Fixing PostgreSQL Transaction ID (XID) Wraparound",
@@ -1292,15 +1038,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses a 32-bit integer for Transaction IDs (XIDs), providing roughly 4 billion IDs. When the counter approaches this limit, the database must 'freeze' old transactions to reuse IDs. If high write volume outpaces the Autovacuum process, the database will eventually shut down and enter read-only mode to prevent data corruption, a state known as XID Wraparound failure.</p>",
-        "root_cause": "Autovacuum settings are too conservative for high-write workloads, preventing the background process from cleaning and freezing tuples fast enough.",
-        "bad_code": "autovacuum_vacuum_scale_factor = 0.2\nautovacuum_freeze_max_age = 200000000",
-        "solution_desc": "Tune autovacuum to trigger more aggressively by reducing the scale factor and increasing the vacuum cost limit. Manually run VACUUM FREEZE on the largest tables if the age is critical.",
-        "good_code": "ALTER TABLE large_table SET (autovacuum_vacuum_scale_factor = 0.01);\nSET autovacuum_vacuum_cost_limit = 1000;",
-        "verification": "Run 'SELECT datname, age(datfrozenxid) FROM pg_database;' and ensure the age is decreasing toward 0.",
         "date": "2026-02-19",
         "id": 1771476493,
-        "type": "error"
+        "path": "data/posts/2026-02/postgres-xid-wraparound-fix.js"
     },
     {
         "title": "ZeroClaw: The Autonomous AI Assistant Infrastructure",
@@ -1312,15 +1052,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI community because it provides a lightweight, modular infrastructure for deploying fully autonomous agents. Unlike bloated frameworks, ZeroClaw focuses on a 'swap-anything' architecture, allowing developers to plug in different LLMs, vector stores, and tools without rewriting the core logic. Its ability to run on edge devices while maintaining complex reasoning capabilities makes it a favorite for local-first AI developers.</p>",
-        "root_cause": "Features include sub-second tool invocation, native support for multi-agent orchestration, and a zero-dependency core that simplifies containerized deployments.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw && cd zeroclaw && pip install .",
-        "solution_desc": "Ideal for building privacy-focused personal assistants, automated DevOps agents, or any application requiring autonomous decision-making without high cloud overhead.",
-        "good_code": "from zeroclaw import Assistant\n\nagent = Assistant(model='gpt-4o', tools=['web_search', 'shell'])\nagent.run(\"Analyze my local logs and summarize errors.\")",
-        "verification": "The project is positioned to become the 'Docker for AI Agents,' with a roadmap focusing on decentralized agent-to-agent communication protocols.",
         "date": "2026-02-19",
         "id": 1771476494,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-ai-assistant-infra.js"
     },
     {
         "title": "Fixing Zig Comptime Memory Exhaustion",
@@ -1333,15 +1067,9 @@ var postsIndex = [
             "Metaprogramming",
             "Error Fix"
         ],
-        "analysis": "<p>Zig's <code>comptime</code> allows for powerful generic programming, but it executes at compile time, meaning the compiler's memory footprint scales with the complexity of the generated types. In deep generic template expansion, specifically recursive type generation, the compiler memoizes every intermediate state. This leads to exponential memory growth during the semantic analysis phase, often crashing the build process on machines with less than 32GB of RAM.</p>",
-        "root_cause": "Infinite or excessively deep recursion in comptime functions that generate unique anonymous structs for every iteration, filling the compiler's type memoization table.",
-        "bad_code": "fn GenerateLinkedList(comptime depth: usize) type {\n    if (depth == 0) return struct { val: i32 };\n    return struct {\n        val: i32,\n        next: GenerateLinkedList(depth - 1),\n    };\n}\n\n// Usage that triggers OOM\nconst HugeList = GenerateLinkedList(10000);",
-        "solution_desc": "Instead of generating nested anonymous structs recursively, use a flat array-based approach or Type Erasure where possible. If recursion is necessary, use an iterative approach with a single container type to prevent the creation of thousands of unique type signatures.",
-        "good_code": "fn GenerateLinkedList(comptime depth: usize) type {\n    return struct {\n        nodes: [depth]struct { val: i32 },\n        pub fn next(self: *@This(), index: usize) ?*struct{val: i32} {\n            if (index >= depth) return null;\n            return &self.nodes[index];\n        }\n    };\n}\n\nconst OptimizedList = GenerateLinkedList(10000);",
-        "verification": "Run `zig build` and monitor the memory usage of the `zig` process. The memory should remain stable and not exceed 1-2GB for large expansions.",
         "date": "2026-02-19",
         "id": 1771463933,
-        "type": "error"
+        "path": "data/posts/2026-02/fixing-zig-comptime-memory-exhaustion.js"
     },
     {
         "title": "Resolving CUDA Memory Fragmentation in 4-bit LLMs",
@@ -1354,15 +1082,9 @@ var postsIndex = [
             "PyTorch",
             "Error Fix"
         ],
-        "analysis": "<p>When running 4-bit quantized LLMs (using bitsandbytes or AutoGPTQ), memory fragmentation occurs because the CUDA allocator struggles with the varying sizes of de-quantized activation tensors and the fixed-size quantized weights. This 'External Fragmentation' means that while total free memory is sufficient, there is no single contiguous block large enough for the next allocation, resulting in a false OOM error.</p>",
-        "root_cause": "Frequent allocation and deallocation of small intermediate tensors during 4-bit dequantization combined with the default PyTorch caching allocator behavior.",
-        "bad_code": "import torch\nfrom transformers import AutoModelForCausalLM\n\n# Standard loading often fails during long context generation\nmodel = AutoModelForCausalLM.from_pretrained(\n    \"model_path\", \n    load_in_4bit=True, \n    device_map=\"auto\"\n)\n# Running inference on 4k+ tokens triggers fragmentation OOM",
-        "solution_desc": "Configure the PyTorch CUDA allocator to use 'expandable_segments'. This feature, introduced in recent PyTorch versions, allows the allocator to map memory into contiguous virtual address spaces even if the physical segments are non-contiguous, effectively eliminating external fragmentation for LLM workloads.",
-        "good_code": "import os\nimport torch\n\n# Enable expandable segments to prevent fragmentation\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"expandable_segments:True\"\n\nmodel = AutoModelForCausalLM.from_pretrained(\n    \"model_path\", \n    load_in_4bit=True, \n    device_map=\"auto\"\n)\n# Fragments are now virtually contiguous",
-        "verification": "Check `torch.cuda.memory_summary()` after long inference runs. The 'Max Reserved' should be significantly closer to 'Max Allocated' than before the fix.",
         "date": "2026-02-19",
         "id": 1771463934,
-        "type": "error"
+        "path": "data/posts/2026-02/cuda-memory-fragmentation-4bit-llm.js"
     },
     {
         "title": "Fixing Flutter Skia Shader Jitter",
@@ -1375,15 +1097,9 @@ var postsIndex = [
             "Mobile",
             "Error Fix"
         ],
-        "analysis": "<p>Flutter apps on high-refresh rate displays (120Hz+) often experience 'jank' during the first animation of a specific UI element. This is caused by the Skia rendering engine compiling the required GLSL/Metal shaders on the UI thread at the exact moment they are needed. On 120Hz displays, the frame budget is only 8.3ms; shader compilation can take 20-50ms, causing noticeable dropped frames.</p>",
-        "root_cause": "Just-in-time (JIT) shader compilation on the raster thread during animation execution.",
-        "bad_code": "// No specific code triggers this, but complex UI like:\nreturn Scaffold(\n  body: AnimatedContainer(\n    duration: Duration(milliseconds: 300),\n    decoration: BoxDecoration(\n      gradient: LinearGradient(colors: [Colors.red, Colors.blue]), // Triggers shader comp\n    ),\n  ),\n);",
-        "solution_desc": "The industry-standard solution is to perform 'Shader Warmup'. You must capture the Skia Shading Language (SkSL) signatures during a profiling session and bundle them with the application. Alternatively, switch to the 'Impeller' rendering engine which pre-compiles shaders during the app build phase.",
-        "good_code": "/* Step 1: Run app in profiling mode and trigger animations */\n// flutter run --profile --cache-sksl --purge-old-cache\n\n/* Step 2: Build with the generated sksl bundle */\n// flutter build apk --bundle-sksl-path flutter_01.sksl.json\n\n/* Alternative for New Flutter versions: Enable Impeller in Info.plist */\n// <key>FLTEnableImpeller</key>\n// <true/>",
-        "verification": "Use the Flutter DevTools Performance overlay. The 'Raster' bar should stay consistently below the 8.3ms line during transitions on 120Hz devices.",
         "date": "2026-02-19",
         "id": 1771463935,
-        "type": "error"
+        "path": "data/posts/2026-02/flutter-skia-shader-jitter-fix.js"
     },
     {
         "title": "Analyzing Zeroclaw: High-Performance Autonomous AI",
@@ -1395,15 +1111,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>Zeroclaw (zeroclaw-labs/zeroclaw) is trending because it addresses the 'bloat' issue in existing AI agent frameworks like LangChain. It provides a lean, low-latency infrastructure for autonomous agents that can be deployed on edge devices or scaled in the cloud. Its 'swap anything' philosophy allows developers to replace LLM providers, vector stores, and toolsets without rewriting core logic, making it highly attractive for production-grade AI applications.</p>",
-        "root_cause": "Minimalist abstraction layers, native support for fast tool-calling protocols, and a focus on sub-100ms internal overhead.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install -e .",
-        "solution_desc": "Ideal for developers building autonomous voice assistants, edge-based automation, or high-throughput RAG pipelines where framework latency is a bottleneck. Adopt it when you need modularity without the overhead of heavy dependencies.",
-        "good_code": "from zeroclaw import Assistant\n\n# Simple, modular initialization\nassistant = Assistant(\n    model=\"gpt-4o\",\n    tools=[\"web_search\", \"python_exec\"],\n    autonomous=True\n)\n\nassistant.run(\"Analyze the current market trends for Zig and report back.\")",
-        "verification": "As AI moves toward 'Agentic Workflows', Zeroclaw is positioned to become the 'Flask' to LangChain's 'Django', offering the speed and flexibility required for the next generation of autonomous apps.",
         "date": "2026-02-19",
         "id": 1771463936,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-analysis.js"
     },
     {
         "title": "Fixing Haskell Space Leaks in Stream Processing",
@@ -1416,15 +1126,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>In high-throughput Haskell stream processing, lazy evaluation often becomes a double-edged sword. While it allows for modularity and infinite streams, it can lead to 'thunk' accumulation. A thunk is a deferred computation that resides in the heap until its value is explicitly required. In a streaming context, if a cumulative state (like a counter or a sum) is updated lazily, the program stores the formula for the update rather than the result, eventually exhausting available memory and causing a crash.</p>",
-        "root_cause": "The use of lazy accumulators (like foldl) in recursive stream processing which creates long chains of unevaluated expressions (thunks) in the heap.",
-        "bad_code": "import Data.List (foldl)\n\n-- Processing a high-throughput stream of integers\nprocessStream :: [Int] -> Int\nprocessStream = foldl (+) 0",
-        "solution_desc": "Replace lazy folds with strict versions (foldl') and ensure that data structures used for state are 'strict' in their fields. Use the BangPatterns extension to force evaluation at specific points.",
-        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\n-- foldl' forces evaluation of the accumulator at each step\nprocessStrictStream :: [Int] -> Int\nprocessStrictStream = foldl' (+) 0",
-        "verification": "Compile with GHC profiling enabled (-prof -auto-all) and run with +RTS -hc to generate a heap profile graph, ensuring a flat memory line.",
         "date": "2026-02-18",
         "id": 1771407583,
-        "type": "error"
+        "path": "data/posts/2026-02/haskell-lazy-evaluation-space-leaks.js"
     },
     {
         "title": "Resolving HNSW Index Fragmentation in Vector DBs",
@@ -1437,15 +1141,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Hierarchical Navigable Small World (HNSW) indexes are the gold standard for vector similarity search, but they struggle with 'heavy incremental updates'. When vectors are frequently updated or deleted, the graph structure becomes fragmented. 'Tombstoning' deleted nodes leaves gaps in the search path, forcing the engine to traverse longer, sub-optimal routes, which increases P99 latency and degrades recall accuracy over time.</p>",
-        "root_cause": "Logical deletions in the HNSW graph lead to disconnected components and high-degree 'ghost' nodes that aren't physically removed until a full rebuild.",
-        "bad_code": "-- High frequency incremental updates causing fragmentation\nUPDATE vector_table \nSET embedding = '[0.12, 0.45, ...]' \nWHERE id = 101; -- Repeated thousands of times",
-        "solution_desc": "Implement a 'Compaction' strategy or use a DB engine that supports automatic graph re-balancing. Architecturally, move to a 'buffer-and-merge' approach where updates are batched and the index is rebuilt or optimized during low-traffic windows.",
-        "good_code": "-- Optimize/Vacuum the index to remove tombstoned nodes\nVACUUM (ANALYZE, VERBOSE) vector_table;\n-- Or trigger index rebuild\nREINDEX INDEX idx_hnsw_embedding;",
-        "verification": "Monitor 'Index Efficiency' metrics and perform 'Recall' testing against a ground-truth set before and after the index optimization.",
         "date": "2026-02-18",
         "id": 1771407584,
-        "type": "error"
+        "path": "data/posts/2026-02/hnsw-index-fragmentation-fix.js"
     },
     {
         "title": "Fixing Go Scheduler Starvation in Numerical Loops",
@@ -1458,15 +1156,9 @@ var postsIndex = [
             "Node.js",
             "Error Fix"
         ],
-        "analysis": "<p>Go's runtime uses a cooperative/preemptive scheduler. However, tight numerical loops that do not contain function calls or system calls can sometimes prevent the scheduler from preempting the goroutine. If a G (goroutine) is stuck in a heavy calculation on a P (processor), other goroutines (like those handling HTTP health checks or GC) may starve, leading to application hangs despite low CPU utilization on other cores.</p>",
-        "root_cause": "The Go 1.14+ asynchronous preemption relies on stack checks or signals; extremely tight loops without function calls can occasionally bypass these points.",
-        "bad_code": "func tightLoop() {\n    for i := 0; i < 1e12; i++ {\n        // Pure numerical work with no function calls\n        res += i * i\n    }\n}",
-        "solution_desc": "Manually yield the processor using 'runtime.Gosched()' or introduce a function call within the loop to allow the scheduler to insert a preemption point.",
-        "good_code": "import \"runtime\"\n\nfunc looseLoop() {\n    for i := 0; i < 1e12; i++ {\n        res += i * i\n        if i%1000000 == 0 {\n            runtime.Gosched() // Explicitly yield to other goroutines\n        }\n    }\n}",
-        "verification": "Run the application with GODEBUG=schedtrace=1000 and observe if all 'P' threads are making progress under load.",
         "date": "2026-02-18",
         "id": 1771407585,
-        "type": "error"
+        "path": "data/posts/2026-02/go-runtime-scheduler-starvation.js"
     },
     {
         "title": "ZeroClaw: Next-Gen Autonomous AI Infrastructure",
@@ -1478,15 +1170,9 @@ var postsIndex = [
             "GitHub",
             "Node.js"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction on GitHub because it addresses the complexity of deploying autonomous AI agents. Unlike monolithic frameworks, ZeroClaw offers a modular, 'swap-anything' architecture. It allows developers to plug in different LLMs (OpenAI, Anthropic, Llama) and vector stores while providing a lightweight footprint suitable for edge deployment. Its focus on 'Fast, Small, and Fully Autonomous' resonates with the shift from centralized AI toward distributed, local-first agents.</p>",
-        "root_cause": "Modular Plugin System, Low-latency Agent Execution, and Multi-LLM Orchestration.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cd zeroclaw && npm install",
-        "solution_desc": "ZeroClaw is ideal for building local AI assistants, automated DevOps agents, or private enterprise knowledge bots where data privacy and low latency are critical. Use it when you need a framework that doesn't lock you into a specific AI provider.",
-        "good_code": "import { ZeroClaw } from 'zeroclaw-core';\n\nconst agent = new ZeroClaw({\n  model: 'gpt-4o',\n  tools: ['web-search', 'shell-exec'],\n  autonomous: true\n});\n\nawait agent.run(\"Optimize the Nginx config for this server\");",
-        "verification": "As AI moves toward 'Small Language Models' (SLMs), ZeroClaw is positioned to become the standard 'glue' for edge-based autonomous operations.",
         "date": "2026-02-18",
         "id": 1771407586,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-analysis.js"
     },
     {
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
@@ -1499,15 +1185,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In high-concurrency networking, C++20 coroutines are often used to manage asynchronous I/O via <code>co_await</code>. A critical issue arises when references or pointers to local variables are passed into an asynchronous operation. If the coroutine suspends and the underlying operation outlives the coroutine frame (e.g., due to a cancellation or premature destruction), the resumed coroutine or the completion handler will access a dangling pointer. This is particularly frequent in network buffers where the lifetime of the <code>std::string</code> or <code>vector</code> used for receiving data is tied to a scope that closes before the I/O finishes.</p>",
-        "root_cause": "The coroutine frame or local scope variables are destroyed while an asynchronous operation still holds a reference to them, typically due to improper use of references in 'fire-and-forget' tasks or incorrect shared_ptr ownership.",
-        "bad_code": "task<void> start_read(tcp::socket& socket) {\n    char buffer[1024]; // Local stack-like buffer in coroutine frame\n    auto bytes = co_await socket.async_read_some(asio::buffer(buffer));\n    process(buffer, bytes);\n}",
-        "solution_desc": "Ensure that the buffer's lifetime is managed by a shared state or move the buffer into the coroutine frame's heap-allocated portion using a member variable in a class-based coroutine or by passing a shared_ptr to the async operation.",
-        "good_code": "task<void> start_read(tcp::socket& socket) {\n    auto buffer = std::make_shared<std::vector<char>>(1024);\n    // Capture shared_ptr to extend lifetime until completion\n    auto bytes = co_await socket.async_read_some(asio::buffer(*buffer));\n    process(buffer->data(), bytes);\n}",
-        "verification": "Use AddressSanitizer (ASan) with 'detect_stack_use_after_return=1' and run stress tests under high network load to catch invalid memory access.",
         "date": "2026-02-18",
         "id": 1771397579,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutine-frame-lifetime-violations.js"
     },
     {
         "title": "Resolving WiredTiger Cache Eviction Contention in MongoDB",
@@ -1520,15 +1200,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>High-throughput MongoDB clusters often hit a 'performance cliff' when the WiredTiger cache becomes full. When dirty pages exceed the <code>eviction_trigger</code>, application threads are forced to participate in eviction (application-side eviction), which leads to massive latency spikes and lock contention. In clusters with high write-concurrency, the eviction threads cannot keep up, causing the global WiredTiger tick to stall and blocking all I/O operations until the cache pressure is relieved.</p>",
-        "root_cause": "Mismatch between the rate of data ingress and the WiredTiger eviction thread capacity, combined with default settings that allow too much dirty data to accumulate before aggressive eviction kicks in.",
-        "bad_code": "// Default configuration under heavy 100k+ OPS load\nstorage.wiredTiger.engineConfig.cacheSizeGB: 16\n// No custom eviction tuning, leading to default 20% dirty trigger",
-        "solution_desc": "Tune the WiredTiger engine to use more background eviction threads and lower the dirty page triggers. This forces the database to start cleaning the cache earlier and more aggressively without stalling user queries.",
-        "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction=(threads_min=4,threads_max=20),eviction_dirty_trigger=5,eviction_dirty_target=3\"\n});",
-        "verification": "Monitor 'wiredtiger.cache.tracked dirty bytes in the cache' and 'app threads page eviction' using mongostat or Cloud Manager.",
         "date": "2026-02-18",
         "id": 1771397580,
-        "type": "error"
+        "path": "data/posts/2026-02/mongodb-wiredtiger-cache-eviction-contention.js"
     },
     {
         "title": "Debugging Spark Broadcast Hash Join OOMs under Skew",
@@ -1541,15 +1215,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>Spark's Broadcast Hash Join (BHJ) is efficient for joining a small table with a large one by broadcasting the small table to all executors. However, when the join key in the 'small' table is heavily skewed (many rows with the same key), the resulting hash map on the executor exceeds the allocated execution memory. Even if the total table size is below <code>spark.sql.autoBroadcastJoinThreshold</code>, the deserialized in-memory object can be significantly larger, leading to Java Heap Space OOMs.</p>",
-        "root_cause": "Data skew leads to a specific hash bucket in the broadcast relation growing beyond the available executor memory during the building of the In-Memory Hash Table.",
-        "bad_code": "// Forcing broadcast on a skewed table\nval joinedDF = largeDF.join(broadcast(skewedSmallDF), \"user_id\")",
-        "solution_desc": "Disable BHJ for the specific query using a hint or increase the partition count and use a SortMergeJoin. Alternatively, implement 'salting' to break up the skewed keys into smaller chunks that can be handled across multiple tasks.",
-        "good_code": "// Use Skew Hint (Spark 3.0+) or Salting\nval joinedDF = largeDF.hint(\"skew\", \"user_id\").join(skewedSmallDF, \"user_id\")\n// Or force SortMergeJoin\nspark.conf.set(\"spark.sql.autoBroadcastJoinThreshold\", -1)",
-        "verification": "Check the Spark UI Storage tab for 'Size in Memory' of the broadcasted relation and verify that the join strategy changed to 'SortMergeJoin' in the SQL tab.",
         "date": "2026-02-18",
         "id": 1771397581,
-        "type": "error"
+        "path": "data/posts/2026-02/spark-broadcast-hash-join-oom-data-skew.js"
     },
     {
         "title": "Analyze the Trending ZeroClaw AI Assistant Infrastructure",
@@ -1561,15 +1229,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>Zeroclaw is rapidly trending due to its 'low-abstraction' approach to AI agent orchestration. Unlike heavy frameworks like LangChain, Zeroclaw focuses on raw performance and 'fully autonomous' capabilities. It is designed for developers who need to deploy AI assistants at the edge or within resource-constrained environments. Its modular architecture allows developers to 'swap anything'—from the LLM provider to the vector database—without rewriting the core agent logic, which is a major pain point in the current AI ecosystem.</p>",
-        "root_cause": "Modular Plugin System, Minimal Overhead, and Native Support for Local/Cloud Hybrid Inference.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -r requirements.txt\npython setup.py install",
-        "solution_desc": "Best used for autonomous DevOps agents, real-time customer support bots, and low-latency IoT AI processing where framework overhead must be minimized.",
-        "good_code": "from zeroclaw.core import Assistant\nfrom zeroclaw.tools import CodeInterpreter\n\nassistant = Assistant(model=\"llama-3\", tools=[CodeInterpreter()])\nassistant.deploy(target=\"lambda-edge\")\nassistant.chat(\"Optimize this SQL query.\")",
-        "verification": "Zeroclaw is positioned to become the 'Standard Library' for autonomous agent deployment, likely integrating deeper with Rust-based inference engines in 2024.",
         "date": "2026-02-18",
         "id": 1771397582,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-zeroclaw-analysis.js"
     },
     {
         "title": "Fixing eBPF Verifier Complexity in Packet Inspection",
@@ -1582,15 +1244,9 @@ var postsIndex = [
             "eBPF",
             "Error Fix"
         ],
-        "analysis": "<p>Deep Packet Inspection (DPI) in eBPF often involves traversing multiple protocol layers. As the complexity of the packet parsing logic increases—especially with nested loops or extensive branching to handle various protocols—the eBPF verifier's state tracking exceeds the 1-million instruction limit. This results in the program being rejected during load time, despite the logic being valid C code.</p>",
-        "root_cause": "The verifier performs a depth-first search of all possible execution paths. Unrolled loops and deep conditional branching for protocol headers cause the 'complexity' (number of states explored) to explode beyond the kernel's safety thresholds.",
-        "bad_code": "for (int i = 0; i < MAX_HEADERS; i++) {\n    struct hdr *h = data + offset;\n    if (h > data_end) break;\n    if (h->type == TYPE_X) { /* Complex Logic */ }\n    offset += sizeof(*h);\n}",
-        "solution_desc": "Refactor the parser to use BPF-to-BPF function calls. This allows the verifier to verify functions individually rather than exploring every permutation of a monolithic main function. Additionally, use bounded loops (available in newer kernels) to avoid forced unrolling.",
-        "good_code": "static __noinline int parse_header(struct __sk_buff *skb, u32 offset) {\n    /* Modularized logic reduces state branching per function */\n    return process_logic(skb, offset);\n}\n\n// In main program\n#pragma unroll\nfor (int i = 0; i < 5; i++) {\n    res = parse_header(skb, offset);\n}",
-        "verification": "Run 'bpftool prog load' and check 'xlated' instructions; ensure 'verifier_stats' shows complexity well below the 1M limit.",
         "date": "2026-02-18",
         "id": 1771390144,
-        "type": "error"
+        "path": "data/posts/2026-02/ebpf-verifier-complexity-dpi-fix.js"
     },
     {
         "title": "Fixing React Native JSI Bridge Congestion",
@@ -1603,15 +1259,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>High-frequency telemetry (e.g., 60Hz sensor data) passed via the JavaScript Interface (JSI) can cause 'bridge congestion.' While JSI is faster than the legacy bridge, synchronous calls from C++ to JS still block the JavaScript thread's event loop. When telemetry events arrive faster than the JS engine can process them, UI frames drop and the app becomes unresponsive.</p>",
-        "root_cause": "Directly invoking JS callback functions from a high-frequency C++ thread without batching or throttling, leading to a saturated JS execution queue.",
-        "bad_code": "void onSensorData(double value) {\n  jsCallback.call(*runtime, jsi::Value(value));\n}",
-        "solution_desc": "Implement a C++ buffering layer that accumulates telemetry data and flushes it to JavaScript in batches synchronized with the display's refresh rate (using a RequestAnimationFrame-like pattern) or at a fixed interval.",
-        "good_code": "void onSensorData(double value) {\n  std::lock_guard<std::mutex> lock(queueMutex);\n  dataBuffer.push_back(value);\n  if (dataBuffer.size() > 30) {\n    flushToJS(); // Batch update every 30 samples\n  }\n}",
-        "verification": "Use React Native Profiler and Perf Monitor; observe if 'JS FPS' stabilizes at 60 despite high incoming data rates.",
         "date": "2026-02-18",
         "id": 1771390145,
-        "type": "error"
+        "path": "data/posts/2026-02/react-native-jsi-telemetry-congestion.js"
     },
     {
         "title": "Solving PyTorch DDP Deadlocks in Heterogeneous Clusters",
@@ -1624,15 +1274,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>When running DistributedDataParallel (DDP) across a cluster with GPUs of varying speeds or interconnect bandwidths, 'all_reduce' operations can deadlock. If one rank finishes its forward pass significantly slower than others, the NCCL watchdog might time out, or the faster ranks might enter a state where they wait indefinitely for the straggler, causing a cluster-wide hang.</p>",
-        "root_cause": "Imbalanced computation-to-communication ratios across nodes and lack of a 'Join' context manager to handle uneven batch sizes or processing speeds.",
-        "bad_code": "model = DDP(model, device_ids=[rank])\nfor data, target in loader:\n    output = model(data)\n    loss = criterion(output, target)\n    loss.backward()",
-        "solution_desc": "Wrap the training loop with the 'dist.join' context manager to handle trailing processes and set a realistic NCCL_TIMEOUT. Additionally, ensure 'find_unused_parameters=False' to reduce overhead if the graph is static.",
-        "good_code": "from torch.distributed.algorithms.join import Join\nmodel = DDP(model, device_ids=[rank])\nwith Join([model]):\n    for data, target in loader:\n        optimizer.zero_grad()\n        loss = model(data).sum()\n        loss.backward()\n        optimizer.step()",
-        "verification": "Monitor logs for 'NCCL INFO Call to all_reduce completed' and ensure training completes without 'Watchdog timeout' errors.",
         "date": "2026-02-18",
         "id": 1771390146,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-ddp-deadlock-heterogeneous.js"
     },
     {
         "title": "Analyzing ZeroClaw: The Fast, Autonomous AI Infra",
@@ -1644,15 +1288,9 @@ var postsIndex = [
             "GitHub",
             "Backend"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction because it addresses the 'deployment friction' of autonomous agents. Unlike heavy frameworks, ZeroClaw focuses on a small, modular footprint that allows developers to swap LLM backends (OpenAI, Anthropic, or local Llama) seamlessly while maintaining high-speed execution. It provides a standardized 'infrastructure' layer for agents to interact with environments, making it the 'Docker' for AI assistants.</p>",
-        "root_cause": "Modular Plugin Architecture, Low Latency Runtime, and Environment-Agnostic Deployment.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git && cd zeroclaw && pip install -e .",
-        "solution_desc": "ZeroClaw is best used for edge AI applications, private local-first autonomous assistants, and microservices where a lightweight agentic loop is required without the overhead of LangChain or AutoGPT.",
-        "good_code": "from zeroclaw.core import Agent\n\nagent = Agent(model='gpt-4', tools=['browser', 'terminal'])\nagent.run('Optimize the database queries in /src')",
-        "verification": "With the rise of local LLMs and 'AI on Edge', ZeroClaw is positioned to become the go-to orchestration layer for hardware-constrained autonomous systems.",
         "date": "2026-02-18",
         "id": 1771390147,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-ai-infra-analysis.js"
     },
     {
         "title": "Resolving Rust Pinning Violations in Async Structures",
@@ -1665,15 +1303,9 @@ var postsIndex = [
             "Systems",
             "Error Fix"
         ],
-        "analysis": "<p>In Rust, self-referential structures are inherently dangerous because moving the structure in memory invalidates internal pointers. This is a common issue when building manual Future implementations or complex async state machines.</p><p>The <code>Pin</code> wrapper guarantees that the data it points to will not be moved until it is dropped, ensuring that self-references remain valid. Violations occur when developers attempt to access fields mutably without satisfying the Unpin trait or failing to use <code>project()</code> correctly.</p>",
-        "root_cause": "Moving a self-referential struct after pointers to its fields have been created, leading to dangling pointers and undefined behavior.",
-        "bad_code": "struct SelfRef {\n    data: String,\n    ptr: *const String,\n}\n\nimpl SelfRef {\n    fn new(txt: &str) -> Self {\n        let mut s = SelfRef { data: txt.to_string(), ptr: std::ptr::null() };\n        s.ptr = &s.data; // Pointer to internal field\n        s\n    }\n} // If this is moved, 'ptr' becomes invalid.",
-        "solution_desc": "Use the Pin<P> type along with PhantomPinned to mark the struct as !Unpin. Use the 'pin-project' crate to safely handle field projection.",
-        "good_code": "use std::pin::Pin;\nuse std::marker::PhantomPinned;\n\nstruct SelfRef {\n    data: String,\n    ptr: *const String,\n    _pin: PhantomPinned,\n}\n\nimpl SelfRef {\n    fn new(txt: &str) -> Pin<Box<Self>> {\n        let res = SelfRef {\n            data: txt.to_string(),\n            ptr: std::ptr::null(),\n            _pin: PhantomPinned,\n        };\n        let mut boxed = Box::pin(res);\n        let data_ptr = &boxed.data as *const String;\n        unsafe {\n            let mut_ref: Pin<&mut SelfRef> = boxed.as_mut();\n            Pin::get_unchecked_mut(mut_ref).ptr = data_ptr;\n        }\n        boxed\n    }\n}",
-        "verification": "Compile with 'cargo check'. Use 'miri' to detect undefined behavior in pointers during runtime execution.",
         "date": "2026-02-18",
         "id": 1771377548,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-pinning-violations-async.js"
     },
     {
         "title": "Fixing Kafka Consumer Group Rebalance Storms",
@@ -1686,15 +1318,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Rebalance storms occur in high-latency pipelines when a consumer takes longer to process a batch of records than the configured <code>max.poll.interval.ms</code>. This causes the broker to assume the consumer has failed, kicking it out of the group.</p><p>As the consumer rejoins, it triggers a rebalance for the entire group, pausing all other consumers. If multiple consumers are struggling with latency, this creates a recursive 'storm' where the group never reaches a stable state.</p>",
-        "root_cause": "Processing time per batch exceeds 'max.poll.interval.ms', or heartbeats are blocked by long-running synchronous operations in the main poll loop.",
-        "bad_code": "Properties props = new Properties();\nprops.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // CRITICAL ERROR: Synchronous heavy processing (e.g., 10 min API call)\n        processRemoteData(record);\n    }\n}",
-        "solution_desc": "Increase 'max.poll.interval.ms' to account for worst-case latency, or decouple processing from the poll loop using an internal worker queue and manual offsets.",
-        "good_code": "Properties props = new Properties();\nprops.put(\"max.poll.interval.ms\", \"900000\"); // Increase to 15 mins\nprops.put(\"max.poll.records\", \"10\"); // Reduce batch size\n\n// Alternative: Parallel processing with manual heartbeating\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    if (!records.isEmpty()) {\n        processInParallel(records); // Logic ensures poll() is called frequently\n    }\n}",
-        "verification": "Monitor 'kafka_consumer_group_rebalance_rate_total' in Prometheus. If stable, the rate should drop to near zero after deployment.",
         "date": "2026-02-18",
         "id": 1771377549,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-rebalance-storms-latency.js"
     },
     {
         "title": "Fixing WGSL Uniform Buffer Alignment Hazards",
@@ -1707,15 +1333,9 @@ var postsIndex = [
             "WebGPU",
             "Error Fix"
         ],
-        "analysis": "<p>WebGPU and WGSL have strict memory layout rules for Uniform Buffers. A common pitfall is the difference between JavaScript's Float32Array packing and WGSL's 16-byte alignment requirement for structures and certain vectors (like vec3).</p><p>When these don't match, the GPU reads garbage data or shifts indices, leading to distorted geometry or flickering. For instance, a <code>vec3</code> in WGSL is treated as having the same alignment as a <code>vec4</code>.</p>",
-        "root_cause": "Failing to account for the 16-byte alignment requirement (std140-like) in WGSL, specifically with vec3 and mixed-type structs.",
-        "bad_code": "// WGSL side\nstruct Config {\n    color: vec3<f32>,\n    intensity: f32,\n}\n\n// JS side - Tightly packed (4 + 1 = 5 floats)\nconst bufferData = new Float32Array([\n    1.0, 0.0, 0.0, // color\n    0.5            // intensity\n]);",
-        "solution_desc": "Manually pad your TypedArrays in JavaScript to match the 16-byte (4-float) alignment requirement of WGSL vec3/vec4 structures.",
-        "good_code": "// WGSL side\nstruct Config {\n    color: vec3<f32>,\n    _pad: f32,\n    intensity: f32,\n    _pad2: vec3<f32>,\n}\n\n// JS side - Padded for 16-byte alignment (vec3 + 1 float padding)\nconst bufferData = new Float32Array([\n    1.0, 0.0, 0.0, 0.0, // color + padding\n    0.5, 0.0, 0.0, 0.0  // intensity + padding\n]);",
-        "verification": "Use the 'WebGPU Inspector' browser extension to inspect buffer memory. Ensure the byte offsets in the GPU buffer match your JS object offsets.",
         "date": "2026-02-18",
         "id": 1771377550,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-wgsl-alignment-hazards.js"
     },
     {
         "title": "ZeroClaw: Lightweight Fully Autonomous AI Infrastructure",
@@ -1727,15 +1347,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI engineering community due to its 'swap-anything' philosophy. Unlike heavy frameworks that lock you into specific LLM providers, ZeroClaw treats the LLM, the memory layer, and the tool-calling interface as hot-swappable components.</p><p>It is designed for speed and low-resource environments, making it ideal for edge deployment where typical LangChain-based agents might be too bloated. Its rise is driven by the shift from simple RAG to 'Agentic Workflows' where the AI autonomously plans and executes shell commands or API calls.</p>",
-        "root_cause": "Key Features: High-performance core, provider-agnostic architecture, built-in tool execution sandbox, and a tiny footprint suitable for 'deploy anywhere' scenarios.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -e .",
-        "solution_desc": "Best used for building local automation agents, autonomous DevOps assistants, or embedded AI tools that need to run without high-latency cloud dependencies.",
-        "good_code": "from zeroclaw import Agent\n\nagent = Agent(provider=\"openai\", model=\"gpt-4-turbo\")\nagent.add_tool(\"terminal\", description=\"Execute shell commands\")\n\nresponse = agent.run(\"Find the largest log file in /var/log and summarize it.\")\nprint(response.output)",
-        "verification": "The project is moving toward a decentralized agentic protocol, potentially allowing Zeroclaw agents to discover and collaborate with each other across different network nodes.",
         "date": "2026-02-18",
         "id": 1771377551,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-ai-agent-infrastructure.js"
     },
     {
         "title": "Fixing Linux Kernel RCU Stall Warnings in IO Workloads",
@@ -1748,15 +1362,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>Read-Copy-Update (RCU) stall warnings occur when a CPU fails to pass through a quiescent state for an extended period. In high-performance I/O environments, intensive interrupt processing or long-running softirqs can monopolize a CPU core, preventing it from reporting its RCU state to the grace-period kthread. This leads to system latency spikes or kernel panics if the watchdog timer expires.</p>",
-        "root_cause": "Intensive disk or network I/O causing 'heavy' softirq processing on a single core, combined with insufficient RCU grace period frequency.",
-        "bad_code": "# Default conservative settings in /etc/sysctl.conf\nkernel.rcu_cpu_stall_timeout = 21\n# No RCU offloading configured in boot params\nGRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\"",
-        "solution_desc": "Offload RCU callback processing to specific 'housekeeping' cores and increase the stall timeout. Use the 'rcu_nocbs' kernel parameter to move RCU work away from performance-critical I/O cores.",
-        "good_code": "# Update GRUB to offload RCU (e.g., cores 1-7 on an 8-core system)\nGRUB_CMDLINE_LINUX_DEFAULT=\"rcu_nocbs=1-7 rcu_cpu_stall_timeout=60\"\n\n# Or via sysctl for immediate (non-offload) relief\nsysctl -w kernel.rcu_cpu_stall_timeout=60",
-        "verification": "Check dmesg for 'rcu_preempt detected stalls' and monitor /proc/interrupts to ensure balanced distribution.",
         "date": "2026-02-17",
         "id": 1771321165,
-        "type": "error"
+        "path": "data/posts/2026-02/linux-kernel-rcu-stall-io-fix.js"
     },
     {
         "title": "Fixing Istio Envoy Sidecar Resource Exhaustion",
@@ -1769,15 +1377,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>In large multicluster service meshes, every Envoy sidecar, by default, receives configuration updates for every service and endpoint in the entire mesh via the xDS protocol. As the number of clusters grows, the memory footprint of the Envoy process scales linearly, eventually leading to OOM (Out Of Memory) kills on sidecar containers even if the application itself is idling.</p>",
-        "root_cause": "Unrestricted xDS discovery scope in large-scale multicluster meshes leading to massive configuration payloads (CDS/EDS).",
-        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: Sidecar\nmetadata:\n  name: default\n  namespace: production\nspec:\n  # Missing egress configuration: defaults to global discovery\n  workloadSelector:\n    labels:\n      app: my-app",
-        "solution_desc": "Implement the Istio 'Sidecar' resource to explicitly limit the egress discovery scope. Only import services that the specific workload actually needs to communicate with, reducing configuration overhead by orders of magnitude.",
-        "good_code": "apiVersion: networking.istio.io/v1beta1\nkind: Sidecar\nmetadata:\n  name: localized-discovery\nspec:\n  egress:\n  - hosts:\n    - \"./*\" # Current namespace\n    - \"istio-system/*\"\n    - \"shared-services/*.svc.cluster.local\"",
-        "verification": "Run 'istioctl proxy-config clusters <pod-name>' to verify the reduced list of endpoints and monitor memory usage in Grafana.",
         "date": "2026-02-17",
         "id": 1771321166,
-        "type": "error"
+        "path": "data/posts/2026-02/istio-envoy-sidecar-oom-fix.js"
     },
     {
         "title": "Solving PostgreSQL Transaction ID Wraparound",
@@ -1790,15 +1392,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) counter. When it reaches approximately 2 billion transactions, the system must 'freeze' old transactions to prevent them from appearing to be in the future. In high-write environments, if autovacuum cannot keep up with the rate of XID consumption, the database will eventually enter read-only mode to prevent data corruption.</p>",
-        "root_cause": "Autovacuum settings being too conservative to handle high transaction throughput, or long-running transactions blocking the vacuum process.",
-        "bad_code": "-- Default settings in postgresql.conf often insufficient for high volume\nautovacuum_vacuum_scale_factor = 0.2\nautovacuum_freeze_max_age = 200000000\nmaintenance_work_mem = 64MB",
-        "solution_desc": "Aggressively tune autovacuum parameters to trigger more frequent cleanups and allocate more memory for vacuum workers to ensure they complete faster.",
-        "good_code": "-- Optimized for high-write environments\nALTER SYSTEM SET autovacuum_freeze_max_age = 1000000000;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 1000;\nALTER SYSTEM SET maintenance_work_mem = '1GB';\n-- Force vacuum on a specific table\nVACUUM FREEZE VERBOSE high_volume_table;",
-        "verification": "Monitor 'age(datfrozenxid)' via SQL queries. Ensure the value stays well below 2 billion.",
         "date": "2026-02-17",
         "id": 1771321167,
-        "type": "error"
+        "path": "data/posts/2026-02/postgres-transaction-id-wraparound.js"
     },
     {
         "title": "Analyzing ZeroClaw: The Fast Autonomous AI Infrastructure",
@@ -1810,15 +1406,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>zeroclaw-labs/zeroclaw is trending due to its 'swap-anything' philosophy in the AI agent space. Unlike bloated frameworks, ZeroClaw focuses on low-latency, autonomous infrastructure that allows developers to swap LLMs (OpenAI, Anthropic, Local Llama) and vector stores instantly. It addresses the 'vendor lock-in' fear while providing a high-performance execution layer for autonomous assistants that can run on edge devices or scaled cloud environments.</p>",
-        "root_cause": "Key Features: 1. Modular Architecture (Swappable LLMs/Tools). 2. Minimal Footprint (No heavy dependencies). 3. High Concurrency (Async-first design). 4. Agentic Autonomy (Built-in tool-calling loops).",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\npip install -e .",
-        "solution_desc": "Best used for building low-latency customer support bots, local coding assistants, or autonomous DevOps agents where you need to switch between expensive GPT-4 models and cheap local models (via Ollama) based on task complexity.",
-        "good_code": "from zeroclaw import ZeroClawAgent\n\nagent = ZeroClawAgent(\n    provider=\"openai\",\n    model=\"gpt-4-turbo\",\n    tools=[\"web_search\", \"code_exec\"]\n)\n\n# Fully autonomous loop\nresponse = agent.run(\"Analyze the latest commit in this repo.\")",
-        "verification": "ZeroClaw represents a shift toward 'AI Infrastructure' over 'AI Wrappers.' Expect widespread adoption in edge computing and private AI deployments.",
         "date": "2026-02-17",
         "id": 1771321168,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-ai-infrastructure-trend.js"
     },
     {
         "title": "Fixing Zig Allocator Memory Corruption",
@@ -1831,15 +1421,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In Zig, memory management is explicit, and standard allocators like <code>std.heap.FixedBufferAllocator</code> or <code>std.heap.ArenaAllocator</code> are not thread-safe by default. When multiple threads attempt to allocate or free memory from the same instance concurrently, the internal state (like the current pointer offset) becomes corrupted. This leads to overlapping memory regions, double frees, or illegal instruction crashes that are notoriously difficult to debug without a thread sanitizer.</p>",
-        "root_cause": "Concurrent mutation of the allocator's internal offset or free-list pointers without atomic synchronization or mutex locking.",
-        "bad_code": "var buf: [1024]u8 = undefined;\nvar fba = std.heap.FixedBufferAllocator.init(&buf);\nconst allocator = fba.allocator();\n\n// Running in parallel threads\nconst ptr = try allocator.alloc(u8, 128);",
-        "solution_desc": "Wrap the base allocator in a thread-safe wrapper or use the GeneralPurposeAllocator with thread safety enabled. Alternatively, use a Mutex to synchronize access to the allocation calls.",
-        "good_code": "var gpa = std.heap.GeneralPurposeAllocator(.{ .thread_safe = true }){};\nconst allocator = gpa.allocator();\n\n// Or wrap a specific allocator\nvar arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\n// Use a Mutex if sharing across threads manually\nmutex.lock();\ndefer mutex.unlock();\nconst data = try arena.allocator().alloc(u8, 128);",
-        "verification": "Compile with '-fsanitize=thread' and run high-concurrency stress tests to ensure no race conditions are reported.",
         "date": "2026-02-17",
         "id": 1771310897,
-        "type": "error"
+        "path": "data/posts/2026-02/zig-manual-allocator-memory-corruption.js"
     },
     {
         "title": "Resolving Elixir GenServer Mailbox Congestion",
@@ -1852,15 +1436,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>Elixir GenServers process messages sequentially from a mailbox. In high-pressure pipelines, if the producer's throughput exceeds the GenServer's processing speed, the mailbox grows unboundedly. This consumes system memory and increases latency significantly. Since standard <code>GenServer.cast/2</code> is fire-and-forget, the producer has no signal to slow down, leading to eventually crashing the node due to Out-Of-Memory (OOM) errors.</p>",
-        "root_cause": "Lack of backpressure mechanisms in an asynchronous producer-consumer pattern where processing time > message arrival rate.",
-        "bad_code": "def handle_info({:data, payload}, state) {\n  # Slow processing logic\n  Process.sleep(100)\n  {:noreply, state}\n}\n\n# Producer\nEnum.each(1..10000, fn i -> send(pid, {:data, i}) end)",
-        "solution_desc": "Replace raw GenServer messaging with GenStage or Broadway to implement demand-based flow control. For simpler cases, use <code>GenServer.call/3</code> to force a synchronous wait, effectively throttling the producer.",
-        "good_code": "def handle_call({:process, payload}, _from, state) do\n  # Process synchronously to apply backpressure\n  result = perform_work(payload)\n  {:reply, :ok, state}\nend\n\n# Better: Use GenStage for demand-driven pipelines\ndef handle_demand(demand, state) do\n  events = fetch_events(demand)\n  {:noreply, events, state}\nend",
-        "verification": "Monitor process queue lengths using ':observer.start' or 'Process.info(pid, :message_queue_len)' under load.",
         "date": "2026-02-17",
         "id": 1771310898,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-genserver-mailbox-congestion.js"
     },
     {
         "title": "Fixing Redis CoW Memory Bloat during Snapshots",
@@ -1873,15 +1451,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Redis uses <code>fork()</code> to create a point-in-time snapshot (RDB) for persistence. This relies on the OS 'Copy-on-Write' (CoW) mechanism. While child and parent share the same physical memory pages initially, any write to the parent during the snapshot forces the OS to duplicate the page. In environments with 'Transparent Huge Pages' (THP) enabled, the OS copies 2MB pages instead of 4KB, leading to massive memory usage spikes that can trigger the OOM killer.</p>",
-        "root_cause": "High write volume during BGSAVE combined with Transparent Huge Pages (THP) causing excessive memory page duplication.",
-        "bad_code": "# Default Linux settings often have THP enabled\ncat /sys/kernel/mm/transparent_hugepage/enabled\n# Output: [always] madvise never",
-        "solution_desc": "Disable Transparent Huge Pages at the OS level and ensure 'vm.overcommit_memory' is set to 1. This reduces the granularity of memory duplication during the fork process.",
-        "good_code": "# Disable THP\necho never > /sys/kernel/mm/transparent_hugepage/enabled\necho never > /sys/kernel/mm/transparent_hugepage/defrag\n\n# Set sysctl\nsysctl vm.overcommit_memory=1",
-        "verification": "Check 'INFO Persistence' and monitor 'mem_fragmentation_ratio' and RSS during a 'BGSAVE' command.",
         "date": "2026-02-17",
         "id": 1771310899,
-        "type": "error"
+        "path": "data/posts/2026-02/redis-cow-memory-bloat-snapshots.js"
     },
     {
         "title": "ZeroClaw: The Rise of Autonomous AI Infrastructure",
@@ -1893,15 +1465,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>ZeroClaw is trending on GitHub because it fills the gap between heavy AI frameworks and lightweight execution environments. It provides a 'deploy anywhere' infrastructure for autonomous agents, focusing on extreme speed and modularity. Unlike other LLM wrappers, ZeroClaw is designed to be hardware-agnostic and fully autonomous, allowing users to swap models (OpenAI, Anthropic, or Local LLMs) without changing the core agent logic. Its popularity stems from its low-latency design and the 'fully autonomous' architecture which reduces human-in-the-loop overhead.</p>",
-        "root_cause": "Modular Agent Architecture, Low-Latency execution, and Local-First deployment capabilities.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install -e .",
-        "solution_desc": "Use ZeroClaw when you need to deploy autonomous agents on edge devices or highly scalable cloud environments where resource efficiency and model-interchangeability are critical.",
-        "good_code": "from zeroclaw import Agent, Swarm\n\n# Initialize an autonomous agent\nagent = Agent(role=\"Researcher\", goal=\"Analyze market trends\")\n\n# Create a swarm for complex tasks\nswarm = Swarm(agents=[agent], task=\"Deep Research on AI\")\nswarm.run()",
-        "verification": "ZeroClaw is positioned to become a standard for 'Agentic Ops,' moving AI from simple chatbots to integrated autonomous services.",
         "date": "2026-02-17",
         "id": 1771310900,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-autonomous-ai-infrastructure.js"
     },
     {
         "title": "Fixing Data Races in Go Atomic Pointer Swaps",
@@ -1914,15 +1480,9 @@ var postsIndex = [
             "Concurrency",
             "Error Fix"
         ],
-        "analysis": "<p>In lock-free state management, developers often use <code>atomic.Pointer</code> or <code>atomic.Value</code> to swap state objects. However, a common pitfall occurs when the developer swaps the pointer but continues to read from or modify the old pointer reference without proper synchronization, or fails to treat the state as immutable. This leads to intermittent data races where one goroutine is writing to a struct field while another is reading the 'old' version that it still holds a reference to.</p>",
-        "root_cause": "The race occurs because Go's atomic operations only guarantee the atomicity of the pointer swap itself, not the memory reachable through that pointer. If the underlying data is mutated after being 'published' or while still being accessed by readers, thread safety is violated.",
-        "bad_code": "type Config struct { QueryLimit int }\nvar globalCfg atomic.Pointer[Config]\n\n// Goroutine 1: Update\ncfg := globalCfg.Load()\ncfg.QueryLimit = 100 // RACE: Mutation of shared object\n\n// Goroutine 2: Read\nlimit := globalCfg.Load().QueryLimit",
-        "solution_desc": "Implement a Copy-on-Write (CoW) pattern. Always treat the object held by the atomic pointer as immutable. To update, load the current pointer, create a deep copy, modify the copy, and then use Compare-And-Swap (CAS) or a simple Swap to publish the new version.",
-        "good_code": "type Config struct { QueryLimit int }\nvar globalCfg atomic.Pointer[Config]\n\nfunc UpdateConfig(newLimit int) {\n    for {\n        oldCfg := globalCfg.Load()\n        newCfg := *oldCfg // Shallow copy (ensure deep copy if nested)\n        newCfg.QueryLimit = newLimit\n        if globalCfg.CompareAndSwap(oldCfg, &newCfg) {\n            break\n        }\n    }\n}",
-        "verification": "Run tests using the Go Race Detector: `go test -race ./...`. Verify that concurrent reads and writes no longer trigger warnings.",
         "date": "2026-02-17",
         "id": 1771303689,
-        "type": "error"
+        "path": "data/posts/2026-02/go-atomic-pointer-data-race-fix.js"
     },
     {
         "title": "Resolving Milvus HNSW Recall Degradation",
@@ -1935,15 +1495,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>Users of Milvus often observe a significant drop in search recall (accuracy) when performing heavy concurrent upserts on HNSW-indexed collections. This happens because the HNSW (Hierarchical Navigable Small World) graph construction is optimized for batch builds. During high-concurrency upserts, the background compaction and index-building threads can create fragmented segments with suboptimal graph connectivity, leading to 'isolated islands' in the vector space that the search algorithm cannot reach.</p>",
-        "root_cause": "Small segment sizes and low 'efConstruction' values during incremental indexing. When segments are too small, the graph connectivity is sparse; when merged, the global graph structure is not re-optimized sufficiently.",
-        "bad_code": "collection.create_index(\n    field_name=\"vector\",\n    index_params={\n        \"index_type\": \"HNSW\",\n        \"metric_type\": \"L2\",\n        \"params\": {\"M\": 8, \"efConstruction\": 40}\n    }\n)",
-        "solution_desc": "Increase the 'M' (max degree of nodes) and 'efConstruction' (entry factor) to ensure denser graph connectivity. Additionally, trigger a manual compaction or set a larger 'segment.maxSize' in the Milvus configuration to ensure larger, more coherent HNSW graphs are built during the merging phase.",
-        "good_code": "index_params = {\n    \"index_type\": \"HNSW\",\n    \"metric_type\": \"L2\",\n    \"params\": {\n        \"M\": 32, \n        \"efConstruction\": 256 // Higher values improve recall significantly\n    }\n}\ncollection.create_index(\"vector\", index_params)\n# Ensure search ef is also tuned\nsearch_params = {\"metric_type\": \"L2\", \"params\": {\"ef\": 128}}",
-        "verification": "Perform a benchmark using the `ANN-Benchmarks` tool or a custom script comparing recall against a Ground Truth set before and after the parameter adjustment.",
         "date": "2026-02-17",
         "id": 1771303690,
-        "type": "error"
+        "path": "data/posts/2026-02/milvus-hnsw-recall-degradation-fix.js"
     },
     {
         "title": "Identifying Haskell Thunk Leaks in Streaming",
@@ -1956,15 +1510,9 @@ var postsIndex = [
             "Java",
             "Error Fix"
         ],
-        "analysis": "<p>Haskell's lazy evaluation is powerful but dangerous in high-concurrency streaming pipelines (e.g., using Conduit or Pipes). A thunk leak occurs when a stateful transformation accumulates unevaluated expressions (thunks) in memory instead of reducing them to values. In a streaming context, this causes memory usage to grow linearly with the number of processed items, eventually leading to an OOM (Out of Memory) crash or excessive GC pressure.</p>",
-        "root_cause": "The use of lazy state containers or lazy folds (like `foldl`) within a streaming loop. The runtime stores the calculation 'recipe' rather than the result, creating a chain of references that cannot be garbage collected.",
-        "bad_code": "import Data.Conduit\nimport qualified Data.Conduit.List as CL\n\n-- Lazy accumulator in a stream\nsumStream = CL.sourceList [1..1000000] $$ CL.fold (\\acc x -> acc + x) 0",
-        "solution_desc": "Force strict evaluation at each step of the pipeline. Use strict variants of folds (e.g., `foldl'`) and apply BangPatterns (`!`) to data constructors or function arguments to ensure that values are reduced to Weak Head Normal Form (WHNF) immediately.",
-        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.Conduit\nimport qualified Data.Conduit.List as CL\nimport Data.List (foldl')\n\n-- Use CL.fold' (strict version) or manual strictness\nsumStreamStrict = CL.sourceList [1..1000000] $$ CL.fold' (\\acc x -> \n    let !next = acc + x in next) 0",
-        "verification": "Profile the application using GHC's heap profiling: `ghc -prof -fprof-auto -rtsopts` and run with `+RTS -hc`. Check the `.hp` file to ensure the 'Stale' or 'Thunk' memory categories are not growing.",
         "date": "2026-02-17",
         "id": 1771303691,
-        "type": "error"
+        "path": "data/posts/2026-02/haskell-thunk-leak-streaming-fix.js"
     },
     {
         "title": "Zeroclaw: The Future of Autonomous AI Infra",
@@ -1976,15 +1524,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>Zeroclaw is rapidly trending on GitHub because it addresses the 'Bloatware' problem in AI agent frameworks. Unlike LangChain or CrewAI, which often feel heavy and abstract, Zeroclaw focuses on a 'deploy-anywhere' philosophy with a minimal footprint. It provides a modular infrastructure for fully autonomous agents that can swap LLMs, vector databases, and tools with zero friction. Its popularity stems from the industry's shift from simple RAG (Retrieval-Augmented Generation) to 'Agentic' workflows that require low latency and high reliability.</p>",
-        "root_cause": "Lightweight modularity, provider-agnostic design (swap OpenAI for local Llama in one line), and built-in support for long-running autonomous loops.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\nnpm install && npm run build",
-        "solution_desc": "Ideal for edge computing, local-first AI applications, and microservices where you need an AI agent to perform complex tasks without the overhead of a massive dependency tree.",
-        "good_code": "import { ZeroClaw } from 'zeroclaw';\n\nconst agent = new ZeroClaw({\n  model: 'gpt-4o',\n  tools: ['web-search', 'file-exec'],\n  autonomous: true\n});\n\nawait agent.run('Research the latest trends in Rust systems programming and summarize.');",
-        "verification": "With its focus on performance and 'swappability,' Zeroclaw is positioned to become the 'Nginx' of AI agent deployments, providing the plumbing that lets developers focus on agent logic rather than infrastructure glue.",
         "date": "2026-02-17",
         "id": 1771303692,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-autonomous-ai-infrastructure.js"
     },
     {
         "title": "C++20: Fixing Use-After-Free in Coroutine Promises",
@@ -1997,15 +1539,9 @@ var postsIndex = [
             "C++",
             "Error Fix"
         ],
-        "analysis": "<p>In C++20 coroutines, the promise object is stored within the coroutine state. A common 'Use-After-Free' (UAF) occurs when the coroutine finishes execution and destroys its state while an external caller still holds a reference to the promise or data owned by it. This often happens because the coroutine's lifetime is managed by a handle that is implicitly destroyed when the coroutine reaches its final suspension point, yet the caller attempts to access result data stored in the promise after the coroutine has resumed and completed.</p>",
-        "root_cause": "The coroutine state (and thus the promise) is destroyed automatically when control flow passes through the final suspension point if the coroutine is not configured to suspend there.",
-        "bad_code": "struct Task {\n  struct promise_type {\n    std::string result;\n    std::suspend_never final_suspend() noexcept { return {}; }\n    // ... other methods\n  };\n};\n\nTask my_coro() { co_return \"data\"; }\n\n// Caller site\nauto& data = handle.promise().result; // UAF if coro finished",
-        "solution_desc": "Configure the coroutine to use std::suspend_always for final_suspend(). This ensures the coroutine state remains alive until the caller explicitly calls handle.destroy(). This allows safe access to the promise data before manual cleanup.",
-        "good_code": "struct promise_type {\n  std::string result;\n  // Suspend at the end to keep the promise alive\n  std::suspend_always final_suspend() noexcept { return {}; }\n  // ...\n};\n\n// Caller must manually destroy\nif (handle.done()) {\n  process(handle.promise().result);\n  handle.destroy();\n}",
-        "verification": "Compile with Clang/GCC using -fsanitize=address. Run the test suite; if the heap-use-after-free error is gone, the lifetime management is correct.",
         "date": "2026-02-17",
         "id": 1771291038,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutine-promise-use-after-free.js"
     },
     {
         "title": "Solving Task Scheduling Latency in Large Airflow DAGs",
@@ -2018,15 +1554,9 @@ var postsIndex = [
             "Kubernetes",
             "Error Fix"
         ],
-        "analysis": "<p>As Airflow deployments scale to thousands of DAGs, the scheduler often experiences 'starvation' where tasks remain in a 'queued' or 'scheduled' state for minutes. This is typically caused by the Scheduler loop spending too much time parsing DAG files (DAG Processing) or being bottlenecked by the metadata database. When the processing time exceeds the heartbeat interval, the scheduler becomes unresponsive to new task instances.</p>",
-        "root_cause": "Top-level code in DAG files (e.g., dynamic task generation via DB queries) causes the DagFileProcessor to hang, blocking the scheduling loop.",
-        "bad_code": "# BAD: Database call at top-level\nlines = db.session.query(Table).all()\nwith DAG('my_dag') as dag:\n    for line in lines:\n        BashOperator(task_id=f'task_{line.id}', ...)",
-        "solution_desc": "Optimize DAG parsing by removing top-level dynamic logic. Increase the number of parsing processes and tune the 'scheduler__min_file_process_interval'. Use Airflow Variables or environment variables instead of direct DB hits for dynamic generation.",
-        "good_code": "# GOOD: Use a static source or cached config\nimport json\nwith open('dag_config.json') as f:\n    configs = json.load(f)\n\nwith DAG('my_dag') as dag:\n    for cfg in configs:\n        BashOperator(task_id=f'task_{cfg[\"id\"]}', ...)",
-        "verification": "Monitor the 'dag_processing.total_parse_time' metric in StatsD. Latency is resolved when parse time is consistently below 30 seconds.",
         "date": "2026-02-17",
         "id": 1771291039,
-        "type": "error"
+        "path": "data/posts/2026-02/airflow-task-scheduling-latency-fix.js"
     },
     {
         "title": "Fixing Elasticsearch Fielddata Circuit Breaker Trips",
@@ -2039,15 +1569,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>Elasticsearch uses 'Fielddata' to perform aggregations and sorting on 'text' fields. Unlike 'keyword' fields that use disk-based doc_values, fielddata is loaded into the JVM heap. On large datasets, multiple aggregations can quickly exhaust the heap, triggering the 'Fielddata Circuit Breaker' to prevent an OutOfMemoryError. This leads to 429 errors or failed queries across the cluster.</p>",
-        "root_cause": "Performing terms aggregations on 'text' fields instead of 'keyword' fields, forcing ES to load inverted indices into RAM.",
-        "bad_code": "PUT /my_index/_mapping\n{\n  \"properties\": {\n    \"category\": {\n      \"type\": \"text\",\n      \"fielddata\": true\n    }\n  }\n}",
-        "solution_desc": "Disable fielddata on text fields and use multi-fields to define a 'keyword' sub-field. Keyword fields use doc_values (on-disk columnar storage), which are memory-efficient and do not rely on the fielddata circuit breaker.",
-        "good_code": "PUT /my_index/_mapping\n{\n  \"properties\": {\n    \"category\": {\n      \"type\": \"text\",\n      \"fields\": {\n        \"raw\": { \"type\": \"keyword\" }\n      }\n    }\n  }\n}\n// Aggregate on category.raw instead",
-        "verification": "Run 'GET /_nodes/stats/breaker' and verify that fielddata 'tripped' counts have stopped incrementing after updating the mapping.",
         "date": "2026-02-17",
         "id": 1771291040,
-        "type": "error"
+        "path": "data/posts/2026-02/elasticsearch-fielddata-breaker-fix.js"
     },
     {
         "title": "ZeroClaw: The High-Speed Autonomous AI Infrastructure",
@@ -2059,15 +1583,9 @@ var postsIndex = [
             "GitHub",
             "Backend"
         ],
-        "analysis": "<p>ZeroClaw is rapidly gaining traction in the AI engineering community as a lightweight, 'no-bloat' alternative to frameworks like LangChain. It focuses on 'autonomous AI infrastructure,' allowing developers to deploy agents that can swap models, vector stores, and tools with zero friction. Its popularity stems from its 'Fast and Small' philosophy—providing a tiny footprint for edge deployment while maintaining full autonomy for complex task planning.</p>",
-        "root_cause": "Modular Agent Architecture, Multi-Provider Support (Ollama, OpenAI, Anthropic), and Native Support for Tool-Calling.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw.git\ncd zeroclaw\npip install .",
-        "solution_desc": "ZeroClaw is best used for high-performance agentic workflows where latency is critical, such as real-time customer support or local autonomous agents operating on edge devices.",
-        "good_code": "from zeroclaw.agent import Agent\n\nagent = Agent(\n    role=\"Researcher\",\n    provider=\"openai\",\n    tools=[\"web_search\", \"file_writer\"]\n)\n\nagent.run(\"Analyze the latest trends in LLM quantization.\")",
-        "verification": "The project is set to dominate the 'Agentic Workflow' niche as more developers pivot from monolithic frameworks to specialized, fast, and swappable AI primitives.",
         "date": "2026-02-17",
         "id": 1771291041,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-ai-infrastructure-trend.js"
     },
     {
         "title": "eBPF: Solving Verifier Complexity Limits",
@@ -2080,15 +1598,9 @@ var postsIndex = [
             "eBPF",
             "Error Fix"
         ],
-        "analysis": "<p>When developing complex eBPF programs for large-scale observability, developers often hit the 'limit of instructions processed' error. The eBPF verifier traverses all possible execution paths to ensure safety. In complex programs with many branches or loops, the state space explodes, exceeding the 1-million instruction limit (on newer kernels) or 4096 (on older ones), even if the actual bytecode is small.</p>",
-        "root_cause": "The verifier's state pruning fails to merge states effectively when code contains complex conditional logic or bounded loops that are unrolled, leading to an exponential increase in the number of verified paths.",
-        "bad_code": "for (int i = 0; i < MAX_ENTRIES; i++) {\n    struct data_t *val = bpf_map_lookup_elem(&my_map, &i);\n    if (val) {\n        // Complex logic with multiple branches\n        if (val->flag) { /* ... */ }\n        else { /* ... */ }\n    }\n}",
-        "solution_desc": "Refactor the program to use tail calls or BPF-to-BPF function calls with the '__noinline' attribute to break the program into smaller, independently verified chunks. Alternatively, use 'bpf_loop' (Kernel 5.17+) to reduce the verification cost of loops.",
-        "good_code": "static __noinline int process_element(int index) {\n    struct data_t *val = bpf_map_lookup_elem(&my_map, &index);\n    if (!val) return 0;\n    // Logic isolated in a function\n    return 0;\n}\n\n// In main prog:\nbpf_loop(MAX_ENTRIES, process_element, NULL, 0);",
-        "verification": "Run 'bpftool prog load' with the 'visual' flag or check 'verifier_log' to ensure the instruction count is within limits.",
         "date": "2026-02-16",
         "id": 1771235199,
-        "type": "error"
+        "path": "data/posts/2026-02/ebpf-verifier-complexity-limits-fix.js"
     },
     {
         "title": "PyTorch: Fixing Distributed Deadlocks",
@@ -2101,15 +1613,9 @@ var postsIndex = [
             "AI",
             "Error Fix"
         ],
-        "analysis": "<p>Distributed training in PyTorch using the NCCL backend often encounters collective communication deadlocks. This typically happens when one rank (GPU) fails to reach a collective operation (like all_reduce or barrier) while others wait indefinitely. This is common in heterogeneous environments or when using uneven data splits across ranks.</p>",
-        "root_cause": "A mismatch in the sequence of collective operations across different ranks, or a silent failure in one node that prevents it from reaching the synchronization point, causing the entire cluster to hang.",
-        "bad_code": "def train(rank, world_size):\n    dist.init_process_group(\"nccl\", rank=rank, world_size=world_size)\n    if rank == 0:\n        # Some rank-specific heavy logic\n        do_expensive_op()\n    # Deadlock if rank 0 is late or fails\n    dist.all_reduce(tensor)",
-        "solution_desc": "Set an explicit 'timeout' in 'init_process_group' and enable 'NCCL_ASYNC_ERROR_HANDLING'. Use 'join()' context managers for DistributedDataParallel to handle uneven inputs across ranks gracefully.",
-        "good_code": "import datetime\ndist.init_process_group(\n    backend=\"nccl\",\n    timeout=datetime.timedelta(seconds=1800),\n    init_method=\"env://\"\n)\n# Use Join context for uneven data\nwith model.join():\n    optimizer.step()",
-        "verification": "Set export NCCL_DEBUG=INFO and NCCL_ASYNC_ERROR_HANDLING=1 to log and catch timeout exceptions in the training loop.",
         "date": "2026-02-16",
         "id": 1771235200,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-distributed-deadlock-fix.js"
     },
     {
         "title": "MongoDB: WiredTiger Cache Eviction Stalls",
@@ -2122,15 +1628,9 @@ var postsIndex = [
             "MongoDB",
             "Error Fix"
         ],
-        "analysis": "<p>Under heavy write pressure, MongoDB performance can plummet due to WiredTiger cache eviction stalls. When the percentage of 'dirty' data in the cache exceeds specific thresholds, WiredTiger forces application threads to perform eviction themselves, leading to massive latency spikes and throughput drops.</p>",
-        "root_cause": "The rate of incoming writes exceeds the background eviction threads' ability to persist data to disk, causing the 'eviction_dirty_trigger' (default 20%) to be hit.",
-        "bad_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16\n# No custom eviction tuning for high-throughput write workloads",
-        "solution_desc": "Increase the number of eviction worker threads and lower the 'eviction_trigger' to start background eviction earlier. Also, ensure disk I/O bandwidth matches the write volume to prevent the eviction queue from backing up.",
-        "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction_threads_min=4,eviction_threads_max=12,eviction_dirty_target=5,eviction_dirty_trigger=10\"\n})",
-        "verification": "Monitor 'wiredTiger.cache.eviction walks abandoned' and 'cache dirty percentage' using 'db.serverStatus().wiredTiger.cache'.",
         "date": "2026-02-16",
         "id": 1771235201,
-        "type": "error"
+        "path": "data/posts/2026-02/mongodb-wiredtiger-eviction-fix.js"
     },
     {
         "title": "zeroclaw: Hardware Interfacing Done Right",
@@ -2142,15 +1642,9 @@ var postsIndex = [
             "GitHub",
             "Rust"
         ],
-        "analysis": "<p>Zeroclaw is gaining massive traction on GitHub as a high-performance, Rust-based framework for hardware-level interaction and input synthesis. Unlike traditional high-level APIs, Zeroclaw operates with near-zero latency and provides a clean, memory-safe interface for kernel-mode drivers, making it a favorite for system developers and performance enthusiasts.</p>",
-        "root_cause": "Safety-first Rust implementation, Kernel-mode abstraction layers, and sub-millisecond polling rate support for HID devices.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw\ncargo build --release",
-        "solution_desc": "Zeroclaw is best used in scenarios requiring high-precision input handling, low-latency device emulation, or developing custom drivers where safety and speed are non-negotiable.",
-        "good_code": "use zeroclaw::prelude::*;\n\nfn main() {\n    let mut driver = ZeroClaw::init().expect(\"Failed to init\");\n    driver.move_mouse(100, 100).unwrap();\n    println!(\"Stealthy movement executed\");\n}",
-        "verification": "The project is rapidly expanding its support for various DMA (Direct Memory Access) hardware and is expected to become the standard for stealthy hardware abstraction.",
         "date": "2026-02-16",
         "id": 1771235202,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-hardware-abstraction-trend.js"
     },
     {
         "title": "Rust: Fixing Async Cancellation Safety in select! Blocks",
@@ -2163,15 +1657,9 @@ var postsIndex = [
             "Async",
             "Error Fix"
         ],
-        "analysis": "<p>In Rust's asynchronous ecosystem, particularly with the <code>tokio::select!</code> macro, cancellation safety is a critical concern. When <code>select!</code> is used, all branches are polled. As soon as one branch completes, all other branches are immediately dropped. If a future is dropped at an <code>await</code> point where it was holding state or midway through an I/O operation, that data is permanently lost. This is particularly dangerous when performing operations like <code>TcpStream::read</code> into a temporary buffer within the <code>select!</code> block.</p>",
-        "root_cause": "The future in a non-completing select! branch is dropped. If that future was responsible for an atomic operation or held partially read data in its internal state, that state is discarded without a chance to recover.",
-        "bad_code": "loop {\n    let mut buf = [0u8; 1024];\n    tokio::select! {\n        res = socket.read(&mut buf) => {\n            process(res?);\n        }\n        _ = timeout => {\n            return Err(Error::Timeout);\n        }\n    }\n}",
-        "solution_desc": "To ensure cancellation safety, state must be preserved across iterations. Instead of using a local buffer inside the loop, move the future itself outside the loop or use a persistent buffer/wrapper that handles partial reads (like `tokio_util::codec`). Using `Box::pin` on the future allows it to be resumed even if the `select!` block restarts.",
-        "good_code": "let mut reader = tokio_util::codec::FramedRead::new(socket, BytesCodec::new());\nloop {\n    tokio::select! {\n        frame = reader.next() => {\n            if let Some(res) = frame { process(res?); }\n        }\n        _ = timeout => {\n            return Err(Error::Timeout);\n        }\n    }\n}",
-        "verification": "Use 'tokio-test' to simulate partial reads and ensure that dropping the future between reads doesn't result in data loss.",
         "date": "2026-02-16",
         "id": 1771224884,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-async-cancellation-safety-select.js"
     },
     {
         "title": "Kafka: Fixing Consumer Group Rebalance Storms",
@@ -2184,15 +1672,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>Rebalance storms occur in Kafka clusters with high partition counts when the group coordinator triggers frequent reassignments. This typically happens because a consumer takes too long to process a batch, exceeding the <code>max.poll.interval.ms</code>, or due to network flakiness exceeding <code>session.timeout.ms</code>. In 'Eager' rebalancing, the entire group stops processing, leading to massive latency spikes and cascading failures as the 'stop-the-world' effect prevents heartbeat signals from being sent.</p>",
-        "root_cause": "The default Eager Rebalance protocol requires all consumers to revoke their partitions before any can be reassigned, combined with aggressive timeout settings in high-latency environments.",
-        "bad_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, RangeAssignor.class.getName());\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\"); // 5 mins too short for heavy tasks",
-        "solution_desc": "Switch to the Cooperative Sticky Assignor to allow 'Incremental Cooperative Rebalancing'. This allows consumers to keep their partitions during a rebalance if they aren't being moved. Additionally, increase the poll interval to account for worst-case processing times and tune heartbeat settings to distinguish between application lag and network failure.",
-        "good_code": "properties.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, CooperativeStickyAssignor.class.getName());\nproperties.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"900000\"); // 15 mins\nproperties.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\");",
-        "verification": "Monitor the 'join-rate' and 'rebalance-latency-avg' metrics in JMX; rebalance times should drop from seconds to milliseconds.",
         "date": "2026-02-16",
         "id": 1771224885,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-consumer-rebalance-storms-fix.js"
     },
     {
         "title": "OCaml: Fixing Parallel GC Domain Contention",
@@ -2205,15 +1687,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>In OCaml 5 (Multicore), domains share a global major heap but have domain-local minor heaps. When any domain triggers a minor collection, it must synchronize with all other domains—a 'stop-the-world' event. If one domain is performing heavy allocation while others are performing compute-intensive tasks without hitting allocation points (safepoints), the allocator domain stalls waiting for others to synchronize, leading to severe performance degradation in parallel workloads.</p>",
-        "root_cause": "High minor heap allocation rates combined with infrequent safepoint polling in compute-heavy loops, causing the parallel collector to wait on 'lazy' domains.",
-        "bad_code": "let compute_heavy_task () = \n  for i = 1 to 1_000_000_000 do\n    (* Tight loop with no allocation - doesn't hit GC safepoints frequently *)\n    ignore(i * i)\n  done",
-        "solution_desc": "Increase the minor heap size to reduce the frequency of collections and manually insert <code>Domain.cpu_relax()</code> or ensure the loop performs occasional allocations to trigger safepoint checks. Use Domain-Local Storage (DLS) to reduce shared state access and avoid unnecessary global heap promotions.",
-        "good_code": "let compute_heavy_task () = \n  for i = 1 to 1_000_000_000 do\n    if i mod 1000 = 0 then Out_channel.flush stdout; (* Indirectly hits safepoint *)\n    ignore(i * i)\n  done\n(* Tune with: OCAMLRUNPARAM='s=128M' *)",
-        "verification": "Profile using 'ocaml-eventlog-trace' to visualize GC pause times and identify domains causing synchronization delays.",
         "date": "2026-02-16",
         "id": 1771224886,
-        "type": "error"
+        "path": "data/posts/2026-02/ocaml-multicore-gc-contention.js"
     },
     {
         "title": "Analyzing Zeroclaw: High-Performance Browser Automation",
@@ -2226,15 +1702,9 @@ var postsIndex = [
             "TypeScript",
             "Rust"
         ],
-        "analysis": "<p>Zeroclaw is rapidly trending on GitHub as the 'modern successor' to Puppeteer and Playwright for stealth-based web scraping. It solves the primary pain point of browser automation: detection. By implementing a custom browser engine wrapper that spoofs hardware fingerprints at the driver level (rather than just JavaScript injection), it bypasses advanced anti-bot measures like Akamai and Cloudflare Turnstile with significantly higher success rates.</p>",
-        "root_cause": "Kernel-level fingerprint spoofing, TLS/JA3 fingerprint randomization, and built-in residential proxy rotation logic.",
-        "bad_code": "git clone https://github.com/zeroclaw-labs/zeroclaw\ncd zeroclaw && npm install",
-        "solution_desc": "Zeroclaw is best used for high-scale data extraction where traditional Playwright/Selenium scripts are getting blocked. It should be adopted when 'headless: true' detection prevents access to public data. Its architecture relies on a Rust-based core for performance and a TypeScript API for ease of use.",
-        "good_code": "import { zeroclaw } from 'zeroclaw';\n\nconst browser = await zeroclaw.launch({\n  stealth: true,\n  fingerprint: 'random',\n  region: 'US'\n});\nconst page = await browser.newPage();\nawait page.goto('https://target-site.com');",
-        "verification": "The project is expected to become the industry standard for 'unblockable' scraping, with future updates focusing on AI-driven CAPTCHA solving.",
         "date": "2026-02-16",
         "id": 1771224887,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-analysis.js"
     },
     {
         "title": "Fixing PostgreSQL Transaction ID Wraparound",
@@ -2247,15 +1717,9 @@ var postsIndex = [
             "Database",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) system, allowing for approximately 4 billion transactions. To manage this, it utilizes a circular buffer where IDs wrap around. When the difference between the oldest frozen transaction and the current XID reaches a critical threshold (usually 2 billion), the database enters a read-only safety mode to prevent data corruption. In high-throughput clusters, autovacuum often cannot keep up with the volume of writes, causing the <code>datfrozenxid</code> to age dangerously.</p>",
-        "root_cause": "The autovacuum worker is throttled or incorrectly configured, preventing it from 'freezing' old tuples faster than new transaction IDs are consumed, eventually hitting the autovacuum_freeze_max_age limit.",
-        "bad_code": "-- Default settings often too conservative for high-write loads\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2; \nALTER SYSTEM SET autovacuum_freeze_max_age = 200000000;",
-        "solution_desc": "Aggressively tune autovacuum parameters to trigger freezing more frequently and increase the throughput of the vacuum process by reducing cost-based delays.",
-        "good_code": "-- Increase worker count and reduce cost delay to speed up freezing\nALTER SYSTEM SET autovacuum_max_workers = 6;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 1000;\nALTER SYSTEM SET autovacuum_freeze_max_age = 500000000;\n-- Target specific high-churn tables\nALTER TABLE high_volume_table SET (autovacuum_vacuum_scale_factor = 0.01);",
-        "verification": "Monitor XID age using: SELECT datname, age(datfrozenxid) FROM pg_database WHERE datname = 'your_db';",
         "date": "2026-02-16",
         "id": 1771217705,
-        "type": "error"
+        "path": "data/posts/2026-02/postgres-txid-wraparound-fix.js"
     },
     {
         "title": "Fixing Istio 503 Downstream Connection Resets",
@@ -2268,15 +1732,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>In cross-region service meshes, 503 'UC' (Upstream Connection) errors or downstream resets often occur due to race conditions between Envoy's keep-alive timers and the application's idle timeouts. When a request travels across regions, latency increases the window where a downstream proxy sends a request on a connection that the upstream has already decided to close, resulting in a reset before the response headers are sent.</p>",
-        "root_cause": "Mismatch between the application's Keep-Alive timeout and Envoy's 'connection_idle_timeout'. If the application closes the connection first without Envoy knowing, Envoy fails the request.",
-        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nspec:\n  host: my-service\n  # Missing connectionPool settings results in default idle timeouts",
-        "solution_desc": "Configure the DestinationRule to ensure Envoy's idle timeout is shorter than the application's timeout, and implement retry logic for connection resets in the VirtualService.",
-        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nspec:\n  host: my-service\n  trafficPolicy:\n    connectionPool:\n      http:\n        idleTimeout: 30s\n        maxRetries: 3\n---\n# VirtualService Retry\nretryOn: \"reset,connect-failure,refused-stream\"",
-        "verification": "Check Envoy logs for 'response_flags: UC' and verify the 'upstream_cx_destroy_remote_with_active_rq' metric.",
         "date": "2026-02-16",
         "id": 1771217706,
-        "type": "error"
+        "path": "data/posts/2026-02/istio-503-downstream-resets.js"
     },
     {
         "title": "Solving React Native JSI Memory Leaks",
@@ -2289,15 +1747,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>React Native's JavaScript Interface (JSI) allows synchronous communication between C++ and JavaScript. However, memory leaks occur when C++ HostObjects hold persistent references to <code>jsi::Value</code> or <code>jsi::Object</code> without accounting for the JavaScript garbage collector. If a C++ object outlives the JS engine's context or holds a circular reference back to JS, the memory is never reclaimed.</p>",
-        "root_cause": "Storing jsi::Value or jsi::Object directly in C++ class members instead of using jsi::WeakObject or failing to clear global references in the JSI Runtime's teardown phase.",
-        "bad_code": "class MyHostObject : public jsi::HostObject {\n  jsi::Value callback_; // Leak: Persistent reference prevents GC\n  MyHostObject(jsi::Value&& cb) : callback_(std::move(cb)) {}\n};",
-        "solution_desc": "Use <code>jsi::WeakObject</code> for long-lived JS references within C++ HostObjects or manually manage the lifecycle by nullifying references via a cleanup method called from the JS side.",
-        "good_code": "class MyHostObject : public jsi::HostObject {\n  std::unique_ptr<jsi::WeakObject> weakCallback_;\n  void setCallback(jsi::Runtime& rt, const jsi::Object& cb) {\n    weakCallback_ = std::make_unique<jsi::WeakObject>(rt, cb);\n  }\n  // Check lock() before calling\n};",
-        "verification": "Use Xcode Memory Graph or Android Studio Profiler to look for growing instances of 'HostObject' after repetitive native module calls.",
         "date": "2026-02-16",
         "id": 1771217707,
-        "type": "error"
+        "path": "data/posts/2026-02/react-native-jsi-memory-leaks.js"
     },
     {
         "title": "Zeroclaw: Stealth Web Automation Done Right",
@@ -2310,15 +1762,9 @@ var postsIndex = [
             "Backend",
             "Python"
         ],
-        "analysis": "<p>Zeroclaw is rapidly trending in the web automation community because it addresses the 'cat-and-mouse' game of bot detection. Unlike standard Selenium or Playwright implementations, Zeroclaw modifies the browser engine at a deeper level to eliminate 'leaks' like <code>navigator.webdriver</code> and inconsistent TLS fingerprints. It is designed for high-performance data extraction where Cloudflare, Akamai, and Datadome are present, offering a 'human-like' footprint out of the box.</p>",
-        "root_cause": "Key innovations include advanced TLS/JA3 fingerprint spoofing, Canvas/WebGL noise generation, and synchronized event-loop handling to prevent timing-based detection.",
-        "bad_code": "pip install zeroclaw\nzeroclaw install-deps",
-        "solution_desc": "Best used for enterprise-grade scrapers, automated market intelligence, and testing security perimeters against sophisticated bot behaviors.",
-        "good_code": "from zeroclaw import StealthBrowser\n\nwith StealthBrowser(headless=True) as browser:\n    page = browser.new_page(fingerprint_profile='macos_chrome_115')\n    page.goto('https://target-site.com')\n    print(page.content())",
-        "verification": "The project is positioned to lead the next generation of 'unblockable' scrapers, likely forcing bot-mitigation providers to move toward behavioral AI analysis rather than fingerprinting.",
         "date": "2026-02-16",
         "id": 1771217708,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-stealth-automation.js"
     },
     {
         "title": "Fixing Zig Alignment Crashes in Comptime Packed Structs",
@@ -2331,15 +1777,9 @@ var postsIndex = [
             "Systems",
             "Error Fix"
         ],
-        "analysis": "<p>In Zig, <code>packed struct</code> types are essential for memory-mapped I/O and binary protocol parsing. However, when generating these structs using <code>comptime</code> logic, developers often encounter alignment-induced crashes (SIGBUS or unaligned access traps). This occurs because packed structs have a default alignment of 1, but CPU instructions for multi-byte types (like u32 or u64) often require 4 or 8-byte alignment. When the Zig compiler generates code to access a field within a packed struct via a pointer, it may use instructions that assume standard alignment, leading to hardware-level faults on architectures like ARM or RISC-V.</p>",
-        "root_cause": "Packed structs override the natural alignment of their members to ensure zero padding. If a pointer to a member is cast or passed to a function expecting natural alignment, the CPU executes an aligned-load instruction on an unaligned address.",
-        "bad_code": "const Header = packed struct {\n    magic: u8,\n    version: u32, // Offset 1, unaligned\n};\n\nfn process(val: *const u32) void {\n    _ = val.*;\n}\n\n// Crash occurs here on some CPUs\nprocess(&header.version);",
-        "solution_desc": "Use the `@alignCast` builtin or ensure the pointer is marked as `*align(1) const u32`. Alternatively, use `@bitCast` to copy the packed data into a naturally aligned stack variable before processing.",
-        "good_code": "const Header = packed struct {\n    magic: u8,\n    version: u32,\n};\n\nfn process(val: *align(1) const u32) void {\n    const safe_val = val.*; // Compiler uses unaligned load\n    _ = safe_val;\n}\n\n// Or bitCast the whole struct to a non-packed version\nconst AlignedHeader = struct { magic: u8, version: u32 };\nconst aligned = @bitCast(AlignedHeader, header);",
-        "verification": "Run the binary through 'zig test' on an ARM64 target or use QEMU with alignment check enabled to verify no SIGBUS is raised.",
         "date": "2026-02-16",
         "id": 1771204674,
-        "type": "error"
+        "path": "data/posts/2026-02/zig-alignment-crashes-packed-structs.js"
     },
     {
         "title": "Fixing Spark Executor OOMs in Skewed AQE Joins",
@@ -2352,15 +1792,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Spark's Adaptive Query Execution (AQE) is designed to handle data skew dynamically by splitting large partitions. However, in high-throughput pipelines, skewed keys can still cause specific executors to exceed their heap limits during the Shuffle Exchange phase. This typically happens when the skew exceeds the default <code>spark.sql.adaptive.skewJoin.skewedPartitionFactor</code>, or when the 'split' partitions are still too large to fit in the execution memory fraction, leading to a 'Fetch Failed' error or a hard JVM OOM.</p>",
-        "root_cause": "Data skew where a single key's volume exceeds the available executor memory per core, coupled with AQE thresholds that are too conservative to trigger partition splitting.",
-        "bad_code": "val df = spark.read.parquet(\"huge_data.parquet\")\n// Default config often fails on 10x skew\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\ndf.join(otherDf, \"skewed_id\").write.save(\"output\")",
-        "solution_desc": "Explicitly lower the skew join thresholds to make AQE more aggressive and increase the min/max partition sizes. Also, ensure 'spark.sql.adaptive.advisoryPartitionSizeInBytes' is tuned relative to executor memory.",
-        "good_code": "// Tuning AQE for aggressive skew handling\nspark.conf.set(\"spark.sql.adaptive.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"2\")\nspark.conf.set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"128MB\")\nspark.conf.set(\"spark.sql.adaptive.advisoryPartitionSizeInBytes\", \"64MB\")",
-        "verification": "Monitor the Spark UI 'SQL' tab to ensure 'skew join' nodes appear in the physical plan and check that 'Peak Execution Memory' per task is stabilized.",
         "date": "2026-02-16",
         "id": 1771204675,
-        "type": "error"
+        "path": "data/posts/2026-02/spark-oom-skewed-data-aqe.js"
     },
     {
         "title": "Fixing Redis Replication Buffer Bloat in Resharding",
@@ -2373,15 +1807,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>During Redis Cluster resharding, the <code>MIGRATE</code> command moves keys between shards. Under heavy write load, the source node's replication buffer for its replicas can grow uncontrollably. This is because the <code>MIGRATE</code> command is a blocking operation on the main thread, and while it processes, incoming writes are buffered. If the resharding involves large keys (e.g., massive HASH or SET types), the buffer eventually exceeds <code>client-output-buffer-limit slave</code>, causing replica disconnection and a subsequent 'sync-storm' that can crash the node.</p>",
-        "root_cause": "High-latency key migration blocking the main thread while high-frequency writes fill the output buffer, exceeding the hard limit for replicas.",
-        "bad_code": "# Default conservative limits in redis.conf\nclient-output-buffer-limit replica 256mb 64mb 60\n# Standard resharding command\nredis-cli --cluster reshard <host>:<port>",
-        "solution_desc": "Temporarily increase the replication buffer limits during maintenance and use the <code>ASYNC</code> flag for the MIGRATE command (available in Redis 4.0+). Additionally, implement pipeline-based resharding to reduce the time the main thread is blocked.",
-        "good_code": "# Increase buffer limits dynamically before resharding\nCONFIG SET client-output-buffer-limit \"replica 1gb 512mb 60\"\n\n# Use ASYNC migration if scripting custom resharding\n# MIGRATE host port key destination-db timeout [COPY] [REPLACE] [ASYNC]",
-        "verification": "Use 'INFO Clients' to monitor 'client_recent_max_output_buffer' and ensure 'slaves' disconnection count remains zero during the resharding process.",
         "date": "2026-02-16",
         "id": 1771204676,
-        "type": "error"
+        "path": "data/posts/2026-02/redis-replication-buffer-bloat-resharding.js"
     },
     {
         "title": "Analyze Zeroclaw: Blazing Fast Web Data Extraction",
@@ -2394,15 +1822,9 @@ var postsIndex = [
             "Rust",
             "Python"
         ],
-        "analysis": "<p>Zeroclaw is rapidly trending on GitHub as the 'claw done right' solution for the LLM era. Unlike traditional crawlers that struggle with modern SPA (Single Page Application) rendering and bot detection, Zeroclaw leverages a Rust-based core to orchestrate headless browser instances with minimal overhead. It is popular because it bridges the gap between simple HTTP scrapers (which fail on JS-heavy sites) and heavy Playwright/Puppeteer setups. It features built-in 'smart-extract' capabilities that use local small language models (SLMs) to clean HTML into structured JSON on the fly.</p>",
-        "root_cause": "Distributed architecture, JS-rendering by default, and baked-in proxy rotation with fingerprint randomization.",
-        "bad_code": "curl -sSL https://zeroclaw.io/install.sh | sh\n# or\npip install zeroclaw",
-        "solution_desc": "Best used for building massive datasets for RAG (Retrieval-Augmented Generation) or fine-tuning LLMs where data cleanliness and extraction speed are the primary bottlenecks.",
-        "good_code": "import zeroclaw\n\n# Blazing fast parallel clawing\nresults = zeroclaw.claw(\n    urls=[\"https://docs.example.com\"],\n    schema={\"title\": \"string\", \"content\": \"markdown\"},\n    render_js=True\n)\nprint(results[0].content)",
-        "verification": "As LLMs require fresher data, Zeroclaw's ability to provide 'clean' web-scale data will likely make it a standard tool in AI data engineering stacks.",
         "date": "2026-02-16",
         "id": 1771204677,
-        "type": "trend"
+        "path": "data/posts/2026-02/zeroclaw-labs-github-analysis.js"
     },
     {
         "title": "Solving RCU Stall Warnings in RT Kernels",
@@ -2415,15 +1837,9 @@ var postsIndex = [
             "Go",
             "Error Fix"
         ],
-        "analysis": "<p>In Linux kernels configured with CONFIG_PREEMPT_RT, Read-Copy Update (RCU) stall warnings occur when a grace period is delayed for too long. Unlike standard kernels, the Real-Time patch changes RCU callbacks to run in kthread context, making them susceptible to priority inversion or starvation from high-priority RT tasks. This is particularly frequent in embedded systems where a tight loop in an RT thread starves the RCU kthreads (rcu_preempt or rcu_sched), preventing them from acknowledging quiescent states.</p>",
-        "root_cause": "An RT thread running at a high priority (99) enters a CPU-intensive loop without reaching a quiescent state or yielding, preventing the RCU grace period kthread from running on that CPU.",
-        "bad_code": "void rt_task_loop(void) {\n    while (data_pending) {\n        // High priority RT task spinning\n        process_data_packet(next_packet());\n        // No voluntary preemption point\n    }\n}",
-        "solution_desc": "Insert voluntary preemption points using rcu_read_unlock() followed by a rescheduling call or ensure the RCU grace period kthread has its priority boosted to match or exceed the spinning task to allow it to progress.",
-        "good_code": "void rt_task_loop(void) {\n    while (data_pending) {\n        rcu_read_lock();\n        process_data_packet(next_packet());\n        rcu_read_unlock();\n        // Allow RCU grace period kthreads to run\n        cond_resched(); \n    }\n}",
-        "verification": "Check dmesg for 'INFO: rcu_preempt self-detected stall on CPU' logs and use 'cyclictest' to ensure latency remains within bounds.",
         "date": "2026-02-15",
         "id": 1771147409,
-        "type": "error"
+        "path": "data/posts/2026-02/linux-kernel-rcu-stall-preemption.js"
     },
     {
         "title": "Solving HNSW Index Fragmentation in Vector DBs",
@@ -2436,15 +1852,9 @@ var postsIndex = [
             "SQL",
             "Error Fix"
         ],
-        "analysis": "<p>HNSW (Hierarchical Navigable Small World) indices are sensitive to high-churn environments where 'upserts' (update + insert) are frequent. Standard HNSW implementations handle deletions by marking nodes as 'deleted' (tombstoning). Over time, these tombstones fragment the graph, forcing the search algorithm to traverse dead links, which increases latency and significantly degrades recall accuracy as the 'entry points' to lower layers become sparse.</p>",
-        "root_cause": "Accumulated 'tombstoned' nodes in the HNSW graph layers leading to disconnected components or inefficient search paths that fail to reach the true nearest neighbors.",
-        "bad_code": "for record in stream:\n    # High churn: constant updates to the same IDs\n    vector_db.upsert(id=record.id, vector=record.embedding)\n    # No maintenance logic for index health",
-        "solution_desc": "Implement a background compaction strategy that periodically triggers a 'shrink' or 'rebuild' phase. Newer engines use 'In-place Link Repair' to reconnect neighbors of deleted nodes during idle cycles or utilize a dynamic HNSW variant that replaces deleted nodes with fresh inserts immediately.",
-        "good_code": "def maintenance_loop(index):\n    if index.tombstone_ratio() > 0.2:\n        # Trigger background rebuilding of the graph\n        index.recompact(target_utilization=0.9)\n        # Or use a provider that supports dynamic link repair\n        index.optimize(parallel=True)",
-        "verification": "Monitor the 'Recall@10' metric against a ground truth set; if it drops below 0.95 during heavy updates, compaction is required.",
         "date": "2026-02-15",
         "id": 1771147410,
-        "type": "error"
+        "path": "data/posts/2026-02/hnsw-index-fragmentation-fix.js"
     },
     {
         "title": "Fixing Space Leaks in Lazy Stream Graphs",
@@ -2457,15 +1867,9 @@ var postsIndex = [
             "Node.js",
             "Error Fix"
         ],
-        "analysis": "<p>Haskell's lazy evaluation is powerful for processing infinite streams, but it often leads to space leaks when a reference to the 'head' of a stream is retained while the 'tail' is consumed. This prevents the Garbage Collector (GC) from reclaiming memory of processed elements because the original pointer still views the entire graph as potentially needed. In complex stream graphs, this manifests as a slow, linear increase in heap usage until an OOM (Out Of Memory) occurs.</p>",
-        "root_cause": "Holding a reference to an unevaluated thunk (lazy value) in a scope that outlives the consumption of that stream, specifically during nested folds or shared stream references.",
-        "bad_code": "processStream :: [Int] -> (Int, Int)\nprocessStream xs = (sum xs, length xs)\n-- Problem: sum consumes xs but xs is kept alive to calculate length",
-        "solution_desc": "Use strict data structures or fold the stream into a single pass using a strict pair (Tup2) or BangPatterns. This ensures that as elements are consumed, they are immediately reduced to values and their memory is freed.",
-        "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessStream :: [Int] -> (Int, Int)\nprocessStream = foldl' (\\(!s, !l) x -> (s + x, l + 1)) (0, 0)\n-- Strict fold ensures stream is consumed and discarded in one pass",
-        "verification": "Run the binary with RTS options '+RTS -hc' to generate a heap profile and ensure the 'active' memory curve is flat.",
         "date": "2026-02-15",
         "id": 1771147411,
-        "type": "error"
+        "path": "data/posts/2026-02/haskell-lazy-stream-space-leak.js"
     },
     {
         "title": "PeonPing: WC3 Audio Alerts for AI Agents",
@@ -2477,15 +1881,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>PeonPing has surged in popularity among developers using AI coding agents like Claude Code or large-scale build pipelines. As these tools perform autonomous multi-step tasks that can take minutes, developers suffer from 'terminal babysitting'—constantly checking if a task is finished. PeonPing solves this by providing nostalgic Warcraft III Orc Peon voice alerts ('Work complete!') when a CLI process finishes, turning a boring wait into a playful, audible notification.</p>",
-        "root_cause": "Key Features: Cross-platform CLI support; Native piping (command | peon); Built-in 'Peon', 'Human', and 'Undead' voice packs; Seamless integration with IDE terminals and AI agents.",
-        "bad_code": "go install github.com/PeonPing/peon-ping@latest\n# Or for Node users\nnpm install -g peon-ping",
-        "solution_desc": "Best used in long-running CI/CD scripts, large npm installs, or when running autonomous AI agents that handle multiple file edits. It reduces cognitive load by allowing the developer to switch contexts (e.g., browse the web) while waiting for the 'Work complete!' audio cue.",
-        "good_code": "# Use it with any command\nclaude-code --fix-bugs | peon-ping\n\n# Or as a standalone alert after a build\nnpm run build && peon-ping --voice peon\n\n# Custom alias in .zshrc\nalias alert='peon-ping'",
-        "verification": "The project is currently trending on GitHub due to its crossover appeal between gaming nostalgia and productivity optimization for the 'AI Agent' era.",
         "date": "2026-02-15",
         "id": 1771147412,
-        "type": "trend"
+        "path": "data/posts/2026-02/peon-ping-warcraft-notifications.js"
     },
     {
         "title": "C++20 Coroutines: Fixing Use-After-Free in Promises",
@@ -2498,15 +1896,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>In C++20 coroutines, the lifecycle of the promise object and the coroutine frame are tightly coupled. A frequent source of Use-After-Free (UAF) errors occurs when a coroutine handle is managed by an asynchronous executor that outlives the scope where the handle was created. If the coroutine reaches its <code>final_suspend</code> point and is configured to automatically destroy itself (via <code>std::suspend_never</code>), any subsequent attempt by the caller or a monitoring thread to access the promise object results in undefined behavior. This is particularly dangerous in high-concurrency environments where race conditions determine whether the frame still exists.</p>",
-        "root_cause": "The coroutine reaches final_suspend and returns std::suspend_never, causing the coroutine frame to be deallocated automatically while a handle or pointer to the promise is still being accessed by the calling context.",
-        "bad_code": "struct Task {\n    struct promise_type {\n        std::suspend_never final_suspend() noexcept { return {}; }\n        // ... other methods\n    };\n};\n\n// Caller side\nauto handle = my_coroutine();\n// Coroutine finishes internally and destroys frame\nstd::cout << handle.promise().result; // CRASH: UAF",
-        "solution_desc": "Configure the coroutine to always suspend at the final point. This transfers ownership of the frame destruction to the holder of the coroutine handle, ensuring the promise remains valid until the caller explicitly calls .destroy().",
-        "good_code": "struct Task {\n    struct promise_type {\n        // Prevents automatic destruction of the frame\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ...\n    };\n    ~Task() { if (handle) handle.destroy(); }\n    std::coroutine_handle<promise_type> handle;\n};",
-        "verification": "Compile with AddressSanitizer (-fsanitize=address). Run the asynchronous flow; the sanitizer should no longer report invalid memory access on the promise object during teardown.",
         "date": "2026-02-15",
         "id": 1771137627,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutines-fix-uaf-promise-lifecycle.js"
     },
     {
         "title": "Ray: Solving Plasma Object Store Fragmentation",
@@ -2519,15 +1911,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Ray utilizes the Plasma Object Store for shared-memory management across distributed workers. In high-throughput task graphs, particularly those involving many small, varying-sized tensors or dataframes, the underlying dlmalloc-based allocator suffers from external fragmentation. Because Plasma objects are immutable and often pinned during execution, the allocator cannot easily move them to consolidate free space. This leads to 'Out of Memory' (OOM) errors even when the system reports significant aggregate free memory, as no single contiguous block is large enough for new allocations.</p>",
-        "root_cause": "Plasma's lack of a compaction mechanism combined with pinning of immutable objects leads to holes in shared memory that cannot be filled by new large object allocations.",
-        "bad_code": "# High fragmentation pattern\nfor data in large_stream:\n    # Creating thousands of tiny objects in shared memory\n    ray.put(data.small_chunk())\n# Eventually ray.put fails even if RAM is free",
-        "solution_desc": "Implement object batching to reduce the number of individual allocations and enable Ray's 'Object Spilling' feature to move cold objects to disk, effectively clearing fragmented blocks.",
-        "good_code": "import ray\n# Configuration to handle fragmentation\nray.init(_system_config={\n    \"object_spilling_threshold\": 0.8,\n    \"min_spilling_size\": 100 * 1024 * 1024\n})\n\n# Batch small objects into a single large object\nbatched_data = [d.small_chunk() for d in large_stream]\nray.put(batched_data)",
-        "verification": "Monitor the Ray dashboard's memory view. Check 'External Fragmentation' metrics in Plasma. The fix is verified if 'Object Store Full' errors vanish under the same throughput.",
         "date": "2026-02-15",
         "id": 1771137628,
-        "type": "error"
+        "path": "data/posts/2026-02/ray-plasma-object-store-fragmentation-fix.js"
     },
     {
         "title": "WebGPU: Fixing Sync Hazards in Compute Pass Barriers",
@@ -2540,15 +1926,9 @@ var postsIndex = [
             "Next.js",
             "Error Fix"
         ],
-        "analysis": "<p>WebGPU operates on an asynchronous command queue model. A synchronization hazard occurs when a storage buffer is modified in one Compute Pass and read in a subsequent operation without ensuring the GPU has completed the write. While WebGPU provides some automatic resource tracking, hazards specifically arise when using multiple <code>dispatchWorkgroups</code> calls within the same pass that depend on each other's output, or when crossing pass boundaries without declaring the appropriate usage transitions in the bind group layouts.</p>",
-        "root_cause": "Implicit synchronization fails when a buffer is bound with 'read-write' storage usage across multiple dispatches that have data dependencies, without intermediate memory barriers or pipeline stalls.",
-        "bad_code": "const pass = commandEncoder.beginComputePass();\npass.setPipeline(pipelineA);\npass.dispatchWorkgroups(64);\n// Hazard: pipelineB reads output from A immediately\npass.setPipeline(pipelineB);\npass.dispatchWorkgroups(64);\npass.end();",
-        "solution_desc": "Split the operations into distinct compute passes or use storage textures with appropriate memory barriers. WebGPU guarantees that work within a single pass is finished before the next pass begins if there is a dependency in the command buffer sequence.",
-        "good_code": "const pass1 = commandEncoder.beginComputePass();\npass1.setPipeline(pipelineA);\npass1.dispatchWorkgroups(64);\npass1.end(); \n\n// Ending the pass ensures writes are visible to the next pass\nconst pass2 = commandEncoder.beginComputePass();\npass2.setPipeline(pipelineB);\npass2.dispatchWorkgroups(64);\npass2.end();",
-        "verification": "Use the 'WebGPU Inspector' extension or Chrome's 'GPU Internals'. Look for validation errors regarding Read-After-Write (RAW) hazards. Ensure data consistency in the final buffer readback.",
         "date": "2026-02-15",
         "id": 1771137629,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-compute-pass-synchronization-hazards.js"
     },
     {
         "title": "PeonPing: Stop Babysitting Your AI Terminal",
@@ -2560,15 +1940,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>PeonPing is trending because it solves a modern developer frustration: the 'AI Wait'. As tools like Claude Code and Aider take over complex refactoring tasks, developers find themselves staring at the terminal waiting for 'Work Complete'. PeonPing injects nostalgic Warcraft III Peon voice lines (and others) into your CLI workflow. It's not just a meme; it's a productivity enhancer that allows developers to context-switch away from the terminal and return exactly when the 'Peon' announces that the task is finished.</p>",
-        "root_cause": "CLI integration, support for Claude Code/Aider, and an MCP (Model Context Protocol) server for direct AI trigger control.",
-        "bad_code": "npm install -g peon-ping\n# or use the MCP server directly",
-        "solution_desc": "Best used in conjunction with long-running CLI tools, build scripts, or AI-driven coding agents. It helps maintain flow state by providing audio cues for task completion.",
-        "good_code": "# Use in your terminal\nclaude code \"refactor the auth logic\" && peon-ping --voice peon\n\n# Or configure as an MCP server in Claude Desktop\n{ \"mcpServers\": { \"peon-ping\": { \"command\": \"npx\", \"args\": [\"-y\", \"peon-ping\"] } } }",
-        "verification": "The project is expanding with custom soundboard support and deep integration for IDE-based terminal wrappers like VS Code and JetBrains.",
         "date": "2026-02-15",
         "id": 1771137630,
-        "type": "trend"
+        "path": "data/posts/2026-02/peon-ping-warcraft-notifications-trend.js"
     },
     {
         "title": "Fixing eBPF Verifier State Explosion in Trace Programs",
@@ -2581,15 +1955,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>eBPF programs must pass a verifier to ensure kernel safety. When writing complex tracing programs with nested loops or extensive conditional branching, the verifier attempts to explore every possible execution path. This often leads to 'state explosion,' where the number of verified instructions exceeds the kernel's complexity limit (typically 1 million instructions), causing the program to fail to load.</p>",
-        "root_cause": "The verifier's path exploration complexity grows exponentially with nested branches, failing when the total states stored or instructions processed exceed BPF_COMPLEXITY_LIMIT_STATES.",
-        "bad_code": "SEC(\"tp/syscalls/sys_enter_execve\")\nint handle_execve(void *ctx) {\n    struct task_struct *task = (struct task_struct *)bpf_get_current_task();\n    #pragma unroll\n    for (int i = 0; i < 64; i++) {\n        if (task->comm[i] == '\\0') break;\n        // Complex logic per character leads to state explosion\n        do_expensive_check(task->comm[i]);\n    }\n    return 0;\n}",
-        "solution_desc": "Refactor the logic to use BPF subprograms (function calls) or the `bpf_loop` helper introduced in newer kernels. Subprograms allow the verifier to verify functions independently, while `bpf_loop` provides a bounded iteration mechanism that the verifier treats as a single state transition.",
-        "good_code": "static int check_char(unsigned int i, void *ctx) {\n    char *comm = ctx;\n    if (comm[i] == '\\0') return 1;\n    do_expensive_check(comm[i]);\n    return 0;\n}\n\nSEC(\"tp/syscalls/sys_enter_execve\")\nint handle_execve(void *ctx) {\n    struct task_struct *task = (struct task_struct *)bpf_get_current_task();\n    bpf_loop(64, check_char, task->comm, 0);\n    return 0;\n}",
-        "verification": "Use `bpftool prog load` and check the 'verified_insns' count; ensure it stays well below the 1M limit.",
         "date": "2026-02-15",
         "id": 1771131000,
-        "type": "error"
+        "path": "data/posts/2026-02/ebpf-verifier-state-explosion-fix.js"
     },
     {
         "title": "Solving PyTorch DDP Deadlocks in Multi-Node Training",
@@ -2602,15 +1970,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Distributed Data Parallel (DDP) deadlocks frequently occur during multi-node training when one process rank enters a collective communication call (like all_reduce) that others never reach. This is common in scenarios with conditional logic in the forward pass or when using datasets with uneven sample distributions across ranks.</p>",
-        "root_cause": "Mismatched execution paths across ranks where one rank finishes its loop early or skips a gradient synchronization step while others wait.",
-        "bad_code": "def train():\n    for data in dataloader:\n        # If rank 0 has 10 batches and rank 1 has 9,\n        # rank 0 will wait forever for rank 1 on the 10th batch\n        outputs = model(data)\n        loss = loss_fn(outputs, targets)\n        loss.backward()\n        optimizer.step()",
-        "solution_desc": "Use the `join()` context manager provided by PyTorch DDP to handle uneven inputs. This allows processes that finish early to remain 'active' and participate in the remaining collective communications required by other ranks.",
-        "good_code": "from torch.nn.parallel import DistributedDataParallel as DDP\n\nmodel = DDP(model_instance, device_ids=[rank])\nwith model.join():\n    for data in dataloader:\n        optimizer.zero_grad()\n        outputs = model(data)\n        loss = loss_fn(outputs, targets)\n        loss.backward()\n        optimizer.step()",
-        "verification": "Set `export NCCL_DEBUG=INFO` and verify that all ranks complete the final epoch without timing out.",
         "date": "2026-02-15",
         "id": 1771131001,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-ddp-deadlock-fix.js"
     },
     {
         "title": "Fixing Selective Receive Starvation in Elixir OTP",
@@ -2623,15 +1985,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In Elixir/Erlang, 'selective receive' occurs when a process uses a `receive` block with a pattern that doesn't match the oldest messages in its mailbox. The VM must scan every message in the mailbox until it finds a match. In high-throughput GenServers, this causes O(N) overhead per message, leading to severe latency and eventual process crashes due to memory exhaustion.</p>",
-        "root_cause": "The mailbox grows indefinitely with non-matching messages, forcing the Erlang scheduler to traverse thousands of items for every single matching operation.",
-        "bad_code": "def loop(state) do\n  receive do\n    {:priority, msg} -> \n      handle_msg(msg, state)\n      loop(state)\n    # Missing catch-all causes non-priority messages to rot in mailbox\n  end\nend",
-        "solution_desc": "Migrate logic to a standard `GenServer` behavior where `handle_info/2` processes messages in the order they arrive. If priority is needed, implement an internal priority queue within the state rather than relying on mailbox scanning.",
-        "good_code": "def handle_info({:priority, msg}, state) do\n  handle_msg(msg, state)\n  {:noreply, state}\nend\n\ndef handle_info(_unknown, state) do\n  # Always consume unknown messages to keep mailbox clean\n  {:noreply, state}\nend",
-        "verification": "Use `:erlang.process_info(pid, :message_queue_len)` to monitor mailbox size under high load.",
         "date": "2026-02-15",
         "id": 1771131002,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-otp-selective-receive-fix.js"
     },
     {
         "title": "Peon-ping: WC3 Audio Alerts for Modern IDEs",
@@ -2643,15 +1999,9 @@ var postsIndex = [
             "GitHub",
             "Node.js"
         ],
-        "analysis": "<p>Peon-ping is trending because it solves the 'terminal babysitting' problem. Developers running long tasks—like Claude Code refactors, heavy builds, or AI generations—often switch tabs and lose focus. By playing iconic Warcraft III Peon sounds ('Work complete!', 'Jobs done!') when a command finishes, it provides a nostalgic yet highly functional productivity loop.</p>",
-        "root_cause": "Audio Notification CLI Wrapper with Nostalgia Factor",
-        "bad_code": "npm install -g peon-ping",
-        "solution_desc": "Integrate Peon-ping into your workflow when using 'Claude Code' or long-running shell scripts. It's best used to prevent context-switching fatigue by allowing you to step away from your terminal physically or mentally.",
-        "good_code": "# Use with Claude Code\nclaude code \"Refactor the auth module\" && peon-ping\n\n# Use with slow builds\nnpm run build; peon-ping --sound=\"jobs-done\"",
-        "verification": "Increasingly adopted by AI engineers; look for future integrations with VS Code Task Runner and broader sound packs.",
         "date": "2026-02-15",
         "id": 1771131003,
-        "type": "trend"
+        "path": "data/posts/2026-02/peon-ping-github-trend.js"
     },
     {
         "title": "Fixing Kafka Rebalance Storms in High-Latency Streams",
@@ -2664,15 +2014,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>Kafka rebalance storms occur when consumer group members are repeatedly kicked out and rejoined, halting all processing. In high-latency stream processing, this is usually triggered because the processing logic within the poll loop takes longer than the maximum allowed interval.</p><p>When the consumer fails to call <code>poll()</code> within the <code>max.poll.interval.ms</code>, the coordinator assumes the consumer has failed. This triggers a group-wide rebalance. The 'storm' happens because the rebalance itself adds overhead, causing other consumers to also timeout, creating a vicious cycle of instability.</p>",
-        "root_cause": "The processing time per batch exceeds 'max.poll.interval.ms', or the heartbeat thread is starved due to high GC pressure or CPU saturation.",
-        "bad_code": "properties.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\n// Heavy processing inside the poll loop\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // This 10-second task multiplied by 100 records = 1000s\n        // Overrides the 300s max.poll.interval.ms\n        processHeavyTask(record);\n    }\n}",
-        "solution_desc": "Decouple the heartbeat from the processing logic. Increase the poll interval to accommodate the worst-case processing time and reduce the number of records fetched per poll to ensure completion within the heartbeat window.",
-        "good_code": "properties.put(\"max.poll.records\", \"10\"); // Process fewer records\nproperties.put(\"max.poll.interval.ms\", \"600000\"); // Increase to 10 mins\nproperties.put(\"session.timeout.ms\", \"45000\"); // Heartbeat timeout\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    processRecords(records); // Logic now fits within 10 minutes\n}",
-        "verification": "Monitor the 'join-rate' and 'rebalance-latency' metrics in JMX. If rebalances drop to zero during high-load periods, the configuration is stable.",
         "date": "2026-02-15",
         "id": 1771118455,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-rebalance-heartbeat-timeouts.js"
     },
     {
         "title": "Solving Rust Async Memory Violations with Pinning",
@@ -2685,15 +2029,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>Rust's async/await generates state machines that often contain self-referential pointers. If an async Future is moved in memory after it has been initialized, these internal pointers become dangling, leading to undefined behavior or memory safety violations.</p><p>The <code>Pin</code> wrapper guarantees that the data it points to will not be moved until it is dropped. This is critical for any structure that stores a reference to its own fields, a common pattern in compiled async blocks where local variables are captured across yield points.</p>",
-        "root_cause": "Attempting to poll a Future that contains internal references after it has been moved across a thread boundary or re-allocated without a Pin wrapper.",
-        "bad_code": "struct MyFuture {\n    data: String,\n    ptr: *const String,\n}\n\n// Moving this struct would invalidate 'ptr'\nfn create_future() -> MyFuture {\n    let mut f = MyFuture { data: \"test\".into(), ptr: std::ptr::null() };\n    f.ptr = &f.data;\n    f\n}",
-        "solution_desc": "Use the `Pin` type to wrap the data, typically on the heap using `Box::pin`. This ensures the memory address remains constant even if the pointer to the box itself is moved.",
-        "good_code": "use std::pin::Pin;\nuse std::marker::PhantomPinned;\n\nstruct MyFuture {\n    data: String,\n    ptr: *const String,\n    _pin: PhantomPinned,\n}\n\nfn create_pinned_future() -> Pin<Box<MyFuture>> {\n    let res = MyFuture {\n        data: \"test\".into(),\n        ptr: std::ptr::null(),\n        _pin: PhantomPinned,\n    };\n    let mut boxed = Box::pin(res);\n    let slice = &boxed.data as *const String;\n    // Safety: data is pinned in the box\n    unsafe { boxed.as_mut().get_unchecked_mut().ptr = slice; }\n    boxed\n}",
-        "verification": "Run the code through 'Miri' using `cargo miri run`. Miri will detect undefined behavior related to pointer invalidation and move violations.",
         "date": "2026-02-15",
         "id": 1771118456,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-async-pinning-self-referential-structs.js"
     },
     {
         "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
@@ -2706,15 +2044,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>In MongoDB, the WiredTiger storage engine manages a cache for data pages. When write volume is extremely high, the rate of 'dirty' pages can exceed the background eviction capability. When dirty pages reach a critical threshold (usually 20%), WiredTiger forces application threads to perform eviction themselves.</p><p>This is known as a 'cache pressure stall.' Application latency spikes from milliseconds to seconds because the threads meant to handle queries are busy writing data to disk to free up space in the cache.</p>",
-        "root_cause": "The write throughput exceeds the underlying I/O capacity or the eviction worker threads are not aggressive enough for the workload.",
-        "bad_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 1 # Too small for high-write volume\n# Default eviction settings usually fail at >20k ops/sec",
-        "solution_desc": "Increase the cache size to reduce the frequency of eviction, and tune the eviction triggers to start cleaning earlier. This prevents the 'application-thread-eviction' panic state.",
-        "good_code": "storage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16\n      configString: \"eviction_target=70,eviction_trigger=90,eviction_dirty_target=5,eviction_dirty_trigger=15\"",
-        "verification": "Use `db.serverStatus().wiredTiger.cache` and check 'tracked dirty pages in the cache'. If it stays below the 'eviction_dirty_trigger', stalls will not occur.",
         "date": "2026-02-15",
         "id": 1771118457,
-        "type": "error"
+        "path": "data/posts/2026-02/mongodb-wiredtiger-cache-eviction-stalls.js"
     },
     {
         "title": "PeonPing: Warcraft III Alerts for Modern IDEs",
@@ -2726,15 +2058,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>PeonPing is a trending utility that bridges the gap between nostalgic gaming and modern developer productivity. It provides Warcraft III Peon voice notifications (like 'Work complete!' and 'Something needs doing!') for terminal-based tasks and AI coding agents like Claude Code or Codex.</p><p>The tool is exploding in popularity because it solves 'terminal babysitting' fatigue. Developers often lose focus while waiting for long-running builds or AI agents to finish complex tasks. PeonPing provides an unmistakable audio cue that brings the developer back to the task exactly when needed.</p>",
-        "root_cause": "Audio feedback for CLI tasks, nostalgic appeal for Warcraft fans, and seamless integration with the growing ecosystem of AI-driven coding agents.",
-        "bad_code": "npm install -g peon-ping\n# or use directly via npx\nnpx peon-ping --help",
-        "solution_desc": "Use PeonPing for any long-running asynchronous task in your workflow. It is particularly effective for AI agents, CI/CD pipelines, and large project compilations.",
-        "good_code": "# Wrap your command to hear 'Work complete!' when done\npeon-ping -c \"claude code --task 'refactor this module'\"\n\n# Use in a shell script for builds\nnpm run build && peon-ping --ready",
-        "verification": "As AI agents become more autonomous, 'ambient status notifications' via audio will likely become a standard part of the developer toolchain.",
         "date": "2026-02-15",
         "id": 1771118458,
-        "type": "trend"
+        "path": "data/posts/2026-02/peon-ping-warcraft-iii-notifications.js"
     },
     {
         "title": "Go Runtime: Fixing Preemption Deadlocks",
@@ -2747,15 +2073,9 @@ var postsIndex = [
             "Performance",
             "Error Fix"
         ],
-        "analysis": "<p>In Go versions prior to 1.14, the scheduler was strictly cooperative, meaning a goroutine had to reach a function call (a safe-point) to be preempted. Even with non-cooperative preemption introduced in 1.14 via signals (SIGURG), certain tight loops—especially those performing heavy mathematical operations or memory-intensive tasks without function calls—can still hang the scheduler. This prevents the Garbage Collector (GC) from starting, leading to a Stop-The-World (STW) deadlock where the entire application freezes because one goroutine refuses to yield the processor.</p>",
-        "root_cause": "The Go scheduler cannot find a safe-point to inject a preemption signal in a loop that lacks function calls or stack-growth checks.",
-        "bad_code": "func busyLoop() {\n\tfor i := 0; i < 1e15; i++ {\n\t\t// Tight loop with no function calls\n\t\t// Go scheduler may fail to preempt this effectively\n\t\t_ = i * i\n\t}\n}",
-        "solution_desc": "Manually invoke the scheduler using runtime.Gosched() inside the loop or refactor the logic to include function calls that trigger stack-bound checks. Ensure you are using Go 1.14+ to take advantage of asynchronous preemption, but remain cautious of system call boundaries.",
-        "good_code": "func busyLoopFixed() {\n\tfor i := 0; i < 1e15; i++ {\n\t\tif i%1000000 == 0 {\n\t\t\truntime.Gosched() // Explicitly yield the processor\n\t\t}\n\t\t_ = i * i\n\t}\n}",
-        "verification": "Use 'go tool trace' to monitor goroutine preemption and check for long STW pauses in GC logs.",
         "date": "2026-02-14",
         "id": 1771060971,
-        "type": "error"
+        "path": "data/posts/2026-02/go-runtime-preemption-deadlocks.js"
     },
     {
         "title": "Triton: Solving GPU Starvation in Multi-Model Batching",
@@ -2768,15 +2088,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Triton Inference Server's dynamic batcher is designed to maximize throughput by grouping requests. However, in a multi-model environment sharing a single GPU, a 'noisy neighbor' effect can occur. If one high-traffic model saturates the dynamic batcher, its requests occupy all available execution slots on the GPU instance group. This leads to starvation for smaller models, which remain stuck in the scheduler queue despite having valid requests, significantly increasing tail latency (P99).</p>",
-        "root_cause": "Improper configuration of max_queue_delay_microseconds and missing priority levels in the model configuration file.",
-        "bad_code": "dynamic_batching {\n  max_batch_size: 32\n  # Missing max_queue_delay_microseconds\n  # Smaller models are starved by high-volume ones\n}",
-        "solution_desc": "Implement explicit 'max_queue_delay_microseconds' to force batch execution even if not full, and use 'priority_levels' within the Triton scheduler to ensure fair resource distribution across different models.",
-        "good_code": "dynamic_batching {\n  max_batch_size: 32\n  max_queue_delay_microseconds: 5000\n  priority_levels: 2\n  default_priority_level: 1\n}\ninstance_group [\n  {\n    count: 2\n    kind: KIND_GPU\n  }\n]",
-        "verification": "Analyze the 'nv_inference_queue_duration_us' metric per model in Prometheus to ensure even distribution.",
         "date": "2026-02-14",
         "id": 1771060972,
-        "type": "error"
+        "path": "data/posts/2026-02/triton-gpu-starvation-fix.js"
     },
     {
         "title": "Istio: Fixing Envoy HoL Blocking in gRPC-Web",
@@ -2789,15 +2103,9 @@ var postsIndex = [
             "Docker",
             "Error Fix"
         ],
-        "analysis": "<p>When using Istio to manage gRPC-Web traffic, Envoy acts as a translator between HTTP/1.1 (client-side) and HTTP/2 (upstream). Head-of-Line (HoL) blocking occurs when a long-lived gRPC stream (like a notification feed) consumes a connection slot, and the downstream Envoy buffer fills up. Due to default TCP settings and circuit breaker limits, subsequent requests are queued behind the stalled stream, causing significant latency for short-lived RPC calls.</p>",
-        "root_cause": "Default Envoy circuit breaker limits on 'max_requests_per_connection' and insufficient 'http2_max_concurrent_streams' settings.",
-        "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: grpc-service\nspec:\n  host: grpc-service.default.svc.cluster.local\n  # Missing trafficPolicy to handle streaming concurrency",
-        "solution_desc": "Tune the DestinationRule trafficPolicy to allow higher concurrency and adjust the connection pool settings to prevent single-stream saturation from blocking the entire connection.",
-        "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: grpc-service\nspec:\n  host: grpc-service.default.svc.cluster.local\n  trafficPolicy:\n    connectionPool:\n      http:\n        http2MaxRequestsPerConnection: 1000\n        maxRequestsPerConnection: 100\n        maxConcurrentStreams: 1024",
-        "verification": "Check Envoy stats using 'istioctl dashboard envoy' and monitor 'upstream_rq_pending_overflow'.",
         "date": "2026-02-14",
         "id": 1771060973,
-        "type": "error"
+        "path": "data/posts/2026-02/istio-envoy-hol-blocking.js"
     },
     {
         "title": "Awesome OpenClaw: Scaling Automation Use Cases",
@@ -2809,15 +2117,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>The 'hesamsheikh/awesome-openclaw-usecases' repository is quickly becoming the definitive collection for developers using OpenClaw, an emerging framework for high-level automation. It is trending because it provides battle-tested 'recipes' for complex tasks like multi-stage web scraping, UI testing, and workflow synchronization that are typically difficult to script from scratch. The community-driven nature allows for rapid updates to deal with evolving anti-bot measures and UI changes in popular platforms.</p>",
-        "root_cause": "Modular Architecture & Community Recipes",
-        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install -r requirements.txt",
-        "solution_desc": "Ideal for enterprise RPA (Robotic Process Automation), complex data extraction pipelines, and cross-platform UI regression testing where traditional Selenium or Playwright setups are too rigid.",
-        "good_code": "from openclaw import ClawClient\n\n# Example pattern from the awesome-list\nclient = ClawClient(api_key=\"your_key\")\nusecase = client.load_recipe(\"ecommerce/product-sync\")\nusecase.execute(params={\"target\": \"amazon\"})",
-        "verification": "As the ecosystem grows, expect tighter integrations with LLMs (Large Language Models) to allow natural language command processing within OpenClaw workflows.",
         "date": "2026-02-14",
         "id": 1771060974,
-        "type": "trend"
+        "path": "data/posts/2026-02/awesome-openclaw-usecases-trend.js"
     },
     {
         "title": "Zig Alignment: Fixing UB in Custom Allocators",
@@ -2830,15 +2132,9 @@ var postsIndex = [
             "Zig",
             "Error Fix"
         ],
-        "analysis": "<p>In Zig, memory alignment is a first-class citizen. Unlike C where misaligned access might just be a performance penalty on some architectures, Zig treats alignment mismatches as Undefined Behavior (UB) during safety-checked builds. When implementing custom allocators, developers often manage a raw <code>[]u8</code> buffer. The error occurs when casting a pointer from this buffer to a structured type without ensuring the address satisfies the type's <code>@alignOf</code> requirement.</p>",
-        "root_cause": "The allocator returns a pointer at an arbitrary offset that is not a multiple of the requested type's alignment, causing a CPU trap or invalid data read.",
-        "bad_code": "fn alloc(self: *Self, len: usize, ptr_align: u8) ![]u8 {\n    const start = self.offset;\n    self.offset += len;\n    // BUG: This does not ensure 'start' is a multiple of 'ptr_align'\n    return self.buffer[start..self.offset];\n}",
-        "solution_desc": "Use the `std.mem.alignForward` utility to move the current offset to the next valid memory address that satisfies the alignment requirement before slicing the buffer.",
-        "good_code": "fn alloc(self: *Self, len: usize, ptr_align: u8) ![]u8 {\n    const aligned_start = std.mem.alignForward(self.offset, ptr_align);\n    const end = aligned_start + len;\n    if (end > self.buffer.len) return error.OutOfMemory;\n    self.offset = end;\n    return self.buffer[aligned_start..end];\n}",
-        "verification": "Compile with `zig build-exe -O Debug` and run. Zig's Safety-Check will trigger a panic if `@ptrCast` is used on an incorrectly aligned address.",
         "date": "2026-02-14",
         "id": 1771050875,
-        "type": "error"
+        "path": "data/posts/2026-02/zig-memory-alignment-ub-fix.js"
     },
     {
         "title": "Fixing Airflow Zombie Tasks in Celery Executors",
@@ -2851,15 +2147,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>Zombie tasks in Apache Airflow occur when the Airflow database thinks a task is 'running', but the process on the Celery worker is no longer reporting heartbeats. This often happens in containerized environments where the worker process is killed by the OOM killer or network partitions prevent the worker from updating the metadata database. The scheduler eventually detects the lack of heartbeats and marks the task as failed, but not before wasting significant queue time.</p>",
-        "root_cause": "Mismatch between Celery's visibility timeout and Airflow's scheduler heartbeat threshold, leading to tasks being orphaned without cleanup.",
-        "bad_code": "[scheduler]\njob_heartbeat_threshold = 30\n\n# CELERY CONFIG (default visibility_timeout is too low)\nbroker_transport_options = {'visibility_timeout': 3600}",
-        "solution_desc": "Increase the `visibility_timeout` for the Celery broker to exceed the longest expected task duration and synchronize the `scheduler_zombie_task_threshold` to allow for brief network spikes.",
-        "good_code": "[scheduler]\nscheduler_zombie_task_threshold = 300\njob_heartbeat_threshold = 60\n\n# Celery Config in airflow.cfg\ncelery_config_options = {\n    'broker_transport_options': {'visibility_timeout': 21600} \n}",
-        "verification": "Monitor the `airflow_scheduler_zombies` metric in Prometheus and verify that 'zombie' logs in the scheduler logs correlate with successful task state transitions.",
         "date": "2026-02-14",
         "id": 1771050876,
-        "type": "error"
+        "path": "data/posts/2026-02/airflow-zombie-tasks-fix.js"
     },
     {
         "title": "Next.js Hydration: Solving Server-Client Divergence",
@@ -2872,15 +2162,9 @@ var postsIndex = [
             "TypeScript",
             "Error Fix"
         ],
-        "analysis": "<p>Hydration mismatch occurs when the pre-rendered HTML from the server doesn't match the first render in the browser. This is common in Next.js when using dynamic values like <code>window.innerWidth</code>, <code>localStorage</code>, or <code>new Date()</code> directly in the JSX. React detects the discrepancy and is forced to discard the server HTML, leading to slower page loads and potential UI flickering.</p>",
-        "root_cause": "Accessing browser-only APIs or non-deterministic data during the initial render pass of a component.",
-        "bad_code": "export default function Component() {\n  const isMobile = window.innerWidth < 768; // Error: window is not defined on server\n  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>;\n}",
-        "solution_desc": "Use a `useEffect` hook to update the state only after the component has mounted on the client, ensuring the initial server-side render remains consistent.",
-        "good_code": "import { useState, useEffect } from 'react';\n\nexport default function Component() {\n  const [isMobile, setIsMobile] = useState(false);\n\n  useEffect(() => {\n    setIsMobile(window.innerWidth < 768);\n  }, []);\n\n  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>;\n}",
-        "verification": "Check the browser console for 'Hydration failed' warnings. Use React DevTools to ensure the DOM nodes are not being recreated on load.",
         "date": "2026-02-14",
         "id": 1771050877,
-        "type": "error"
+        "path": "data/posts/2026-02/nextjs-hydration-mismatch-fix.js"
     },
     {
         "title": "OpenClaw Use Cases: Automating Life with AI Agents",
@@ -2892,15 +2176,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>The 'awesome-openclaw-usecases' repository is gaining traction because it bridges the gap between raw LLM capabilities and practical desktop automation. OpenClaw provides a standardized way for AI agents to 'see' and 'interact' with any UI, and this community collection provides the recipes. It's popular because it democratizes Robotic Process Automation (RPA) by replacing complex legacy scripting with natural language instructions and computer vision.</p>",
-        "root_cause": "Community-driven modularity, cross-platform UI interaction via Python, and seamless integration with OpenAI/Anthropic APIs.",
-        "bad_code": "pip install openclaw\ngit clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git",
-        "solution_desc": "Ideal for automating repetitive tasks like invoice data entry, cross-app testing, and personal productivity workflows where traditional APIs are unavailable.",
-        "good_code": "from openclaw import Agent\n\n# Example: Automating a search in a custom desktop app\nagent = Agent(model=\"gpt-4-vision\")\nagent.run(\"Open the CRM app, find customer 'John Doe' and export his last invoice to PDF.\")",
-        "verification": "The project is seeing increased contributions in the 'Workflow' directory, suggesting a shift toward enterprise-level agentic automation.",
         "date": "2026-02-14",
         "id": 1771050878,
-        "type": "trend"
+        "path": "data/posts/2026-02/openclaw-github-trend-analysis.js"
     },
     {
         "title": "Haskell Space Leaks: Fixing Thunk Accumulation",
@@ -2913,15 +2191,9 @@ var postsIndex = [
             "MemoryManagement",
             "Error Fix"
         ],
-        "analysis": "<p>Haskell's lazy evaluation is a double-edged sword. While it allows for infinite data structures and modular code, it frequently leads to 'space leaks' where the runtime builds up a massive chain of unevaluated computations known as thunks. Instead of storing the result of a calculation (like an integer), the heap stores the recipe to calculate it, which consumes significantly more memory and can eventually lead to a stack overflow or OOM (Out of Memory) error during evaluation.</p>",
-        "root_cause": "The use of non-strict functions (like foldl) on large data structures, causing the accumulation of unevaluated expressions in the heap instead of immediate reduction to Weak Head Normal Form (WHNF).",
-        "bad_code": "sumList :: [Int] -> Int\nsumList xs = foldl (\\acc x -> acc + x) 0 xs\n-- This builds a thunk: (((0 + x1) + x2) + x3) ...",
-        "solution_desc": "Replace lazy folds with strict variants (foldl') and utilize 'Bang Patterns' to force evaluation of accumulator arguments at each step, ensuring the heap stores values rather than thunks.",
-        "good_code": "import Data.List (foldl')\n\nsumListStrict :: [Int] -> Int\nsumListStrict xs = foldl' (\\acc x -> acc + x) 0 xs\n-- foldl' forces evaluation of the accumulator at each step.",
-        "verification": "Run the program with GHC's profiling tools: 'ghc -prof -fprof-auto -rtsopts' and analyze the heap profile using '+RTS -hc'.",
         "date": "2026-02-14",
         "id": 1771043297,
-        "type": "error"
+        "path": "data/posts/2026-02/haskell-space-leaks-thunk-accumulation.js"
     },
     {
         "title": "PostgreSQL TXID Wraparound: Rescuing Forced Read-Only DBs",
@@ -2934,15 +2206,9 @@ var postsIndex = [
             "PostgreSQL",
             "Error Fix"
         ],
-        "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (TXID) counter. When this counter reaches approximately 2 billion transactions, the system risks 'wraparound' where old transactions appear to be in the future. To prevent data corruption, PostgreSQL enters a safety-critical forced read-only mode. Once this threshold is crossed, the database will refuse to accept any WRITE commands until a manual intervention cleans up the old transaction IDs through a process called freezing.</p>",
-        "root_cause": "The Autovacuum daemon failed to keep up with the transaction volume, or a long-running transaction/replication slot prevented the 'relfrozenxid' from advancing, leading to counter exhaustion.",
-        "bad_code": "-- Symptom: Database logs show:\n-- ERROR: database is shut down to avoid wraparound failures\n-- HINT: Stop the postmaster and vacuum that database in single-user mode.",
-        "solution_desc": "Shut down the database and restart in single-user mode to run a manual VACUUM FREEZE. Alternatively, if the DB is still responsive, identify the oldest tables and run an aggressive VACUUM specifically on them while increasing autovacuum worker priority.",
-        "good_code": "-- 1. Find oldest tables\nSELECT relname, age(relfrozenxid) FROM pg_class WHERE relkind = 'r' ORDER BY 2 DESC;\n\n-- 2. Force aggressive freezing\nVACUUM FREEZE VERBOSE table_name;",
-        "verification": "Monitor the 'age(relfrozenxid)' for all databases. Ensure it drops significantly below the 'autovacuum_freeze_max_age' setting.",
         "date": "2026-02-14",
         "id": 1771043298,
-        "type": "error"
+        "path": "data/posts/2026-02/postgresql-txid-wraparound-rescue.js"
     },
     {
         "title": "HNSW Recall Drift: Fixing Index Staleness",
@@ -2955,15 +2221,9 @@ var postsIndex = [
             "MachineLearning",
             "Error Fix"
         ],
-        "analysis": "<p>Hierarchical Navigable Small Worlds (HNSW) is a leading algorithm for Approximate Nearest Neighbor (ANN) search. However, in high-throughput environments where vectors are frequently updated or deleted, the graph topology degrades—a phenomenon known as 'Recall Drift'. As nodes are removed, the optimized paths through the multi-layered graph become fragmented, leading to lower search accuracy (recall) despite high query latency.</p>",
-        "root_cause": "Incremental updates and 'soft deletes' in HNSW graphs lead to suboptimal entry points and broken edges, as the graph is not globally re-optimized after individual mutations.",
-        "bad_code": "import hnswlib\n# Repeatedly updating vectors without maintenance\nfor i in range(1000000):\n    index.add_items(new_vector, i)\n    index.mark_deleted(i-100) # Recall drops over time",
-        "solution_desc": "Implement a periodic index rebuild strategy or use 'tombstone' cleanup. In systems like Milvus or Pinecone, this involves triggering a compaction or merging segments. Adjusting 'efSearch' dynamically can temporarily mitigate drift at the cost of latency.",
-        "good_code": "# Solution: Periodic Re-indexing or tuning efConstruction\nindex.init_index(max_elements=N, ef_construction=200, M=16)\n# If recall < threshold, trigger full rebuild into a shadow index\nif current_recall < 0.90:\n    new_index.add_items(all_vectors)\n    swap_indices(index, new_index)",
-        "verification": "Measure recall by comparing HNSW results against a Brute Force (Flat) search baseline using a sample query set.",
         "date": "2026-02-14",
         "id": 1771043299,
-        "type": "error"
+        "path": "data/posts/2026-02/hnsw-recall-drift-vector-search.js"
     },
     {
         "title": "Trend: Awesome OpenClaw Use-cases for Automation",
@@ -2975,15 +2235,9 @@ var postsIndex = [
             "GitHub",
             "TypeScript"
         ],
-        "analysis": "<p>The 'awesome-openclaw-usecases' repository is trending because it provides a community-curated collection of practical implementations for OpenClaw, a powerful open-source framework for web automation and data extraction. As web platforms become more complex with shadow DOMs and heavy SPAs, developers are moving away from simple scrapers toward structured, resilient automation patterns. This repo serves as the 'blueprints' for building sophisticated digital assistants and data miners.</p>",
-        "root_cause": "High-extensibility, pre-configured selectors for popular sites, and seamless integration with containerized headless browsers.",
-        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases && npm install",
-        "solution_desc": "OpenClaw is best used for automated lead generation, monitoring price changes across e-commerce platforms, and automating repetitive UI tasks that lack official APIs. Adopt it when you need a 'human-like' browsing interaction that is easily maintainable via TypeScript.",
-        "good_code": "import { OpenClaw } from 'openclaw-core';\n\nconst scenario = new OpenClaw({\n  target: 'https://example.com',\n  action: async (page) => {\n    await page.click('#login-btn');\n    return await page.extractData('.product-list');\n  }\n});",
-        "verification": "The project is expected to grow as more AI-integrated extraction templates are added, potentially becoming the standard library for open-source RPA (Robotic Process Automation).",
         "date": "2026-02-14",
         "id": 1771043300,
-        "type": "trend"
+        "path": "data/posts/2026-02/awesome-openclaw-usecases-guide.js"
     },
     {
         "title": "C++20 Coroutines: Solving the Dangling Promise Trap",
@@ -2996,15 +2250,9 @@ var postsIndex = [
             "C++20",
             "Error Fix"
         ],
-        "analysis": "<p>C++20 coroutines introduce a complex relationship between the coroutine frame, the promise object, and the returned handle. A 'Dangling Promise' occurs when a coroutine is suspended, but the object managing the coroutine's lifetime (like a Task or Future wrapper) is destroyed before the coroutine resumes or completes.</p><p>Unlike high-level languages, C++ does not provide automatic garbage collection for coroutine frames. If the caller drops the handle while the coroutine is awaiting an external event, the promise object may be deallocated, leading to Use-After-Free (UAF) when the execution eventually resumes.</p>",
-        "root_cause": "The coroutine handle is stored in a temporary object that goes out of scope while the coroutine is suspended at an 'initial_suspend' or 'yield' point, causing the underlying promise to be destroyed.",
-        "bad_code": "Task<int> get_data() {\n    auto result = co_await fetch_remote();\n    co_return result;\n}\n\n// Caller usage\nvoid fire_and_forget() {\n    get_data(); // Temporary Task object destroyed immediately!\n}",
-        "solution_desc": "Implement a proper RAII wrapper that manages the coroutine_handle. Ensure that the coroutine's 'initial_suspend' returns 'std::suspend_always' and that the lifecycle of the Task object is tied to the completion of the coroutine via a reference-counted handle or by awaiting it properly.",
-        "good_code": "template<typename T>\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{handle_type::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ... handle result ...\n    };\n    using handle_type = std::coroutine_handle<promise_type>;\n    handle_type h_;\n    ~Task() { if(h_) h_.destroy(); }\n};\n\n// Correct usage\nauto my_task = get_data(); \n// Now 'my_task' holds the handle alive.",
-        "verification": "Compile with AddressSanitizer (-fsanitize=address). The fix will show 0 memory leaks or UAF errors when the caller scope exits.",
         "date": "2026-02-14",
         "id": 1771031661,
-        "type": "error"
+        "path": "data/posts/2026-02/cpp20-coroutines-dangling-promise-fix.js"
     },
     {
         "title": "Spark Data Skew: Fixing Salted Key Shuffle OOM",
@@ -3017,15 +2265,9 @@ var postsIndex = [
             "Spark",
             "Error Fix"
         ],
-        "analysis": "<p>In distributed processing, data skew occurs when a small number of keys contain the vast majority of the data. During a Join or GroupBy operation, Spark hashes keys to determine their destination partition. If one key (e.g., 'null' or a generic category) is massive, a single executor will be overwhelmed with data, leading to a Shuffle OOM.</p><p>The Salted Key technique redistributes this concentrated data by appending a random suffix to the skewed key, breaking the single large partition into multiple smaller ones.</p>",
-        "root_cause": "Uneven distribution of records across partitions causing a single JVM executor to exceed its heap memory limit during the shuffle phase.",
-        "bad_code": "val df1 = spark.table(\"large_sales\") // Skewed on 'store_id'\nval df2 = spark.table(\"stores\")\n\n// This join fails if store_id '101' has 50% of all rows\nval joined = df1.join(df2, \"store_id\")",
-        "solution_desc": "Apply 'salting' to the skewed key in the large table by adding a random integer. In the small table (dimension table), explode the records so each original key matches every possible salt value, ensuring the join can still complete.",
-        "good_code": "val saltNum = 10\nval df1Salted = df1.withColumn(\"salt\", (rand * saltNum).cast(\"int\"))\n    .withColumn(\"join_key\", concat($\"store_id\", lit(\"_\"), $\"salt\"))\n\nval df2Exploded = df2.withColumn(\"salt\", explode(array((0 until saltNum).map(lit): _*)))\n    .withColumn(\"join_key\", concat($\"store_id\", lit(\"_\"), $\"salt\"))\n\nval result = df1Salted.join(df2Exploded, \"join_key\")",
-        "verification": "Monitor the Spark UI. Look for 'Max' vs 'Median' task duration in the 'Stages' tab. Salted joins should show uniform task times across all executors.",
         "date": "2026-02-14",
         "id": 1771031662,
-        "type": "error"
+        "path": "data/posts/2026-02/spark-data-skew-salted-key-oom.js"
     },
     {
         "title": "Redis Replication: Fixing Client Buffer Eviction Loops",
@@ -3038,15 +2280,9 @@ var postsIndex = [
             "AWS",
             "Error Fix"
         ],
-        "analysis": "<p>Redis Master-Slave replication involves a synchronization phase where the Master sends a bulk RDB file followed by a stream of write commands stored in the replication buffer. If the Master receives high write volume during this sync, the replication buffer (a subset of the Client Output Buffer) can exceed its hard limit.</p><p>When this happens, Redis terminates the connection to the slave. The slave reconnects, triggers a full resync, and the cycle repeats indefinitely, consuming CPU and IO while never completing the sync.</p>",
-        "root_cause": "The 'client-output-buffer-limit slave' threshold is too low to accommodate the 'write delta' accumulated during the initial RDB transfer.",
-        "bad_code": "# Default settings often too small for high-throughput\nclient-output-buffer-limit slave 256mb 64mb 60",
-        "solution_desc": "Increase the 'client-output-buffer-limit slave' settings. Adjust the hard limit (immediate disconnect) and soft limit (disconnect after N seconds) to account for your maximum expected write throughput during the time it takes to transfer an RDB file.",
-        "good_code": "# Increase hard limit to 1GB and soft limit to 512MB for 120s\nCONFIG SET client-output-buffer-limit \"slave 1024mb 512mb 120\"\n\n# Also check repl-backlog-size for partial resyncs\nCONFIG SET repl-backlog-size 256mb",
-        "verification": "Check Redis logs for 'Client id=... scheduled to be closed ASAP for overcoming of output buffer limits'. If the message disappears and 'synchronized with master' appears, the fix is successful.",
         "date": "2026-02-14",
         "id": 1771031663,
-        "type": "error"
+        "path": "data/posts/2026-02/redis-replication-buffer-eviction-fix.js"
     },
     {
         "title": "Exploring Awesome-OpenClaw: Modernizing Retro Logic",
@@ -3058,15 +2294,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>OpenClaw is an open-source reimplementation of the classic 1997 platformer 'Captain Claw'. The 'hesamsheikh/awesome-openclaw-usecases' repository is trending because it acts as a centralized knowledge base for the engine's new scripting capabilities. As retro-gaming enthusiasts move away from closed binaries, OpenClaw provides a cross-platform (C++/SDL2) alternative.</p><p>The popularity stems from the community's desire to extend the original game with HD resolutions, custom levels, and modern scripting logic that was impossible in the original 90s engine. It bridges the gap between nostalgia and modern software extensibility.</p>",
-        "root_cause": "Extensible Level Logic, Modern Resolution Support, Cross-Platform Compatibility, and Lua Scripting Integration.",
-        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases",
-        "solution_desc": "This repository is best used for developers looking to implement custom game mechanics (like new enemy AI or physics interactions) within the OpenClaw engine. It serves as a blueprint for modders and game preservationists.",
-        "good_code": "-- Example Use Case: Custom Logic for a Jump Pad\nfunction OnTouch(player)\n    if player:GetVelocityY() > 0 then\n        player:SetVelocityY(-800)\n        PlaySound(\"STRENGTH_UP\")\n    end\nend",
-        "verification": "As the project matures, expect integration with more advanced rendering backends (Vulkan) and a surge in community-created 'Total Conversion' mods.",
         "date": "2026-02-14",
         "id": 1771031664,
-        "type": "trend"
+        "path": "data/posts/2026-02/awesome-openclaw-usecases-trend.js"
     },
     {
         "title": "eBPF Verifier: Navigating the 1-Million Instruction Limit",
@@ -3079,15 +2309,9 @@ var postsIndex = [
             "Infra",
             "Error Fix"
         ],
-        "analysis": "<p>The eBPF verifier is a sophisticated static analyzer that ensures BPF programs are safe to run in the kernel. However, it operates on a 'complexity' budget. For every branch in your code, the verifier must explore the state. While modern kernels have increased the limit to 1 million processed instructions, complex logic—especially loops and heavy unrolling—can quickly exceed this threshold, causing the loader to fail with 'program too complex'.</p>",
-        "root_cause": "The verifier performs a depth-first search of all possible execution paths. Large programs with many conditional branches or unrolled loops create a state explosion where the total number of instructions 'verified' exceeds 1,000,000, even if the actual binary is small.",
-        "bad_code": "#define LOOP_SIZE 512\n\nSEC(\"socket\")\nint handle_packet(struct __sk_buff *skb) {\n    // Unrolling a large loop causes the verifier to track state for every iteration\n    #pragma clang loop unroll(full)\n    for (int i = 0; i < LOOP_SIZE; i++) {\n        // Complex logic inside a branch\n        if (data_end > data + i) {\n            process_byte(data[i]);\n        }\n    }\n    return 1;\n}",
-        "solution_desc": "Break the program into smaller, sub-verifiable units using BPF-to-BPF function calls (__noinline). This forces the verifier to analyze the function once in isolation rather than unrolling its state into the main program's path. Alternatively, use tail calls to transition to a new program context, resetting the instruction count.",
-        "good_code": "__noinline\nstatic int process_data(struct __sk_buff *skb, int offset) {\n    // Isolated logic for the verifier\n    return 0;\n}\n\nSEC(\"socket\")\nint handle_packet(struct __sk_buff *skb) {\n    for (int i = 0; i < 10; i++) {\n        process_data(skb, i);\n    }\n    return 1;\n}",
-        "verification": "Use 'bpftool prog load' and check if the verifier log shows successful completion without 'processed XXX instructions, stack depth YYY' errors.",
         "date": "2026-02-13",
         "id": 1770975346,
-        "type": "error"
+        "path": "data/posts/2026-02/ebpf-verifier-instruction-limit-fix.js"
     },
     {
         "title": "Fixing PyTorch CUDA Memory Fragmentation OOM",
@@ -3100,15 +2324,9 @@ var postsIndex = [
             "AI",
             "Error Fix"
         ],
-        "analysis": "<p>CUDA Out-of-Memory (OOM) errors in PyTorch often occur even when 'nvidia-smi' shows significant free memory. This is usually due to fragmentation within PyTorch's caching allocator. When the allocator cannot find a contiguous block of memory large enough for a new tensor, it triggers an OOM, despite the sum of small free holes being sufficient.</p>",
-        "root_cause": "The PyTorch allocator keeps blocks of memory in a cache to avoid expensive CUDA malloc calls. Over time, frequent allocations and deletions of varying sizes create 'holes'. If the largest contiguous hole is smaller than the requested size, the allocation fails.",
-        "bad_code": "import torch\n\n# Repeatedly creating and deleting tensors of varying sizes\nfor i in range(1000):\n    x = torch.randn(1024, 1024, device='cuda')\n    y = torch.randn(i % 500 + 1, 1024, device='cuda')\n    del x, y # Small holes are left behind",
-        "solution_desc": "Use the environment variable 'PYTORCH_CUDA_ALLOC_CONF' to set 'max_split_size_mb'. This prevents the allocator from creating large blocks that cannot be split, effectively reducing the size of potential fragments. Additionally, periodic calls to torch.cuda.empty_cache() can help defragment, though it comes with a performance penalty.",
-        "good_code": "import os\n# Set before importing torch or running script\nos.environ[\"PYTORCH_CUDA_ALLOC_CONF\"] = \"max_split_size_mb:128\"\n\nimport torch\n# Clear cache manually if fragmentation is detected\ntorch.cuda.empty_cache()",
-        "verification": "Run 'torch.cuda.memory_summary()' to inspect the 'segment_size' vs 'active_size' and ensure the 'max_split_size_mb' is effectively reducing large block retention.",
         "date": "2026-02-13",
         "id": 1770975347,
-        "type": "error"
+        "path": "data/posts/2026-02/pytorch-cuda-fragmentation-oom-fix.js"
     },
     {
         "title": "Solving Elixir GenServer Mailbox Congestion",
@@ -3121,15 +2339,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In Elixir/Erlang, 'selective receive' occurs when you use a receive block that only matches specific patterns while ignoring others. If a process receives a high volume of messages that don't match the current receive pattern, those messages accumulate in the process mailbox. Every subsequent receive call must scan through these ignored messages, leading to O(N) complexity per scan and eventual process exhaustion.</p>",
-        "root_cause": "The BEAM virtual machine scans the mailbox from oldest to newest. If the first message doesn't match the pattern, it's skipped and the next is checked. If thousands of messages are skipped, CPU usage spikes and the process becomes unresponsive.",
-        "bad_code": "def loop(state) do\n  receive do\n    {:priority, msg} -> \n       handle_priority(msg)\n       loop(state)\n    # If other messages arrive, they stay in the mailbox\n    # and are scanned every time we look for :priority\n  end\nend",
-        "solution_desc": "Avoid manual 'receive' blocks inside GenServers. Instead, rely on the GenServer's native 'handle_info/2' callbacks. GenServers are designed to consume the mailbox sequentially. If you need priority, implement a separate priority queue structure or use multiple processes to isolate different message types.",
-        "good_code": "def handle_info({:priority, msg}, state) do\n  handle_priority(msg)\n  {:noreply, state}\nend\n\ndef handle_info(_other, state) do\n  # Always match and discard or handle unknown messages\n  {:noreply, state}\nend",
-        "verification": "Check 'Process.info(pid, :message_queue_len)' in the observer or IEx shell to ensure the mailbox is not growing indefinitely.",
         "date": "2026-02-13",
         "id": 1770975348,
-        "type": "error"
+        "path": "data/posts/2026-02/elixir-selective-receive-mailbox-fix.js"
     },
     {
         "title": "OpenClaw: Revolutionizing Automated Web Workflows",
@@ -3141,15 +2353,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>The 'hesamsheikh/awesome-openclaw-usecases' repository is trending as it provides a community-driven collection of practical applications for OpenClaw. OpenClaw is an emerging framework designed to simplify web automation by combining LLMs with headless browser drivers. It effectively solves the 'brittle selector' problem by allowing agents to understand web elements semantically rather than relying on hardcoded XPaths.</p>",
-        "root_cause": "OpenClaw features include self-healing automation scripts, natural language browsing commands, and the ability to handle complex multi-step web interactions (like solving captchas or navigating dynamic SPAs) that traditional tools like Selenium struggle with.",
-        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install openclaw",
-        "solution_desc": "OpenClaw is best adopted for data scraping from dynamic websites, automated regression testing of UI components, and building AI agents that can perform tasks like 'Book a flight on site X'. Use the examples in the 'awesome' repo to jumpstart your implementation.",
-        "good_code": "from openclaw import ClawAgent\n\nagent = ClawAgent(api_key=\"YOUR_LLM_KEY\")\nagent.browse(\"https://example.com\")\nagent.do(\"Extract all product prices and save to CSV\")",
-        "verification": "The project is expected to grow as more developers integrate local LLMs (like Llama 3) to reduce the cost of autonomous web agents.",
         "date": "2026-02-13",
         "id": 1770975349,
-        "type": "trend"
+        "path": "data/posts/2026-02/openclaw-trending-github-repository.js"
     },
     {
         "title": "Rust Async Cancellation: Preventing Resource Leaks",
@@ -3162,15 +2368,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>In Rust's async ecosystem, futures can be dropped at any <code>.await</code> point, often due to a <code>tokio::select!</code> branch finishing first or a timeout triggering. If your code assumes that execution will always reach the line after an await, you risk leaving resources in an inconsistent state or leaking memory. This is particularly dangerous when manually managing state outside of RAII guards.</p>",
-        "root_cause": "The runtime drops the Future object, causing its stack-allocated variables to be dropped immediately, which may bypass manual cleanup logic that was expected to run after the await point.",
-        "bad_code": "async fn process_data(mutex: Arc<Mutex<State>>) {\n    let mut state = mutex.lock().await;\n    state.busy = true;\n    // If cancelled here, 'busy' remains true forever\n    do_io().await;\n    state.busy = false;\n}",
-        "solution_desc": "Utilize RAII (Resource Acquisition Is Initialization) by creating a guard object that implements the Drop trait to ensure cleanup happens regardless of how the future terminates.",
-        "good_code": "struct StateGuard<'a>(&'a Mutex<State>);\nimpl Drop for StateGuard<'_> {\n    fn drop(&mut self) { self.0.lock_blocking().busy = false; }\n}\n\nasync fn process_fixed(mutex: Arc<Mutex<State>>) {\n    let mut state = mutex.lock().await;\n    state.busy = true;\n    let _guard = StateGuard(&mutex);\n    do_io().await;\n    // _guard handles cleanup on success or cancellation\n}",
-        "verification": "Use 'tokio-test' to wrap the future in a timeout and assert the state of the resource after the timeout occurs.",
         "date": "2026-02-13",
         "id": 1770965368,
-        "type": "error"
+        "path": "data/posts/2026-02/rust-async-cancellation-resource-leaks.js"
     },
     {
         "title": "Fixing Kafka Poison Pill Consumer Rebalancing",
@@ -3183,15 +2383,9 @@ var postsIndex = [
             "Backend",
             "Error Fix"
         ],
-        "analysis": "<p>A 'Poison Pill' is a record that fails consistently during processing. In Kafka, if a message causes the consumer to hang or crash repeatedly, the consumer fails to send heartbeats or exceeds <code>max.poll.interval.ms</code>. This triggers a group rebalance, shifting the problematic record to another consumer, which then also crashes, leading to a 'rebalance storm' that halts the entire pipeline.</p>",
-        "root_cause": "The consumer processing logic lacks an isolated error boundary or a Dead Letter Queue (DLQ) mechanism, causing processing time to exceed the maximum allowed poll interval.",
-        "bad_code": "while (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // If this throws an unhandled exception or hangs,\n        // the whole group rebalances.\n        processHeavyLogic(record.value());\n    }\n}",
-        "solution_desc": "Implement a try-catch block within the loop to catch exceptions, send failed records to a Dead Letter Topic (DLT), and commit the offset to move forward.",
-        "good_code": "for (ConsumerRecord<String, String> record : records) {\n    try {\n        processHeavyLogic(record.value());\n    } catch (Exception e) {\n        sendToDeadLetterQueue(record);\n        consumer.commitSync(Collections.singletonMap(partition, new OffsetAndMetadata(record.offset() + 1)));\n    }\n}",
-        "verification": "Produce a malformed message to the topic and observe if the consumer group remains 'STABLE' while the message moves to the DLT.",
         "date": "2026-02-13",
         "id": 1770965369,
-        "type": "error"
+        "path": "data/posts/2026-02/kafka-poison-pill-rebalance-fix.js"
     },
     {
         "title": "WebGPU Alignment: Fixing Uniform Buffer Padding",
@@ -3204,15 +2398,9 @@ var postsIndex = [
             "Frontend",
             "Error Fix"
         ],
-        "analysis": "<p>WebGPU follows the WGSL <code>std140</code> and <code>std430</code> layout rules for uniform and storage buffers. A common trap occurs when developers pass a flat <code>Float32Array</code> from JavaScript that doesn't account for the 16-byte alignment required for vectors like <code>vec3</code> or <code>vec4</code>. This results in the GPU reading garbage data or shifted values from the buffer.</p>",
-        "root_cause": "The memory layout in JavaScript (densely packed) does not match the GPU's requirement where certain types must start at offsets that are multiples of 16 bytes.",
-        "bad_code": "const bufferData = new Float32Array([\n    1.0, 0.0, 0.0, // position (vec3)\n    1.0,           // scale (f32) - Mistakenly packed right after\n]);\n// GPU expects vec3 to occupy 16 bytes, not 12.",
-        "solution_desc": "Manually pad the data structure in JavaScript to ensure every vec3 is followed by 4 bytes of padding, or use a 16-byte stride for all elements in the uniform block.",
-        "good_code": "const bufferData = new Float32Array([\n    1.0, 0.0, 0.0, 0.0, // position (vec3) + 4 bytes padding\n    1.0, 0.0, 0.0, 0.0  // scale (f32) + 12 bytes padding\n]);\n// Total 32 bytes, matching WGSL std140 layout requirements.",
-        "verification": "Use a GPU debugger like Spector.js or Chrome's WebGPU Inspector to verify the buffer contents match the expected struct layout.",
         "date": "2026-02-13",
         "id": 1770965370,
-        "type": "error"
+        "path": "data/posts/2026-02/webgpu-alignment-uniform-buffer-fix.js"
     },
     {
         "title": "OpenClaw Use Cases: Automating Life with AI",
@@ -3224,15 +2412,9 @@ var postsIndex = [
             "GitHub",
             "Python"
         ],
-        "analysis": "<p>The 'awesome-openclaw-usecases' repository is trending because it provides a practical bridge between Large Language Models (LLMs) and real-world automation. As developers move from 'chatting' with AI to 'acting' with AI, OpenClaw offers a standardized way to define agentic workflows. Its popularity stems from the community-driven collection of scripts that automate repetitive tasks like email sorting, web research, and system maintenance.</p>",
-        "root_cause": "Modular Agent Architecture, Multi-LLM Support, and Extensible Action Plugins.",
-        "bad_code": "git clone https://github.com/hesamsheikh/awesome-openclaw-usecases.git\ncd awesome-openclaw-usecases\npip install -r requirements.txt",
-        "solution_desc": "Ideal for developers building personal assistants, automated DevOps pipelines, or researchers needing to orchestrate complex tool-use sequences without writing boilerplate glue code.",
-        "good_code": "from openclaw import Agent\n\n# Define a use case for automated news summarization\nagent = Agent(role=\"Researcher\")\nagent.add_tool(\"web_search\")\n\nagent.run(\"Find the top 3 news about Rust 1.75 and email them to me.\")",
-        "verification": "Expect a surge in 'Agentic Workflow' implementations and tighter integration with local LLM runners like Ollama.",
         "date": "2026-02-13",
         "id": 1770965371,
-        "type": "trend"
+        "path": "data/posts/2026-02/openclaw-usecases-trending-repo.js"
     },
     {
         "id": 1770859934,
