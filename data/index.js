@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771839888,
+        "title": "Resolving Rust Async Pinning Violations",
+        "slug": "resolving-rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/resolving-rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771839889,
+        "title": "Preventing Kafka Consumer Rebalance Storms",
+        "slug": "preventing-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/preventing-kafka-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771839890,
+        "title": "Fixing WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-race-conditions",
+        "language": "TypeScript",
+        "code": "BufferMappingError",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/webgpu-buffer-mapping-race-conditions.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771839891,
+        "title": "Analyzing OpenPlanter: The Future of Smart Indoor Gardening",
+        "slug": "analyze-openplanter-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/analyze-openplanter-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1771829744,
         "title": "Resolving Zig Comptime Stack Overflows in Recursion",
         "slug": "zig-comptime-stack-overflow-recursion",
