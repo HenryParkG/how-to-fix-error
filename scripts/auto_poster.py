@@ -49,6 +49,7 @@ def get_github_trending():
 # Priority list of models to try (Latest -> Older)
 # Priority list of models to try (Latest -> Older)
 MODELS_TO_TRY = [
+    "gemini-flash-latest",
     "gemini-3.1-pro-preview",
     "gemini-2.5-flash",
     "gemini-2.5-pro",
