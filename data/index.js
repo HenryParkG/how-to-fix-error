@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771829744,
+        "title": "Resolving Zig Comptime Stack Overflows in Recursion",
+        "slug": "zig-comptime-stack-overflow-recursion",
+        "language": "Zig",
+        "code": "StackOverflowError",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/zig-comptime-stack-overflow-recursion.js",
+        "tags": [
+            "Zig",
+            "Metaprogramming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771829745,
+        "title": "Fixing Spark Driver OOM from RDD Lineage Growth",
+        "slug": "spark-rdd-lineage-driver-oom",
+        "language": "Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/spark-rdd-lineage-driver-oom.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771829746,
+        "title": "Preventing PostgreSQL TXID Wraparound in Multi-Tenant DBs",
+        "slug": "postgresql-txid-wraparound-prevention",
+        "language": "SQL",
+        "code": "WraparoundWarning",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/postgresql-txid-wraparound-prevention.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771829747,
+        "title": "OpenPlanter: The Open Source Smart Gardening Revolution",
+        "slug": "shinmegamiboson-openplanter-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-02-23",
+        "path": "data/posts/2026-02/shinmegamiboson-openplanter-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1771822400,
         "title": "Resolving Elixir GenServer Mailbox Congestion",
         "slug": "elixir-genserver-mailbox-congestion",
