@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Haskell Space Leaks in Stream Processing",
+    "title": "Resolving Haskell Space Leaks in High-Throughput Pipelines",
     "slug": "haskell-lazy-evaluation-space-leaks",
-    "language": "Rust",
-    "code": "HeapOverflow",
+    "language": "Haskell",
+    "code": "SpaceLeak (OOM)",
     "tags": [
-        "Rust",
+        "Haskell",
         "Backend",
         "Performance",
         "Error Fix"
     ],
-    "analysis": "<p>In high-throughput Haskell stream processing, lazy evaluation often becomes a double-edged sword. While it allows for modularity and infinite streams, it can lead to 'thunk' accumulation. A thunk is a deferred computation that resides in the heap until its value is explicitly required. In a streaming context, if a cumulative state (like a counter or a sum) is updated lazily, the program stores the formula for the update rather than the result, eventually exhausting available memory and causing a crash.</p>",
-    "root_cause": "The use of lazy accumulators (like foldl) in recursive stream processing which creates long chains of unevaluated expressions (thunks) in the heap.",
-    "bad_code": "import Data.List (foldl)\n\n-- Processing a high-throughput stream of integers\nprocessStream :: [Int] -> Int\nprocessStream = foldl (+) 0",
-    "solution_desc": "Replace lazy folds with strict versions (foldl') and ensure that data structures used for state are 'strict' in their fields. Use the BangPatterns extension to force evaluation at specific points.",
-    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\n-- foldl' forces evaluation of the accumulator at each step\nprocessStrictStream :: [Int] -> Int\nprocessStrictStream = foldl' (+) 0",
-    "verification": "Compile with GHC profiling enabled (-prof -auto-all) and run with +RTS -hc to generate a heap profile graph, ensuring a flat memory line.",
-    "date": "2026-02-18",
-    "id": 1771407583,
+    "analysis": "<p>Haskell's default lazy evaluation strategy can be a double-edged sword. In high-throughput data pipelines, expressions are not evaluated until their results are strictly required. This creates 'thunks'\u2014unevaluated pointers in memory. When processing millions of events, these thunks accumulate rapidly, consuming the entire heap before the garbage collector can reclaim them, leading to a space leak.</p>",
+    "root_cause": "The use of non-strict folds (like foldl) on large streams, causing an accumulation of unevaluated arithmetic thunks in the heap.",
+    "bad_code": "processData :: [Int] -> Int\nprocessData xs = foldl (+) 0 xs -- This builds a massive thunk: (((0 + 1) + 2) + ...)",
+    "solution_desc": "Switch to strict evaluation using the prime version of the folding function (foldl') and utilize the BangPatterns language extension to force evaluation of accumulator variables at each step.",
+    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessDataStrict :: [Int] -> Int\nprocessDataStrict xs = foldl' (\\ !acc x -> acc + x) 0 xs",
+    "verification": "Run the application with RTS options `-g1 -N` and use `hp2ps` to generate a heap profile. Ensure the heap usage remains constant (flat line) during processing.",
+    "date": "2026-02-23",
+    "id": 1771811128,
     "type": "error"
 });
