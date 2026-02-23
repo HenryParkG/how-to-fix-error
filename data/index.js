@@ -1,5 +1,88 @@
 var postsIndex = [
     {
+        "title": "Mitigating NCCL Collective Timeouts in LLM Training",
+        "slug": "mitigate-nccl-timeout-llm-training",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "tags": [
+            "Python",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ],
+        "analysis": "<p>In distributed multi-node LLM training, NCCL (NVIDIA Collective Communications Library) timeouts often manifest as cryptic 'Watchdog' errors or hung processes during the <code>all_reduce</code> phase. These failures are typically triggered by network jitter, inconsistent GPU clock speeds across nodes, or CPU-side bottlenecks that prevent timely participation in collective operations. When one node lags, the entire ring waits, eventually exceeding the default 30-minute timeout window.</p>",
+        "root_cause": "The root cause is usually a combination of 'NCCL_SOCKET_IFNAME' misconfiguration causing traffic to route over slow interfaces, and the lack of 'NCCL_ASYNC_ERROR_HANDLING' causing the training loop to hang indefinitely rather than failing fast and recovering.",
+        "bad_code": "import torch.distributed as dist\n\n# Basic initialization without error handling or timeout tuning\ndist.init_process_group(\n    backend='nccl',\n    init_method='env://',\n    world_size=64,\n    rank=my_rank\n)",
+        "solution_desc": "Set NCCL-specific environment variables to force the correct network interface and enable asynchronous error handling. Additionally, provide an explicit, shorter timeout duration and implement a robust initialization check to ensure all nodes are reachable before starting the compute-heavy loop.",
+        "good_code": "import os\nimport datetime\nimport torch.distributed as dist\n\n# Force high-speed interface (e.g., Infiniband or 100G Eth)\nos.environ['NCCL_SOCKET_IFNAME'] = 'eth0'\nos.environ['NCCL_ASYNC_ERROR_HANDLING'] = '1'\nos.environ['NCCL_IB_DISABLE'] = '0'  # Enable IB if available\n\ndist.init_process_group(\n    backend='nccl',\n    timeout=datetime.timedelta(seconds=1800),\n    init_method='env://',\n    world_size=64,\n    rank=my_rank\n)",
+        "verification": "Run the training script with 'NCCL_DEBUG=INFO' and verify that 'ncclNet' logs show the correct interface and that 'all_reduce' operations complete within the expected latency profile.",
+        "date": "2026-02-23",
+        "id": 1771809436,
+        "type": "error"
+    },
+    {
+        "title": "Resolving Silent K8s OOMKills in cgroup v2",
+        "slug": "k8s-silent-oomkill-cgroup-v2",
+        "language": "Kubernetes",
+        "code": "OOM_KILL_V2",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ],
+        "analysis": "<p>With the industry shift to cgroup v2, Kubernetes users have reported 'silent' OOMKills where pods disappear without the standard Exit Code 137 in the main container logs. This occurs because cgroup v2 manages memory pressure via <code>memory.max</code> and <code>memory.high</code> differently than v1's <code>memory.limit_in_bytes</code>. The discrepancy often results in the kernel killing a process within a sub-container or a sidecar without triggering the Kubelet's top-level event recorder accurately.</p>",
+        "root_cause": "The kernel's OOM killer in cgroup v2 may target processes based on 'Pressure Stall Information' (PSI) before the Kubelet realizes the limit has been breached, leading to a race condition where the pod is terminated before the reason is logged to the API server.",
+        "bad_code": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: memory-hog\nspec:\n  containers:\n  - name: app\n    image: app:latest\n    resources:\n      limits:\n        memory: \"2Gi\" # No memory reservation or swap tuning",
+        "solution_desc": "Implement 'MemoryQoS' feature gates in Kubernetes to leverage cgroup v2's 'memory.min' and 'memory.low' for better protection. Also, ensure the node's Kubelet configuration includes 'memoryThrottlingFactor' and monitor 'memory.events' within the cgroup filesystem to catch 'oom_kill' counts that don't reach the K8s event bus.",
+        "good_code": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: memory-hog-fixed\nspec:\n  containers:\n  - name: app\n    image: app:latest\n    resources:\n      requests:\n        memory: \"1.5Gi\"\n      limits:\n        memory: \"2Gi\"\n  # Ensure Kubelet is configured with --feature-gates=\"MemoryQoS=true\"",
+        "verification": "Check '/sys/fs/cgroup/memory.events' inside the container. If 'oom_kill' is non-zero but K8s reports 'Completed', the cgroup v2 discrepancy is confirmed and mitigated by setting requests closer to limits.",
+        "date": "2026-02-23",
+        "id": 1771809437,
+        "type": "error"
+    },
+    {
+        "title": "Fixing C++20 Coroutine Frame Leaks",
+        "slug": "cpp20-coroutine-frame-leak-fix",
+        "language": "C++",
+        "code": "CORO_LEAK",
+        "tags": [
+            "Go",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ],
+        "analysis": "<p>In high-throughput networking applications, C++20 coroutines are used to manage thousands of concurrent sockets. However, a common pitfall is the 'leaked coroutine frame.' Unlike traditional functions, coroutines allocate a frame on the heap. If the <code>promise_type</code> does not correctly handle <code>final_suspend</code> or if the <code>coroutine_handle</code> is never destroyed by the caller after completion, the memory associated with the coroutine state is never reclaimed.</p>",
+        "root_cause": "The failure occurs when the 'final_suspend' method returns 'std::suspend_always' but the calling event loop fails to call 'handle.destroy()', or when an exception escapes the coroutine body without reaching the promise's 'unhandled_exception' logic.",
+        "bad_code": "struct Task {\n    struct promise_type {\n        std::suspend_always final_suspend() noexcept { return {}; }\n        // ... other methods\n    };\n    std::coroutine_handle<promise_type> handle;\n    ~Task() { } // Handle is leaked!\n};",
+        "solution_desc": "Implement a RAII (Resource Acquisition Is Initialization) wrapper for the <code>coroutine_handle</code>. Ensure the destructor calls <code>.destroy()</code> if the handle is valid. Furthermore, the <code>final_suspend</code> should return <code>std::suspend_always</code> to allow the caller to clean up, or the wrapper must be designed to relinquish ownership correctly.",
+        "good_code": "struct Task {\n    struct promise_type { /* ... */ };\n    std::coroutine_handle<promise_type> handle;\n    \n    ~Task() {\n        if (handle) handle.destroy();\n    }\n    Task(Task&& other) : handle(other.handle) { other.handle = nullptr; }\n    // Disable copying to prevent double-destroy\n    Task(const Task&) = delete;\n};",
+        "verification": "Use Valgrind or AddressSanitizer (ASAN) to monitor heap allocations. Run a loop creating 1,000,000 coroutines; memory usage should remain flat if frames are correctly destroyed.",
+        "date": "2026-02-23",
+        "id": 1771809438,
+        "type": "error"
+    },
+    {
+        "title": "OpenPlanter: The Future of Automated IoT Agriculture",
+        "slug": "openplanter-iot-agriculture-trend",
+        "language": "Python",
+        "code": "Trend",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ],
+        "analysis": "<p>OpenPlanter is rapidly gaining traction in the GitHub community as a premier open-source hardware and software stack for automated precision agriculture. It leverages Python-based edge logic to manage soil moisture, nutrient delivery, and lighting cycles. Its popularity stems from the intersection of 'Right to Repair' and 'Smart Farming,' allowing hobbyists and small-scale farmers to bypass expensive, proprietary agricultural tech silos with a modular, DIY approach.</p>",
+        "root_cause": "Key Features & Innovations: 1. Modular Driver System for various NPK sensors. 2. Real-time monitoring via a FastAPI-based dashboard. 3. Edge-first processing reducing reliance on cloud latency. 4. Integrated CAD files for 3D-printable structural components.",
+        "bad_code": "git clone https://github.com/ShinMegamiBoson/OpenPlanter.git\ncd OpenPlanter\npip install -r requirements.txt\npython main.py --simulate",
+        "solution_desc": "Best Use Cases: Small-scale greenhouses, urban indoor farming, and educational IoT projects. Adopt when you need a customizable automation layer that integrates with standard Home Assistant setups via MQTT.",
+        "good_code": "from openplanter.sensors import MoistureSensor\nfrom openplanter.actuators import Pump\n\n# Quick logic to automate watering\nif MoistureSensor('soil_1').read() < 30:\n    Pump('main_valve').activate(duration=5)\n    print(\"Watering cycle initiated via OpenPlanter.\")",
+        "verification": "The project is expanding into AI-driven crop yield prediction. Expect future releases to integrate computer vision for pest detection using lightweight TensorFlow models on Raspberry Pi.",
+        "date": "2026-02-23",
+        "id": 1771809439,
+        "type": "trend"
+    },
+    {
         "title": "Fixing eBPF Verifier State Explosion in Complex XDP Programs",
         "slug": "fixing-ebpf-verifier-state-explosion-xdp",
         "language": "C / eBPF",
