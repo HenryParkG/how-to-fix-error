@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771908463,
+        "title": "Fixing C++20 Coroutine Leaks in Custom Schedulers",
+        "slug": "cpp20-coroutine-memory-leaks-scheduler",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/cpp20-coroutine-memory-leaks-scheduler.js",
+        "tags": [
+            "Rust",
+            "Multithreading",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771908464,
+        "title": "Fixing CUDA Illegal Memory Access in Quantized LLMs",
+        "slug": "cuda-illegal-memory-access-llm",
+        "language": "CUDA",
+        "code": "IllegalAccess",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/cuda-illegal-memory-access-llm.js",
+        "tags": [
+            "Python",
+            "AI",
+            "GPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771908465,
+        "title": "Fixing Haskell Thunk-Induced Space Leaks in Streams",
+        "slug": "haskell-thunk-space-leaks-streams",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/haskell-thunk-space-leaks-streams.js",
+        "tags": [
+            "Go",
+            "Functional",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771908466,
+        "title": "OpenPlanter: The Future of Open-Source Smart Farming",
+        "slug": "openplanter-iot-agtech-analysis",
+        "language": "Python/TypeScript",
+        "code": "Trend",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/openplanter-iot-agtech-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1771895740,
         "title": "Resolving eBPF Verifier Rejections in Complex Loops",
         "slug": "ebpf-verifier-loop-unrolling-fix",
