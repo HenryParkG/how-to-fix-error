@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771895740,
+        "title": "Resolving eBPF Verifier Rejections in Complex Loops",
+        "slug": "ebpf-verifier-loop-unrolling-fix",
+        "language": "Rust",
+        "code": "VerifierError",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/ebpf-verifier-loop-unrolling-fix.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771895741,
+        "title": "Fixing gRPC Head-of-Line Blocking in HTTP/2 Streams",
+        "slug": "grpc-http2-hol-blocking-fix",
+        "language": "Go",
+        "code": "LatencySpike",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/grpc-http2-hol-blocking-fix.js",
+        "tags": [
+            "gRPC",
+            "Network",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771895742,
+        "title": "Mitigating MongoDB WiredTiger Write Stalls",
+        "slug": "mongodb-wiredtiger-checkpoint-stalls",
+        "language": "SQL",
+        "code": "WiredTigerError",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/mongodb-wiredtiger-checkpoint-stalls.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771895743,
+        "title": "OpenPlanter: The Future of Automated Indoor Gardening",
+        "slug": "openplanter-iot-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/openplanter-iot-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1771839888,
         "title": "Resolving Rust Async Pinning Violations",
         "slug": "resolving-rust-async-pinning-violations",
