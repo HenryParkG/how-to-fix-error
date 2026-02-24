@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771915849,
+        "title": "Resolving OCaml Multicore Major GC Stalls",
+        "slug": "ocaml-multicore-gc-stalls-fix",
+        "language": "OCaml",
+        "code": "GC_STALL",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/ocaml-multicore-gc-stalls-fix.js",
+        "tags": [
+            "OCaml",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771915850,
+        "title": "Mitigating Linux Kernel Slab Fragmentation",
+        "slug": "linux-kernel-slab-fragmentation",
+        "language": "C",
+        "code": "MEM_FRAG",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/linux-kernel-slab-fragmentation.js",
+        "tags": [
+            "Linux",
+            "Infra",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771915851,
+        "title": "Fixing Vector DB HNSW Index Fragmentation",
+        "slug": "vector-db-index-fragmentation",
+        "language": "Python",
+        "code": "INDEX_DEGRADE",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/vector-db-index-fragmentation.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771915852,
+        "title": "OpenPlanter: The Open Source IoT Hydroponics Revolution",
+        "slug": "openplanter-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/openplanter-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1771908463,
         "title": "Fixing C++20 Coroutine Leaks in Custom Schedulers",
         "slug": "cpp20-coroutine-memory-leaks-scheduler",
