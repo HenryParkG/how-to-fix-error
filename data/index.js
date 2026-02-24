@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771926211,
+        "title": "Mitigating Flutter Shader Jitter via Skia Warmup",
+        "slug": "flutter-skia-warmup-shader-jitter",
+        "language": "Dart/Flutter",
+        "code": "ShaderCompilationJank",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/flutter-skia-warmup-shader-jitter.js",
+        "tags": [
+            "TypeScript",
+            "Flutter",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771926212,
+        "title": "Fixing Elixir GenServer Mailbox Overflows",
+        "slug": "elixir-genserver-mailbox-overflow",
+        "language": "Elixir/Erlang",
+        "code": "MailboxOverflowError",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/elixir-genserver-mailbox-overflow.js",
+        "tags": [
+            "Python",
+            "Elixir",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771926213,
+        "title": "Istio mTLS Handshake Timeouts in High-Churn Clusters",
+        "slug": "istio-mtls-handshake-timeout",
+        "language": "Go/Envoy",
+        "code": "mTLSTimeout",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/istio-mtls-handshake-timeout.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771926214,
+        "title": "OpenPlanter: The Future of Open Source Smart Gardening",
+        "slug": "openplanter-iot-trend-analysis",
+        "language": "C++/Python",
+        "code": "Trend",
+        "date": "2026-02-24",
+        "path": "data/posts/2026-02/openplanter-iot-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1771915849,
         "title": "Resolving OCaml Multicore Major GC Stalls",
         "slug": "ocaml-multicore-gc-stalls-fix",
