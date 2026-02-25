@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772012872,
+        "title": "Mitigating C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++ / Rust",
+        "code": "LifetimeViolation",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772012873,
+        "title": "Resolving Spark Executor OOMs via DPP and Skew Joins",
+        "slug": "spark-oom-dpp-skew-join",
+        "language": "Scala / SQL",
+        "code": "ExecutorOOM",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/spark-oom-dpp-skew-join.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772012874,
+        "title": "Fixing K8s Cgroup v2 JVM Memory Discrepancies",
+        "slug": "k8s-cgroupv2-jvm-memory-fix",
+        "language": "Java / Kubernetes",
+        "code": "OOMKilled",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/k8s-cgroupv2-jvm-memory-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772012875,
+        "title": "Analyze Trending GitHub Repo: cloudflare/vinext",
+        "slug": "cloudflare-vinext-vite-plugin",
+        "language": "TypeScript / Vite",
+        "code": "Trend",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1772002483,
         "title": "Resolving eBPF Map-in-Map Lookup Failures",
         "slug": "ebpf-map-in-map-lookup-failures",
