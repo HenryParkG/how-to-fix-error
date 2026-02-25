@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1772002483,
+        "title": "Resolving eBPF Map-in-Map Lookup Failures",
+        "slug": "ebpf-map-in-map-lookup-failures",
+        "language": "Go",
+        "code": "ENOENT / EFAULT",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/ebpf-map-in-map-lookup-failures.js",
+        "tags": [
+            "Go",
+            "eBPF",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772002484,
+        "title": "Mitigating Redis Fork-Induced Latency Spikes",
+        "slug": "redis-fork-latency-cow-load",
+        "language": "SQL",
+        "code": "OOM / LATENCY",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/redis-fork-latency-cow-load.js",
+        "tags": [
+            "SQL",
+            "Redis",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772002485,
+        "title": "Fixing React Native JSI Memory Bloat",
+        "slug": "react-native-jsi-memory-bloat",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/react-native-jsi-memory-bloat.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772002486,
+        "title": "Inside Leonxlnx/taste-skill: Curing AI Design Slop",
+        "slug": "leonxlnx-taste-skill-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/leonxlnx-taste-skill-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React"
+        ]
+    },
+    {
         "id": 1771994918,
         "title": "Resolving Kafka Consumer Group Rebalance Storms",
         "slug": "kafka-consumer-rebalance-storms",
