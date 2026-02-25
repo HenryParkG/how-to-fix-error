@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1771994918,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "ConsumerGroupRebalanceException",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771994919,
+        "title": "Mitigating WebGPU Resource Synchronization Races",
+        "slug": "webgpu-resource-sync-races",
+        "language": "TypeScript",
+        "code": "GPURenderPassEncoder-Race",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/webgpu-resource-sync-races.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "GPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771994920,
+        "title": "Fixing Rust Pinning Violations in Async Executors",
+        "slug": "rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771994921,
+        "title": "Enhancing AI UI Quality with Taste-Skill",
+        "slug": "taste-skill-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/taste-skill-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1771982508,
         "title": "Mitigating PostgreSQL Transaction ID Wraparound",
         "slug": "postgres-txid-wraparound-mitigation",
