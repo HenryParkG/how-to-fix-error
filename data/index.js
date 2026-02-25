@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1771982508,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXID_WRAPAROUND",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/postgres-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771982509,
+        "title": "Resolving Zig Memory Alignment Faults in SIMD",
+        "slug": "zig-simd-memory-alignment-faults",
+        "language": "Zig",
+        "code": "ALIGNMENT_FAULT",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/zig-simd-memory-alignment-faults.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Low-Level",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771982510,
+        "title": "Fixing PyTorch DDP Gradient Synchronization Timeouts",
+        "slug": "pytorch-ddp-gradient-sync-timeout",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/pytorch-ddp-gradient-sync-timeout.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1771982511,
+        "title": "Trend: Leonxlnx/taste-skill High-Agency Frontend",
+        "slug": "taste-skill-ai-frontend-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-25",
+        "path": "data/posts/2026-02/taste-skill-ai-frontend-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1771926211,
         "title": "Mitigating Flutter Shader Jitter via Skia Warmup",
         "slug": "flutter-skia-warmup-shader-jitter",
