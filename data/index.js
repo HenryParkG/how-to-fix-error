@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1772088579,
+        "title": "Resolving PostgreSQL Index Bloat with Bottom-Up Deletion",
+        "slug": "postgres-btree-index-bloat-bottom-up-deletion",
+        "language": "SQL",
+        "code": "IndexBloat",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/postgres-btree-index-bloat-bottom-up-deletion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772088580,
+        "title": "Fixing PyTorch DDP Deadlocks in Async Collectives",
+        "slug": "pytorch-ddp-deadlocks-async-collectives",
+        "language": "Python",
+        "code": "RuntimeError (Deadlock)",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/pytorch-ddp-deadlocks-async-collectives.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772088581,
+        "title": "Mitigating OCaml Multicore Memory Contention in Parallel GC",
+        "slug": "ocaml-multicore-parallel-gc-contention",
+        "language": "OCaml",
+        "code": "PerformanceDegradation",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/ocaml-multicore-parallel-gc-contention.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772088582,
+        "title": "Vinext: Reimplementing Next.js API Surface on Vite",
+        "slug": "cloudflare-vinext-vite-nextjs-plugin",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-nextjs-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1772081146,
         "title": "Resolving Elixir GenServer Mailbox Congestion",
         "slug": "elixir-genserver-mailbox-congestion",
