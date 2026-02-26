@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772098806,
+        "title": "Fixing Rust Async Pin-Projection Violations",
+        "slug": "rust-async-pin-projection-violations",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/rust-async-pin-projection-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772098807,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "SQL",
+        "code": "CacheEvictionStall",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772098808,
+        "title": "Eliminating Haskell Space Leaks in Thunk Chains",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Backend",
+            "Haskell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772098809,
+        "title": "Analyzing vinext: The Vite-powered Next.js API Alternative",
+        "slug": "cloudflare-vinext-tech-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/cloudflare-vinext-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1772088579,
         "title": "Resolving PostgreSQL Index Bloat with Bottom-Up Deletion",
         "slug": "postgres-btree-index-bloat-bottom-up-deletion",

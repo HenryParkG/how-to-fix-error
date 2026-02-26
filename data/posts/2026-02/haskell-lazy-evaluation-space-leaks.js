@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Resolving Haskell Space Leaks in High-Throughput Pipelines",
+    "title": "Eliminating Haskell Space Leaks in Thunk Chains",
     "slug": "haskell-lazy-evaluation-space-leaks",
     "language": "Haskell",
-    "code": "SpaceLeak (OOM)",
+    "code": "SpaceLeak",
     "tags": [
-        "Haskell",
         "Backend",
-        "Performance",
+        "Haskell",
         "Error Fix"
     ],
-    "analysis": "<p>Haskell's default lazy evaluation strategy can be a double-edged sword. In high-throughput data pipelines, expressions are not evaluated until their results are strictly required. This creates 'thunks'\u2014unevaluated pointers in memory. When processing millions of events, these thunks accumulate rapidly, consuming the entire heap before the garbage collector can reclaim them, leading to a space leak.</p>",
-    "root_cause": "The use of non-strict folds (like foldl) on large streams, causing an accumulation of unevaluated arithmetic thunks in the heap.",
-    "bad_code": "processData :: [Int] -> Int\nprocessData xs = foldl (+) 0 xs -- This builds a massive thunk: (((0 + 1) + 2) + ...)",
-    "solution_desc": "Switch to strict evaluation using the prime version of the folding function (foldl') and utilize the BangPatterns language extension to force evaluation of accumulator variables at each step.",
-    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessDataStrict :: [Int] -> Int\nprocessDataStrict xs = foldl' (\\ !acc x -> acc + x) 0 xs",
-    "verification": "Run the application with RTS options `-g1 -N` and use `hp2ps` to generate a heap profile. Ensure the heap usage remains constant (flat line) during processing.",
-    "date": "2026-02-23",
-    "id": 1771811128,
+    "analysis": "<p>Haskell's lazy evaluation is powerful but can lead to 'space leaks' when large chains of unevaluated computations (thunks) build up in memory. Instead of storing the result of a calculation, Haskell stores the instruction to calculate it.</p><p>In recursive functions or folds, these thunks can accumulate until the heap is exhausted, even if the final result is a small integer. This is common in long-running loops that don't force evaluation of intermediate states.</p>",
+    "root_cause": "The use of lazy folds (like foldl) creates a massive nested thunk structure in the heap that is only evaluated at the very end of the computation.",
+    "bad_code": "sumList :: [Int] -> Int\nsumList = foldl (+) 0 -- Build a thunk (0+1+2+3...) that grows with list size",
+    "solution_desc": "Switch to strict evaluation using 'foldl'' (the strict version of foldl) or use BangPatterns to force the evaluation of the accumulator at each step.",
+    "good_code": "import Data.List (foldl')\n\n-- foldl' forces evaluation of the accumulator at each step\nsumListStrict :: [Int] -> Int\nsumListStrict = foldl' (+) 0",
+    "verification": "Run the program with GHC runtime statistics (+RTS -s). Observe the 'peak_megabytes_total' to ensure it remains constant regardless of input size.",
+    "date": "2026-02-26",
+    "id": 1772098808,
     "type": "error"
 });
