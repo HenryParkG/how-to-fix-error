@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772068466,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "resolving-go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "Runtime Starvation",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/resolving-go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772068467,
+        "title": "Solving HNSW Recall Decay in Dynamic Vector DBs",
+        "slug": "mitigating-hnsw-recall-degradation-churn",
+        "language": "Python",
+        "code": "Recall Degradation",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/mitigating-hnsw-recall-degradation-churn.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772068468,
+        "title": "Fixing gRPC L7 Load Balancing Imbalance",
+        "slug": "fixing-grpc-l7-load-balancing-imbalance",
+        "language": "Kubernetes",
+        "code": "Traffic Imbalance",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/fixing-grpc-l7-load-balancing-imbalance.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772068469,
+        "title": "vinext: Reimagining Next.js APIs with Vite",
+        "slug": "cloudflare-vinext-tech-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/cloudflare-vinext-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772012872,
         "title": "Mitigating C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
