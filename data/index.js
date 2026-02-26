@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772081146,
+        "title": "Resolving Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "ProcessOverload",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/elixir-genserver-mailbox-congestion.js",
+        "tags": [
+            "Elixir",
+            "Distributed Systems",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772081147,
+        "title": "Mitigating KV Cache Fragmentation in LLM Serving",
+        "slug": "mitigate-kv-cache-fragmentation",
+        "language": "Python",
+        "code": "MemoryFragmentation",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/mitigate-kv-cache-fragmentation.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772081148,
+        "title": "Fixing Flutter Skia Shader Compilation Jitter",
+        "slug": "flutter-skia-shader-jitter-fix",
+        "language": "Dart",
+        "code": "GPUJank",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/flutter-skia-shader-jitter-fix.js",
+        "tags": [
+            "TypeScript",
+            "Mobile",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772081149,
+        "title": "Cloudflare Vinext: Next.js API Surface for Vite",
+        "slug": "cloudflare-vinext-vite-nextjs-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-26",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-nextjs-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772068466,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "resolving-go-scheduler-starvation-tight-loops",
