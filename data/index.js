@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772184795,
+        "title": "Resolving Linux Kernel RCU Grace Period Stalls in NVMe",
+        "slug": "linux-kernel-rcu-grace-period-stalls-nvme",
+        "language": "C",
+        "code": "RCU_STALL",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/linux-kernel-rcu-grace-period-stalls-nvme.js",
+        "tags": [
+            "Linux",
+            "Kernel",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772184796,
+        "title": "Fixing Spark Shuffle Block Fetch Failures on Spot Instances",
+        "slug": "spark-shuffle-fetch-failures-spot-instances",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/spark-shuffle-fetch-failures-spot-instances.js",
+        "tags": [
+            "Java",
+            "AWS",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772184797,
+        "title": "Mitigating Elixir GenStage Demand-Flow Stalls",
+        "slug": "elixir-genstage-demand-flow-stalls",
+        "language": "Go",
+        "code": "STALL_BACKPRESSURE",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/elixir-genstage-demand-flow-stalls.js",
+        "tags": [
+            "Go",
+            "Node.js",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772184798,
+        "title": "Vinext: Reimplementing Next.js API Surface on Vite",
+        "slug": "vinext-vite-nextjs-api-surface",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/vinext-vite-nextjs-api-surface.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772174520,
         "title": "Debugging eBPF Verifier Failures in Tail-Call Chains",
         "slug": "ebpf-verifier-tail-call-failures",
