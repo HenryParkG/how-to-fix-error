@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1772166690,
+        "title": "Resolving Slab Fragmentation in C++ Microservices",
+        "slug": "linux-kernel-slab-fragmentation-cpp",
+        "language": "C++, Linux",
+        "code": "SLUB_ALLOC_FAIL",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/linux-kernel-slab-fragmentation-cpp.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772166691,
+        "title": "Mitigating Istio mTLS Handshake Storms",
+        "slug": "istio-mtls-handshake-storms-fix",
+        "language": "Istio, Envoy",
+        "code": "TLS_HANDSHAKE_TIMEOUT",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/istio-mtls-handshake-storms-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772166692,
+        "title": "Fixing Redis Replication Buffer Overflows",
+        "slug": "redis-replication-buffer-overflow-fix",
+        "language": "Redis, Go",
+        "code": "REPL_BUF_OVERFLOW",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/redis-replication-buffer-overflow-fix.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772166693,
+        "title": "Vinext: Reimplementing Next.js APIs on Vite",
+        "slug": "vinext-cloudflare-vite-plugin-nextjs",
+        "language": "TypeScript, Vite",
+        "code": "Trend",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/vinext-cloudflare-vite-plugin-nextjs.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1772154798,
         "title": "Fixing Zig Memory Corruptions in Nested Arena Patterns",
         "slug": "zig-nested-arena-memory-corruption-fix",
