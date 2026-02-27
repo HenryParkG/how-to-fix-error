@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772174520,
+        "title": "Debugging eBPF Verifier Failures in Tail-Call Chains",
+        "slug": "ebpf-verifier-tail-call-failures",
+        "language": "C / eBPF",
+        "code": "EACCES / EINVAL",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/ebpf-verifier-tail-call-failures.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772174521,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-partition",
+        "language": "Java / Scala",
+        "code": "ClusterUnreachable",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/akka-cluster-split-brain-partition.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772174522,
+        "title": "Fixing HNSW Index Stale-Links in Vector Databases",
+        "slug": "hnsw-index-stale-links-fix",
+        "language": "Rust",
+        "code": "StaleLinkError",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/hnsw-index-stale-links-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772174523,
+        "title": "Analyzing vinext: Deploying Next.js Anywhere with Vite",
+        "slug": "cloudflare-vinext-vite-plugin-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-plugin-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1772166690,
         "title": "Resolving Slab Fragmentation in C++ Microservices",
         "slug": "linux-kernel-slab-fragmentation-cpp",
