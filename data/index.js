@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772154798,
+        "title": "Fixing Zig Memory Corruptions in Nested Arena Patterns",
+        "slug": "zig-nested-arena-memory-corruption-fix",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/zig-nested-arena-memory-corruption-fix.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772154799,
+        "title": "Resolving WebGPU Memory Alignment Violations",
+        "slug": "webgpu-memory-alignment-violations-fix",
+        "language": "TypeScript",
+        "code": "AlignmentError",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/webgpu-memory-alignment-violations-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772154800,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storm-high-cardinality",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/kafka-rebalance-storm-high-cardinality.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772154801,
+        "title": "Cloudflare Vinext: Breaking Next.js Vendor Lock-in",
+        "slug": "cloudflare-vinext-vite-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-27",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772098806,
         "title": "Fixing Rust Async Pin-Projection Violations",
         "slug": "rust-async-pin-projection-violations",
