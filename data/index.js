@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772270291,
+        "title": "Fixing Rust Pinning Violations in Async Structs",
+        "slug": "rust-pinning-violations-self-referential-async",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/rust-pinning-violations-self-referential-async.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772270292,
+        "title": "Fixing LLM Quantization Drift in 4-bit Kernels",
+        "slug": "llm-quantization-drift-4bit-normalfloat",
+        "language": "Python",
+        "code": "PrecisionLoss",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/llm-quantization-drift-4bit-normalfloat.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772270293,
+        "title": "Mitigating gRPC Go Flow-Control Deadlocks",
+        "slug": "grpc-go-flow-control-deadlock-fix",
+        "language": "Go",
+        "code": "FlowControlDeadlock",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/grpc-go-flow-control-deadlock-fix.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772270294,
+        "title": "Analyzing Anthropic Financial Services Plugins",
+        "slug": "anthropics-financial-services-plugins-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/anthropics-financial-services-plugins-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1772251958,
         "title": "Profiling Haskell Space Leaks in Lazy ByteString Pipelines",
         "slug": "haskell-lazy-bytestring-space-leaks",
