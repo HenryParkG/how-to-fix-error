@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772251958,
+        "title": "Profiling Haskell Space Leaks in Lazy ByteString Pipelines",
+        "slug": "haskell-lazy-bytestring-space-leaks",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/haskell-lazy-bytestring-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772251959,
+        "title": "Debugging PyTorch DDP Deadlocks in Gradient Bucketing",
+        "slug": "pytorch-ddp-gradient-deadlock",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/pytorch-ddp-gradient-deadlock.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772251960,
+        "title": "Resolving MongoDB WiredTiger Read Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "NoSQL",
+        "code": "ExhaustionError",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772251961,
+        "title": "Why cloudflare/vinext is the Ultimate Vite-Edge Bridge",
+        "slug": "vinext-vite-nextjs-api-surface",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/vinext-vite-nextjs-api-surface.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772240869,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
