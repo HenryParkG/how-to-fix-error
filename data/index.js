@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772240869,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "C++20",
+            "Performance",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772240870,
+        "title": "Debugging RN JSI Memory Leaks in Native Modules",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "MemoryLeak",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React Native",
+            "JSI",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772240871,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/postgres-txid-wraparound-mitigation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772240872,
+        "title": "Cloudflare Vinext: Next.js API Surface Anywhere",
+        "slug": "cloudflare-vinext-vite-plugin",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-02-28",
+        "path": "data/posts/2026-02/cloudflare-vinext-vite-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1772184795,
         "title": "Resolving Linux Kernel RCU Grace Period Stalls in NVMe",
         "slug": "linux-kernel-rcu-grace-period-stalls-nvme",

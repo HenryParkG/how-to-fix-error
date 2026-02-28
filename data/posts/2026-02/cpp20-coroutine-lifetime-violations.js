@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating C++20 Coroutine Lifetime Violations",
+    "title": "Fixing C++20 Coroutine Lifetime Violations",
     "slug": "cpp20-coroutine-lifetime-violations",
-    "language": "C++ / Rust",
+    "language": "C++",
     "code": "LifetimeViolation",
     "tags": [
+        "C++20",
+        "Performance",
         "Rust",
-        "Backend",
-        "Go",
         "Error Fix"
     ],
-    "analysis": "<p>In asynchronous IO task-graphs, C++20 coroutines introduce significant risks regarding object lifetimes. Unlike synchronous code, a coroutine's execution is suspended and resumed, often outliving the scope in which it was initially created. The primary danger arises when a coroutine captures references to local variables from its caller. Since the caller's stack frame is destroyed upon suspension (if the caller is not also awaited), the coroutine is left with dangling references when it eventually resumes.</p>",
-    "root_cause": "Capturing local variables by reference in a coroutine that outlives the caller's stack frame, leading to use-after-free errors during resumption.",
-    "bad_code": "task<void> fetch_data(const std::string& query) {\n    auto result = co_await db.async_query(query); // query is a reference\n    process(result);\n}\n\nvoid trigger() {\n    std::string q = \"SELECT * FROM users\";\n    fetch_data(q); // q goes out of scope while fetch_data is suspended\n}",
-    "solution_desc": "Ensure all data required by the coroutine is captured by value or stored in a shared state (like std::shared_ptr) within the coroutine's promise object. For task-graphs, use a 'structured concurrency' approach where the parent scope is guaranteed to outlive children.",
-    "good_code": "task<void> fetch_data(std::string query) {\n    // query is now moved into the coroutine frame\n    auto result = co_await db.async_query(query);\n    process(result);\n}\n\n// Or use shared pointers for complex objects\ntask<void> process_ctx(std::shared_ptr<Context> ctx) {\n    co_await ctx->io_op();\n}",
-    "verification": "Use AddressSanitizer (ASan) to detect use-after-free at runtime and implement static analysis checks to forbid reference-captures in coroutine signatures.",
-    "date": "2026-02-25",
-    "id": 1772012872,
+    "analysis": "<p>C++20 coroutines are stackless, meaning their state is stored on the heap in a coroutine frame. A critical error occurs when a coroutine captures a reference to a local variable from its calling scope. Since the calling function returns immediately upon the first suspension point (co_await), the local variable is destroyed, leaving the coroutine with a dangling reference when it eventually resumes.</p>",
+    "root_cause": "The coroutine captures arguments by reference or pointer that point to stack-allocated memory in the caller's scope, which is invalidated after the initial suspension.",
+    "bad_code": "task<void> delayed_print(const std::string& message) {\n    co_await sleep_for(1s);\n    std::cout << message << std::endl; // 'message' is a dangling reference!\n}\n\n// Usage\ndelayed_print(\"Hello World\"); // Temporary string destroyed immediately",
+    "solution_desc": "Always pass arguments to coroutines by value if they need to persist across suspension points, or ensure the promise object manages the lifetime of shared data. Passing by value ensures the data is moved or copied into the coroutine frame.",
+    "good_code": "task<void> delayed_print(std::string message) {\n    co_await sleep_for(1s);\n    std::cout << message << std::endl; // 'message' is safely stored in the coroutine frame\n}",
+    "verification": "Compile with AddressSanitizer (ASan) to detect use-after-free or use-after-scope errors during runtime execution.",
+    "date": "2026-02-28",
+    "id": 1772240869,
     "type": "error"
 });

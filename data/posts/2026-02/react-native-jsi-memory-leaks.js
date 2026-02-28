@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating React Native JSI Memory Leaks",
+    "title": "Debugging RN JSI Memory Leaks in Native Modules",
     "slug": "react-native-jsi-memory-leaks",
     "language": "TypeScript",
-    "code": "Memory Leak",
+    "code": "MemoryLeak",
     "tags": [
+        "React Native",
+        "JSI",
         "React",
-        "TypeScript",
-        "Frontend",
         "Error Fix"
     ],
-    "analysis": "<p>The JavaScript Interface (JSI) allows React Native to bridge C++ and JavaScript without serialization overhead. However, when handling high-frequency event streams (e.g., 120Hz sensor data or real-time audio processing), developers often leak memory by failing to manage the lifecycle of <code>jsi::Value</code> objects inside the C++ host functions.</p><p>Because JSI bypasses the standard React Native bridge, the JavaScript Garbage Collector (GC) cannot automatically track C++ allocations that hold references to JS objects. If a C++ function creates a <code>jsi::Object</code> or <code>jsi::String</code> on every frame without explicitly clearing it or using a <code>jsi::Scope</code>, the memory footprint will grow linearly until the app crashes.</p>",
-    "root_cause": "Capturing 'jsi::Value' or 'jsi::Object' in long-lived C++ lambdas or global variables, preventing the JS engine from garbage collecting the underlying objects.",
-    "bad_code": "/* C++ JSI Module */\njv::Value getEvent(jsi::Runtime& rt) {\n    // BUG: Creating a new object on every call in a high-frequency stream\n    // without ensuring the previous ones are cleaned up by the JS GC\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"timestamp\", jsi::Value(12345));\n    return jsi::Value(rt, obj);\n}",
-    "solution_desc": "Use <code>jsi::Scope</code> to manage temporary values and prefer passing typed arrays (ArrayBuffers) for high-frequency data to minimize the creation of JS objects. If data must persist, use <code>jsi::WeakObject</code> to allow the GC to collect the object when it's no longer used in JavaScript.",
-    "good_code": "/* C++ JSI Module with Scope Management */\njv::Value getEvent(jsi::Runtime& rt) {\n    jsi::Scope scope(rt);\n    jsi::Object obj(rt);\n    obj.setProperty(rt, \"data\", jsi::String::createFromUtf8(rt, \"payload\"));\n    \n    // Return value is automatically moved out of scope\n    return jsi::Value(rt, obj);\n}\n\n// Better approach for high frequency:\nvoid updateBuffer(jsi::Runtime& rt, jsi::ArrayBuffer& buffer) {\n    uint8_t* raw = buffer.data(rt);\n    // Modify raw memory directly instead of creating JS objects\n}",
-    "verification": "Monitor the 'Heap Size' using Chrome DevTools or Flipper. Use 'adb shell dumpsys meminfo' to check for growth in the 'Native Heap' versus 'JS Heap' while the event stream is active.",
-    "date": "2026-02-22",
-    "id": 1771723087,
+    "analysis": "<p>The JavaScript Interface (JSI) provides direct access to the JS runtime from native code (C++). Memory leaks frequently occur when native code creates <code>jsi::Value</code> or <code>jsi::Object</code> instances and fails to release them, or when <code>jsi::Persistent</code> handles are used to keep JS objects alive without a clear strategy for their invalidation when the JS component unmounts.</p>",
+    "root_cause": "Holding onto <code>jsi::Persistent</code> objects in a native HostObject without a mechanism to nullify them when the associated React component is destroyed.",
+    "bad_code": "class MyNativeModule : public jsi::HostObject {\n    jsi::Persistent<jsi::Function> callback_;\n    void setCallback(jsi::Runtime& rt, const jsi::Value& cb) {\n        callback_ = jsi::Persistent<jsi::Function>(rt, cb.asObject(rt).asFunction(rt));\n        // Never released!\n    }\n};",
+    "solution_desc": "Implement an explicit cleanup method or use weak references where possible. Ensure the native side listens to the React lifecycle (e.g., through a 'cleanup' call from useEffect) to release persistent references.",
+    "good_code": "void clearCallback() {\n    callback_.reset(); // Explicitly release the JS reference\n}\n\n// JS side\nuseEffect(() => {\n    NativeModule.setCallback(() => {});\n    return () => NativeModule.clearCallback();\n}, []);",
+    "verification": "Use the Memory Profiler in Xcode or Android Studio to track 'Heap Growth' and ensure the 'jsi::Object' count decreases when components unmount.",
+    "date": "2026-02-28",
+    "id": 1772240870,
     "type": "error"
 });
