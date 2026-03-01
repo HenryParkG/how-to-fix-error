@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772346937,
+        "title": "Fixing Zig Comptime Memory Exhaustion in Recursion",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "ComptimeOutOfMemory",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Zig",
+            "Metaprogramming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772346938,
+        "title": "Resolving Kafka Rebalance Storms in High-Partition Clusters",
+        "slug": "kafka-rebalance-storm-resolution",
+        "language": "Java",
+        "code": "RebalanceInProgress",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/kafka-rebalance-storm-resolution.js",
+        "tags": [
+            "Kafka",
+            "Backend",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772346939,
+        "title": "Fixing Elixir GenServer Mailbox Congestion in Signal Processing",
+        "slug": "elixir-genserver-mailbox-fix",
+        "language": "Elixir",
+        "code": "ProcessMailboxFull",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-fix.js",
+        "tags": [
+            "Elixir",
+            "Real-time",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772346940,
+        "title": "OpenFang: The Open-Source Agent Operating System",
+        "slug": "openfang-agent-os-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/openfang-agent-os-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772340539,
         "title": "Fixing eBPF Verifier Complexity in Tail-Recursive XDP",
         "slug": "ebpf-verifier-complexity-tail-recursion-xdp",
