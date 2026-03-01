@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772328182,
+        "title": "Debugging Wasm Linear Memory Bounds Violations",
+        "slug": "wasm-memory-bounds-violations-multi-threaded",
+        "language": "Rust",
+        "code": "MemoryOutOfBounds",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/wasm-memory-bounds-violations-multi-threaded.js",
+        "tags": [
+            "Rust",
+            "WebAssembly",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772328183,
+        "title": "Fixing Load-Balancing Divergence in MoE Routing",
+        "slug": "moe-token-routing-divergence-fix",
+        "language": "Python",
+        "code": "ExpertOverload",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/moe-token-routing-divergence-fix.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772328184,
+        "title": "Resolving Istio Sidecar Lifecycle Race Conditions",
+        "slug": "istio-sidecar-lifecycle-race-condition",
+        "language": "Kubernetes",
+        "code": "EnvoyNotReady",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/istio-sidecar-lifecycle-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772328185,
+        "title": "OpenFang: The Open-Source Agent Operating System",
+        "slug": "openfang-agent-os-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/openfang-agent-os-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772270291,
         "title": "Fixing Rust Pinning Violations in Async Structs",
         "slug": "rust-pinning-violations-self-referential-async",
