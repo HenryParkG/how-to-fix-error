@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1772356900,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Custom Schedulers",
+        "slug": "cpp20-coroutine-frame-leak-scheduler",
+        "language": "C++ / Backend",
+        "code": "MemoryLeak",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/cpp20-coroutine-frame-leak-scheduler.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772356901,
+        "title": "Resolving HNSW Graph Fragmentation in Vector Databases",
+        "slug": "vector-db-hnsw-fragmentation-fix",
+        "language": "Python / SQL",
+        "code": "PerformanceDegradation",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/vector-db-hnsw-fragmentation-fix.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772356902,
+        "title": "Fixing OCaml Multicore GC Latency Spikes",
+        "slug": "ocaml-multicore-gc-latency-spikes",
+        "language": "OCaml / Backend",
+        "code": "GCLatency",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-latency-spikes.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772356903,
+        "title": "Openfang: The Rise of the Open-Source Agent Operating System",
+        "slug": "openfang-agent-os-trend",
+        "language": "Python / TypeScript",
+        "code": "Trend",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/openfang-agent-os-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772346937,
         "title": "Fixing Zig Comptime Memory Exhaustion in Recursion",
         "slug": "zig-comptime-memory-exhaustion-fix",
