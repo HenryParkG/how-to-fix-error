@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772340539,
+        "title": "Fixing eBPF Verifier Complexity in Tail-Recursive XDP",
+        "slug": "ebpf-verifier-complexity-tail-recursion-xdp",
+        "language": "Go",
+        "code": "VerifierError",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/ebpf-verifier-complexity-tail-recursion-xdp.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772340540,
+        "title": "Fixing Elasticsearch Segment Merging and I/O Wait Spikes",
+        "slug": "elasticsearch-segment-merging-io-wait-fix",
+        "language": "Java",
+        "code": "IOPerformance",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/elasticsearch-segment-merging-io-wait-fix.js",
+        "tags": [
+            "Elasticsearch",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772340541,
+        "title": "Debugging WebGPU Compute Shader Synchronization Races",
+        "slug": "webgpu-compute-shader-sync-races",
+        "language": "TypeScript",
+        "code": "RaceCondition",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/webgpu-compute-shader-sync-races.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772340542,
+        "title": "Exploring OpenFang: The Open-Source Agent Operating System",
+        "slug": "open-source-agent-os-openfang",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-01",
+        "path": "data/posts/2026-03/open-source-agent-os-openfang.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772328182,
         "title": "Debugging Wasm Linear Memory Bounds Violations",
         "slug": "wasm-memory-bounds-violations-multi-threaded",
