@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772426655,
+        "title": "Fixing Ghost-Pointer Aliasing in Rust Unsafe Async Wrappers",
+        "slug": "fixing-ghost-pointer-aliasing-rust-unsafe-async",
+        "language": "Rust",
+        "code": "PointerAliasing",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/fixing-ghost-pointer-aliasing-rust-unsafe-async.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772426656,
+        "title": "Resolving Data Skew and OOM in Spark Adaptive Query Execution",
+        "slug": "spark-aqe-data-skew-oom-fix",
+        "language": "Java",
+        "code": "SparkAQE_OOM",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/spark-aqe-data-skew-oom-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772426657,
+        "title": "Mitigating Postgres Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXID_Wraparound",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/postgres-transaction-id-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772426658,
+        "title": "OpenFang: The Open-Source Agent Operating System",
+        "slug": "openfang-agent-os-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/openfang-agent-os-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1772414117,
         "title": "Fixing Non-Deterministic Deadlocks in PyTorch DDP",
         "slug": "pytorch-ddp-bucket-rebuilding-deadlock",
