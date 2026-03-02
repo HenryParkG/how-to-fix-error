@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772444340,
+        "title": "Fixing eBPF Verifier Complexity Limit Triggers",
+        "slug": "fixing-ebpf-verifier-complexity-limit",
+        "language": "Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/fixing-ebpf-verifier-complexity-limit.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772444341,
+        "title": "Resolving WebGPU Memory Mapping Race Conditions",
+        "slug": "webgpu-memory-mapping-race-conditions",
+        "language": "TypeScript",
+        "code": "GPU_BUFFER_MAPPING_ERROR",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/webgpu-memory-mapping-race-conditions.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772444342,
+        "title": "Mitigating Redis Fork-Induced Latency and THP",
+        "slug": "redis-fork-latency-thp-conflicts",
+        "language": "Rust",
+        "code": "REDIS_LATENCY_SPIKE",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/redis-fork-latency-thp-conflicts.js",
+        "tags": [
+            "Infra",
+            "Docker",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772444343,
+        "title": "Analyze RightNow-AI/openfang: The Agent OS",
+        "slug": "open-source-agent-os-openfang",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/open-source-agent-os-openfang.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772433947,
         "title": "Fixing Go Scheduler Starvation in Tight Runtime Loops",
         "slug": "fixing-go-scheduler-starvation-tight-loops",
