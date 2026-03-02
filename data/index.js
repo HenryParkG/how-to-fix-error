@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772433947,
+        "title": "Fixing Go Scheduler Starvation in Tight Runtime Loops",
+        "slug": "fixing-go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "SchedulerStarvation",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/fixing-go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772433948,
+        "title": "Resolving Triton Inference Server Model Cache Thrashing",
+        "slug": "resolve-triton-model-cache-thrashing",
+        "language": "Python",
+        "code": "CacheThrashing",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/resolve-triton-model-cache-thrashing.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772433949,
+        "title": "Mitigating K8s 'Zombie' Cgroup Leaks in High-Churn Pods",
+        "slug": "k8s-zombie-cgroup-leak-mitigation",
+        "language": "Kubernetes",
+        "code": "CgroupLeak",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/k8s-zombie-cgroup-leak-mitigation.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772433950,
+        "title": "RightNow-AI/openfang: The Open-source Agent Operating System",
+        "slug": "openfang-agent-os-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-02",
+        "path": "data/posts/2026-03/openfang-agent-os-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772426655,
         "title": "Fixing Ghost-Pointer Aliasing in Rust Unsafe Async Wrappers",
         "slug": "fixing-ghost-pointer-aliasing-rust-unsafe-async",
