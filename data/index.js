@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1772530403,
+        "title": "Resolving PostgreSQL XID Wraparound in High-Load Clusters",
+        "slug": "postgresql-xid-wraparound-resolution",
+        "language": "SQL",
+        "code": "TransactionIDWraparound",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/postgresql-xid-wraparound-resolution.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772530404,
+        "title": "Eliminating Elixir GenServer Mailbox Bottlenecks",
+        "slug": "elixir-genserver-mailbox-optimization",
+        "language": "Go",
+        "code": "MailboxSelectiveReceive",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-optimization.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772530405,
+        "title": "Mitigating Rust Async Cancellation Hazards",
+        "slug": "rust-async-cancellation-hazards",
+        "language": "Rust",
+        "code": "AsyncCancellationError",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/rust-async-cancellation-hazards.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772530406,
+        "title": "Accelerating ML: Training on Apple Neural Engine (ANE)",
+        "slug": "maderix-ane-neural-engine-training",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/maderix-ane-neural-engine-training.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772519968,
         "title": "Fixing C++20 Coroutine Handle Leaks in Orchestrators",
         "slug": "cpp20-coroutine-handle-leaks",
