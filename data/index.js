@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772500726,
+        "title": "Fixing Zig Comptime Memory Exhaustion in Meta-Programming",
+        "slug": "fixing-zig-comptime-memory-exhaustion",
+        "language": "Zig",
+        "code": "ComptimeAllocError",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/fixing-zig-comptime-memory-exhaustion.js",
+        "tags": [
+            "Rust",
+            "Zig",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772500727,
+        "title": "Mitigating Istio gRPC Out-of-Order Packet Drops",
+        "slug": "mitigating-istio-grpc-packet-drops",
+        "language": "Go",
+        "code": "EnvoyStreamReset",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/mitigating-istio-grpc-packet-drops.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772500728,
+        "title": "Resolving Kafka Stop-the-World Rebalancing",
+        "slug": "kafka-stop-the-world-rebalancing-fix",
+        "language": "Java",
+        "code": "ConsumerRebalanceDelay",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/kafka-stop-the-world-rebalancing-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772500729,
+        "title": "Exploring Lakr233/vphone-cli: The Virtual Phone Tool",
+        "slug": "lakr233-vphone-cli-overview",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/lakr233-vphone-cli-overview.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1772444340,
         "title": "Fixing eBPF Verifier Complexity Limit Triggers",
         "slug": "fixing-ebpf-verifier-complexity-limit",
