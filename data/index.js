@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772519968,
+        "title": "Fixing C++20 Coroutine Handle Leaks in Orchestrators",
+        "slug": "cpp20-coroutine-handle-leaks",
+        "language": "Go",
+        "code": "Memory Leak",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/cpp20-coroutine-handle-leaks.js",
+        "tags": [
+            "Go",
+            "C++",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772519969,
+        "title": "Mitigating Activation Divergence in PyTorch INT8 PTQ",
+        "slug": "pytorch-int8-quantization-divergence",
+        "language": "Python",
+        "code": "Accuracy Drop",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/pytorch-int8-quantization-divergence.js",
+        "tags": [
+            "Python",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772519970,
+        "title": "Resolving MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-stalls",
+        "language": "SQL",
+        "code": "Latency Spike",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772519971,
+        "title": "Accelerating Inference with maderix/ANE on Apple Silicon",
+        "slug": "maderix-ane-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/maderix-ane-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772512932,
         "title": "Fixing Haskell Space Leaks in Lazy Folds",
         "slug": "haskell-space-leaks-lazy-folds",
