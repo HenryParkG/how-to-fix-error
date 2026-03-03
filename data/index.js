@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772512932,
+        "title": "Fixing Haskell Space Leaks in Lazy Folds",
+        "slug": "haskell-space-leaks-lazy-folds",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/haskell-space-leaks-lazy-folds.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Functional Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772512933,
+        "title": "Resolving HNSW Index Fragmentation and Recall Decay",
+        "slug": "hnsw-index-fragmentation-recall-decay",
+        "language": "Rust",
+        "code": "RecallDecay",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/hnsw-index-fragmentation-recall-decay.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772512934,
+        "title": "Mitigating Linux Kernel RCU Stalls in Packet Processing",
+        "slug": "linux-kernel-rcu-stalls-packet-processing",
+        "language": "C",
+        "code": "RCUStall",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/linux-kernel-rcu-stalls-packet-processing.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772512935,
+        "title": "vphone-cli: Advanced Android Virtualization via CLI",
+        "slug": "vphone-cli-android-virtualization-trend",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-03-03",
+        "path": "data/posts/2026-03/vphone-cli-android-virtualization-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772500726,
         "title": "Fixing Zig Comptime Memory Exhaustion in Meta-Programming",
         "slug": "fixing-zig-comptime-memory-exhaustion",
