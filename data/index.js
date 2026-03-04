@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772616740,
+        "title": "Fixing Zig Comptime Memory Exhaustion in Metaprogramming",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "ComptimeOOM",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Zig",
+            "Metaprogramming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772616741,
+        "title": "Mitigating Vector DB Index Fragmentation in HNSW Graphs",
+        "slug": "hnsw-index-fragmentation-fix",
+        "language": "Go",
+        "code": "GraphFragmentation",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/hnsw-index-fragmentation-fix.js",
+        "tags": [
+            "VectorDB",
+            "HNSW",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772616742,
+        "title": "Resolving Haskell Lazy Evaluation Space Leaks in Streams",
+        "slug": "haskell-lazy-space-leak-fix",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/haskell-lazy-space-leak-fix.js",
+        "tags": [
+            "Haskell",
+            "Streams",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772616743,
+        "title": "Analyzing maderix/ANE: Training on Apple Neural Engine",
+        "slug": "maderix-ane-trend-analysis",
+        "language": "Swift/C++",
+        "code": "Trend",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/maderix-ane-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772606169,
         "title": "Resolving eBPF Verifier Complexity in DPI",
         "slug": "ebpf-verifier-complexity-dpi-fix",

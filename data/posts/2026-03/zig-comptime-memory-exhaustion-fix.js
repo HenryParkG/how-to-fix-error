@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Zig Comptime Memory Exhaustion in Recursion",
+    "title": "Fixing Zig Comptime Memory Exhaustion in Metaprogramming",
     "slug": "zig-comptime-memory-exhaustion-fix",
     "language": "Zig",
-    "code": "ComptimeOutOfMemory",
+    "code": "ComptimeOOM",
     "tags": [
         "Zig",
         "Metaprogramming",
         "Rust",
         "Error Fix"
     ],
-    "analysis": "<p>Zig's comptime feature allows for powerful code generation, but it relies on the compiler's internal evaluator. When performing deep recursive operations\u2014such as parsing complex static data or generating large types\u2014the evaluator can hit the default evaluation branch quota. If the recursion isn't properly bounded or if it creates excessive intermediate allocations within the compiler's memory space, it leads to a 'comptime memory exhaustion' or 'evaluation exceeded' error, effectively halting the build process.</p>",
-    "root_cause": "The default `@setEvalBranchQuota` limit is exceeded during deep recursion, or large recursive structures are instantiated without lazy evaluation, causing the compiler to overflow its internal heap.",
-    "bad_code": "fn RecursiveType(comptime n: usize) type {\n    if (n == 0) return i32;\n    return struct { child: RecursiveType(n - 1) };\n}\n\nexport fn test_recursive() void {\n    // This will hit the branch quota if n is high\n    var x: RecursiveType(10000) = undefined;\n    _ = x;\n}",
-    "solution_desc": "Increase the evaluation branch quota using @setEvalBranchQuota and refactor deep recursion into iterative patterns or memoized structures to reduce the load on the compiler's evaluator.",
-    "good_code": "fn RecursiveType(comptime n: usize) type {\n    @setEvalBranchQuota(20000);\n    if (n == 0) return i32;\n    // Refactored to avoid deep nesting if possible\n    return struct { child: RecursiveType(n - 1) };\n}\n\n// Or use a more iterative approach for metadata extraction",
-    "verification": "Run `zig build` and monitor compiler memory usage; ensure the 'evaluation exceeded' error no longer triggers for the required depth.",
-    "date": "2026-03-01",
-    "id": 1772346937,
+    "analysis": "<p>In Zig, the compiler evaluates code at compile-time (comptime) to perform powerful metaprogramming. However, when building generic pipelines that recursively generate types or perform complex lookups, the compiler's internal memory allocator can become exhausted. This often manifests during the evaluation of <code>inline for</code> loops or recursive <code>struct</code> definitions that lack a clear termination or memoization strategy, leading to a 'comptime memory limit exceeded' error.</p>",
+    "root_cause": "Excessive creation of unique anonymous types within recursive comptime functions and exceeding the default '@setEvalBranchQuota'.",
+    "bad_code": "fn GeneratePipeline(comptime depth: usize) type {\n    if (depth == 0) return struct { val: i32 };\n    return struct {\n        next: GeneratePipeline(depth - 1),\n        data: [depth]u8,\n    };\n}\n// Calling this with a large depth creates thousands of unique types.",
+    "solution_desc": "Memoize type generation using a comptime-available Map or Container to ensure that identical type signatures are not re-allocated. Additionally, increase the evaluation quota and use 'extern struct' where appropriate to flatten structures.",
+    "good_code": "const type_cache = std.StaticStringMap(type);\n\nfn GeneratePipeline(comptime depth: usize) type {\n    @setEvalBranchQuota(10000);\n    if (depth == 0) return struct { val: i32 };\n    // Use a memoization strategy here or flatten the recursion\n    return struct {\n        next_depth: usize = depth - 1,\n        data: []u8,\n    };\n}",
+    "verification": "Run `zig build` and monitor compiler resident set size (RSS). Ensure the build completes without the 'evaluation exceeded' error.",
+    "date": "2026-03-04",
+    "id": 1772616740,
     "type": "error"
 });
