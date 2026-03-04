@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1772598388,
+        "title": "Mitigating WebGPU Resource Synchronization Hazards",
+        "slug": "webgpu-resource-sync-hazards",
+        "language": "TypeScript",
+        "code": "Data Race",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/webgpu-resource-sync-hazards.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772598389,
+        "title": "Resolving Apache Spark Shuffle Service OOMs",
+        "slug": "spark-shuffle-service-oom",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/spark-shuffle-service-oom.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772598390,
+        "title": "Fixing OCaml Multicore Memory Contention",
+        "slug": "ocaml-multicore-memory-contention",
+        "language": "Rust",
+        "code": "GC Contention",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/ocaml-multicore-memory-contention.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772598391,
+        "title": "Training on ANE: Reverse Engineering Apple’s Private APIs",
+        "slug": "apple-neural-engine-private-api-training",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/apple-neural-engine-private-api-training.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Machine Learning"
+        ]
+    },
+    {
         "id": 1772586810,
         "title": "Fixing Go Scheduler Livelocks in Tight Loops",
         "slug": "go-scheduler-livelock-tight-loops",
