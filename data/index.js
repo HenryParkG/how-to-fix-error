@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772586810,
+        "title": "Fixing Go Scheduler Livelocks in Tight Loops",
+        "slug": "go-scheduler-livelock-tight-loops",
+        "language": "Go",
+        "code": "G-Scheduler-Livelock",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/go-scheduler-livelock-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772586811,
+        "title": "Resolving ClickHouse Part Merge Storms",
+        "slug": "clickhouse-merge-storm-throttling",
+        "language": "SQL",
+        "code": "TooManyParts-41",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/clickhouse-merge-storm-throttling.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "ClickHouse",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772586812,
+        "title": "Fixing Wasm Linear Memory Fragmentation",
+        "slug": "wasm-memory-fragmentation-fix",
+        "language": "TypeScript",
+        "code": "Wasm-Mem-Leak",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/wasm-memory-fragmentation-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebAssembly",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772586813,
+        "title": "maderix/ANE: Unlocking the Apple Neural Engine",
+        "slug": "maderix-ane-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/maderix-ane-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "ML"
+        ]
+    },
+    {
         "id": 1772530403,
         "title": "Resolving PostgreSQL XID Wraparound in High-Load Clusters",
         "slug": "postgresql-xid-wraparound-resolution",
