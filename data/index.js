@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772606169,
+        "title": "Resolving eBPF Verifier Complexity in DPI",
+        "slug": "ebpf-verifier-complexity-dpi-fix",
+        "language": "Go",
+        "code": "VerifierLimit",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/ebpf-verifier-complexity-dpi-fix.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772606170,
+        "title": "Fixing Redis BGSAVE Fork Failures and CoW Spikes",
+        "slug": "redis-bgsave-fork-cow-fix",
+        "language": "Go",
+        "code": "OOM-Fork-Fail",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/redis-bgsave-fork-cow-fix.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772606171,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java",
+        "code": "Split-Brain",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772606172,
+        "title": "ANE: Training Neural Networks on Apple Neural Engine",
+        "slug": "maderix-ane-reverse-engineering-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-04",
+        "path": "data/posts/2026-03/maderix-ane-reverse-engineering-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772598388,
         "title": "Mitigating WebGPU Resource Synchronization Hazards",
         "slug": "webgpu-resource-sync-hazards",
