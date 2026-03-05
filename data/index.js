@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772692869,
+        "title": "Resolving Elixir GenServer Mailbox Bottlenecks",
+        "slug": "elixir-genserver-mailbox-bottlenecks",
+        "language": "Elixir",
+        "code": "ProcessMailboxFull",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-bottlenecks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772692870,
+        "title": "Mitigating Cassandra Tombstone Saturation",
+        "slug": "cassandra-tombstone-saturation-fix",
+        "language": "Java/CQL",
+        "code": "TombstoneOverwhelmingException",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/cassandra-tombstone-saturation-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772692871,
+        "title": "Fixing Kubernetes Cgroup v2 Memory Accounting Leaks",
+        "slug": "k8s-cgroup-v2-memory-leaks",
+        "language": "Go",
+        "code": "KubeletMemoryPressure",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/k8s-cgroup-v2-memory-leaks.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772692872,
+        "title": "Trend: ANE - Training on Apple Neural Engine",
+        "slug": "maderix-ane-reverse-engineered-api",
+        "language": "Python/C++",
+        "code": "Trend",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/maderix-ane-reverse-engineered-api.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1772684980,
         "title": "Mitigating Rust Async Cancellation Hazards in io_uring",
         "slug": "rust-async-iouring-cancellation-hazards",
