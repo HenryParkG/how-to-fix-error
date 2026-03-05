@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772684980,
+        "title": "Mitigating Rust Async Cancellation Hazards in io_uring",
+        "slug": "rust-async-iouring-cancellation-hazards",
+        "language": "Rust",
+        "code": "MemoryUnsafe",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/rust-async-iouring-cancellation-hazards.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "io_uring",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772684981,
+        "title": "Resolving gRPC Head-of-Line Blocking in HTTP/2 Flow Control",
+        "slug": "grpc-http2-hol-blocking-flow-control",
+        "language": "Go",
+        "code": "StreamStall",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/grpc-http2-hol-blocking-flow-control.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "gRPC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772684982,
+        "title": "Preventing PostgreSQL Transaction ID (XID) Wraparound",
+        "slug": "postgres-xid-wraparound-vacuum-stalled",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/postgres-xid-wraparound-vacuum-stalled.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772684983,
+        "title": "Unlocking the Apple Neural Engine with maderix/ANE",
+        "slug": "apple-neural-engine-maderix-ane-reverse-engineered",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/apple-neural-engine-maderix-ane-reverse-engineered.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "ML"
+        ]
+    },
+    {
         "id": 1772673347,
         "title": "Debugging C++20 Coroutine Frame Memory Corruption",
         "slug": "cpp20-coroutine-frame-memory-corruption",
