@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772703272,
+        "title": "Mitigating Go Scheduler Livelocks in Tight Loops",
+        "slug": "mitigating-go-scheduler-livelocks-tight-loops",
+        "language": "Go",
+        "code": "Livelock",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/mitigating-go-scheduler-livelocks-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772703273,
+        "title": "Resolving Kafka Consumer Rebalance Storms",
+        "slug": "resolve-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/resolve-kafka-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772703274,
+        "title": "Optimizing WebGPU Memory Buffer Sync",
+        "slug": "optimize-webgpu-buffer-synchronization",
+        "language": "TypeScript",
+        "code": "GPUBufferSyncError",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/optimize-webgpu-buffer-synchronization.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772703275,
+        "title": "Exploring the Google Workspace CLI (googleworkspace/cli)",
+        "slug": "google-workspace-cli-trend-analysis",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/google-workspace-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772692869,
         "title": "Resolving Elixir GenServer Mailbox Bottlenecks",
         "slug": "elixir-genserver-mailbox-bottlenecks",
