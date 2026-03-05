@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772673347,
+        "title": "Debugging C++20 Coroutine Frame Memory Corruption",
+        "slug": "cpp20-coroutine-frame-memory-corruption",
+        "language": "C++",
+        "code": "Heap-Use-After-Free",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/cpp20-coroutine-frame-memory-corruption.js",
+        "tags": [
+            "Rust",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772673348,
+        "title": "Resolving PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlocks-multi-node",
+        "language": "Python",
+        "code": "NCCL Timeout/Deadlock",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/pytorch-ddp-deadlocks-multi-node.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772673349,
+        "title": "Mitigating WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "C++",
+        "code": "Cache Eviction Latency",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772673350,
+        "title": "Reverse-Engineering Apple Silicon: The maderix/ANE Trend",
+        "slug": "maderix-ane-apple-neural-engine-guide",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-03-05",
+        "path": "data/posts/2026-03/maderix-ane-apple-neural-engine-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772616740,
         "title": "Fixing Zig Comptime Memory Exhaustion in Metaprogramming",
         "slug": "zig-comptime-memory-exhaustion-fix",
