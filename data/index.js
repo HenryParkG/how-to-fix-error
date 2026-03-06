@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772789455,
+        "title": "Debugging Rust Pinning Violations in Manual Future Polling",
+        "slug": "debugging-rust-pinning-violations-manual-future",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/debugging-rust-pinning-violations-manual-future.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772789456,
+        "title": "Mitigating Spark Executor OOMs in Wide Shuffles",
+        "slug": "spark-executor-oom-data-skew-shuffles",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/spark-executor-oom-data-skew-shuffles.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772789457,
+        "title": "Resolving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772789458,
+        "title": "Google Workspace CLI: The Unified Command Line for Productivity",
+        "slug": "google-workspace-cli-github-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/google-workspace-cli-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772779010,
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
