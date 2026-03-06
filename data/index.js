@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772771271,
+        "title": "Diagnosing Haskell Space Leaks in Lazy ByteStrings",
+        "slug": "haskell-lazy-bytestring-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/haskell-lazy-bytestring-space-leaks.js",
+        "tags": [
+            "Node.js",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772771272,
+        "title": "Mitigating HNSW Index Fragmentation in Vector DBs",
+        "slug": "hnsw-index-fragmentation-latency-spikes",
+        "language": "C++",
+        "code": "LatencySpike",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/hnsw-index-fragmentation-latency-spikes.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772771273,
+        "title": "Debugging Zig Use-After-Free in Comptime Allocators",
+        "slug": "zig-comptime-allocator-uaf",
+        "language": "Zig",
+        "code": "MemorySafety",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/zig-comptime-allocator-uaf.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772771274,
+        "title": "Google Workspace CLI: Unified Terminal Productivity",
+        "slug": "google-workspace-cli-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/google-workspace-cli-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772759970,
         "title": "Debugging eBPF Verifier Rejection in BPF-to-BPF Calls",
         "slug": "ebpf-verifier-rejection-bpf-to-bpf",
