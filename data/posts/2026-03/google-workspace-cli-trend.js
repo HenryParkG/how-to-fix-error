@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Google Workspace CLI: Unified Terminal Productivity",
+    "title": "Inside googleworkspace/cli: The Unified Workspace Tool",
     "slug": "google-workspace-cli-trend",
     "language": "Go",
     "code": "Trend",
@@ -8,13 +8,13 @@ window.onPostDataLoaded({
         "GitHub",
         "Go"
     ],
-    "analysis": "<p>The <code>googleworkspace/cli</code> repository is trending because it solves the long-standing 'portal fatigue' associated with Google\u2019s enterprise suite. Historically, managing Drive permissions, Gmail filters, and Calendar events required separate APIs or complex script setups. This tool leverages the <b>Google Discovery Service</b> to dynamically generate commands, ensuring it supports every API feature out-of-the-box.</p><p>The inclusion of AI agent skills is a major draw, allowing users to pipe terminal output directly into AI-driven workflows for document summarization or automated scheduling without leaving the CLI.</p>",
-    "root_cause": "Dynamic API Generation, Unified Auth, AI Integration, and Cross-Platform Scriptability.",
-    "bad_code": "# Installation via Go (Ensure GOBIN is in your PATH)\ngo install github.com/googleworkspace/cli@latest",
-    "solution_desc": "Ideal for DevOps engineers automating user onboarding, researchers syncing massive Drive datasets, and power users who want to apply AI to their Workspace data via shell pipes.",
-    "good_code": "# List files in Drive and use the AI skill to summarize a document\ngw drive list --query \"name contains 'Project'\"\ngw ai summarize --id <FILE_ID> --model gemini-pro",
-    "verification": "The project is rapidly gaining stars and community contributions, indicating a shift toward terminal-first enterprise management.",
+    "analysis": "<p>The 'googleworkspace/cli' is trending because it solves the fragmentation problem of managing Google's vast ecosystem. Unlike previous tools that focused on a single service (like 'gam' for Admin), this tool is dynamically built from the Google Discovery Service. This means it supports Drive, Gmail, Calendar, and even the latest AI agent skills via a single, consistent interface. Its popularity stems from its 'everything-as-code' approach to Workspace management and its built-in support for AI-driven automation.</p>",
+    "root_cause": "Dynamic API Generation & AI Integration",
+    "bad_code": "go install github.com/googleworkspace/cli/cmd/workspace@latest",
+    "solution_desc": "Use this CLI for bulk administrative tasks, CI/CD pipelines involving Google Docs/Drive, or building AI agents that need to interact with Workspace data using the 'agent' skill flag.",
+    "good_code": "# Search for emails and export to a file\nworkspace gmail search \"from:boss\" --format json > reports.json\n\n# List Drive files using a specific AI agent skill\nworkspace drive list --skill \"summarize-recent-files\"",
+    "verification": "With Google's push toward 'AI Agents', this CLI is positioned to become the primary interface for developers bridging LLMs and enterprise productivity data.",
     "date": "2026-03-06",
-    "id": 1772771274,
+    "id": 1772779013,
     "type": "trend"
 });

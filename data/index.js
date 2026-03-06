@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772779010,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "Go",
+        "code": "LifetimeViolation",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772779011,
+        "title": "Solving PyTorch DDP Deadlocks in Collective Comm",
+        "slug": "pytorch-ddp-collective-deadlock",
+        "language": "Python",
+        "code": "CollectiveDeadlock",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/pytorch-ddp-collective-deadlock.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772779012,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-stalls",
+        "language": "SQL",
+        "code": "CacheEvictionStall",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772779013,
+        "title": "Inside googleworkspace/cli: The Unified Workspace Tool",
+        "slug": "google-workspace-cli-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/google-workspace-cli-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772771271,
         "title": "Diagnosing Haskell Space Leaks in Lazy ByteStrings",
         "slug": "haskell-lazy-bytestring-space-leaks",
