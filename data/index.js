@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772759970,
+        "title": "Debugging eBPF Verifier Rejection in BPF-to-BPF Calls",
+        "slug": "ebpf-verifier-rejection-bpf-to-bpf",
+        "language": "Go",
+        "code": "VerifierError",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/ebpf-verifier-rejection-bpf-to-bpf.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772759971,
+        "title": "Mitigating Redis AOF Rewrite CoW Memory Exhaustion",
+        "slug": "redis-aof-rewrite-cow-fix",
+        "language": "Go",
+        "code": "OOMKill",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/redis-aof-rewrite-cow-fix.js",
+        "tags": [
+            "SQL",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772759972,
+        "title": "Fixing React Native JSI Memory Leaks in Turbo Modules",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "TypeScript",
+        "code": "MemoryLeak",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/react-native-jsi-memory-leak-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772759973,
+        "title": "Analyzing 'googleworkspace/cli': The Universal Workspace Tool",
+        "slug": "google-workspace-cli-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-06",
+        "path": "data/posts/2026-03/google-workspace-cli-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772703272,
         "title": "Mitigating Go Scheduler Livelocks in Tight Loops",
         "slug": "mitigating-go-scheduler-livelocks-tight-loops",
