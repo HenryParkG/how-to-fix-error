@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772845861,
+        "title": "Fix gRPC Stream Exhaustion & Head-of-Line Blocking",
+        "slug": "grpc-stream-exhaustion-hol-blocking",
+        "language": "Go",
+        "code": "ResourceExhausted",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/grpc-stream-exhaustion-hol-blocking.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772845862,
+        "title": "Fix Precision Loss and NaNs in 4-bit LLM Inference",
+        "slug": "fix-nan-precision-loss-4bit-quantization",
+        "language": "Python",
+        "code": "FloatingPointError",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/fix-nan-precision-loss-4bit-quantization.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772845863,
+        "title": "Resolve Elixir GenServer Mailbox Overflows in Telemetry",
+        "slug": "elixir-genserver-mailbox-overflow-fix",
+        "language": "Elixir",
+        "code": "ProcessOverflow",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-overflow-fix.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772845864,
+        "title": "Google Workspace CLI: Automating the Productivity Suite",
+        "slug": "google-workspace-cli-analysis-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/google-workspace-cli-analysis-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772789455,
         "title": "Debugging Rust Pinning Violations in Manual Future Polling",
         "slug": "debugging-rust-pinning-violations-manual-future",
