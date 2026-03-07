@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1772864959,
+        "title": "Mitigating Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms-high-latency",
+        "language": "Java",
+        "code": "ConsumerRebalanceException",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/kafka-consumer-rebalance-storms-high-latency.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772864960,
+        "title": "Solving Next.js Hydration Mismatches in Streaming SSR",
+        "slug": "nextjs-hydration-mismatches-streaming-suspense",
+        "language": "TypeScript",
+        "code": "HydrationMismatchError",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/nextjs-hydration-mismatches-streaming-suspense.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772864961,
+        "title": "Fixing Go Runtime Scheduler Starvation",
+        "slug": "go-runtime-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/go-runtime-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772864962,
+        "title": "Analyzing the googleworkspace/cli Trend",
+        "slug": "google-workspace-cli-features-usage",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/google-workspace-cli-features-usage.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772857119,
         "title": "Debugging AF_XDP Zero-Copy Descriptor Ring Synchronization",
         "slug": "linux-kernel-af-xdp-zc-sync",
