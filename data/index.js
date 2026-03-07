@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772857119,
+        "title": "Debugging AF_XDP Zero-Copy Descriptor Ring Synchronization",
+        "slug": "linux-kernel-af-xdp-zc-sync",
+        "language": "C / Rust",
+        "code": "Race Condition",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/linux-kernel-af-xdp-zc-sync.js",
+        "tags": [
+            "Rust",
+            "Infra",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772857120,
+        "title": "Fixing WebGPU Resource Race Conditions in Multi-Pass Shaders",
+        "slug": "webgpu-compute-race-conditions",
+        "language": "TypeScript / WGSL",
+        "code": "Data Race",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/webgpu-compute-race-conditions.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772857121,
+        "title": "Eliminating OCaml Multicore Memory Contention",
+        "slug": "ocaml-multicore-gc-contention",
+        "language": "OCaml",
+        "code": "GC Bottleneck",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-contention.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772857122,
+        "title": "Google Workspace CLI: Automating the Productivity Suite",
+        "slug": "google-workspace-cli-trending",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/google-workspace-cli-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772845861,
         "title": "Fix gRPC Stream Exhaustion & Head-of-Line Blocking",
         "slug": "grpc-stream-exhaustion-hol-blocking",
