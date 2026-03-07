@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772875274,
+        "title": "Fixing Zig SIMD Alignment Violations in Interop",
+        "slug": "zig-simd-alignment-violation-fix",
+        "language": "Zig",
+        "code": "AlignmentViolation",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/zig-simd-alignment-violation-fix.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772875275,
+        "title": "Mitigating Vector Index Merging Stalls in Milvus",
+        "slug": "milvus-vector-index-merging-stalls",
+        "language": "Go",
+        "code": "MergeStall",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/milvus-vector-index-merging-stalls.js",
+        "tags": [
+            "Kubernetes",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772875276,
+        "title": "Resolving Istio mTLS Handshake Timeouts",
+        "slug": "istio-mtls-handshake-timeout-fix",
+        "language": "Kubernetes",
+        "code": "mTLSHandshakeTimeout",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/istio-mtls-handshake-timeout-fix.js",
+        "tags": [
+            "Istio",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772875277,
+        "title": "Trending: Google Workspace CLI with AI Skills",
+        "slug": "google-workspace-cli-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-07",
+        "path": "data/posts/2026-03/google-workspace-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1772864959,
         "title": "Mitigating Kafka Consumer Rebalance Storms",
         "slug": "kafka-consumer-rebalance-storms-high-latency",
