@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1772944139,
+        "title": "Fixing Rust Pin Projection Violations in Manual Futures",
+        "slug": "rust-pin-projection-violations-manual-futures",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/rust-pin-projection-violations-manual-futures.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772944140,
+        "title": "Fixing Spark Shuffle-Stage OOMs in Skewed Data",
+        "slug": "spark-shuffle-oom-skewed-data",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/spark-shuffle-oom-skewed-data.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "BigData",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772944141,
+        "title": "Resolving PostgreSQL TXID Wraparound and Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772944142,
+        "title": "Google Workspace CLI: Unified Productivity via Terminal",
+        "slug": "google-workspace-cli-features-usage",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/google-workspace-cli-features-usage.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Backend"
+        ]
+    },
+    {
         "id": 1772932584,
         "title": "Debugging Haskell Space Leaks in Lazy Pipelines",
         "slug": "debugging-haskell-space-leaks",
