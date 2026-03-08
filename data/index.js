@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772961660,
+        "title": "Fixing WebAssembly Linear Memory Fragmentation",
+        "slug": "wasm-linear-memory-fragmentation-fix",
+        "language": "Rust",
+        "code": "MemoryFragmentation",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/wasm-linear-memory-fragmentation-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "WebAssembly",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772961661,
+        "title": "Resolving gRPC Stream Deadlocks in Proxy Chains",
+        "slug": "grpc-stream-deadlock-proxy-fix",
+        "language": "Go",
+        "code": "FlowControlDeadlock",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/grpc-stream-deadlock-proxy-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "gRPC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772961662,
+        "title": "Mitigating Cassandra Latency from Tombstone Overload",
+        "slug": "cassandra-tombstone-latency-fix",
+        "language": "Java",
+        "code": "TombstoneOverload",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/cassandra-tombstone-latency-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772961663,
+        "title": "Exploring the Google Workspace CLI: A Unified Power Tool",
+        "slug": "google-workspace-cli-trend-analysis",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/google-workspace-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772951542,
         "title": "Fixing C++20 Coroutine Suspended State Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
