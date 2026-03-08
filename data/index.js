@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772932584,
+        "title": "Debugging Haskell Space Leaks in Lazy Pipelines",
+        "slug": "debugging-haskell-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak (Thunk accumulation)",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/debugging-haskell-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772932585,
+        "title": "Resolving PyTorch DDP Gradient Sync Deadlocks",
+        "slug": "pytorch-ddp-gradient-sync-deadlocks",
+        "language": "Python",
+        "code": "Distributed Deadlock",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/pytorch-ddp-gradient-sync-deadlocks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772932586,
+        "title": "Mitigating eBPF Verifier Complexity Limits",
+        "slug": "mitigate-ebpf-verifier-complexity",
+        "language": "C / Go",
+        "code": "Verifier Complexity Error",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/mitigate-ebpf-verifier-complexity.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772932587,
+        "title": "Google Workspace CLI: Unified Terminal Management",
+        "slug": "google-workspace-cli-overview",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/google-workspace-cli-overview.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1772875274,
         "title": "Fixing Zig SIMD Alignment Violations in Interop",
         "slug": "zig-simd-alignment-violation-fix",
