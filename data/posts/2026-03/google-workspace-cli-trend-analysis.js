@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Trending: Google Workspace CLI with AI Skills",
+    "title": "Google Workspace CLI: One Tool for All Apps",
     "slug": "google-workspace-cli-trend-analysis",
     "language": "TypeScript",
     "code": "Trend",
@@ -8,13 +8,13 @@ window.onPostDataLoaded({
         "GitHub",
         "Node.js"
     ],
-    "analysis": "<p>The 'googleworkspace/cli' is trending because it solves the 'Portal Fatigue' for developers managing Drive, Gmail, and Docs. Unlike static CLIs, it is dynamically built from the Google Discovery Service, meaning it supports every API feature out-of-the-box. Its inclusion of 'AI agent skills' marks a shift toward 'Agentic Workflows' where the CLI can interpret natural language tasks to automate complex cross-app workflows.</p>",
-    "root_cause": "Dynamic API discovery, multi-account support, and built-in AI capabilities for automation.",
-    "bad_code": "npm install -g @google-workspace/cli\nworkspace auth login",
-    "solution_desc": "Best used for DevOps automation, bulk permission management in Drive, and rapid prototyping of Google Workspace integrations without writing custom OAuth2 boilerplate.",
-    "good_code": "# Use AI to find and summarize files\nworkspace drive query \"summarize my last 5 invoices\"\n# List calendar events in JSON\nworkspace calendar events list --calendarId primary --maxResults 10",
-    "verification": "With Google's push for Gemini integration, this CLI is poised to become the primary interface for 'Workspace as Code' (WaC) implementations.",
-    "date": "2026-03-07",
-    "id": 1772875277,
+    "analysis": "<p>The <code>googleworkspace/cli</code> is trending because it solves 'API fatigue' for developers working within the Google ecosystem. Unlike traditional specialized tools (like clasp), this CLI is dynamically generated from the Google Discovery Service. This means it supports Drive, Gmail, Calendar, and even Admin SDKs via a single unified interface, complete with AI agent capabilities for natural language command execution.</p>",
+    "root_cause": "Dynamic API discovery, unified authentication flow, and built-in AI agent skills that translate intent into API calls.",
+    "bad_code": "npm install -g @googleworkspace/cli\nwks login",
+    "solution_desc": "Best used for DevOps automation, batch processing of Workspace resources, and building AI-driven internal tools without writing boilerplate SDK code.",
+    "good_code": "# List files using AI intent\nwks drive files list --query \"name contains 'Invoices'\"\n# Or use the AI agent\nwks ai 'Find all emails from HR and save attachments to Drive'",
+    "verification": "The project is rapidly evolving with a focus on 'Agentic' workflows, suggesting a future where CLI tools act as autonomous bridges between SaaS platforms.",
+    "date": "2026-03-08",
+    "id": 1772951545,
     "type": "trend"
 });

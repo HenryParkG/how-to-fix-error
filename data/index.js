@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1772951542,
+        "title": "Fixing C++20 Coroutine Suspended State Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772951543,
+        "title": "Eliminating Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "SystemOverload",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-congestion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772951544,
+        "title": "Mitigating Redis CoW Memory Spikes during BGSAVE",
+        "slug": "redis-cow-memory-spikes-bgsave",
+        "language": "Redis",
+        "code": "OOMKiller",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/redis-cow-memory-spikes-bgsave.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Redis",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1772951545,
+        "title": "Google Workspace CLI: One Tool for All Apps",
+        "slug": "google-workspace-cli-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-08",
+        "path": "data/posts/2026-03/google-workspace-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1772944139,
         "title": "Fixing Rust Pin Projection Violations in Manual Futures",
         "slug": "rust-pin-projection-violations-manual-futures",
