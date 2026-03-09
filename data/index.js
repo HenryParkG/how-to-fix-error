@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773039094,
+        "title": "Fixing eBPF Verifier Complexity in XDP Programs",
+        "slug": "fixing-ebpf-verifier-complexity-xdp",
+        "language": "C / Go",
+        "code": "VerifierLimitReached",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/fixing-ebpf-verifier-complexity-xdp.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773039095,
+        "title": "Mitigating HNSW Index Poisoning in Vector DBs",
+        "slug": "hnsw-index-poisoning-concurrent-upserts",
+        "language": "Rust",
+        "code": "ConcurrentWriteConflict",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/hnsw-index-poisoning-concurrent-upserts.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773039096,
+        "title": "Diagnosing Haskell Space Leaks in Thunk Chains",
+        "slug": "diagnosing-haskell-space-leaks-thunks",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/diagnosing-haskell-space-leaks-thunks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773039097,
+        "title": "Karpathy's autoresearch: AI-Driven ML Pipelines",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773031608,
         "title": "Resolving 4-bit PTQ Divergence in LLM Quantization",
         "slug": "resolving-llm-4bit-ptq-divergence",
