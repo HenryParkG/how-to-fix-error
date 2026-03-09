@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1773018967,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "StarvationError",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773018968,
+        "title": "Resolving Kafka Zombie Fencing Violations",
+        "slug": "kafka-zombie-fencing-eos-fix",
+        "language": "Java",
+        "code": "ProducerFencedException",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/kafka-zombie-fencing-eos-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773018969,
+        "title": "Debugging WebGPU Resource State Tracking Hazards",
+        "slug": "webgpu-resource-synchronization-hazards",
+        "language": "TypeScript",
+        "code": "SynchronizationError",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/webgpu-resource-synchronization-hazards.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773018970,
+        "title": "Analyzing karpathy/autoresearch: AI-Driven R&D",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1772961660,
         "title": "Fixing WebAssembly Linear Memory Fragmentation",
         "slug": "wasm-linear-memory-fragmentation-fix",
