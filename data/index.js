@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1773049189,
+        "title": "Fixing Rust Pinning Violations in Async Futures",
+        "slug": "rust-pinning-violations-async-futures",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/rust-pinning-violations-async-futures.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773049190,
+        "title": "Diagnosing PyTorch Multi-Node Deadlocks",
+        "slug": "pytorch-multi-node-deadlocks",
+        "language": "Python",
+        "code": "CollectiveDeadlock",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/pytorch-multi-node-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Distributed",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773049191,
+        "title": "Resolving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/postgres-transaction-id-wraparound.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773049192,
+        "title": "Analyzing Karpathy's Autoresearch: AI Research Agents",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Backend"
+        ]
+    },
+    {
         "id": 1773039094,
         "title": "Fixing eBPF Verifier Complexity in XDP Programs",
         "slug": "fixing-ebpf-verifier-complexity-xdp",
