@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773031608,
+        "title": "Resolving 4-bit PTQ Divergence in LLM Quantization",
+        "slug": "resolving-llm-4bit-ptq-divergence",
+        "language": "Python",
+        "code": "WeightDivergence",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/resolving-llm-4bit-ptq-divergence.js",
+        "tags": [
+            "LLM",
+            "PyTorch",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773031609,
+        "title": "Fixing Zig Comptime Memory Exhaustion",
+        "slug": "fix-zig-comptime-memory-exhaustion",
+        "language": "Zig",
+        "code": "OutOfMemory",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/fix-zig-comptime-memory-exhaustion.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773031610,
+        "title": "Debugging JSI Memory Leaks in RN TurboModules",
+        "slug": "debug-react-native-jsi-memory-leaks",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/debug-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773031611,
+        "title": "Analyzing karpathy/autoresearch: The Future of AI Labs",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-09",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773018967,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-runtime-scheduler-starvation-fix",
