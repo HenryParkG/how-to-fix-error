@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773124687,
+        "title": "Fixing Linux Kernel RCU Sched Stalls in RT Workloads",
+        "slug": "linux-kernel-rcu-sched-stalls-rt",
+        "language": "C / Go",
+        "code": "RCU_STALL",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/linux-kernel-rcu-sched-stalls-rt.js",
+        "tags": [
+            "Linux",
+            "Kernel",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773124688,
+        "title": "Resolving WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-race-conditions",
+        "language": "TypeScript",
+        "code": "GPUBufferUsageError",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/webgpu-buffer-mapping-race-conditions.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773124689,
+        "title": "Mitigating WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "Go / SQL",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773124690,
+        "title": "Analyzing Karpathy/Autoresearch: AI Agents for ML Research",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773116856,
         "title": "Fixing OCaml Multicore Races under Relaxed Memory",
         "slug": "ocaml-multicore-data-race-relaxed-memory",
