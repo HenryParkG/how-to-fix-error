@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773135351,
+        "title": "Resolving Zig Pointer Alignment Faults in Multi-Platform FFI",
+        "slug": "zig-pointer-alignment-ffi-fix",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/zig-pointer-alignment-ffi-fix.js",
+        "tags": [
+            "Zig",
+            "FFI",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773135352,
+        "title": "Mitigating Kafka 'Zombie' Rebalances in Kubernetes",
+        "slug": "kafka-zombie-rebalance-k8s",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/kafka-zombie-rebalance-k8s.js",
+        "tags": [
+            "Kafka",
+            "Kubernetes",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773135353,
+        "title": "Fixing PyTorch CUDA Illegal Memory Access in Autograd",
+        "slug": "pytorch-cuda-illegal-access-autograd",
+        "language": "Python",
+        "code": "CUDA_ERROR_ILLEGAL_ADDRESS",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/pytorch-cuda-illegal-access-autograd.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773135354,
+        "title": "Inside karpathy/autoresearch: AI-Driven Model Evolution",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773124687,
         "title": "Fixing Linux Kernel RCU Sched Stalls in RT Workloads",
         "slug": "linux-kernel-rcu-sched-stalls-rt",
