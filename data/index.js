@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773116856,
+        "title": "Fixing OCaml Multicore Races under Relaxed Memory",
+        "slug": "ocaml-multicore-data-race-relaxed-memory",
+        "language": "Go",
+        "code": "DataRace",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/ocaml-multicore-data-race-relaxed-memory.js",
+        "tags": [
+            "Go",
+            "Multithreading",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773116857,
+        "title": "Fixing Spark AQE Skew in High-Cardinality Joins",
+        "slug": "spark-aqe-skew-high-cardinality",
+        "language": "SQL",
+        "code": "DataSkew",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/spark-aqe-skew-high-cardinality.js",
+        "tags": [
+            "SQL",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773116858,
+        "title": "Fixing Istio mTLS Handshake Timeouts",
+        "slug": "istio-mtls-handshake-timeout-fix",
+        "language": "Kubernetes",
+        "code": "Timeout",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/istio-mtls-handshake-timeout-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773116859,
+        "title": "Trend: AI Research Automation with Karpathy's Autoresearch",
+        "slug": "karpathy-autoresearch-ai-agents",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/karpathy-autoresearch-ai-agents.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773105048,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",

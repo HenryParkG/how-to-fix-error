@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Resolving Istio mTLS Handshake Timeouts",
+    "title": "Fixing Istio mTLS Handshake Timeouts",
     "slug": "istio-mtls-handshake-timeout-fix",
     "language": "Kubernetes",
-    "code": "mTLSHandshakeTimeout",
+    "code": "Timeout",
     "tags": [
-        "Istio",
+        "Kubernetes",
         "Docker",
         "Infra",
         "Error Fix"
     ],
-    "analysis": "<p>Microservices with high pod churn (rapid scaling or frequent deployments) often experience 503 errors and mTLS handshake timeouts. This happens because the Envoy sidecar cannot obtain new certificates from the Istiod CA fast enough, or the existing Secret Discovery Service (SDS) connection remains stale after a pod IP change.</p>",
-    "root_cause": "The default Citadel/Istiod certificate rotation grace period is too short, and the Secret Discovery Service (SDS) 'push' mechanism becomes a bottleneck during burst scaling events.",
-    "bad_code": "apiVersion: security.istio.io/v1beta1\nkind: PeerAuthentication\nspec:\n  mtls:\n    mode: STRICT\n# Lacks configuration for SDS retry and grace periods",
-    "solution_desc": "Optimize the ProxyConfig to increase the `proxyMetadata` for SDS connection timeouts and tune the Istiod environment variables to handle more concurrent CSR (Certificate Signing Request) signatures.",
-    "good_code": "meshConfig:\n  defaultConfig:\n    proxyMetadata:\n      SECRET_TTL: \"24h\"\n      SECRET_GRACE_PERIOD_RATIO: \"0.5\"\n      ISTIO_META_IDLE_TIMEOUT: \"30s\"",
-    "verification": "Check the Envoy logs for `upstream connect error or disconnect/reset before headers`. If the logs show successful mTLS handshakes during a scale-up event, the timeout issue is resolved.",
-    "date": "2026-03-07",
-    "id": 1772875276,
+    "analysis": "<p>In geographically distributed service meshes, the latency between Envoy proxies can exceed the default mTLS handshake timeout. When a source proxy initiates a TLS handshake with a destination, it expects a completion within a strict window (often 10s). If the latency is high or the control plane (istiod) is slow to rotate certificates, Envoy terminates the connection before the handshake finishes, resulting in 503 errors or connection resets.</p>",
+    "root_cause": "High network RTT between clusters causes the underlying TCP/TLS handshake to exceed the Envoy default handshake_timeout property.",
+    "bad_code": "apiVersion: install.istio.io/v1alpha1\nkind: IstioOperator\nspec:\n  meshConfig:\n    # Default values often too low for cross-region\n    accessLogFile: /dev/stdout",
+    "solution_desc": "Apply an EnvoyFilter to the ingress or egress gateways (and sidecars) to explicitly increase the transport_socket's handshake_timeout to accommodate the network latency.",
+    "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: EnvoyFilter\nmetadata:\n  name: extend-handshake-timeout\nspec:\n  configPatches:\n  - applyTo: NETWORK_FILTER\n    match:\n      listener:\n        filterChain:\n          filter:\n            name: \"envoy.filters.network.http_connection_manager\"\n    patch:\n      operation: MERGE\n      value:\n        typed_config:\n          \"@type\": \"type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager\"\n          common_http_protocol_options:\n            max_connection_duration: 30s",
+    "verification": "Monitor the 'envoy_cluster_ssl_context_no_certificate' and 'envoy_listener_ssl_handshake_error' metrics in Prometheus for a decrease in failures.",
+    "date": "2026-03-10",
+    "id": 1773116858,
     "type": "error"
 });
