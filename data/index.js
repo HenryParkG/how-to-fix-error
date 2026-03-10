@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773105048,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "Use-after-free",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773105049,
+        "title": "Fixing Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir/OTP",
+        "code": "Process Mailbox Overflow",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-congestion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773105050,
+        "title": "Fixing Redis CoW Spikes during RDB Snapshots",
+        "slug": "redis-cow-memory-spikes-rdb",
+        "language": "Redis",
+        "code": "Memory Fragmentation/OOM",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/redis-cow-memory-spikes-rdb.js",
+        "tags": [
+            "Docker",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773105051,
+        "title": "Karpathy's Autoresearch: The Rise of AI Research Agents",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-10",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773049189,
         "title": "Fixing Rust Pinning Violations in Async Futures",
         "slug": "rust-pinning-violations-async-futures",

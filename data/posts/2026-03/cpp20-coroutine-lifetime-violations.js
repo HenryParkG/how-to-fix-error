@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing C++20 Coroutine Suspended State Lifetime Violations",
+    "title": "Fixing C++20 Coroutine Lifetime Violations",
     "slug": "cpp20-coroutine-lifetime-violations",
     "language": "C++",
-    "code": "Use-After-Free",
+    "code": "Use-after-free",
     "tags": [
         "Rust",
         "Backend",
         "C++",
         "Error Fix"
     ],
-    "analysis": "<p>C++20 coroutines are stackless, allocating their state (the coroutine frame) on the heap. A critical error occurs when a coroutine captures references to local variables or parameters by reference. When the coroutine suspends at an <code>co_await</code> point, the calling function's stack frame may be destroyed, leaving the coroutine with dangling references. This is particularly dangerous in asynchronous workflows where the coroutine outlives its initiator.</p>",
-    "root_cause": "Capturing objects by reference in a coroutine that suspends, leading to dangling references once the caller's stack is cleared.",
-    "bad_code": "std::future<void> bad_coroutine(const std::string& input) {\n    // Suspending here allows 'input' to go out of scope\n    co_await some_async_op(); \n    std::cout << input << std::endl; // CRASH: input is a dangling reference\n}",
-    "solution_desc": "Always capture parameters by value in coroutines or use shared ownership (std::shared_ptr) to ensure the data remains valid throughout the entire lifecycle of the coroutine execution.",
-    "good_code": "std::future<void> good_coroutine(std::string input) {\n    // 'input' is moved into the coroutine frame\n    co_await some_async_op();\n    std::cout << input << std::endl; // SAFE: input is local to the frame\n}",
-    "verification": "Compile with AddressSanitizer (ASan) and use -fcoroutines-ts to detect heap-use-after-free during runtime execution.",
-    "date": "2026-03-08",
-    "id": 1772951542,
+    "analysis": "<p>In C++20, coroutines suspend execution and return control to the caller. A common mistake occurs when a coroutine accepts arguments by reference (e.g., const std::string&). If the caller's scope ends while the coroutine is suspended, the reference becomes a dangling pointer. Unlike traditional functions, the coroutine's state (the coroutine frame) persists on the heap, but the references it captured point to the now-destroyed stack frame of the caller.</p><p>This is particularly dangerous in asynchronous task graphs where a coroutine might be launched and then the initiating function exits immediately, leaving the coroutine to resume later and access garbage memory.</p>",
+    "root_cause": "Capturing stack-allocated references or pointers in a coroutine that outlives the caller's scope.",
+    "bad_code": "Task<void> process_data(const std::string& input) {\n    co_await async_io();\n    std::cout << input << std::endl; // CRASH: input is a dangling reference\n}\n\nvoid start() {\n    process_data(\"Temporary String\");\n}",
+    "solution_desc": "Always pass arguments to asynchronous coroutines by value. The coroutine frame will copy these values into its heap-allocated storage, ensuring they remain valid for the entire lifecycle of the coroutine.",
+    "good_code": "Task<void> process_data(std::string input) {\n    co_await async_io();\n    std::cout << input << std::endl; // SAFE: input is stored in the coroutine frame\n}\n\nvoid start() {\n    process_data(\"Temporary String\"); // Copied into coroutine frame\n}",
+    "verification": "Compile with AddressSanitizer (-fsanitize=address) to detect heap-use-after-free during coroutine resumption.",
+    "date": "2026-03-10",
+    "id": 1773105048,
     "type": "error"
 });
