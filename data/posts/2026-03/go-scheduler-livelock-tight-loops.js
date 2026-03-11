@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Fixing Go Scheduler Livelocks in Tight Loops",
+    "title": "Resolving Go Scheduler Livelocks in Tight Loops",
     "slug": "go-scheduler-livelock-tight-loops",
     "language": "Go",
-    "code": "G-Scheduler-Livelock",
+    "code": "StarvationError",
     "tags": [
         "Go",
         "Backend",
-        "Performance",
         "Error Fix"
     ],
-    "analysis": "<p>In Go, the runtime scheduler manages goroutines using a cooperative-ish strategy. Before Go 1.14, a goroutine performing a tight loop without function calls (a 'leaf' function) could occupy a P (Processor) indefinitely, preventing the scheduler from preempting it. This caused 'livelocks' where sysmon would signal for a stop-the-world event (like GC), but the tight loop would never reach a safepoint.</p><p>Even with asynchronous preemption introduced in 1.14+, certain tight loops\u2014especially those involving heavy register pressure or specific architectural edge cases\u2014can still resist preemption signals, leading to high latency for other goroutines and delayed Garbage Collection cycles.</p>",
-    "root_cause": "The Go scheduler relies on stack-growth checks at function entries as implicit safepoints. Tight loops without function calls lack these checks, and if asynchronous signals are blocked or delayed, the goroutine never yields control.",
-    "bad_code": "func computeSum(data []int) int {\n\tsum := 0\n\t// Tight loop with no function calls\n\tfor i := 0; i < len(data); i++ {\n\t\tsum += data[i]\n\t}\n\treturn sum\n}",
-    "solution_desc": "Manually introduce a scheduler yield using runtime.Gosched() or ensure the loop performs a function call that triggers a stack check. For modern Go versions, ensure the environment allows SIGURG signals, which are required for asynchronous preemption.",
-    "good_code": "func computeSum(data []int) int {\n\tsum := 0\n\tfor i := 0; i < len(data); i++ {\n\t\tsum += data[i]\n\t\t// Explicitly yield to allow other goroutines and GC to run\n\t\tif i%1000000 == 0 {\n\t\t\truntime.Gosched()\n\t\t}\n\t}\n\treturn sum\n}",
-    "verification": "Use 'GODEBUG=schedtrace=1000' to monitor the scheduler. If a goroutine is stuck on one thread (M) for several seconds without shifting, the livelock persists.",
-    "date": "2026-03-04",
-    "id": 1772586810,
+    "analysis": "<p>In Go versions prior to 1.14, the scheduler relied purely on cooperative preemption. If a goroutine entered a 'tight' loop containing no function calls, it would never trigger a stack growth check, effectively hijacking the Processor (P). Even with the introduction of asynchronous preemption in Go 1.14+, high-frequency tight loops that manipulate memory without yielding can still lead to GC stalls and scheduler latency, as the signal-based preemption might be delayed or blocked by certain atomic operations or syscalls.</p>",
+    "root_cause": "The Go scheduler cannot preempt a goroutine that does not make function calls or reach a safepoint, causing other goroutines on the same P to starve.",
+    "bad_code": "func busyLoop(done chan bool) {\n\tfor {\n\t\t// Tight loop with no function calls\n\t\t// Before Go 1.14, this hangs the P forever\n\t\ti++\n\t}\n\tdone <- true\n}",
+    "solution_desc": "Manually invoke the scheduler using runtime.Gosched() to yield execution, or ensure the loop performs an operation that triggers a safepoint (like a function call or I/O). In modern Go, ensure the loop isn't blocking OS signals if relying on async preemption.",
+    "good_code": "func busyLoop(done chan bool) {\n\tfor {\n\t\ti++\n\t\t// Cooperative yield to let other goroutines run\n\t\tif i%1000 == 0 {\n\t\t\truntime.Gosched()\n\t\t}\n\t}\n\tdone <- true\n}",
+    "verification": "Run the code with GOMAXPROCS=1. If the program terminates or other goroutines execute, the livelock is resolved.",
+    "date": "2026-03-11",
+    "id": 1773203297,
     "type": "error"
 });

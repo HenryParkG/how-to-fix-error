@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1773203297,
+        "title": "Resolving Go Scheduler Livelocks in Tight Loops",
+        "slug": "go-scheduler-livelock-tight-loops",
+        "language": "Go",
+        "code": "StarvationError",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/go-scheduler-livelock-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773203298,
+        "title": "Mitigating HNSW Graph Fragmentation in Vector DBs",
+        "slug": "hnsw-graph-fragmentation-fix",
+        "language": "Rust",
+        "code": "IndexDegradation",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/hnsw-graph-fragmentation-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773203299,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "XidWraparound",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/postgres-xid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773203300,
+        "title": "Andrej Karpathy's autoresearch: AI-Driven R&D",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773191470,
         "title": "Fixing eBPF Verifier Complexity in XDP Programs",
         "slug": "ebpf-xdp-verifier-complexity-fix",
