@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773211257,
+        "title": "Fixing Rust Async Pinning Violations in Custom Futures",
+        "slug": "rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773211258,
+        "title": "Eliminating Elixir GenServer Selective Receive Bottlenecks",
+        "slug": "elixir-genserver-selective-receive",
+        "language": "Elixir",
+        "code": "MailboxO(N)",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/elixir-genserver-selective-receive.js",
+        "tags": [
+            "Elixir",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773211259,
+        "title": "Mitigating Redis Copy-on-Write Memory Bloat during BGSAVE",
+        "slug": "redis-cow-memory-bloat",
+        "language": "Redis",
+        "code": "MemoryExhaustion",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/redis-cow-memory-bloat.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773211260,
+        "title": "Analyzing Karpathy's Autoresearch: Agentic ML Discovery",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773203297,
         "title": "Resolving Go Scheduler Livelocks in Tight Loops",
         "slug": "go-scheduler-livelock-tight-loops",
