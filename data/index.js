@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773221686,
+        "title": "Fixing C++20 Coroutine Lambda Use-After-Free",
+        "slug": "cpp20-coroutine-lambda-uaf-fix",
+        "language": "C++20",
+        "code": "Use-After-Free",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/cpp20-coroutine-lambda-uaf-fix.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773221687,
+        "title": "Solving gRPC Stickiness in Kubernetes Headless Services",
+        "slug": "grpc-kubernetes-headless-stickiness",
+        "language": "Go / gRPC",
+        "code": "Load Balancing",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/grpc-kubernetes-headless-stickiness.js",
+        "tags": [
+            "gRPC",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773221688,
+        "title": "Eliminating OCaml Multicore GC Latency Spikes",
+        "slug": "ocaml-multicore-gc-latency-optimization",
+        "language": "OCaml 5.0",
+        "code": "GC Latency",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-latency-optimization.js",
+        "tags": [
+            "OCaml",
+            "Performance",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773221689,
+        "title": "Analyzing Karpathy's autoresearch: AI-Driven ML Research",
+        "slug": "karpathy-autoresearch-ai-agents-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/karpathy-autoresearch-ai-agents-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773211257,
         "title": "Fixing Rust Async Pinning Violations in Custom Futures",
         "slug": "rust-async-pinning-violations",
