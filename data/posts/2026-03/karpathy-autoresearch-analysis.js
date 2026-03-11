@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Inside karpathy/autoresearch: AI-Driven Model Evolution",
+    "title": "Karpathy's autoresearch: The Rise of Automated ML Scientists",
     "slug": "karpathy-autoresearch-analysis",
-    "language": "Python",
+    "language": "Python / LLM",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
         "Python"
     ],
-    "analysis": "<p>Andrej Karpathy's 'autoresearch' is trending because it demonstrates the next logical step in LLM utility: the 'AI Scientist'. It automates the entire ML research loop\u2014writing code, running training experiments on a single-GPU (nanochat), analyzing logs, and iterating on the architecture\u2014all without human intervention. It captures the industry's shift from AI as a coding assistant to AI as an autonomous agent.</p>",
-    "root_cause": "Key Features include: 1. Automated prompt-based hypothesis generation. 2. Integration with low-overhead training scripts (nanoGPT/nanochat). 3. A closed-loop feedback system where LLMs interpret training loss curves to suggest hyperparameters.",
-    "bad_code": "git clone https://github.com/karpathy/autoresearch\ncd autoresearch\npip install -r requirements.txt\npython research.py --gpu_id 0",
-    "solution_desc": "Best for researchers looking to explore large hyperparameter spaces or architectural tweaks quickly. Adopt it when you have a well-defined 'base' training script and want an agent to optimize it automatically.",
-    "good_code": "import autoresearch\n\n# Configure the agent to optimize a nanochat model\nresearcher = autoresearch.Agent(\n    model=\"gpt-4o\",\n    task=\"Improve convergence speed of 100M parameter LLM\"\n)\nresearcher.run_loop(max_iterations=5)",
-    "verification": "The project represents a future where 'Self-Improving Code' becomes a standard dev-ops practice, shifting the developer's role from writing code to defining objective functions.",
-    "date": "2026-03-10",
-    "id": 1773135354,
+    "analysis": "<p>Andrej Karpathy's 'autoresearch' repository has exploded in popularity because it demonstrates the 'AI-Scientist' loop: LLM agents that don't just write code, but formulate hypotheses, run experiments on nanoGPT, and iterate based on results. It represents a shift from 'AI as a coding assistant' to 'AI as an autonomous researcher'. It is specifically tuned for single-GPU setups, making high-level ML research accessible to individuals.</p>",
+    "root_cause": "Autonomous Agent Loops, Automated Experiment Tracking, and LLM-driven Hypothesis Generation.",
+    "bad_code": "git clone https://github.com/karpathy/autoresearch.git\ncd autoresearch\npip install -r requirements.txt\nexport OPENAI_API_KEY='your_key'",
+    "solution_desc": "Ideal for benchmarking new LLM architectures, hyperparameter tuning automation, and exploring architectural variants of Transformers without manual oversight. Use it when you have a defined objective (e.g., 'Reduce validation loss') but want to explore many implementation strategies automatically.",
+    "good_code": "# Running an automated research cycle\n# The agent will attempt to improve the nanoGPT baseline\npython autoresearch.py --task \"Research and implement a more efficient attention mechanism for 128MB GPU memory limits\"",
+    "verification": "The future outlook suggests 'Verifiable Research Streams' where AI agents provide a full audit trail of failed and successful experiments, potentially automating the 'Methods' section of scientific papers.",
+    "date": "2026-03-11",
+    "id": 1773191473,
     "type": "trend"
 });

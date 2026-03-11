@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773191470,
+        "title": "Fixing eBPF Verifier Complexity in XDP Programs",
+        "slug": "ebpf-xdp-verifier-complexity-fix",
+        "language": "C / Rust",
+        "code": "RPL_LIMIT_EXCEEDED",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/ebpf-xdp-verifier-complexity-fix.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773191471,
+        "title": "Eliminating Haskell Space Leaks in Lazy Streams",
+        "slug": "haskell-lazy-stream-space-leak",
+        "language": "Haskell",
+        "code": "HEAP_EXHAUSTION",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/haskell-lazy-stream-space-leak.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773191472,
+        "title": "Debugging Selective Hydration Mismatches in Next.js",
+        "slug": "nextjs-hydration-mismatch-fix",
+        "language": "TypeScript",
+        "code": "HYDRATION_ERROR",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/nextjs-hydration-mismatch-fix.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773191473,
+        "title": "Karpathy's autoresearch: The Rise of Automated ML Scientists",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python / LLM",
+        "code": "Trend",
+        "date": "2026-03-11",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773135351,
         "title": "Resolving Zig Pointer Alignment Faults in Multi-Platform FFI",
         "slug": "zig-pointer-alignment-ffi-fix",
