@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773297758,
+        "title": "Fixing eBPF Verifier State-Explosion in BPF-to-BPF Calls",
+        "slug": "ebpf-verifier-state-explosion-fix",
+        "language": "C",
+        "code": "VerifierError",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/ebpf-verifier-state-explosion-fix.js",
+        "tags": [
+            "Go",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773297759,
+        "title": "Mitigating Kafka Zombie Producers via ID Fencing",
+        "slug": "kafka-zombie-producer-fencing",
+        "language": "Kafka",
+        "code": "ProducerFencedException",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/kafka-zombie-producer-fencing.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773297760,
+        "title": "Eliminating React Native JSI Deadlocks in Native Modules",
+        "slug": "react-native-jsi-deadlock-fix",
+        "language": "TypeScript",
+        "code": "Deadlock",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/react-native-jsi-deadlock-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773297761,
+        "title": "Analyzing karpathy/autoresearch: AI Agents as Researchers",
+        "slug": "karpathy-autoresearch-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/karpathy-autoresearch-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773290571,
         "title": "Solving PyTorch DDP Deadlocks in Multi-Node Training",
         "slug": "pytorch-ddp-multi-node-deadlock-fix",
