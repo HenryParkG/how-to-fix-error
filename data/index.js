@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773277711,
+        "title": "Fixing ARMv8 Weak Memory Violations in Rust Unsafe Blocks",
+        "slug": "armv8-weak-memory-rust-unsafe",
+        "language": "Rust",
+        "code": "MemoryModelError",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/armv8-weak-memory-rust-unsafe.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773277712,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-eviction-stalls",
+        "language": "Go",
+        "code": "CacheEvictionTimeout",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773277713,
+        "title": "Eliminating Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java",
+        "code": "SplitBrainInconsistency",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773277714,
+        "title": "Analyzing Karpathy Autoresearch: AI Research Agents",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773221686,
         "title": "Fixing C++20 Coroutine Lambda Use-After-Free",
         "slug": "cpp20-coroutine-lambda-uaf-fix",
