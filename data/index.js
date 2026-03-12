@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1773308083,
+        "title": "Fixing Go Scheduler Livelocks in Cgo Loops",
+        "slug": "go-cgo-scheduler-livelock-fix",
+        "language": "Go",
+        "code": "SchedulerLivelock",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/go-cgo-scheduler-livelock-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Cgo",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773308084,
+        "title": "Mitigating HNSW Graph Fragmentation in Vector DBs",
+        "slug": "hnsw-vector-db-fragmentation",
+        "language": "Rust",
+        "code": "GraphFragmentation",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/hnsw-vector-db-fragmentation.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773308085,
+        "title": "Eliminating Haskell Space Leaks in Lazy Streams",
+        "slug": "haskell-lazy-stream-space-leak",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/haskell-lazy-stream-space-leak.js",
+        "tags": [
+            "Backend",
+            "Python",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773308086,
+        "title": "Analyzing Karpathy's Autoresearch AI Agents",
+        "slug": "karpathy-autoresearch-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/karpathy-autoresearch-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1773297758,
         "title": "Fixing eBPF Verifier State-Explosion in BPF-to-BPF Calls",
         "slug": "ebpf-verifier-state-explosion-fix",
