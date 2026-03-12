@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1773290571,
+        "title": "Solving PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-multi-node-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/pytorch-ddp-multi-node-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773290572,
+        "title": "Fix Zig Comptime Memory Exhaustion in Cross-Builds",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "OutOfMemory",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Zig",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773290573,
+        "title": "Mitigating WebGPU Buffer Pressure in Path Tracers",
+        "slug": "webgpu-path-tracer-buffer-pressure-fix",
+        "language": "TypeScript",
+        "code": "GPUDeviceLost",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/webgpu-path-tracer-buffer-pressure-fix.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773290574,
+        "title": "Karpathy's Autoresearch: The Rise of Autonomous ML Agents",
+        "slug": "karpathy-autoresearch-ai-agents-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-12",
+        "path": "data/posts/2026-03/karpathy-autoresearch-ai-agents-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1773277711,
         "title": "Fixing ARMv8 Weak Memory Violations in Rust Unsafe Blocks",
         "slug": "armv8-weak-memory-rust-unsafe",
