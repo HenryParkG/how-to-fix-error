@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773364465,
+        "title": "Eliminating Erlang VM Binary Leakage in Elixir GenStage",
+        "slug": "elixir-genstage-binary-leakage-fix",
+        "language": "Elixir",
+        "code": "Memory Leak (Binary)",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/elixir-genstage-binary-leakage-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773364466,
+        "title": "Fixing Linux Kernel RCU Stalls in High-Core KVM Instances",
+        "slug": "fix-kvm-linux-rcu-stalls",
+        "language": "C",
+        "code": "RCU Stall Warning",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/fix-kvm-linux-rcu-stalls.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773364467,
+        "title": "Mitigating ClickHouse MergeTree Fragmentation",
+        "slug": "clickhouse-mergetree-upsert-fix",
+        "language": "SQL",
+        "code": "Too Many Parts",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/clickhouse-mergetree-upsert-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773364468,
+        "title": "CLI-Anything: Making ALL Software Agent-Native",
+        "slug": "cli-anything-agent-native-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/cli-anything-agent-native-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773308083,
         "title": "Fixing Go Scheduler Livelocks in Cgo Loops",
         "slug": "go-cgo-scheduler-livelock-fix",
