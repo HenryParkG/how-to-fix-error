@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773376168,
+        "title": "Eliminating C++20 Coroutine Frame Leakage",
+        "slug": "cpp20-coroutine-frame-leakage-fix",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/cpp20-coroutine-frame-leakage-fix.js",
+        "tags": [
+            "Go",
+            "C++",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773376169,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "Data Loss Risk",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/postgresql-txid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773376170,
+        "title": "Mitigating OCaml 5 Multicore Domain Contention",
+        "slug": "ocaml-multicore-domain-contention",
+        "language": "OCaml",
+        "code": "Performance Bottleneck",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/ocaml-multicore-domain-contention.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "OCaml",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773376171,
+        "title": "HKUDS/CLI-Anything: Making Software Agent-Native",
+        "slug": "hkuds-cli-anything-agent-native",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/hkuds-cli-anything-agent-native.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773364465,
         "title": "Eliminating Erlang VM Binary Leakage in Elixir GenStage",
         "slug": "elixir-genstage-binary-leakage-fix",
