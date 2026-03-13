@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773394320,
+        "title": "Resolving PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError (Timeout)",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/pytorch-ddp-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Deep Learning",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773394321,
+        "title": "Fixing Istio Sidecar Race Conditions during Pod Shutdown",
+        "slug": "istio-sidecar-termination-race",
+        "language": "Kubernetes",
+        "code": "ConnectionResetError",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/istio-sidecar-termination-race.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773394322,
+        "title": "Mitigating Zig Comptime Memory Exhaustion",
+        "slug": "zig-comptime-memory-fix",
+        "language": "Rust",
+        "code": "CompileError (QuotaExceeded)",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/zig-comptime-memory-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773394323,
+        "title": "CLI-Anything: Making ALL Software Agent-Native",
+        "slug": "cli-anything-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/cli-anything-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773384033,
         "title": "Resolving Rust PhantomData Variance in Lock-Free Logic",
         "slug": "rust-phantomdata-variance-lock-free",
