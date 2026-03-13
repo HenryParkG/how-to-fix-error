@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773384033,
+        "title": "Resolving Rust PhantomData Variance in Lock-Free Logic",
+        "slug": "rust-phantomdata-variance-lock-free",
+        "language": "Rust",
+        "code": "VarianceMismatch",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/rust-phantomdata-variance-lock-free.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "HighPerformance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773384034,
+        "title": "Mitigating Spark Driver OOMs from Task Result Bloat",
+        "slug": "spark-driver-oom-task-result-size",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/spark-driver-oom-task-result-size.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "BigData",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773384035,
+        "title": "Eliminating WiredTiger Ticket Contention in MongoDB",
+        "slug": "mongodb-wiredtiger-ticket-contention",
+        "language": "SQL",
+        "code": "WriteTicketExhaustion",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-ticket-contention.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773384036,
+        "title": "CLI-Anything: Making ALL Software Agent-Native",
+        "slug": "hkuds-cli-anything-agent-native",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-13",
+        "path": "data/posts/2026-03/hkuds-cli-anything-agent-native.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773376168,
         "title": "Eliminating C++20 Coroutine Frame Leakage",
         "slug": "cpp20-coroutine-frame-leakage-fix",
