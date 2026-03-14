@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773462515,
+        "title": "Fixing KV Cache Fragmentation in LLM Inference",
+        "slug": "eliminating-kv-cache-fragmentation-vllm",
+        "language": "Python",
+        "code": "MemoryFragmentation",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/eliminating-kv-cache-fragmentation-vllm.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773462516,
+        "title": "Solving WebGPU Multi-Pass Pipeline Deadlocks",
+        "slug": "resolving-webgpu-sync-deadlocks",
+        "language": "TypeScript",
+        "code": "SynchronizationDeadlock",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/resolving-webgpu-sync-deadlocks.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773462517,
+        "title": "Eliminating Haskell Lazy Stream Space Leaks",
+        "slug": "mitigating-haskell-space-leaks",
+        "language": "Go",
+        "code": "SpaceLeak",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/mitigating-haskell-space-leaks.js",
+        "tags": [
+            "Go",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773462518,
+        "title": "CLI-Anything: Bridging LLMs and Shell Tools",
+        "slug": "cli-anything-agent-native-software",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/cli-anything-agent-native-software.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773450780,
         "title": "Fixing eBPF Verifier State Explosion in XDP Tail-Calls",
         "slug": "ebpf-verifier-state-space-explosion-xdp",
