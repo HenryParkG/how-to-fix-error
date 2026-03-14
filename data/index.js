@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773450780,
+        "title": "Fixing eBPF Verifier State Explosion in XDP Tail-Calls",
+        "slug": "ebpf-verifier-state-space-explosion-xdp",
+        "language": "C / Go",
+        "code": "Verifier Limit reached",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/ebpf-verifier-state-space-explosion-xdp.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773450781,
+        "title": "Eliminating WasmGC Reference Cycles in JS Interop",
+        "slug": "wasmgc-reference-cycle-interop-fix",
+        "language": "Rust / Wasm",
+        "code": "Memory Leak (Cycle)",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/wasmgc-reference-cycle-interop-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebAssembly",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773450782,
+        "title": "Mitigating Kafka Rebalance Storms in Kubernetes",
+        "slug": "kafka-rebalance-storms-k8s-fix",
+        "language": "Java / Kafka",
+        "code": "Group Rebalance Storm",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/kafka-rebalance-storms-k8s-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773450783,
+        "title": "CLI-Anything: Making ALL Software Agent-Native",
+        "slug": "cli-anything-github-trend-analysis",
+        "language": "Python / LLM",
+        "code": "Trend",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/cli-anything-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773394320,
         "title": "Resolving PyTorch DDP Deadlocks in Multi-Node Training",
         "slug": "pytorch-ddp-deadlock-fix",
