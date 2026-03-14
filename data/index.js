@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773480254,
+        "title": "Fixing React Native JSI Memory Leaks in Native Modules",
+        "slug": "fix-react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "MemoryLeak (JSI)",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/fix-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773480255,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773480256,
+        "title": "Debugging C++20 Coroutine Memory Leaks in Promise Types",
+        "slug": "cpp20-coroutine-promise-leak-fix",
+        "language": "Rust",
+        "code": "MemoryLeak (Coro)",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/cpp20-coroutine-promise-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773480257,
+        "title": "Analyzing CLI-Anything: Making Software Agent-Native",
+        "slug": "cli-anything-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-14",
+        "path": "data/posts/2026-03/cli-anything-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773470130,
         "title": "Eliminating Elixir GenServer Mailbox Congestion",
         "slug": "elixir-genserver-mailbox-congestion-backpressure",
