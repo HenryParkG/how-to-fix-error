@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773566740,
+        "title": "Fixing Zig Memory Alignment Violations in Direct I/O",
+        "slug": "fixing-zig-memory-alignment-direct-io",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/fixing-zig-memory-alignment-direct-io.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773566741,
+        "title": "Eliminating Haskell Space Leaks in Lazy Evaluation",
+        "slug": "eliminating-haskell-space-leaks-lazy-chains",
+        "language": "Haskell",
+        "code": "StackOverflow",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/eliminating-haskell-space-leaks-lazy-chains.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Haskell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773566742,
+        "title": "Resolving Istio Envoy Sidecar Cluster Warming Timeouts",
+        "slug": "resolving-istio-envoy-cluster-warming-timeouts",
+        "language": "Go",
+        "code": "EnvoyTimeout",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/resolving-istio-envoy-cluster-warming-timeouts.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773566743,
+        "title": "Analyzing Garry Tan's gstack: The Future of Agentic Dev",
+        "slug": "garry-tan-gstack-claude-code-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-code-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1773557117,
         "title": "Resolving eBPF Verifier Complexity Limits in XDP",
         "slug": "ebpf-verifier-complexity-xdp",
