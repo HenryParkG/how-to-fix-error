@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773537927,
+        "title": "Eliminating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "SQL",
+        "code": "WiredTiger LRS Stall",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773537928,
+        "title": "Resolving Rust Borrow Checker Self-Referential Pinning",
+        "slug": "rust-async-pinning-borrow-checker",
+        "language": "Rust",
+        "code": "E0515 / Self-Ref",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/rust-async-pinning-borrow-checker.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773537929,
+        "title": "Fixing gRPC Flow Control Deadlocks in Microservices",
+        "slug": "grpc-flow-control-deadlock-nested",
+        "language": "Go",
+        "code": "HTTP/2 Flow Deadlock",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/grpc-flow-control-deadlock-nested.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773537930,
+        "title": "Analyzing gstack: Garry Tan's Claude AI Workflow",
+        "slug": "garry-tan-gstack-claude-setup",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-setup.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1773480254,
         "title": "Fixing React Native JSI Memory Leaks in Native Modules",
         "slug": "fix-react-native-jsi-memory-leaks",
