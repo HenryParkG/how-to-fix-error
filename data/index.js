@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1773557117,
+        "title": "Resolving eBPF Verifier Complexity Limits in XDP",
+        "slug": "ebpf-verifier-complexity-xdp",
+        "language": "Rust",
+        "code": "BPF_VERIFIER_ERR_LIMIT_REACHED",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/ebpf-verifier-complexity-xdp.js",
+        "tags": [
+            "Rust",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773557118,
+        "title": "Mitigating Kafka Rebalance Storms in Kubernetes",
+        "slug": "kafka-rebalance-storms-k8s",
+        "language": "Java",
+        "code": "ConsumerGroupRebalanceException",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/kafka-rebalance-storms-k8s.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773557119,
+        "title": "Eliminating Flutter UI Jank via Skia Shader Warmup",
+        "slug": "flutter-skia-shader-jank",
+        "language": "TypeScript",
+        "code": "ShaderCompilationJank",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/flutter-skia-shader-jank.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773557120,
+        "title": "Inside gstack: Garry Tan’s Claude Code Persona Setup",
+        "slug": "garry-tan-gstack-claude-code",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773550811,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-non-cooperative-preemption",
