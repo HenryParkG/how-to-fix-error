@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1773550811,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-non-cooperative-preemption",
+        "language": "Go",
+        "code": "GoRuntimeError",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/go-scheduler-starvation-non-cooperative-preemption.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773550812,
+        "title": "Mitigating Redis COW Memory Exhaustion during BGSAVE",
+        "slug": "redis-cow-memory-exhaustion-bgsave",
+        "language": "Infra",
+        "code": "OOMKilled",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/redis-cow-memory-exhaustion-bgsave.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773550813,
+        "title": "Resolving Spark Shuffle Block OOM during Skew Joins",
+        "slug": "spark-shuffle-block-oom-data-skew",
+        "language": "Java",
+        "code": "SparkShuffleError",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/spark-shuffle-block-oom-data-skew.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773550814,
+        "title": "Inside Garry Tan's gstack: CEO-Led AI Engineering",
+        "slug": "garry-tan-gstack-claude-code-setup",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-15",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-code-setup.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1773537927,
         "title": "Eliminating MongoDB WiredTiger Cache Eviction Stalls",
         "slug": "mongodb-wiredtiger-cache-eviction-stalls",
