@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Inside gstack: Garry Tan\u2019s Claude Code Persona Setup",
+    "title": "Inside Garry Tan's gstack: The Future of AI Coding",
     "slug": "garry-tan-gstack-claude-code",
-    "language": "Python",
+    "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Python"
+        "TypeScript"
     ],
-    "analysis": "<p>Garry Tan (CEO of Y Combinator) recently popularized 'gstack', a highly opinionated configuration for Anthropic\u2019s 'Claude Code' CLI. It transforms a single AI agent into a virtual C-suite and engineering team. The trend is shifting from 'AI as a chatbot' to 'AI as an autonomous organization'. gstack is trending because it provides a structured framework for solo founders to operate at the scale of a funded startup by delegating specific roles to the LLM agent.</p>",
-    "root_cause": "Role-Based Agentic Orchestration using 6 core personas: CEO (Strategy), Eng Manager (Tasking), Product Manager (Requirements), Release Manager (Deployment), Software Engineer (Implementation), and QA (Testing).",
-    "bad_code": "npm install -g @anthropic-ai/claude-code\n# Then clone the gstack personas configuration\ngit clone https://github.com/garrytan/gstack.git ~/.gstack",
-    "solution_desc": "Best used by solo developers or small teams who need a 'second pair of eyes' on architectural decisions and code quality. It works by injecting system prompts into Claude Code that force the AI to switch perspectives depending on the phase of the development lifecycle (e.g., from 'CEO' during brainstorming to 'QA' during PR reviews).",
-    "good_code": "// Example Persona Alias in .clauderc or shell\n// claude --persona ceo \"Review the market viability of this feature\"\n// claude --persona qa \"Write 10 edge-case unit tests for the auth module\"\n\n{ \n  \"personas\": {\n    \"eng-manager\": \"Focus on code maintainability and tech debt...\",\n    \"release-manager\": \"Validate CI/CD logs and versioning...\"\n  }\n}",
-    "verification": "Future outlook: This pattern will likely be integrated into IDEs, where 'Persona Switching' becomes a standard UI feature for multi-agent autonomous development.",
-    "date": "2026-03-15",
-    "id": 1773557120,
+    "analysis": "<p>The 'gstack' repository represents Y Combinator CEO Garry Tan's highly opinionated 'Claude Code' configuration. It\u2019s trending because it transforms a standard LLM into a fully-fledged engineering team. The stack uses 6 specialized AI personas (CEO, Eng Manager, Release Manager, etc.) to automate the entire SDLC. </p><p>It leverages Claude 3.5 Sonnet's advanced reasoning to handle 'agentic' workflows, where the AI doesn't just write code, but manages its own PRs, runs QA tests, and coordinates feature releases with minimal human intervention.</p>",
+    "root_cause": "Role-Based AI Orchestration; Automated QA Gates; GitHub Action Integration; Opinionated CLI tools for Claude-centric development.",
+    "bad_code": "npm install -g @anthropic-ai/claude-code\ngit clone https://github.com/garrytan/gstack.git\ncd gstack && ./setup.sh",
+    "solution_desc": "Use gstack when building rapid prototypes or maintaining complex TypeScript/Next.js projects where you want AI to act as a 'Force Multiplier' for solo founders.",
+    "good_code": "// Example of the 'Release Manager' tool definition in gstack\nexport const releaseManager = {\n  role: \"Release Manager\",\n  instructions: \"Monitor CI/CD, verify build artifacts, and draft changelogs based on git diffs.\",\n  tools: [\"gh-cli\", \"npm-publish\"]\n};",
+    "verification": "Expect a shift from 'copilots' to 'autonomous agents' that manage the metadata and quality of code, not just the lines of text.",
+    "date": "2026-03-16",
+    "id": 1773654993,
     "type": "trend"
 });

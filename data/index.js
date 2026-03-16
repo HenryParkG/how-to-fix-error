@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773654990,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "Runtime Starvation",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773654991,
+        "title": "Resolving Spark Shuffle Partition Skew in Joins",
+        "slug": "spark-shuffle-partition-skew-joins",
+        "language": "Java/Scala",
+        "code": "Data Skew",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/spark-shuffle-partition-skew-joins.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773654992,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "Deadlock",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Network",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773654993,
+        "title": "Inside Garry Tan's gstack: The Future of AI Coding",
+        "slug": "garry-tan-gstack-claude-code",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1773644784,
         "title": "Fixing WebGPU Memory Aliasing in Compute Passes",
         "slug": "webgpu-memory-aliasing-fix",
