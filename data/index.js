@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773644784,
+        "title": "Fixing WebGPU Memory Aliasing in Compute Passes",
+        "slug": "webgpu-memory-aliasing-fix",
+        "language": "TypeScript",
+        "code": "GPUMemoryHazard",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/webgpu-memory-aliasing-fix.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773644785,
+        "title": "Fixing Send/Sync Violations in Rust FFI Wrappers",
+        "slug": "rust-ffi-send-sync-fix",
+        "language": "Rust",
+        "code": "E0277_ThreadSafety",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/rust-ffi-send-sync-fix.js",
+        "tags": [
+            "Rust",
+            "FFI",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773644786,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-fix",
+        "language": "SQL",
+        "code": "CacheStall_WriteBlocking",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "MongoDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773644787,
+        "title": "Garry Tan's gstack: The Future of Agentic AI Engineering",
+        "slug": "gstack-garry-tan-analysis",
+        "language": "Next.js",
+        "code": "Trend",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/gstack-garry-tan-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1773637777,
         "title": "Fixing C++20 Coroutine Leaks in Async Networking",
         "slug": "cpp20-coroutine-memory-leak-fix",
