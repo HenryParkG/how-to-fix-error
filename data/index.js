@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773624308,
+        "title": "Fixing Elixir OTP Mailbox Congestion",
+        "slug": "fixing-elixir-otp-mailbox-congestion",
+        "language": "Elixir",
+        "code": "GenServer.Congestion",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/fixing-elixir-otp-mailbox-congestion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773624309,
+        "title": "Mitigating HNSW Index Fragmentation",
+        "slug": "mitigating-hnsw-index-fragmentation",
+        "language": "Rust",
+        "code": "VectorDB.GraphDecay",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/mitigating-hnsw-index-fragmentation.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773624310,
+        "title": "Fixing Cgroup v2 Memory OOM Race Conditions",
+        "slug": "cgroup-v2-memory-oom-race-fix",
+        "language": "C",
+        "code": "Kernel.OOM.Race",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/cgroup-v2-memory-oom-race-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773624311,
+        "title": "Inside Garry Tan's GStack for Claude Code",
+        "slug": "garry-tan-gstack-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/garry-tan-gstack-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1773566740,
         "title": "Fixing Zig Memory Alignment Violations in Direct I/O",
         "slug": "fixing-zig-memory-alignment-direct-io",
