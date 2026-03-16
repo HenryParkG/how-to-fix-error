@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773637777,
+        "title": "Fixing C++20 Coroutine Leaks in Async Networking",
+        "slug": "cpp20-coroutine-memory-leak-fix",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/cpp20-coroutine-memory-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773637778,
+        "title": "Resolving PyTorch DDP Deadlocks in Gradient Sync",
+        "slug": "pytorch-ddp-deadlock-sync",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/pytorch-ddp-deadlock-sync.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773637779,
+        "title": "Mitigating Postgres Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound-mitigation",
+        "language": "SQL",
+        "code": "DataLossRisk",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/postgres-transaction-id-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773637780,
+        "title": "Analyzing gstack: Garry Tan's Claude Code Setup",
+        "slug": "garry-tan-gstack-claude-code-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-16",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-code-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1773624308,
         "title": "Fixing Elixir OTP Mailbox Congestion",
         "slug": "fixing-elixir-otp-mailbox-congestion",

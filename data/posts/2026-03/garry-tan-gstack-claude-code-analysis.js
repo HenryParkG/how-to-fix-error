@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Analyzing Garry Tan's gstack: The Future of Agentic Dev",
+    "title": "Analyzing gstack: Garry Tan's Claude Code Setup",
     "slug": "garry-tan-gstack-claude-code-analysis",
     "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript"
+        "Node.js"
     ],
-    "analysis": "<p>Gstack is trending because it provides a structured framework for 'Agentic Software Engineering.' Unlike standard LLM chat, gstack uses Claude Code with an opinionated 'C-Suite' hierarchy. It transforms a single AI prompt into a collaborative session between 6 distinct personas: the CEO (Vision), Engineering Manager (Architecture), Developer (Code), Release Manager (Deployment), QA (Testing), and Technical Writer (Documentation). This significantly reduces hallucinations by forcing the model to 'argue' through different stages of the SDLC before writing a single line of code.</p>",
-    "root_cause": "Structured Meta-Prompting & Agentic Workflows",
-    "bad_code": "git clone https://github.com/garrytan/gstack.git\ncd gstack\nnpm install && npm run setup-claude",
-    "solution_desc": "Best for solo founders and small engineering teams who need to maintain enterprise-grade rigor (tests, docs, and architecture reviews) without the overhead of additional staff. Adopt when moving from 'chat-to-code' to 'agentic-system' development.",
-    "good_code": "// usage: gstack plan \"Add Stripe integration\"\n// 1. CEO sets business constraints\n// 2. EM generates technical spec\n// 3. Dev implements against spec\n// 4. QA generates and runs playwright tests",
-    "verification": "The project represents the shift toward 'Software 2.0' where the developer acts as an Orchestrator rather than a Syntactician.",
-    "date": "2026-03-15",
-    "id": 1773566743,
+    "analysis": "<p>Garry Tan's 'gstack' is trending because it provides an opinionated framework for using Anthropic's 'Claude Code' as a full-cycle software engineering team. It effectively moves beyond simple chat interfaces into agentic workflows. By defining 6 specific personas\u2014CEO, Engineering Manager, Product Manager, Coder, Release Manager, and QA\u2014it automates the entire SDLC. It's popular because it reduces the cognitive overhead of managing complex AI prompts by structuring them into a command-line 'stack' that handles everything from feature ideation to production deployment.</p>",
+    "root_cause": "Agentic Personas, Tool-Use Integration, Git-integrated QA, and Automated Release Cycles.",
+    "bad_code": "npm install -g @anthropic-ai/claude-code && git clone https://github.com/garrytan/gstack.git",
+    "solution_desc": "Ideal for solo founders or small teams looking to scale output. Use it when you need to bridge the gap between 'code generation' and 'software engineering' by letting Claude manage context across multiple files and testing environments.",
+    "good_code": "# Example usage of the gstack persona flow\nclaude \"Analyze current repo and act as EM to create a sprint plan\"\nclaude \"Act as Coder to implement feature X and QA to verify with vitest\"",
+    "verification": "The future of AI development lies in multi-agent orchestration like gstack, where the human transitions from 'coder' to 'reviewer/orchestrator'.",
+    "date": "2026-03-16",
+    "id": 1773637780,
     "type": "trend"
 });
