@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1773740767,
+        "title": "Fixing Elixir OTP Selective Receive Latency",
+        "slug": "elixir-otp-selective-receive-latency",
+        "language": "Elixir",
+        "code": "Latency Spike",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/elixir-otp-selective-receive-latency.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773740768,
+        "title": "Fixing PostgreSQL TXID Wraparound Stalls",
+        "slug": "postgres-txid-wraparound-stalls",
+        "language": "SQL",
+        "code": "DB Halt",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/postgres-txid-wraparound-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773740769,
+        "title": "Solving C++20 Coroutine Memory Leaks",
+        "slug": "cpp20-coroutine-memory-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/cpp20-coroutine-memory-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "CPP",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773740770,
+        "title": "Analyzing Garry Tan's 'gstack' AI Framework",
+        "slug": "garry-tan-gstack-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/garry-tan-gstack-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js",
+            "AI"
+        ]
+    },
+    {
         "id": 1773730434,
         "title": "Fixing Quantization Divergence in LoRA Fine-Tuning",
         "slug": "fixing-quantization-divergence-lora",

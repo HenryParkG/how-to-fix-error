@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Analyze gstack: Garry Tan's Opinionated AI Stack",
+    "title": "Analyzing Garry Tan's 'gstack' AI Framework",
     "slug": "garry-tan-gstack-analysis",
     "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript",
-        "Node.js"
+        "Node.js",
+        "AI"
     ],
-    "analysis": "<p>The 'garrytan/gstack' repository is trending because it codifies the 'CEO-Engineer' workflow using Claude Code and the Model Context Protocol (MCP). It represents a shift from simple AI code assistance to an autonomous multi-role agent system. By using 10 specific tools\u2014ranging from memory management to automated QA\u2014it allows a single developer to operate like a full engineering department.</p><p>The stack is popular because it solves the 'context drift' problem in AI coding, where the LLM loses track of large codebase architectures. It treats the AI not as a text generator, but as a system administrator with elevated privileges to execute, test, and deploy code.</p>",
-    "root_cause": "Claude Code, MCP Servers (Google Maps, GitHub, Sequential Thinking), Cursor, and custom CLI wrappers for automated PR reviews and documentation.",
-    "bad_code": "git clone https://github.com/garrytan/gstack.git\ncd gstack && npm install\n# Initialize the AI roles\nexport CLAUDE_CODE_ROLE=CEO",
-    "solution_desc": "Adopt gstack when building MVPs or maintaining complex TypeScript/Next.js projects where you want an AI to handle the 'Release Manager' and 'QA' roles automatically.",
-    "good_code": "// Example: Using the gstack MCP pattern to define a QA tool\nconst qaBot = new GStackTool({\n  role: 'QA_Engineer',\n  tools: ['jest-executor', 'playwright-vrt'],\n  constraints: 'Must achieve 90% coverage before passing to Release_Manager'\n});",
-    "verification": "The future of this trend points toward 'Autonomous Software Houses' where human developers focus on high-level architecture while the gstack handles implementation and verification cycles.",
+    "analysis": "<p>Garry Tan's 'gstack' is trending because it provides a blueprint for an 'AI-First' engineering organization. It uses 'Claude Code' (Anthropic's CLI agent) paired with a specific Model Context Protocol (MCP) configuration. It treats AI as a '10-person department' by defining 10 specific tool-roles: CEO (Strategy), Eng Manager (Planning), Release Manager (CI/CD), Doc Engineer (Markdown), and QA (Testing).</p><p>It is popular because it moves beyond chat into autonomous execution within the terminal, allowing developers to delegate entire workflows rather than just snippets.</p>",
+    "root_cause": "Role-based AI Orchestration & MCP Tooling",
+    "bad_code": "npm install -g @anthropic-ai/claude-code\n# Configure gstack roles\nclaude config set --alias gstack-qa \"Act as QA engineer...\"",
+    "solution_desc": "Best for fast-moving startups and solo founders. Use it when you need to maintain high documentation standards and test coverage without a dedicated human QA team. Adopt it by mapping your current CLI tools (git, grep, npm) to Claude's tool-calling capabilities.",
+    "good_code": "// Example: The 'Doc Engineer' prompt pattern\n{\n  \"role\": \"Doc Engineer\",\n  \"tools\": [\"ripgrep\", \"file_read\"],\n  \"instruction\": \"Scan all new exports in /src and update README.md and /docs automatically before every commit.\"\n}",
+    "verification": "The shift toward 'Agentic Workflows' where the terminal is the primary interface for LLMs managing local files.",
     "date": "2026-03-17",
-    "id": 1773722819,
+    "id": 1773740770,
     "type": "trend"
 });
