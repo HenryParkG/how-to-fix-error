@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1773730434,
+        "title": "Fixing Quantization Divergence in LoRA Fine-Tuning",
+        "slug": "fixing-quantization-divergence-lora",
+        "language": "Python",
+        "code": "WeightDivergence",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/fixing-quantization-divergence-lora.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773730435,
+        "title": "Fixing Zig Memory Safety in Manual Comptime Interop",
+        "slug": "zig-comptime-memory-violation-fix",
+        "language": "Zig",
+        "code": "IllegalMemoryAccess",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/zig-comptime-memory-violation-fix.js",
+        "tags": [
+            "Rust",
+            "Low-Level",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773730436,
+        "title": "Mitigating Redis BGSAVE Fork Failures in High-Memory Env",
+        "slug": "redis-bgsave-fork-failure-fix",
+        "language": "Redis",
+        "code": "OOM-ForkFailure",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/redis-bgsave-fork-failure-fix.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773730437,
+        "title": "Analyzing 'garrytan/gstack': The Ultimate Claude Code Setup",
+        "slug": "garry-tan-gstack-claude-setup",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/garry-tan-gstack-claude-setup.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1773722816,
         "title": "Resolving Rust Pinning Violations in Async Futures",
         "slug": "rust-pinning-violations-async-futures",
