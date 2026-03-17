@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1773722816,
+        "title": "Resolving Rust Pinning Violations in Async Futures",
+        "slug": "rust-pinning-violations-async-futures",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/rust-pinning-violations-async-futures.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773722817,
+        "title": "Fixing Next.js Streaming Hydration Mismatches",
+        "slug": "nextjs-streaming-hydration-mismatches",
+        "language": "TypeScript",
+        "code": "HydrationError",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/nextjs-streaming-hydration-mismatches.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773722818,
+        "title": "Mitigating Ray Actor Placement Deadlocks",
+        "slug": "ray-actor-placement-deadlocks-llm",
+        "language": "Python",
+        "code": "PlacementDeadlock",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/ray-actor-placement-deadlocks-llm.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773722819,
+        "title": "Analyze gstack: Garry Tan's Opinionated AI Stack",
+        "slug": "garry-tan-gstack-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/garry-tan-gstack-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1773710190,
         "title": "Fixing eBPF Verifier Complexity Limit Violations",
         "slug": "ebpf-verifier-complexity-limit-fix",

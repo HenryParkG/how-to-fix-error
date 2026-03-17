@@ -1,22 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Rust Pinning Violations in Async Futures",
+    "title": "Resolving Rust Pinning Violations in Async Futures",
     "slug": "rust-pinning-violations-async-futures",
     "language": "Rust",
-    "code": "PinningViolation",
+    "code": "PinViolation",
     "tags": [
         "Rust",
-        "Async",
-        "Safety",
         "Backend",
+        "Async",
         "Error Fix"
     ],
-    "analysis": "<p>In Rust, async functions generate state machines that often contain self-referential pointers (e.g., a reference to a variable stored within the same future's stack frame). If such a future is moved in memory after it has started executing, those internal pointers become dangling, leading to undefined behavior.</p><p>The <code>Pin</code> wrapper is designed to guarantee that the data it points to will not be moved until it is dropped, ensuring the safety of these self-references.</p>",
-    "root_cause": "Moving a self-referential future after polling has begun, invalidating internal memory addresses.",
-    "bad_code": "struct MyFuture {\n    data: String,\n    ptr: *const String,\n}\n\nimpl Future for MyFuture {\n    type Output = ();\n    fn poll(self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<()> {\n        // If 'self' moves, 'ptr' becomes invalid\n        println!(\"{:?}\", unsafe { &*self.ptr });\n        Poll::Ready(())\n    }\n}",
-    "solution_desc": "Use the `pin_project` crate or `Box::pin` to ensure the future is heap-allocated and its memory location is stable throughout its lifecycle.",
-    "good_code": "use pin_project::pin_project;\n\n#[pin_project]\nstruct MyFuture {\n    data: String,\n    #[pin]\n    inner_future: tokio::time::Sleep,\n}\n\n// Usage: let pinned_fut = Box::pin(MyFuture { ... });",
-    "verification": "Run `cargo test` and use `Miri` (cargo miri test) to detect potential memory safety violations and invalid pointer dereferences.",
-    "date": "2026-03-09",
-    "id": 1773049189,
+    "analysis": "<p>Rust's async/await system generates state machines that often contain self-referential pointers. When a Future is moved in memory, these internal pointers become invalid, leading to undefined behavior. The <code>Pin</code> wrapper is designed to guarantee that the data it points to will not be moved until it is dropped.</p><p>Violations typically occur when developers attempt to manually implement <code>Poll</code> or use low-level concurrency primitives without correctly pinning the underlying futures. This results in the 'Future is not Unpin' error during compilation or memory corruption at runtime.</p>",
+    "root_cause": "The future contains self-referential references (e.g., a reference to a local variable held across an .await point) and was moved in memory after it began polling.",
+    "bad_code": "struct MyFuture {\n    data: String,\n    ptr: *const String,\n}\n\nimpl Future for MyFuture {\n    type Output = ();\n    fn poll(self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<()> {\n        // Error: Attempting to move self while it might be pinned\n        let _ = *self;\n        Poll::Ready(())\n    }\n}",
+    "solution_desc": "Use Box::pin to heap-allocate the future and ensure it remains at a stable memory address, or use the tokio::pin! macro for stack pinning.",
+    "good_code": "use std::pin::Pin;\nuse std::future::Future;\n\nasync fn execute_task() {\n    let fut = async { /* ... */ };\n    // Correctly pin the future to the heap\n    let mut pinned_fut = Box::pin(fut);\n    \n    // Or use the pin! macro for stack pinning\n    // tokio::pin!(fut);\n}",
+    "verification": "Run 'cargo check'. If the future is correctly pinned, the 'cannot move out of pinned' error will resolve. Use Miri to detect remaining undefined behavior in unsafe blocks.",
+    "date": "2026-03-17",
+    "id": 1773722816,
     "type": "error"
 });
