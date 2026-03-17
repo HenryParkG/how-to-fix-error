@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773710190,
+        "title": "Fixing eBPF Verifier Complexity Limit Violations",
+        "slug": "ebpf-verifier-complexity-limit-fix",
+        "language": "C / Rust",
+        "code": "VerifierError",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/ebpf-verifier-complexity-limit-fix.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773710191,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storm-fix",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/kafka-consumer-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773710192,
+        "title": "Eliminating React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "C++ / TS",
+        "code": "OutOfMemory",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773710193,
+        "title": "Analyzing garrytan/gstack: The CEO-Grade Stack",
+        "slug": "garry-tan-gstack-analysis",
+        "language": "TypeScript / AI",
+        "code": "Trend",
+        "date": "2026-03-17",
+        "path": "data/posts/2026-03/garry-tan-gstack-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1773654990,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-runtime-scheduler-starvation-fix",

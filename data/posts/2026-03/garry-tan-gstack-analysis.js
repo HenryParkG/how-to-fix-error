@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Inside Garry Tan's GStack for Claude Code",
+    "title": "Analyzing garrytan/gstack: The CEO-Grade Stack",
     "slug": "garry-tan-gstack-analysis",
-    "language": "TypeScript",
+    "language": "TypeScript / AI",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
         "TypeScript"
     ],
-    "analysis": "<p>The 'garrytan/gstack' repository has exploded in popularity because it provides a blueprint for turning Claude Code (Anthropic's CLI) into a full-scale engineering team. By leveraging highly opinionated system prompts, it enforces a rigid workflow where AI agents act as specialized personas. This prevents the 'generalist AI' hallucination problem by constraining the AI's context to specific organizational roles.</p>",
-    "root_cause": "GStack uses 6 core personas: CEO (Product Vision), Eng Manager (Ticket breakdown), Release Manager (Deployment), QA (Edge cases), Security, and Engineer. This modularity ensures code quality and architectural integrity.",
-    "bad_code": "npm install -g @anthropic-ai/claude-code\n# Clone and symlink the gstack custom prompts\ngit clone https://github.com/garrytan/gstack.git",
-    "solution_desc": "Adopt GStack when building solo-founder projects or moving to 'AI-first' development. It is best used for greenfield TypeScript/Next.js projects where the AI can manage the entire lifecycle from PRD to CI/CD config.",
-    "good_code": "// Usage Pattern: Invoking the Eng Manager persona\nclaude \"@em review the current architecture in /src and create tasks for the Engineer for the Stripe integration\"",
-    "verification": "The future of GStack lies in 'Agentic Workflows' where the AI self-corrects based on its own QA persona's feedback before the human ever sees the code.",
-    "date": "2026-03-16",
-    "id": 1773624311,
+    "analysis": "<p>Garry Tan's 'gstack' is trending because it provides a blueprint for 'AI-First Engineering'. It moves beyond simple boilerplate by integrating Claude Code with a specific 10-tool configuration. This setup allows a single developer to operate as a full engineering team. It leverages the agentic capabilities of Claude to not just write code, but to handle documentation (Doc Engineer), enforce linting (QA), and manage deployment cycles (Release Manager) through a highly opinionated CLI environment.</p>",
+    "root_cause": "Opinionated Automation: Combines Next.js, Tailwind, and Supabase with a pre-configured Claude Code environment for autonomous PR management and architectural consistency.",
+    "bad_code": "git clone https://github.com/garrytan/gstack.git\ncd gstack\nnpm install\n# Requires Claude Code CLI",
+    "solution_desc": "Best for solo founders or small 'tiger teams' who need to ship enterprise-grade code at startup speed. Adopt it when you want to minimize 'non-coding' overhead like writing docs or manual testing.",
+    "good_code": "// gstack logic: Using Claude Code as a manager\n// Prompt: \"@manager implement a new auth flow and update the docs\"\n// The gstack setup uses custom instructions to trigger the 'Doc Engineer' tools automatically.",
+    "verification": "The future points toward 'Agentic Workflows' where the IDE handles the lifecycle, not just the syntax. Expect gstack-like configurations to become the standard for AI-native companies.",
+    "date": "2026-03-17",
+    "id": 1773710193,
     "type": "trend"
 });
