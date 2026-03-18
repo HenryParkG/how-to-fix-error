@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773827023,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-preemption-fix",
+        "language": "Go",
+        "code": "RuntimeStarvation",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/go-scheduler-starvation-preemption-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773827024,
+        "title": "Fix Kafka Rebalance Loops in Long Tasks",
+        "slug": "kafka-consumer-rebalance-loop-fix",
+        "language": "Kafka",
+        "code": "MaxPollExceeded",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/kafka-consumer-rebalance-loop-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773827025,
+        "title": "Fixing Next.js Streaming Hydration Mismatches",
+        "slug": "nextjs-streaming-hydration-fix",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/nextjs-streaming-hydration-fix.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773827026,
+        "title": "AutoResearchClaw: AI-Driven Paper Generation",
+        "slug": "autoresearchclaw-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/autoresearchclaw-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773816753,
         "title": "Resolving eBPF Verifier Complexity Limits",
         "slug": "resolving-ebpf-verifier-complexity-limits",
