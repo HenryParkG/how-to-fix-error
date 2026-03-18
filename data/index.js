@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1773809489,
+        "title": "Eliminating Haskell Space Leaks in Thunk Chains",
+        "slug": "haskell-space-leak-lazy-evaluation",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/haskell-space-leak-lazy-evaluation.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Functional Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773809490,
+        "title": "Mitigating Envoy Circuit Breaker Cascades in gRPC",
+        "slug": "envoy-grpc-circuit-breaker-cascades",
+        "language": "Go",
+        "code": "Cascade Failure",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/envoy-grpc-circuit-breaker-cascades.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773809491,
+        "title": "Fixing HNSW Graph Fragmentation in Vector DBs",
+        "slug": "hnsw-graph-fragmentation-vector-db",
+        "language": "Rust",
+        "code": "Graph Decay",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/hnsw-graph-fragmentation-vector-db.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773809492,
+        "title": "AutoResearchClaw: Fully Autonomous AI Research",
+        "slug": "autoresearchclaw-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/autoresearchclaw-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1773796826,
         "title": "Resolving PyTorch NCCL Deadlocks in Distributed LLM Training",
         "slug": "pytorch-nccl-deadlock-fix",
