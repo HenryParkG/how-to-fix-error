@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773816753,
+        "title": "Resolving eBPF Verifier Complexity Limits",
+        "slug": "resolving-ebpf-verifier-complexity-limits",
+        "language": "Go",
+        "code": "EACCES (Verifier Limit)",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/resolving-ebpf-verifier-complexity-limits.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773816754,
+        "title": "Mitigating Flink Checkpoint Alignment Deadlocks",
+        "slug": "mitigating-flink-checkpoint-alignment-deadlocks",
+        "language": "Java",
+        "code": "CheckpointTimeoutException",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/mitigating-flink-checkpoint-alignment-deadlocks.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773816755,
+        "title": "Eliminating Wasm Linear Memory Fragmentation",
+        "slug": "eliminating-wasm-memory-fragmentation",
+        "language": "Rust",
+        "code": "WasmRuntimeError (OOM)",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/eliminating-wasm-memory-fragmentation.js",
+        "tags": [
+            "Rust",
+            "TypeScript",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773816756,
+        "title": "AutoResearchClaw: Autonomous AI Research Trend",
+        "slug": "autoresearchclaw-autonomous-ai-research-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-18",
+        "path": "data/posts/2026-03/autoresearchclaw-autonomous-ai-research-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773809489,
         "title": "Eliminating Haskell Space Leaks in Thunk Chains",
         "slug": "haskell-space-leak-lazy-evaluation",
