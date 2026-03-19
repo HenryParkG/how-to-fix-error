@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1773895805,
+        "title": "Fixing Rust Pinning Violations in Async Futures",
+        "slug": "rust-pinning-violations-self-referential-futures",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/rust-pinning-violations-self-referential-futures.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773895806,
+        "title": "Resolving Spark Executor OOMs in Broadcast Joins",
+        "slug": "spark-executor-oom-broadcast-hash-join",
+        "language": "Scala/Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/spark-executor-oom-broadcast-hash-join.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773895807,
+        "title": "Eliminating Elixir GenServer Mailbox Bloat",
+        "slug": "elixir-genserver-mailbox-selective-receive",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-selective-receive.js",
+        "tags": [
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773895808,
+        "title": "NVIDIA NemoClaw: Secure AI Infrastructure Automation",
+        "slug": "nvidia-nemoclaw-secure-installation-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-secure-installation-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773883209,
         "title": "Fix Zig SIMD Alignment Violations in Bit-Casting",
         "slug": "zig-simd-alignment-bitcast-fix",
