@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773912905,
+        "title": "Fixing C++20 Coroutine Leaks in Suspended Promises",
+        "slug": "cpp20-coroutine-memory-leak-fix",
+        "language": "C++ / Rust",
+        "code": "MemoryLeak",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/cpp20-coroutine-memory-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Systems Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773912906,
+        "title": "Mitigating HNSW Latency Spikes in Vector DBs",
+        "slug": "hnsw-index-latency-spike-mitigation",
+        "language": "Rust / Vector DB",
+        "code": "LatencySpike",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/hnsw-index-latency-spike-mitigation.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773912907,
+        "title": "Fixing Istio Pilot-Agent SDS Sync Failures",
+        "slug": "istio-sds-sync-failure-fix",
+        "language": "Kubernetes / Go",
+        "code": "SDSSyncError",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/istio-sds-sync-failure-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773912908,
+        "title": "Unlocking Secure LLM Deployment with NVIDIA/NemoClaw",
+        "slug": "nvidia-nemoclaw-trending-repo-analysis",
+        "language": "Python / AI",
+        "code": "Trend",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-trending-repo-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773902793,
         "title": "Fixing PyTorch DDP Deadlocks in Multi-Node All-Reduce",
         "slug": "fixing-pytorch-ddp-deadlocks",

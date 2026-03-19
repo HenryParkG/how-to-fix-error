@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing C++20 Coroutine Leaks in Async Networking",
+    "title": "Fixing C++20 Coroutine Leaks in Suspended Promises",
     "slug": "cpp20-coroutine-memory-leak-fix",
-    "language": "C++",
+    "language": "C++ / Rust",
     "code": "MemoryLeak",
     "tags": [
         "Rust",
+        "Systems Programming",
         "Backend",
-        "Networking",
         "Error Fix"
     ],
-    "analysis": "<p>In high-performance asynchronous networking runtimes, C++20 coroutines are often used to simplify callback chains. However, a common pitfall occurs when the coroutine handle is not explicitly destroyed, leading to persistent memory leaks. Unlike higher-level languages, C++ coroutines do not have automatic garbage collection. If a coroutine finishes its execution or is suspended indefinitely without its <code>std::coroutine_handle::destroy()</code> being called, the promise object and the coroutine frame remain on the heap indefinitely.</p>",
-    "root_cause": "The promise_type fails to call destroy() on the coroutine handle during the final suspension point, or the owner of the handle loses track of the coroutine state before it reaches completion.",
-    "bad_code": "struct Task {\n  struct promise_type {\n    std::suspend_never initial_suspend() { return {}; }\n    std::suspend_always final_suspend() noexcept { return {}; }\n    void return_void() {}\n    Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n    void unhandled_exception() { std::terminate(); }\n  };\n  std::coroutine_handle<promise_type> handle;\n  // Missing Destructor to cleanup handle\n};",
-    "solution_desc": "Implement a proper RAII wrapper for the coroutine handle. Ensure that the task object's destructor calls handle.destroy() if the handle is valid, and use std::suspend_always in final_suspend to ensure the coroutine frame isn't prematurely deallocated before the wrapper can inspect it.",
-    "good_code": "struct Task {\n  struct promise_type {\n    std::suspend_never initial_suspend() { return {}; }\n    std::suspend_always final_suspend() noexcept { return {}; }\n    void return_void() {}\n    Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n    void unhandled_exception() { std::terminate(); }\n  };\n  std::coroutine_handle<promise_type> handle;\n  ~Task() { if (handle) handle.destroy(); }\n  Task(Task&& other) : handle(other.handle) { other.handle = nullptr; }\n};",
-    "verification": "Monitor the process memory using Valgrind or LeakSanitizer (ASan). Ensure that the 'leaked' byte count remains zero after thousands of async network requests.",
-    "date": "2026-03-16",
-    "id": 1773637777,
+    "analysis": "<p>C++20 coroutines are stackless, meaning their state is typically allocated on the heap via operator new. A common pitfall occurs when a coroutine reaches its final suspension point. If the promise type specifies <code>std::suspend_always</code> for <code>final_suspend()</code>, the coroutine state is not automatically destroyed. If the caller or the managing object (like a Task or Future) fails to call <code>handle.destroy()</code>, the coroutine frame remains orphaned in memory indefinitely. This is exacerbated in asynchronous event loops where thousands of coroutines may be suspended awaiting external I/O that never completes, leading to gradual heap exhaustion.</p>",
+    "root_cause": "The coroutine promise type uses final_suspend returning std::suspend_always without a corresponding RAII-managed call to coroutine_handle::destroy().",
+    "bad_code": "struct MyTask {\n  struct promise_type {\n    std::suspend_always initial_suspend() { return {}; }\n    // LEAK: Returns suspend_always but caller doesn't destroy\n    std::suspend_always final_suspend() noexcept { return {}; }\n    MyTask get_return_object() { return {std::coroutine_handle<promise_type>::from_promise(*this)}; }\n    void unhandled_exception() {}\n  };\n  std::coroutine_handle<promise_type> h;\n  // Missing Destructor calling h.destroy()\n};",
+    "solution_desc": "Implement a strict RAII wrapper for the coroutine handle. Ensure that the destructor of the Task object calls handle.destroy() if the handle is valid. Alternatively, use std::suspend_never in final_suspend if the lifecycle is managed entirely by the coroutine completion itself, though RAII is safer for cancelled tasks.",
+    "good_code": "struct MyTask {\n  struct promise_type {\n    std::suspend_always initial_suspend() { return {}; }\n    std::suspend_always final_suspend() noexcept { return {}; }\n    MyTask get_return_object() { return {std::coroutine_handle<promise_type>::from_promise(*this)}; }\n    void return_void() {}\n    void unhandled_exception() { std::terminate(); }\n  };\n  std::coroutine_handle<promise_type> h;\n  ~MyTask() { if (h) h.destroy(); }\n  MyTask(MyTask&& other) : h(other.h) { other.h = nullptr; }\n  // Prevent copying to avoid double destroy\n  MyTask(const MyTask&) = delete;\n};",
+    "verification": "Compile with Clang/LLVM and run through Valgrind or AddressSanitizer (ASAN). Verify '0 bytes in 0 blocks' are leaked after the coroutine reaches final_suspend.",
+    "date": "2026-03-19",
+    "id": 1773912905,
     "type": "error"
 });
