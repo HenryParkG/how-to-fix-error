@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773883209,
+        "title": "Fix Zig SIMD Alignment Violations in Bit-Casting",
+        "slug": "zig-simd-alignment-bitcast-fix",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/zig-simd-alignment-bitcast-fix.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773883210,
+        "title": "Resolve K8s API Starvation via Controller Throttling",
+        "slug": "k8s-api-server-starvation-throttling",
+        "language": "Go",
+        "code": "APIError429",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/k8s-api-server-starvation-throttling.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773883211,
+        "title": "Fix ZIO Fiber Leaks in Persistent Stream Supervision",
+        "slug": "zio-fiber-leaks-stream-supervision",
+        "language": "Scala",
+        "code": "FiberLeak",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/zio-fiber-leaks-stream-supervision.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Scala",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773883212,
+        "title": "NVIDIA NemoClaw: Secure AI Agent Installation",
+        "slug": "nvidia-nemoclaw-secure-installation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-secure-installation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773827023,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-preemption-fix",
