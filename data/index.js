@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1773902793,
+        "title": "Fixing PyTorch DDP Deadlocks in Multi-Node All-Reduce",
+        "slug": "fixing-pytorch-ddp-deadlocks",
+        "language": "Python",
+        "code": "RuntimeError: NCCL Timeout",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/fixing-pytorch-ddp-deadlocks.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773902794,
+        "title": "Resolving OCaml Multicore Parallel GC Contention",
+        "slug": "ocaml-multicore-gc-contention-fix",
+        "language": "OCaml",
+        "code": "Runtime Latency Spike",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-contention-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773902795,
+        "title": "Eliminating WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-race-fix",
+        "language": "TypeScript",
+        "code": "BufferStateError",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/webgpu-buffer-mapping-race-fix.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Graphics",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773902796,
+        "title": "NVIDIA NeMoClaw: Secure AI Stack Orchestration",
+        "slug": "nvidia-nemoclaw-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-19",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1773895805,
         "title": "Fixing Rust Pinning Violations in Async Futures",
         "slug": "rust-pinning-violations-self-referential-futures",
