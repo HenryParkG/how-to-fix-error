@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773969352,
+        "title": "Resolving eBPF Verifier Limits in XDP Tail Calls",
+        "slug": "ebpf-verifier-complexity-xdp-tail-calls",
+        "language": "Go",
+        "code": "BPF_VERIFY_LIMIT",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/ebpf-verifier-complexity-xdp-tail-calls.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773969353,
+        "title": "Fixing Flutter Janky Frames via Impeller Migration",
+        "slug": "flutter-jank-skia-shader-impeller",
+        "language": "TypeScript",
+        "code": "UI_JANK_SKIA",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/flutter-jank-skia-shader-impeller.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Next.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773969354,
+        "title": "Eliminating PostgreSQL Subtransaction Cache Overflows",
+        "slug": "postgres-subtransaction-overflow-fix",
+        "language": "SQL",
+        "code": "SUBXID_OVERFLOW",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/postgres-subtransaction-overflow-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773969355,
+        "title": "NVIDIA NemoClaw: Secure AI Installation Framework",
+        "slug": "nvidia-nemoclaw-secure-install-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-secure-install-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773912905,
         "title": "Fixing C++20 Coroutine Leaks in Suspended Promises",
         "slug": "cpp20-coroutine-memory-leak-fix",
