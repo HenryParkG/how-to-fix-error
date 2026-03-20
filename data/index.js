@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773999153,
+        "title": "Solving Rust Pinning Violations in Async Structs",
+        "slug": "rust-pinning-violations-async-self-referential",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/rust-pinning-violations-async-self-referential.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773999154,
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-group-rebalance-storms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/kafka-consumer-group-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773999155,
+        "title": "Debugging Elixir GenServer Mailbox Bottlenecks",
+        "slug": "elixir-genserver-mailbox-bottlenecks",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-bottlenecks.js",
+        "tags": [
+            "Backend",
+            "Node.js",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773999156,
+        "title": "Analyzing NVIDIA NemoClaw for Secure OpenClaw Setup",
+        "slug": "nvidia-nemoclaw-secure-openclaw-installation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-secure-openclaw-installation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773988981,
         "title": "Fixing Zig SIMD Alignment Faults in Custom Allocators",
         "slug": "zig-simd-alignment-faults-fix",
