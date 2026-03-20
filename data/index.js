@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773981767,
+        "title": "Fix Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "RuntimeStarvation",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773981768,
+        "title": "Fix MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "SQL",
+        "code": "CacheEvictionStall",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773981769,
+        "title": "Fix React Native JSI Memory Leaks in TurboModules",
+        "slug": "react-native-jsi-memory-leaks-turbomodules",
+        "language": "TypeScript",
+        "code": "JSIMemoryLeak",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/react-native-jsi-memory-leaks-turbomodules.js",
+        "tags": [
+            "React",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773981770,
+        "title": "NVIDIA NeMoClaw: Secure AI Deployments",
+        "slug": "nvidia-nemoclaw-secure-openclaw-installation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-secure-openclaw-installation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773969352,
         "title": "Resolving eBPF Verifier Limits in XDP Tail Calls",
         "slug": "ebpf-verifier-complexity-xdp-tail-calls",
