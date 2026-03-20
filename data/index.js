@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1773988981,
+        "title": "Fixing Zig SIMD Alignment Faults in Custom Allocators",
+        "slug": "zig-simd-alignment-faults-fix",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/zig-simd-alignment-faults-fix.js",
+        "tags": [
+            "Zig",
+            "SIMD",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773988982,
+        "title": "Mitigating Precision Collapse in 4-bit Quantized LLMs",
+        "slug": "4bit-llm-precision-collapse-fix",
+        "language": "Python",
+        "code": "PrecisionError",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/4bit-llm-precision-collapse-fix.js",
+        "tags": [
+            "AI",
+            "LLM",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773988983,
+        "title": "Eliminating ES Circuit Breaker Trips during CCR",
+        "slug": "es-ccr-circuit-breaker-trips",
+        "language": "Java",
+        "code": "CircuitBreakerException",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/es-ccr-circuit-breaker-trips.js",
+        "tags": [
+            "Elasticsearch",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1773988984,
+        "title": "NVIDIA NemoClaw: Secure AI Agent Orchestration",
+        "slug": "nvidia-nemoclaw-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-20",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773981767,
         "title": "Fix Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
