@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774074752,
+        "title": "Fixing eBPF Verifier Pointer-Aliasing in XDP",
+        "slug": "ebpf-verifier-pointer-aliasing-xdp",
+        "language": "Rust",
+        "code": "R1_type_inv",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/ebpf-verifier-pointer-aliasing-xdp.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774074753,
+        "title": "Solving Recall Loss During HNSW Index Compaction",
+        "slug": "hnsw-recall-degradation-fix",
+        "language": "Go",
+        "code": "Recall_Degradation",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/hnsw-recall-degradation-fix.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774074754,
+        "title": "Fixing Thread-Local Storage Memory Leaks in WASM",
+        "slug": "wasm-tls-memory-leak-fix",
+        "language": "TypeScript",
+        "code": "TLS_Leak",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/wasm-tls-memory-leak-fix.js",
+        "tags": [
+            "TypeScript",
+            "Rust",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774074755,
+        "title": "Inside NVIDIA NemoClaw: Secure Agentic Inference",
+        "slug": "nvidia-nemoclaw-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774066976,
         "title": "Fix WebGPU Resource Races in Multi-Pass Pipelines",
         "slug": "webgpu-resource-sync-races",
