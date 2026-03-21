@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774066976,
+        "title": "Fix WebGPU Resource Races in Multi-Pass Pipelines",
+        "slug": "webgpu-resource-sync-races",
+        "language": "TypeScript",
+        "code": "GPU_SYNC_ERROR",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/webgpu-resource-sync-races.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774066977,
+        "title": "Resolve Redis CoW Memory Exhaustion during Snapshots",
+        "slug": "redis-cow-memory-exhaustion",
+        "language": "Redis",
+        "code": "OOM_COW_FAILURE",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/redis-cow-memory-exhaustion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774066978,
+        "title": "Fix C++20 Coroutine Use-After-Return Errors",
+        "slug": "cpp20-coroutine-uar-fix",
+        "language": "C++",
+        "code": "UAR_COROUTINE",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/cpp20-coroutine-uar-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774066979,
+        "title": "NVIDIA/NemoClaw: Secure LLM Agents in OpenShell",
+        "slug": "nvidia-nemoclaw-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774055476,
         "title": "Eliminating Space Leaks in Lazy Haskell Evaluation Chains",
         "slug": "fixing-haskell-space-leaks-lazy-evaluation",
