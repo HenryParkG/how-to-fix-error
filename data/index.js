@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774055476,
+        "title": "Eliminating Space Leaks in Lazy Haskell Evaluation Chains",
+        "slug": "fixing-haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/fixing-haskell-space-leaks-lazy-evaluation.js",
+        "tags": [
+            "Haskell",
+            "Performance",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774055477,
+        "title": "Fixing PyTorch DDP Deadlocks during Gradient Sync",
+        "slug": "pytorch-ddp-gradient-sync-deadlock",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/pytorch-ddp-gradient-sync-deadlock.js",
+        "tags": [
+            "PyTorch",
+            "Distributed",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774055478,
+        "title": "Resolving Kubernetes DNS Throttling (ndots:5) in Microservices",
+        "slug": "kubernetes-dns-throttling-ndots-fix",
+        "language": "Go",
+        "code": "DNSLookupTimeout",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/kubernetes-dns-throttling-ndots-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774055479,
+        "title": "NVIDIA/NemoClaw: Secure Managed Inference Trends",
+        "slug": "nvidia-nemoclaw-managed-inference-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-managed-inference-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1773999153,
         "title": "Solving Rust Pinning Violations in Async Structs",
         "slug": "rust-pinning-violations-async-self-referential",
