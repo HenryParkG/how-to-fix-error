@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774085038,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "solving-go-runtime-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/solving-go-runtime-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774085039,
+        "title": "Resolving PostgreSQL XID Wraparound Errors",
+        "slug": "postgres-xid-wraparound-vacuum-contention",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/postgres-xid-wraparound-vacuum-contention.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774085040,
+        "title": "Eliminating Envoy Sidecar Memory Leaks in K8s",
+        "slug": "envoy-sidecar-memory-leak-kubernetes",
+        "language": "Kubernetes",
+        "code": "HeapFragmentation",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/envoy-sidecar-memory-leak-kubernetes.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774085041,
+        "title": "Analyzing NVIDIA/NemoClaw: Secure Managed Inference",
+        "slug": "nvidia-nemoclaw-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-21",
+        "path": "data/posts/2026-03/nvidia-nemoclaw-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774074752,
         "title": "Fixing eBPF Verifier Pointer-Aliasing in XDP",
         "slug": "ebpf-verifier-pointer-aliasing-xdp",
