@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774154850,
+        "title": "Mitigating BEAM Process Mailbox Overload",
+        "slug": "mitigating-beam-process-mailbox-overload",
+        "language": "Elixir",
+        "code": "ProcessMailboxOverload",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/mitigating-beam-process-mailbox-overload.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774154851,
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "fixing-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/fixing-kafka-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774154852,
+        "title": "Resolving RN JSI Memory Corruption",
+        "slug": "react-native-jsi-memory-corruption",
+        "language": "TypeScript",
+        "code": "JSIMemoryCorruption",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/react-native-jsi-memory-corruption.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774154853,
+        "title": "ClawTeam: Agent Swarm Intelligence Analysis",
+        "slug": "clawteam-agent-swarm-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774142394,
         "title": "Fixing Ghost Pointers in Zig Comptime Allocators",
         "slug": "fixing-ghost-pointers-zig-comptime",
