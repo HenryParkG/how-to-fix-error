@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774161585,
+        "title": "Fix NCCL All-Reduce Deadlocks in PyTorch",
+        "slug": "fix-nccl-all-reduce-deadlocks-pytorch",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/fix-nccl-all-reduce-deadlocks-pytorch.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774161586,
+        "title": "Eliminating Thunk-Induced Space Leaks in Haskell",
+        "slug": "haskell-thunk-space-leak-fix",
+        "language": "Haskell",
+        "code": "MEM_LEAK",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/haskell-thunk-space-leak-fix.js",
+        "tags": [
+            "Backend",
+            "Go",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774161587,
+        "title": "Mitigating ScyllaDB Write Amplification",
+        "slug": "scylladb-write-amplification-fix",
+        "language": "SQL",
+        "code": "WRITE_AMP",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/scylladb-write-amplification-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774161588,
+        "title": "ClawTeam: The Future of Agent Swarm Intelligence",
+        "slug": "clawteam-agent-swarm-intelligence-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774154850,
         "title": "Mitigating BEAM Process Mailbox Overload",
         "slug": "mitigating-beam-process-mailbox-overload",
