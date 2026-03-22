@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1774142394,
+        "title": "Fixing Ghost Pointers in Zig Comptime Allocators",
+        "slug": "fixing-ghost-pointers-zig-comptime",
+        "language": "Zig",
+        "code": "Memory Access Error",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/fixing-ghost-pointers-zig-comptime.js",
+        "tags": [
+            "Zig",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774142395,
+        "title": "Resolving Quantization Drift in Vector IVF-ADC",
+        "slug": "vector-db-quantization-drift-ivf-adc",
+        "language": "Python",
+        "code": "Data Inconsistency",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/vector-db-quantization-drift-ivf-adc.js",
+        "tags": [
+            "Python",
+            "VectorDB",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774142396,
+        "title": "Solving gRPC Head-of-Line Blocking in HTTP/2",
+        "slug": "grpc-http2-head-of-line-blocking",
+        "language": "Go",
+        "code": "Performance Bottleneck",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/grpc-http2-head-of-line-blocking.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774142397,
+        "title": "ClawTeam: The Rise of Agent Swarm Intelligence",
+        "slug": "clawteam-agent-swarm-intelligence-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774085038,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "solving-go-runtime-scheduler-starvation",
