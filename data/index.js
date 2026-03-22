@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774171457,
+        "title": "Debugging C++20 Coroutine Frame Leaks",
+        "slug": "cpp20-coroutine-frame-leaks-networking",
+        "language": "C++20",
+        "code": "MemoryLeak",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/cpp20-coroutine-frame-leaks-networking.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774171458,
+        "title": "Fixing Spark Shuffle Service Memory Fragmentation",
+        "slug": "spark-shuffle-service-memory-fragmentation",
+        "language": "Java/Scala",
+        "code": "MemoryFragmentation",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/spark-shuffle-service-memory-fragmentation.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774171459,
+        "title": "Mitigating WiredTiger Cache Eviction Contention",
+        "slug": "mongodb-wiredtiger-cache-eviction-fix",
+        "language": "MongoDB",
+        "code": "CacheContention",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-eviction-fix.js",
+        "tags": [
+            "Docker",
+            "NoSQL",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774171460,
+        "title": "ClawTeam: Agent Swarm Intelligence Explained",
+        "slug": "clawteam-agent-swarm-intelligence-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-22",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774161585,
         "title": "Fix NCCL All-Reduce Deadlocks in PyTorch",
         "slug": "fix-nccl-all-reduce-deadlocks-pytorch",
