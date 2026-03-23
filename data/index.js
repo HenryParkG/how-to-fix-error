@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774241869,
+        "title": "Fix eBPF Verifier Path-Complexity Rejections",
+        "slug": "ebpf-verifier-path-complexity-fix",
+        "language": "C, Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/ebpf-verifier-path-complexity-fix.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774241870,
+        "title": "Fix K8s Sidecar Lifecycle Race in Jobs",
+        "slug": "k8s-sidecar-job-race-condition",
+        "language": "Go, YAML",
+        "code": "SIGTERM_RACE",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/k8s-sidecar-job-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774241871,
+        "title": "Mitigate PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "TXID_WRAPAROUND",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/postgres-txid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774241872,
+        "title": "ClawTeam: Agent Swarm Intelligence for Automation",
+        "slug": "clawteam-agent-swarm-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774228821,
         "title": "Mitigating Rust Async Cancellation Hazards",
         "slug": "mitigating-rust-async-cancellation-pin-projected",
