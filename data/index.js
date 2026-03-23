@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774228821,
+        "title": "Mitigating Rust Async Cancellation Hazards",
+        "slug": "mitigating-rust-async-cancellation-pin-projected",
+        "language": "Rust",
+        "code": "AsyncCancellation",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/mitigating-rust-async-cancellation-pin-projected.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774228822,
+        "title": "Resolving Ray Task Graph Deadlocks on Node Preemption",
+        "slug": "ray-distributed-task-graph-deadlocks",
+        "language": "Python",
+        "code": "DistributedDeadlock",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/ray-distributed-task-graph-deadlocks.js",
+        "tags": [
+            "Python",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774228823,
+        "title": "Fixing WebGPU Command Buffer Synchronization Races",
+        "slug": "webgpu-command-buffer-sync-races",
+        "language": "TypeScript",
+        "code": "RaceCondition",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/webgpu-command-buffer-sync-races.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774228824,
+        "title": "ClawTeam: One-Command Multi-Agent Swarm Automation",
+        "slug": "clawteam-agent-swarm-intelligence-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774171457,
         "title": "Debugging C++20 Coroutine Frame Leaks",
         "slug": "cpp20-coroutine-frame-leaks-networking",
