@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774259718,
+        "title": "Elixir: Fixing Selective Receive Bottlenecks in OTP",
+        "slug": "elixir-selective-receive-bottlenecks-otp",
+        "language": "Elixir",
+        "code": "O(N) Mailbox Scan",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/elixir-selective-receive-bottlenecks-otp.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774259719,
+        "title": "Redis: Mitigating CoW Memory Spikes During Snapshots",
+        "slug": "redis-mitigating-cow-memory-spikes",
+        "language": "Redis",
+        "code": "OOM-Killer Spike",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/redis-mitigating-cow-memory-spikes.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774259720,
+        "title": "Next.js: Fixing Hydration Errors in Parallel Streaming",
+        "slug": "nextjs-hydration-mismatches-parallel-streaming",
+        "language": "TypeScript",
+        "code": "Hydration Mismatch",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/nextjs-hydration-mismatches-parallel-streaming.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774259721,
+        "title": "ClawTeam: Mastering Agent Swarm Intelligence",
+        "slug": "clawteam-agent-swarm-intelligence-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/clawteam-agent-swarm-intelligence-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774249175,
         "title": "Zig: Resolving Memory Safety in Allocator Chaining",
         "slug": "zig-allocator-chaining-memory-safety",
