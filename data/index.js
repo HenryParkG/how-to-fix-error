@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774249175,
+        "title": "Zig: Resolving Memory Safety in Allocator Chaining",
+        "slug": "zig-allocator-chaining-memory-safety",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/zig-allocator-chaining-memory-safety.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774249176,
+        "title": "Fixing HNSW Graph Fragmentation in Vector DBs",
+        "slug": "hnsw-graph-fragmentation-vector-db",
+        "language": "C++ / Python",
+        "code": "Index Decay",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/hnsw-graph-fragmentation-vector-db.js",
+        "tags": [
+            "VectorDB",
+            "SQL",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774249177,
+        "title": "OCaml: Debugging Multicore GC Latency Spikes",
+        "slug": "ocaml-multicore-gc-latency-spikes",
+        "language": "OCaml",
+        "code": "STW Latency",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-latency-spikes.js",
+        "tags": [
+            "OCaml",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774249178,
+        "title": "ClawTeam: Scaling Agent Swarm Intelligence",
+        "slug": "hku-clawteam-agent-swarm-automation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-23",
+        "path": "data/posts/2026-03/hku-clawteam-agent-swarm-automation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774241869,
         "title": "Fix eBPF Verifier Path-Complexity Rejections",
         "slug": "ebpf-verifier-path-complexity-fix",

@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing OCaml Multicore GC Latency Spikes",
+    "title": "OCaml: Debugging Multicore GC Latency Spikes",
     "slug": "ocaml-multicore-gc-latency-spikes",
-    "language": "OCaml / Backend",
-    "code": "GCLatency",
+    "language": "OCaml",
+    "code": "STW Latency",
     "tags": [
+        "OCaml",
         "Rust",
         "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>OCaml 5.x introduced Multicore support, moving from a single-threaded runtime to a parallel one with 'Domains'. However, parallel data processing often triggers major GC latency spikes. This occurs when minor heaps across domains fill up at different rates, forcing frequent synchronization for major heap promotion.</p><p>The Stop-the-World (STW) phase for global root scanning becomes a bottleneck when processing large-scale immutable data structures in parallel.</p>",
-    "root_cause": "The default 'max_shared_minor_ratio' is too low for data-heavy parallel tasks, causing domains to trigger global major GC cycles too frequently when promoting short-lived parallel objects.",
-    "bad_code": "(* Standard parallel map triggering high GC overhead *)\nlet results = Domainslib.Task.parallel_map pool ~f:heavy_compute large_list",
-    "solution_desc": "Tune the GC parameters via OCAMLRUNPARAM to increase the minor heap size per domain and adjust the major heap increment. Using a 'pooling' strategy for large buffers instead of constant allocation in the parallel loop significantly reduces promotion pressure.",
-    "good_code": "(* Optimized GC settings and buffer reuse *)\n(* Set OCAMLRUNPARAM=\"s=512M,i=128M,o=100\" *)\nlet process_batch pool data =\n  let local_buf = Bytes.create 1024 in (* Reuse local buffers *)\n  Domainslib.Task.parallel_for pool ~start:0 ~finish:(Array.length data - 1)\n    ~body:(fun i -> data.(i) <- compute_with_buf local_buf data.(i))",
-    "verification": "Use 'ocaml-memtrace' to visualize allocation rates and 'eventlog' to measure the duration of GC STW phases. Ensure major_gc_cycles are minimized.",
-    "date": "2026-03-01",
-    "id": 1772356902,
+    "analysis": "<p>OCaml 5's multicore runtime introduced a sophisticated concurrent garbage collector. However, parallel workloads often experience sudden latency spikes (100ms+). This usually happens when the 'minor heap' (where young objects live) is too small, forcing frequent 'Stop-The-World' (STW) synchronization across all cores to promote objects to the shared major heap.</p>",
+    "root_cause": "High allocation rates in parallel domains trigger frequent minor collections. Since OCaml 5 requires all domains to reach a 'safe point' for minor GC, a single stalled domain can block the entire runtime.",
+    "bad_code": "(* Default GC settings with 8 cores *)\nlet () = \n  let _ = Domain.spawn (fn () -> heavy_allocation_loop ()) in\n  (* Minor heap is likely too small for multicore throughput *)\n  Gc.set { (Gc.get()) with minor_heap_size = 256 * 1024 }",
+    "solution_desc": "Increase the `minor_heap_size` significantly to accommodate the aggregate allocation rate of all domains. Additionally, use `OCAMLRUNPARAM=\"v=0x400\"` to profile GC slices and identify if 'major' cycles are being triggered prematurely by heap fragmentation.",
+    "good_code": "(* Optimized for Multicore Parallelism *)\nlet () = \n  (* Increase minor heap to 128MB per core to reduce STW frequency *)\n  let new_size = 128 * 1024 * 1024 in\n  Gc.set { (Gc.get()) with \n    minor_heap_size = new_size;\n    space_overhead = 120; (* Less aggressive major GC *)\n    allocation_policy = 2 (* Best-fit to reduce fragmentation *)\n  }",
+    "verification": "Run the application with `oltop` or `eventlog-tools`. Verify that 'minor-gc-latency' peaks are reduced and domain synchronization waits are minimized.",
+    "date": "2026-03-23",
+    "id": 1774249177,
     "type": "error"
 });
