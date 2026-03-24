@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774345576,
+        "title": "Resolving eBPF Loop Unrolling Rejections in XDP",
+        "slug": "ebpf-xdp-loop-unrolling-fix",
+        "language": "C",
+        "code": "VerifierError",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/ebpf-xdp-loop-unrolling-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774345577,
+        "title": "Fixing Postgres Transaction ID Wraparound Stalls",
+        "slug": "postgres-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/postgres-txid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774345578,
+        "title": "Fixing WebGPU Buffer Mapping Synchronization Races",
+        "slug": "webgpu-buffer-mapping-race-fix",
+        "language": "TypeScript",
+        "code": "OperationError",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/webgpu-buffer-mapping-race-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774345579,
+        "title": "Flash-MoE: High-Performance MoE Models on Local Hardware",
+        "slug": "flash-moe-tech-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/flash-moe-tech-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774335236,
         "title": "Resolving Soundness Issues in Manual Pin-Projection",
         "slug": "rust-pin-projection-soundness",

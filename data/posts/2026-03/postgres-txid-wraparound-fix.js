@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigate PostgreSQL Transaction ID Wraparound",
+    "title": "Fixing Postgres Transaction ID Wraparound Stalls",
     "slug": "postgres-txid-wraparound-fix",
     "language": "SQL",
-    "code": "TXID_WRAPAROUND",
+    "code": "TXIDWraparound",
     "tags": [
         "SQL",
-        "PostgreSQL",
         "Infra",
+        "Database",
         "Error Fix"
     ],
-    "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (TXID) system. When the TXID counter reaches approximately 2 billion, the database risks 'wraparound,' where old transactions appear to be in the future. To prevent data loss, PostgreSQL enters a forced read-only mode once the 'datfrozenxid' threshold is breached.</p>",
-    "root_cause": "High-churn environments where autovacuum cannot keep pace with transaction generation, preventing the 'freezing' of old tuples.",
-    "bad_code": "-- Default aggressive settings often missing\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2;\nALTER SYSTEM SET autovacuum_freeze_max_age = 200000000;",
-    "solution_desc": "Aggressively tune autovacuum parameters to trigger more frequent cleanups and manually perform 'VACUUM FREEZE' on the largest tables during maintenance windows.",
-    "good_code": "ALTER TABLE high_churn_table SET (autovacuum_vacuum_scale_factor = 0.01,\nautovacuum_vacuum_cost_limit = 1000);\n\n-- Monitor age\nSELECT datname, age(datfrozenxid) FROM pg_database;",
-    "verification": "Execute 'SELECT age(datfrozenxid) FROM pg_database' and verify the age is significantly below 'autovacuum_freeze_max_age'.",
-    "date": "2026-03-23",
-    "id": 1774241871,
+    "analysis": "<p>In high-write PostgreSQL clusters, the Transaction ID (XID) counter can approach the 2-billion limit. When the age of the oldest transaction reaches <code>autovacuum_freeze_max_age</code>, the database enters a forced 'wraparound prevention' mode. If this fails to clear the backlog, the database may stop accepting writes entirely to prevent data corruption, resulting in significant downtime.</p>",
+    "root_cause": "Autovacuum worker starvation or misconfiguration preventing the freezing of old tuples, coupled with long-running transactions holding back the 'oldest Xmin'.",
+    "bad_code": "-- Current settings are too conservative for high volume\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 200;\nALTER SYSTEM SET autovacuum_max_workers = 3;",
+    "solution_desc": "Identify and kill long-running transactions, then aggressively tune autovacuum parameters to increase throughput. Manual VACUUM FREEZE on the oldest tables is often required to recover from a stall.",
+    "good_code": "-- Tune for aggressive recovery\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 2000;\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.01;\nVACUUM FREEZE VERBOSE heavy_table_name;",
+    "verification": "Monitor `select datname, age(datfrozenxid) from pg_database;` and ensure age is decreasing.",
+    "date": "2026-03-24",
+    "id": 1774345577,
     "type": "error"
 });
