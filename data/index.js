@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774314837,
+        "title": "Resolving Goroutine Starvation in Non-Preemptive Loops",
+        "slug": "go-goroutine-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "SchedulerStarvation",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/go-goroutine-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774314838,
+        "title": "Debugging NCCL Timeout Deadlocks in Multi-GPU Training",
+        "slug": "pytorch-nccl-timeout-deadlock-fix",
+        "language": "Python",
+        "code": "NCCLTimeoutError",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/pytorch-nccl-timeout-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774314839,
+        "title": "Identifying Thunk Leaks in Long-Running State Monads",
+        "slug": "haskell-state-monad-thunk-leak-fix",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/haskell-state-monad-thunk-leak-fix.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774314840,
+        "title": "Flash-MoE: Running 100B+ Models on Local Laptops",
+        "slug": "danveloper-flash-moe-analysis",
+        "language": "Python/C++",
+        "code": "Trend",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/danveloper-flash-moe-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774259718,
         "title": "Elixir: Fixing Selective Receive Bottlenecks in OTP",
         "slug": "elixir-selective-receive-bottlenecks-otp",
