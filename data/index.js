@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774327708,
+        "title": "C++20: Fixing UAF in Symmetric Transfer Coroutines",
+        "slug": "cpp20-uaf-symmetric-transfer-coroutine-fix",
+        "language": "C++20",
+        "code": "Use-After-Free",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/cpp20-uaf-symmetric-transfer-coroutine-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774327709,
+        "title": "PyTorch: Debugging Deadlocks in Triton Kernel Tiling",
+        "slug": "pytorch-triton-kernel-tiling-deadlock-fix",
+        "language": "Python",
+        "code": "GPU-Deadlock",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/pytorch-triton-kernel-tiling-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774327710,
+        "title": "Elasticsearch: Fixing Ghost Shard Metadata Inconsistencies",
+        "slug": "elasticsearch-ghost-shard-metadata-fix",
+        "language": "Java",
+        "code": "Metadata-Mismatch",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/elasticsearch-ghost-shard-metadata-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774327711,
+        "title": "Flash-MoE: Running 100B+ Models on Consumer Laptops",
+        "slug": "flash-moe-github-trend-analysis",
+        "language": "Python/C++",
+        "code": "Trend",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/flash-moe-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1774314837,
         "title": "Resolving Goroutine Starvation in Non-Preemptive Loops",
         "slug": "go-goroutine-scheduler-starvation-fix",
