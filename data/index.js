@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1774335236,
+        "title": "Resolving Soundness Issues in Manual Pin-Projection",
+        "slug": "rust-pin-projection-soundness",
+        "language": "Rust",
+        "code": "Undefined Behavior",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/rust-pin-projection-soundness.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774335237,
+        "title": "Debugging Zombie Consumer Fencing in Kafka",
+        "slug": "kafka-zombie-consumer-fencing",
+        "language": "Kafka",
+        "code": "FencedInstanceIdException",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/kafka-zombie-consumer-fencing.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774335238,
+        "title": "Fixing Misaligned Memory Access Traps in WASM SIMD",
+        "slug": "wasm-simd-misaligned-memory",
+        "language": "WebAssembly",
+        "code": "Runtime Trap",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/wasm-simd-misaligned-memory.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774335239,
+        "title": "Flash-MoE: High-Performance Mixture of Experts on Laptops",
+        "slug": "flash-moe-running-llms-on-laptops",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-03-24",
+        "path": "data/posts/2026-03/flash-moe-running-llms-on-laptops.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend",
+            "Python"
+        ]
+    },
+    {
         "id": 1774327708,
         "title": "C++20: Fixing UAF in Symmetric Transfer Coroutines",
         "slug": "cpp20-uaf-symmetric-transfer-coroutine-fix",
