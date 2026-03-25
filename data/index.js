@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774431850,
+        "title": "Fix Goroutine Starvation in Compute-Intensive Loops",
+        "slug": "fixing-goroutine-starvation-scheduling-gaps",
+        "language": "Go",
+        "code": "StarvationError",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/fixing-goroutine-starvation-scheduling-gaps.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774431851,
+        "title": "Resolve Layout Thrashing in React Native Fabric",
+        "slug": "resolve-layout-thrashing-fabric-shadow-tree",
+        "language": "React Native",
+        "code": "RenderThrash",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/resolve-layout-thrashing-fabric-shadow-tree.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774431852,
+        "title": "Debug MongoDB WiredTiger Write Amplification Spikes",
+        "slug": "mongodb-wiredtiger-write-amplification-fix",
+        "language": "MongoDB",
+        "code": "WriteAmpSpike",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-write-amplification-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774431853,
+        "title": "Analyzing dbskill: Business Logic for Claude Code",
+        "slug": "trend-dontbesilent-dbskill-claude-code",
+        "language": "LLM Skills",
+        "code": "Trend",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/trend-dontbesilent-dbskill-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774421605,
         "title": "Resolving Elixir Selective Receive Mailbox Bottlenecks",
         "slug": "elixir-selective-receive-bottlenecks",
