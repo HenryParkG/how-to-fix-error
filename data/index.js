@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1774414168,
+        "title": "Mitigating HNSW Graph Fragmentation in Vector DBs",
+        "slug": "hnsw-graph-fragmentation-fix",
+        "language": "Go",
+        "code": "HNSW_FRAG_LEAK",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/hnsw-graph-fragmentation-fix.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774414169,
+        "title": "Fixing Comptime Memory Corruption in Zig Generics",
+        "slug": "zig-comptime-generic-corruption",
+        "language": "Zig",
+        "code": "COMPTIME_MEM_FAIL",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/zig-comptime-generic-corruption.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774414170,
+        "title": "Resolving OCaml Multicore Minor Heap Promotion Bottlenecks",
+        "slug": "ocaml-multicore-gc-promotion",
+        "language": "OCaml",
+        "code": "GC_PROMO_STALL",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/ocaml-multicore-gc-promotion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774414171,
+        "title": "Analyzing the dbskill Trend for Claude Code",
+        "slug": "dontbesilent-dbskill-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/dontbesilent-dbskill-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774345576,
         "title": "Resolving eBPF Loop Unrolling Rejections in XDP",
         "slug": "ebpf-xdp-loop-unrolling-fix",
