@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774421605,
+        "title": "Resolving Elixir Selective Receive Mailbox Bottlenecks",
+        "slug": "elixir-selective-receive-bottlenecks",
+        "language": "Elixir",
+        "code": "SelectiveReceiveStall",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/elixir-selective-receive-bottlenecks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774421606,
+        "title": "Fixing KV Cache Fragmentation in PagedAttention",
+        "slug": "llm-kv-cache-paged-attention-fix",
+        "language": "Python",
+        "code": "KVCacheFragmentation",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/llm-kv-cache-paged-attention-fix.js",
+        "tags": [
+            "Python",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774421607,
+        "title": "Debugging RCU Callback Stalls in High-Core Linux Systems",
+        "slug": "linux-kernel-rcu-callback-stalls",
+        "language": "C",
+        "code": "RCUStallError",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/linux-kernel-rcu-callback-stalls.js",
+        "tags": [
+            "Rust",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774421608,
+        "title": "GitHub Trend: dbskill - Business Diagnosis for Claude Code",
+        "slug": "trend-dbskill-claude-code-extension",
+        "language": "JSON / Markdown",
+        "code": "Trend",
+        "date": "2026-03-25",
+        "path": "data/posts/2026-03/trend-dbskill-claude-code-extension.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774414168,
         "title": "Mitigating HNSW Graph Fragmentation in Vector DBs",
         "slug": "hnsw-graph-fragmentation-fix",
