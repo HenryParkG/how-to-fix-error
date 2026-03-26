@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774518866,
+        "title": "Fix Zig Comptime Pointer Integrity Violations",
+        "slug": "zig-comptime-pointer-integrity-violations",
+        "language": "Zig",
+        "code": "ComptimeMemoryError",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/zig-comptime-pointer-integrity-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774518867,
+        "title": "Resolving RocksDB Write Stalls during LSM-Tree Compaction",
+        "slug": "rocksdb-write-stalls-lsm-compaction",
+        "language": "C++/Rust",
+        "code": "WriteStallException",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/rocksdb-write-stalls-lsm-compaction.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774518868,
+        "title": "Resolving Gradient Desync in Hybrid 3D Parallelism",
+        "slug": "hybrid-3d-parallelism-gradient-desync",
+        "language": "Python",
+        "code": "GradSyncMismatch",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/hybrid-3d-parallelism-gradient-desync.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774518869,
+        "title": "Analyze Trending Repo: slavingia/skills (Claude Code)",
+        "slug": "trend-analysis-slavingia-skills",
+        "language": "TypeScript/JSON",
+        "code": "Trend",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/trend-analysis-slavingia-skills.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774508297,
         "title": "Resolving eBPF Verifier Failures in Rust XDP Programs",
         "slug": "rust-ebpf-verifier-xdp-failures",
