@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1774501222,
+        "title": "Debugging Use-After-Free Hazards in C++20 Coroutines",
+        "slug": "cpp20-coroutine-use-after-free-symmetric-transfer",
+        "language": "C++",
+        "code": "MemoryCorruption",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/cpp20-coroutine-use-after-free-symmetric-transfer.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774501223,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storms-multi-tenant",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/kafka-rebalance-storms-multi-tenant.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774501224,
+        "title": "Fixing Skia Shader Compilation Jitter in Flutter",
+        "slug": "flutter-skia-shader-compilation-jitter",
+        "language": "Dart",
+        "code": "UIJank",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/flutter-skia-shader-compilation-jitter.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774501225,
+        "title": "Claude Code Skills: The Minimalist Entrepreneur Framework",
+        "slug": "slavingia-skills-claude-code-analysis",
+        "language": "Markdown",
+        "code": "Trend",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/slavingia-skills-claude-code-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774488261,
         "title": "Resolving NCCL Collective Communication Timeouts",
         "slug": "resolving-nccl-timeouts-distributed-training",
