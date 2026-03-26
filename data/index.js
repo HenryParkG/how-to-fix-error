@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774508297,
+        "title": "Resolving eBPF Verifier Failures in Rust XDP Programs",
+        "slug": "rust-ebpf-verifier-xdp-failures",
+        "language": "Rust",
+        "code": "Verifier Error",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/rust-ebpf-verifier-xdp-failures.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774508298,
+        "title": "Debugging gRPC HTTP/2 Stream Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "Stream Stalls",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774508299,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXID Exhaustion",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/postgresql-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774508300,
+        "title": "Claude Code Skills: The Minimalist Entrepreneur Framework",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774501222,
         "title": "Debugging Use-After-Free Hazards in C++20 Coroutines",
         "slug": "cpp20-coroutine-use-after-free-symmetric-transfer",
