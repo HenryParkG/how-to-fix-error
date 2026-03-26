@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1774488261,
+        "title": "Resolving NCCL Collective Communication Timeouts",
+        "slug": "resolving-nccl-timeouts-distributed-training",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/resolving-nccl-timeouts-distributed-training.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774488262,
+        "title": "Debugging Sidecar Lifecycle Race Conditions in K8s",
+        "slug": "kubernetes-sidecar-lifecycle-race-conditions",
+        "language": "Go",
+        "code": "JOB_STUCK_TERMINATING",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/kubernetes-sidecar-lifecycle-race-conditions.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774488263,
+        "title": "Mitigating Memory Leaks in Lazy Monad Stacks",
+        "slug": "haskell-lazy-monad-transformer-leaks",
+        "language": "Haskell",
+        "code": "SPACE_LEAK",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/haskell-lazy-monad-transformer-leaks.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774488264,
+        "title": "Analyzing slavingia/skills: Claude Code for Entrepreneurs",
+        "slug": "clavingia-skills-claude-code-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-26",
+        "path": "data/posts/2026-03/clavingia-skills-claude-code-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774431850,
         "title": "Fix Goroutine Starvation in Compute-Intensive Loops",
         "slug": "fixing-goroutine-starvation-scheduling-gaps",
