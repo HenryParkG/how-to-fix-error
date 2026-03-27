@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774594693,
+        "title": "Fixing Haskell Space Leaks in Lazy Thunks",
+        "slug": "resolving-haskell-space-leaks-thunks",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/resolving-haskell-space-leaks-thunks.js",
+        "tags": [
+            "Haskell",
+            "Functional",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774594694,
+        "title": "Fixing Linux io_uring SQPOLL Deadlocks",
+        "slug": "fixing-io-uring-sqpoll-deadlocks",
+        "language": "C / Rust",
+        "code": "Deadlock",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/fixing-io-uring-sqpoll-deadlocks.js",
+        "tags": [
+            "Linux",
+            "Systems",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774594695,
+        "title": "Debugging WebGPU Buffer Sync Race Conditions",
+        "slug": "webgpu-buffer-sync-race-conditions",
+        "language": "TypeScript",
+        "code": "MemoryRace",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/webgpu-buffer-sync-race-conditions.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774594696,
+        "title": "Claude Code: Sahil Lavingia’s Skills Repo",
+        "slug": "claude-code-skills-sahil-lavingia",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/claude-code-skills-sahil-lavingia.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774587727,
         "title": "Fixing Non-Preemptive Cgo Scheduler Livelocks",
         "slug": "resolving-cgo-scheduler-livelocks",
