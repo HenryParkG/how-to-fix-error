@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774587727,
+        "title": "Fixing Non-Preemptive Cgo Scheduler Livelocks",
+        "slug": "resolving-cgo-scheduler-livelocks",
+        "language": "Go",
+        "code": "Livelock/Starvation",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/resolving-cgo-scheduler-livelocks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Runtime",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774587728,
+        "title": "Mitigating Recall Loss in High-Churn Milvus Collections",
+        "slug": "milvus-vector-recall-loss-fix",
+        "language": "Python",
+        "code": "Recall Degradation",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/milvus-vector-recall-loss-fix.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774587729,
+        "title": "Debugging OCaml-to-Wasm GC Memory Leaks",
+        "slug": "ocaml-wasm-gc-leak-debug",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/ocaml-wasm-gc-leak-debug.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774587730,
+        "title": "Analyzing Sahil Lavingia's 'Skills' for Claude Code",
+        "slug": "claude-code-skills-sahil-lavingia",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/claude-code-skills-sahil-lavingia.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774574651,
         "title": "Fixing Cache Race Conditions in Multi-Region Redis",
         "slug": "redis-multi-region-cache-race-conditions",
