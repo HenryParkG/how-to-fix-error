@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774604846,
+        "title": "Fixing CUDA VMM Fragmentation in PagedAttention",
+        "slug": "cuda-pagedattention-vmm-fragmentation-fix",
+        "language": "Python/CUDA",
+        "code": "Memory Fragmentation",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/cuda-pagedattention-vmm-fragmentation-fix.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774604847,
+        "title": "Fixing Use-After-Free in C++20 Coroutine Transfers",
+        "slug": "cpp20-coroutine-symmetric-transfer-uaf",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/cpp20-coroutine-symmetric-transfer-uaf.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774604848,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-stalls-fix",
+        "language": "NoSQL/C++",
+        "code": "Cache Eviction Stall",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-eviction-stalls-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774604849,
+        "title": "Claude Code Skills: The Minimalist Entrepreneur",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "TypeScript/MCP",
+        "code": "Trend",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774594693,
         "title": "Fixing Haskell Space Leaks in Lazy Thunks",
         "slug": "resolving-haskell-space-leaks-thunks",
