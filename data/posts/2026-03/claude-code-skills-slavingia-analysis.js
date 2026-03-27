@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Claude Code Skills: The Minimalist Entrepreneur Framework",
+    "title": "Claude Code Skills: The Minimalist Entrepreneur",
     "slug": "claude-code-skills-slavingia-analysis",
-    "language": "Node.js",
+    "language": "TypeScript / Claude Code",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Node.js"
+        "TypeScript"
     ],
-    "analysis": "<p>The 'slavingia/skills' repository is trending because it represents a shift in AI productivity: moving from generic chat to 'Skill-Based' automation. Based on Sahil Lavingia's 'The Minimalist Entrepreneur', these skills allow 'Claude Code' (Anthropic's CLI tool) to execute domain-specific workflows. It bridges the gap between raw LLM capabilities and practical business operations, such as calculating runway, managing lean backlogs, or automating repetitive 'founder' tasks directly from the terminal.</p>",
-    "root_cause": "Key Features & Innovations: 1. Modular skill definitions that extend Claude Code's toolset. 2. Integration of 'Minimalist Entrepreneur' principles into automated prompts. 3. Zero-dependency CLI integration for rapid business prototyping.",
-    "bad_code": "npm install -g @anthropic-ai/claude-code\ngit clone https://github.com/slavingia/skills.git\n# Copy desired skills to your Claude Code config directory",
-    "solution_desc": "Best Use Cases: Ideal for solo founders and 'minimalist' developers who want to use AI as a fractional COO. Use it to automate the 'boring' parts of project management and financial tracking without leaving the IDE.",
-    "good_code": "// Example of a Skill definition for Claude Code\nexport const calculateRunway = {\n  name: 'calculate_runway',\n  description: 'Calculates months of runway based on burn rate and cash',\n  parameters: { \n    type: 'object',\n    properties: { cash: { type: 'number' }, burn: { type: 'number' } }\n  },\n  execute: async ({ cash, burn }) => ({ result: cash / burn })\n};",
-    "verification": "As AI agents become more autonomous, 'Skill' repositories will become the new 'NPM' for agentic workflows. Expect Sahil's approach to influence how developers package business logic for LLMs.",
-    "date": "2026-03-26",
-    "id": 1774508300,
+    "analysis": "<p>The repository 'slavingia/skills' has surged in popularity as it represents the first major 'community-driven skill-set' for Claude Code, Anthropic\u2019s new CLI agent. It bridges the gap between high-level business philosophy (Sahil Lavingia's 'The Minimalist Entrepreneur') and low-level code execution. By injecting specific business logic rules and coding patterns into the AI's runtime, it allows Claude to not just write code, but to write code that adheres to 'Minimalist' principles: profitability, sustainability, and lean architecture.</p>",
+    "root_cause": "Standardizes AI agent behavior using specialized system prompts and MCP (Model Context Protocol) configs to automate the 'Minimalist Entrepreneur' workflow.",
+    "bad_code": "git clone https://github.com/slavingia/skills.git\ncp -r skills/ ~/.claude/skills/",
+    "solution_desc": "Use this when building MVP-stage startups where speed and code-cleanliness are paramount. It is ideal for solo-developers using Claude Code who want to automate repetitive 'business-logic' scaffolding.",
+    "good_code": "// Example skill definition for Claude Code\n{\n  \"name\": \"minimalist-startup-check\",\n  \"description\": \"Validates if a feature is lean enough for an MVP\",\n  \"patterns\": [\"is_profitable\", \"is_automated\"],\n  \"run\": \"claude run check-lean --input ./src\"\n}",
+    "verification": "The project is a harbinger of 'Persona-Driven AI Development,' where developers share not just libraries, but entire behavioral profiles for their AI coding partners.",
+    "date": "2026-03-27",
+    "id": 1774574654,
     "type": "trend"
 });

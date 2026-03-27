@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774574651,
+        "title": "Fixing Cache Race Conditions in Multi-Region Redis",
+        "slug": "redis-multi-region-cache-race-conditions",
+        "language": "Go / Redis",
+        "code": "Race Condition",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/redis-multi-region-cache-race-conditions.js",
+        "tags": [
+            "Redis",
+            "Distributed Systems",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774574652,
+        "title": "Fixing Non-Deterministic Metadata in PyTorch DDP",
+        "slug": "pytorch-ddp-metadata-serialization-fix",
+        "language": "Python / PyTorch",
+        "code": "RuntimeError",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/pytorch-ddp-metadata-serialization-fix.js",
+        "tags": [
+            "Machine Learning",
+            "Distributed",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774574653,
+        "title": "Resolving Actor Mailbox Congestion in Elixir GenStage",
+        "slug": "elixir-genstage-mailbox-congestion-fix",
+        "language": "Elixir",
+        "code": "Process Timeout",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/elixir-genstage-mailbox-congestion-fix.js",
+        "tags": [
+            "Concurrency",
+            "Erlang",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774574654,
+        "title": "Claude Code Skills: The Minimalist Entrepreneur",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "TypeScript / Claude Code",
+        "code": "Trend",
+        "date": "2026-03-27",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774518866,
         "title": "Fix Zig Comptime Pointer Integrity Violations",
         "slug": "zig-comptime-pointer-integrity-violations",
