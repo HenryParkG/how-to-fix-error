@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774680461,
+        "title": "Fixing Zig Memory Corruption in Threaded Arena Resizing",
+        "slug": "zig-memory-corruption-arena-resizing",
+        "language": "Zig",
+        "code": "Memory Corruption",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/zig-memory-corruption-arena-resizing.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774680462,
+        "title": "Fix PyTorch FSDP Divergence from Precision Mismatch",
+        "slug": "pytorch-fsdp-precision-clipping-fix",
+        "language": "Python",
+        "code": "Gradient Divergence",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/pytorch-fsdp-precision-clipping-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774680463,
+        "title": "Resolving Cassandra Mutation Dropping via I/O Throttling",
+        "slug": "cassandra-mutation-dropping-io-saturation",
+        "language": "Java",
+        "code": "Mutation Error",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/cassandra-mutation-dropping-io-saturation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774680464,
+        "title": "Claude Code Skills: Transforming Code into Products",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774673296,
         "title": "Fixing Rust Pinning Violations in Manual Futures",
         "slug": "rust-pinning-violations-manual-futures",

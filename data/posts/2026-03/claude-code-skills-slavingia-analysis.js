@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Claude Code Skills: The Minimalist AI Workflow",
+    "title": "Claude Code Skills: Transforming Code into Products",
     "slug": "claude-code-skills-slavingia-analysis",
     "language": "TypeScript",
     "code": "Trend",
@@ -8,13 +8,13 @@ window.onPostDataLoaded({
         "GitHub",
         "TypeScript"
     ],
-    "analysis": "<p>The 'slavingia/skills' repository has surged in popularity by operationalizing Sahil Lavingia's 'Minimalist Entrepreneur' philosophy within the Claude Code ecosystem. It utilizes the Model Context Protocol (MCP) to turn Claude into an autonomous agent capable of executing business-specific skills, ranging from financial analysis to automated code reviews, reducing the overhead for solo-founders.</p>",
-    "root_cause": "Pre-built Skill Templates, MCP Integration, and Philosophy-as-Code (Minimalist Entrepreneur).",
-    "bad_code": "npm install -g @anthropic-ai/claude-code && git clone https://github.com/slavingia/skills",
-    "solution_desc": "Ideal for entrepreneurs and solo developers who need to automate complex, multi-step workflows (like SaaS management) using AI agents with local filesystem access.",
-    "good_code": "{\n  \"name\": \"analyze_startup_metrics\",\n  \"description\": \"Calculates LTV/CAC from local CSV files\",\n  \"parameters\": { \"file\": \"metrics.csv\" }\n}",
-    "verification": "The trend suggests a move toward 'Agentic Workflows' where AI tools don't just write code, but manage business operations via standard protocols.",
+    "analysis": "<p>The 'slavingia/skills' repository is trending because it bridges the gap between raw AI coding and product-led development. Inspired by Sahil Lavingia's 'The Minimalist Entrepreneur', it provides a set of custom 'skills' for Claude Code (Anthropic\u2019s CLI agent). These skills allow Claude to act not just as a coder, but as a product manager and MVP builder, automating repetitive setup and strategy tasks.</p>",
+    "root_cause": "Standardized skill sets for AI agents, focus on the 'Minimalist Entrepreneur' philosophy, and automation of MVP boilerplate.",
+    "bad_code": "git clone https://github.com/slavingia/skills.git\ncp -r skills/* ~/.claude/skills/",
+    "solution_desc": "Use this repository when you need to rapidly prototype an MVP. It's best adopted by developers who want Claude to handle project structure, landing page logic, and deployment configurations following a specific entrepreneurial framework.",
+    "good_code": "claude \"use the minimalist-entrepreneur skill to scaffold a new SaaS landing page using Next.js and Tailwind\"",
+    "verification": "As AI agents move from chat interfaces to local terminal execution, standardized 'skill' registries like this will become the new 'npm' for agentic workflows.",
     "date": "2026-03-28",
-    "id": 1774673299,
+    "id": 1774680464,
     "type": "trend"
 });
