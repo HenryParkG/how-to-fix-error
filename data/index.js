@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774690178,
+        "title": "Resolving Elixir GenServer Mailbox Overflows",
+        "slug": "elixir-genserver-mailbox-overflows-backpressure",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/elixir-genserver-mailbox-overflows-backpressure.js",
+        "tags": [
+            "Go",
+            "Elixir",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774690179,
+        "title": "Fixing Next.js 15 Streaming Hydration Errors",
+        "slug": "nextjs-15-streaming-hydration-mismatches",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/nextjs-15-streaming-hydration-mismatches.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774690180,
+        "title": "Fixing Terraform Provider State Lock Deadlocks",
+        "slug": "terraform-state-lock-deadlocks-cicd",
+        "language": "HCL",
+        "code": "StateLockError",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/terraform-state-lock-deadlocks-cicd.js",
+        "tags": [
+            "AWS",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774690181,
+        "title": "The Rise of slavingia/skills: Claude Code Patterns",
+        "slug": "claude-code-skills-minimalist-entrepreneur-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/claude-code-skills-minimalist-entrepreneur-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774680461,
         "title": "Fixing Zig Memory Corruption in Threaded Arena Resizing",
         "slug": "zig-memory-corruption-arena-resizing",
