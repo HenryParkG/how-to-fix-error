@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774673296,
+        "title": "Fixing Rust Pinning Violations in Manual Futures",
+        "slug": "rust-pinning-violations-manual-futures",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/rust-pinning-violations-manual-futures.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774673297,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/postgresql-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774673298,
+        "title": "Resolving Spark Catalyst OOMs in Nested JSON",
+        "slug": "spark-catalyst-oom-nested-json",
+        "language": "Java",
+        "code": "CatalystOOM",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/spark-catalyst-oom-nested-json.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Spark",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774673299,
+        "title": "Claude Code Skills: The Minimalist AI Workflow",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774660716,
         "title": "Fixing eBPF Verifier State Explosions in Complex XDP",
         "slug": "ebpf-verifier-state-explosion-fix",
