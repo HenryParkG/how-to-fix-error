@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1774660716,
+        "title": "Fixing eBPF Verifier State Explosions in Complex XDP",
+        "slug": "ebpf-verifier-state-explosion-fix",
+        "language": "Rust",
+        "code": "VerifierError",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/ebpf-verifier-state-explosion-fix.js",
+        "tags": [
+            "Rust",
+            "XDP",
+            "Infra",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774660717,
+        "title": "Mitigating Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms-fix",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/kafka-consumer-rebalance-storms-fix.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774660718,
+        "title": "Resolving Envoy xDS Configuration Bloat in K8s",
+        "slug": "envoy-xds-config-bloat-k8s",
+        "language": "Kubernetes",
+        "code": "OOMKilledEnvoy",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/envoy-xds-config-bloat-k8s.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774660719,
+        "title": "Analyzing slavingia/skills: Claude Code for Entrepreneurs",
+        "slug": "claudecode-skills-sahil-lavingia",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-28",
+        "path": "data/posts/2026-03/claudecode-skills-sahil-lavingia.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1774604846,
         "title": "Fixing CUDA VMM Fragmentation in PagedAttention",
         "slug": "cuda-pagedattention-vmm-fragmentation-fix",
