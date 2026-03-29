@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Eliminating Akka Cluster Split-Brain Scenarios",
+    "title": "Resolving Akka Cluster Split-Brain Scenarios",
     "slug": "akka-cluster-split-brain-fix",
     "language": "Java",
-    "code": "SplitBrainInconsistency",
+    "code": "Split-Brain",
     "tags": [
         "Java",
         "Backend",
-        "Kubernetes",
+        "Akka",
         "Error Fix"
     ],
-    "analysis": "<p>In distributed systems, network partitions can lead to a 'Split-Brain' where a cluster splits into two or more independent factions. In Akka Cluster, if the failure detector marks nodes as unreachable, and both sides of the partition decide to 'down' the other side, both will continue as independent clusters. This leads to dual leaders and catastrophic data corruption when using Single Writers or Sharding.</p>",
-    "root_cause": "Usage of the legacy 'auto-down-unreachable-after' setting or lack of a deterministic consensus strategy for node removal during network instability.",
-    "bad_code": "akka {\n  cluster {\n    # DANGEROUS: Leads to split-brain during partitions\n    auto-down-unreachable-after = 10s\n  }\n}",
-    "solution_desc": "Implement the Akka Split Brain Resolver (SBR). For fixed-size clusters or Kubernetes, use the 'keep-majority' or 'static-quorum' strategy to ensure only one partition survives the failure.",
-    "good_code": "akka.cluster {\n  downing-provider-class = \"akka.cluster.sbr.SplitBrainResolverProvider\"\n  split-brain-resolver {\n    active-strategy = \"keep-majority\"\n    keep-majority {\n      role = \"worker\"\n    }\n  }\n  # Disable legacy auto-down\n  allow-weakly-up-members = on\n}",
-    "verification": "Use a 'Chaos Mesh' tool to inject network partitions in a staging Kubernetes environment and verify that only the majority partition remains functional while the minority shuts down.",
-    "date": "2026-03-12",
-    "id": 1773277713,
+    "analysis": "<p>A split-brain scenario occurs in Akka Clusters when a network partition divides the nodes into two or more groups that cannot communicate. Each side believes the other nodes are down and attempts to continue as the authoritative cluster. This leads to data inconsistency, especially in systems using Akka Persistence or Cluster Sharding, as multiple instances of the same actor might be spawned across different partitions.</p>",
+    "root_cause": "The lack of an automated Downing Provider or using a 'naive' downing strategy that doesn't account for quorum during network partitions.",
+    "bad_code": "akka.cluster.downing-provider-class = \"akka.cluster.NoDowning\"\n# Or even worse, manual downing without a strategy:\n# cluster.down(address);",
+    "solution_desc": "Implement the Akka Split Brain Resolver (SBR). Use the 'static-quorum' strategy for fixed-size clusters or 'keep-majority' for dynamic clusters. This ensures that only the side with the majority of nodes survives, while the minority side terminates itself.",
+    "good_code": "akka.cluster.downing-provider-class = \"akka.cluster.sbr.SplitBrainResolverProvider\"\nakka.cluster.split-brain-resolver.active-strategy = \"keep-majority\"\nakka.cluster.split-brain-resolver.stable-after = 10s",
+    "verification": "Simulate a network partition using 'iptables' or 'tc' and verify that the minority partition nodes shut down while the majority partition remains operational.",
+    "date": "2026-03-29",
+    "id": 1774747642,
     "type": "error"
 });

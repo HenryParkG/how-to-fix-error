@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774747641,
+        "title": "Mitigating Go Scheduler Starvation in CPU-Bound Loops",
+        "slug": "go-scheduler-starvation-cpu-loops",
+        "language": "Go",
+        "code": "Starvation",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/go-scheduler-starvation-cpu-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774747642,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java",
+        "code": "Split-Brain",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Akka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774747643,
+        "title": "Fixing WebGPU Synchronization Deadlocks",
+        "slug": "webgpu-synchronization-deadlocks-fix",
+        "language": "TypeScript",
+        "code": "Deadlock",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/webgpu-synchronization-deadlocks-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774747644,
+        "title": "Mastering Claude Code Skills: The Minimalist Entrepreneur",
+        "slug": "claude-code-minimalist-entrepreneur-skills",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/claude-code-minimalist-entrepreneur-skills.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774690178,
         "title": "Resolving Elixir GenServer Mailbox Overflows",
         "slug": "elixir-genserver-mailbox-overflows-backpressure",
