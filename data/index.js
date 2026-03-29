@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774776555,
+        "title": "Fixing Rust Async Pin-Unpin Violations in Streams",
+        "slug": "rust-async-pin-unpin-violations",
+        "language": "Rust",
+        "code": "Pinning Error",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/rust-async-pin-unpin-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774776556,
+        "title": "Resolving Kafka Rebalance Storms with Sticky Assignors",
+        "slug": "kafka-cooperative-sticky-assignors",
+        "language": "Java",
+        "code": "Rebalance Storm",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/kafka-cooperative-sticky-assignors.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infrastructure",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774776557,
+        "title": "Fixing Postgres Index Bloat from Abandoned Slots",
+        "slug": "postgres-index-bloat-replication-slots",
+        "language": "SQL",
+        "code": "Index Bloat",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/postgres-index-bloat-replication-slots.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774776558,
+        "title": "slavingia/skills: Automating The Minimalist Entrepreneur",
+        "slug": "slavingia-skills-claude-code-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/slavingia-skills-claude-code-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774767273,
         "title": "Fixing eBPF Verifier Rejection of Bounded Loops",
         "slug": "ebpf-verifier-bounded-loops-fix",

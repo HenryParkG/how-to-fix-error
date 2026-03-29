@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Claude Code Skills: The Minimalist Entrepreneur Framework",
+    "title": "slavingia/skills: Automating The Minimalist Entrepreneur",
     "slug": "slavingia-skills-claude-code-analysis",
-    "language": "Markdown",
+    "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Node.js"
+        "TypeScript"
     ],
-    "analysis": "<p>The repository 'slavingia/skills' is trending because it bridges the gap between high-level business philosophy and the technical execution of AI agents. Based on Sahil Lavingia's 'The Minimalist Entrepreneur', these 'skills' are essentially structured system prompts and behavioral instructions for Claude Code (Anthropic's CLI agent). It allows developers to 'program' Claude with specific entrepreneurial constraints\u2014such as prioritizing MVP features over technical debt or automating marketing loops\u2014making the AI not just a coder, but a product-minded partner.</p>",
-    "root_cause": "Structured system instructions that encode 'The Minimalist Entrepreneur' principles into AI agent workflows.",
-    "bad_code": "git clone https://github.com/slavingia/skills.git\n# Add to Claude Code config\ncp skills/*.md ~/.claude-code/skills/",
-    "solution_desc": "Adopt these skills when building 'indie hacker' projects where speed and market validation are more critical than complex architecture. It is best used within the Claude Code CLI environment to maintain a consistent 'Minimalist Entrepreneur' persona during development cycles.",
-    "good_code": "claude \"Analyze my current codebase and suggest the absolute minimum \nset of features to launch, following minimalist-entrepreneur.md\"",
-    "verification": "As AI agents move from 'autocomplete' to 'autonomous collaborators', specialized knowledge repositories like this will become the standard for fine-tuning agent behavior without retraining models.",
-    "date": "2026-03-26",
-    "id": 1774501225,
+    "analysis": "<p>The 'slavingia/skills' repository is trending because it bridges the gap between business philosophy and autonomous coding. Built for Anthropic's 'Claude Code' CLI, it provides a library of 'skills' based on Sahil Lavingia's 'The Minimalist Entrepreneur'. It allows developers to use an AI agent that doesn't just write code, but audits that code for 'minimalist' principles\u2014ensuring builders don't over-engineer their MVPs and stay focused on profitability.</p>",
+    "root_cause": "Integration of 'Claude Code' capabilities with high-level business heuristics to automate market research, MVP scaffolding, and community-first development.",
+    "bad_code": "# Install Claude Code first, then clone and symlink\ngit clone https://github.com/slavingia/skills.git\nmkdir -p ~/.claude/skills\ncp skills/*.js ~/.claude/skills/",
+    "solution_desc": "Adopt this for the 'Initial Traction' phase of a startup. Use the skills to validate ideas via terminal prompts and ensure the generated codebase remains lean and maintainable without unnecessary dependencies.",
+    "good_code": "# Example usage within the Claude Code terminal\n/skill minimalist-audit \"Review my current React components\"\n/skill market-research \"Find 10 pain points for small SaaS owners on Reddit\"",
+    "verification": "The repo signals a shift where 'skills' become the new 'plugins', making AI agents specialized in specific business frameworks.",
+    "date": "2026-03-29",
+    "id": 1774776558,
     "type": "trend"
 });
