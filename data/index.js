@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1774760754,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774760755,
+        "title": "Resolving HNSW Index Stale-Link Accumulation",
+        "slug": "hnsw-stale-link-accumulation",
+        "language": "C++ / Python",
+        "code": "MemoryPerformanceLeak",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/hnsw-stale-link-accumulation.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774760756,
+        "title": "Mitigating Redis COW Memory Spikes",
+        "slug": "redis-cow-memory-spikes",
+        "language": "Redis / Linux",
+        "code": "OOMKilled",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/redis-cow-memory-spikes.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774760757,
+        "title": "Claude Code Skills: The Minimalist Entrepreneur",
+        "slug": "claude-code-skills-lavingia",
+        "language": "TypeScript / Markdown",
+        "code": "Trend",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/claude-code-skills-lavingia.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774747641,
         "title": "Mitigating Go Scheduler Starvation in CPU-Bound Loops",
         "slug": "go-scheduler-starvation-cpu-loops",
