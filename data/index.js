@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1774767273,
+        "title": "Fixing eBPF Verifier Rejection of Bounded Loops",
+        "slug": "ebpf-verifier-bounded-loops-fix",
+        "language": "Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/ebpf-verifier-bounded-loops-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774767274,
+        "title": "Mitigating Haskell Space Leaks in Streaming Pipelines",
+        "slug": "haskell-space-leak-streaming-fix",
+        "language": "Rust",
+        "code": "HEAP_EXHAUSTION",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/haskell-space-leak-streaming-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774767275,
+        "title": "Resolving Elasticsearch Circuit Breaker Exceptions",
+        "slug": "elasticsearch-cardinality-agg-fix",
+        "language": "Java",
+        "code": "CIRCUIT_BREAKING_EXCEPTION",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/elasticsearch-cardinality-agg-fix.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774767276,
+        "title": "Analyzing slavingia/skills: Claude Code for Entrepreneurs",
+        "slug": "claude-code-skills-slavingia-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-03-29",
+        "path": "data/posts/2026-03/claude-code-skills-slavingia-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1774760754,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",

@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Claude Code Skills: Transforming Code into Products",
+    "title": "Analyzing slavingia/skills: Claude Code for Entrepreneurs",
     "slug": "claude-code-skills-slavingia-analysis",
     "language": "TypeScript",
     "code": "Trend",
@@ -8,13 +8,13 @@ window.onPostDataLoaded({
         "GitHub",
         "TypeScript"
     ],
-    "analysis": "<p>The 'slavingia/skills' repository is trending because it bridges the gap between raw AI coding and product-led development. Inspired by Sahil Lavingia's 'The Minimalist Entrepreneur', it provides a set of custom 'skills' for Claude Code (Anthropic\u2019s CLI agent). These skills allow Claude to act not just as a coder, but as a product manager and MVP builder, automating repetitive setup and strategy tasks.</p>",
-    "root_cause": "Standardized skill sets for AI agents, focus on the 'Minimalist Entrepreneur' philosophy, and automation of MVP boilerplate.",
-    "bad_code": "git clone https://github.com/slavingia/skills.git\ncp -r skills/* ~/.claude/skills/",
-    "solution_desc": "Use this repository when you need to rapidly prototype an MVP. It's best adopted by developers who want Claude to handle project structure, landing page logic, and deployment configurations following a specific entrepreneurial framework.",
-    "good_code": "claude \"use the minimalist-entrepreneur skill to scaffold a new SaaS landing page using Next.js and Tailwind\"",
-    "verification": "As AI agents move from chat interfaces to local terminal execution, standardized 'skill' registries like this will become the new 'npm' for agentic workflows.",
-    "date": "2026-03-28",
-    "id": 1774680464,
+    "analysis": "<p>The 'slavingia/skills' repository has rapidly gained popularity as it represents a shift from 'code-only' AI assistants to 'business-aware' agents. Based on Sahil Lavingia's 'The Minimalist Entrepreneur', these skills utilize the Model Context Protocol (MCP) to inject business logic, MVP prioritisation, and lean development philosophy directly into the Claude Code CLI environment.</p><p>It is popular because it solves the 'blank page' problem for developers who can code but struggle with product-market fit or feature creep. By integrating these skills, Claude doesn't just write functions; it challenges unnecessary complexity based on Sahil's principles.</p>",
+    "root_cause": "MCP (Model Context Protocol) Integration & Entrepreneurial Heuristics",
+    "bad_code": "npm install -g @anthropic-ai/claude-code",
+    "solution_desc": "Best used by solo-founders and 'indie hackers' to automate the alignment between their technical implementation and their business constraints.",
+    "good_code": "claude skills import https://github.com/slavingia/skills\nclaude \"How should I structure the MVP for a SaaS using these skills?\"",
+    "verification": "The trend points toward a future where 'Opinionated AI' helps developers make better architectural decisions based on specific business methodologies.",
+    "date": "2026-03-29",
+    "id": 1774767276,
     "type": "trend"
 });
