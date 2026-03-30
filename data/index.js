@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774847870,
+        "title": "Fixing Linux Kernel Futex Hash Table Contention",
+        "slug": "linux-kernel-futex-hash-contention",
+        "language": "Go",
+        "code": "Lock Contention",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/linux-kernel-futex-hash-contention.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774847871,
+        "title": "Mitigating Envoy Head-of-Line Blocking in gRPC",
+        "slug": "envoy-grpc-http2-hol-blocking",
+        "language": "Go",
+        "code": "Stream Stalling",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/envoy-grpc-http2-hol-blocking.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774847872,
+        "title": "Fixing React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leak",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/react-native-jsi-memory-leak.js",
+        "tags": [
+            "React",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774847873,
+        "title": "LarkSuite CLI: Automation for Modern AI Agents",
+        "slug": "larksuite-cli-trend-analysis",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/larksuite-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1774834100,
         "title": "Resolving Zig Memory Corruption in Custom Allocator Chains",
         "slug": "zig-memory-corruption-allocator-chain",
