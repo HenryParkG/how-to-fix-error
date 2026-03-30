@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "LarkSuite CLI: Automation for Modern AI Agents",
+    "title": "Mastering larksuite/cli: AI-Powered Productivity",
     "slug": "larksuite-cli-trend-analysis",
-    "language": "Go",
+    "language": "Go / TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
         "Go"
     ],
-    "analysis": "<p>The 'larksuite/cli' is trending because it bridges the gap between enterprise collaboration (Lark/Feishu) and the developer's terminal. As companies move toward 'Agentic' workflows, this tool provides 200+ commands that allow AI Agents to interact with Docs, Sheets, and Messenger programmatically. Its popularity stems from its human-centric design, comprehensive domain coverage, and first-class support for AI Agent 'Skills'.</p>",
-    "root_cause": "Unified API surface for all Lark/Feishu apps, built-in support for AI Agent integration, and a highly modular plugin system.",
-    "bad_code": "brew install larksuite/tap/lark\nlark login\nlark messenger send --chat-id \"oc_xxx\" --text \"Hello World\"",
-    "solution_desc": "Best for DevOps automation (alerts to Messenger), data sync (reading/writing to Base/Sheets), and building autonomous AI Agents that manage corporate calendars or tasks.",
-    "good_code": "// Example: Using a CLI 'Skill' to fetch sheet data\nlark base record-list --app-token \"TOKEN\" --table-id \"TABLE_ID\" --json",
-    "verification": "Lark/Feishu is expanding its global footprint; the CLI is expected to become the primary interface for headless integration and internal tool development.",
+    "analysis": "<p>The 'larksuite/cli' is trending because it bridges the gap between enterprise operations and the growing 'AI Agent' ecosystem. As companies move toward autonomous workflows, a CLI that exposes 200+ commands across Docs, Sheets, and Messenger allows developers to script complex interactions that were previously manual. Its built-in 'AI Agent Skills' allow LLMs to invoke these commands directly, making it a foundation for automated corporate intelligence.</p>",
+    "root_cause": "Extensible Plugin Architecture, AI-Agent Readiness, and Multi-Domain Support (Messenger, Calendar, Base).",
+    "bad_code": "curl -sS https://raw.githubusercontent.com/larksuite/cli/main/install.sh | sh",
+    "solution_desc": "Adopt larksuite/cli when you need to automate repetitive Lark/Feishu tasks or provide a structured interface for AI Agents to interact with company data (e.g., creating sheets, sending notifications, or managing tasks).",
+    "good_code": "# Sending a rich-text message via CLI\nlark im send --chat-id \"oc_123\" --msg-type \"text\" --content \"Hello from AI Agent\"\n\n# Exporting a sheet to local CSV for processing\nlark base export --app-token \"bas...\" --table-id \"tbl...\"",
+    "verification": "The project is rapidly gaining stars and forks, indicating strong community interest in 'Headless' enterprise software management.",
     "date": "2026-03-30",
-    "id": 1774847873,
+    "id": 1774855040,
     "type": "trend"
 });

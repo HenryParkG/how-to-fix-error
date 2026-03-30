@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774855037,
+        "title": "Resolving Go CGO Pointer-Passing Violations",
+        "slug": "go-cgo-pointer-passing-violations",
+        "language": "Go",
+        "code": "runtime.panic",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/go-cgo-pointer-passing-violations.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774855038,
+        "title": "Mitigating Elixir BEAM Livelock from Selective Receive",
+        "slug": "elixir-beam-selective-receive-livelock",
+        "language": "Erlang/Elixir",
+        "code": "SchedulerLivelock",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/elixir-beam-selective-receive-livelock.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774855039,
+        "title": "Fixing Cassandra SSTable Bloat from Tombstone Accumulation",
+        "slug": "cassandra-sstable-tombstone-bloat",
+        "language": "Cassandra",
+        "code": "TombstoneOverload",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/cassandra-sstable-tombstone-bloat.js",
+        "tags": [
+            "SQL",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774855040,
+        "title": "Mastering larksuite/cli: AI-Powered Productivity",
+        "slug": "larksuite-cli-trend-analysis",
+        "language": "Go / TypeScript",
+        "code": "Trend",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/larksuite-cli-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1774847870,
         "title": "Fixing Linux Kernel Futex Hash Table Contention",
         "slug": "linux-kernel-futex-hash-contention",
