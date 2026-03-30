@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774865313,
+        "title": "Fixing C++20 Coroutine Memory Leaks in Promise Lifetimes",
+        "slug": "cpp20-coroutine-memory-leak-fix",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/cpp20-coroutine-memory-leak-fix.js",
+        "tags": [
+            "Backend",
+            "C++",
+            "RAII",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774865314,
+        "title": "Resolving HNSW Recall Degradation during Concurrent Upserts",
+        "slug": "hnsw-recall-degradation-concurrent-upserts",
+        "language": "Go",
+        "code": "RecallDegradation",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/hnsw-recall-degradation-concurrent-upserts.js",
+        "tags": [
+            "Backend",
+            "Go",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774865315,
+        "title": "Istio mTLS Handshake Protocol Mismatch Debugging",
+        "slug": "istio-mtls-handshake-mismatch-fix",
+        "language": "Go",
+        "code": "mTLSError",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/istio-mtls-handshake-mismatch-fix.js",
+        "tags": [
+            "Infra",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774865316,
+        "title": "Lark Suite CLI: The Ultimate DevOps Bridge for Enterprise AI",
+        "slug": "lark-suite-cli-tech-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/lark-suite-cli-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1774855037,
         "title": "Resolving Go CGO Pointer-Passing Violations",
         "slug": "go-cgo-pointer-passing-violations",
