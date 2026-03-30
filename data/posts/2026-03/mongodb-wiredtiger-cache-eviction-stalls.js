@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fix MongoDB WiredTiger Cache Eviction Stalls",
+    "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
     "slug": "mongodb-wiredtiger-cache-eviction-stalls",
     "language": "SQL",
-    "code": "CacheEvictionStall",
+    "code": "WT_CACHE_FULL / Latency Spikes",
     "tags": [
         "SQL",
         "Infra",
-        "Database",
+        "Docker",
         "Error Fix"
     ],
-    "analysis": "<p>MongoDB's WiredTiger storage engine uses an internal cache to manage data pages. During heavy bulk writes, the cache fills up rapidly. If the background eviction threads cannot keep up with the incoming data, WiredTiger enters a 'stalling' state where application threads (the ones performing the writes) are forced to assist in page eviction.</p><p>This causes a massive spike in write latency (often jumping from 1ms to 1000ms+) because the threads meant for inserting data are now performing complex I/O operations to free up cache space. This is often visible in 'mongostat' as a surge in 'dirty' cache percentage and a drop in throughput.</p>",
-    "root_cause": "The write rate exceeds the 'eviction_trigger' threshold, forcing synchronous eviction by application threads.",
-    "bad_code": "// Standard connection without flow control or cache tuning\nstorage:\n  dbPath: /var/lib/mongodb\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 1 # Too small for high-velocity bulk writes",
-    "solution_desc": "Increase the number of WiredTiger eviction threads and tune the eviction thresholds. Additionally, implement client-side rate limiting or enable 'flow control' in MongoDB 4.2+ to prevent the cache from reaching critical dirty levels.",
-    "good_code": "db.adminCommand({\n  setParameter: 1,\n  wiredTigerEngineRuntimeConfig: \"eviction=(threads_min=4,threads_max=8)\",\n  wiredTigerConcurrentWriteTransactions: 128\n});\n// In mongod.conf, ensure cacheSizeGB is at least 50-60% of RAM.",
-    "verification": "Monitor 'wiredTiger.cache.tracked dirty pages in the cache' using db.serverStatus(). Ensure the percentage stays below the 20% default threshold during bulk operations.",
-    "date": "2026-03-20",
-    "id": 1773981768,
+    "analysis": "<p>WiredTiger uses a cache to manage data pages. Under heavy write pressure, dirty pages (modified data not yet written to disk) accumulate. If the percentage of dirty pages exceeds the 'eviction_dirty_trigger', application threads are forced to participate in eviction, causing 'stalls' and massive latency spikes.</p><p>This creates a death spiral where the database stops processing requests because all worker threads are busy trying to clear space in the cache, while the underlying I/O subsystem is saturated.</p>",
+    "root_cause": "The default eviction settings are too conservative for high-throughput SSDs, allowing dirty pages to reach critical thresholds before aggressive eviction starts.",
+    "bad_code": "# Default settings often fail on high-write workloads\n# No explicit cache tuning in mongod.conf",
+    "solution_desc": "Aggressively lower the dirty page triggers so that eviction threads start working earlier, and increase the number of eviction worker threads to match the CPU/IO capabilities.",
+    "good_code": "db.adminCommand({\n  setParameter: 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction_target=70,eviction_trigger=90,eviction_dirty_target=5,eviction_dirty_trigger=10,eviction_workers_min=4,eviction_workers_max=12\"\n})",
+    "verification": "Check 'db.serverStatus().wiredTiger.cache' for 'tracked dirty pages in the cache'. The value should stay consistently below the 'eviction_dirty_trigger' percentage.",
+    "date": "2026-03-30",
+    "id": 1774834102,
     "type": "error"
 });

@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774834100,
+        "title": "Resolving Zig Memory Corruption in Custom Allocator Chains",
+        "slug": "zig-memory-corruption-allocator-chain",
+        "language": "Zig",
+        "code": "SIGSEGV / Use-After-Free",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/zig-memory-corruption-allocator-chain.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774834101,
+        "title": "Mitigating PyTorch CUDA OOM during DDP Gradient All-Reduce",
+        "slug": "pytorch-ddp-cuda-oom-gradient-all-reduce",
+        "language": "Python",
+        "code": "RuntimeError: CUDA out of memory",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/pytorch-ddp-cuda-oom-gradient-all-reduce.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774834102,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "SQL",
+        "code": "WT_CACHE_FULL / Latency Spikes",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774834103,
+        "title": "Scaling Enterprise Workflows with Larksuite CLI",
+        "slug": "larksuite-cli-ai-agent-integration",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-30",
+        "path": "data/posts/2026-03/larksuite-cli-ai-agent-integration.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1774776555,
         "title": "Fixing Rust Async Pin-Unpin Violations in Streams",
         "slug": "rust-async-pin-unpin-violations",
