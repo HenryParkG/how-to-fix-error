@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1774951016,
+        "title": "Mitigating PyTorch CUDA Memory Fragmentation in LLMs",
+        "slug": "pytorch-cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/pytorch-cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "MLOps",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774951017,
+        "title": "Resolving Zig Comptime Memory Exhaustion in Generics",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "Compiler_OutOfMemory",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "System Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774951018,
+        "title": "Fixing OCaml 5 Multicore GC Stalls in Parallel Runtimes",
+        "slug": "ocaml-5-multicore-gc-stalls",
+        "language": "OCaml",
+        "code": "GC_STALL",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/ocaml-5-multicore-gc-stalls.js",
+        "tags": [
+            "Backend",
+            "Python",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774951019,
+        "title": "Analyzing larksuite/cli: The AI-Ready Productivity Tool",
+        "slug": "larksuite-cli-ai-agent-integration",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/larksuite-cli-ai-agent-integration.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774940589,
         "title": "Mitigating Rust Pin-Projection Violations in Async Rust",
         "slug": "rust-pin-projection-violations-async",

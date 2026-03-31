@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fix Zig Comptime Memory Exhaustion in Cross-Builds",
+    "title": "Resolving Zig Comptime Memory Exhaustion in Generics",
     "slug": "zig-comptime-memory-exhaustion-fix",
     "language": "Zig",
-    "code": "OutOfMemory",
+    "code": "Compiler_OutOfMemory",
     "tags": [
-        "Zig",
+        "Rust",
         "Backend",
-        "Systems",
+        "System Programming",
         "Error Fix"
     ],
-    "analysis": "<p>Zig's comptime feature is powerful but can lead to compiler memory exhaustion when generating large static structures or performing deep recursive metaprogramming. During cross-compilation pipelines, the compiler maintains multiple IR states, and excessive comptime allocations (especially those involving large arrays or complex reflection) can exceed the host's physical RAM.</p>",
-    "root_cause": "Unbounded recursion in comptime functions or the creation of massive anonymous types inside 'inline for' loops.",
-    "bad_code": "fn generateHugeTable(comptime size: usize) [size]u32 {\n    var table: [size]u32 = undefined;\n    inline for (0..size) |i| {\n        table[i] = i * 2; // inline for unrolls, consuming massive compiler memory\n    }\n    return table;\n}",
-    "solution_desc": "Replace 'inline for' with standard 'for' loops within comptime blocks when possible to prevent excessive unrolling. Use '@setEvalBranchQuota' to catch runaway recursion early and optimize data structures to use more compact representations during compilation.",
-    "good_code": "fn generateHugeTable(comptime size: usize) [size]u32 {\n    @setEvalBranchQuota(1000000);\n    var table: [size]u32 = undefined;\n    for (&table, 0..) |*val, i| {\n        val.* = @as(u32, @intCast(i)) * 2;\n    }\n    return table;\n}",
-    "verification": "Run 'zig build' and monitor memory usage; ensuring it stays constant regardless of the 'size' parameter in comptime functions.",
-    "date": "2026-03-12",
-    "id": 1773290572,
+    "analysis": "<p>Zig's powerful 'comptime' allows for arbitrary code execution during compilation. However, in large-scale metaprogramming\u2014such as generating complex parsers or deeply nested generic data structures\u2014the compiler can run out of memory. This happens because the Zig compiler must track the state of all comptime variables and function calls, and recursive generics can lead to an exponential increase in type-generation memory usage.</p>",
+    "root_cause": "Infinite or overly deep recursive type resolution and high @setEvalBranchQuota settings that allow the compiler to store excessive intermediate states during comptime evaluation.",
+    "bad_code": "fn RecursiveType(comptime n: u32) type {\n    if (n == 0) return u32;\n    // Exponential type growth: each step creates two new types\n    return struct { \n        a: RecursiveType(n - 1), \n        b: RecursiveType(n - 1) \n    };\n}\n\nconst MyType = RecursiveType(20);",
+    "solution_desc": "Optimize the metaprogramming logic to use memoization for types and flatten recursion into loops where possible. Use @setEvalBranchQuota judiciously and avoid redundant type transformations that force the compiler to keep large AST fragments in memory.",
+    "good_code": "fn FlatType(comptime n: u32) type {\n    @setEvalBranchQuota(5000);\n    var T = u32;\n    inline for (0..n) |_| {\n        // Linear growth via wrapping rather than binary recursion\n        T = struct { data: T };\n    }\n    return T;\n}\n\nconst MyType = FlatType(20);",
+    "verification": "Execute 'zig build-exe' with '--verbose-cc' to monitor the memory footprint of the compiler process during the semantic analysis phase.",
+    "date": "2026-03-31",
+    "id": 1774951017,
     "type": "error"
 });
