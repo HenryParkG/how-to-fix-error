@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774940589,
+        "title": "Mitigating Rust Pin-Projection Violations in Async Rust",
+        "slug": "rust-pin-projection-violations-async",
+        "language": "Rust",
+        "code": "Memory Safety",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/rust-pin-projection-violations-async.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774940590,
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-jitter-fix",
+        "language": "Java/Kafka",
+        "code": "Timeout Jitter",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/kafka-consumer-rebalance-jitter-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774940591,
+        "title": "Resolving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "PostgreSQL",
+        "code": "XID Wraparound",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774940592,
+        "title": "Mastering LarkSuite CLI: The Next-Gen AI Agent Interface",
+        "slug": "larksuite-cli-ai-agent-trend",
+        "language": "Go / Node.js",
+        "code": "Trend",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/larksuite-cli-ai-agent-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1774920339,
         "title": "Mitigating eBPF Verifier Tail-Call Rejections",
         "slug": "ebpf-verifier-tail-call-rejections",
