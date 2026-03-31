@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1774920339,
+        "title": "Mitigating eBPF Verifier Tail-Call Rejections",
+        "slug": "ebpf-verifier-tail-call-rejections",
+        "language": "Go",
+        "code": "VerifierError",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/ebpf-verifier-tail-call-rejections.js",
+        "tags": [
+            "Go",
+            "Kernel",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774920340,
+        "title": "Fixing Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774920341,
+        "title": "Resolving K8s Sidecar Lifecycle Race Conditions",
+        "slug": "k8s-sidecar-lifecycle-race-conditions",
+        "language": "Kubernetes",
+        "code": "RaceCondition",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/k8s-sidecar-lifecycle-race-conditions.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1774920342,
+        "title": "Larksuite CLI: Bridging Enterprise SaaS and AI Agents",
+        "slug": "larksuite-cli-ai-agent-integration",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-03-31",
+        "path": "data/posts/2026-03/larksuite-cli-ai-agent-integration.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774865313,
         "title": "Fixing C++20 Coroutine Memory Leaks in Promise Lifetimes",
         "slug": "cpp20-coroutine-memory-leak-fix",
