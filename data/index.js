@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1775037821,
+        "title": "Fix eBPF Verifier Complexity in XDP Filters",
+        "slug": "ebpf-verifier-complexity-xdp-filters",
+        "language": "Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-xdp-filters.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775037822,
+        "title": "Fix Ray Plasma Store Deadlocks in Large Shuffles",
+        "slug": "ray-plasma-store-eviction-deadlocks",
+        "language": "Python",
+        "code": "PLASMA_STORE_FULL",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/ray-plasma-store-eviction-deadlocks.js",
+        "tags": [
+            "Python",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775037823,
+        "title": "Fix Next.js Hydration Mismatches in Micro-Frontends",
+        "slug": "nextjs-hydration-mismatch-micro-frontends",
+        "language": "Next.js",
+        "code": "HYDRATION_ERROR",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/nextjs-hydration-mismatch-micro-frontends.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775037824,
+        "title": "Analyze instructkr/claw-code: The Rust-Powered AI Engine",
+        "slug": "claw-code-github-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/claw-code-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1775027403,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
