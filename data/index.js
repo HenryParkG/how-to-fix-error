@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1775020695,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "Runtime Starvation",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775020696,
+        "title": "Mitigating GenServer Mailbox Bloat in Elixir",
+        "slug": "elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "Mailbox Congestion",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775020697,
+        "title": "Solving Redis RDB Fork-induced Latency Spikes",
+        "slug": "redis-rdb-fork-latency-spikes",
+        "language": "Redis",
+        "code": "Fork Latency",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/redis-rdb-fork-latency-spikes.js",
+        "tags": [
+            "Docker",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775020698,
+        "title": "Analyze instructkr/claw-code: The Rust-Powered AI Toolset",
+        "slug": "claw-code-github-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/claw-code-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775007975,
         "title": "Resolving Spark Shuffle OOMs in Skewed Multi-Stage Joins",
         "slug": "spark-shuffle-oom-data-skew-fix",
