@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1775007975,
+        "title": "Resolving Spark Shuffle OOMs in Skewed Multi-Stage Joins",
+        "slug": "spark-shuffle-oom-data-skew-fix",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/spark-shuffle-oom-data-skew-fix.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775007976,
+        "title": "Mitigating WebGPU Command Buffer Deadlocks",
+        "slug": "webgpu-command-buffer-deadlock-fix",
+        "language": "TypeScript",
+        "code": "GPUDeviceLost",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/webgpu-command-buffer-deadlock-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775007977,
+        "title": "Fixing Linux Kernel Soft-Lockups from XFS AIL Contention",
+        "slug": "linux-kernel-xfs-soft-lockup-fix",
+        "language": "C",
+        "code": "Soft-Lockup",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/linux-kernel-xfs-soft-lockup-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775007978,
+        "title": "Why claw-code Surpassed 50K Stars in 2 Hours",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1774951016,
         "title": "Mitigating PyTorch CUDA Memory Fragmentation in LLMs",
         "slug": "pytorch-cuda-memory-fragmentation-llm",
