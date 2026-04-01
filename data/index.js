@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1775027403,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "AccessViolation",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775027404,
+        "title": "Fixing MongoDB WiredTiger Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "WiredTigerTickets",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775027405,
+        "title": "Resolving Quantization-Induced Drift in Vector DBs",
+        "slug": "vector-db-quantization-drift",
+        "language": "Python",
+        "code": "AccuracyDrift",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/vector-db-quantization-drift.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775027406,
+        "title": "Analyze instructkr/claw-code: The 50K Star Phenomenon",
+        "slug": "claw-code-rust-tooling-trend",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-01",
+        "path": "data/posts/2026-04/claw-code-rust-tooling-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775020695,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
