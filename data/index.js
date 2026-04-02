@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775123588,
+        "title": "Resolving Go Scheduler Livelocks in Cgo Interop",
+        "slug": "go-scheduler-livelock-cgo-interop",
+        "language": "Go",
+        "code": "Livelock/Starvation",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/go-scheduler-livelock-cgo-interop.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775123589,
+        "title": "Mitigating WAL Bloat in CockroachDB Clusters",
+        "slug": "cockroachdb-wal-bloat-mitigation",
+        "language": "SQL",
+        "code": "Storage Bloat",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/cockroachdb-wal-bloat-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775123590,
+        "title": "Fixing Binary Memory Leaks in Elixir GenServers",
+        "slug": "elixir-genserver-binary-memory-leaks",
+        "language": "Elixir",
+        "code": "Memory Leak",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/elixir-genserver-binary-memory-leaks.js",
+        "tags": [
+            "Backend",
+            "Node.js",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775123591,
+        "title": "Claw-code: The High-Performance Rust Harness Tool",
+        "slug": "claw-code-rust-harness-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/claw-code-rust-harness-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775113316,
         "title": "Resolving Page Cache Thrashing in Zig Applications",
         "slug": "resolving-page-cache-thrashing-zig",
