@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775113316,
+        "title": "Resolving Page Cache Thrashing in Zig Applications",
+        "slug": "resolving-page-cache-thrashing-zig",
+        "language": "Zig",
+        "code": "IO_CACHE_FLUSH",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/resolving-page-cache-thrashing-zig.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775113317,
+        "title": "Fixing gRPC Deadline Cascades in Istio Meshes",
+        "slug": "grpc-deadline-cascades-istio",
+        "language": "Go",
+        "code": "DEADLINE_EXCEEDED",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/grpc-deadline-cascades-istio.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775113318,
+        "title": "Mitigating Distributed Training Deadlocks in NCCL",
+        "slug": "mitigate-nccl-training-deadlocks",
+        "language": "Python",
+        "code": "NCCL_COMM_ABORT",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/mitigate-nccl-training-deadlocks.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775113319,
+        "title": "Claw-Code: Why the Rust-Based Repo is Trending",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Rust",
+            "GitHub",
+            "Tech Trend"
+        ]
+    },
+    {
         "id": 1775105843,
         "title": "Solving Haskell Lazy Evaluation Space Leaks",
         "slug": "haskell-lazy-evaluation-space-leaks",
