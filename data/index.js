@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775105843,
+        "title": "Solving Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Functional Programming",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775105844,
+        "title": "Mitigating PyTorch CUDA Memory Fragmentation",
+        "slug": "pytorch-cuda-memory-fragmentation",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/pytorch-cuda-memory-fragmentation.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775105845,
+        "title": "Fixing React Native JSI Bridge Congestion",
+        "slug": "react-native-jsi-bridge-congestion",
+        "language": "TypeScript",
+        "code": "BridgeCongestion",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/react-native-jsi-bridge-congestion.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775105846,
+        "title": "Claw-Code: The New Standard for Rust Harness Tools",
+        "slug": "claw-code-rust-harness-tools",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/claw-code-rust-harness-tools.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775092979,
         "title": "Fixing Wasmtime Memory Fragmentation in Long-Running Guests",
         "slug": "wasmtime-memory-fragmentation-fix",
