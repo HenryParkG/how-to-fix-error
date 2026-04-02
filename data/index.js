@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775092979,
+        "title": "Fixing Wasmtime Memory Fragmentation in Long-Running Guests",
+        "slug": "wasmtime-memory-fragmentation-fix",
+        "language": "Rust",
+        "code": "MemoryFragmentation",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/wasmtime-memory-fragmentation-fix.js",
+        "tags": [
+            "WebAssembly",
+            "Wasmtime",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775092980,
+        "title": "Fixing Kafka Consumer Rebalance Storms in Large Streams",
+        "slug": "kafka-rebalance-storm-solution",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/kafka-rebalance-storm-solution.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775092981,
+        "title": "Mitigating PostgreSQL XID Wraparound in High-Write DBs",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775092982,
+        "title": "Claw-Code: Why This Rust Power-Tool Hit 100K Stars",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-02",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775037821,
         "title": "Fix eBPF Verifier Complexity in XDP Filters",
         "slug": "ebpf-verifier-complexity-xdp-filters",
