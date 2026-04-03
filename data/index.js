@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775209531,
+        "title": "Fixing CUDA Fragmentation in Gradient Checkpointing",
+        "slug": "cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775209532,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java",
+        "code": "ClusterPartitionException",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775209533,
+        "title": "Mitigating WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "AWS",
+        "code": "WiredTigerCacheEvictionStall",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "AWS",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775209534,
+        "title": "Inside Claw-Code: The 100K Star Rust Phenomenon",
+        "slug": "claw-code-rust-harness-tools",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/claw-code-rust-harness-tools.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775199545,
         "title": "Fixing C++20 Coroutine Leaks in Network Proxies",
         "slug": "cpp20-coroutine-leak-fix",
