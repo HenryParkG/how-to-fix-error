@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1775179637,
+        "title": "Fixing Rust Async Stream Cancellation Safety",
+        "slug": "rust-async-stream-cancellation-safety",
+        "language": "Rust",
+        "code": "AsyncSafety",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/rust-async-stream-cancellation-safety.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775179638,
+        "title": "Reducing Milvus Vector Index Rebuild Latency",
+        "slug": "milvus-index-rebuild-latency-fix",
+        "language": "Go",
+        "code": "PerfFix",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/milvus-index-rebuild-latency-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775179639,
+        "title": "Fixing WebGPU Compute Shader Race Conditions",
+        "slug": "webgpu-compute-shader-race-fix",
+        "language": "TypeScript",
+        "code": "RaceCondition",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/webgpu-compute-shader-race-fix.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775179640,
+        "title": "Claw-code: The High-Performance Rust AI Harness",
+        "slug": "claw-code-rust-ai-trend",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/claw-code-rust-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1775123588,
         "title": "Resolving Go Scheduler Livelocks in Cgo Interop",
         "slug": "go-scheduler-livelock-cgo-interop",
