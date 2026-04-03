@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775199545,
+        "title": "Fixing C++20 Coroutine Leaks in Network Proxies",
+        "slug": "cpp20-coroutine-leak-fix",
+        "language": "C++ / Rust",
+        "code": "MemoryLeak",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/cpp20-coroutine-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775199546,
+        "title": "Resolving K8s CSI Deadlocks in Multi-AZ Provisioning",
+        "slug": "k8s-csi-deadlock-multi-az",
+        "language": "Kubernetes",
+        "code": "Deadlock",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/k8s-csi-deadlock-multi-az.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775199547,
+        "title": "Preventing PostgreSQL XID Wraparound in High-Write Clusters",
+        "slug": "postgres-xid-wraparound-prevention",
+        "language": "SQL / Go",
+        "code": "XIDWraparound",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-prevention.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775199548,
+        "title": "Claw-Code: The 100K Star Rust Tool for Rapid Harnessing",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775192469,
         "title": "Debugging eBPF Verifier Complexity in XDP Pipelines",
         "slug": "ebpf-verifier-complexity-xdp",
