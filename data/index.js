@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775192469,
+        "title": "Debugging eBPF Verifier Complexity in XDP Pipelines",
+        "slug": "ebpf-verifier-complexity-xdp",
+        "language": "Go",
+        "code": "VerifierError: Instruction limit exceeded",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-xdp.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775192470,
+        "title": "Fixing Spark OOMs in Skewed Broadcast Hash Joins",
+        "slug": "spark-oom-skewed-broadcast-join",
+        "language": "Java",
+        "code": "OutOfMemoryError: Java heap space",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/spark-oom-skewed-broadcast-join.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775192471,
+        "title": "Mitigating Redis Fork Latency in Large-Memory Instances",
+        "slug": "redis-fork-latency-mitigation",
+        "language": "Rust",
+        "code": "Tail Latency Spike (fork() overhead)",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/redis-fork-latency-mitigation.js",
+        "tags": [
+            "AWS",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775192472,
+        "title": "Claw-code: The High-Performance Rust Harness",
+        "slug": "claw-code-rust-harness",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-03",
+        "path": "data/posts/2026-04/claw-code-rust-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775179637,
         "title": "Fixing Rust Async Stream Cancellation Safety",
         "slug": "rust-async-stream-cancellation-safety",
