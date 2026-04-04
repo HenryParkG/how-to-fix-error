@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1775295045,
+        "title": "Fixing eBPF Verifier Rejections in Tail-Call Architectures",
+        "slug": "fixing-ebpf-verifier-tail-call-rejections",
+        "language": "Go / C",
+        "code": "VerifierError",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/fixing-ebpf-verifier-tail-call-rejections.js",
+        "tags": [
+            "Go",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775295046,
+        "title": "Debugging State Pollution in Next.js Edge Runtime",
+        "slug": "nextjs-edge-runtime-state-pollution",
+        "language": "TypeScript",
+        "code": "StateLeak",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/nextjs-edge-runtime-state-pollution.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775295047,
+        "title": "Resolving Spark Executor OOMs during Skewed Hash Joins",
+        "slug": "spark-executor-oom-skewed-joins",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/spark-executor-oom-skewed-joins.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775295048,
+        "title": "Claw-Code: Why This Rust Repo Surpassed 100K Stars",
+        "slug": "claw-code-rust-repo-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/claw-code-rust-repo-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1775285401,
         "title": "Resolving Go Scheduler Starvation in CPU-Bound Loops",
         "slug": "go-runtime-scheduler-starvation-fix",
