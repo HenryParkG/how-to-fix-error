@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1775285401,
+        "title": "Resolving Go Scheduler Starvation in CPU-Bound Loops",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "RuntimeStarvation",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775285402,
+        "title": "Fixing WebGPU Resource Leakage and Buffer Race Conditions",
+        "slug": "webgpu-resource-leak-race-condition-fix",
+        "language": "TypeScript",
+        "code": "GPUResourceLeak",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/webgpu-resource-leak-race-condition-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775285403,
+        "title": "Mitigating Vector Index Recall Degradation in Milvus",
+        "slug": "milvus-vector-index-recall-fix",
+        "language": "Python",
+        "code": "MilvusRecallDrop",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/milvus-vector-index-recall-fix.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775285404,
+        "title": "Analyzing Claw-Code: The 100K Star Rust Speedster",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775277986,
         "title": "Fixing PyTorch DDP Deadlocks in Heterogeneous Clusters",
         "slug": "fixing-pytorch-ddp-deadlocks-heterogeneous-gpu",
