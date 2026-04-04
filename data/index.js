@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775277986,
+        "title": "Fixing PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "fixing-pytorch-ddp-deadlocks-heterogeneous-gpu",
+        "language": "Python",
+        "code": "RuntimeError: Collective communication timeout",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/fixing-pytorch-ddp-deadlocks-heterogeneous-gpu.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Distributed Computing",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775277987,
+        "title": "Mitigating Erlang VM Atom Table Overflows",
+        "slug": "mitigating-erlang-vm-atom-table-overflows",
+        "language": "Erlang/Elixir",
+        "code": "system_limit (atom_table)",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/mitigating-erlang-vm-atom-table-overflows.js",
+        "tags": [
+            "Backend",
+            "Node.js",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775277988,
+        "title": "Resolving ClickHouse Part Merging Stalls",
+        "slug": "clickhouse-part-merging-stalls-high-ingestion",
+        "language": "SQL",
+        "code": "Too many parts (425)",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/clickhouse-part-merging-stalls-high-ingestion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775277989,
+        "title": "Claw-Code: The Rust-Powered Coding Engine Surpassing 100K Stars",
+        "slug": "claw-code-rust-ai-coding-assistant",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/claw-code-rust-ai-coding-assistant.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775265606,
         "title": "Fixing Zig Use-After-Free in Manual Memory Management",
         "slug": "zig-use-after-free-manual-memory",
