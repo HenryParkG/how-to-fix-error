@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775265606,
+        "title": "Fixing Zig Use-After-Free in Manual Memory Management",
+        "slug": "zig-use-after-free-manual-memory",
+        "language": "Zig",
+        "code": "UseAfterFree",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/zig-use-after-free-manual-memory.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775265607,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storms-microservices",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/kafka-rebalance-storms-microservices.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775265608,
+        "title": "Debugging Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775265609,
+        "title": "Analyzing the claw-code 100K Star Phenomenon",
+        "slug": "claw-code-github-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-04",
+        "path": "data/posts/2026-04/claw-code-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775209531,
         "title": "Fixing CUDA Fragmentation in Gradient Checkpointing",
         "slug": "cuda-memory-fragmentation-llm",

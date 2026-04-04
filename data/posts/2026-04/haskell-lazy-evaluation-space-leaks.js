@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Solving Haskell Lazy Evaluation Space Leaks",
+    "title": "Debugging Haskell Lazy Evaluation Space Leaks",
     "slug": "haskell-lazy-evaluation-space-leaks",
     "language": "Haskell",
     "code": "SpaceLeak",
     "tags": [
-        "Rust",
-        "Functional Programming",
-        "Performance",
+        "Go",
+        "Backend",
+        "Python",
         "Error Fix"
     ],
-    "analysis": "<p>In high-throughput Haskell pipelines, space leaks occur when the runtime builds up massive chains of unevaluated expressions, known as thunks. Instead of calculating a value immediately, Haskell's lazy evaluation strategy defers the work, storing the computation on the heap. In a streaming context, these thunks can consume all available RAM before they are finally forced, leading to catastrophic garbage collection overhead or OOM (Out of Memory) crashes.</p>",
-    "root_cause": "The accumulation of thunks in long-running recursive functions or folds (like foldl) where intermediate results are not required to be computed until the very end.",
-    "bad_code": "processData :: [Int] -> Int\nprocessData = foldl (+) 0  -- foldl builds a massive thunk: (((0 + 1) + 2) + 3)...",
-    "solution_desc": "Replace lazy folds with strict variants (foldl') and utilize BangPatterns or 'seq' to force evaluation of accumulator variables at each step, ensuring the heap only stores the current result.",
-    "good_code": "import Data.List (foldl')\n\nprocessDataStrict :: [Int] -> Int\nprocessDataStrict = foldl' (+) 0 -- foldl' forces evaluation at each step",
-    "verification": "Use the GHC profiler with '-hT' to generate a heap profile. A 'sawtooth' pattern indicates healthy GC, while a linear upward slope indicates a leak.",
-    "date": "2026-04-02",
-    "id": 1775105843,
+    "analysis": "<p>Space leaks in Haskell streaming pipelines occur when the runtime builds up a massive chain of unevaluated computations, known as 'thunks', instead of computing the actual values. In production pipelines, this causes the heap memory usage to grow linearly until the process is killed by the OOM killer, despite the data itself being small.</p>",
+    "root_cause": "The root cause is the accumulation of thunks in long-lived stateful folds or recursive functions that do not force evaluation to Weak Head Normal Form (WHNF).",
+    "bad_code": "processData :: [Int] -> Int\nprocessData = foldl (\\acc x -> acc + x) 0 \n-- foldl is lazy and builds a massive ((((0+1)+2)+3)...) thunk",
+    "solution_desc": "Use the strict version of fold (foldl') and employ 'BangPatterns' to force evaluation of the accumulator at each step of the stream processing.",
+    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessData :: [Int] -> Int\nprocessData = foldl' (\\ !acc x -> acc + x) 0\n-- foldl' and BangPattern force immediate computation",
+    "verification": "Profile the application using 'ghc -prof -fprof-auto' and inspect the '.hp' heap profile graph to ensure a flat memory usage line.",
+    "date": "2026-04-04",
+    "id": 1775265608,
     "type": "error"
 });
