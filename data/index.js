@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775365594,
+        "title": "Fixing JSI Threading Violations in React Native",
+        "slug": "fixing-jsi-threading-violations-react-native",
+        "language": "C++ / React Native",
+        "code": "JSI_THREAD_UNSAFE",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/fixing-jsi-threading-violations-react-native.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775365595,
+        "title": "Resolving Airflow Scheduler Starvation in Dynamic DAGs",
+        "slug": "airflow-scheduler-starvation-dynamic-tasks",
+        "language": "Python",
+        "code": "SCHEDULER_LAG",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/airflow-scheduler-starvation-dynamic-tasks.js",
+        "tags": [
+            "Python",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775365596,
+        "title": "Debugging RCU Stall Warnings in Linux Kernel Drivers",
+        "slug": "debugging-rcu-stall-warnings-linux-kernel",
+        "language": "Rust / C",
+        "code": "RCU_STALL_WARN",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/debugging-rcu-stall-warnings-linux-kernel.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775365597,
+        "title": "Analyze Trending Repository: ultraworkers/claw-code",
+        "slug": "claw-code-rust-github-trend",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/claw-code-rust-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775352512,
         "title": "Fixing C++20 Coroutine Frame Lifetime Mismanagement",
         "slug": "cpp20-coroutine-frame-lifetime-fix",
