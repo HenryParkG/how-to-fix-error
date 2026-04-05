@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775381581,
+        "title": "Fixing Pointer Aliasing Violations in Rust SIMD",
+        "slug": "rust-simd-pointer-aliasing-fix",
+        "language": "Rust",
+        "code": "AliasingViolation",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/rust-simd-pointer-aliasing-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "LLVM",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775381582,
+        "title": "Mitigating B-Tree Node Split Deadlocks in WiredTiger",
+        "slug": "mongodb-wiredtiger-btree-deadlock",
+        "language": "SQL",
+        "code": "DeadlockFound",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-btree-deadlock.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775381583,
+        "title": "Resolving gRPC Stream Deadlocks in HTTP/2 Exhaustion",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "StreamHang",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775381584,
+        "title": "Claw-Code: The New Era of Rust-Powered Development",
+        "slug": "claw-code-rust-repo-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/claw-code-rust-repo-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775372184,
         "title": "Fixing Zig io_uring Race Conditions",
         "slug": "fixing-zig-io-uring-race-conditions",
