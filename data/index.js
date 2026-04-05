@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775372184,
+        "title": "Fixing Zig io_uring Race Conditions",
+        "slug": "fixing-zig-io-uring-race-conditions",
+        "language": "Zig",
+        "code": "Race Condition",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/fixing-zig-io-uring-race-conditions.js",
+        "tags": [
+            "Backend",
+            "Linux",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775372185,
+        "title": "Resolving FP8 Precision Loss in Triton Kernels",
+        "slug": "resolving-fp8-triton-precision-loss",
+        "language": "Python",
+        "code": "Precision Loss",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/resolving-fp8-triton-precision-loss.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775372186,
+        "title": "Mitigating RocksDB Write Amplification Stalls",
+        "slug": "mitigating-rocksdb-write-amplification-stalls",
+        "language": "Go",
+        "code": "Performance Stall",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/mitigating-rocksdb-write-amplification-stalls.js",
+        "tags": [
+            "Infra",
+            "SQL",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775372187,
+        "title": "Unlocking Claw-Code: The 100K Star Phenomenon",
+        "slug": "claw-code-github-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/claw-code-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775365594,
         "title": "Fixing JSI Threading Violations in React Native",
         "slug": "fixing-jsi-threading-violations-react-native",
