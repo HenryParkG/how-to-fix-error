@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1775352512,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Mismanagement",
+        "slug": "cpp20-coroutine-frame-lifetime-fix",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/cpp20-coroutine-frame-lifetime-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775352513,
+        "title": "Resolving Istio Sidecar OOMKill Loops",
+        "slug": "istio-sidecar-oomkill-resolution",
+        "language": "Go",
+        "code": "Exit Code 137",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/istio-sidecar-oomkill-resolution.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775352514,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "Read-Only Mode",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/postgresql-xid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775352515,
+        "title": "Claw-Code: Rust's New 100K Star Phenomenon",
+        "slug": "claw-code-github-trend",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-05",
+        "path": "data/posts/2026-04/claw-code-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775295045,
         "title": "Fixing eBPF Verifier Rejections in Tail-Call Architectures",
         "slug": "fixing-ebpf-verifier-tail-call-rejections",
