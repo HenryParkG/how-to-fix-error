@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775452576,
+        "title": "Fixing eBPF Stack Limit Violations in Tail Calls",
+        "slug": "ebpf-stack-limit-violations-tail-calls",
+        "language": "C",
+        "code": "BPF_VERIFIER_STACK_LIMIT",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/ebpf-stack-limit-violations-tail-calls.js",
+        "tags": [
+            "Backend",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775452577,
+        "title": "Resolving Elixir Selective Receive Mailbox Bottlenecks",
+        "slug": "elixir-otp-selective-receive-fix",
+        "language": "Elixir",
+        "code": "OTP_MAILBOX_CONGESTION",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/elixir-otp-selective-receive-fix.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775452578,
+        "title": "Fixing Vector Index Fragmentation in Milvus",
+        "slug": "milvus-index-fragmentation-churn",
+        "language": "Python",
+        "code": "MILVUS_FRAG_DEGRADATION",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/milvus-index-fragmentation-churn.js",
+        "tags": [
+            "Infra",
+            "SQL",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775452579,
+        "title": "Claw-Code: The Fastest Rust Repo to 100K Stars",
+        "slug": "claw-code-rust-repo-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/claw-code-rust-repo-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775438921,
         "title": "Fixing Haskell Space Leaks in Lazy Streams",
         "slug": "haskell-space-leak-lazy-streaming",
