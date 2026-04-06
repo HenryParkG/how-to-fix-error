@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1775438921,
+        "title": "Fixing Haskell Space Leaks in Lazy Streams",
+        "slug": "haskell-space-leak-lazy-streaming",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/haskell-space-leak-lazy-streaming.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775438922,
+        "title": "Fixing WebGPU Sync Races in Async Buffer Maps",
+        "slug": "webgpu-sync-race-async-buffer",
+        "language": "TypeScript",
+        "code": "GPUBufferUsageError",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/webgpu-sync-race-async-buffer.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775438923,
+        "title": "Mitigating Redis Latency Spikes via THP Disabling",
+        "slug": "redis-latency-thp-fork-fix",
+        "language": "C",
+        "code": "LatencySpike",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/redis-latency-thp-fork-fix.js",
+        "tags": [
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775438924,
+        "title": "Claw-Code: Why This Rust Repo Hit 100K Stars",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775381581,
         "title": "Fixing Pointer Aliasing Violations in Rust SIMD",
         "slug": "rust-simd-pointer-aliasing-fix",
