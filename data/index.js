@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1775459905,
+        "title": "Resolving NCCL All-Reduce Deadlocks in Distributed Training",
+        "slug": "nccl-all-reduce-deadlock-distributed-transformer",
+        "language": "Python",
+        "code": "RuntimeError: NCCL Error 2",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/nccl-all-reduce-deadlock-distributed-transformer.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775459906,
+        "title": "Fixing OCaml 5.0 Multicore Memory Leaks in Effect Handlers",
+        "slug": "ocaml-5-effect-handler-memory-leak-fix",
+        "language": "OCaml",
+        "code": "Leak: Fiber Stack",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/ocaml-5-effect-handler-memory-leak-fix.js",
+        "tags": [
+            "Backend",
+            "Go",
+            "Multicore",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775459907,
+        "title": "Mitigating Kubernetes PLEG Relist Latency",
+        "slug": "kubernetes-pleg-relist-latency-fix",
+        "language": "Go",
+        "code": "PLEG Relist Timeout",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/kubernetes-pleg-relist-latency-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775459908,
+        "title": "Claw-Code: The 100K Star Rust AI Powerhouse",
+        "slug": "claw-code-rust-ai-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/claw-code-rust-ai-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1775452576,
         "title": "Fixing eBPF Stack Limit Violations in Tail Calls",
         "slug": "ebpf-stack-limit-violations-tail-calls",
