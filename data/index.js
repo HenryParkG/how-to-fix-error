@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775469648,
+        "title": "Fixing C++20 Coroutine Promise Lifetime Violations",
+        "slug": "cpp20-coroutine-promise-lifetime-fix",
+        "language": "C++",
+        "code": "Lifetime UB",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/cpp20-coroutine-promise-lifetime-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775469649,
+        "title": "Resolving Kafka Sticky Assignor Skew in Consumer Groups",
+        "slug": "kafka-sticky-assignor-skew-resolution",
+        "language": "Kafka",
+        "code": "Partition Skew",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/kafka-sticky-assignor-skew-resolution.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775469650,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound Risk",
+        "slug": "postgresql-xid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "XID Wraparound",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/postgresql-xid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775469651,
+        "title": "Claw-Code: Analyzing the Fastest 100K Star Rust Repo",
+        "slug": "claw-code-rust-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-04-06",
+        "path": "data/posts/2026-04/claw-code-rust-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1775459905,
         "title": "Resolving NCCL All-Reduce Deadlocks in Distributed Training",
         "slug": "nccl-all-reduce-deadlock-distributed-transformer",
