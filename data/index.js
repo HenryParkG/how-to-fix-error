@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775556087,
+        "title": "Fixing eBPF Map Race Conditions in Multi-Core Environments",
+        "slug": "mitigating-ebpf-map-race-conditions",
+        "language": "Go",
+        "code": "Race Condition",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/mitigating-ebpf-map-race-conditions.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775556088,
+        "title": "Resolving Triton Shared Memory Deadlocks in Ensembles",
+        "slug": "triton-shm-deadlock-fix",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/triton-shm-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775556089,
+        "title": "Fixing Redis COW Memory Exhaustion during RDB Snapshots",
+        "slug": "redis-cow-memory-exhaustion",
+        "language": "Go",
+        "code": "OOM Error",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/redis-cow-memory-exhaustion.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775556090,
+        "title": "OpenClaude: The Multi-Model Open Source Coding Agent CLI",
+        "slug": "openclaude-cli-trend",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/openclaude-cli-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1775545616,
         "title": "Resolving Spark Broadcast Hash Join OOM on Skewed Datasets",
         "slug": "spark-broadcast-hash-join-oom-fix",
