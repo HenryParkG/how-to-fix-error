@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775538281,
+        "title": "Mitigating Linux Kernel RCU Stall in Containers",
+        "slug": "linux-kernel-rcu-sched-stall-containers",
+        "language": "C / Shell",
+        "code": "RCU_SCHED_STALL",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/linux-kernel-rcu-sched-stall-containers.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775538282,
+        "title": "Fixing XLA Graph Breakages in JAX Training",
+        "slug": "fixing-xla-graph-breakages-jax",
+        "language": "Python",
+        "code": "XLA_COMPILATION_ERROR",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/fixing-xla-graph-breakages-jax.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775538283,
+        "title": "Resolving WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Go",
+        "code": "WT_CACHE_STALL",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775538284,
+        "title": "Open Claude: The Multi-LLM Coding Agent CLI",
+        "slug": "open-claude-coding-agent-cli",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/open-claude-coding-agent-cli.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1775525187,
         "title": "Fixing Zig Memory Safety Violations in Arena Allocators",
         "slug": "fixing-zig-arena-allocator-memory-safety",
