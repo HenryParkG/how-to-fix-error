@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775525187,
+        "title": "Fixing Zig Memory Safety Violations in Arena Allocators",
+        "slug": "fixing-zig-arena-allocator-memory-safety",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/fixing-zig-arena-allocator-memory-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775525188,
+        "title": "Resolving PyTorch FSDP Sharded State Inconsistencies",
+        "slug": "pytorch-fsdp-gradient-accumulation-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/pytorch-fsdp-gradient-accumulation-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775525189,
+        "title": "Mitigating Istio Envoy Outbound Cluster Warming Timeouts",
+        "slug": "istio-envoy-cluster-warming-timeout",
+        "language": "Go",
+        "code": "503 Service Unavailable",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/istio-envoy-cluster-warming-timeout.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775525190,
+        "title": "OpenClaude: The Open-Source AI Coding Agent Revolution",
+        "slug": "openclaude-ai-coding-agent-analysis",
+        "language": "TypeScript/Python",
+        "code": "Trend",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/openclaude-ai-coding-agent-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775469648,
         "title": "Fixing C++20 Coroutine Promise Lifetime Violations",
         "slug": "cpp20-coroutine-promise-lifetime-fix",
