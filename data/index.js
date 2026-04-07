@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775545616,
+        "title": "Resolving Spark Broadcast Hash Join OOM on Skewed Datasets",
+        "slug": "spark-broadcast-hash-join-oom-fix",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/spark-broadcast-hash-join-oom-fix.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775545617,
+        "title": "Fixing WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-race-conditions",
+        "language": "TypeScript",
+        "code": "BufferStateError",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/webgpu-buffer-mapping-race-conditions.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775545618,
+        "title": "Mitigating Haskell Lazy I/O Space Leaks",
+        "slug": "haskell-lazy-io-space-leak-fix",
+        "language": "Rust",
+        "code": "HeapOverflow",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/haskell-lazy-io-space-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Haskell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775545619,
+        "title": "OpenClaude: The Open-Source AI Coding Agent CLI",
+        "slug": "openclaude-coding-agent-trend",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-04-07",
+        "path": "data/posts/2026-04/openclaude-coding-agent-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1775538281,
         "title": "Mitigating Linux Kernel RCU Stall in Containers",
         "slug": "linux-kernel-rcu-sched-stall-containers",
