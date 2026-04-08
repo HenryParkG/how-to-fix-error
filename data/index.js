@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775624779,
+        "title": "Fixing C++20 Coroutine Leaks in Asynchronous Graphs",
+        "slug": "cpp20-coroutine-memory-leak-fix",
+        "language": "C++ / Rust",
+        "code": "Memory Leak (Resource)",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/cpp20-coroutine-memory-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775624780,
+        "title": "Mitigating Kafka Consumer Rebalance Storms",
+        "slug": "kafka-rebalance-storm-fix",
+        "language": "Java / Kafka",
+        "code": "Rebalance Storm",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/kafka-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775624781,
+        "title": "Fixing PostgreSQL XID Wraparound in High-Write DBs",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL / Postgres",
+        "code": "Transaction ID Exhaustion",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775624782,
+        "title": "Career-ops: AI-Powered Job Search with Claude Code",
+        "slug": "career-ops-ai-job-search-trend",
+        "language": "Go / TypeScript",
+        "code": "Trend",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/career-ops-ai-job-search-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1775611641,
         "title": "Fixing Elixir GenServer Selective Receive Mailbox Bloat",
         "slug": "elixir-genserver-mailbox-bloat",
