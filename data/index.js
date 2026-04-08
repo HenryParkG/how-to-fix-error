@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775642460,
+        "title": "Fixing Zig SIMD Memory Alignment Violations",
+        "slug": "zig-simd-alignment-violations",
+        "language": "Rust",
+        "code": "AlignmentMismatch",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/zig-simd-alignment-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775642461,
+        "title": "Resolving PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "pytorch-ddp-heterogeneous-deadlocks",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/pytorch-ddp-heterogeneous-deadlocks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775642462,
+        "title": "Mitigating gRPC Flow Control Deadlocks in Microservices",
+        "slug": "grpc-flow-control-deadlocks",
+        "language": "Go",
+        "code": "ResourceExhausted",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/grpc-flow-control-deadlocks.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775642463,
+        "title": "Mempalace: The AI Memory System Dominating Benchmarks",
+        "slug": "mempalace-ai-memory-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/mempalace-ai-memory-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775632108,
         "title": "Fixing Rust Pin-Projection Invariants in Manual Async",
         "slug": "rust-pin-projection-async-state-machines",
