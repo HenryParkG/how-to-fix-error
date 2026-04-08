@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775611641,
+        "title": "Fixing Elixir GenServer Selective Receive Mailbox Bloat",
+        "slug": "elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775611642,
+        "title": "Fix 4-bit Quantized LLM Weight-Activation Discrepancy",
+        "slug": "llm-4bit-quantization-fix",
+        "language": "Python",
+        "code": "QuantizationError",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/llm-4bit-quantization-fix.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "AI/ML",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775611643,
+        "title": "Mitigating React Native JSI Memory Leaks in TurboModules",
+        "slug": "react-native-jsi-memory-leak",
+        "language": "C++ / TypeScript",
+        "code": "MemoryLeak",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leak.js",
+        "tags": [
+            "React Native",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775611644,
+        "title": "AI Career Ops: Transforming Job Searches with Claude Code",
+        "slug": "career-ops-ai-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/career-ops-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1775556087,
         "title": "Fixing eBPF Map Race Conditions in Multi-Core Environments",
         "slug": "mitigating-ebpf-map-race-conditions",

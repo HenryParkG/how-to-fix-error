@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating GenServer Mailbox Bloat in Elixir",
+    "title": "Fixing Elixir GenServer Selective Receive Mailbox Bloat",
     "slug": "elixir-genserver-mailbox-bloat",
     "language": "Elixir",
-    "code": "Mailbox Congestion",
+    "code": "MailboxOverflow",
     "tags": [
-        "Backend",
+        "Elixir",
         "Erlang",
+        "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>Elixir's GenServer processes have unbounded mailboxes. When a producer sends messages faster than the consumer can process them\u2014often during high-frequency bursts\u2014the mailbox grows linearly. This leads to increased memory consumption (RAM bloat) and causes the Erlang VM (BEAM) to spend more time scanning the mailbox, eventually leading to process crashes or Node-wide Out-Of-Memory (OOM) errors.</p>",
-    "root_cause": "The ingress rate of messages exceeds the throughput of the handle_info/handle_cast callbacks without any backpressure mechanism.",
-    "bad_code": "def handle_cast({:process_data, data}, state) {\n  # Heavy processing\n  :timer.sleep(100)\n  {:noreply, state}\n}",
-    "solution_desc": "Implement a shedding mechanism using a buffer or switch to GenStage to introduce backpressure. Alternatively, use a pool of workers or check the mailbox size before accepting new work.",
-    "good_code": "def handle_cast({:process_data, data}, state) {\n  {:message_queue_len, len} = Process.info(self(), :message_queue_len)\n  if len > 5000 do\n    # Drop message if mailbox is too full\n    {:noreply, state}\n  else\n    # Process data\n    {:noreply, state}\n  end\n}",
-    "verification": "Monitor process memory using :observer.start() or inspect Process.info(pid, :message_queue_len) under load.",
-    "date": "2026-04-01",
-    "id": 1775020696,
+    "analysis": "<p>In Elixir, a GenServer runs within a single process that relies on a specific message handling loop. Selective receive occurs when a developer uses a manual <code>receive</code> block inside a GenServer callback (like <code>handle_info/2</code> or <code>handle_cast/2</code>). This causes the process to scan its own mailbox for a specific pattern, skipping other messages. As the mailbox grows, each scan becomes O(N), leading to severe CPU spikes and eventual process crashes due to memory exhaustion.</p>",
+    "root_cause": "The use of a nested 'receive' block inside a GenServer callback, which bypasses the standard OTP loop and forces linear scanning of the process mailbox.",
+    "bad_code": "def handle_info(:trigger_sync, state) do\n  send(self(), :inner_msg)\n  # BAD: Manual receive inside a GenServer callback\n  receive do\n    :inner_msg -> \n      perform_sync(state)\n  after\n    5000 -> :timeout\n  end\n  {:noreply, state}\nend",
+    "solution_desc": "Refactor the logic to use the GenServer's native state machine. Instead of waiting manually, return the state and handle the subsequent message in a separate 'handle_info' or 'handle_cast' callback to keep the mailbox flowing.",
+    "good_code": "def handle_info(:trigger_sync, state) do\n  send(self(), :inner_msg)\n  {:noreply, state}\nend\n\n@impl true\ndef handle_info(:inner_msg, state) do\n  perform_sync(state)\n  {:noreply, state}\nend",
+    "verification": "Use ':erlang.process_info(pid, :message_queue_len)' to monitor mailbox growth under load.",
+    "date": "2026-04-08",
+    "id": 1775611641,
     "type": "error"
 });
