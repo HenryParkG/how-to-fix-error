@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775632108,
+        "title": "Fixing Rust Pin-Projection Invariants in Manual Async",
+        "slug": "rust-pin-projection-async-state-machines",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/rust-pin-projection-async-state-machines.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775632109,
+        "title": "Mitigating Kubernetes Sidecar Shutdown Race Conditions",
+        "slug": "k8s-sidecar-graceful-shutdown-race",
+        "language": "Kubernetes",
+        "code": "SIGTERM-Race",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/k8s-sidecar-graceful-shutdown-race.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775632110,
+        "title": "Resolving Cassandra Tombstone Bloat in Wide-Row Schemas",
+        "slug": "cassandra-tombstone-bloat-wide-rows",
+        "language": "SQL",
+        "code": "TombstoneOverload",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/cassandra-tombstone-bloat-wide-rows.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775632111,
+        "title": "MemPalace: The Highest-Scoring AI Memory System",
+        "slug": "mempalace-ai-memory-system-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-08",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775624779,
         "title": "Fixing C++20 Coroutine Leaks in Asynchronous Graphs",
         "slug": "cpp20-coroutine-memory-leak-fix",
