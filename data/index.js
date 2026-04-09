@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775711072,
+        "title": "Resolving eBPF Verifier Complexity Limits",
+        "slug": "ebpf-verifier-complexity-limits-xdp",
+        "language": "C/Rust",
+        "code": "VerifierError",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-limits-xdp.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775711073,
+        "title": "Fixing Redis Fork-Induced Latency Spikes",
+        "slug": "redis-fork-latency-large-memory",
+        "language": "Redis/Go",
+        "code": "LatencySpike",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/redis-fork-latency-large-memory.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Redis",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775711074,
+        "title": "Mitigating Istio Envoy Filter Lua Sandbox OOMs",
+        "slug": "istio-envoy-lua-sandbox-oom",
+        "language": "Lua/C++",
+        "code": "SandboxOOM",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/istio-envoy-lua-sandbox-oom.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775711075,
+        "title": "MemPalace: The Peak AI Memory System",
+        "slug": "mempalace-ai-memory-system-trend",
+        "language": "Python/C++",
+        "code": "Trend",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775697528,
         "title": "Resolving Haskell Space Leaks in Lazy Thunk Chains",
         "slug": "resolving-haskell-space-leaks-lazy-evaluation",
