@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775697528,
+        "title": "Resolving Haskell Space Leaks in Lazy Thunk Chains",
+        "slug": "resolving-haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/resolving-haskell-space-leaks-lazy-evaluation.js",
+        "tags": [
+            "Functional Programming",
+            "Performance",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775697529,
+        "title": "Fixing WebGPU Memory Sync Hazards in Compute Pipelines",
+        "slug": "webgpu-memory-sync-hazards-compute-pipelines",
+        "language": "WGSL",
+        "code": "DataRace",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/webgpu-memory-sync-hazards-compute-pipelines.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775697530,
+        "title": "Mitigating Vector DB HNSW Index Corruption",
+        "slug": "vector-db-hnsw-index-corruption-fix",
+        "language": "Rust",
+        "code": "ConcurrentCorruption",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/vector-db-hnsw-index-corruption-fix.js",
+        "tags": [
+            "VectorDB",
+            "HNSW",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775697531,
+        "title": "MemPalace: The Highest-Scoring AI Memory System",
+        "slug": "mempalace-ai-memory-system-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775642460,
         "title": "Fixing Zig SIMD Memory Alignment Violations",
         "slug": "zig-simd-alignment-violations",
