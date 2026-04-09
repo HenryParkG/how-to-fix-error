@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775729234,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "Rust",
+        "code": "Use-After-Free",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775729235,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "Database-Halt",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/postgres-txid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775729236,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storm-fix",
+        "language": "Java",
+        "code": "Rebalance-Loop",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/kafka-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775729237,
+        "title": "Inside MemPalace: The Highest-Scoring AI Memory System",
+        "slug": "mempalace-ai-memory-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/mempalace-ai-memory-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775718822,
         "title": "Resolving Elixir OTP Mailbox Bloat from Selective Receive",
         "slug": "elixir-otp-selective-receive-stalls",

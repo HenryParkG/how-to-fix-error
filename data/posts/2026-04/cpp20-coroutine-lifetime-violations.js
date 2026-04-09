@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
     "title": "Fixing C++20 Coroutine Lifetime Violations",
     "slug": "cpp20-coroutine-lifetime-violations",
-    "language": "C++",
-    "code": "AccessViolation",
+    "language": "Rust",
+    "code": "Use-After-Free",
     "tags": [
         "Rust",
         "Backend",
+        "Systems",
         "Error Fix"
     ],
-    "analysis": "<p>C++20 coroutines are stackless, meaning local variables are moved to a heap-allocated coroutine frame. A common pitfall occurs when passing arguments by reference. While a normal function keeps the reference valid for its duration, a coroutine suspends, potentially outliving the caller's scope where the referenced object resided. This leads to use-after-free errors when the coroutine resumes.</p>",
-    "root_cause": "Capturing or passing objects by reference to a coroutine that suspends and resumes after the original object's lifetime has ended.",
-    "bad_code": "task<void> process_data(const std::string& input) {\n    co_await async_io();\n    std::cout << input << std::endl; // 'input' is a dangling reference if caller scope ended\n}\n\nvoid trigger() {\n    auto t = process_data(\"temp\"); // Temporary string destroyed here\n    t.resume();\n}",
-    "solution_desc": "Always pass arguments by value to coroutines intended for asynchronous execution to ensure they are copied into the coroutine frame, or use shared pointers for shared ownership.",
-    "good_code": "task<void> process_data(std::string input) {\n    co_await async_io();\n    std::cout << input << std::endl; // 'input' is safely stored in the coroutine frame\n}\n\nvoid trigger() {\n    auto t = process_data(\"temp\");\n    // The string 'temp' is moved/copied into the frame\n}",
-    "verification": "Use AddressSanitizer (ASan) to detect heap-use-after-free or verify with Valgrind during the suspension/resume cycle.",
-    "date": "2026-04-01",
-    "id": 1775027403,
+    "analysis": "<p>In C++20, coroutines allocate a frame on the heap to store state. A common pitfall occurs when parameters are passed by reference or pointer. Since coroutines are suspended and resumed, the original caller's stack frame might be destroyed while the coroutine frame still holds references to that stack, leading to critical memory corruption.</p>",
+    "root_cause": "The coroutine frame captures references to temporary objects or local variables from the calling scope that expire before the coroutine resumes.",
+    "bad_code": "task<void> process_data(const std::string& input) {\n    // Suspending here allows the caller to continue\n    co_await async_io();\n    // CRASH: 'input' reference is now dangling if the caller destroyed the string\n    std::cout << input << std::endl;\n}",
+    "solution_desc": "Ensure that all data required by the coroutine after its first suspension point is captured by value rather than by reference, moving the ownership into the coroutine frame itself.",
+    "good_code": "task<void> process_data(std::string input) {\n    // 'input' is moved into the coroutine frame\n    co_await async_io();\n    // SAFE: the frame owns the string data\n    std::cout << input << std::endl;\n}",
+    "verification": "Compile with AddressSanitizer (ASan) and execute heavy concurrent loads to detect dangling pointer access during suspension.",
+    "date": "2026-04-09",
+    "id": 1775729234,
     "type": "error"
 });
