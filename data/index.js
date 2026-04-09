@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775718822,
+        "title": "Resolving Elixir OTP Mailbox Bloat from Selective Receive",
+        "slug": "elixir-otp-selective-receive-stalls",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/elixir-otp-selective-receive-stalls.js",
+        "tags": [
+            "Elixir",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775718823,
+        "title": "Mitigating ES Circuit Breaker Trips during Segment Merges",
+        "slug": "elasticsearch-circuit-breaker-lucene-merge",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/elasticsearch-circuit-breaker-lucene-merge.js",
+        "tags": [
+            "Infra",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775718824,
+        "title": "Fixing Wasm Linear Memory Fragmentation in Workers",
+        "slug": "wasm-memory-fragmentation-multi-thread",
+        "language": "Rust",
+        "code": "WasmRuntimeError",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/wasm-memory-fragmentation-multi-thread.js",
+        "tags": [
+            "Rust",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775718825,
+        "title": "Mempalace: The Future of AI Long-Term Memory Systems",
+        "slug": "mempalace-ai-memory-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-09",
+        "path": "data/posts/2026-04/mempalace-ai-memory-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775711072,
         "title": "Resolving eBPF Verifier Complexity Limits",
         "slug": "ebpf-verifier-complexity-limits-xdp",
