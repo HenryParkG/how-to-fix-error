@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775805480,
+        "title": "Zig Memory Alignment in Cross-Platform SIMD",
+        "slug": "zig-simd-memory-alignment-faults",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/zig-simd-memory-alignment-faults.js",
+        "tags": [
+            "Rust",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775805481,
+        "title": "Resolving PyTorch NCCL Collective Communication Timeouts",
+        "slug": "pytorch-nccl-distributed-timeouts",
+        "language": "Python",
+        "code": "NCCLTimeout",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/pytorch-nccl-distributed-timeouts.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775805482,
+        "title": "Fixing Haskell Space Leaks in Lazy Stream Processing",
+        "slug": "haskell-lazy-stream-space-leaks",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/haskell-lazy-stream-space-leaks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Functional",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775805483,
+        "title": "Unlocking AI Long-Term Memory with MemPalace",
+        "slug": "mempalace-ai-memory-system-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775798323,
         "title": "Fixing JSI Memory Leaks in High-Freq Native Bridges",
         "slug": "react-native-jsi-memory-leak-fix",
