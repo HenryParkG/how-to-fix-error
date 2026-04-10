@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775815326,
+        "title": "Fixing eBPF Verifier State Complexity Errors",
+        "slug": "ebpf-verifier-state-tracking-fix",
+        "language": "Rust",
+        "code": "Invalid Instruction Transition",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/ebpf-verifier-state-tracking-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775815327,
+        "title": "Mitigating Precision Loss in HNSW Quantization",
+        "slug": "hnsw-quantization-precision-fix",
+        "language": "Python",
+        "code": "Accuracy Drop (Recall)",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/hnsw-quantization-precision-fix.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775815328,
+        "title": "Fixing WebGPU Buffer Synchronization Race Conditions",
+        "slug": "webgpu-synchronization-race-fix",
+        "language": "TypeScript",
+        "code": "GPURaceCondition",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/webgpu-synchronization-race-fix.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775815329,
+        "title": "MemPalace: The New Gold Standard for AI Memory",
+        "slug": "mempalace-ai-memory-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/mempalace-ai-memory-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775805480,
         "title": "Zig Memory Alignment in Cross-Platform SIMD",
         "slug": "zig-simd-memory-alignment-faults",
