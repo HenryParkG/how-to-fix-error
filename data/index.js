@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1775784534,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775784535,
+        "title": "Mitigating Kubernetes DNS Latency Conntrack Race",
+        "slug": "k8s-dns-conntrack-race-fix",
+        "language": "Kubernetes",
+        "code": "DNSLatencySpikes",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/k8s-dns-conntrack-race-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775784536,
+        "title": "Fixing WiredTiger Ticket Exhaustion in MongoDB",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "SQL",
+        "code": "TicketExhaustion",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775784537,
+        "title": "Mempalace: Why the Highest-Scoring AI Memory is Trending",
+        "slug": "mempalace-ai-memory-system-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775729234,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
