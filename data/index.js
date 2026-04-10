@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775798323,
+        "title": "Fixing JSI Memory Leaks in High-Freq Native Bridges",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "React Native",
+        "code": "MemoryLeak",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leak-fix.js",
+        "tags": [
+            "React",
+            "C++",
+            "Mobile",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775798324,
+        "title": "Mitigating RocksDB Write Stalls in L0-to-L1 Pressure",
+        "slug": "rocksdb-write-stall-l0-l1-compaction",
+        "language": "SQL",
+        "code": "WriteStall",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/rocksdb-write-stall-l0-l1-compaction.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775798325,
+        "title": "Fixing Rust Async Cancellation Hazards",
+        "slug": "rust-async-cancellation-hazards",
+        "language": "Rust",
+        "code": "RaceCondition",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/rust-async-cancellation-hazards.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775798326,
+        "title": "MemPalace: The New Standard for AI Long-Term Memory",
+        "slug": "mempalace-ai-memory-system-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-10",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775784534,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
