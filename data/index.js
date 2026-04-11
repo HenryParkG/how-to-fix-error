@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775890282,
+        "title": "Fixing Istio Sidecar Termination in K8s Batch Jobs",
+        "slug": "istio-sidecar-termination-race-condition",
+        "language": "Kubernetes",
+        "code": "JobCompletionTimeout",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/istio-sidecar-termination-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775890283,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparoundError",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/postgres-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775890284,
+        "title": "Resolving Spark Shuffle Loss on Spot Instances",
+        "slug": "spark-shuffle-block-loss-spot-instances",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/spark-shuffle-block-loss-spot-instances.js",
+        "tags": [
+            "Java",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775890285,
+        "title": "Mempalace: High-Performance AI Memory System",
+        "slug": "mempalace-ai-memory-system-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775882978,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
