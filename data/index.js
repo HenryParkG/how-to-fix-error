@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775870565,
+        "title": "Mitigating Wasm Linear Memory Fragmentation",
+        "slug": "wasm-linear-memory-fragmentation-fix",
+        "language": "Rust",
+        "code": "MemoryFragmentationError",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/wasm-linear-memory-fragmentation-fix.js",
+        "tags": [
+            "Wasm",
+            "Memory Management",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775870566,
+        "title": "Resolving Ray Object Store Spilling & Pinning",
+        "slug": "ray-object-store-spilling-hazards",
+        "language": "Python",
+        "code": "ObjectStoreFullError",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/ray-object-store-spilling-hazards.js",
+        "tags": [
+            "Distributed Systems",
+            "Ray",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775870567,
+        "title": "Eliminating Flutter Skia Shader Compilation Jank",
+        "slug": "flutter-skia-shader-jank-fix",
+        "language": "TypeScript",
+        "code": "ShaderCompilationJank",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/flutter-skia-shader-jank-fix.js",
+        "tags": [
+            "Flutter",
+            "Mobile",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775870568,
+        "title": "Mempalace: The Gold Standard for AI Memory",
+        "slug": "milla-jovovich-mempalace-trending",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/milla-jovovich-mempalace-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775815326,
         "title": "Fixing eBPF Verifier State Complexity Errors",
         "slug": "ebpf-verifier-state-tracking-fix",
