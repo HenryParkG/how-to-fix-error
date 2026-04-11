@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775899945,
+        "title": "Eliminating Redis Fork Child Latency Spikes on THP",
+        "slug": "redis-fork-latency-thp-fix",
+        "language": "Redis / Linux",
+        "code": "Latency Spike",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/redis-fork-latency-thp-fix.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775899946,
+        "title": "Resolving Airflow Scheduler Zombie Task Loops",
+        "slug": "airflow-zombie-task-fix",
+        "language": "Python",
+        "code": "ZombieTask",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/airflow-zombie-task-fix.js",
+        "tags": [
+            "Python",
+            "Airflow",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775899947,
+        "title": "Fixing Pointer Aliasing Violations in Rust FFI",
+        "slug": "rust-ffi-pointer-aliasing-fix",
+        "language": "Rust",
+        "code": "UB Violation",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/rust-ffi-pointer-aliasing-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775899948,
+        "title": "Mempalace: Revolutionizing AI Long-Term Memory",
+        "slug": "mempalace-ai-memory-system",
+        "language": "Python / AI",
+        "code": "Trend",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/mempalace-ai-memory-system.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775890282,
         "title": "Fixing Istio Sidecar Termination in K8s Batch Jobs",
         "slug": "istio-sidecar-termination-race-condition",
