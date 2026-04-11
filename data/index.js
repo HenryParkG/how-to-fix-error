@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775882978,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeError",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "C++",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775882979,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775882980,
+        "title": "Mitigating Elixir OTP Process Mailbox Bloat",
+        "slug": "elixir-otp-mailbox-bloat",
+        "language": "Elixir",
+        "code": "MailboxBloat",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/elixir-otp-mailbox-bloat.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775882981,
+        "title": "mempalace: The Gold Standard for AI Memory Systems",
+        "slug": "milla-jovovich-mempalace-ai-memory",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-11",
+        "path": "data/posts/2026-04/milla-jovovich-mempalace-ai-memory.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1775870565,
         "title": "Mitigating Wasm Linear Memory Fragmentation",
         "slug": "wasm-linear-memory-fragmentation-fix",
