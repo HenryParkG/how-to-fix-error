@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1775958362,
+        "title": "Fixing Zig SIMD Alignment Faults in Cross-Compilation",
+        "slug": "zig-simd-alignment-faults",
+        "language": "Zig",
+        "code": "SIGBUS/Alignment",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/zig-simd-alignment-faults.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775958363,
+        "title": "Resolving Collective Deadlocks in Tensor Parallelism",
+        "slug": "tensor-parallelism-deadlock-fix",
+        "language": "Python",
+        "code": "NCCL Timeout",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/tensor-parallelism-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775958364,
+        "title": "Fixing gRPC Load Balancing Divergence in Service Meshes",
+        "slug": "grpc-lb-divergence-mesh",
+        "language": "Go",
+        "code": "LB Divergence",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/grpc-lb-divergence-mesh.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775958365,
+        "title": "Analyze Trending Repo: farzaa/clicky",
+        "slug": "farzaa-clicky-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/farzaa-clicky-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1775899945,
         "title": "Eliminating Redis Fork Child Latency Spikes on THP",
         "slug": "redis-fork-latency-thp-fix",
