@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775977545,
+        "title": "Fixing eBPF Verifier Rejection in XDP Tail-Calls",
+        "slug": "ebpf-verifier-xdp-tail-call-fix",
+        "language": "Go",
+        "code": "BPF_PROG_LOAD_ERR",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/ebpf-verifier-xdp-tail-call-fix.js",
+        "tags": [
+            "Go",
+            "C",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775977546,
+        "title": "Mitigating Write Amplification in RocksDB LSM Trees",
+        "slug": "rocksdb-write-amplification-fix",
+        "language": "Rust",
+        "code": "STALL_WRITE_ERR",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/rocksdb-write-amplification-fix.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775977547,
+        "title": "Optimizing WebGPU Memory to Prevent Context Loss",
+        "slug": "webgpu-memory-leak-context-loss",
+        "language": "TypeScript",
+        "code": "GPU_DEVICE_LOST",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/webgpu-memory-leak-context-loss.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775977548,
+        "title": "Why 'farzaa/clicky' is Trending for Modern Analytics",
+        "slug": "clicky-github-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/clicky-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1775971015,
         "title": "Fixing Cancellation Safety in Rust Pin-Projected Futures",
         "slug": "rust-async-cancellation-safety-fix",
