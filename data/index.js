@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775971015,
+        "title": "Fixing Cancellation Safety in Rust Pin-Projected Futures",
+        "slug": "rust-async-cancellation-safety-fix",
+        "language": "Rust",
+        "code": "AsyncSafetyViolation",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/rust-async-cancellation-safety-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775971016,
+        "title": "Fixing HNSW Index Rebuild Stalls in Vector Databases",
+        "slug": "hnsw-index-rebuild-stall-fix",
+        "language": "Go",
+        "code": "Deadlock/Livelock",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/hnsw-index-rebuild-stall-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775971017,
+        "title": "Resolving WiredTiger Cache Contention in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-fix",
+        "language": "Python",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-fix.js",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775971018,
+        "title": "Analyze Trending Repo: farzaa/clicky (Modern Analytics)",
+        "slug": "farzaa-clicky-github-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/farzaa-clicky-github-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1775958362,
         "title": "Fixing Zig SIMD Alignment Faults in Cross-Compilation",
         "slug": "zig-simd-alignment-faults",
