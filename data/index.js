@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1775986723,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "fixing-cpp20-coroutine-lifetime-violations",
+        "language": "C++ / Rust",
+        "code": "LifetimeError",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/fixing-cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775986724,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "resolving-kafka-rebalance-storms",
+        "language": "Kafka / Java",
+        "code": "RebalanceStorm",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/resolving-kafka-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775986725,
+        "title": "Mitigating Haskell Lazy Evaluation Thunk Leaks",
+        "slug": "haskell-lazy-evaluation-thunk-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/haskell-lazy-evaluation-thunk-leaks.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1775986726,
+        "title": "GitHub Trend: Analyzing farzaa/clicky",
+        "slug": "github-trend-farzaa-clicky",
+        "language": "TypeScript / React",
+        "code": "Trend",
+        "date": "2026-04-12",
+        "path": "data/posts/2026-04/github-trend-farzaa-clicky.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1775977545,
         "title": "Fixing eBPF Verifier Rejection in XDP Tail-Calls",
         "slug": "ebpf-verifier-xdp-tail-call-fix",
