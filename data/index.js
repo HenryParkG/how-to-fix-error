@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776066573,
+        "title": "Fixing Istio Sidecar Timeouts during Envoy Hot Restarts",
+        "slug": "fix-istio-envoy-hot-restart-timeout",
+        "language": "Kubernetes",
+        "code": "UpstreamTimeout",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/fix-istio-envoy-hot-restart-timeout.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776066574,
+        "title": "Resolving Next.js Hydration Mismatches in Edge Routes",
+        "slug": "nextjs-hydration-mismatch-edge-streaming",
+        "language": "Next.js",
+        "code": "HydrationFailed",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/nextjs-hydration-mismatch-edge-streaming.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776066575,
+        "title": "Mitigating Spark Driver OOM from Broadcast Metadata",
+        "slug": "spark-driver-oom-broadcast-join",
+        "language": "Python",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/spark-driver-oom-broadcast-join.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776066576,
+        "title": "Why clicky by farzaa is Trending: Instant App Scaffolding",
+        "slug": "farzaa-clicky-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/farzaa-clicky-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776058413,
         "title": "Resolving PostgreSQL XID Wraparound Failures",
         "slug": "postgres-xid-wraparound-fix",
