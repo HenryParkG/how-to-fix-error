@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776058413,
+        "title": "Resolving PostgreSQL XID Wraparound Failures",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "XID Exhaustion",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776058414,
+        "title": "Fixing Go Scheduler Preemption in CPU-Bound Loops",
+        "slug": "go-scheduler-preemption-fix",
+        "language": "Go",
+        "code": "Latent Scheduling",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/go-scheduler-preemption-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776058415,
+        "title": "Resolving Gradient Divergence in FP8 Training",
+        "slug": "fp8-gradient-divergence-fix",
+        "language": "Python",
+        "code": "FP8 Divergence",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/fp8-gradient-divergence-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776058416,
+        "title": "Why farzaa/clicky is the New Standard for Simple Analytics",
+        "slug": "farzaa-clicky-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/farzaa-clicky-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1776045034,
         "title": "Fixing Wasm Linear Memory Fragmentation",
         "slug": "wasm-linear-memory-fragmentation",
