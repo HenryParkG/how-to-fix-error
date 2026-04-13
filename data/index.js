@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776076020,
+        "title": "Fixing Linux Kernel PSI Spikes in Cgroup v2 Workloads",
+        "slug": "fixing-linux-kernel-psi-spikes-cgroup-v2",
+        "language": "C",
+        "code": "PressureStall",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/fixing-linux-kernel-psi-spikes-cgroup-v2.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776076021,
+        "title": "Resolving HNSW Index Convergence Failures in Vector DBs",
+        "slug": "hnsw-index-convergence-failures-vector-db",
+        "language": "Rust",
+        "code": "ConvergenceError",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/hnsw-index-convergence-failures-vector-db.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776076022,
+        "title": "Mitigating gRPC Deadlines from HTTP/2 Flow Control Starvation",
+        "slug": "grpc-deadlines-http2-flow-control-starvation",
+        "language": "Go",
+        "code": "DEADLINE_EXCEEDED",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/grpc-deadlines-http2-flow-control-starvation.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776076023,
+        "title": "Analyzing farzaa/clicky: The Lean Analytics Movement",
+        "slug": "analyze-farzaa-clicky-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/analyze-farzaa-clicky-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1776066573,
         "title": "Fixing Istio Sidecar Timeouts during Envoy Hot Restarts",
         "slug": "fix-istio-envoy-hot-restart-timeout",
