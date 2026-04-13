@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Why 'farzaa/clicky' is Trending for Modern Analytics",
+    "title": "Why farzaa/clicky is Trending: Open Source Analytics",
     "slug": "clicky-github-trend-analysis",
     "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
+        "TypeScript",
         "Next.js"
     ],
-    "analysis": "<p>Farzaa's 'clicky' is gaining massive traction on GitHub because it addresses the growing developer frustration with bloated, cookie-heavy analytics platforms. It provides a dead-simple, privacy-first way to track user interactions without the overhead of Google Analytics or the cost of Mixpanel. The repository is trending because it perfectly captures the 'minimalist stack' movement, offering high-performance event tracking that integrates seamlessly with Next.js and Vercel environments.</p>",
-    "root_cause": "Key Features: Lightweight script size (<1kb), zero-cookie tracking for GDPR compliance, and a developer-first API that prioritizes local-first debugging and simple event schemas.",
-    "bad_code": "git clone https://github.com/farzaa/clicky.git\ncd clicky\nnpm install && npm run dev",
-    "solution_desc": "Ideal for indie hackers, early-stage startups, and performance-critical landing pages where user privacy and page speed are the top priorities. Adopt it when you need to know *what* users are doing without tracking *who* they are.",
-    "good_code": "import { Clicky } from '@farzaa/clicky';\n\nconst tracker = new Clicky({ id: 'your-project-id' });\n\n// Simple event tracking\ntracker.track('button_clicked', { color: 'blue' });",
-    "verification": "The project is expected to expand into the 'self-hosted' niche, likely adding first-class support for Supabase and PlanetScale adapters in the near future.",
-    "date": "2026-04-12",
-    "id": 1775977548,
+    "analysis": "<p>The 'farzaa/clicky' repository has gained significant traction as a simplified, privacy-focused alternative to heavy analytics engines. It leverages the modern T3 stack philosophy\u2014efficiency, type safety, and ease of deployment. Developers are moving away from monolithic analytics tools in favor of 'Clicky' because it provides raw event data ownership without the cookie-consent headaches of traditional trackers.</p>",
+    "root_cause": "Key features include sub-100ms event logging, a clean React hook interface for event tracking, and seamless integration with Vercel and Supabase.",
+    "bad_code": "git clone https://github.com/farzaa/clicky.git\ncd clicky\nnpm install\n# Configure .env with your DATABASE_URL",
+    "solution_desc": "Best used for early-stage startups and internal tools where you need to track user conversion funnels without integrating complex SDKs. It fits perfectly into Next.js Middleware for edge-side tracking.",
+    "good_code": "import { track } from '@/lib/clicky';\n\nconst SignUpButton = () => (\n  <button onClick={() => track('user_signup', { plan: 'pro' })}>\n    Sign Up\n  </button>\n);",
+    "verification": "The project is evolving towards a 'Self-Hosted as a Service' model, with a roadmap focusing on automated SQL report generation.",
+    "date": "2026-04-13",
+    "id": 1776045037,
     "type": "trend"
 });

@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776045034,
+        "title": "Fixing Wasm Linear Memory Fragmentation",
+        "slug": "wasm-linear-memory-fragmentation",
+        "language": "Rust",
+        "code": "MemoryOOM",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/wasm-linear-memory-fragmentation.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776045035,
+        "title": "Fixing NCCL Ring-Search Deadlocks",
+        "slug": "pytorch-nccl-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/pytorch-nccl-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776045036,
+        "title": "Resolving GenServer Selective Receive Latency",
+        "slug": "elixir-genserver-selective-receive",
+        "language": "Elixir",
+        "code": "ProcessHanging",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/elixir-genserver-selective-receive.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776045037,
+        "title": "Why farzaa/clicky is Trending: Open Source Analytics",
+        "slug": "clicky-github-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-13",
+        "path": "data/posts/2026-04/clicky-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1775986723,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "fixing-cpp20-coroutine-lifetime-violations",
