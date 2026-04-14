@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776143746,
+        "title": "Fixing eBPF Verifier Path-Explosion in XDP Programs",
+        "slug": "ebpf-verifier-path-explosion-xdp",
+        "language": "Go",
+        "code": "Verifier Rejection",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/ebpf-verifier-path-explosion-xdp.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776143747,
+        "title": "Resolving Haskell Space Leaks in Lazy State Monads",
+        "slug": "haskell-space-leaks-lazy-state",
+        "language": "Haskell",
+        "code": "Memory Leak",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/haskell-space-leaks-lazy-state.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776143748,
+        "title": "Mitigating Redis Fork Latency Spikes and HugePages",
+        "slug": "redis-fork-latency-cow-hugepages",
+        "language": "C",
+        "code": "Latency Spike",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/redis-fork-latency-cow-hugepages.js",
+        "tags": [
+            "Infra",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776143749,
+        "title": "Analyzing Hermes Agent: The Nous Research Open AI Guide",
+        "slug": "hermes-agent-orange-book-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/hermes-agent-orange-book-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776131133,
         "title": "Resolving Zig Memory Fragmentation in Custom Allocators",
         "slug": "zig-memory-fragmentation-custom-allocators",
