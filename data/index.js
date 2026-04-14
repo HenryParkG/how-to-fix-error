@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1776161284,
+        "title": "Fixing OCaml Multicore Contention in Parallel GC",
+        "slug": "ocaml-multicore-memory-contention-gc",
+        "language": "OCaml",
+        "code": "RuntimeError",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/ocaml-multicore-memory-contention-gc.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776161285,
+        "title": "Fixing NCCL All-Reduce Timeouts in Distributed LLM Training",
+        "slug": "nccl-all-reduce-timeout-fix",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/nccl-all-reduce-timeout-fix.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776161286,
+        "title": "Resolving PostgreSQL Index Bloat from Stale Replication Slots",
+        "slug": "postgres-index-bloat-stale-slots",
+        "language": "SQL",
+        "code": "VacuumFail",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/postgres-index-bloat-stale-slots.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776161287,
+        "title": "Hermes Agent Orange Book: Mastering Open Source AI Agents",
+        "slug": "hermes-agent-orange-book-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/hermes-agent-orange-book-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776151137,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
