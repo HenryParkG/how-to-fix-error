@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776131133,
+        "title": "Resolving Zig Memory Fragmentation in Custom Allocators",
+        "slug": "zig-memory-fragmentation-custom-allocators",
+        "language": "Zig",
+        "code": "MemoryFragmentation",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/zig-memory-fragmentation-custom-allocators.js",
+        "tags": [
+            "Zig",
+            "Low-level",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776131134,
+        "title": "Fixing CUDA Illegal Memory Access in PyTorch Kernels",
+        "slug": "cuda-illegal-memory-access-pytorch-fused-kernels",
+        "language": "CUDA/C++",
+        "code": "CUDA_ERROR_ILLEGAL_ADDRESS",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/cuda-illegal-memory-access-pytorch-fused-kernels.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776131135,
+        "title": "Debugging WebGPU Buffer Sync Deadlocks",
+        "slug": "webgpu-buffer-sync-deadlocks-compute-shaders",
+        "language": "WebGPU/TS",
+        "code": "BufferSyncDeadlock",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/webgpu-buffer-sync-deadlocks-compute-shaders.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776131136,
+        "title": "Analyze Trending: Hermes Agent Orange Book",
+        "slug": "hermes-agent-orange-book-analysis",
+        "language": "Python/AI",
+        "code": "Trend",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/hermes-agent-orange-book-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776076020,
         "title": "Fixing Linux Kernel PSI Spikes in Cgroup v2 Workloads",
         "slug": "fixing-linux-kernel-psi-spikes-cgroup-v2",
