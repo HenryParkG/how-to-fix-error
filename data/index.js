@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776151137,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "UseAfterFree",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776151138,
+        "title": "Mitigating Kafka Consumer Rebalance Storms",
+        "slug": "kafka-rebalance-storm-fix",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/kafka-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776151139,
+        "title": "Fixing Elixir GenServer Mailbox Bottlenecks",
+        "slug": "elixir-genserver-mailbox-bottleneck",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-bottleneck.js",
+        "tags": [
+            "Go",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776151140,
+        "title": "Inside the Hermes Agent Orange Book",
+        "slug": "hermes-agent-orange-book-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-14",
+        "path": "data/posts/2026-04/hermes-agent-orange-book-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776143746,
         "title": "Fixing eBPF Verifier Path-Explosion in XDP Programs",
         "slug": "ebpf-verifier-path-explosion-xdp",
