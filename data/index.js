@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776237573,
+        "title": "Debugging Zig Memory Alignment Faults in SIMD Kernels",
+        "slug": "zig-simd-memory-alignment-faults",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/zig-simd-memory-alignment-faults.js",
+        "tags": [
+            "Rust",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776237574,
+        "title": "Fixing React Hydration Mismatches in Multi-Region SSR",
+        "slug": "react-ssr-hydration-mismatch-multi-region",
+        "language": "TypeScript",
+        "code": "HydrationError",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/react-ssr-hydration-mismatch-multi-region.js",
+        "tags": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776237575,
+        "title": "Mitigating PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "pytorch-ddp-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/pytorch-ddp-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776237576,
+        "title": "Trend: AI-Powered Diagramming with Fireworks Tech Graph",
+        "slug": "fireworks-tech-graph-ai-diagrams",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/fireworks-tech-graph-ai-diagrams.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776230155,
         "title": "Fixing Go Scheduler Starvation in Non-Preemptive Loops",
         "slug": "go-scheduler-starvation-non-preemptive-loops",
