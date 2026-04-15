@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1776216472,
+        "title": "Resolving Rust Pinning Violations in Manual Futures",
+        "slug": "rust-pinning-violations-manual-future",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/rust-pinning-violations-manual-future.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776216473,
+        "title": "Mitigating Spark Executor OOM from Skewed Shuffles",
+        "slug": "spark-oom-skewed-shuffle-cardinality",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/spark-oom-skewed-shuffle-cardinality.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776216474,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "SQL",
+        "code": "CacheStall",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776216475,
+        "title": "fireworks-tech-graph: AI-Native Architecture Visualization",
+        "slug": "trend-fireworks-tech-graph-claude-code",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/trend-fireworks-tech-graph-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776161284,
         "title": "Fixing OCaml Multicore Contention in Parallel GC",
         "slug": "ocaml-multicore-memory-contention-gc",
