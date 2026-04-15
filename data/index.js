@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776230155,
+        "title": "Fixing Go Scheduler Starvation in Non-Preemptive Loops",
+        "slug": "go-scheduler-starvation-non-preemptive-loops",
+        "language": "Go",
+        "code": "Runtime Starvation",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/go-scheduler-starvation-non-preemptive-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776230156,
+        "title": "Fixing Vector DB Memory Exhaustion during HNSW Indexing",
+        "slug": "vector-db-hnsw-memory-exhaustion",
+        "language": "Python",
+        "code": "OOM Error",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/vector-db-hnsw-memory-exhaustion.js",
+        "tags": [
+            "Python",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776230157,
+        "title": "Resolving gRPC Head-of-Line Blocking in HTTP/2 Streams",
+        "slug": "grpc-http2-head-of-line-blocking",
+        "language": "Go",
+        "code": "Network Congestion",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/grpc-http2-head-of-line-blocking.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776230158,
+        "title": "Trend: fireworks-tech-graph for AI-Driven Diagrams",
+        "slug": "fireworks-tech-graph-ai-diagrams",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/fireworks-tech-graph-ai-diagrams.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1776216472,
         "title": "Resolving Rust Pinning Violations in Manual Futures",
         "slug": "rust-pinning-violations-manual-future",
