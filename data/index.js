@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776247758,
+        "title": "Debugging eBPF Verifier Complexity Limits",
+        "slug": "ebpf-verifier-complexity-tracepoints",
+        "language": "Go",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-tracepoints.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776247759,
+        "title": "Fixing CUDA Fragmentation in PagedAttention",
+        "slug": "pagedattention-cuda-memory-fragmentation",
+        "language": "Python",
+        "code": "CUDAMemoryError",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/pagedattention-cuda-memory-fragmentation.js",
+        "tags": [
+            "LLM",
+            "PyTorch",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776247760,
+        "title": "Resolving Redis Fork-Induced Latency Spikes",
+        "slug": "redis-fork-cow-latency-spikes",
+        "language": "Docker",
+        "code": "LatencySpike",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/redis-fork-cow-latency-spikes.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776247761,
+        "title": "Claude Code: Fireworks Tech Graph Explained",
+        "slug": "fireworks-tech-graph-claude-code",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-15",
+        "path": "data/posts/2026-04/fireworks-tech-graph-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776237573,
         "title": "Debugging Zig Memory Alignment Faults in SIMD Kernels",
         "slug": "zig-simd-memory-alignment-faults",
