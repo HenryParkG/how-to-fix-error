@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776324018,
+        "title": "Fixing Rust Pinning Violations in Custom Futures",
+        "slug": "rust-pinning-violations-async-lifetimes",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/rust-pinning-violations-async-lifetimes.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776324019,
+        "title": "Fixing React Native JSI Memory Leaks in High-Freq Comms",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "C++ / TypeScript",
+        "code": "JSIMemoryLeak",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leak-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776324020,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-eviction-fix",
+        "language": "NoSQL / Engine",
+        "code": "WTCacheStall",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-eviction-fix.js",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776324021,
+        "title": "GitHub Trend: Fireworks Tech Graph for Claude Code",
+        "slug": "trend-fireworks-tech-graph-analysis",
+        "language": "TypeScript / AI",
+        "code": "Trend",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/trend-fireworks-tech-graph-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1776316995,
         "title": "Resolving Elixir GenServer Mailbox Congestion",
         "slug": "elixir-genserver-mailbox-congestion-fix",
