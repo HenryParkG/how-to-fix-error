@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776316995,
+        "title": "Resolving Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion-fix",
+        "language": "Elixir",
+        "code": "ProcessMailboxOverflow",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-congestion-fix.js",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776316996,
+        "title": "Fixing WebGPU Pipeline Compilation Stalls",
+        "slug": "webgpu-pipeline-compilation-stalls",
+        "language": "TypeScript",
+        "code": "GPUPipelineStall",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/webgpu-pipeline-compilation-stalls.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Next.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776316997,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparoundWarning",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/postgres-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776316998,
+        "title": "Trend: Claude Code Mastery with Fireworks Tech Graph",
+        "slug": "fireworks-tech-graph-claude-skill",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/fireworks-tech-graph-claude-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776304164,
         "title": "Debugging C++20 Coroutine Frame Leaks with Custom Allocators",
         "slug": "cpp20-coroutine-frame-leaks-custom-allocators",
