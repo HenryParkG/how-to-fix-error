@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776304164,
+        "title": "Debugging C++20 Coroutine Frame Leaks with Custom Allocators",
+        "slug": "cpp20-coroutine-frame-leaks-custom-allocators",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/cpp20-coroutine-frame-leaks-custom-allocators.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776304165,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms-fix",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/kafka-consumer-rebalance-storms-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "DistributedSystems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776304166,
+        "title": "Mitigating Istio Sidecar Resource Exhaustion",
+        "slug": "istio-sidecar-resource-exhaustion-spiky-traffic",
+        "language": "Go",
+        "code": "OOMKilled",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/istio-sidecar-resource-exhaustion-spiky-traffic.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776304167,
+        "title": "AI-Powered Technical Diagrams with fireworks-tech-graph",
+        "slug": "fireworks-tech-graph-claude-code-tooling",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/fireworks-tech-graph-claude-code-tooling.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776247758,
         "title": "Debugging eBPF Verifier Complexity Limits",
         "slug": "ebpf-verifier-complexity-tracepoints",
