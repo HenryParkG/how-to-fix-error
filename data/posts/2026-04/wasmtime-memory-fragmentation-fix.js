@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Wasmtime Memory Fragmentation in Long-Running Guests",
+    "title": "Fixing WebAssembly Memory Fragmentation in Wasmtime",
     "slug": "wasmtime-memory-fragmentation-fix",
     "language": "Rust",
     "code": "MemoryFragmentation",
     "tags": [
-        "WebAssembly",
-        "Wasmtime",
         "Rust",
+        "Backend",
+        "WebAssembly",
         "Error Fix"
     ],
-    "analysis": "<p>When running WebAssembly modules in long-lived host environments like Wasmtime, linear memory fragmentation can lead to process-wide Out Of Memory (OOM) errors even when sufficient global memory exists. This occurs because the host's memory allocator cannot find contiguous blocks of memory to satisfy a module's growth request (memory.grow), often exacerbated by frequent instantiation and destruction of small-lived guest instances within a single engine.</p>",
-    "root_cause": "The default allocator in Wasmtime relies on system mmap calls which can become fragmented over time. When a Wasm instance requests more memory, it requires a contiguous range. If the address space is riddled with small allocations or mappings, the OS fails to provide a large enough contiguous block.",
-    "bad_code": "use wasmtime::*;\n\nfn main() {\n    let engine = Engine::default(); // Uses default mmap strategy\n    let module = Module::from_file(&engine, \"guest.wasm\").unwrap();\n    \n    loop {\n        let mut store = Store::new(&engine, ());\n        let instance = Instance::new(&mut store, &module, &[]).unwrap();\n        // Instance grows memory and dies, leaving fragmented virtual address space\n    }\n}",
-    "solution_desc": "Implement the Pooling Allocator. This strategy pre-allocates a large contiguous block of virtual address space and manages it manually. This prevents the OS from fragmenting the address space and allows for extremely fast instance creation and cleanup by reusing pre-reserved memory slots.",
-    "good_code": "use wasmtime::*;\n\nfn main() {\n    let mut config = Config::new();\n    let mut pooling_config = PoolingAllocationConfig::default();\n    \n    // Pre-reserve slots for instances to prevent fragmentation\n    pooling_config.total_memories(100);\n    pooling_config.memory_keep_resident(1024 * 1024);\n    \n    config.allocation_strategy(InstanceAllocationStrategy::Pooling(pooling_config));\n    \n    let engine = Engine::new(&config).unwrap();\n    let module = Module::from_file(&engine, \"guest.wasm\").unwrap();\n    // ... instantiation logic now uses pooled slots\n}",
-    "verification": "Monitor 'wasmtime_pooling_allocator_active_instances' and 'process_virtual_memory_bytes' metrics to ensure memory usage remains stable over millions of iterations.",
-    "date": "2026-04-02",
-    "id": 1775092979,
+    "analysis": "<p>In long-running Wasmtime runtimes, frequent instantiation and deallocation of modules can lead to severe linear memory fragmentation. This occurs because the default memory allocator may not reclaim virtual memory regions efficiently, or the host-side 'growth' strategy creates non-contiguous holes. Over time, the process exhausts available virtual address space even if physical memory usage is low, leading to 'OutOfMemory' errors during store creation.</p>",
+    "root_cause": "The default memory strategy uses a 'dynamic' growth approach without a pooling allocator, causing the host to map disparate virtual memory chunks that cannot be merged or reused effectively for new instances.",
+    "bad_code": "let engine = Engine::default();\nlet mut store = Store::new(&engine, MyState::default());\n// Frequent creation/destruction in a loop leads to fragmentation\nlet instance = Instance::new(&mut store, &module, &[]);",
+    "solution_desc": "Implement the Wasmtime Pooling Allocator. By pre-allocating a large contiguous block of virtual memory and subdividing it into fixed-size slots for instances, you eliminate the overhead of repeated mmap/munmap calls and prevent address space fragmentation.",
+    "good_code": "let mut config = Config::new();\nlet mut pooling_config = PoolingAllocationConfig::default();\npooling_config.max_unused_warm_slots(10);\npooling_config.instance_memory_pages(100);\nconfig.allocation_strategy(InstanceAllocationStrategy::Pooling(pooling_config));\n\nlet engine = Engine::new(&config)?;\nlet mut store = Store::new(&engine, MyState::default());",
+    "verification": "Monitor 'wasmtime_memory_usage_bytes' and 'process_virtual_memory_bytes' over 24 hours. The virtual memory footprint should remain stable rather than climbing linearly.",
+    "date": "2026-04-16",
+    "id": 1776334108,
     "type": "error"
 });

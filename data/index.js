@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776334108,
+        "title": "Fixing WebAssembly Memory Fragmentation in Wasmtime",
+        "slug": "wasmtime-memory-fragmentation-fix",
+        "language": "Rust",
+        "code": "MemoryFragmentation",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/wasmtime-memory-fragmentation-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "WebAssembly",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776334109,
+        "title": "Resolving HNSW Stale-Pointer Crashes in Vector DBs",
+        "slug": "hnsw-stale-pointer-vector-db-fix",
+        "language": "Rust",
+        "code": "Segfault/StalePointer",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/hnsw-stale-pointer-vector-db-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776334110,
+        "title": "Fixing K8s Informer Cache Inconsistency in Controllers",
+        "slug": "kubernetes-informer-cache-fix",
+        "language": "Go",
+        "code": "CacheInconsistency",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/kubernetes-informer-cache-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776334111,
+        "title": "Trend: AI-Driven Diagrams with fireworks-tech-graph",
+        "slug": "fireworks-tech-graph-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-16",
+        "path": "data/posts/2026-04/fireworks-tech-graph-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI"
+        ]
+    },
+    {
         "id": 1776324018,
         "title": "Fixing Rust Pinning Violations in Custom Futures",
         "slug": "rust-pinning-violations-async-lifetimes",
