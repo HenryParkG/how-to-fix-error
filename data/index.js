@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776390359,
+        "title": "Mitigating Go Runtime Scheduler Livelocks",
+        "slug": "go-runtime-scheduler-livelock-mitigation",
+        "language": "Go",
+        "code": "GOMAXPROCS Hang",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/go-runtime-scheduler-livelock-mitigation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776390360,
+        "title": "Resolving PyTorch NCCL Collective Timeouts",
+        "slug": "pytorch-nccl-timeout-fix",
+        "language": "Python",
+        "code": "RuntimeError: NCCL Error 2",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/pytorch-nccl-timeout-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776390361,
+        "title": "Debugging gRPC 'GOAWAY' in High-Churn Meshes",
+        "slug": "grpc-goaway-service-mesh-churn",
+        "language": "Go",
+        "code": "Unavailable: GOAWAY",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/grpc-goaway-service-mesh-churn.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776390362,
+        "title": "Observing AI Token Spend with Codeburn",
+        "slug": "codeburn-ai-token-cost-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/codeburn-ai-token-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776334108,
         "title": "Fixing WebAssembly Memory Fragmentation in Wasmtime",
         "slug": "wasmtime-memory-fragmentation-fix",
