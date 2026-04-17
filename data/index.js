@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776410436,
+        "title": "Fixing C++20 Coroutine Symmetric Transfer Deadlocks",
+        "slug": "cpp20-coroutine-symmetric-transfer-deadlocks",
+        "language": "C++",
+        "code": "Deadlock",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/cpp20-coroutine-symmetric-transfer-deadlocks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776410437,
+        "title": "Fixing Kafka Consumer Max Poll Interval Rebalance Loops",
+        "slug": "kafka-max-poll-interval-rebalance-fix",
+        "language": "Kafka / Java",
+        "code": "ConsumerRebalance",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/kafka-max-poll-interval-rebalance-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776410438,
+        "title": "Resolving OCaml Multicore Memory Contention in Parallel GC",
+        "slug": "ocaml-multicore-memory-contention-fix",
+        "language": "OCaml",
+        "code": "MemoryContention",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/ocaml-multicore-memory-contention-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776410439,
+        "title": "AgentSeal/codeburn: AI Token Cost Observability TUI",
+        "slug": "agentseal-codeburn-ai-cost-observability",
+        "language": "TypeScript / Node.js",
+        "code": "Trend",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/agentseal-codeburn-ai-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776403308,
         "title": "Mitigating eBPF Verifier Path-Explosion in XDP",
         "slug": "ebpf-verifier-path-explosion-xdp",
