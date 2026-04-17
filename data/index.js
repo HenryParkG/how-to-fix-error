@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1776403308,
+        "title": "Mitigating eBPF Verifier Path-Explosion in XDP",
+        "slug": "ebpf-verifier-path-explosion-xdp",
+        "language": "Rust",
+        "code": "Verifier Limit Exceeded",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/ebpf-verifier-path-explosion-xdp.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "eBPF",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776403309,
+        "title": "Fixing CUDA OOM in PagedAttention KV-Cache Resizing",
+        "slug": "cuda-oom-pagedattention-resizing",
+        "language": "Python",
+        "code": "CUDA Runtime Error: Out of Memory",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/cuda-oom-pagedattention-resizing.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776403310,
+        "title": "Debugging Haskell Space Leaks in Lazy Pipelines",
+        "slug": "haskell-space-leaks-lazy-pipelines",
+        "language": "Go",
+        "code": "Heap Exhaustion",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/haskell-space-leaks-lazy-pipelines.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Haskell",
+            "Memory Management",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776403311,
+        "title": "AgentSeal/codeburn: TUI for AI Token Observability",
+        "slug": "codeburn-ai-token-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/codeburn-ai-token-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "AI"
+        ]
+    },
+    {
         "id": 1776390359,
         "title": "Mitigating Go Runtime Scheduler Livelocks",
         "slug": "go-runtime-scheduler-livelock-mitigation",
