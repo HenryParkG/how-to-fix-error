@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776420379,
+        "title": "Fixing Linux io_uring CQE Reordering in Multithreaded SQs",
+        "slug": "fix-io-uring-cqe-reordering",
+        "language": "Rust",
+        "code": "RaceCondition",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/fix-io-uring-cqe-reordering.js",
+        "tags": [
+            "Rust",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776420380,
+        "title": "Resolving PG Hint-Bit Write Amplification on Replicas",
+        "slug": "postgres-hint-bit-write-amplification",
+        "language": "SQL",
+        "code": "WriteAmplification",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/postgres-hint-bit-write-amplification.js",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776420381,
+        "title": "Mitigating WebGPU Memory Aliasing in Compute Passes",
+        "slug": "webgpu-memory-aliasing-compute",
+        "language": "TypeScript",
+        "code": "DataRace",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/webgpu-memory-aliasing-compute.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776420382,
+        "title": "Observability for AI Coding: Codeburn TUI Dashboard",
+        "slug": "agentseal-codeburn-ai-observability",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-04-17",
+        "path": "data/posts/2026-04/agentseal-codeburn-ai-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1776410436,
         "title": "Fixing C++20 Coroutine Symmetric Transfer Deadlocks",
         "slug": "cpp20-coroutine-symmetric-transfer-deadlocks",
