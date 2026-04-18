@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1776495442,
+        "title": "Resolving Go Runtime Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "Starvation",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776495443,
+        "title": "Debugging Istio Envoy Proxy Connection Resets",
+        "slug": "istio-envoy-connection-resets-termination",
+        "language": "Kubernetes",
+        "code": "ConnectionReset",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/istio-envoy-connection-resets-termination.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776495444,
+        "title": "Mitigating WiredTiger Ticket Exhaustion in MongoDB",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "Node.js",
+        "code": "TicketExhaustion",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "AWS",
+            "Infra",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776495445,
+        "title": "Codeburn: Monitor Your AI Coding Token Costs",
+        "slug": "codeburn-ai-token-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/codeburn-ai-token-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776488477,
         "title": "Zig: Resolving Alignment Mismatches in Cross-Compiled FFI",
         "slug": "zig-ffi-alignment-cross-compile-fix",

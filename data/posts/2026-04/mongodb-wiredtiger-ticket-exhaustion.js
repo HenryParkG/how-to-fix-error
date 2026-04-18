@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing WiredTiger Ticket Exhaustion in MongoDB",
+    "title": "Mitigating WiredTiger Ticket Exhaustion in MongoDB",
     "slug": "mongodb-wiredtiger-ticket-exhaustion",
-    "language": "SQL",
+    "language": "Node.js",
     "code": "TicketExhaustion",
     "tags": [
-        "SQL",
+        "AWS",
         "Infra",
+        "Node.js",
         "Error Fix"
     ],
-    "analysis": "<p>WiredTiger uses a semaphore-based ticketing system to control concurrent read and write operations (default 128 each). In write-heavy clusters, if disk I/O becomes a bottleneck or lock contention occurs, operations take longer to complete. This holds tickets for extended periods, leading to 'ticket exhaustion' where new incoming requests are queued, causing massive latency and eventual node failure.</p>",
-    "root_cause": "Slow I/O or unoptimized queries causing operations to hold WiredTiger read/write tickets longer than the replenishment rate.",
-    "bad_code": "// Default configuration often fails under extreme burst loads\n// db.serverStatus().wiredTiger.concurrentTransactions\n{\n  \"write\" : { \"out\" : 128, \"available\" : 0 }\n}",
-    "solution_desc": "Identify and optimize slow queries using the Profiler. If hardware is the bottleneck, increase IOPS or move to faster storage. As a temporary buffer, tune 'wiredTigerConcurrentWriteTransactions', though this can increase CPU context switching.",
-    "good_code": "db.adminCommand({\n  setParameter: 1,\n  wiredTigerConcurrentWriteTransactions: 256\n});\n// Always accompany with index optimization:\ndb.collection.createIndex({ high_volume_key: 1 }, { background: true });",
-    "verification": "Run 'db.serverStatus().wiredTiger.concurrentTransactions' and ensure 'available' tickets stay consistently above zero during peak load.",
-    "date": "2026-04-10",
-    "id": 1775784536,
+    "analysis": "<p>WiredTiger uses a ticketing system to control concurrency, defaulting to 128 concurrent read and 128 concurrent write tickets. In high-concurrency workloads, especially those involving slow disk I/O or unindexed queries, these tickets are held for longer durations. Once all tickets are exhausted, new operations queue up, leading to a massive spike in latency and eventually making the database unresponsive even if CPU usage is low.</p>",
+    "root_cause": "Long-running write operations or lack of indexes cause operations to hold WiredTiger write tickets longer than the arrival rate of new requests.",
+    "bad_code": "// High concurrency write without indexes\nfor (let i = 0; i < 1000; i++) {\n  db.collection('logs').insertOne({ timestamp: Date.now(), msg: 'test' });\n}\n// If 'logs' is heavily fragmented or lacks IOPS, tickets exhaust.",
+    "solution_desc": "Optimize query performance via indexing to reduce ticket hold time, and implement application-level concurrency limiting or connection pooling to prevent overwhelming the engine.",
+    "good_code": "// 1. Ensure Index exists to speed up writes/updates\ndb.collection('logs').createIndex({ timestamp: 1 });\n\n// 2. Monitor tickets via serverStatus\nconst status = db.serverStatus().wiredTiger.concurrentTransactions;\nconsole.log(`Write tickets available: ${status.write.available}`);",
+    "verification": "Check MongoDB 'db.serverStatus().wiredTiger.concurrentTransactions' during peak load to ensure 'available' tickets remain above zero.",
+    "date": "2026-04-18",
+    "id": 1776495444,
     "type": "error"
 });
