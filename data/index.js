@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776505177,
+        "title": "Resolving eBPF Verifier Path Explosion in Bounded Loops",
+        "slug": "resolving-ebpf-verifier-path-explosion",
+        "language": "C",
+        "code": "VERIFIER_COMPLEXITY_LIMIT",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/resolving-ebpf-verifier-path-explosion.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776505178,
+        "title": "Fixing PyTorch NCCL Timeout Errors in Multi-Node Training",
+        "slug": "pytorch-nccl-timeout-distributed-training",
+        "language": "Python",
+        "code": "NCCL_COMM_TIMEOUT",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/pytorch-nccl-timeout-distributed-training.js",
+        "tags": [
+            "PyTorch",
+            "MLOps",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776505179,
+        "title": "Debugging Elixir Binary Leakage in Long-Lived Processes",
+        "slug": "elixir-binary-leakage-otp-processes",
+        "language": "Elixir",
+        "code": "REFC_BINARY_MEMORY_LEAK",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/elixir-binary-leakage-otp-processes.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776505180,
+        "title": "Observing AI Token Spend with AgentSeal Codeburn",
+        "slug": "codeburn-ai-cost-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/codeburn-ai-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1776495442,
         "title": "Resolving Go Runtime Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
