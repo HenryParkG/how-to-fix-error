@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776488477,
+        "title": "Zig: Resolving Alignment Mismatches in Cross-Compiled FFI",
+        "slug": "zig-ffi-alignment-cross-compile-fix",
+        "language": "Zig",
+        "code": "MemoryAlignmentError",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/zig-ffi-alignment-cross-compile-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776488478,
+        "title": "Fixing HNSW Graph Connectivity Decay in Vector DBs",
+        "slug": "hnsw-graph-connectivity-decay-fix",
+        "language": "Python",
+        "code": "GraphFragmentation",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/hnsw-graph-connectivity-decay-fix.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776488479,
+        "title": "Fixing Next.js Hydration Mismatches in Nested Suspense",
+        "slug": "nextjs-nested-suspense-hydration-fix",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/nextjs-nested-suspense-hydration-fix.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776488480,
+        "title": "AgentSeal/codeburn: Real-time Cost Dashboard for AI Agents",
+        "slug": "agentseal-codeburn-ai-cost-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/agentseal-codeburn-ai-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1776475512,
         "title": "Fixing Rust Lifetime Variance Mismatches in HRTBs",
         "slug": "rust-lifetime-variance-hrtb-fix",
