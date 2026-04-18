@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "AgentSeal/codeburn: AI Token Cost Observability TUI",
+    "title": "Tracking AI Token Usage with AgentSeal/codeburn",
     "slug": "agentseal-codeburn-ai-cost-observability",
-    "language": "TypeScript / Node.js",
+    "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript"
+        "TypeScript",
+        "Node.js"
     ],
-    "analysis": "<p>With the rise of autonomous AI agents like Claude Code, Cursor, and Aider, developers are seeing a surge in API costs. 'AgentSeal/codeburn' is trending because it provides an interactive Terminal User Interface (TUI) to track these costs in real-time. It acts as a wrapper or proxy that monitors outgoing requests to LLM providers.</p><p>It is popular because it solves the 'bill shock' problem for developers using expensive models (like Claude 3.5 Sonnet or GPT-4o) in loop-based coding tasks where a single bug can burn $50 in minutes.</p>",
-    "root_cause": "Real-time cost tracking, TUI dashboard for CLI-centric workflows, support for Claude/OpenAI/Gemini, and per-project budgeting.",
-    "bad_code": "npm install -g @agentseal/codeburn\ncodeburn --path ./my-project",
-    "solution_desc": "Use codeburn when running high-iteration AI agents to set hard limits on token spend and visualize which files or prompts are consuming the most budget.",
-    "good_code": "// .codeburnrc config example\n{\n  \"threshold\": 5.00,\n  \"provider\": \"anthropic\",\n  \"currency\": \"USD\",\n  \"watch\": [\"src/\", \"lib/\"]\n}",
-    "verification": "As AI agents move toward fully autonomous 'dev-in-a-box' solutions, tools like codeburn will likely integrate into CI/CD to prevent runaway costs during automated PR reviews.",
-    "date": "2026-04-17",
-    "id": 1776410439,
+    "analysis": "<p>As developers integrate AI agents like Claude Code, Cursor, and Codex deeper into their workflows, managing 'Token Burn' has become a critical financial and operational challenge. <code>AgentSeal/codeburn</code> is an interactive TUI dashboard that provides real-time cost observability. It allows developers to see exactly how much money is being spent on specific files, git branches, or AI prompts, preventing the dreaded 'infinite loop bill' from autonomous agents.</p>",
+    "root_cause": "Interactive TUI Dashboard; Real-time pricing calculation for Claude 3.5 and GPT-4o; Support for local and remote LLM providers; Cost-per-file and cost-per-commit breakdowns.",
+    "bad_code": "npm install -g @agentseal/codeburn\n# Then run within your project root:\ncodeburn init",
+    "solution_desc": "Best adopted by teams using 'Agentic' workflows where AI writes and executes code autonomously. Use it to set 'circuit breakers' or just to build awareness of which refactoring tasks are the most expensive in terms of context window usage.",
+    "good_code": "# Start the interactive dashboard\ncodeburn --watch\n\n# Generate a summary report for the current branch\ncodeburn report --since \"1 day ago\"",
+    "verification": "The project is quickly gaining traction in the 'AI-Engineering' space. Its future outlook includes deeper integration with CI/CD pipelines to block PRs that exceed a defined token budget.",
+    "date": "2026-04-18",
+    "id": 1776475515,
     "type": "trend"
 });

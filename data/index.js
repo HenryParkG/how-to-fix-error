@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776475512,
+        "title": "Fixing Rust Lifetime Variance Mismatches in HRTBs",
+        "slug": "rust-lifetime-variance-hrtb-fix",
+        "language": "Rust",
+        "code": "HRTB-Variance-Mismatch",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/rust-lifetime-variance-hrtb-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776475513,
+        "title": "Mitigating AWS Lambda Execution Context Poisoning",
+        "slug": "aws-lambda-context-poisoning-fix",
+        "language": "Node.js",
+        "code": "Lambda-State-Leak",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/aws-lambda-context-poisoning-fix.js",
+        "tags": [
+            "AWS",
+            "Node.js",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776475514,
+        "title": "Resolving Redis BGSAVE Latency Spikes caused by THP",
+        "slug": "redis-bgsave-latency-thp-fix",
+        "language": "Redis",
+        "code": "Redis-Latency-THP",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/redis-bgsave-latency-thp-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776475515,
+        "title": "Tracking AI Token Usage with AgentSeal/codeburn",
+        "slug": "agentseal-codeburn-ai-cost-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-18",
+        "path": "data/posts/2026-04/agentseal-codeburn-ai-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1776420379,
         "title": "Fixing Linux io_uring CQE Reordering in Multithreaded SQs",
         "slug": "fix-io-uring-cqe-reordering",
