@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776576104,
+        "title": "Resolving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "TransactionWraparoundError",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776576105,
+        "title": "Fixing Spark S3 Checkpoint Corruption",
+        "slug": "spark-s3-checkpoint-corruption-fix",
+        "language": "Java",
+        "code": "CheckpointReadException",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/spark-s3-checkpoint-corruption-fix.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776576106,
+        "title": "Mitigating Akka Actor Mailbox Overflow",
+        "slug": "akka-actor-mailbox-overflow-leak",
+        "language": "Java",
+        "code": "MailboxOverflowException",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/akka-actor-mailbox-overflow-leak.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776576107,
+        "title": "Observing AI Costs with Codeburn",
+        "slug": "codeburn-ai-token-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/codeburn-ai-token-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1776563354,
         "title": "Fixing C++20 Coroutine Frame Use-After-Free",
         "slug": "cpp20-coroutine-uaf-fix",

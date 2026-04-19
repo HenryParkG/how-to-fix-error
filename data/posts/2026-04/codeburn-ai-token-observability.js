@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Codeburn: Monitor Your AI Coding Token Costs",
+    "title": "Observing AI Costs with Codeburn",
     "slug": "codeburn-ai-token-observability",
     "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript"
+        "TypeScript",
+        "Node.js"
     ],
-    "analysis": "<p>With the rise of autonomous AI agents and IDEs like Claude Code, Cursor, and Codex, developers are facing a new kind of 'bill shock'. AgentSeal/codeburn is trending because it provides a Terminal User Interface (TUI) specifically designed to track and visualize token usage and monetary costs of AI coding assistants in real-time. It fills a critical gap in the developer workflow by offering local observability into how many cents every 'fix this bug' prompt is actually costing.</p>",
-    "root_cause": "Real-time cost tracking for Claude 3.5/3.7, Cursor usage history analysis, and an interactive TUI dashboard.",
-    "bad_code": "npm install -g @agentseal/codeburn",
-    "solution_desc": "Perfect for freelance developers and enterprise teams who need to audit AI spend or optimize prompt engineering by identifying 'token-heavy' operations.",
-    "good_code": "# Run the dashboard to see current session costs\ncodeburn dashboard --provider anthropic\n\n# Analyze historical logs from Cursor or Claude Code\ncodeburn analyze ./path/to/logs",
-    "verification": "As AI agents become more integrated into CI/CD, expect Codeburn to evolve into a mandatory cost-governance tool for engineering managers.",
-    "date": "2026-04-18",
-    "id": 1776495445,
+    "analysis": "<p>With the rise of AI-driven development tools like Claude Code and Cursor, developers are inadvertently spending significant amounts on API tokens. 'getagentseal/codeburn' has trended because it provides a Terminal User Interface (TUI) dashboard that tracks token consumption in real-time. It bridges the gap between 'coding fast' and 'coding affordably' by offering granular visibility into which files or prompts are 'burning' the most credits.</p>",
+    "root_cause": "Real-time cost tracking, TUI-based interactive dashboard, support for major LLM providers (Anthropic, OpenAI), and zero-config integration with CLI coding agents.",
+    "bad_code": "npm install -g codeburn\ncodeburn analyze ./project",
+    "solution_desc": "Ideal for freelance developers managing tight API budgets and enterprise teams looking to audit AI usage across their engineering org without manual spreadsheet tracking.",
+    "good_code": "# Start the dashboard to monitor active sessions\ncodeburn monitor --provider claude --cost-limit 5.00\n\n# Get a summary of the last 24 hours\ncodeburn report --last 24h",
+    "verification": "The project is expected to expand into 'Budget Guardrails' where it can automatically throttle AI agents when a specific spend threshold is met.",
+    "date": "2026-04-19",
+    "id": 1776576107,
     "type": "trend"
 });
