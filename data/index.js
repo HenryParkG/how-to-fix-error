@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1776591566,
+        "title": "Solving Zig Comptime Memory Exhaustion in Runtimes",
+        "slug": "zig-comptime-memory-exhaustion",
+        "language": "Zig",
+        "code": "ComptimeAllocError",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/zig-comptime-memory-exhaustion.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776591567,
+        "title": "Fixing HNSW Recall Degradation in Vector Databases",
+        "slug": "hnsw-recall-degradation-fix",
+        "language": "Python",
+        "code": "RecallDrift",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/hnsw-recall-degradation-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776591568,
+        "title": "Resolving gRPC Flow Control Deadlocks in Go Streams",
+        "slug": "grpc-flow-control-deadlocks",
+        "language": "Go",
+        "code": "StreamDeadlock",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/grpc-flow-control-deadlocks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776591569,
+        "title": "Codeburn: Tracking Your AI Token Costs in Real-Time",
+        "slug": "codeburn-ai-token-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/codeburn-ai-token-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776582459,
         "title": "Resolving Rust Pin Projection Violations in Custom Futures",
         "slug": "rust-pin-projection-violations",
