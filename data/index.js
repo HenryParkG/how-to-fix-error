@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776582459,
+        "title": "Resolving Rust Pin Projection Violations in Custom Futures",
+        "slug": "rust-pin-projection-violations",
+        "language": "Rust",
+        "code": "BorrowError",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/rust-pin-projection-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776582460,
+        "title": "Fixing CUDA Memory Fragmentation in LLM Inference",
+        "slug": "cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776582461,
+        "title": "Mitigating Redis Fork-Induced Latency Spikes",
+        "slug": "redis-fork-latency-spikes",
+        "language": "SQL",
+        "code": "LatencyError",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/redis-fork-latency-spikes.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776582462,
+        "title": "Codeburn: Real-time AI Token Cost Observability TUI",
+        "slug": "codeburn-ai-cost-observability",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/codeburn-ai-cost-observability.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776576104,
         "title": "Resolving PostgreSQL Transaction ID Wraparound",
         "slug": "postgresql-transaction-id-wraparound-fix",
