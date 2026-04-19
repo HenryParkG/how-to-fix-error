@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776563354,
+        "title": "Fixing C++20 Coroutine Frame Use-After-Free",
+        "slug": "cpp20-coroutine-uaf-fix",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/cpp20-coroutine-uaf-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776563355,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storm-fix",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/kafka-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776563356,
+        "title": "Fixing Haskell Space Leaks in Lazy Evaluation",
+        "slug": "haskell-space-leak-fix",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/haskell-space-leak-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776563357,
+        "title": "Codeburn: Real-time AI Token Cost Observability",
+        "slug": "codeburn-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-19",
+        "path": "data/posts/2026-04/codeburn-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1776505177,
         "title": "Resolving eBPF Verifier Path Explosion in Bounded Loops",
         "slug": "resolving-ebpf-verifier-path-explosion",

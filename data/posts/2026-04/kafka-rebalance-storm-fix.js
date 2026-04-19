@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating Kafka Consumer Rebalance Storms",
+    "title": "Mitigating Kafka Consumer Group Rebalance Storms",
     "slug": "kafka-rebalance-storm-fix",
     "language": "Kafka",
     "code": "RebalanceStorm",
     "tags": [
         "Java",
-        "SQL",
+        "Backend",
         "Infra",
         "Error Fix"
     ],
-    "analysis": "<p>Rebalance storms occur when consumers in a group repeatedly trigger membership changes, causing the 'Stop-the-World' effect where no data is processed. This is frequently caused by a mismatch between <code>max.poll.interval.ms</code> and the actual time taken to process a batch of messages. If processing takes longer than the interval, the consumer stops sending heartbeats, the coordinator marks it dead, and a rebalance is triggered, which often cascades as other consumers take on the extra load and also timeout.</p>",
-    "root_cause": "Message processing logic exceeding max.poll.interval.ms, causing the group coordinator to assume consumer failure.",
-    "bad_code": "properties.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\n// In consumer loop\nConsumerRecords records = consumer.poll(1000);\nfor (Record r : records) {\n    expensive_computation(r); // Takes 10 mins occasionally\n}",
-    "solution_desc": "Increase <code>max.poll.interval.ms</code> to exceed the worst-case processing time, or preferably, decouple the message fetching from processing using an internal thread pool while maintaining heartbeats on the main thread.",
-    "good_code": "properties.put(\"max.poll.interval.ms\", \"600000\");\nproperties.put(\"session.timeout.ms\", \"45000\");\n// Ensure processing is wrapped in try-catch to prevent thread death\nexecutor.submit(() -> process(record));",
-    "verification": "Monitor the 'join-rate' and 'rebalance-latency' metrics in JMX or Confluent Control Center; they should stabilize after the change.",
-    "date": "2026-04-14",
-    "id": 1776151138,
+    "analysis": "<p>In high-throughput Kafka clusters, a 'Rebalance Storm' occurs when consumers are repeatedly kicked out of the group, causing constant partition reassignment and zero progress. This usually happens when the time taken to process a batch of records exceeds the <code>max.poll.interval.ms</code> configuration.</p><p>When this limit is exceeded, the consumer stops sending heartbeats, the coordinator marks it as dead, and a rebalance is triggered. As other consumers take over the load, they also time out, leading to a cascading failure across the group.</p>",
+    "root_cause": "Processing latency per batch exceeds the max.poll.interval.ms threshold, or the heartbeat thread is starved by heavy CPU-bound processing.",
+    "bad_code": "properties.put(\"max.poll.records\", \"1000\");\nproperties.put(\"max.poll.interval.ms\", \"300000\"); // 5 mins\n// If 1000 records take > 5 mins to process, rebalance occurs.",
+    "solution_desc": "Decouple processing from the polling loop using an internal thread pool or significantly reduce 'max.poll.records'. Alternatively, increase 'max.poll.interval.ms' to accommodate the worst-case processing time of a single batch.",
+    "good_code": "properties.put(\"max.poll.records\", \"100\"); // Smaller batch\nproperties.put(\"max.poll.interval.ms\", \"600000\"); // 10 mins\nproperties.put(\"session.timeout.ms\", \"45000\");",
+    "verification": "Monitor the 'kafka.consumer:type=consumer-coordinator-metrics,name=rebalance-total' metric. It should stabilize to a near-zero rate after initial startup.",
+    "date": "2026-04-19",
+    "id": 1776563355,
     "type": "error"
 });
