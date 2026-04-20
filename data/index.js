@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1776649857,
+        "title": "Resolving OCaml 5.0 Multicore Memory Contention",
+        "slug": "ocaml-5-multicore-gc-contention",
+        "language": "OCaml",
+        "code": "RuntimeError (GC Contention)",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/ocaml-5-multicore-gc-contention.js",
+        "tags": [
+            "OCaml",
+            "Multicore",
+            "Rust",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776649858,
+        "title": "Fixing Kubernetes API Server Throttling in Controllers",
+        "slug": "kubernetes-api-server-throttling-fix",
+        "language": "Go",
+        "code": "429 Too Many Requests",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/kubernetes-api-server-throttling-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776649859,
+        "title": "Mitigating Triton Kernel Memory Aliasing",
+        "slug": "triton-kernel-memory-aliasing-fix",
+        "language": "Python",
+        "code": "CUDA Error (Illegal Address)",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/triton-kernel-memory-aliasing-fix.js",
+        "tags": [
+            "Python",
+            "AI",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776649860,
+        "title": "Exploring Lingbot-Map: The Future of 3D Scene Reconstruction",
+        "slug": "lingbot-map-3d-foundation-model",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/lingbot-map-3d-foundation-model.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1776591566,
         "title": "Solving Zig Comptime Memory Exhaustion in Runtimes",
         "slug": "zig-comptime-memory-exhaustion",
