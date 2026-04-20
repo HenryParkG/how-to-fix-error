@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776680874,
+        "title": "Resolving Elixir GenServer Process Inbox Overflow",
+        "slug": "elixir-genserver-inbox-overflow",
+        "language": "Elixir",
+        "code": "MailboxOverflowError",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/elixir-genserver-inbox-overflow.js",
+        "tags": [
+            "Backend",
+            "Elixir",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776680875,
+        "title": "Fixing PyTorch DDP Gradient Bucket Deadlocks",
+        "slug": "pytorch-ddp-gradient-deadlocks",
+        "language": "Python",
+        "code": "RuntimeError: Expected to have finished reduction",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/pytorch-ddp-gradient-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776680876,
+        "title": "Preventing PostgreSQL Transaction ID (XID) Wraparound",
+        "slug": "postgres-xid-wraparound-prevention",
+        "language": "SQL",
+        "code": "ERROR: database is not accepting commands",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-prevention.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776680877,
+        "title": "Unlocking Autonomous Browsing with browser-use",
+        "slug": "browser-use-llm-harness-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/browser-use-llm-harness-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776671538,
         "title": "Resolving C++20 Coroutine Promise Memory Leaks",
         "slug": "cpp20-coroutine-promise-memory-leak",
