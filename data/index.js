@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776663172,
+        "title": "Resolving eBPF Verifier Complexity in XDP Programs",
+        "slug": "ebpf-verifier-complexity-xdp-fix",
+        "language": "Go",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-xdp-fix.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776663173,
+        "title": "Fixing WebGPU Buffer Alignment Violations",
+        "slug": "webgpu-buffer-alignment-fix",
+        "language": "TypeScript",
+        "code": "ValidationError",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/webgpu-buffer-alignment-fix.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776663174,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-fix",
+        "language": "Go",
+        "code": "CacheEvictionContention",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-eviction-fix.js",
+        "tags": [
+            "SQL",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776663175,
+        "title": "Analyze Trending: Robbyant/lingbot-map 3D Model",
+        "slug": "lingbot-map-3d-foundation-model",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/lingbot-map-3d-foundation-model.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776649857,
         "title": "Resolving OCaml 5.0 Multicore Memory Contention",
         "slug": "ocaml-5-multicore-gc-contention",
