@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776671538,
+        "title": "Resolving C++20 Coroutine Promise Memory Leaks",
+        "slug": "cpp20-coroutine-promise-memory-leak",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/cpp20-coroutine-promise-memory-leak.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776671539,
+        "title": "Mitigating Kafka Partition Skew & Rebalance Storms",
+        "slug": "kafka-partition-skew-rebalance-storms",
+        "language": "Kafka/Java",
+        "code": "System Instability",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/kafka-partition-skew-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776671540,
+        "title": "Fixing JSI Memory Leaks in React Native Turbo Modules",
+        "slug": "jsi-native-memory-leak-turbo-modules",
+        "language": "TypeScript/C++",
+        "code": "Heap Exhaustion",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/jsi-native-memory-leak-turbo-modules.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776671541,
+        "title": "Analyze Robbyant/lingbot-map: 3D Foundation Model",
+        "slug": "lingbot-map-3d-foundation-model",
+        "language": "Python/PyTorch",
+        "code": "Trend",
+        "date": "2026-04-20",
+        "path": "data/posts/2026-04/lingbot-map-3d-foundation-model.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776663172,
         "title": "Resolving eBPF Verifier Complexity in XDP Programs",
         "slug": "ebpf-verifier-complexity-xdp-fix",
