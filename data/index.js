@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1776748846,
+        "title": "Fixing Istio Envoy Memory Exhaustion in gRPC Streams",
+        "slug": "istio-envoy-grpc-memory-exhaustion",
+        "language": "Kubernetes",
+        "code": "OOMKilled",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/istio-envoy-grpc-memory-exhaustion.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776748847,
+        "title": "Mitigating Haskell Space Leaks in Lazy Stream Processing",
+        "slug": "haskell-space-leak-lazy-streams",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/haskell-space-leak-lazy-streams.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776748848,
+        "title": "Fixing HNSW Index Corruption in Vector Databases",
+        "slug": "hnsw-index-corruption-concurrent-upserts",
+        "language": "Rust",
+        "code": "DataCorruption",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/hnsw-index-corruption-concurrent-upserts.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776748849,
+        "title": "OpenMythos: Reconstructing Claude's Architecture",
+        "slug": "openmythos-claude-mythos-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1776735963,
         "title": "Resolving Rust Async Pinning Violations",
         "slug": "rust-async-pinning-violations",
