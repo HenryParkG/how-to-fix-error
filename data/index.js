@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776735963,
+        "title": "Resolving Rust Async Pinning Violations",
+        "slug": "rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "Pinning Violation",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Memory Safety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776735964,
+        "title": "Fixing Spark Shuffle Spill and OOM in Skewed Joins",
+        "slug": "spark-shuffle-spill-oom-skew",
+        "language": "SQL",
+        "code": "OOM / Spill",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/spark-shuffle-spill-oom-skew.js",
+        "tags": [
+            "SQL",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776735965,
+        "title": "Mitigating Redis Fork-Induced Latency Spikes",
+        "slug": "redis-fork-latency-rdb-snapshot",
+        "language": "Node.js",
+        "code": "Latency Spike",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/redis-fork-latency-rdb-snapshot.js",
+        "tags": [
+            "Infra",
+            "AWS",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776735966,
+        "title": "OpenMythos: Reconstructing the Claude Architecture",
+        "slug": "openmythos-claude-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/openmythos-claude-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776680874,
         "title": "Resolving Elixir GenServer Process Inbox Overflow",
         "slug": "elixir-genserver-inbox-overflow",
