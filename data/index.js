@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776766353,
+        "title": "Fixing eBPF Verifier Complexity in XDP Programs",
+        "slug": "resolving-ebpf-verifier-complexity-xdp",
+        "language": "C / Go",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/resolving-ebpf-verifier-complexity-xdp.js",
+        "tags": [
+            "Go",
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776766354,
+        "title": "Fixing Triton Kernel Pointer Aliasing in LLM Layers",
+        "slug": "mitigating-triton-pointer-aliasing-errors",
+        "language": "Python / Triton",
+        "code": "PointerAliasing",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/mitigating-triton-pointer-aliasing-errors.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776766355,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-fix",
+        "language": "C++ / MongoDB",
+        "code": "CacheStall",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-eviction-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776766356,
+        "title": "Analyzing OpenMythos: A Claude-Inspired Architecture",
+        "slug": "openmythos-claude-architecture-analysis",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776756172,
         "title": "Resolving Zig Comptime Alignment in Cross-Compiled Binaries",
         "slug": "zig-comptime-alignment-violations",
