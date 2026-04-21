@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776756172,
+        "title": "Resolving Zig Comptime Alignment in Cross-Compiled Binaries",
+        "slug": "zig-comptime-alignment-violations",
+        "language": "Zig",
+        "code": "AlignmentError",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/zig-comptime-alignment-violations.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776756173,
+        "title": "Mitigating KV Cache Fragmentation in LLM Inference",
+        "slug": "llm-kv-cache-fragmentation-mitigation",
+        "language": "Python",
+        "code": "MemoryFragmentation",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/llm-kv-cache-fragmentation-mitigation.js",
+        "tags": [
+            "Python",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776756174,
+        "title": "Fixing Elasticsearch Segment Merging Bottlenecks",
+        "slug": "elasticsearch-segment-merging-fix",
+        "language": "Java",
+        "code": "ThreadStarvation",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/elasticsearch-segment-merging-fix.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776756175,
+        "title": "Exploring OpenMythos: Reconstructing Claude's Architecture",
+        "slug": "openmythos-claude-mythos-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-21",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776748846,
         "title": "Fixing Istio Envoy Memory Exhaustion in gRPC Streams",
         "slug": "istio-envoy-grpc-memory-exhaustion",
