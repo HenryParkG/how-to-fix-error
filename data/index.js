@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776852911,
+        "title": "Fix Rust Pinning Violations in Custom Polls",
+        "slug": "rust-pinning-violations-async-poll",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/rust-pinning-violations-async-poll.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776852912,
+        "title": "Fix Spark Executor OOMs from Wide Shuffle Skew",
+        "slug": "spark-executor-oom-data-skew",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/spark-executor-oom-data-skew.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776852913,
+        "title": "Resolve Redis Fork Latency Spikes in RDB",
+        "slug": "redis-fork-latency-rdb-snapshots",
+        "language": "Go",
+        "code": "LatencySpike",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/redis-fork-latency-rdb-snapshots.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776852914,
+        "title": "OpenMythos: Reconstructing the Claude Architecture",
+        "slug": "openmythos-claude-architecture-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776842491,
         "title": "Fixing C++20 Coroutine Frame Leaks in High-Perf Servers",
         "slug": "cpp20-coroutine-frame-leaks",
