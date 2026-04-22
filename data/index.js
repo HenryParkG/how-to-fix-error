@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776842491,
+        "title": "Fixing C++20 Coroutine Frame Leaks in High-Perf Servers",
+        "slug": "cpp20-coroutine-frame-leaks",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/cpp20-coroutine-frame-leaks.js",
+        "tags": [
+            "C++",
+            "Performance",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776842492,
+        "title": "Resolving gRPC HoL Blocking in HTTP/2 Sidecar Proxies",
+        "slug": "grpc-hol-blocking-sidecar",
+        "language": "Go",
+        "code": "LatencySpike",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/grpc-hol-blocking-sidecar.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776842493,
+        "title": "Mitigating Elixir GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-congestion.js",
+        "tags": [
+            "Node.js",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776842494,
+        "title": "OpenMythos: Reconstructing Claude's Internal Architecture",
+        "slug": "openmythos-claude-architecture-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776835083,
         "title": "Fixing Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
