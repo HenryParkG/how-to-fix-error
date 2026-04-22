@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1776821429,
+        "title": "Debugging Linux Kernel RCU Stalls in High-Concurrency",
+        "slug": "debugging-linux-kernel-rcu-stalls",
+        "language": "Rust",
+        "code": "RCU_STALL_TIMEOUT",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/debugging-linux-kernel-rcu-stalls.js",
+        "tags": [
+            "Rust",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776821430,
+        "title": "Resolving WebGPU Memory Synchronization Races",
+        "slug": "webgpu-memory-synchronization-races",
+        "language": "TypeScript",
+        "code": "DATA_RACE_CONDITION",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/webgpu-memory-synchronization-races.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776821431,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storms-mitigation",
+        "language": "Java",
+        "code": "REBALANCE_STORM",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/kafka-rebalance-storms-mitigation.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776821432,
+        "title": "OpenMythos: Reconstructing the Claude Mythos Architecture",
+        "slug": "openmythos-claude-architecture-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776766353,
         "title": "Fixing eBPF Verifier Complexity in XDP Programs",
         "slug": "resolving-ebpf-verifier-complexity-xdp",
