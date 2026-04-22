@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776835083,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776835084,
+        "title": "Resolving Flutter Skia Shader Compilation Jitter",
+        "slug": "flutter-skia-shader-jitters-fix",
+        "language": "Dart",
+        "code": "UIJank",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/flutter-skia-shader-jitters-fix.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "CSS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776835085,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/postgres-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776835086,
+        "title": "OpenMythos: Reconstructing Claude's Architecture",
+        "slug": "openmythos-claude-reconstruction-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-22",
+        "path": "data/posts/2026-04/openmythos-claude-reconstruction-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776821429,
         "title": "Debugging Linux Kernel RCU Stalls in High-Concurrency",
         "slug": "debugging-linux-kernel-rcu-stalls",
