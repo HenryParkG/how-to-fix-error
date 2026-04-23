@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776929018,
+        "title": "Stopping Kafka Rebalance Storms in Kubernetes",
+        "slug": "kafka-rebalance-storms-k8s",
+        "language": "Java",
+        "code": "ConsumerRebalanceException",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/kafka-rebalance-storms-k8s.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776929019,
+        "title": "Fixing WebGPU Pipeline Compilation Stalls",
+        "slug": "webgpu-pipeline-compilation-stalls",
+        "language": "TypeScript",
+        "code": "GPUPipelineStall",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/webgpu-pipeline-compilation-stalls.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776929020,
+        "title": "Reducing DPDK Page Fault Latency via Hugepages",
+        "slug": "dpdk-page-fault-latency-fix",
+        "language": "Rust",
+        "code": "KernelPageFault",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/dpdk-page-fault-latency-fix.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776929021,
+        "title": "OpenMythos: Reconstructing Claude's Architecture",
+        "slug": "open-mythos-claude-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/open-mythos-claude-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776921752,
         "title": "Fixing DDP Deadlocks in Heterogeneous GPU Clusters",
         "slug": "pytorch-ddp-deadlock-heterogeneous-gpu",

@@ -5,17 +5,17 @@ window.onPostDataLoaded({
     "code": "GPUPipelineStall",
     "tags": [
         "TypeScript",
-        "WebGPU",
         "Next.js",
+        "WebGPU",
         "Error Fix"
     ],
-    "analysis": "<p>Dynamic scene rendering in WebGPU often requires on-the-fly shader generation. If pipelines are created synchronously using 'createRenderPipeline', the main browser thread blocks until the GPU driver compiles the WGSL code into machine instructions. This causes visible frame drops (stuttering) and degrades user experience in interactive 3D applications.</p>",
-    "root_cause": "Invoking the synchronous 'createRenderPipeline' method which forces an immediate stall of the execution context to wait for the GPU driver's compiler backend.",
-    "bad_code": "const pipeline = device.createRenderPipeline({\n  layout: 'auto',\n  vertex: { module: vsModule, entryPoint: 'main' },\n  fragment: { module: fsModule, entryPoint: 'main', targets: [{ format }] }\n});",
-    "solution_desc": "Switch to the asynchronous 'createRenderPipelineAsync' method. This allows the browser to compile the pipeline in a background thread, returning a Promise that resolves once the pipeline is ready for use without blocking the main render loop.",
-    "good_code": "const pipeline = await device.createRenderPipelineAsync({\n  layout: 'auto',\n  vertex: { module: vsModule, entryPoint: 'main' },\n  fragment: { module: fsModule, entryPoint: 'main', targets: [{ format }] }\n});",
-    "verification": "Use Chrome DevTools Performance tab to check for 'GPU Compute' tasks and ensure no 'Long Task' warnings appear during scene transitions.",
-    "date": "2026-04-16",
-    "id": 1776316996,
+    "analysis": "<p>WebGPU applications often suffer from micro-stutters or long initial freezes when shaders are complex. This occurs because the GPU driver must compile WGSL into machine code. When using synchronous pipeline creation, the main JavaScript thread is blocked until the GPU driver returns the compiled pipeline, effectively halting the UI and all other logic in dynamic shader environments where new pipelines are generated on-the-fly.</p>",
+    "root_cause": "Invoking 'device.createRenderPipeline()' synchronously, which forces the CPU to wait for the GPU compiler's backend process.",
+    "bad_code": "const pipeline = device.createRenderPipeline({\n  layout: 'auto',\n  vertex: { module: vsModule, entryPoint: 'main' },\n  fragment: { module: fsModule, entryPoint: 'main', targets: [{ format }] }\n});\n// Logic below is blocked until compilation finishes",
+    "solution_desc": "Utilize 'createRenderPipelineAsync' to move compilation to a background thread. This allows the application to remain responsive while the pipeline prepares in the background.",
+    "good_code": "// Use the async variant to avoid main thread blocking\nconst pipelinePromise = device.createRenderPipelineAsync({\n  layout: 'auto',\n  vertex: { module: vsModule, entryPoint: 'main' },\n  fragment: { module: fsModule, entryPoint: 'main', targets: [{ format }] }\n});\n\n// Handle other logic while waiting\nconst pipeline = await pipelinePromise;",
+    "verification": "Use Chrome DevTools Performance tab to check for 'Long Tasks' (>50ms) during shader loading. The task duration should decrease to near zero for the compilation step.",
+    "date": "2026-04-23",
+    "id": 1776929019,
     "type": "error"
 });
