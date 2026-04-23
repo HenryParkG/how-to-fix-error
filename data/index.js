@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776908983,
+        "title": "Fixing Use-After-Free in Custom Zig Allocators",
+        "slug": "zig-use-after-free-manual-allocators",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/zig-use-after-free-manual-allocators.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776908984,
+        "title": "Mitigating HNSW Index Connectivity Decay",
+        "slug": "hnsw-index-connectivity-decay-fix",
+        "language": "Python",
+        "code": "Connectivity Decay",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/hnsw-index-connectivity-decay-fix.js",
+        "tags": [
+            "SQL",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776908985,
+        "title": "Optimizing Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776908986,
+        "title": "Analyzing OpenMythos: The Claude Architecture Rebuilt",
+        "slug": "openmythos-claude-mythos-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776852911,
         "title": "Fix Rust Pinning Violations in Custom Polls",
         "slug": "rust-pinning-violations-async-poll",
