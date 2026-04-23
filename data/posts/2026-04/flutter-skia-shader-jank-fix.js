@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Eliminating Flutter Skia Shader Compilation Jank",
+    "title": "Fixing Flutter Skia Shader Compilation Jank on iOS",
     "slug": "flutter-skia-shader-jank-fix",
     "language": "TypeScript",
-    "code": "ShaderCompilationJank",
+    "code": "Shader Compilation Jank",
     "tags": [
-        "Flutter",
-        "Mobile",
         "TypeScript",
+        "Frontend",
+        "React",
         "Error Fix"
     ],
-    "analysis": "<p>In Flutter apps using the Skia backend, shaders are compiled on-demand the first time a specific animation or transition occurs. This compilation happens on the UI thread, causing frames to drop (jank). This is especially prevalent on iOS where the Skia-to-Metal translation layer adds significant overhead during the initial run.</p>",
-    "root_cause": "The engine lacks pre-warmed SkSL (Skia Shading Language) instructions for complex graphics, forcing synchronous runtime compilation.",
-    "bad_code": "// No specific code causes this, it is an engine behavior\n// but failing to provide a warmup file triggers it:\nvoid main() {\n  runApp(const MyHighPerformanceApp());\n}",
-    "solution_desc": "Generate a shader bundle by running the app in a specialized capture mode and then embedding the resulting `.sksl` file in the application assets for pre-compilation at startup.",
-    "good_code": "// 1. Generate: flutter run --profile --cache-sksl\n// 2. Press 'M' to save SkSL\n// 3. Update pubspec.yaml:\n/*\nflutter:\n  assets:\n    - shaders/io.flutter.skp.sksl\n*/\n\n// 4. Build with bundle:\n// flutter build ios --bundle-sksl-path shaders/io.flutter.skp.sksl",
-    "verification": "Run the app using the 'Timeline' tool in DevTools and look for 'GrGLProgramBuilder::preLink' calls appearing before the transition starts.",
-    "date": "2026-04-11",
-    "id": 1775870567,
+    "analysis": "<p>Flutter apps using the Skia backend on iOS often experience 'jank' (dropped frames) during the first run of an animation. This occurs because the Skia graphics engine compiles required OpenGL/Metal shaders just-in-time (JIT). On iOS, this compilation is slow enough to exceed the 16ms frame budget (60fps), resulting in a visible stutter that disappears on subsequent runs once the shader is cached.</p>",
+    "root_cause": "Dynamic shader generation at runtime during the first animation frame rather than pre-compiling or using the new Impeller rendering engine.",
+    "bad_code": "import 'package:flutter/material.dart';\n// Standard animation code without shader warm-up\ncontroller.forward();",
+    "solution_desc": "The modern solution is to transition to the Impeller rendering engine, which is the default in newer Flutter versions. If stuck on Skia, implement SkSL (Skia Shading Language) warm-up by capturing shader traces during development and bundling them with the application.",
+    "good_code": "/* 1. Capture: flutter run --profile --cache-sksl --purge-old-cache */\n/* 2. Bundle: flutter build ipa --bundle-sksl-path flutter_01.sksl.json */\n// Or enable Impeller in Info.plist:\n// <key>FLTEnableImpeller</key>\n// <true/>",
+    "verification": "Use the Flutter DevTools Performance overlay to monitor 'Shader Compilation' time. In Impeller, these spikes should be non-existent.",
+    "date": "2026-04-23",
+    "id": 1776939346,
     "type": "error"
 });

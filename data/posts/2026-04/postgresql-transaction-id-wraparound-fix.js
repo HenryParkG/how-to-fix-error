@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Resolving PostgreSQL Transaction ID Wraparound",
+    "title": "Eliminating PostgreSQL XID Wraparound in High-Write Clusters",
     "slug": "postgresql-transaction-id-wraparound-fix",
     "language": "SQL",
-    "code": "TransactionWraparoundError",
+    "code": "XID Wraparound",
     "tags": [
         "SQL",
         "Infra",
         "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) system, limiting the number of active transactions to approximately 2.1 billion. In high-write clusters, this limit can be reached rapidly. When the 'age' of the oldest transaction reaches a critical threshold, the database enters a read-only state to prevent data loss. This occurs because XID comparisons rely on modular arithmetic; failing to 'freeze' old transactions makes them appear to be in the future, causing data invisibility.</p>",
-    "root_cause": "Aggressive write volumes exceeding the autovacuum freeze rate, or long-running transactions/orphaned prepared transactions preventing the truncation of the clog.",
-    "bad_code": "ALTER SYSTEM SET autovacuum_freeze_max_age = 200000000;\n-- Default value often too low for high-throughput DBs,\n-- causing premature emergency vacuums during peak load.",
-    "solution_desc": "Proactively tune autovacuum parameters to trigger freezing more frequently and increase maintenance workers. Identify and terminate long-running transactions that block the freeze horizon.",
-    "good_code": "ALTER SYSTEM SET autovacuum_freeze_max_age = 1000000000;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 1000;\nALTER SYSTEM SET maintenance_work_mem = '2GB';\n\n-- Identify problematic tables\nSELECT relname, age(relfrozenxid) \nFROM pg_class \nWHERE relkind = 'r' \nORDER BY age(relfrozenxid) DESC;",
-    "verification": "Monitor 'pg_stat_activity' for long transactions and track 'age(relfrozenxid)' via Prometheus/Grafana to ensure it stays below 800 million.",
-    "date": "2026-04-19",
-    "id": 1776576104,
+    "analysis": "<p>PostgreSQL uses a 32-bit transaction ID (XID) system, allowing for approximately 4 billion transactions. To manage visibility, half of these are in the 'past' and half in the 'future'. In high-velocity write environments, if the 'oldest' transaction is not 'frozen' via VACUUM before the 2-billion threshold is reached, the database enters a fail-safe read-only mode to prevent data corruption. This leads to immediate service outages in high-concurrency systems.</p>",
+    "root_cause": "The autovacuum worker fails to keep up with the transaction burn rate because the default 'autovacuum_vacuum_scale_factor' (0.2) is too high for large tables, delaying the freezing process until the XID age reaches dangerous levels.",
+    "bad_code": "ALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.2;\nALTER SYSTEM SET autovacuum_freeze_max_age = 200000000;\n-- Default settings are insufficient for tables with 100M+ writes/day",
+    "solution_desc": "Decrease the scale factor to trigger vacuuming more frequently on large tables and increase the autovacuum worker count and maintenance work memory to ensure the process completes faster. Manually tune 'vacuum_freeze_min_age' to lower thresholds.",
+    "good_code": "ALTER TABLE large_transaction_table SET (\n  autovacuum_vacuum_scale_factor = 0.01,\n  autovacuum_freeze_min_age = 50000000,\n  autovacuum_vacuum_cost_limit = 1000\n);\n-- Monitor with: SELECT relname, age(relfrozenxid) FROM pg_class WHERE relkind = 'r';",
+    "verification": "Execute 'SELECT datname, age(datfrozenxid) FROM pg_database;' and ensure the age is consistently trending downwards after the configuration change.",
+    "date": "2026-04-23",
+    "id": 1776939345,
     "type": "error"
 });

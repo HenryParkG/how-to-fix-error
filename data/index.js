@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1776939345,
+        "title": "Eliminating PostgreSQL XID Wraparound in High-Write Clusters",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "SQL",
+        "code": "XID Wraparound",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776939346,
+        "title": "Fixing Flutter Skia Shader Compilation Jank on iOS",
+        "slug": "flutter-skia-shader-jank-fix",
+        "language": "TypeScript",
+        "code": "Shader Compilation Jank",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/flutter-skia-shader-jank-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776939347,
+        "title": "Resolving CFS Bandwidth Throttling in Go Services",
+        "slug": "go-cfs-bandwidth-throttling-fix",
+        "language": "Go",
+        "code": "CPU Throttling",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/go-cfs-bandwidth-throttling-fix.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776939348,
+        "title": "Analyze OpenMythos: The Claude Mythos Architecture",
+        "slug": "openmythos-claude-architecture-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1776929018,
         "title": "Stopping Kafka Rebalance Storms in Kubernetes",
         "slug": "kafka-rebalance-storms-k8s",
