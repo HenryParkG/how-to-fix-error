@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1776921752,
+        "title": "Fixing DDP Deadlocks in Heterogeneous GPU Clusters",
+        "slug": "pytorch-ddp-deadlock-heterogeneous-gpu",
+        "language": "Python",
+        "code": "RuntimeError (NCCL Timeout)",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/pytorch-ddp-deadlock-heterogeneous-gpu.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776921753,
+        "title": "Mitigating eBPF Verifier Rejection in XDP Pipelines",
+        "slug": "ebpf-verifier-rejection-xdp-fix",
+        "language": "Rust",
+        "code": "VerifierError (Program too complex)",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/ebpf-verifier-rejection-xdp-fix.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776921754,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-cloud-partition",
+        "language": "Java",
+        "code": "SplitBrainResolver (Cluster Partition)",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/akka-cluster-split-brain-cloud-partition.js",
+        "tags": [
+            "Java",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776921755,
+        "title": "Analyzing OpenMythos: Reconstructing the Claude Architecture",
+        "slug": "openmythos-claude-mythos-architecture-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-23",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-architecture-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776908983,
         "title": "Fixing Use-After-Free in Custom Zig Allocators",
         "slug": "zig-use-after-free-manual-allocators",
