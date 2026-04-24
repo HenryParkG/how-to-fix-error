@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1776995319,
+        "title": "Fixing C++20 Coroutine Lifetime Use-After-Free",
+        "slug": "cpp20-coroutine-suspension-use-after-free",
+        "language": "C++",
+        "code": "MemorySafety",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/cpp20-coroutine-suspension-use-after-free.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776995320,
+        "title": "Resolving GenServer Mailbox Overflow under High-Throughput",
+        "slug": "genserver-mailbox-selective-receive-overflow",
+        "language": "Elixir",
+        "code": "ResourceExhaustion",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/genserver-mailbox-selective-receive-overflow.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776995321,
+        "title": "Mitigating WiredTiger WAL Contention in High-Write Loads",
+        "slug": "wiredtiger-wal-contention-mitigation",
+        "language": "C++",
+        "code": "ConcurrencyLock",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/wiredtiger-wal-contention-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1776995322,
+        "title": "Analyzing OpenMythos: Claude's Architecture Reconstructed",
+        "slug": "openmythos-claude-mythos-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776939345,
         "title": "Eliminating PostgreSQL XID Wraparound in High-Write Clusters",
         "slug": "postgresql-transaction-id-wraparound-fix",
