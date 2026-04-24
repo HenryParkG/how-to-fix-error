@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777008509,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "ResourceExhaustion",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777008510,
+        "title": "Fixing RN JSI Memory Leaks in High-Freq Callbacks",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777008511,
+        "title": "Resolving Cgroup v2 Memory Accounting Discrepancies",
+        "slug": "cgroup-v2-memory-accounting-fix",
+        "language": "C",
+        "code": "SystemError",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/cgroup-v2-memory-accounting-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777008512,
+        "title": "Exploring OpenMythos: Reconstructing Claude's Architecture",
+        "slug": "openmythos-claude-architecture-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/openmythos-claude-architecture-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1776995319,
         "title": "Fixing C++20 Coroutine Lifetime Use-After-Free",
         "slug": "cpp20-coroutine-suspension-use-after-free",
