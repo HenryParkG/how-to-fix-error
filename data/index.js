@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777025876,
+        "title": "Fixing eBPF Verifier State-Space Explosion",
+        "slug": "ebpf-verifier-state-space-explosion",
+        "language": "Rust",
+        "code": "VerifierLimitReached",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/ebpf-verifier-state-space-explosion.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777025877,
+        "title": "Fixing Vector DB HNSW Indexing Stalls",
+        "slug": "vector-db-hnsw-indexing-stalls",
+        "language": "Go",
+        "code": "HNSWLockContention",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/vector-db-hnsw-indexing-stalls.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777025878,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-multi-region",
+        "language": "Java",
+        "code": "SplitBrainResolverError",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/akka-cluster-split-brain-multi-region.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777025879,
+        "title": "Analyze OpenMythos: A Claude Reconstruction",
+        "slug": "open-mythos-claude-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/open-mythos-claude-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1777016974,
         "title": "Rust Pin Projection Safety in Async Streams",
         "slug": "rust-pin-projection-async-streams",
