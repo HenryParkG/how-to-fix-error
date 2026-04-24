@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Analyzing OpenMythos: Claude's Architecture Reconstructed",
+    "title": "Analyzing OpenMythos: The Claude Architecture",
     "slug": "openmythos-claude-mythos-reconstruction",
     "language": "Python",
     "code": "Trend",
@@ -8,13 +8,13 @@ window.onPostDataLoaded({
         "GitHub",
         "Python"
     ],
-    "analysis": "<p>OpenMythos is trending because it bridges the gap between the closed-source 'Mythos' architecture (the underlying framework of Anthropic's Claude) and the open-source community. It provides a first-principles reconstruction of Constitutional AI and the specific RLAIF (Reinforcement Learning from AI Feedback) loops that give Claude its distinct personality and reasoning capabilities. Developers are flocking to it to understand how to replicate Claude's high-steerability and 'warm' conversational tone in local LLMs.</p>",
-    "root_cause": "Constitutional AI Integration, Recursive Self-Improvement Loops, and Steerability Primitives.",
-    "bad_code": "git clone https://github.com/kyegomez/OpenMythos.git\ncd OpenMythos\npip install -r requirements.txt",
-    "solution_desc": "Best used for building 'Moral Agents' or applications requiring strict adherence to a set of principles (a 'Constitution') without human-in-the-loop fine-tuning.",
-    "good_code": "from openmythos import MythosModel\n\nmodel = MythosModel(\"mythos-base\")\nmodel.apply_constitution(\"path/to/ethical_guidelines.txt\")\nresponse = model.generate(\"Explain the ethics of AI.\")",
-    "verification": "OpenMythos represents a shift toward 'Architectural Transparency' in the age of proprietary frontier models, likely influencing the next generation of open-source alignment techniques.",
+    "analysis": "<p>OpenMythos is gaining traction as a high-fidelity theoretical reconstruction of Anthropic's Claude architecture. It bridges the gap between proprietary research papers and open-source implementation, focusing specifically on Constitutional AI loops and the unique attention-scaling behaviors attributed to the 'Mythos' family of models.</p>",
+    "root_cause": "Key features include a modular Constitutional AI trainer, implementation of specific RLAIF (Reinforcement Learning from AI Feedback) pipelines, and a structured approach to model alignment.",
+    "bad_code": "git clone https://github.com/kyegomez/OpenMythos.git\npip install -r requirements.txt",
+    "solution_desc": "Ideal for researchers building safe, aligned models or enterprises requiring 'Constitutional' constraints on their LLM outputs without relying on closed-source APIs.",
+    "good_code": "from openmythos import MythosTransformer, ConstitutionalTrainer\n\nmodel = MythosTransformer(dims=1024, heads=16)\ntrainer = ConstitutionalTrainer(model=model, constitution='Be helpful and harmless')\ntrainer.align()",
+    "verification": "The project is expected to expand into specialized 'Safety-first' fine-tuning datasets and provide more benchmarks against the original Claude research metrics.",
     "date": "2026-04-24",
-    "id": 1776995322,
+    "id": 1777016977,
     "type": "trend"
 });

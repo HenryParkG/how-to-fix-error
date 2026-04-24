@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777016974,
+        "title": "Rust Pin Projection Safety in Async Streams",
+        "slug": "rust-pin-projection-async-streams",
+        "language": "Rust",
+        "code": "PinSafetyError",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/rust-pin-projection-async-streams.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777016975,
+        "title": "Fixing PyTorch CUDA Fragmentation in Inference",
+        "slug": "pytorch-cuda-memory-fragmentation",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/pytorch-cuda-memory-fragmentation.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777016976,
+        "title": "Mitigating Redis COW Memory Exhaustion",
+        "slug": "redis-rdb-cow-memory-exhaustion",
+        "language": "Redis",
+        "code": "OOM_Killed",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/redis-rdb-cow-memory-exhaustion.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777016977,
+        "title": "Analyzing OpenMythos: The Claude Architecture",
+        "slug": "openmythos-claude-mythos-reconstruction",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-04-24",
+        "path": "data/posts/2026-04/openmythos-claude-mythos-reconstruction.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1777008509,
         "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
         "slug": "grpc-http2-flow-control-deadlock",

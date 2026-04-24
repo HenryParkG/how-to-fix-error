@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating PyTorch CUDA Memory Fragmentation",
+    "title": "Fixing PyTorch CUDA Fragmentation in Inference",
     "slug": "pytorch-cuda-memory-fragmentation",
     "language": "Python",
-    "code": "RuntimeError",
+    "code": "CUDA_OUT_OF_MEMORY",
     "tags": [
         "Python",
         "PyTorch",
-        "AI",
+        "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>Distributed LLM fine-tuning often encounters 'RuntimeError: CUDA out of memory' even when the total reported free memory exceeds the requested allocation. This is caused by memory fragmentation within the CUDA caching allocator. When varying sequence lengths are processed, the allocator creates holes of free memory that are too small to house new large tensors, eventually failing to find a contiguous block despite having sufficient aggregate capacity.</p>",
-    "root_cause": "The caching allocator's tendency to hold onto blocks of specific sizes, combined with the dynamic memory requirements of attention masks and gradients in LLMs.",
-    "bad_code": "for batch in dataloader:\n    output = model(batch) # Implicitly triggers fragmentation over time\n    loss = criterion(output, targets)\n    loss.backward()\n    optimizer.step()",
-    "solution_desc": "Configure the CUDA allocator using the 'expandable_segments' setting and implement periodic manual cache clearing. Alternatively, use a memory-efficient backend like FlashAttention to reduce the size of intermediate activations.",
-    "good_code": "import os\nimport torch\n\n# Set allocator configuration before any CUDA calls\nos.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'\n\n# Inside training loop\ntorch.cuda.empty_cache() # Periodically clear if fragmentation persists",
-    "verification": "Monitor memory using torch.cuda.memory_summary(). Check 'active_blocks' vs 'inactive_split_blocks' to see fragmentation efficiency.",
-    "date": "2026-04-02",
-    "id": 1775105844,
+    "analysis": "<p>Multi-tenant inference servers often suffer from CUDA memory fragmentation. PyTorch's caching allocator might hold onto small blocks of memory, preventing the allocation of a single large contiguous block for a new request, even if the total free memory is theoretically sufficient.</p>",
+    "root_cause": "The default caching allocator strategy results in 'external fragmentation' where free memory is split into non-contiguous segments across the GPU heap.",
+    "bad_code": "import torch\nmodel = load_model()\n# Standard inference loop in a web server\nfor batch in request_stream:\n    output = model(batch.cuda()) # Crashes with OOM despite free memory",
+    "solution_desc": "Configure the PyTorch allocator using the `PYTORCH_CUDA_ALLOC_CONF` environment variable to set a `max_split_size_mb`. This forces the allocator to prevent large blocks from being split into tiny pieces that cause fragmentation.",
+    "good_code": "import os\nos.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:512'\n\nimport torch\n# Clear cache periodically in multi-tenant environments\nif torch.cuda.memory_reserved() > threshold:\n    torch.cuda.empty_cache()",
+    "verification": "Monitor 'nvidia-smi' and 'torch.cuda.memory_summary()' to observe the reduction in 'inactive_split' memory blocks.",
+    "date": "2026-04-24",
+    "id": 1777016975,
     "type": "error"
 });
