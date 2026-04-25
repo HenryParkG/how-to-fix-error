@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1777080492,
+        "title": "Debugging Haskell Space Leaks in Thunk Chains",
+        "slug": "haskell-space-leak-lazy-evaluation",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/haskell-space-leak-lazy-evaluation.js",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777080493,
+        "title": "Fixing Linux RCU Stall Deadlocks in PREEMPT_RT",
+        "slug": "linux-kernel-rcu-stall-preempt-rt",
+        "language": "C",
+        "code": "Deadlock",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/linux-kernel-rcu-stall-preempt-rt.js",
+        "tags": [
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777080494,
+        "title": "Resolving WebGPU Pipeline Stalls in Multi-Queue Workflows",
+        "slug": "webgpu-pipeline-stalls-resource-contention",
+        "language": "TypeScript",
+        "code": "PipelineStall",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/webgpu-pipeline-stalls-resource-contention.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777080495,
+        "title": "Huashu Design: HTML-native Design Skill for Claude Code",
+        "slug": "huashu-design-claude-code-html-skill",
+        "language": "HTML/CSS",
+        "code": "Trend",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/huashu-design-claude-code-html-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1777025876,
         "title": "Fixing eBPF Verifier State-Space Explosion",
         "slug": "ebpf-verifier-state-space-explosion",
