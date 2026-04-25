@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777093578,
+        "title": "Fixing Zig Comptime Memory Exhaustion in Meta-Programming",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "ComptimeMemoryLimit",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777093579,
+        "title": "Fixing Envoy Sidecar Connection Pooling Starvation",
+        "slug": "istio-envoy-mtls-starvation-fix",
+        "language": "Envoy / Istio",
+        "code": "PoolStarvation",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/istio-envoy-mtls-starvation-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777093580,
+        "title": "Mitigating Kafka Sticky Assignor Drift in Scaling",
+        "slug": "kafka-sticky-assignor-drift-mitigation",
+        "language": "Kafka",
+        "code": "AssignorDrift",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/kafka-sticky-assignor-drift-mitigation.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777093581,
+        "title": "Huashu Design: HTML-Native Skills for Claude Code",
+        "slug": "huashu-design-claude-code-trend",
+        "language": "TypeScript / HTML",
+        "code": "Trend",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/huashu-design-claude-code-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777080492,
         "title": "Debugging Haskell Space Leaks in Thunk Chains",
         "slug": "haskell-space-leak-lazy-evaluation",
