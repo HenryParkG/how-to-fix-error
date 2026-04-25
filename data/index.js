@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777110199,
+        "title": "Fixing Elixir GenServer Mailbox Bloat in Phoenix Channels",
+        "slug": "fix-elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/fix-elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777110200,
+        "title": "Resolving Spark Shuffle Partition Skew OOM in ETL",
+        "slug": "spark-shuffle-partition-skew-oom",
+        "language": "Python/Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/spark-shuffle-partition-skew-oom.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777110201,
+        "title": "Mitigating PostgreSQL Transaction ID (XID) Wraparound",
+        "slug": "postgres-xid-wraparound-fix",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/postgres-xid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777110202,
+        "title": "Huashu Design: HTML-Native Design Skill for Claude Code",
+        "slug": "huashu-design-claude-skill-trend",
+        "language": "TypeScript/HTML",
+        "code": "Trend",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/huashu-design-claude-skill-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1777100662,
         "title": "Fixing C++20 Coroutine Lifecycle Leaks in Runtimes",
         "slug": "cpp20-coroutine-lifecycle-leaks-fix",
