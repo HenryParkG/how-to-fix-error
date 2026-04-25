@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Huashu Design: HTML-Native Skills for Claude Code",
+    "title": "Huashu Design: HTML-Native Design Skill for Claude Code",
     "slug": "huashu-design-claude-code-trend",
-    "language": "TypeScript / HTML",
+    "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript",
-        "CSS"
+        "Frontend"
     ],
-    "analysis": "<p>Huashu Design (alchaincyf/huashu-design) is trending because it solves the 'fidelity gap' in AI-generated UI. While AI models like Claude are great at logic, their raw CSS/HTML output often lacks design sophistication. Huashu provides a set of HTML-native 'skills' and a design philosophy that allows Claude Code to generate high-fidelity prototypes, animations, and even presentation slides directly.</p><p>It is popular because it treats design as a primitive for AI agents, offering 20 specific design philosophies and a framework for agent-agnostic UI generation. This allows developers to use Claude not just as a coder, but as a sophisticated UI/UX designer capable of outputting production-quality visual assets.</p>",
-    "root_cause": "Key Features: 20+ High-fidelity Design Philosophies, MP4 Animation Export Support, HTML-Native Prototypes, and Agent-agnostic Logic for AI-driven workflows.",
-    "bad_code": "git clone https://github.com/alchaincyf/huashu-design.git\ncd huashu-design\nnpm install",
-    "solution_desc": "Best used by developers and designers utilizing Claude Code or other AI agents to rapidly iterate on high-fidelity web interfaces. It is ideal for internal tools, landing page prototypes, and interactive documentation where visual quality is paramount.",
-    "good_code": "<!-- Example of a Huashu-enhanced design instruction for Claude -->\n<huashu-design-pattern>\n  <theme value=\"modern-sleek\" />\n  <animation type=\"smooth-fade\" />\n  <component type=\"hero-section\" data-fidelity=\"high\" />\n</huashu-design-pattern>",
-    "verification": "Expect to see this project evolve into a standard library for 'Design-as-Code' in the burgeoning AI Agent ecosystem, likely expanding with more Framework-specific exports (React/Vue).",
+    "analysis": "<p>Huashu Design ('huashu-design') is a trending repository designed to empower AI agents, specifically Claude Code, with high-fidelity UI/UX design capabilities. Unlike traditional code generation, it focuses on HTML-native design 'skills'\u2014allowing the agent to think like a designer. It leverages a '20 Design Philosophy' framework and a '5-Dimensional Review' system to ensure that generated prototypes aren't just functional, but aesthetically professional and UX-optimized. It's trending because it turns a CLI-based agent into a full-stack product designer capable of exporting high-fidelity prototypes and MP4 animations.</p>",
+    "root_cause": "Key Features: 1. Agent-agnostic architecture (works best with Claude). 2. Integrated 20-point design system. 3. High-fidelity HTML/CSS prototyping. 4. Built-in review loops for visual consistency. 5. Support for MP4/Slide exports.",
+    "bad_code": "git clone https://github.com/alchaincyf/huashu-design.git\ncd huashu-design && npm install\n# To use with Claude: Add the 'skill' path to your claude-config",
+    "solution_desc": "Best used by product managers and frontend engineers to rapidly iterate on UI concepts via natural language. Adopt it when you need more than just 'boilerplate' code\u2014use it for high-fidelity mockups, design-to-code workflows, and interactive documentation directly within AI sessions.",
+    "good_code": "// Example: Triggering a high-fidelity dashboard design\n// In Claude Code terminal:\n// \"Use huashu-design to create a dark-mode analytics dashboard \n//  following the 'Minimalism' philosophy with interactive charts.\"",
+    "verification": "The project is rapidly gaining stars on GitHub, indicating a shift toward 'AI-Native Design Systems' where the agent understands visual hierarchy as a first-class citizen.",
     "date": "2026-04-25",
-    "id": 1777093581,
+    "id": 1777100665,
     "type": "trend"
 });

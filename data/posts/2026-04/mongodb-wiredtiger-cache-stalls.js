@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Mitigating WiredTiger Cache Eviction Stalls",
+    "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
     "slug": "mongodb-wiredtiger-cache-stalls",
-    "language": "AWS",
-    "code": "WiredTigerCacheEvictionStall",
+    "language": "Go",
+    "code": "LatencySpike",
     "tags": [
-        "AWS",
-        "Infra",
         "SQL",
+        "Infra",
         "Error Fix"
     ],
-    "analysis": "<p>MongoDB write-heavy workloads often experience sudden spikes in latency when the WiredTiger cache fills up with dirty pages. When the 'dirty' percentage exceeds the eviction threshold, WiredTiger threads start performing application-side eviction, essentially blocking client operations until the cache is cleared. This results in a 'sawtooth' performance pattern where throughput drops to near zero for several seconds.</p>",
-    "root_cause": "Default eviction settings (5% dirty trigger) are too conservative for high-throughput SSDs (like AWS EBS gp3/io2), causing the cache to fill faster than the background threads can flush it.",
-    "bad_code": "storage:\n  dbPath: /var/lib/mongodb\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16\n# Default internal settings: \n# eviction_dirty_target: 5%, eviction_dirty_trigger: 20%",
-    "solution_desc": "Tune the WiredTiger engine configuration to trigger background eviction earlier and increase the number of worker threads to match the available I/O bandwidth.",
-    "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction=(threads_min=4,threads_max=8),eviction_dirty_target=3,eviction_dirty_trigger=10\"\n})\n# Or in mongod.conf:\n# wiredTiger.engineConfig.configString: \"eviction=(threads_min=4,threads_max=8)\"",
-    "verification": "Check `db.serverStatus().wiredTiger.cache['tracked dirty bytes in the cache']` and ensure it stays below the trigger threshold.",
-    "date": "2026-04-03",
-    "id": 1775209533,
+    "analysis": "<p>WiredTiger uses a ticket-based system for concurrency and a background eviction process to keep the cache clean. Under heavy write pressure, if the 'dirty' data in the cache exceeds the <code>eviction_dirty_trigger</code> (default 20%), WiredTiger forces application threads to perform eviction (page-to-disk writes). This results in massive latency spikes (stalls) for CRUD operations as client threads are hijacked to do maintenance work.</p>",
+    "root_cause": "The rate of data modification exceeds the disk I/O throughput or the background eviction thread capacity, causing the cache to reach the 'hard' dirty limit.",
+    "bad_code": "// Default configuration on low-IOPS storage\nstorage:\n  wiredTiger:\n    engineConfig:\n      cacheSizeGB: 16 # Often too small for the working set",
+    "solution_desc": "Aggressively tune the WiredTiger eviction parameters. Lower the <code>eviction_dirty_target</code> to start background eviction earlier and increase <code>eviction_threads_max</code>. If using SSDs, increase the target to prevent the application from being throttled, and ensure the <code>cacheSizeGB</code> is set to 50-60% of available RAM.",
+    "good_code": "db.adminCommand({\n  \"setParameter\": 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction_dirty_target=5,eviction_dirty_trigger=15,eviction_threads_min=4,eviction_threads_max=8\"\n})",
+    "verification": "Monitor `mongostat` and check `wiredTiger.cache.tracked dirty bytes in the cache`. If it consistently hits the trigger % and 'app threads page-in/eviction' counts rise, further tuning is needed.",
+    "date": "2026-04-25",
+    "id": 1777100664,
     "type": "error"
 });

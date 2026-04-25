@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1777100662,
+        "title": "Fixing C++20 Coroutine Lifecycle Leaks in Runtimes",
+        "slug": "cpp20-coroutine-lifecycle-leaks-fix",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifecycle-leaks-fix.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777100663,
+        "title": "Resolving Airflow Worker Starvation in Dynamic DAGs",
+        "slug": "airflow-worker-starvation-dynamic-dag",
+        "language": "Python",
+        "code": "ResourceExhaustion",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/airflow-worker-starvation-dynamic-dag.js",
+        "tags": [
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777100664,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "Go",
+        "code": "LatencySpike",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777100665,
+        "title": "Huashu Design: HTML-Native Design Skill for Claude Code",
+        "slug": "huashu-design-claude-code-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-25",
+        "path": "data/posts/2026-04/huashu-design-claude-code-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1777093578,
         "title": "Fixing Zig Comptime Memory Exhaustion in Meta-Programming",
         "slug": "zig-comptime-memory-exhaustion-fix",
