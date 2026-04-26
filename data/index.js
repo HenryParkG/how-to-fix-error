@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777168255,
+        "title": "Fixing PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlock-multi-node",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/pytorch-ddp-deadlock-multi-node.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777168256,
+        "title": "Debugging RN JSI Memory Leaks in High-Freq Modules",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "MemoryLeak",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777168257,
+        "title": "Fixing ES Segment Merging Pressure in High-Cardinality Indices",
+        "slug": "elasticsearch-segment-merging-pressure",
+        "language": "Go",
+        "code": "IOPerformance",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/elasticsearch-segment-merging-pressure.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777168258,
+        "title": "Kami: Effortless Elegant Paper for Web Content",
+        "slug": "trend-kami-paper-styles",
+        "language": "CSS",
+        "code": "Trend",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/trend-kami-paper-styles.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777110199,
         "title": "Fixing Elixir GenServer Mailbox Bloat in Phoenix Channels",
         "slug": "fix-elixir-genserver-mailbox-bloat",

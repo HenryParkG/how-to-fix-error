@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing RN JSI Memory Leaks in High-Freq Callbacks",
+    "title": "Debugging RN JSI Memory Leaks in High-Freq Modules",
     "slug": "react-native-jsi-memory-leaks",
-    "language": "C++",
+    "language": "TypeScript",
     "code": "MemoryLeak",
     "tags": [
         "React",
-        "TypeScript",
         "Frontend",
+        "TypeScript",
         "Error Fix"
     ],
-    "analysis": "<p>When using the React Native JSI (JavaScript Interface) to bridge high-frequency data (like sensor streams or frame buffers), memory leaks occur if C++-allocated JSI objects are not scoped correctly. JavaScript values (jsi::Value, jsi::Object) created in native code are managed by the Hermes or V8 garbage collector, but native references can prevent collection if the JSI Scope is not explicitly managed during rapid iterations.</p>",
-    "root_cause": "Creating new JSI objects inside a tight native loop without wrapping them in a jsi::Scope, causing the JavaScript heap to grow indefinitely until a full GC cycle, which may never trigger fast enough.",
-    "bad_code": "void onSensorData(jsi::Runtime& rt, double value) {\n  // Leaks memory if called 60+ times per second\n  jsi::Object data(rt);\n  data.setProperty(rt, \"value\", jsi::Value(value));\n  callback.call(rt, data);\n}",
-    "solution_desc": "Implement a `jsi::Scope` within the callback function. A Scope tells the engine that any JSI values created within its lifetime can be reclaimed as soon as the scope is exited, provided there are no other JS references.",
-    "good_code": "void onSensorData(jsi::Runtime& rt, double value) {\n  jsi::Scope scope(rt);\n  jsi::Object data(rt);\n  data.setProperty(rt, \"value\", jsi::Value(value));\n  callback.asObject(rt).asFunction(rt).call(rt, data);\n}",
-    "verification": "Use the memory profiler in Flipper or Xcode's 'Leaks' instrument to observe the 'jsi::Pointer' count stay constant during high-frequency events.",
-    "date": "2026-04-24",
-    "id": 1777008510,
+    "analysis": "<p>JavaScript Interface (JSI) allows direct C++ to JS communication, bypassing the bridge. However, memory leaks occur when C++ holds long-lived references to JS objects (jsi::Object) or vice-versa without proper lifecycle management. In high-frequency modules like camera frames or sensors, these leaks cause rapid OOM (Out of Memory) crashes.</p>",
+    "root_cause": "Creating jsi::Persistent handles in the C++ layer and failing to release them when the component unmounts or when the JS garbage collector expects the object to be reachable only through JS.",
+    "bad_code": "class MyNativeModule : public jsi::HostObject {\n  jsi::Value callback_;\n  void setCallback(jsi::Runtime& rt, jsi::Value& cb) {\n    // Storing a value directly without Persistent or manual cleanup\n    callback_ = jsi::Value(rt, cb);\n  }\n};",
+    "solution_desc": "Use jsi::Persistent to manage JS values in C++ and explicitly reset them. Implement a cleanup method that is called during the React Native component's componentWillUnmount to nullify native references.",
+    "good_code": "class MyNativeModule : public jsi::HostObject {\n  std::unique_ptr<jsi::Persistent<jsi::Object>> jsCallback_;\n\n  void setCallback(jsi::Runtime& rt, const jsi::Object& cb) {\n    jsCallback_ = std::make_unique<jsi::Persistent<jsi::Object>>(rt, cb);\n  }\n\n  void cleanup() {\n    jsCallback_.reset();\n  }\n};",
+    "verification": "Use Xcode Memory Graph or Android Studio Profiler to observe the 'jsi::HostObject' count. Ensure the heap size stabilizes after repeated interactions with the module.",
+    "date": "2026-04-26",
+    "id": 1777168256,
     "type": "error"
 });
