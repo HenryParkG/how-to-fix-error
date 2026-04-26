@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1777187942,
+        "title": "Rust: Fixing FFI Pinning & Async Cancellation Safety",
+        "slug": "rust-ffi-pinning-async-cancellation-safety",
+        "language": "Rust",
+        "code": "Soundness Violation",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/rust-ffi-pinning-async-cancellation-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "FFI",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777187943,
+        "title": "Fixing HNSW Recall Loss in High-Throughput Upserts",
+        "slug": "hnsw-index-recall-degradation-fix",
+        "language": "Python",
+        "code": "Recall Degradation",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/hnsw-index-recall-degradation-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "VectorDB",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777187944,
+        "title": "Fixing K8s EBS Silent Corruption via CSI Race Fix",
+        "slug": "k8s-ebs-csi-mount-race-corruption",
+        "language": "Go",
+        "code": "Data Corruption",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/k8s-ebs-csi-mount-race-corruption.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "AWS",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777187945,
+        "title": "Kami: The Minimalist 'Good Content' Publishing Framework",
+        "slug": "kami-github-trend-content-publishing",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/kami-github-trend-content-publishing.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Vue"
+        ]
+    },
+    {
         "id": 1777181535,
         "title": "Solving eBPF Verifier Complexity Limits in Packet Parsers",
         "slug": "ebpf-verifier-complexity-limits-packet-parsers",
