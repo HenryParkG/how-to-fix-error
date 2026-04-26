@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777181535,
+        "title": "Solving eBPF Verifier Complexity Limits in Packet Parsers",
+        "slug": "ebpf-verifier-complexity-limits-packet-parsers",
+        "language": "Rust",
+        "code": "VerifierLimitError",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-limits-packet-parsers.js",
+        "tags": [
+            "eBPF",
+            "Networking",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777181536,
+        "title": "Fixing AWS Lambda VPC ENI Exhaustion in Serverless Spikes",
+        "slug": "aws-lambda-vpc-eni-exhaustion-fix",
+        "language": "Go",
+        "code": "EC2ThrottlingException",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/aws-lambda-vpc-eni-exhaustion-fix.js",
+        "tags": [
+            "Serverless",
+            "Networking",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777181537,
+        "title": "Resolving OCaml Multicore Memory Contention in Parallel GC",
+        "slug": "ocaml-multicore-memory-contention-gc",
+        "language": "Go",
+        "code": "RuntimePerformanceDegradation",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/ocaml-multicore-memory-contention-gc.js",
+        "tags": [
+            "OCaml",
+            "Performance",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777181538,
+        "title": "Analyze Trending Repository: tw93/Kami",
+        "slug": "github-trend-tw93-kami-paper-layouts",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/github-trend-tw93-kami-paper-layouts.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777168255,
         "title": "Fixing PyTorch DDP Deadlocks in Multi-Node Training",
         "slug": "pytorch-ddp-deadlock-multi-node",
