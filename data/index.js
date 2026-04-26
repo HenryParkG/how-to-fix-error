@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777196709,
+        "title": "Resolving Haskell Space Leaks in Lazy Stream Evaluation",
+        "slug": "haskell-lazy-stream-space-leaks",
+        "language": "Haskell",
+        "code": "MemoryLeak (SpaceLeak)",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/haskell-lazy-stream-space-leaks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Haskell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777196710,
+        "title": "Debugging WebGPU Buffer Synchronization and Memory Races",
+        "slug": "webgpu-buffer-sync-memory-races",
+        "language": "TypeScript",
+        "code": "RaceCondition",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/webgpu-buffer-sync-memory-races.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777196711,
+        "title": "Fixing Redis Replication Buffer Overflows",
+        "slug": "redis-replication-buffer-overflows",
+        "language": "Redis",
+        "code": "ReplicaDisconnect",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/redis-replication-buffer-overflows.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777196712,
+        "title": "Unlocking Aesthetic UI with Kami: A Modern UI Toolkit",
+        "slug": "analyze-kami-ui-trending-repo",
+        "language": "JavaScript/CSS",
+        "code": "Trend",
+        "date": "2026-04-26",
+        "path": "data/posts/2026-04/analyze-kami-ui-trending-repo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777187942,
         "title": "Rust: Fixing FFI Pinning & Async Cancellation Safety",
         "slug": "rust-ffi-pinning-async-cancellation-safety",

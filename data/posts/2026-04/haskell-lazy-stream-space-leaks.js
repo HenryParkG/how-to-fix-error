@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Haskell Space Leaks in Lazy Stream Processing",
+    "title": "Resolving Haskell Space Leaks in Lazy Stream Evaluation",
     "slug": "haskell-lazy-stream-space-leaks",
     "language": "Haskell",
-    "code": "MemoryLeak",
+    "code": "MemoryLeak (SpaceLeak)",
     "tags": [
         "Go",
         "Backend",
-        "Functional",
+        "Haskell",
         "Error Fix"
     ],
-    "analysis": "<p>Haskell's non-strict evaluation is powerful but prone to 'space leaks'. In high-throughput stream processing, a space leak occurs when the program creates a massive chain of unevaluated computations (thunks) instead of computing values. This consumes heap space until the system triggers an Out Of Memory (OOM) error.</p><p>Commonly, this happens during reductions where an accumulator isn't forced to evaluate at each step. Even though the logic is mathematically sound, the execution model defers the actual calculation, holding a pointer to every element in the stream.</p>",
-    "root_cause": "Lazy evaluation of numeric accumulators in recursive functions or folds (like using <code>foldl</code> instead of <code>foldl'</code>), which prevents the Garbage Collector from reclaiming memory of processed stream elements.",
-    "bad_code": "processStream :: [Int] -> Int\nprocessStream xs = foldl (\\acc x -> acc + x) 0 xs\n-- foldl is lazy in its accumulator, building a massive (+ (+ (+...))) thunk",
-    "solution_desc": "Switch to strict evaluation patterns using <code>foldl'</code> from <code>Data.List</code> or <code>Data.Foldable</code>. Use BangPatterns (<code>!</code>) to force evaluation of data structures at specific points in your stream pipeline.",
-    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessStream :: [Int] -> Int\nprocessStream xs = foldl' (\\acc x -> acc + x) 0 xs\n\n-- Or using a recursive approach with BangPatterns\nsumStrict :: [Int] -> Int -> Int\nsumStrict [] !acc = acc\nsumStrict (x:xs) !acc = sumStrict xs (acc + x)",
-    "verification": "Profile the application using `+RTS -hc` to generate a heap profile. A successful fix will show a flat 'sawtooth' memory usage pattern rather than a linear climb.",
-    "date": "2026-04-10",
-    "id": 1775805482,
+    "analysis": "<p>In Haskell, lazy evaluation is a powerful feature that allows for infinite data structures, but it can lead to 'space leaks' where memory is consumed by unindexed thunks (unevaluated expressions). When processing streams, if the accumulator in a recursive function or fold is not forced to evaluate, Haskell builds a massive chain of operations in memory instead of the actual result.</p>",
+    "root_cause": "The use of lazy 'foldl' or recursive functions that build up thunks in the heap, causing memory usage to grow linearly with stream size until the final result is demanded.",
+    "bad_code": "sumList :: [Int] -> Int\nsumList = foldl (+) 0 -- This builds a thunk: (((0 + 1) + 2) + ...)",
+    "solution_desc": "Switch to the strict version 'foldl'' from Data.List or use BangPatterns to force evaluation of the accumulator at each step, preventing the growth of the thunk chain.",
+    "good_code": "import Data.List (foldl')\n\nsumListStrict :: [Int] -> Int\nsumListStrict = foldl' (+) 0 -- foldl' forces evaluation of the result at each step",
+    "verification": "Compile with GHC profiling (-prof -fprof-auto) and run with +RTS -hc to generate a heap profile. Ensure the heap graph remains constant (O(1) space) instead of showing a 'mountain' shape.",
+    "date": "2026-04-26",
+    "id": 1777196709,
     "type": "error"
 });
