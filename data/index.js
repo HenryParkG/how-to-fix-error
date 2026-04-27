@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777277260,
+        "title": "Resolving NCCL Collective Communication Deadlocks",
+        "slug": "pytorch-nccl-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/pytorch-nccl-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777277261,
+        "title": "Fixing Skia Shader Jitter in Flutter Impeller Migrations",
+        "slug": "flutter-skia-jitter-impeller-fix",
+        "language": "Dart",
+        "code": "UI_JANK",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/flutter-skia-jitter-impeller-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Mobile",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777277262,
+        "title": "Debugging Envoy Proxy Memory Leaks in Istio EDS",
+        "slug": "istio-envoy-eds-memory-leak",
+        "language": "Go",
+        "code": "OOMKilled",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/istio-envoy-eds-memory-leak.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777277263,
+        "title": "Trend: Guizang-PPT Claude Skill for Magazine Decks",
+        "slug": "guizang-ppt-skill-claude-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777268762,
         "title": "Fixing Elixir GenServer Selective Receive Bottlenecks",
         "slug": "elixir-genserver-selective-receive-fix",
