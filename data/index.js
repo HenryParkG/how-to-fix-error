@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1777287228,
+        "title": "eBPF: Overcoming Verifier Instruction Limits in XDP",
+        "slug": "ebpf-xdp-verifier-instruction-limit",
+        "language": "C",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/ebpf-xdp-verifier-instruction-limit.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "C",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777287229,
+        "title": "Spark: Fixing Executor OOMs in Large-Scale Shuffles",
+        "slug": "spark-shuffle-metadata-oom-fix",
+        "language": "Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/spark-shuffle-metadata-oom-fix.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777287230,
+        "title": "gRPC: Resolving HTTP/2 Stream Starvation",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "StreamStarvation",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777287231,
+        "title": "Trend: Claude Skill for Pro-Level Magazine Decks",
+        "slug": "guizang-ppt-skill-claude-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777277260,
         "title": "Resolving NCCL Collective Communication Deadlocks",
         "slug": "pytorch-nccl-deadlock-fix",

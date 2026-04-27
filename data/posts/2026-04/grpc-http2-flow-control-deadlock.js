@@ -1,21 +1,22 @@
 window.onPostDataLoaded({
-    "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+    "title": "gRPC: Resolving HTTP/2 Stream Starvation",
     "slug": "grpc-http2-flow-control-deadlock",
     "language": "Go",
-    "code": "ResourceExhaustion",
+    "code": "StreamStarvation",
     "tags": [
         "Go",
-        "gRPC",
+        "Kubernetes",
         "Backend",
+        "Node.js",
         "Error Fix"
     ],
-    "analysis": "<p>In bi-directional gRPC streams, deadlocks often occur when the HTTP/2 flow control window is exhausted on both ends. This typically happens when the sender fills the stream's buffer and the receiver's transport-level window, while the receiver is also blocked trying to send data to the sender. Because HTTP/2 multiplexes streams over a single TCP connection, a stall in flow control for one stream can eventually saturate the connection-level window, halting all communication.</p>",
-    "root_cause": "The client and server are both performing synchronous writes to a stream with a fixed window size without concurrently draining the receive buffer, leading to a circular wait condition.",
-    "bad_code": "func (s *server) BiStream(stream pb.Service_BiStreamServer) error {\n\tfor {\n\t\t// Synchronous write blocks if window is full\n\t\tif err := stream.Send(&pb.Resp{}); err != nil {\n\t\t\treturn err\n\t\t}\n\t\t// Recv is never reached if Send blocks\n\t\tmsg, _ := stream.Recv()\n\t\tprocess(msg)\n\t}\n}",
-    "solution_desc": "Decouple reading and writing using separate goroutines. This ensures that the 'Recv' side continues to process incoming messages and send 'WINDOW_UPDATE' frames back to the peer, even if the 'Send' side is temporarily blocked by backpressure.",
-    "good_code": "func (s *server) BiStream(stream pb.Service_BiStreamServer) error {\n\terrCh := make(chan error, 1)\n\tgo func() {\n\t\tfor {\n\t\t\tmsg, err := stream.Recv()\n\t\t\tif err != nil { errCh <- err; return }\n\t\t\tprocess(msg)\n\t\t}\n\t}()\n\tfor {\n\t\tselect {\n\t\tcase err := <-errCh: return err\n\t\tdefault:\n\t\t\tif err := stream.Send(&pb.Resp{}); err != nil { return err }\n\t\t}\n\t}\n}",
-    "verification": "Monitor the 'grpc_server_msg_received_total' metric and use 'netstat' to check for full Send-Q buffers while the application is idle.",
-    "date": "2026-04-24",
-    "id": 1777008509,
+    "analysis": "<p>In high-concurrency gRPC services, developers often encounter a scenario where some requests hang indefinitely while the CPU and memory usage remain low. This is typically 'Stream Starvation.' HTTP/2 uses flow control at both the stream and connection levels. If a single client stream is slow to consume data, it can fill the entire connection-level window, effectively blocking all other multiplexed streams on that same TCP connection.</p>",
+    "root_cause": "The default HTTP/2 flow control window size (64KB) is too small for high-latency or high-bandwidth networks. When the connection-level flow control window is exhausted, no further data can be sent for any stream until a WindowUpdate frame is received.",
+    "bad_code": "s := grpc.NewServer()\n// No custom keepalive or window settings\npb.RegisterServiceServer(s, &server{})",
+    "solution_desc": "Increase the initial window size and connection window size to accommodate larger bandwidth-delay products (BDP). Implement server-side keepalive to detect and close dead connections that might be holding onto window quotas.",
+    "good_code": "s := grpc.NewServer(\n    grpc.InitialWindowSize(1 << 20),     // 1MB\n    grpc.InitialConnWindowSize(1 << 22), // 4MB\n    grpc.KeepaliveParams(keepalive.ServerParameters{\n        MaxConnectionIdle: 5 * time.Minute,\n    }),\n)",
+    "verification": "Use the `GRPC_GO_LOG_SEVERITY_LEVEL=info` environment variable and `netstat` to observe window size updates and ensure streams are not blocking for longer than expected.",
+    "date": "2026-04-27",
+    "id": 1777287230,
     "type": "error"
 });
