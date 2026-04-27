@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777268762,
+        "title": "Fixing Elixir GenServer Selective Receive Bottlenecks",
+        "slug": "elixir-genserver-selective-receive-fix",
+        "language": "Elixir",
+        "code": "Mailbox Scanning",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/elixir-genserver-selective-receive-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777268763,
+        "title": "Mitigating MultiXact ID Wraparound in PostgreSQL",
+        "slug": "postgres-multixact-wraparound-mitigation",
+        "language": "SQL",
+        "code": "Wraparound Hazard",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/postgres-multixact-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777268764,
+        "title": "Fixing C++20 Coroutine Promise Use-After-Free",
+        "slug": "cpp20-coroutine-uaf-fix",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/cpp20-coroutine-uaf-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777268765,
+        "title": "Trend: Guizang-PPT - Single-File WebGL Magazine Decks",
+        "slug": "guizang-ppt-skill-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/guizang-ppt-skill-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777254937,
         "title": "Zig: Resolving Memory Alignment Faults in SIMD Allocators",
         "slug": "zig-simd-memory-alignment-faults",
