@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777254937,
+        "title": "Zig: Resolving Memory Alignment Faults in SIMD Allocators",
+        "slug": "zig-simd-memory-alignment-faults",
+        "language": "Zig",
+        "code": "AlignmentFault",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/zig-simd-memory-alignment-faults.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "HighPerformance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777254938,
+        "title": "Kafka: Mitigating Recursive Rebalance Storms",
+        "slug": "kafka-mitigating-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/kafka-mitigating-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777254939,
+        "title": "MongoDB: Resolving WiredTiger Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "SQL",
+        "code": "TicketExhaustion",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777254940,
+        "title": "AI to Magazine: Analyzing the Guizang PPT Skill",
+        "slug": "guizang-ppt-skill-claude-code",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-27",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1777196709,
         "title": "Resolving Haskell Space Leaks in Lazy Stream Evaluation",
         "slug": "haskell-lazy-stream-space-leaks",
