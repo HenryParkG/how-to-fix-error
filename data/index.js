@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1777355450,
+        "title": "Mitigating CFS Throttling in Java Kubernetes Pods",
+        "slug": "k8s-java-cfs-throttling-fix",
+        "language": "Java, Kubernetes",
+        "code": "Latency Spikes",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/k8s-java-cfs-throttling-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Java",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777355451,
+        "title": "Fixing HNSW Index Degradation in Vector Databases",
+        "slug": "fix-hnsw-index-degradation-concurrency",
+        "language": "Rust, Python",
+        "code": "Recall Accuracy Loss",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/fix-hnsw-index-degradation-concurrency.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777355452,
+        "title": "Eliminating Haskell Space Leaks via Strictness",
+        "slug": "haskell-space-leak-strictness-analysis",
+        "language": "Haskell",
+        "code": "Memory Leak (Thunk)",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/haskell-space-leak-strictness-analysis.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777355453,
+        "title": "Mastering guizang-ppt-skill for HTML Presentations",
+        "slug": "guizang-ppt-skill-claude-guide",
+        "language": "TypeScript, CSS",
+        "code": "Trend",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1777341731,
         "title": "Optimizing Go Scavenger Latency in High-Allocation Runtimes",
         "slug": "go-scavenger-latency-spikes",

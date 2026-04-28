@@ -1,21 +1,22 @@
 window.onPostDataLoaded({
-    "title": "Analyzing guizang-ppt-skill: Claude-Powered PPTs",
+    "title": "Mastering guizang-ppt-skill for HTML Presentations",
     "slug": "guizang-ppt-skill-claude-guide",
-    "language": "TypeScript",
+    "language": "TypeScript, CSS",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Frontend",
-        "TypeScript"
+        "TypeScript",
+        "CSS",
+        "Frontend"
     ],
-    "analysis": "<p>The 'guizang-ppt-skill' is a trending GitHub repository that integrates with Claude Code to transform simple text prompts into high-end, magazine-style HTML presentations. It has gained popularity because it solves the 'ugly slide' problem of AI outputs by providing 10 professional layouts and WebGL-powered hero backgrounds, all bundled into a single-file portable HTML output. It represents a shift from static documents to interactive, AI-generated visual experiences.</p>",
-    "root_cause": "Key features include horizontal-swipe navigation, 5 curated visual themes, dynamic WebGL shader backgrounds, and a single-file output architecture that makes sharing presentations via any browser seamless.",
-    "bad_code": "claude skill add https://github.com/op7418/guizang-ppt-skill",
-    "solution_desc": "Best used for developer pitches, rapid prototyping of marketing decks, and internal reports where visual fidelity is required without the time investment of manual PowerPoint design. It is highly effective for technical teams using Claude Code as their primary CLI tool.",
-    "good_code": "// Prompt example for Claude:\n// \"Create a 5-page deck about Microservices Architecture using the guizang-ppt-skill.\n// Use the 'Dark' theme and include a WebGL hero background for the title slide.\"",
-    "verification": "The project is expected to expand with more interactive UI components, more complex WebGL animations, and direct PDF/PNG export capabilities for traditional workflows.",
+    "analysis": "<p>The 'op7418/guizang-ppt-skill' repository is trending as a specialized 'skill' for Claude Code and LLMs. It solves the 'boring slide' problem by converting structured text prompts into visually stunning, magazine-style HTML presentations. It leverages modern web technologies like WebGL for cinematic backgrounds and CSS Scroll Snap for a high-end feel, all bundled into a single portable file.</p>",
+    "root_cause": "10 distinct layout engines, 5 curated aesthetic themes, WebGL hero backgrounds, and seamless integration with Claude's tool-calling capabilities.",
+    "bad_code": "git clone https://github.com/op7418/guizang-ppt-skill.git\ncd guizang-ppt-skill && npm install",
+    "solution_desc": "Best used by developers and product managers who need to rapidly create 'pitch-deck' quality slides from technical documentation or project notes using AI agents like Claude.",
+    "good_code": "<!-- Prompt Example to Claude -->\n\"Create a 5-slide deck using guizang-ppt-skill about \nMicroservices Architecture with the 'Cyberpunk' theme \nand a WebGL particle background.\"",
+    "verification": "The project is rapidly becoming the standard for AI-generated visual content due to its 'single-file' output which is easily shareable and requires no hosting infrastructure.",
     "date": "2026-04-28",
-    "id": 1777341734,
+    "id": 1777355453,
     "type": "trend"
 });
