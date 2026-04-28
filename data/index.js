@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777373737,
+        "title": "Rust: Resolving Send-Bound Violations in Recursive Async",
+        "slug": "rust-async-recursive-send-fix",
+        "language": "Rust",
+        "code": "Future: !Send",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/rust-async-recursive-send-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777373738,
+        "title": "PostgreSQL: Preventing Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-prevention",
+        "language": "SQL",
+        "code": "TXID Wraparound",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/postgres-txid-wraparound-prevention.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777373739,
+        "title": "Elixir: Fixing GenServer Mailbox Congestion",
+        "slug": "elixir-genserver-mailbox-fix",
+        "language": "Elixir",
+        "code": "Mailbox Overflow",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/elixir-genserver-mailbox-fix.js",
+        "tags": [
+            "Backend",
+            "Elixir",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777373740,
+        "title": "Guizang-PPT: Claude Code for High-End HTML Decks",
+        "slug": "guizang-ppt-skill-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/guizang-ppt-skill-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777363714,
         "title": "Zig: Fixing Comptime-Induced Binary Bloat in Allocators",
         "slug": "zig-comptime-binary-bloat-allocator",
