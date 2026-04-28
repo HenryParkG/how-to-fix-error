@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777363714,
+        "title": "Zig: Fixing Comptime-Induced Binary Bloat in Allocators",
+        "slug": "zig-comptime-binary-bloat-allocator",
+        "language": "Zig",
+        "code": "BinaryBloat",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/zig-comptime-binary-bloat-allocator.js",
+        "tags": [
+            "Zig",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777363715,
+        "title": "PyTorch: Resolving Shared Memory Deadlocks in DataLoaders",
+        "slug": "pytorch-shared-memory-deadlock-dataloader",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/pytorch-shared-memory-deadlock-dataloader.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777363716,
+        "title": "Redis: Mitigating CoW Memory Bloat during RDB Snapshots",
+        "slug": "redis-cow-memory-bloat-fix",
+        "language": "Redis",
+        "code": "OutOfMemory",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/redis-cow-memory-bloat-fix.js",
+        "tags": [
+            "Infra",
+            "SQL",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777363717,
+        "title": "Trend: Guizang-PPT - Magazine-Style Decks via Claude Code",
+        "slug": "guizang-ppt-skill-claude-html-decks",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-html-decks.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777355450,
         "title": "Mitigating CFS Throttling in Java Kubernetes Pods",
         "slug": "k8s-java-cfs-throttling-fix",
