@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777341731,
+        "title": "Optimizing Go Scavenger Latency in High-Allocation Runtimes",
+        "slug": "go-scavenger-latency-spikes",
+        "language": "Go",
+        "code": "GC Latency",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/go-scavenger-latency-spikes.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777341732,
+        "title": "Fixing Non-Deterministic Gradients in Distributed Autograd",
+        "slug": "pytorch-distributed-autograd-gradients",
+        "language": "Python",
+        "code": "Gradient Drift",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/pytorch-distributed-autograd-gradients.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777341733,
+        "title": "Fixing JSI Memory Leaks in RN TurboModules",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777341734,
+        "title": "Analyzing guizang-ppt-skill: Claude-Powered PPTs",
+        "slug": "guizang-ppt-skill-claude-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-28",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777287228,
         "title": "eBPF: Overcoming Verifier Instruction Limits in XDP",
         "slug": "ebpf-xdp-verifier-instruction-limit",

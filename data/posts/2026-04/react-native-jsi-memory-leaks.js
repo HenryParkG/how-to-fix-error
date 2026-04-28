@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Debugging RN JSI Memory Leaks in High-Freq Modules",
+    "title": "Fixing JSI Memory Leaks in RN TurboModules",
     "slug": "react-native-jsi-memory-leaks",
-    "language": "TypeScript",
-    "code": "MemoryLeak",
+    "language": "C++",
+    "code": "Memory Leak",
     "tags": [
         "React",
-        "Frontend",
         "TypeScript",
+        "Frontend",
         "Error Fix"
     ],
-    "analysis": "<p>JavaScript Interface (JSI) allows direct C++ to JS communication, bypassing the bridge. However, memory leaks occur when C++ holds long-lived references to JS objects (jsi::Object) or vice-versa without proper lifecycle management. In high-frequency modules like camera frames or sensors, these leaks cause rapid OOM (Out of Memory) crashes.</p>",
-    "root_cause": "Creating jsi::Persistent handles in the C++ layer and failing to release them when the component unmounts or when the JS garbage collector expects the object to be reachable only through JS.",
-    "bad_code": "class MyNativeModule : public jsi::HostObject {\n  jsi::Value callback_;\n  void setCallback(jsi::Runtime& rt, jsi::Value& cb) {\n    // Storing a value directly without Persistent or manual cleanup\n    callback_ = jsi::Value(rt, cb);\n  }\n};",
-    "solution_desc": "Use jsi::Persistent to manage JS values in C++ and explicitly reset them. Implement a cleanup method that is called during the React Native component's componentWillUnmount to nullify native references.",
-    "good_code": "class MyNativeModule : public jsi::HostObject {\n  std::unique_ptr<jsi::Persistent<jsi::Object>> jsCallback_;\n\n  void setCallback(jsi::Runtime& rt, const jsi::Object& cb) {\n    jsCallback_ = std::make_unique<jsi::Persistent<jsi::Object>>(rt, cb);\n  }\n\n  void cleanup() {\n    jsCallback_.reset();\n  }\n};",
-    "verification": "Use Xcode Memory Graph or Android Studio Profiler to observe the 'jsi::HostObject' count. Ensure the heap size stabilizes after repeated interactions with the module.",
-    "date": "2026-04-26",
-    "id": 1777168256,
+    "analysis": "<p>React Native's JSI (JavaScript Interface) allows C++ and JavaScript to interact directly without a bridge. However, holding 'jsi::Value' or 'jsi::Object' instances within C++ class members in a TurboModule creates a persistent reference. If these are not explicitly released or if a circular reference is created between a C++ object and a JS host object, the JS engine's garbage collector cannot reclaim the memory.</p>",
+    "root_cause": "Storing 'jsi::Value' or 'jsi::Object' in long-lived C++ objects (like std::shared_ptr) without using 'jsi::WeakObject' or failing to clear them during the module's invalidation phase.",
+    "bad_code": "class MyTurboModule : public jsi::HostObject {\n    jsi::Value persistentCallback; // LEAK: Strong reference to JS object\n\n    void setCallback(jsi::Runtime& rt, const jsi::Value& cb) {\n        persistentCallback = jsi::Value(rt, cb);\n    }\n};",
+    "solution_desc": "Use 'jsi::WeakObject' for callbacks that don't need to extend the JS object's lifetime, or implement the 'invalidate' method to clear all persistent references when the bridge or surface is destroyed.",
+    "good_code": "class MyTurboModule : public jsi::HostObject {\n    std::unique_ptr<jsi::Object> callbackPtr;\n\n    void setCallback(jsi::Runtime& rt, const jsi::Value& cb) {\n        if (cb.isObject()) {\n            callbackPtr = std::make_unique<jsi::Object>(cb.asObject(rt));\n        }\n    }\n\n    ~MyTurboModule() {\n        callbackPtr.reset(); // Ensure cleanup on destruction\n    }\n};",
+    "verification": "Use the Chrome DevTools Memory Profiler to track the 'JSIExecutor' heap and look for growing counts of 'HostObject' instances after component unmounting.",
+    "date": "2026-04-28",
+    "id": 1777341733,
     "type": "error"
 });
