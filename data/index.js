@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777449682,
+        "title": "Resolving io_uring CQE Overruns in High-Throughput I/O",
+        "slug": "linux-io-uring-cqe-overrun-fix",
+        "language": "Rust",
+        "code": "IORING_CQ_OVERFLOW",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/linux-io-uring-cqe-overrun-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777449683,
+        "title": "Eliminating Ray Actor Deadlocks in Cyclic Dependencies",
+        "slug": "ray-actor-deadlock-cyclic-graphs",
+        "language": "Python",
+        "code": "RayActorDeadlock",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/ray-actor-deadlock-cyclic-graphs.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777449684,
+        "title": "Mitigating Segment Merging Throttling in ES Clusters",
+        "slug": "elasticsearch-segment-merging-throttling",
+        "language": "Java",
+        "code": "ES_MERGE_THROTTLE",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/elasticsearch-segment-merging-throttling.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777449685,
+        "title": "Guizang-PPT-Skill: Claude-Powered Magazine Decks",
+        "slug": "guizang-ppt-skill-claude-code-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-code-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777441576,
         "title": "Fixing eBPF Verifier Limits in Nested Packet Filters",
         "slug": "ebpf-verifier-complexity-nested-filters",
