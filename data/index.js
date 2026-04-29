@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777459621,
+        "title": "Resolving Go Scheduler Starvation in Tight Loops",
+        "slug": "go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "Starvation",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777459622,
+        "title": "Istio Proxy Memory Exhaustion from XDS Cardinality",
+        "slug": "istio-proxy-memory-exhaustion-xds",
+        "language": "Kubernetes",
+        "code": "OOMKilled",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/istio-proxy-memory-exhaustion-xds.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777459623,
+        "title": "Fixing Haskell Space Leaks in Lazy Thunk Chains",
+        "slug": "haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "MemoryLeak",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/haskell-space-leaks-lazy-evaluation.js",
+        "tags": [
+            "TypeScript",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777459624,
+        "title": "Trend: Guizang-PPT - Magazine-Style HTML Decks from AI",
+        "slug": "guizang-ppt-skill-claude-decks",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-decks.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777449682,
         "title": "Resolving io_uring CQE Overruns in High-Throughput I/O",
         "slug": "linux-io-uring-cqe-overrun-fix",
