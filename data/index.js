@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777428228,
+        "title": "Fixing C++20 Coroutine Reference Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-fix",
+        "language": "C++20",
+        "code": "Lifetime Error",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/cpp20-coroutine-lifetime-fix.js",
+        "tags": [
+            "C++",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777428229,
+        "title": "Eliminating Kafka Rebalance Storms via Decoupled Loops",
+        "slug": "kafka-decoupled-processing-rebalance",
+        "language": "Kafka",
+        "code": "Rebalance Storm",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/kafka-decoupled-processing-rebalance.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777428230,
+        "title": "WebGPU Buffer Alignment and Synchronization Hazards",
+        "slug": "webgpu-alignment-sync-hazards",
+        "language": "WebGPU/WGSL",
+        "code": "Alignment/Sync Error",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/webgpu-alignment-sync-hazards.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777428231,
+        "title": "Claude Code Skill: Transforming Prompts to Magazine Decks",
+        "slug": "guizang-ppt-skill-claude-code",
+        "language": "JavaScript/HTML",
+        "code": "Trend",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777373737,
         "title": "Rust: Resolving Send-Bound Violations in Recursive Async",
         "slug": "rust-async-recursive-send-fix",

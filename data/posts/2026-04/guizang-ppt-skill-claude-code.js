@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "AI to Magazine: Analyzing the Guizang PPT Skill",
+    "title": "Claude Code Skill: Transforming Prompts to Magazine Decks",
     "slug": "guizang-ppt-skill-claude-code",
-    "language": "TypeScript",
+    "language": "JavaScript/HTML",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript",
-        "Frontend"
+        "TypeScript"
     ],
-    "analysis": "<p>The 'guizang-ppt-skill' repository is trending because it bridges the gap between raw LLM output and high-end design. Unlike traditional 'Markdown-to-PPT' tools that produce sterile, corporate-looking slides, this tool uses Claude Code to generate interactive, horizontal-swipe, magazine-style HTML decks. It leverages modern web technologies like WebGL for fluid backgrounds and CSS Flex/Grid for 10 distinct, sophisticated layouts.</p><p>Its popularity stems from the 'Single File' philosophy\u2014everything (CSS, JS, Assets) is bundled into one HTML file, making it instantly shareable and portable for developers and creators alike.</p>",
-    "root_cause": "10 Adaptive Layouts (Focus, Comparison, Gallery, etc.), 5 Professional Themes (Dark, Nordic, etc.), WebGL Hero Backgrounds, and Zero-Dependency Single-File Output.",
-    "bad_code": "git clone https://github.com/op7418/guizang-ppt-skill.git\ncd guizang-ppt-skill\nnpm install",
-    "solution_desc": "Ideal for technical demos, pitch decks where aesthetics matter, and rapid prototyping of presentations directly from an LLM prompt. Adopt this when you need 'Design-as-Code' that goes beyond basic bullet points.",
-    "good_code": "// Usage pattern via Claude Code / Prompt\n// \"Use the guizang-skill to create a 5-slide deck about \n// Quantum Computing with the 'Nordic' theme and \n// 'Split-Screen' layout for the third slide.\"",
-    "verification": "The project is likely to evolve into a full-fledged 'Agentic UI' framework where slides are not edited but 'prompted' into existence with real-time data binding.",
-    "date": "2026-04-27",
-    "id": 1777254940,
+    "analysis": "<p>'guizang-ppt-skill' is trending because it solves the 'last mile' problem of Generative AI: presentation. While LLMs are great at writing content, turning that content into a high-end, horizontal-swipe magazine-style HTML deck is usually a manual chore. This Claude Code skill automates the design layer, offering 10 distinct layouts and WebGL hero backgrounds that look professional out of the box, outputting a single portable HTML file.</p>",
+    "root_cause": "Single-file portability, high-performance WebGL aesthetics, and seamless integration with the Claude Code CLI for instant 'Prompt-to-Product' workflows.",
+    "bad_code": "npx claude-code@latest\n/skill-add https://github.com/op7418/guizang-ppt-skill",
+    "solution_desc": "Ideal for developers needing to generate project pitches, technical documentation summaries, or quick marketing decks without leaving the terminal or hiring a designer.",
+    "good_code": "Claude> Create a magazine-style deck about Quantum Computing trends.\nClaude> [Using guizang-ppt-skill] Generating 10 slides...\nClaude> Output: presentation.html (Themes: Cyberpunk, WebGL active)",
+    "verification": "As Claude Code gains adoption as a 'Developer Agent', skills like this that produce tangible visual artifacts (rather than just code) will define the next wave of 'Agentic UI' tools.",
+    "date": "2026-04-29",
+    "id": 1777428231,
     "type": "trend"
 });
