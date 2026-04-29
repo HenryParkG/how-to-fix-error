@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777441576,
+        "title": "Fixing eBPF Verifier Limits in Nested Packet Filters",
+        "slug": "ebpf-verifier-complexity-nested-filters",
+        "language": "Rust",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/ebpf-verifier-complexity-nested-filters.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777441577,
+        "title": "Resolving Spark Executor OOM in Broadcast Joins",
+        "slug": "spark-executor-oom-broadcast-join-bloat",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/spark-executor-oom-broadcast-join-bloat.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777441578,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Python",
+        "code": "CacheEvictionStall",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777441579,
+        "title": "Inside Guizang-PPT-Skill: The Future of AI Decks",
+        "slug": "guizang-ppt-skill-claude-code-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-29",
+        "path": "data/posts/2026-04/guizang-ppt-skill-claude-code-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1777428228,
         "title": "Fixing C++20 Coroutine Reference Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-fix",
