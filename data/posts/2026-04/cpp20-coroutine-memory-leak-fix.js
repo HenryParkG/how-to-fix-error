@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing C++20 Coroutine Leaks in Asynchronous Graphs",
+    "title": "Eliminating C++20 Coroutine Memory Leaks",
     "slug": "cpp20-coroutine-memory-leak-fix",
-    "language": "C++ / Rust",
-    "code": "Memory Leak (Resource)",
+    "language": "C++",
+    "code": "Memory Leak",
     "tags": [
         "Rust",
-        "Backend",
+        "Networking",
         "Performance",
         "Error Fix"
     ],
-    "analysis": "<p>In C++20, coroutines allocate a 'coroutine state' on the heap which contains the promise object and captured parameters. In complex asynchronous task graphs, memory leaks frequently occur when the coroutine lifecycle is not strictly tied to a RAII-compliant handle. If a coroutine reaches its final suspension point but the handle's <code>.destroy()</code> method is never called, the heap memory is never reclaimed.</p><p>This is particularly dangerous in high-concurrency environments where task graphs are pruned or cancelled dynamically, leaving 'orphaned' coroutine states that slowly consume the system's RSS.</p>",
-    "root_cause": "The coroutine promise's final_suspend() returns std::suspend_always, but the ownership of the coroutine_handle is lost or not managed by a smart pointer/wrapper that calls .destroy() upon destruction.",
-    "bad_code": "struct Task {\n  struct promise_type {\n    Task get_return_object() { return Task{handle_type::from_promise(*this)}; }\n    std::suspend_always initial_suspend() { return {}; }\n    std::suspend_always final_suspend() noexcept { return {}; } // Stays suspended\n    void return_void() {}\n    void unhandled_exception() {}\n  };\n  handle_type h_;\n  // Missing destructor to call h_.destroy()\n};",
-    "solution_desc": "Implement a RAII wrapper for the coroutine handle. Ensure that the destructor of the Task object explicitly calls handle.destroy(). Use std::coroutine_handle::from_promise to manage the state and consider move-only semantics to prevent multiple handles from attempting to destroy the same state.",
-    "good_code": "struct Task {\n  ~Task() {\n    if (h_) h_.destroy();\n  }\n  Task(Task&& other) noexcept : h_(other.h_) { other.h_ = nullptr; }\n  Task& operator=(Task&& other) noexcept {\n    if (this != &other) {\n      if (h_) h_.destroy();\n      h_ = other.h_; other.h_ = nullptr;\n    }\n    return *this;\n  }\n  handle_type h_;\n};",
-    "verification": "Use Valgrind or AddressSanitizer (ASan) to check for leaked blocks. In a loop of 1 million task creations, RSS should remain stable.",
-    "date": "2026-04-08",
-    "id": 1775624779,
+    "analysis": "<p>In high-frequency networking stacks, C++20 coroutines offer significant performance gains by reducing context switching. However, manual lifecycle management of the <code>std::coroutine_handle</code> often leads to memory leaks. The problem usually arises when a coroutine promise is allocated on the heap but the <code>destroy()</code> method is never called, particularly when an asynchronous operation is cancelled or an exception is thrown mid-suspension.</p><p>Unlike high-level languages, C++ coroutines require the developer to define when the coroutine frame is deallocated. In a networking loop, if the socket closes before the coroutine resumes, the handle remains 'in flight' forever, consuming memory for the promise object and the local variables captured in the frame.</p>",
+    "root_cause": "Failure to call coroutine_handle::destroy() on orphaned coroutine frames during socket disconnection or timeout events.",
+    "bad_code": "struct Task {\n  std::coroutine_handle<promise_type> handle;\n  ~Task() { /* Missing handle.destroy() */ }\n};\n\n// In network loop\nauto my_coro = socket_read(); \nif (error) return; // Coroutine frame leaked here!",
+    "solution_desc": "Implement a strict RAII (Resource Acquisition Is Initialization) wrapper for the coroutine handle. Ensure that the task destructor explicitly checks for handle validity and invokes destroy(). Additionally, use symmetric transfer to avoid deep recursion and ensure proper cleanup during final suspension.",
+    "good_code": "struct Task {\n  std::coroutine_handle<promise_type> handle;\n  Task(std::coroutine_handle<promise_type> h) : handle(h) {}\n  ~Task() {\n    if (handle) handle.destroy();\n  }\n  Task(Task&& other) : handle(other.handle) { other.handle = nullptr; }\n  // Prevents leaks on scope exit\n};",
+    "verification": "Run the networking service under Valgrind or use AddressSanitizer (ASan) with 'detect_leaks=1'. Monitor memory usage stability over 1 million rapid connection/disconnection cycles.",
+    "date": "2026-04-30",
+    "id": 1777536317,
     "type": "error"
 });

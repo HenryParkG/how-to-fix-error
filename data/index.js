@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777536317,
+        "title": "Eliminating C++20 Coroutine Memory Leaks",
+        "slug": "cpp20-coroutine-memory-leak-fix",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/cpp20-coroutine-memory-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777536318,
+        "title": "Resolving Kafka Rebalance Storms in K8s",
+        "slug": "kafka-k8s-rebalance-storm-fix",
+        "language": "Go",
+        "code": "Rebalance Storm",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/kafka-k8s-rebalance-storm-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Kafka",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777536319,
+        "title": "Fixing Flutter Janky Frames from Skia",
+        "slug": "flutter-skia-jank-fix",
+        "language": "Dart",
+        "code": "UI Jitter",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/flutter-skia-jank-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "CSS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777536320,
+        "title": "Open-Design: The Local-First Design AI Alternative",
+        "slug": "open-design-ai-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/open-design-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React"
+        ]
+    },
+    {
         "id": 1777528211,
         "title": "Fixing Rust Pinning Violations in Async-FFI Integration",
         "slug": "rust-pinning-async-ffi-fix",
