@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1777528211,
+        "title": "Fixing Rust Pinning Violations in Async-FFI Integration",
+        "slug": "rust-pinning-async-ffi-fix",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/rust-pinning-async-ffi-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777528212,
+        "title": "Mitigating HNSW Index Fragmentation in Vector Databases",
+        "slug": "hnsw-index-fragmentation-fix",
+        "language": "Python",
+        "code": "HNSWPerfDegradation",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/hnsw-index-fragmentation-fix.js",
+        "tags": [
+            "SQL",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777528213,
+        "title": "Eliminating Elixir GenServer Mailbox Bloat",
+        "slug": "elixir-genserver-backpressure-fix",
+        "language": "Go",
+        "code": "MailboxOverflow",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/elixir-genserver-backpressure-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777528214,
+        "title": "Analyze Trending Repository: nexu-io/open-design",
+        "slug": "open-design-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/open-design-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777514624,
         "title": "Fix CUDA Memory Fragmentation in Distributed LLM Training",
         "slug": "pytorch-cuda-memory-fragmentation-llm",
