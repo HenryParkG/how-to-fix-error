@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777545999,
+        "title": "Mitigating Postgres Transaction ID Wraparound",
+        "slug": "mitigating-postgres-txid-wraparound",
+        "language": "PostgreSQL",
+        "code": "TXID_WRAPAROUND",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/mitigating-postgres-txid-wraparound.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777546000,
+        "title": "Debugging eBPF Verifier Bounded Loop Rejection",
+        "slug": "ebpf-verifier-bounded-loops-xdp",
+        "language": "Rust",
+        "code": "VERIFIER_REJECTION",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/ebpf-verifier-bounded-loops-xdp.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777546001,
+        "title": "Fixing Wasm Linear Memory Bounds Check Failures",
+        "slug": "wasm-linear-memory-bounds-fix",
+        "language": "TypeScript",
+        "code": "OUT_OF_BOUNDS",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/wasm-linear-memory-bounds-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebAssembly",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777546002,
+        "title": "Open-Design: Local-First Open Source Claude Design",
+        "slug": "open-design-trending-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/open-design-trending-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React"
+        ]
+    },
+    {
         "id": 1777536317,
         "title": "Eliminating C++20 Coroutine Memory Leaks",
         "slug": "cpp20-coroutine-memory-leak-fix",
