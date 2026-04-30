@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1777514624,
+        "title": "Fix CUDA Memory Fragmentation in Distributed LLM Training",
+        "slug": "pytorch-cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "OOM_CUDA_FRAGMENTATION",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/pytorch-cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777514625,
+        "title": "Fix DNS Latency Spikes from Conntrack Race Conditions",
+        "slug": "k8s-dns-conntrack-race-condition",
+        "language": "Kubernetes",
+        "code": "DNS_TIMEOUT_UDP",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/k8s-dns-conntrack-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777514626,
+        "title": "Fix Memory Corruption in Zig Comptime Generic Structures",
+        "slug": "zig-comptime-generic-memory-corruption",
+        "language": "Zig",
+        "code": "COMPTIME_PTR_CORRUPTION",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/zig-comptime-generic-memory-corruption.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777514627,
+        "title": "Open-Design: The Local-First LLM UI for Design Systems",
+        "slug": "nexu-io-open-design-trending",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-04-30",
+        "path": "data/posts/2026-04/nexu-io-open-design-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777459621,
         "title": "Resolving Go Scheduler Starvation in Tight Loops",
         "slug": "go-scheduler-starvation-tight-loops",
