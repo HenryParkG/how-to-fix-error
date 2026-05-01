@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777630582,
+        "title": "Eliminating Erlang VM Binary Leakage in Elixir Streams",
+        "slug": "elixir-erlang-binary-leakage-fix",
+        "language": "Elixir",
+        "code": "MemoryLeak",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/elixir-erlang-binary-leakage-fix.js",
+        "tags": [
+            "Node.js",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777630583,
+        "title": "Mitigating GPU Memory Fragmentation in PyTorch Caching",
+        "slug": "pytorch-gpu-memory-fragmentation-fix",
+        "language": "Python",
+        "code": "OutOfMemory",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/pytorch-gpu-memory-fragmentation-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777630584,
+        "title": "Resolving Rust Async-Trait Lifetime Contradictions",
+        "slug": "rust-async-trait-lifetime-fix",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/rust-async-trait-lifetime-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777630585,
+        "title": "Analyzing open-design: The Local-First Claude Design Alternative",
+        "slug": "open-design-nexu-io-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/open-design-nexu-io-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777623410,
         "title": "Fixing Go Scheduler Livelocks in Non-Preemptible Loops",
         "slug": "go-scheduler-livelock-tight-loops",
