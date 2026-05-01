@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777615206,
+        "title": "Eliminating Haskell Space Leaks in Monad Transformers",
+        "slug": "haskell-monad-transformer-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/haskell-monad-transformer-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777615207,
+        "title": "Resolving WebGPU Synchronization Hazards in Compute Pipelines",
+        "slug": "webgpu-synchronization-hazards-compute",
+        "language": "TypeScript",
+        "code": "SyncHazard",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/webgpu-synchronization-hazards-compute.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777615208,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-stalls",
+        "language": "Go",
+        "code": "CacheStall",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777615209,
+        "title": "nexu-io/open-design: Open-Source Claude Design Alternative",
+        "slug": "open-design-nexu-io-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/open-design-nexu-io-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1777601237,
         "title": "Resolving PyTorch DDP Deadlocks from Bucket Mismatches",
         "slug": "pytorch-ddp-bucket-mismatch-deadlock",
