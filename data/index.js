@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777623410,
+        "title": "Fixing Go Scheduler Livelocks in Non-Preemptible Loops",
+        "slug": "go-scheduler-livelock-tight-loops",
+        "language": "Go",
+        "code": "GOSCHED-001",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/go-scheduler-livelock-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777623411,
+        "title": "Mitigating vLLM PagedAttention Fragmentation",
+        "slug": "vllm-pagedattention-fragmentation-fix",
+        "language": "Python",
+        "code": "MEM-FRAG-VLLM",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/vllm-pagedattention-fragmentation-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777623412,
+        "title": "Resolving gRPC Head-of-Line Blocking in HTTP/2",
+        "slug": "grpc-http2-hol-blocking-resolution",
+        "language": "Go",
+        "code": "GRPC-HOL-002",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/grpc-http2-hol-blocking-resolution.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Infrastructure",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777623413,
+        "title": "Nexu Open-Design: The Local-First Claude Artifacts Rival",
+        "slug": "nexu-open-design-trending-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/nexu-open-design-trending-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777615206,
         "title": "Eliminating Haskell Space Leaks in Monad Transformers",
         "slug": "haskell-monad-transformer-space-leaks",
