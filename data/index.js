@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777601237,
+        "title": "Resolving PyTorch DDP Deadlocks from Bucket Mismatches",
+        "slug": "pytorch-ddp-bucket-mismatch-deadlock",
+        "language": "Python",
+        "code": "RuntimeDeadlock",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/pytorch-ddp-bucket-mismatch-deadlock.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777601238,
+        "title": "Eliminating Redis RDB Memory Spikes from THP Fragmentation",
+        "slug": "redis-rdb-thp-memory-spikes",
+        "language": "Linux / C",
+        "code": "OOMCritical",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/redis-rdb-thp-memory-spikes.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777601239,
+        "title": "Fixing Cache Line False Sharing in C++ Allocators",
+        "slug": "cpp-cache-line-false-sharing-fix",
+        "language": "C++",
+        "code": "PerfRegression",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/cpp-cache-line-false-sharing-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "High-Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777601240,
+        "title": "Open-Design: The Local-First AI UI Revolution",
+        "slug": "nexu-io-open-design-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-01",
+        "path": "data/posts/2026-05/nexu-io-open-design-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777545999,
         "title": "Mitigating Postgres Transaction ID Wraparound",
         "slug": "mitigating-postgres-txid-wraparound",
