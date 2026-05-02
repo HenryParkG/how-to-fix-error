@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777706413,
+        "title": "Fixing C++20 Coroutine Leaks in Symmetric Transfer",
+        "slug": "cpp20-coroutine-memory-leaks-symmetric-transfer",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/cpp20-coroutine-memory-leaks-symmetric-transfer.js",
+        "tags": [
+            "Rust",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777706414,
+        "title": "Eliminating Kafka Rebalance Storms in Static Clusters",
+        "slug": "kafka-static-membership-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/kafka-static-membership-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777706415,
+        "title": "Mitigating Postgres Index Bloat from Aborted HOT Updates",
+        "slug": "postgres-hot-update-index-bloat",
+        "language": "SQL",
+        "code": "IndexBloat",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/postgres-hot-update-index-bloat.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777706416,
+        "title": "Analyzing nexu-io/open-design: Local-First Design AI",
+        "slug": "open-design-nexu-io-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/open-design-nexu-io-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1777699769,
         "title": "Resolving eBPF Verifier State Explosion in Bounded Loops",
         "slug": "ebpf-verifier-state-explosion-fix",
