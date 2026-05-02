@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777699769,
+        "title": "Resolving eBPF Verifier State Explosion in Bounded Loops",
+        "slug": "ebpf-verifier-state-explosion-fix",
+        "language": "Go",
+        "code": "BPF_VERIFIER_STATE_LIMIT",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/ebpf-verifier-state-explosion-fix.js",
+        "tags": [
+            "Go",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777699770,
+        "title": "Mitigating HNSW Index Fragmentation and Latency Drift",
+        "slug": "hnsw-index-fragmentation-latency",
+        "language": "Rust",
+        "code": "VECTOR_SEARCH_DRIFT",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/hnsw-index-fragmentation-latency.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777699771,
+        "title": "Fixing Wasm Linear Memory Fragmentation in Workers",
+        "slug": "wasm-memory-fragmentation-fix",
+        "language": "TypeScript",
+        "code": "WASM_OUT_OF_MEMORY",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/wasm-memory-fragmentation-fix.js",
+        "tags": [
+            "TypeScript",
+            "Rust",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777699772,
+        "title": "Open-Design: Local-First Design System Powerhouse",
+        "slug": "nexu-io-open-design-trending",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/nexu-io-open-design-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1777686863,
         "title": "Resolving Linux Kernel Soft Lockups from RCU Overload",
         "slug": "linux-kernel-soft-lockup-rcu-callback-overload",
