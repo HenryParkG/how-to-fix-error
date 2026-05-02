@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777715664,
+        "title": "Fixing Zig Pointer Aliasing in Comptime Allocators",
+        "slug": "zig-pointer-aliasing-comptime-allocators",
+        "language": "Zig",
+        "code": "Aliasing Violation",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/zig-pointer-aliasing-comptime-allocators.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Memory",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777715665,
+        "title": "Eliminating Spark OOMs from Skewed Partition Shuffles",
+        "slug": "spark-oom-skewed-partition-shuffle",
+        "language": "Java",
+        "code": "Executor OOM",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/spark-oom-skewed-partition-shuffle.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777715666,
+        "title": "Resolving MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Go",
+        "code": "Cache Stall",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777715667,
+        "title": "Inside Open-Design: The Local-First Claude Alternative",
+        "slug": "open-design-local-first-ai-prototyping",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/open-design-local-first-ai-prototyping.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777706413,
         "title": "Fixing C++20 Coroutine Leaks in Symmetric Transfer",
         "slug": "cpp20-coroutine-memory-leaks-symmetric-transfer",
