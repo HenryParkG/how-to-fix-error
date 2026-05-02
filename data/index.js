@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1777686863,
+        "title": "Resolving Linux Kernel Soft Lockups from RCU Overload",
+        "slug": "linux-kernel-soft-lockup-rcu-callback-overload",
+        "language": "C / Linux",
+        "code": "SoftLockup",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/linux-kernel-soft-lockup-rcu-callback-overload.js",
+        "tags": [
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777686864,
+        "title": "Mitigating Elasticsearch Global Ordinals Starvation",
+        "slug": "elasticsearch-threadpool-starvation-global-ordinals",
+        "language": "Java",
+        "code": "ThreadpoolStarvation",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/elasticsearch-threadpool-starvation-global-ordinals.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777686865,
+        "title": "Fixing React Native JSI Memory Leaks in Bridge Calls",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "TypeScript",
+        "code": "MemoryLeak",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/react-native-jsi-memory-leak-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777686866,
+        "title": "Open Design: Local-First Claude Design Alternative",
+        "slug": "open-design-nexu-io-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-02",
+        "path": "data/posts/2026-05/open-design-nexu-io-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777630582,
         "title": "Eliminating Erlang VM Binary Leakage in Elixir Streams",
         "slug": "elixir-erlang-binary-leakage-fix",
