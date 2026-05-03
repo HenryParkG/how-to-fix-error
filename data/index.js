@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777773437,
+        "title": "Fixing OCaml 5 Multicore GC Latency Spikes",
+        "slug": "ocaml-5-multicore-gc-latency-fix",
+        "language": "Go",
+        "code": "GC_LATENCY_SPIKE",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/ocaml-5-multicore-gc-latency-fix.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777773438,
+        "title": "Mitigating K8s DNS Latency from Conntrack Races",
+        "slug": "k8s-dns-conntrack-race-condition",
+        "language": "Go",
+        "code": "DNS_TIMEOUT_5S",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/k8s-dns-conntrack-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777773439,
+        "title": "Fixing Redis Replication Buffer Overflows and OOM",
+        "slug": "redis-replication-buffer-overflow-oom",
+        "language": "SQL",
+        "code": "REPL_BUF_OOM",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/redis-replication-buffer-overflow-oom.js",
+        "tags": [
+            "SQL",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777773440,
+        "title": "Open-Design: The Local-First Open Source Claude Alternative",
+        "slug": "open-design-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/open-design-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1777715664,
         "title": "Fixing Zig Pointer Aliasing in Comptime Allocators",
         "slug": "zig-pointer-aliasing-comptime-allocators",
