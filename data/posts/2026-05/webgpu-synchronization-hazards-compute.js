@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Resolving WebGPU Synchronization Hazards in Compute Pipelines",
+    "title": "Fixing WebGPU Synchronization Hazards in Compute Shaders",
     "slug": "webgpu-synchronization-hazards-compute",
-    "language": "TypeScript",
+    "language": "WebGPU/WGSL",
     "code": "SyncHazard",
     "tags": [
         "TypeScript",
-        "React",
         "Frontend",
+        "WebGPU",
         "Error Fix"
     ],
-    "analysis": "<p>WebGPU requires explicit synchronization when multiple compute passes read and write to the same GPUBuffer. A synchronization hazard occurs when a subsequent dispatch starts reading from a buffer before the previous write dispatch has finished flushing its results to global memory. Unlike WebGL, WebGPU does not automatically insert barriers between dispatches within the same pass, leading to non-deterministic 'flickering' or corrupted data.</p>",
-    "root_cause": "Missing execution and memory barriers between back-to-back compute dispatches that share a mutable storage buffer in the same command sequence.",
-    "bad_code": "const commandEncoder = device.createCommandEncoder();\nconst pass = commandEncoder.beginComputePass();\npass.setPipeline(pipelineA);\npass.dispatchWorkgroups(64);\n// Hazard: pipelineB starts before pipelineA writes are visible\npass.setPipeline(pipelineB);\npass.dispatchWorkgroups(64);\npass.end();",
-    "solution_desc": "Insert a storageBarrier() in the WGSL shader code or, more robustly, split the dispatches into separate compute passes or use explicit buffer usage transitions to ensure the driver inserts the necessary hardware fences.",
-    "good_code": "const commandEncoder = device.createCommandEncoder();\nconst pass1 = commandEncoder.beginComputePass();\npass1.setPipeline(pipelineA);\npass1.dispatchWorkgroups(64);\npass1.end(); \n\n// Ending the pass ensures a transition/barrier\nconst pass2 = commandEncoder.beginComputePass();\npass2.setPipeline(pipelineB);\npass2.dispatchWorkgroups(64);\npass2.end();",
-    "verification": "Use the 'WebGPU Inspector' or Chrome's validation layer. If no 'Read-after-Write' warnings appear and output is deterministic, the hazard is resolved.",
-    "date": "2026-05-01",
-    "id": 1777615207,
+    "analysis": "<p>WebGPU compute shaders execute in parallel across many workgroups. A common hazard occurs when multiple workgroups read from and write to the same storage buffer without explicit memory barriers. Since the GPU scheduler provides no execution order guarantees between different workgroups, this leads to race conditions where a read might occur before a previous write has committed to global memory, causing flickering or incorrect data processing.</p>",
+    "root_cause": "Missing storageBarriers in WGSL or lack of command encoder barriers between dependent compute passes, leading to Read-After-Write (RAW) hazards.",
+    "bad_code": "@compute @workgroup_size(64)\nfn main(@builtin(global_invocation_id) id: vec3<u32>) {\n    // Writing to a buffer and reading it back immediately in another group\n    data[id.x] = data[id.x] * 2.0;\n    let val = data[id.x + 1]; // Race condition: neighbor might not be updated\n}",
+    "solution_desc": "Use workgroupBarriers() for intra-group synchronization and split dependent operations into multiple compute passes (dispatch calls) with the appropriate buffer usages to let the WebGPU implementation insert hardware-level barriers.",
+    "good_code": "// Split into two dispatches or use workgroup memory for intra-group\n@compute @workgroup_size(64)\nfn main(@builtin(global_invocation_id) id: vec3<u32>) {\n    // Pass 1: Compute logic\n    temp_storage[id.x] = input[id.x] * 2.0;\n    workgroupBarrier(); // Syncs threads in the same workgroup\n    // Pass 2: Consumption logic\n    let result = temp_storage[id.x] + temp_storage[(id.x + 1) % 64];\n}",
+    "verification": "Enable WebGPU validation layers in Chrome/Edge and check for 'Overlap of usage' warnings. Use a GPU capture tool (like RenderDoc) to verify memory transition barriers.",
+    "date": "2026-05-03",
+    "id": 1777787424,
     "type": "error"
 });

@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777787423,
+        "title": "Resolving Rust Pinning Violations in Async Streams",
+        "slug": "rust-async-stream-pinning-violations",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/rust-async-stream-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777787424,
+        "title": "Fixing WebGPU Synchronization Hazards in Compute Shaders",
+        "slug": "webgpu-synchronization-hazards-compute",
+        "language": "WebGPU/WGSL",
+        "code": "SyncHazard",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/webgpu-synchronization-hazards-compute.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777787425,
+        "title": "Mitigating PyTorch CUDA Fragmentation in LLM Inference",
+        "slug": "pytorch-cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "CudaOOM",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/pytorch-cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777787426,
+        "title": "Open-Design: The Local-First Design System Alternative",
+        "slug": "open-design-nexuio-ai-prototyping",
+        "language": "TypeScript/React",
+        "code": "Trend",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/open-design-nexuio-ai-prototyping.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777773437,
         "title": "Fixing OCaml 5 Multicore GC Latency Spikes",
         "slug": "ocaml-5-multicore-gc-latency-fix",
