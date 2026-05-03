@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777794521,
+        "title": "Resolving Elixir OTP Mailbox Bottlenecks",
+        "slug": "elixir-otp-mailbox-selective-receive-fix",
+        "language": "Elixir",
+        "code": "Performance Bottleneck",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/elixir-otp-mailbox-selective-receive-fix.js",
+        "tags": [
+            "Elixir",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777794522,
+        "title": "Eliminating gRPC Stream Stalls from HTTP/2 Exhaustion",
+        "slug": "grpc-http2-flow-control-window-stalls",
+        "language": "Go",
+        "code": "Stream Stall",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/grpc-http2-flow-control-window-stalls.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777794523,
+        "title": "Fixing Go Runtime Scheduler Starvation",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "Scheduler Starvation",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777794524,
+        "title": "Open-Design: The Local-First Design AI Alternative",
+        "slug": "open-design-github-tech-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/open-design-github-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777787423,
         "title": "Resolving Rust Pinning Violations in Async Streams",
         "slug": "rust-async-stream-pinning-violations",
