@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777802344,
+        "title": "Solving eBPF Path-Explosion in XDP Hooks",
+        "slug": "ebpf-xdp-path-explosion-fix",
+        "language": "Go",
+        "code": "Verifier Error",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/ebpf-xdp-path-explosion-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777802345,
+        "title": "Mitigating Vector DB Recall Decay in HNSW",
+        "slug": "hnsw-recall-decay-fix",
+        "language": "Rust",
+        "code": "Recall Drift",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/hnsw-recall-decay-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777802346,
+        "title": "Fixing React Native JSI Memory Leaks",
+        "slug": "react-native-jsi-memory-leak",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/react-native-jsi-memory-leak.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777802347,
+        "title": "Open-Design: The Local-First Claude Alternative",
+        "slug": "open-design-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-03",
+        "path": "data/posts/2026-05/open-design-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React"
+        ]
+    },
+    {
         "id": 1777794521,
         "title": "Resolving Elixir OTP Mailbox Bottlenecks",
         "slug": "elixir-otp-mailbox-selective-receive-fix",
