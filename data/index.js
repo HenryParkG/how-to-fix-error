@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777859928,
+        "title": "Fixing Haskell Space Leaks in Stateful Stream Processors",
+        "slug": "haskell-stream-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/haskell-stream-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777859929,
+        "title": "Fixing Kafka Rebalance Storms in Static Membership",
+        "slug": "kafka-static-membership-rebalancing",
+        "language": "Kafka",
+        "code": "Rebalance Storm",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/kafka-static-membership-rebalancing.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777859930,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Network Stacks",
+        "slug": "cpp20-coroutine-frame-leaks",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/cpp20-coroutine-frame-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777859931,
+        "title": "Open-Design: The Local-First Claude Artifacts Alternative",
+        "slug": "open-design-ai-trend",
+        "language": "TypeScript / Next.js",
+        "code": "Trend",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/open-design-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "React",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777802344,
         "title": "Solving eBPF Path-Explosion in XDP Hooks",
         "slug": "ebpf-xdp-path-explosion-fix",
