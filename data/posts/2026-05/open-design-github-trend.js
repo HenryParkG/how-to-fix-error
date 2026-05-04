@@ -1,5 +1,5 @@
 window.onPostDataLoaded({
-    "title": "Open-Design: The Local-First Open Source Claude Alternative",
+    "title": "Nexu-io Open-Design: The Local-First Design Future",
     "slug": "open-design-github-trend",
     "language": "TypeScript",
     "code": "Trend",
@@ -7,15 +7,15 @@ window.onPostDataLoaded({
         "Tech Trend",
         "GitHub",
         "TypeScript",
-        "React"
+        "Next.js"
     ],
-    "analysis": "<p>The 'nexu-io/open-design' repository is trending due to its promise of a 'local-first' AI design experience. Unlike proprietary tools like Claude Design, it allows developers to generate high-fidelity UI/UX prototypes, design systems, and multimedia content directly from their own infrastructure or CLI. Its popularity stems from the integration of 19 specialized skills and 71 brand-grade design systems, combined with the ability to export to production-ready formats like HTML, MP4, and PPTX. It solves the privacy concerns of enterprise teams while providing 'sandboxed previews' for safe execution.</p>",
-    "root_cause": "Local-first architecture, Multi-LLM support (Claude, Gemini, Qwen), and sandboxed code execution for design prototyping.",
-    "bad_code": "git clone https://github.com/nexu-io/open-design.git\ncd open-design\nnpm install\ncp .env.example .env # Add your LLM keys",
-    "solution_desc": "Open-Design is best used for rapid prototyping where data privacy is paramount. It should be adopted by teams looking to build custom design-to-code pipelines or those who want to leverage multiple LLM models (like Claude Code or Gemini) within a unified design environment without being locked into a single provider's UI.",
-    "good_code": "// Example of triggering a design generation via CLI\nnpx open-design generate --prompt \"A modern dashboard for a crypto wallet\" --system \"shadcn-ui\" --export \"html\"",
-    "verification": "The project is likely to evolve into a standard for AI-driven frontend engineering, with future versions focusing on deeper integration with VS Code (Cursor/Copilot) and real-time collaborative editing.",
-    "date": "2026-05-03",
-    "id": 1777773440,
+    "analysis": "<p>nexu-io/open-design is trending because it bridges the gap between AI code generation and professional design systems. Unlike basic UI generators, it provides 'brand-grade' design systems and HyperFrames, allowing developers to generate prototypes that are exportable to production-ready formats like HTML, PDF, and PPTX.</p><p>Its popularity stems from its 'Local-first' philosophy and wide compatibility with LLM CLI tools like Claude Code and Cursor, enabling a seamless 'Design-as-Code' workflow.</p>",
+    "root_cause": "Local-first architecture, 19+ integrated skills, sandboxed previews, and high-fidelity Design System generation.",
+    "bad_code": "git clone https://github.com/nexu-io/open-design.git\ncd open-design\nnpm install\nnpm run dev",
+    "solution_desc": "Ideal for rapid prototyping in regulated industries (local-first), building internal tool galleries, and automating marketing collateral (Slides/Videos) directly from code descriptions.",
+    "good_code": "// Example of using a Design System Skill\nimport { DesignSystem } from 'open-design';\n\nconst myApp = DesignSystem.generate({\n  brand: 'EcoTech',\n  style: 'Minimalist',\n  components: ['Navbar', 'Hero', 'Pricing']\n});",
+    "verification": "The project is rapidly evolving; watch for its upcoming 'HyperFrame' updates which promise even tighter integration with Real-time Canvas APIs.",
+    "date": "2026-05-04",
+    "id": 1777874131,
     "type": "trend"
 });

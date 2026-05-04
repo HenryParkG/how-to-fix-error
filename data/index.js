@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777874128,
+        "title": "Fixing Zig Comptime Memory Corruption",
+        "slug": "zig-comptime-memory-corruption-fix",
+        "language": "Zig",
+        "code": "MemoryCorruption",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/zig-comptime-memory-corruption-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777874129,
+        "title": "Solving MongoDB WiredTiger Cache Deadlocks",
+        "slug": "mongodb-wiredtiger-cache-deadlock-mitigation",
+        "language": "Go",
+        "code": "Deadlock (Write Contention)",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-cache-deadlock-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777874130,
+        "title": "Fixing Scala ZIO Fiber Leaks in ZStream",
+        "slug": "scala-zio-fiber-leak-fix",
+        "language": "Java",
+        "code": "ResourceLeak",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/scala-zio-fiber-leak-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777874131,
+        "title": "Nexu-io Open-Design: The Local-First Design Future",
+        "slug": "open-design-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/open-design-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1777859928,
         "title": "Fixing Haskell Space Leaks in Stateful Stream Processors",
         "slug": "haskell-stream-space-leaks",
