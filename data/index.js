@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1777882687,
+        "title": "Fixing OCaml Multicore Memory Contention in Parallel GC",
+        "slug": "ocaml-multicore-gc-contention-fix",
+        "language": "OCaml",
+        "code": "GC Contention",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/ocaml-multicore-gc-contention-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Multicore",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777882688,
+        "title": "Mitigating Ray Object Store Spilling in Large-Scale Training",
+        "slug": "ray-object-store-spilling-mitigation",
+        "language": "Python",
+        "code": "ObjectStoreFull",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/ray-object-store-spilling-mitigation.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Distributed-Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777882689,
+        "title": "Resolving PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-transaction-id-wraparound",
+        "language": "SQL",
+        "code": "XID Wraparound",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/postgres-transaction-id-wraparound.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777882690,
+        "title": "Analysis of nexu-io/open-design: Local-First AI UI",
+        "slug": "nexu-io-open-design-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/nexu-io-open-design-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777874128,
         "title": "Fixing Zig Comptime Memory Corruption",
         "slug": "zig-comptime-memory-corruption-fix",
