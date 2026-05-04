@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1777892217,
+        "title": "Fixing Rust Pin-Projection Memory Unsoundness",
+        "slug": "rust-pin-projection-memory-unsoundness",
+        "language": "Rust",
+        "code": "UnsoundPin",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/rust-pin-projection-memory-unsoundness.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777892218,
+        "title": "Mitigating PyTorch CUDA Memory Fragmentation in LLMs",
+        "slug": "pytorch-cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "CUDA_OOM",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/pytorch-cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777892219,
+        "title": "Resolving Istio Sidecar Resource Exhaustion",
+        "slug": "istio-sidecar-mTLS-rotation-exhaustion",
+        "language": "Kubernetes",
+        "code": "EnvoyOOM",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/istio-sidecar-mTLS-rotation-exhaustion.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777892220,
+        "title": "Analyzing Nexu-IO Open-Design: The Local-First Claude Design Alternative",
+        "slug": "nexu-io-open-design-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-04",
+        "path": "data/posts/2026-05/nexu-io-open-design-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1777882687,
         "title": "Fixing OCaml Multicore Memory Contention in Parallel GC",
         "slug": "ocaml-multicore-gc-contention-fix",
