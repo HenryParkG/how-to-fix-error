@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777967685,
+        "title": "Fixing C++20 Coroutine Promise-Type Lifecycle Mismatches",
+        "slug": "cpp20-coroutine-lifecycle-mismatches",
+        "language": "C++",
+        "code": "LifetimeError",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/cpp20-coroutine-lifecycle-mismatches.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777967686,
+        "title": "Resolving Haskell Lazy Space Leaks in Streaming Analytics",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "StackOverflow/OOM",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Python",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777967687,
+        "title": "Mitigating Vector DB HNSW Index Fragmentation",
+        "slug": "vector-db-hnsw-fragmentation-fix",
+        "language": "Go",
+        "code": "IndexDegradation",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/vector-db-hnsw-fragmentation-fix.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777967688,
+        "title": "Analysis: CVE-2026-31431 Linux Kernel Copy Fail",
+        "slug": "cve-2026-31431-linux-kernel-lpe",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/cve-2026-31431-linux-kernel-lpe.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1777959268,
         "title": "Fixing eBPF Verifier Complexity in XDP Pipelines",
         "slug": "ebpf-verifier-complexity-xdp-fix",
