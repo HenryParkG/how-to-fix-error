@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777976919,
+        "title": "Fixing Zig Comptime Memory Exhaustion",
+        "slug": "fixing-zig-comptime-memory-exhaustion",
+        "language": "Zig",
+        "code": "ComptimeMemoryExhaustion",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/fixing-zig-comptime-memory-exhaustion.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777976920,
+        "title": "Resolving React Native JSI Memory Leaks",
+        "slug": "resolving-react-native-jsi-memory-leaks",
+        "language": "C++/JavaScript",
+        "code": "JSIMemoryLeak",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/resolving-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React Native",
+            "C++",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777976921,
+        "title": "Mitigating Elasticsearch Shard Deadlocks",
+        "slug": "mitigating-elasticsearch-shard-deadlocks",
+        "language": "Java",
+        "code": "ShardAllocationDeadlock",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/mitigating-elasticsearch-shard-deadlocks.js",
+        "tags": [
+            "Elasticsearch",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777976922,
+        "title": "Analyze Trending: CVE-2026-31431 Linux LPE",
+        "slug": "analyze-cve-2026-31431-linux-lpe",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/analyze-cve-2026-31431-linux-lpe.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1777967685,
         "title": "Fixing C++20 Coroutine Promise-Type Lifecycle Mismatches",
         "slug": "cpp20-coroutine-lifecycle-mismatches",
