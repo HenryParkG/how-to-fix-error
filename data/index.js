@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777959268,
+        "title": "Fixing eBPF Verifier Complexity in XDP Pipelines",
+        "slug": "ebpf-verifier-complexity-xdp-fix",
+        "language": "Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/ebpf-verifier-complexity-xdp-fix.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777959269,
+        "title": "Fixing Elixir Selective Receive Bottlenecks",
+        "slug": "elixir-genserver-selective-receive-fix",
+        "language": "Go",
+        "code": "BEAM_MAILBOX_CONGESTION",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/elixir-genserver-selective-receive-fix.js",
+        "tags": [
+            "Go",
+            "Elixir",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777959270,
+        "title": "Fixing LoRA Gradient Vanishing in 4-bit Training",
+        "slug": "lora-quantization-gradient-fix",
+        "language": "Python",
+        "code": "GRADIENT_VANISHING",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/lora-quantization-gradient-fix.js",
+        "tags": [
+            "Python",
+            "AI",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777959271,
+        "title": "Inside Copy Fail: Analyzing CVE-2026-31431 LPE",
+        "slug": "cve-2026-31431-linux-kernel-exploit",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/cve-2026-31431-linux-kernel-exploit.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1777946366,
         "title": "Resolving Go Runtime Scheduler Starvation",
         "slug": "go-runtime-scheduler-starvation-fix",
