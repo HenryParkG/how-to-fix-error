@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1777946366,
+        "title": "Resolving Go Runtime Scheduler Starvation",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "GOMAXPROCS Starvation",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777946367,
+        "title": "Mitigating PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlock-multi-node",
+        "language": "Python",
+        "code": "DistDeadlockErr",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/pytorch-ddp-deadlock-multi-node.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777946368,
+        "title": "Fixing Flutter Impeller Shader Jitter",
+        "slug": "flutter-impeller-shader-jitter-fix",
+        "language": "Dart",
+        "code": "ShaderJank",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/flutter-impeller-shader-jitter-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Flutter",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1777946369,
+        "title": "Analyze Trending: 'theori-io/copy-fail-CVE-2026-31431'",
+        "slug": "linux-kernel-cve-2026-31431-analysis",
+        "language": "C / Linux",
+        "code": "Trend",
+        "date": "2026-05-05",
+        "path": "data/posts/2026-05/linux-kernel-cve-2026-31431-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1777892217,
         "title": "Fixing Rust Pin-Projection Memory Unsoundness",
         "slug": "rust-pin-projection-memory-unsoundness",
