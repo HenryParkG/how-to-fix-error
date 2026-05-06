@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778065054,
+        "title": "Debugging eBPF Verifier State-Explosion in DPI",
+        "slug": "ebpf-verifier-state-explosion-dpi",
+        "language": "Rust",
+        "code": "BPF_VERIFIER_STATE_EXPLOSION",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/ebpf-verifier-state-explosion-dpi.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778065055,
+        "title": "Resolving Kafka Consumer Poison Pill Rebalance Storms",
+        "slug": "kafka-poison-pill-rebalance-storms",
+        "language": "Java",
+        "code": "REBALANCE_TIMEOUT_EXCEEDED",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/kafka-poison-pill-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778065056,
+        "title": "Mitigating Elixir GenServer Mailbox Pressure",
+        "slug": "elixir-genserver-mailbox-pressure",
+        "language": "Go",
+        "code": "PROCESS_MAILBOX_OVERFLOW",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/elixir-genserver-mailbox-pressure.js",
+        "tags": [
+            "Go",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778065057,
+        "title": "Identifying USB-C Capabilities with WhatCable",
+        "slug": "whatcable-macos-usb-c-utility",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/whatcable-macos-usb-c-utility.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778054922,
         "title": "Rust Async Stream FFI Cancellation Safety",
         "slug": "rust-async-ffi-stream-cancellation-safety",
