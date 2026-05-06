@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1778032716,
+        "title": "Fixing Wasm Linear Memory Fragmentation at the Edge",
+        "slug": "wasm-linear-memory-fragmentation-fix",
+        "language": "Rust",
+        "code": "MemoryFragmentation",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/wasm-linear-memory-fragmentation-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778032717,
+        "title": "Resolving gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "FlowControlBlocking",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778032718,
+        "title": "Mitigating WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "Node.js",
+        "code": "CacheEvictionStall",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778032719,
+        "title": "Exploring WhatCable: The USB-C Decoder for macOS",
+        "slug": "whatcable-macos-usb-c-analyzer",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/whatcable-macos-usb-c-analyzer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1777976919,
         "title": "Fixing Zig Comptime Memory Exhaustion",
         "slug": "fixing-zig-comptime-memory-exhaustion",
