@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1778054922,
+        "title": "Rust Async Stream FFI Cancellation Safety",
+        "slug": "rust-async-ffi-stream-cancellation-safety",
+        "language": "Rust",
+        "code": "AsyncCancellationError",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/rust-async-ffi-stream-cancellation-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778054923,
+        "title": "Fix PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "pytorch-ddp-heterogeneous-deadlocks",
+        "language": "Python",
+        "code": "NCCLTimeoutError",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/pytorch-ddp-heterogeneous-deadlocks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778054924,
+        "title": "Resolve WebGPU Buffer Sync Races in Compute Pipelines",
+        "slug": "webgpu-buffer-sync-compute-races",
+        "language": "TypeScript",
+        "code": "GPUSyncRace",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/webgpu-buffer-sync-compute-races.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778054925,
+        "title": "WhatCable: Understanding Your USB-C Capabilities",
+        "slug": "whatcable-macos-usb-c-utility",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/whatcable-macos-usb-c-utility.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778046566,
         "title": "Resolving OCaml Multicore Minor-Heap Contention",
         "slug": "ocaml-multicore-minor-heap-contention",
