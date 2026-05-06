@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1778046566,
+        "title": "Resolving OCaml Multicore Minor-Heap Contention",
+        "slug": "ocaml-multicore-minor-heap-contention",
+        "language": "OCaml",
+        "code": "GCLatency",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/ocaml-multicore-minor-heap-contention.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778046567,
+        "title": "Mitigating K8s Admission Webhook Latency Spikes",
+        "slug": "k8s-admission-webhook-latency-mitigation",
+        "language": "Go",
+        "code": "K8sLatency",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/k8s-admission-webhook-latency-mitigation.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778046568,
+        "title": "Fixing Spark Shuffle Failures on Spot Instances",
+        "slug": "spark-shuffle-block-migration-spot-instances",
+        "language": "Java",
+        "code": "ShuffleFetchFailed",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/spark-shuffle-block-migration-spot-instances.js",
+        "tags": [
+            "Java",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778046569,
+        "title": "Why 'whatcable' is the Must-Have macOS Utility",
+        "slug": "darrylmorley-whatcable-macos-analysis",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-06",
+        "path": "data/posts/2026-05/darrylmorley-whatcable-macos-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778032716,
         "title": "Fixing Wasm Linear Memory Fragmentation at the Edge",
         "slug": "wasm-linear-memory-fragmentation-fix",
