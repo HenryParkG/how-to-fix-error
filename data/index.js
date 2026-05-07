@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778133177,
+        "title": "Zig Comptime Pointer Aliasing in Custom Allocators",
+        "slug": "zig-comptime-pointer-aliasing-allocator",
+        "language": "Zig",
+        "code": "Memory/Safety",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/zig-comptime-pointer-aliasing-allocator.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Memory",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778133178,
+        "title": "Resolving BF16 Gradient Overflow and NaN Loss in LLMs",
+        "slug": "bf16-gradient-overflow-nan-loss-fix",
+        "language": "Python",
+        "code": "ML/Training",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/bf16-gradient-overflow-nan-loss-fix.js",
+        "tags": [
+            "Python",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778133179,
+        "title": "Fixing ClickHouse Tail Latency During Part Merges",
+        "slug": "clickhouse-latency-spikes-merges",
+        "language": "SQL",
+        "code": "Database/Config",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/clickhouse-latency-spikes-merges.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778133180,
+        "title": "Why 'whatcable' is Trending: Solving USB-C Chaos",
+        "slug": "whatcable-macos-utility-trend",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/whatcable-macos-utility-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778119263,
         "title": "Fix C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
