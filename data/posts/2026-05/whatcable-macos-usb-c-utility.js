@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Identifying USB-C Capabilities with WhatCable",
+    "title": "Demystifying USB-C: Analyzing whatcable for macOS",
     "slug": "whatcable-macos-usb-c-utility",
-    "language": "TypeScript",
+    "language": "Swift",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript"
+        "macOS"
     ],
-    "analysis": "<p>The USB-C ecosystem is notoriously confusing; two identical-looking cables can have vastly different capabilities, ranging from 480Mbps (USB 2.0) to 40Gbps (Thunderbolt 4), and varying Power Delivery (PD) limits. 'WhatCable' (darrylmorley/whatcable) is a trending macOS menu bar utility that solves this by querying the system's I/O registry to provide 'plain English' descriptions of every connected cable.</p><p>It has gained popularity among developers and hardware enthusiasts because macOS's native 'System Report' hides this information deep within nested menus. WhatCable surfaces E-marker chip data instantly, showing users exactly what their hardware is capable of.</p>",
-    "root_cause": "Key Features: Real-time monitoring of USB bus changes, identification of 'charging-only' vs 'data' cables, and reporting of maximum negotiated wattage for Power Delivery.",
-    "bad_code": "brew install --cask whatcable # Simple installation via Homebrew",
-    "solution_desc": "Best used by developers troubleshooting peripheral connectivity, photographers transferring large media, or anyone trying to find the 'fast' charging cable in a drawer of identical wires.",
-    "good_code": "// Logic mimics: IORegistryEntryCreateIterator\n// Output: 'Cable: USB 3.1 Gen 2 | Max Speed: 10Gbps | Power: 100W'",
-    "verification": "The project is likely to expand with support for Thunderbolt 5 and more detailed E-marker chip analysis as new hardware ships with M4-series Macs.",
-    "date": "2026-05-06",
-    "id": 1778065057,
+    "analysis": "<p>The 'whatcable' repository by Darryl Morley has exploded in popularity because it solves a hardware 'black box' problem. USB-C cables look identical but vary wildly in capabilities\u2014some only support USB 2.0 speeds (480Mbps), while others support Thunderbolt 4 (40Gbps) and 100W+ Power Delivery. This app parses macOS IOKit registry data to provide a human-readable summary of the physical link characteristics of every connected cable.</p>",
+    "root_cause": "Transparency in Hardware Standards: The app identifies 'Max Speed', 'Current Wattage', and 'Manufacturer Data' by querying the IOUSBHostFamily and IORegistryTree, exposing metadata that macOS usually hides deep within System Report.",
+    "bad_code": "brew install --cask whatcable # Quick install via Homebrew",
+    "solution_desc": "Ideal for developers and sysadmins who need to verify if a docking station or external SSD is bottlenecked by a low-quality cable. Use it whenever a peripheral isn't performing at advertised speeds or a laptop is charging slowly.",
+    "good_code": "// Example of the logic used to determine link speed\n// (Conceptual Swift/IOKit usage)\nlet service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching(\"IOUSBHostDevice\"))\nif let speed = IORegistryEntryCreateCFProperty(service, \"Device Speed\" as CFString, kCFAllocatorDefault, 0) {\n    print(\"Detected Speed: \\(speed)\")\n}",
+    "verification": "As USB-C and Thunderbolt merge further (USB4), tools like whatcable will become essential system utilities for hardware troubleshooting.",
+    "date": "2026-05-07",
+    "id": 1778151682,
     "type": "trend"
 });
