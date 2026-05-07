@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778141810,
+        "title": "Fixing Userfaultfd Page Fault Stalls in JVM GC",
+        "slug": "fixing-userfaultfd-page-fault-stalls-jvm-gc",
+        "language": "Java",
+        "code": "Kernel Page Fault Stall",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/fixing-userfaultfd-page-fault-stalls-jvm-gc.js",
+        "tags": [
+            "Java",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778141811,
+        "title": "Debugging Ray Distributed Actor Deadlocks in Scaling",
+        "slug": "ray-actor-deadlocks-dynamic-autoscaling",
+        "language": "Python",
+        "code": "ActorDeadlockError",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/ray-actor-deadlocks-dynamic-autoscaling.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778141812,
+        "title": "Resolving RocksDB Write Amplification Spikes",
+        "slug": "rocksdb-write-amplification-lsm-compaction",
+        "language": "Rust",
+        "code": "HighWriteAmp",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/rocksdb-write-amplification-lsm-compaction.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778141813,
+        "title": "Why 'whatcable' is the Must-Have macOS Tool for USB-C",
+        "slug": "whatcable-macos-usb-c-utility-trend",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/whatcable-macos-usb-c-utility-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778133177,
         "title": "Zig Comptime Pointer Aliasing in Custom Allocators",
         "slug": "zig-comptime-pointer-aliasing-allocator",
