@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778119263,
+        "title": "Fix C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "HighPerformance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778119264,
+        "title": "Fix HNSW Index Corruption in Vector DBs",
+        "slug": "hnsw-vector-db-corruption-fix",
+        "language": "Go",
+        "code": "IndexCorruption",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/hnsw-vector-db-corruption-fix.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778119265,
+        "title": "Fix Istio Sidecar Resource Exhaustion",
+        "slug": "istio-mtls-handshake-flood-fix",
+        "language": "Kubernetes",
+        "code": "ResourceExhaustion",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/istio-mtls-handshake-flood-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778119266,
+        "title": "WhatCable: Making USB-C Capabilities Transparent",
+        "slug": "darrylmorley-whatcable-macos-analysis",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-05-07",
+        "path": "data/posts/2026-05/darrylmorley-whatcable-macos-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778065054,
         "title": "Debugging eBPF Verifier State-Explosion in DPI",
         "slug": "ebpf-verifier-state-explosion-dpi",
