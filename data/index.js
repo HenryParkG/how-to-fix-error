@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778235498,
+        "title": "Resolving eBPF Verifier Rejection of Bounded Loops",
+        "slug": "ebpf-verifier-bounded-loop-fix",
+        "language": "C / eBPF",
+        "code": "VerifierRejection",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/ebpf-verifier-bounded-loop-fix.js",
+        "tags": [
+            "Go",
+            "C",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778235499,
+        "title": "Fixing Spark Shuffle Block Corruption in Large Joins",
+        "slug": "spark-shuffle-block-corruption-fix",
+        "language": "Java / Scala",
+        "code": "CorruptStreamException",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/spark-shuffle-block-corruption-fix.js",
+        "tags": [
+            "Java",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778235500,
+        "title": "Fixing Flutter Shader Jank via Impeller Pipeline",
+        "slug": "flutter-shader-jank-impeller-fix",
+        "language": "Dart",
+        "code": "ShaderCompilationJank",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/flutter-shader-jank-impeller-fix.js",
+        "tags": [
+            "TypeScript",
+            "CSS",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778235501,
+        "title": "DirtyFrag: Advancing Kernel Heap Fragmentation Research",
+        "slug": "dirtyfrag-github-trend-analysis",
+        "language": "C / Kernel",
+        "code": "Trend",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/dirtyfrag-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778224613,
         "title": "Fixing C++20 Coroutine HALO Lifetime Violations",
         "slug": "cpp20-coroutine-halo-lifetime-fix",
