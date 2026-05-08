@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778206046,
+        "title": "Debugging Rust Pin-Projection in Custom Async Streams",
+        "slug": "rust-pin-projection-async-stream-fix",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/rust-pin-projection-async-stream-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778206047,
+        "title": "Resolving PyTorch FSDP Collective Communication Timeouts",
+        "slug": "pytorch-fsdp-timeout-sync-fix",
+        "language": "Python",
+        "code": "NCCLTimeout",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/pytorch-fsdp-timeout-sync-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778206048,
+        "title": "Fixing WebGPU Buffer Alignment Violations in WGSL",
+        "slug": "webgpu-buffer-alignment-wgsl-fix",
+        "language": "TypeScript",
+        "code": "AlignmentError",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/webgpu-buffer-alignment-wgsl-fix.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "GPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778206049,
+        "title": "DeepClaude: Claude Code UX with DeepSeek Efficiency",
+        "slug": "deepclaude-ai-agent-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/deepclaude-ai-agent-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778151679,
         "title": "Fixing Linux io_uring CQ Overflows in NVMe Workloads",
         "slug": "fixing-io-uring-cq-overflows-nvme",
