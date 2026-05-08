@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778224613,
+        "title": "Fixing C++20 Coroutine HALO Lifetime Violations",
+        "slug": "cpp20-coroutine-halo-lifetime-fix",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/cpp20-coroutine-halo-lifetime-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "CPP",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778224614,
+        "title": "Resolving Milvus HNSW Index Fragmentation",
+        "slug": "milvus-hnsw-fragmentation-fix",
+        "language": "Milvus",
+        "code": "IndexFragmentation",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/milvus-hnsw-fragmentation-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778224615,
+        "title": "Fixing Elixir GenServer Selective Receive Stalls",
+        "slug": "elixir-genserver-selective-receive-fix",
+        "language": "Elixir",
+        "code": "MailboxCongestion",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/elixir-genserver-selective-receive-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778224616,
+        "title": "Kernel Memory Research with dirtyfrag",
+        "slug": "github-trending-dirtyfrag-analysis",
+        "language": "C/Rust",
+        "code": "Trend",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/github-trending-dirtyfrag-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778217803,
         "title": "Debugging Linux RCU Grace Period Stalls on High-Core CPUs",
         "slug": "linux-kernel-rcu-stall-debugging",
