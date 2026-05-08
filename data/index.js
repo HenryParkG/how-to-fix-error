@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778217803,
+        "title": "Debugging Linux RCU Grace Period Stalls on High-Core CPUs",
+        "slug": "linux-kernel-rcu-stall-debugging",
+        "language": "C",
+        "code": "RCU_STALL_ERROR",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/linux-kernel-rcu-stall-debugging.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778217804,
+        "title": "Resolving MongoDB WiredTiger Cache Eviction Contention",
+        "slug": "mongodb-wiredtiger-cache-eviction-fix",
+        "language": "C++",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-cache-eviction-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778217805,
+        "title": "Fixing React Native JSI Memory Leaks in Turbo Modules",
+        "slug": "react-native-jsi-memory-leak-fix",
+        "language": "TypeScript",
+        "code": "MEM_LEAK_JSI",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/react-native-jsi-memory-leak-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778217806,
+        "title": "DeepClaude: The High-Performance Reasoning API Loop",
+        "slug": "deepclaude-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-08",
+        "path": "data/posts/2026-05/deepclaude-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778206046,
         "title": "Debugging Rust Pin-Projection in Custom Async Streams",
         "slug": "rust-pin-projection-async-stream-fix",

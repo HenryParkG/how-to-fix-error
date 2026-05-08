@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing React Native JSI Memory Leaks in Bridge Calls",
+    "title": "Fixing React Native JSI Memory Leaks in Turbo Modules",
     "slug": "react-native-jsi-memory-leak-fix",
     "language": "TypeScript",
-    "code": "MemoryLeak",
+    "code": "MEM_LEAK_JSI",
     "tags": [
         "React",
         "TypeScript",
+        "Frontend",
         "Error Fix"
     ],
-    "analysis": "<p>JavaScript Interface (JSI) allows C++ to maintain references to JavaScript objects. A common leak occurs when C++ code captures a jsi::Value or jsi::Object in a long-lived lambda or a global map without using a WeakObject or ensuring explicit invalidation. Because the JavaScript Garbage Collector cannot see references held inside C++ heap-allocated memory, these JS objects are never collected, leading to a steady increase in memory consumption in high-frequency scenarios like sensor data streaming.</p>",
-    "root_cause": "Strong references to jsi::Value objects held in C++ memory outliving their intended JavaScript lifecycle.",
-    "bad_code": "// C++ snippet holding a strong reference\njsi::Function callback = args[0].asObject(runtime).asFunction(runtime);\n// Storing the function directly in a vector prevents GC\nstoredCallbacks.push_back(jsi::Value(runtime, callback));",
-    "solution_desc": "Use jsi::WeakObject for long-term storage or ensure that C++ wrappers are explicitly destroyed when the corresponding JS component unmounts.",
-    "good_code": "// Use jsi::Object to store, but manage lifecycle via cleanup\nauto callbackPtr = std::make_shared<jsi::Function>(args[0].asObject(runtime).asFunction(runtime));\n\n// Use an ID-based map to allow explicit deletion from JS\nthis->callbacks[callbackId] = std::move(callbackPtr);\n\n// Ensure a cleanup method is exposed to JS\nvoid removeCallback(int id) { this->callbacks.erase(id); }",
-    "verification": "Use Xcode Memory Graph or Android Studio Profiler to observe 'jsi::HostObject' counts. Verify that memory returns to baseline after the JS component unmounts.",
-    "date": "2026-05-02",
-    "id": 1777686865,
+    "analysis": "<p>React Native JSI (JavaScript Interface) allows direct C++ to JS communication. A common leak occurs when C++ objects hold a <code>jsi::Value</code> or <code>jsi::Object</code> in a member variable. Since the JS Garbage Collector cannot 'see' into the C++ heap, these objects are never collected, even if the JS-side reference is nullified, leading to growing memory usage in Turbo Modules.</p>",
+    "root_cause": "Capturing jsi::Value objects in C++ member variables or lambdas without wrapping them in jsi::Persistent or manually managing their lifecycle.",
+    "bad_code": "class MyTurboModule : public jsi::HostObject {\n  jsi::Function callback_;\n  void setCallback(jsi::Runtime& rt, const jsi::Value& cb) {\n    // Problem: Direct assignment creates a leak as GC cannot track this\n    callback_ = cb.asObject(rt).asFunction(rt);\n  }\n};",
+    "solution_desc": "Use <code>jsi::Persistent</code> to wrap JavaScript values stored in C++. This allows the JS engine to track the reference and requires an explicit <code>reset()</code> to release the memory.",
+    "good_code": "class MyTurboModule : public jsi::HostObject {\n  std::unique_ptr<jsi::Persistent<jsi::Function>> persistentCallback_;\n  \n  void setCallback(jsi::Runtime& rt, const jsi::Value& cb) {\n    // Solution: Store as a Persistent reference\n    persistentCallback_ = std::make_unique<jsi::Persistent<jsi::Function>>(\n      rt, cb.asObject(rt).asFunction(rt)\n    );\n  }\n  \n  ~MyTurboModule() { persistentCallback_.reset(); }\n};",
+    "verification": "Use Xcode Memory Graph or Android Studio Profiler to look for non-deallocated C++ HostObjects after the JS component unmounts.",
+    "date": "2026-05-08",
+    "id": 1778217805,
     "type": "error"
 });
