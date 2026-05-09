@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778320851,
+        "title": "Fixing Zig Comptime Memory Exhaustion",
+        "slug": "zig-comptime-memory-exhaustion-fix",
+        "language": "Zig",
+        "code": "OutOfMemory",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/zig-comptime-memory-exhaustion-fix.js",
+        "tags": [
+            "Zig",
+            "Metaprogramming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778320852,
+        "title": "Mitigating Gradient Vanishing in 4-bit LoRA",
+        "slug": "fix-gradient-vanishing-4bit-lora",
+        "language": "Python",
+        "code": "GradientVanishing",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/fix-gradient-vanishing-4bit-lora.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Next.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778320853,
+        "title": "Resolving Redis Latency Spikes from CoW Page Faults",
+        "slug": "redis-latency-cow-page-faults",
+        "language": "C",
+        "code": "LatencySpike",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/redis-latency-cow-page-faults.js",
+        "tags": [
+            "Infra",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778320854,
+        "title": "Analyze V4bel/dirtyfrag: Advanced Payload Evasion",
+        "slug": "v4bel-dirtyfrag-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/v4bel-dirtyfrag-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778312610,
         "title": "Fixing OCaml 5.0 Multicore GC Stalls",
         "slug": "ocaml-5-multicore-gc-stalls",
