@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778312610,
+        "title": "Fixing OCaml 5.0 Multicore GC Stalls",
+        "slug": "ocaml-5-multicore-gc-stalls",
+        "language": "OCaml",
+        "code": "GC_STALL",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/ocaml-5-multicore-gc-stalls.js",
+        "tags": [
+            "OCaml",
+            "Multicore",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778312611,
+        "title": "Fixing WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-races",
+        "language": "TypeScript",
+        "code": "GPU_BUFFER_ERR",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/webgpu-buffer-mapping-races.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778312612,
+        "title": "Mitigating PyTorch DDP Collective Deadlocks",
+        "slug": "pytorch-ddp-communication-deadlocks",
+        "language": "Python",
+        "code": "DDP_DEADLOCK",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/pytorch-ddp-communication-deadlocks.js",
+        "tags": [
+            "PyTorch",
+            "MLOps",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778312613,
+        "title": "Deep Dive into V4bel/dirtyfrag: Linux Heap Exploitation",
+        "slug": "dirtyfrag-linux-kernel-exploitation",
+        "language": "C / Linux",
+        "code": "Trend",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/dirtyfrag-linux-kernel-exploitation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778305224,
         "title": "Fixing Istio mTLS Timeouts During Aggressive HPA",
         "slug": "istio-mtls-handshake-timeout-hpa",
