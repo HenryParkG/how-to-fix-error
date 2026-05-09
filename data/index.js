@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778292097,
+        "title": "Fixing Go Runtime Preemption Stalls in Assembly Loops",
+        "slug": "go-runtime-preemption-stalls-assembly",
+        "language": "Go",
+        "code": "GC Starvation",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/go-runtime-preemption-stalls-assembly.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778292098,
+        "title": "Fixing CUDA Stream Deadlocks in Multi-GPU Pipelines",
+        "slug": "cuda-stream-sync-deadlocks-multi-gpu",
+        "language": "Python",
+        "code": "CUDA_ERROR_LAUNCH_FAILED",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/cuda-stream-sync-deadlocks-multi-gpu.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778292099,
+        "title": "Mitigating Kafka Rebalance Storms via Static Membership",
+        "slug": "kafka-rebalance-storms-static-membership",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/kafka-rebalance-storms-static-membership.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778292100,
+        "title": "Analyze V4bel/dirtyfrag: Linux Kernel Exploit Research",
+        "slug": "v4bel-dirtyfrag-github-trend",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/v4bel-dirtyfrag-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778235498,
         "title": "Resolving eBPF Verifier Rejection of Bounded Loops",
         "slug": "ebpf-verifier-bounded-loop-fix",
