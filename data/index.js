@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778305224,
+        "title": "Fixing Istio mTLS Timeouts During Aggressive HPA",
+        "slug": "istio-mtls-handshake-timeout-hpa",
+        "language": "Go",
+        "code": "TLS_HANDSHAKE_TIMEOUT",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/istio-mtls-handshake-timeout-hpa.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778305225,
+        "title": "Mitigating PostgreSQL TXID Wraparound in Heavy Clusters",
+        "slug": "postgres-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TransactionIDWraparound",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/postgres-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778305226,
+        "title": "Resolving Haskell Lazy Space Leaks in Stream Pipelines",
+        "slug": "haskell-lazy-evaluation-space-leak",
+        "language": "Go",
+        "code": "HeapStackOverflow",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/haskell-lazy-evaluation-space-leak.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778305227,
+        "title": "Analyzing V4bel/dirtyfrag: Memory Fragmentation Exploitation",
+        "slug": "dirtyfrag-github-trend-analysis",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-05-09",
+        "path": "data/posts/2026-05/dirtyfrag-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778292097,
         "title": "Fixing Go Runtime Preemption Stalls in Assembly Loops",
         "slug": "go-runtime-preemption-stalls-assembly",
