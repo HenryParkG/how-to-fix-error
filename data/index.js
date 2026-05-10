@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778407560,
+        "title": "Fixing CGo Pointer Aliasing Violations in Go's GC",
+        "slug": "fixing-cgo-pointer-aliasing-violations",
+        "language": "Go",
+        "code": "RuntimeError",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/fixing-cgo-pointer-aliasing-violations.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "CGo",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778407561,
+        "title": "Mitigating Spark OOM via Adaptive Query Execution",
+        "slug": "spark-oom-data-skew-aqe",
+        "language": "Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/spark-oom-data-skew-aqe.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Spark",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778407562,
+        "title": "Resolving PostgreSQL Write Amplification via HOT Updates",
+        "slug": "postgres-hot-update-failures",
+        "language": "SQL",
+        "code": "WriteAmplification",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/postgres-hot-update-failures.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778407563,
+        "title": "Local DeepSeek Inference on Metal with antirez/ds4",
+        "slug": "antirez-ds4-deepseek-metal",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-metal.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778399867,
         "title": "Fixing Soundness in Manual Pin Projections for Rust",
         "slug": "rust-pin-projection-soundness-fix",
