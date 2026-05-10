@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778378435,
+        "title": "Fixing C++20 Coroutine Memory Leaks",
+        "slug": "fixing-cpp20-coroutine-memory-leaks",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-memory-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++20",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778378436,
+        "title": "Mitigating MongoDB WiredTiger Cache Pressure Stalls",
+        "slug": "mongodb-wiredtiger-cache-pressure-stalls",
+        "language": "MongoDB",
+        "code": "CacheStall",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-cache-pressure-stalls.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778378437,
+        "title": "Resolving Elixir GenStage Mailbox Overflows",
+        "slug": "elixir-genstage-mailbox-overflows",
+        "language": "Elixir",
+        "code": "MailboxFull",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/elixir-genstage-mailbox-overflows.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778378438,
+        "title": "DeepSeek 4 Flash: Local Inference with ds4",
+        "slug": "antirez-ds4-metal-inference-engine",
+        "language": "C / Metal",
+        "code": "Trend",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/antirez-ds4-metal-inference-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778320851,
         "title": "Fixing Zig Comptime Memory Exhaustion",
         "slug": "zig-comptime-memory-exhaustion-fix",
