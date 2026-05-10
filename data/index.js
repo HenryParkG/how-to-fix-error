@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778392545,
+        "title": "Resolving eBPF Verifier Complexity in XDP Pipelines",
+        "slug": "ebpf-verifier-complexity-xdp-fix",
+        "language": "Go",
+        "code": "EACCES (Verifier)",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/ebpf-verifier-complexity-xdp-fix.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778392546,
+        "title": "Fixing HNSW Memory Exhaustion in Vector Databases",
+        "slug": "hnsw-memory-exhaustion-fix",
+        "language": "Rust",
+        "code": "OOM_ERROR",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/hnsw-memory-exhaustion-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778392547,
+        "title": "Tuning gRPC HTTP/2 Windows to Fix Stream Starvation",
+        "slug": "grpc-http2-flow-control-tuning",
+        "language": "Go",
+        "code": "FLOW_CONTROL_ERROR",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/grpc-http2-flow-control-tuning.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778392548,
+        "title": "Deep Dive into ds4: Antirez's Metal Inference Engine",
+        "slug": "antirez-ds4-metal-inference-analysis",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/antirez-ds4-metal-inference-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778378435,
         "title": "Fixing C++20 Coroutine Memory Leaks",
         "slug": "fixing-cpp20-coroutine-memory-leaks",
