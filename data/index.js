@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778399867,
+        "title": "Fixing Soundness in Manual Pin Projections for Rust",
+        "slug": "rust-pin-projection-soundness-fix",
+        "language": "Rust",
+        "code": "SoundnessViolation",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/rust-pin-projection-soundness-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778399868,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-rebalance-storm-mitigation",
+        "language": "Kafka",
+        "code": "GroupRebalance",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/kafka-rebalance-storm-mitigation.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778399869,
+        "title": "Fixing Memory Corruption in React Native JSI Modules",
+        "slug": "react-native-jsi-memory-fix",
+        "language": "React Native",
+        "code": "MemoryCorruption",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/react-native-jsi-memory-fix.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778399870,
+        "title": "Deep Dive into ds4: antirez's Metal LLM Engine",
+        "slug": "antirez-ds4-metal-inference-trend",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-10",
+        "path": "data/posts/2026-05/antirez-ds4-metal-inference-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778392545,
         "title": "Resolving eBPF Verifier Complexity in XDP Pipelines",
         "slug": "ebpf-verifier-complexity-xdp-fix",
