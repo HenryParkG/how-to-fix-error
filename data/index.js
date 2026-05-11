@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1778480954,
+        "title": "Fixing io_uring CQ Overflows in High-Throughput Zig",
+        "slug": "zig-io-uring-cq-overflow-fix",
+        "language": "Zig",
+        "code": "IORING_CQ_OVERFLOW",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/zig-io-uring-cq-overflow-fix.js",
+        "tags": [
+            "Zig",
+            "Backend",
+            "Linux",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778480955,
+        "title": "Mitigating NCCL All-Reduce Deadlocks in PyTorch",
+        "slug": "pytorch-nccl-allreduce-deadlock",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/pytorch-nccl-allreduce-deadlock.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "MLOps",
+            "Distributed",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778480956,
+        "title": "Resolving LSM-Tree Compaction Debt in RocksDB",
+        "slug": "rocksdb-compaction-debt-stalls",
+        "language": "Go",
+        "code": "WRITE_STALL",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/rocksdb-compaction-debt-stalls.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Infrastructure",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778480957,
+        "title": "Antirez ds4: Local DeepSeek-V3 Inference on Metal",
+        "slug": "antirez-ds4-deepseek-metal-inference",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-metal-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend",
+            "AI"
+        ]
+    },
+    {
         "id": 1778465452,
         "title": "Fixing Triton CUDA Illegal Memory Access",
         "slug": "triton-cuda-illegal-memory-access",
