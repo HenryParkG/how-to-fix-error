@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778500672,
+        "title": "Debugging Memory Lifetime Violations in C++20 Coroutines",
+        "slug": "cpp20-coroutine-memory-lifetime-violations",
+        "language": "C++ / Rust",
+        "code": "Use-After-Free",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/cpp20-coroutine-memory-lifetime-violations.js",
+        "tags": [
+            "C++20",
+            "Memory-Safety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778500673,
+        "title": "Fixing Numerical Divergence in PTQ-Quantized Transformers",
+        "slug": "fixing-ptq-numerical-divergence-transformers",
+        "language": "Python / PyTorch",
+        "code": "Precision Loss",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/fixing-ptq-numerical-divergence-transformers.js",
+        "tags": [
+            "AI",
+            "Quantization",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778500674,
+        "title": "Mitigating WiredTiger Ticket Exhaustion in MongoDB",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion",
+        "language": "Golang / MongoDB",
+        "code": "Resource Exhaustion",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778500675,
+        "title": "DeepSeek 4 Flash (antirez/ds4): Local Metal Inference",
+        "slug": "antirez-ds4-metal-inference-engine",
+        "language": "C / Metal",
+        "code": "Trend",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/antirez-ds4-metal-inference-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778480954,
         "title": "Fixing io_uring CQ Overflows in High-Throughput Zig",
         "slug": "zig-io-uring-cq-overflow-fix",
