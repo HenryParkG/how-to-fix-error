@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1778465452,
+        "title": "Fixing Triton CUDA Illegal Memory Access",
+        "slug": "triton-cuda-illegal-memory-access",
+        "language": "Python",
+        "code": "CUDA_ERROR_ILLEGAL_ADDRESS",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/triton-cuda-illegal-memory-access.js",
+        "tags": [
+            "Python",
+            "CUDA",
+            "Triton",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778465453,
+        "title": "Mitigating Envoy Sidecar Race Conditions in K8s",
+        "slug": "istio-envoy-graceful-shutdown-fix",
+        "language": "Go",
+        "code": "ERR_CONNECTION_RESET",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/istio-envoy-graceful-shutdown-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Envoy",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778465454,
+        "title": "Fixing Haskell Lazy Stream Space Leaks",
+        "slug": "haskell-lazy-stream-space-leak",
+        "language": "Haskell",
+        "code": "Heap Overflow",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/haskell-lazy-stream-space-leak.js",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Functional Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778465455,
+        "title": "Deep Dive into antirez/ds4: Local Metal LLM Inference",
+        "slug": "antirez-ds4-deepseek-metal-analysis",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-11",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-metal-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778407560,
         "title": "Fixing CGo Pointer Aliasing Violations in Go's GC",
         "slug": "fixing-cgo-pointer-aliasing-violations",
