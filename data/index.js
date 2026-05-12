@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778574952,
+        "title": "Mitigating Go Scheduler Livelocks in Preemption Loops",
+        "slug": "go-scheduler-livelock-preemption",
+        "language": "Go",
+        "code": "Livelock",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/go-scheduler-livelock-preemption.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778574953,
+        "title": "Resolving DNS Conntrack Race Conditions in Kubernetes",
+        "slug": "kubernetes-dns-conntrack-race",
+        "language": "Kubernetes",
+        "code": "Packet Drop",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/kubernetes-dns-conntrack-race.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778574954,
+        "title": "Fixing PostgreSQL TXID Wraparound under Starvation",
+        "slug": "postgres-txid-wraparound-vacuum",
+        "language": "SQL",
+        "code": "Data Loss Risk",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/postgres-txid-wraparound-vacuum.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778574955,
+        "title": "DeepSeek 4 Flash: Local Inference for Metal and CUDA",
+        "slug": "antirez-ds4-deepseek-inference",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778565477,
         "title": "Fixing BPF Verifier State Explosions in XDP",
         "slug": "debugging-bpf-verifier-state-explosions-xdp",
