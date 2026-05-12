@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1778551598,
+        "title": "Fixing RCU Callback Panics in High-Load Linux Systems",
+        "slug": "linux-kernel-panic-rcu-callback-accumulation",
+        "language": "C / Linux",
+        "code": "RCU_STALL_PANIC",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/linux-kernel-panic-rcu-callback-accumulation.js",
+        "tags": [
+            "Rust",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778551599,
+        "title": "Mitigating HNSW Graph Decay in High-Churn Vector DBs",
+        "slug": "hnsw-graph-connectivity-decay-fix",
+        "language": "Rust / C++",
+        "code": "HNSW_DISCONNECTION",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/hnsw-graph-connectivity-decay-fix.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778551600,
+        "title": "Solving Selective Receive Bottlenecks in Elixir",
+        "slug": "elixir-selective-receive-bottleneck",
+        "language": "Elixir / Erlang",
+        "code": "BEAM_MAILBOX_STALL",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/elixir-selective-receive-bottleneck.js",
+        "tags": [
+            "Go",
+            "Node.js",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778551601,
+        "title": "DeepSeek-V3 on Metal: Inside the 'ds4' Inference Engine",
+        "slug": "antirez-ds4-deepseek-metal-inference",
+        "language": "C / Metal",
+        "code": "Trend",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-metal-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778500672,
         "title": "Debugging Memory Lifetime Violations in C++20 Coroutines",
         "slug": "cpp20-coroutine-memory-lifetime-violations",
