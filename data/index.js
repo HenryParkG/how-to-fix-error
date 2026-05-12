@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1778584396,
+        "title": "Fixing Rust Async Cancellation in Pin-Projected Futures",
+        "slug": "rust-async-cancellation-pin-projected-futures",
+        "language": "Rust",
+        "code": "AsyncCancellation",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/rust-async-cancellation-pin-projected-futures.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778584397,
+        "title": "Resolving WebGPU Pipeline Stalls in Compute Shaders",
+        "slug": "webgpu-command-buffer-pipeline-stalls",
+        "language": "TypeScript",
+        "code": "GPUPipelineStall",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/webgpu-command-buffer-pipeline-stalls.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Performance",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778584398,
+        "title": "Mitigating gRPC Flow Control Deadlocks in Microservices",
+        "slug": "grpc-flow-control-deadlocks-microservices",
+        "language": "Go",
+        "code": "gRPCDeadlock",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/grpc-flow-control-deadlocks-microservices.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778584399,
+        "title": "Deep Dive into antirez/ds4: Flash DeepSeek for Metal/CUDA",
+        "slug": "antirez-ds4-deepseek-inference-engine",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/antirez-ds4-deepseek-inference-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Infrastructure",
+            "AI"
+        ]
+    },
+    {
         "id": 1778574952,
         "title": "Mitigating Go Scheduler Livelocks in Preemption Loops",
         "slug": "go-scheduler-livelock-preemption",
