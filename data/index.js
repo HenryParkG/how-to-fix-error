@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1778565477,
+        "title": "Fixing BPF Verifier State Explosions in XDP",
+        "slug": "debugging-bpf-verifier-state-explosions-xdp",
+        "language": "Rust",
+        "code": "VerifierError",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/debugging-bpf-verifier-state-explosions-xdp.js",
+        "tags": [
+            "Rust",
+            "eBPF",
+            "XDP",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778565478,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-group-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/kafka-consumer-group-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778565479,
+        "title": "Resolving Memory Fragmentation in Multi-Tenant Wasm",
+        "slug": "wasm-memory-fragmentation-multi-tenant",
+        "language": "Rust",
+        "code": "MemoryOOM",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/wasm-memory-fragmentation-multi-tenant.js",
+        "tags": [
+            "Rust",
+            "Wasm",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778565480,
+        "title": "Local LLM Mastery with antirez/ds4 for Metal",
+        "slug": "antirez-ds4-local-inference-metal",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-12",
+        "path": "data/posts/2026-05/antirez-ds4-local-inference-metal.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778551598,
         "title": "Fixing RCU Callback Panics in High-Load Linux Systems",
         "slug": "linux-kernel-panic-rcu-callback-accumulation",
