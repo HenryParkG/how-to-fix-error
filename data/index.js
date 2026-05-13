@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778671560,
+        "title": "Mitigating BEAM Distribution Port Congestion",
+        "slug": "beam-distribution-port-congestion",
+        "language": "Elixir",
+        "code": "PortCongestionError",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/beam-distribution-port-congestion.js",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778671561,
+        "title": "Fixing HNSW Index Fragmentation and Recall Degradation",
+        "slug": "hnsw-index-fragmentation-recall",
+        "language": "Python",
+        "code": "RecallDegradation",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/hnsw-index-fragmentation-recall.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778671562,
+        "title": "Fixing CFS Bandwidth Throttling in K8s",
+        "slug": "cfs-bandwidth-throttling-k8s",
+        "language": "Go",
+        "code": "CPUThrottling",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/cfs-bandwidth-throttling-k8s.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778671563,
+        "title": "Trend: dirtyfrag - Stabilizing Linux Heap Exploits",
+        "slug": "dirtyfrag-linux-kernel-exploitation",
+        "language": "C",
+        "code": "Trend",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/dirtyfrag-linux-kernel-exploitation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778653130,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
