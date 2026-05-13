@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Fix C++20 Coroutine Lifetime Violations",
+    "title": "Fixing C++20 Coroutine Lifetime Violations",
     "slug": "cpp20-coroutine-lifetime-violations",
     "language": "C++",
-    "code": "LifetimeViolation",
+    "code": "Lifetime Error",
     "tags": [
         "Rust",
         "Backend",
-        "HighPerformance",
         "Error Fix"
     ],
-    "analysis": "<p>C++20 coroutines are 'stackless', meaning that when a coroutine suspends via <code>co_await</code>, the execution returns to the caller. A frequent error in asynchronous network stacks occurs when the coroutine captures arguments by reference or pointer. If the caller's scope finishes before the coroutine resumes, those references point to deallocated memory, leading to non-deterministic crashes or heap corruption.</p>",
-    "root_cause": "Capturing function arguments by reference (e.g., const std::string&) in a coroutine that yields, causing the reference to outlive the caller's stack frame.",
-    "bad_code": "task<void> process_packet(const std::string& data) {\n    co_await socket.write(data);\n    // CRASH: 'data' is a reference to a temporary that may be gone\n    std::cout << \"Sent: \" << data << std::endl;\n}",
-    "solution_desc": "Always pass arguments by value to coroutines intended for asynchronous execution. This ensures the coroutine state machine (the coroutine frame) owns a copy of the data, extending its lifetime until the coroutine completes.",
-    "good_code": "task<void> process_packet(std::string data) {\n    co_await socket.write(data);\n    // SAFE: 'data' is stored in the coroutine frame\n    std::cout << \"Sent: \" << data << std::endl;\n}",
-    "verification": "Compile with AddressSanitizer (ASan) and run a stress test that triggers high-frequency suspension; ASan will flag any use-after-free on the stack or heap.",
-    "date": "2026-05-07",
-    "id": 1778119263,
+    "analysis": "<p>C++20 coroutines introduce a significant paradigm shift in asynchronous programming but come with hidden dangers regarding object lifetimes. Unlike standard functions, a coroutine's state is stored on the heap, yet it often captures references to objects on the stack. When a coroutine suspends, the calling function's stack frame may be destroyed, leaving the coroutine with dangling references to local variables.</p><p>This issue is particularly prevalent in asynchronous task chains where lambdas are used to initiate coroutines. If a lambda captures by reference and then suspends, the lambda object itself may go out of scope before the coroutine resumes, leading to undefined behavior or segmentation faults that are notoriously difficult to debug.</p>",
+    "root_cause": "The coroutine frame captures arguments by reference or pointer, but the underlying storage is destroyed during a 'co_await' suspension point because the caller's scope ends.",
+    "bad_code": "Task<void> process_data(const std::string& input) {\n    // Suspending here allows the caller to continue\n    co_await socket.async_write(input);\n    // CRASH: 'input' reference is now dangling if caller finished\n    std::cout << \"Sent: \" << input << std::endl;\n}\n\n// Usage\n{ \n    std::string data = \"payload\";\n    process_data(data); // Returns Task, but 'data' is destroyed at '}'\n}",
+    "solution_desc": "Always capture by value in coroutines that might outlive their call site, or use 'std::shared_ptr' to manage shared ownership of the data throughout the coroutine's lifecycle. Ensure the 'promise_type' is configured to handle argument copies correctly.",
+    "good_code": "Task<void> process_data(std::string input) { \n    // Input is now moved/copied into the coroutine frame\n    co_await socket.async_write(input);\n    // SAFE: 'input' lives in the heap-allocated coroutine frame\n    std::cout << \"Sent: \" << input << std::endl;\n}\n\n// Or using shared_ptr for large objects\nTask<void> process_large_data(std::shared_ptr<BigData> data) {\n    co_await socket.async_write(data->buffer);\n    std::cout << \"Processed: \" << data->id << std::endl;\n}",
+    "verification": "Compile with AddressSanitizer (ASan) and run the task chain; ASan will flag any use-after-free if the lifetime is violated.",
+    "date": "2026-05-13",
+    "id": 1778653130,
     "type": "error"
 });

@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1778653130,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "Lifetime Error",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778653131,
+        "title": "Resolving PyTorch DDP Gradient Deadlocks",
+        "slug": "pytorch-ddp-gradient-deadlocks",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/pytorch-ddp-gradient-deadlocks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778653132,
+        "title": "OCaml 5.x GC Latency in Multicore Effects",
+        "slug": "ocaml-5-multicore-gc-latency",
+        "language": "OCaml",
+        "code": "Latency Spike",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/ocaml-5-multicore-gc-latency.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778653133,
+        "title": "Analyzing V4bel/dirtyfrag: Windows Kernel Heap Massage",
+        "slug": "v4bel-dirtyfrag-github-trend",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/v4bel-dirtyfrag-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1778638330,
         "title": "Mitigating Zig Allocator Use-After-Free in Comptime Types",
         "slug": "zig-comptime-allocator-uaf",
