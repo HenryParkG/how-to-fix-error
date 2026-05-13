@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778638330,
+        "title": "Mitigating Zig Allocator Use-After-Free in Comptime Types",
+        "slug": "zig-comptime-allocator-uaf",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/zig-comptime-allocator-uaf.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778638331,
+        "title": "Fixing Space Leaks in Haskell Monad Transformers",
+        "slug": "haskell-statet-space-leak-fix",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/haskell-statet-space-leak-fix.js",
+        "tags": [
+            "Haskell",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778638332,
+        "title": "Resolving ScyllaDB Tombstone Saturation in Wide Columns",
+        "slug": "scylladb-tombstone-saturation",
+        "language": "ScyllaDB",
+        "code": "TombstoneSaturation",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/scylladb-tombstone-saturation.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778638333,
+        "title": "Analyzing dirtyfrag: Linux Kernel Heap Grooming",
+        "slug": "dirtyfrag-kernel-heap-tool",
+        "language": "C / Python",
+        "code": "Trend",
+        "date": "2026-05-13",
+        "path": "data/posts/2026-05/dirtyfrag-kernel-heap-tool.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778584396,
         "title": "Fixing Rust Async Cancellation in Pin-Projected Futures",
         "slug": "rust-async-cancellation-pin-projected-futures",
