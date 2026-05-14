@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778739392,
+        "title": "Resolving PostgreSQL MultiXact ID Exhaustion",
+        "slug": "postgresql-multixact-id-exhaustion-fix",
+        "language": "SQL",
+        "code": "MultiXactLimit",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/postgresql-multixact-id-exhaustion-fix.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778739393,
+        "title": "Fixing Go Runtime Starvation in Preemption Loops",
+        "slug": "go-runtime-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "SchedulerStarvation",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/go-runtime-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778739394,
+        "title": "Mitigating Envoy Circuit Breaker Flapping",
+        "slug": "envoy-circuit-breaker-flapping-canary",
+        "language": "Go",
+        "code": "CB_FLAP",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/envoy-circuit-breaker-flapping-canary.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778739395,
+        "title": "Trend: Zero-Native - High Perf Apps with Zig and Web UI",
+        "slug": "zero-native-zig-web-ui-trend",
+        "language": "Zig",
+        "code": "Trend",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/zero-native-zig-web-ui-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1778724847,
         "title": "Fixing eBPF Verifier State Explosions",
         "slug": "ebpf-verifier-state-explosion-fix",

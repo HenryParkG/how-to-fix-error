@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Resolving Go Runtime Scheduler Starvation",
+    "title": "Fixing Go Runtime Starvation in Preemption Loops",
     "slug": "go-runtime-scheduler-starvation-fix",
     "language": "Go",
-    "code": "GOMAXPROCS Starvation",
+    "code": "SchedulerStarvation",
     "tags": [
         "Go",
         "Backend",
-        "Concurrency",
         "Error Fix"
     ],
-    "analysis": "<p>In Go versions prior to 1.14, and even in newer versions under specific constraints, the Go runtime utilizes a cooperative scheduler. When a goroutine enters a tight, CPU-bound loop that contains no function calls, the scheduler's asynchronous preemption mechanism (which relies on stack guards) may fail to trigger. This causes the goroutine to 'starve' the Processor (P), preventing other goroutines, including the Garbage Collector (GC) background workers, from executing on that OS thread.</p><p>This manifest as high latency, blocked network pollers, and in extreme cases, the entire application hanging if GOMAXPROCS is low.</p>",
-    "root_cause": "The Go compiler only inserts preemption checks at function entry points. A loop without any function calls is effectively non-preemptible by the cooperative scheduler logic.",
-    "bad_code": "func compute() {\n    for {\n        // Tight loop with no function calls\n        // The scheduler cannot safely preempt this\n        i++ \n    }\n}",
-    "solution_desc": "Manually invoke the scheduler's yielding mechanism or ensure the loop includes a point where the runtime can intervene. In Go 1.14+, signal-based preemption usually handles this, but for high-performance loops or older environments, explicit yielding is safer.",
-    "good_code": "func compute() {\n    for {\n        // Explicitly yield control back to the scheduler\n        runtime.Gosched()\n        i++\n    }\n}",
-    "verification": "Compile with 'go build' and monitor execution using 'GODEBUG=schedtrace=1000'. Verify that other goroutines are scheduled onto the P even while the loop is running.",
-    "date": "2026-05-05",
-    "id": 1777946366,
+    "analysis": "<p>In Go versions prior to 1.14, the scheduler used cooperative preemption, meaning a goroutine would only yield at function calls. In later versions, non-cooperative preemption (using signals) was introduced, but tight loops with zero function calls or high-frequency memory allocation can still starve the scheduler of M:N mapping cycles, leading to high latency in GC or other goroutines.</p>",
+    "root_cause": "A tight, long-running computational loop that does not contain function calls or preemption points, preventing the Go scheduler from context-switching.",
+    "bad_code": "func heavyWork(data []int) {\n    for i := 0; i < len(data); i++ {\n        // Tight loop with no function calls\n        data[i] = data[i] * 2 / 3 + 1\n    }\n}",
+    "solution_desc": "Use runtime.Gosched() to manually yield the processor or ensure the loop performs operations that trigger the scheduler's preemption points.",
+    "good_code": "import \"runtime\"\n\nfunc heavyWork(data []int) {\n    for i := 0; i < len(data); i++ {\n        data[i] = data[i] * 2 / 3 + 1\n        // Manually yield every N iterations to prevent starvation\n        if i%1000 == 0 {\n            runtime.Gosched()\n        }\n    }\n}",
+    "verification": "Run the code with GODEBUG=schedtrace=1000 to observe goroutine migration and scheduling latency.",
+    "date": "2026-05-14",
+    "id": 1778739393,
     "type": "error"
 });
