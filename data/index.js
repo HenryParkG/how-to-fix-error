@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1778724847,
+        "title": "Fixing eBPF Verifier State Explosions",
+        "slug": "ebpf-verifier-state-explosion-fix",
+        "language": "Go / C",
+        "code": "VerifierError",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/ebpf-verifier-state-explosion-fix.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778724848,
+        "title": "Mitigating Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778724849,
+        "title": "Solving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java / Scala",
+        "code": "SplitBrain",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778724850,
+        "title": "Zero-Native: Building Zig Apps with Web UI",
+        "slug": "zero-native-zig-web-ui-trend",
+        "language": "Zig / TypeScript",
+        "code": "Trend",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/zero-native-zig-web-ui-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1778671560,
         "title": "Mitigating BEAM Distribution Port Congestion",
         "slug": "beam-distribution-port-congestion",

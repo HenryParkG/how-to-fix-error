@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Resolving eBPF Verifier State Explosion in Bounded Loops",
+    "title": "Fixing eBPF Verifier State Explosions",
     "slug": "ebpf-verifier-state-explosion-fix",
-    "language": "Go",
-    "code": "BPF_VERIFIER_STATE_LIMIT",
+    "language": "Go / C",
+    "code": "VerifierError",
     "tags": [
         "Go",
-        "Linux",
         "Backend",
+        "Kernel",
         "Error Fix"
     ],
-    "analysis": "<p>When developing complex eBPF programs, the verifier must explore every possible execution path to ensure safety. In programs containing nested bounded loops or multiple conditional branches within a loop, the number of states to explore can grow exponentially.</p><p>This 'state explosion' often triggers the verifier's limit (traditionally 1 million instructions), resulting in program rejection even if the logic is technically sound and the loops are strictly bounded.</p>",
-    "root_cause": "The verifier performs path-sensitive analysis. Each conditional branch inside a loop causes the verifier to fork its internal state. Without state pruning or 'bpf_loop' helpers, the complexity reaches O(2^n).",
-    "bad_code": "int i;\n#pragma unroll\nfor (i = 0; i < 512; i++) {\n    if (data + i + 1 > data_end) break;\n    if (data[i] == 0x01) { /* complex logic A */ }\n    else if (data[i] == 0x02) { /* complex logic B */ }\n    // ... many more branches\n}",
-    "solution_desc": "Replace manual loop unrolling with the 'bpf_loop' helper introduced in Kernel 5.17+. This helper uses a callback-based approach that the verifier treats as a single state transition per iteration, significantly reducing the exploration overhead.",
-    "good_code": "struct loop_ctx { __u64 count; };\nstatic int loop_callback(__u32 index, struct loop_ctx *ctx) {\n    if (index >= 512) return 1;\n    // Logic here is verified once and applied to all iterations\n    return 0;\n}\n// In main BPF program:\nstruct loop_ctx ctx = {0};\nbpf_loop(512, loop_callback, &ctx, 0);",
-    "verification": "Run 'bpftool prog load' and check for 'processed [N] insns' in the verifier log. The instruction count should drop from near-limit to a few thousand.",
-    "date": "2026-05-02",
-    "id": 1777699769,
+    "analysis": "<p>When developing complex eBPF programs, the kernel verifier performs a static analysis of all possible execution paths. In complex tail call chains, especially when combined with large loops or deep branching logic, the number of states to explore grows exponentially. This leads to the 'state limit reached' or 'too many instructions' error, even if the program logic is logically sound. The verifier tracks register states and stack values; when it encounters too many permutations, it aborts to protect the kernel from resource exhaustion.</p>",
+    "root_cause": "The verifier reaches the 1-million instruction complexity limit or the 64k state limit due to path pruning failure in deep tail call branching.",
+    "bad_code": "SEC(\"classifier/tail_call\")\nint handle_tail(struct __sk_buff *skb) {\n    // Too many branches before tail calling\n    if (skb->len > 100) { /* logic A */ }\n    else if (skb->len > 50) { /* logic B */ }\n    // ... 20 more branches ...\n    bpf_tail_call(skb, &jmp_table, NEXT_PROG_INDEX);\n    return TC_ACT_OK;\n}",
+    "solution_desc": "Refactor the logic to use bpf-to-bpf function calls where possible and simplify register state. Specifically, move heavy logic into the target of the tail call rather than the caller, and use 'inline' pragmas sparingly to prevent the verifier from expanding code too much.",
+    "good_code": "static __noinline int process_packet(struct __sk_buff *skb) {\n    // Logic moved to a non-inlined function to isolate state\n    return skb->len > 100 ? 1 : 0;\n}\n\nSEC(\"classifier/optimized\")\nint handle_tail_fixed(struct __sk_buff *skb) {\n    process_packet(skb);\n    // Tail call with minimal local register pressure\n    bpf_tail_call(skb, &jmp_table, NEXT_PROG_INDEX);\n    return TC_ACT_OK;\n}",
+    "verification": "Use 'bpftool prog load' with the 'visualize' or verbose flag (-v) to inspect the verifier log and ensure the 'insns processed' count is significantly lower.",
+    "date": "2026-05-14",
+    "id": 1778724847,
     "type": "error"
 });
