@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1778756984,
+        "title": "Resolving Rust Async Stream Pinning Violations",
+        "slug": "rust-async-stream-pinning-violations",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/rust-async-stream-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778756985,
+        "title": "Mitigating Spark Skewed Join Memory Pressure",
+        "slug": "spark-skewed-join-memory-pressure",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/spark-skewed-join-memory-pressure.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778756986,
+        "title": "Debugging WebGPU Buffer Mapping Collisions",
+        "slug": "webgpu-buffer-mapping-collisions",
+        "language": "TypeScript",
+        "code": "OperationError",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/webgpu-buffer-mapping-collisions.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778756987,
+        "title": "Inside Zero-Native: High-Performance Cross-Platform Apps",
+        "slug": "vercel-labs-zero-native-analysis",
+        "language": "Zig",
+        "code": "Trend",
+        "date": "2026-05-14",
+        "path": "data/posts/2026-05/vercel-labs-zero-native-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1778739392,
         "title": "Resolving PostgreSQL MultiXact ID Exhaustion",
         "slug": "postgresql-multixact-id-exhaustion-fix",
