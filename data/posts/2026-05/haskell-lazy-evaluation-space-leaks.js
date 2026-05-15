@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Resolving Haskell Lazy Space Leaks in Streaming Analytics",
+    "title": "Debugging Haskell Lazy Evaluation Space Leaks",
     "slug": "haskell-lazy-evaluation-space-leaks",
     "language": "Haskell",
-    "code": "StackOverflow/OOM",
+    "code": "HeapOverflow",
     "tags": [
-        "Python",
-        "Java",
+        "Rust",
         "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>In streaming analytics, Haskell's default lazy evaluation can be a double-edged sword. When performing aggregations over large streams (e.g., calculating a mean), the runtime builds up a massive chain of unevaluated thunks (the expression tree) instead of the actual numerical result. This 'space leak' consumes heap space linearly with the number of events, eventually leading to Out-of-Memory (OOM) errors even for simple counters.</p>",
-    "root_cause": "Using non-strict fold functions (like foldl) which defer computation by creating thunks in memory instead of reducing values immediately.",
-    "bad_code": "processAnalytics :: [Double] -> Double\nprocessAnalytics xs = foldl (\\acc x -> acc + x) 0 xs -- Accumulates thunks",
-    "solution_desc": "Switch to strict evaluation using foldl' from Data.List or strict fields in data constructors. This forces the evaluation of the accumulator at each step, keeping memory usage constant.",
-    "good_code": "import Data.List (foldl')\n\nprocessAnalytics :: [Double] -> Double\nprocessAnalytics xs = foldl' (\\acc x -> acc + x) 0 xs -- Strict reduction",
-    "verification": "Use GHC profiling tools with '+RTS -s' to monitor memory residency. Constant memory usage indicates the leak is fixed.",
-    "date": "2026-05-05",
-    "id": 1777967686,
+    "analysis": "<p>Lazy evaluation is Haskell's greatest strength and its most common source of production failures. In streaming pipelines, space leaks occur when the runtime builds up a massive chain of unevaluated computations, known as 'thunks', instead of calculating the actual value.</p><p>This is particularly dangerous in long-running processes where an accumulator in a fold or a transformation isn't forced, causing the heap to grow until the process hits the OOM killer. Traditional profilers might show high memory usage but won't immediately point to the unforced thunk.</p>",
+    "root_cause": "Failure to force evaluation of accumulators in recursive functions or stream processing, leading to the creation of deeply nested thunks in the heap.",
+    "bad_code": "processData :: [Int] -> Int\nprocessData = foldl (\\acc x -> acc + x) 0",
+    "solution_desc": "Replace lazy folds with strict variants (foldl') and use Bang Patterns (!x) to force evaluation at specific points. For complex data structures, derive Generic and use 'deepseq' to ensure entire structures are evaluated.",
+    "good_code": "{-# LANGUAGE BangPatterns #-}\nimport Data.List (foldl')\n\nprocessData :: [Int] -> Int\nprocessData = foldl' (\\ !acc x -> acc + x) 0",
+    "verification": "Run the binary with RTS options '+RTS -hc' to generate a heap profile. Use 'hp2ps' to visualize memory and ensure the 'Total Memory' graph remains constant rather than increasing linearly.",
+    "date": "2026-05-15",
+    "id": 1778843606,
     "type": "error"
 });

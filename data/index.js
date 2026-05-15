@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1778843605,
+        "title": "Fixing Kubernetes CFS Throttling for Low-Latency Apps",
+        "slug": "resolving-k8s-cfs-throttling",
+        "language": "Kubernetes",
+        "code": "CPUThrottlingHigh",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/resolving-k8s-cfs-throttling.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778843606,
+        "title": "Debugging Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778843607,
+        "title": "Fixing HNSW Index Compaction Latency Spikes",
+        "slug": "vector-db-hnsw-compaction-latency",
+        "language": "Rust",
+        "code": "LatencySpike",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/vector-db-hnsw-compaction-latency.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778843608,
+        "title": "OrcaSlicer: The Evolution of 3D Printing Workflow",
+        "slug": "orcaslicer-bambulab-trend-analysis",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1778826292,
         "title": "Fixing C++20 Coroutine Frame Leaks via Symmetric Transfer",
         "slug": "cpp20-coroutine-symmetric-transfer-leaks",
