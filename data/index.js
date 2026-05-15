@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1778826292,
+        "title": "Fixing C++20 Coroutine Frame Leaks via Symmetric Transfer",
+        "slug": "cpp20-coroutine-symmetric-transfer-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/cpp20-coroutine-symmetric-transfer-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778826293,
+        "title": "Debugging PyTorch DDP Collective Communication Deadlocks",
+        "slug": "pytorch-ddp-nccl-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeError",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/pytorch-ddp-nccl-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778826294,
+        "title": "Mitigating RN JSI Memory Corruption in TurboModules",
+        "slug": "react-native-jsi-memory-corruption",
+        "language": "C++ / JS",
+        "code": "SIGSEGV",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/react-native-jsi-memory-corruption.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778826295,
+        "title": "Why OrcaSlicer is the New Standard for 3D Printing",
+        "slug": "orcaslicer-bambulab-trend-analysis",
+        "language": "C++ / Python",
+        "code": "Trend",
+        "date": "2026-05-15",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778811129,
         "title": "Fixing Triton Tiling Mismatches in FlashAttention",
         "slug": "triton-kernel-tiling-mismatches-flashattention",
