@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778910388,
+        "title": "Mitigating Envoy Sidecar Memory Leaks in Istio",
+        "slug": "istio-envoy-memory-leak-fix",
+        "language": "Kubernetes",
+        "code": "MemoryLeak",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/istio-envoy-memory-leak-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778910389,
+        "title": "Fixing OCaml Multicore Parallel GC Contention",
+        "slug": "ocaml-multicore-gc-contention-fix",
+        "language": "Go",
+        "code": "ParallelContention",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/ocaml-multicore-gc-contention-fix.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778910390,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-txid-wraparound-fix",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/postgres-txid-wraparound-fix.js",
+        "tags": [
+            "SQL",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778910391,
+        "title": "OrcaSlicer: The Open-Source Standard for Bambu Lab",
+        "slug": "orcaslicer-bambulab-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778897050,
         "title": "Resolving eBPF Verifier Complexity in XDP Pipelines",
         "slug": "ebpf-verifier-complexity-xdp-fix",
