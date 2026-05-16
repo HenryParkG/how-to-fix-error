@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778926072,
+        "title": "Mitigating Go Scheduler Latency in Tight Loops",
+        "slug": "go-scheduler-latency-asynchronous-preemption",
+        "language": "Go",
+        "code": "Runtime Latency",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/go-scheduler-latency-asynchronous-preemption.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778926073,
+        "title": "Fixing Spark OOM from Skewed Shuffle Buffers",
+        "slug": "spark-oom-skewed-partition-shuffle",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/spark-oom-skewed-partition-shuffle.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778926074,
+        "title": "Resolving WebGPU Uniform Buffer Alignment Violations",
+        "slug": "webgpu-uniform-buffer-alignment-padding",
+        "language": "TypeScript",
+        "code": "ValidationError",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/webgpu-uniform-buffer-alignment-padding.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778926075,
+        "title": "OrcaSlicer: The Future of High-Speed 3D Printing Control",
+        "slug": "orcaslicer-bambulab-github-trend",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Infra"
+        ]
+    },
+    {
         "id": 1778917828,
         "title": "Resolving Cgroup v2 Memory Page Fault Thrashing",
         "slug": "resolving-cgroup-v2-memory-thrashing",
