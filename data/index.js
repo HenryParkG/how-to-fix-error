@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778897050,
+        "title": "Resolving eBPF Verifier Complexity in XDP Pipelines",
+        "slug": "ebpf-verifier-complexity-xdp-fix",
+        "language": "Rust",
+        "code": "BPF_COMPLEXITY_LIMIT_EXCEEDED",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/ebpf-verifier-complexity-xdp-fix.js",
+        "tags": [
+            "Rust",
+            "Networking",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778897051,
+        "title": "Fixing Elixir GenServer Mailbox Selective Receive Issues",
+        "slug": "elixir-genserver-mailbox-bottlenecks",
+        "language": "Java",
+        "code": "MAILBOX_OVERFLOW",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/elixir-genserver-mailbox-bottlenecks.js",
+        "tags": [
+            "Java",
+            "Elixir",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778897052,
+        "title": "Mitigating Kafka Consumer Group Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storm-fix",
+        "language": "Java",
+        "code": "GROUP_REBALANCE_STORM",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/kafka-consumer-rebalance-storm-fix.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778897053,
+        "title": "Analyzing OrcaSlicer: The Best Bambu Lab Alternative",
+        "slug": "orcaslicer-bambulab-trend-analysis",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-16",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778843605,
         "title": "Fixing Kubernetes CFS Throttling for Low-Latency Apps",
         "slug": "resolving-k8s-cfs-throttling",
