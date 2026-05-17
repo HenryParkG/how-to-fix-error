@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779013072,
+        "title": "Mitigating eBPF Verifier Complexity Limits",
+        "slug": "ebpf-verifier-complexity-limits",
+        "language": "Go",
+        "code": "VerifierLimitExceeded",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/ebpf-verifier-complexity-limits.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779013073,
+        "title": "Resolving Redis CoW OOM During BGSAVE Snapshots",
+        "slug": "redis-cow-oom-bgsave",
+        "language": "SQL",
+        "code": "OOMKiller-RedisFork",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/redis-cow-oom-bgsave.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779013074,
+        "title": "Fixing Flutter Skia Shader Compilation Jank",
+        "slug": "flutter-skia-shader-jank-fix",
+        "language": "TypeScript",
+        "code": "ShaderCompilationJank",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/flutter-skia-shader-jank-fix.js",
+        "tags": [
+            "TypeScript",
+            "CSS",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779013075,
+        "title": "Analyze Trending: OrcaSlicer for Bambu Lab Users",
+        "slug": "orcaslicer-bambulab-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1778998421,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
