@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778998421,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "EXC_BAD_ACCESS",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778998422,
+        "title": "Resolving HNSW Index Recall Degradation",
+        "slug": "hnsw-index-recall-degradation-fix",
+        "language": "Python",
+        "code": "RecallLoss",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/hnsw-index-recall-degradation-fix.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778998423,
+        "title": "Mitigating gRPC HTTP/2 Head-of-Line Blocking",
+        "slug": "grpc-http2-hol-blocking-fix",
+        "language": "Go",
+        "code": "DeadlineExceeded",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/grpc-http2-hol-blocking-fix.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778998424,
+        "title": "OrcaSlicer: The Open-Source Powerhouse for 3D Printing",
+        "slug": "orcaslicer-bambulab-trend-analysis",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1778983692,
         "title": "Fixing Rust Pinning Violations in Async States",
         "slug": "rust-pinning-violations-async-state-machines",
