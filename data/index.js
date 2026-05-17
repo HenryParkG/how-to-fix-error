@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1778983692,
+        "title": "Fixing Rust Pinning Violations in Async States",
+        "slug": "rust-pinning-violations-async-state-machines",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/rust-pinning-violations-async-state-machines.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778983693,
+        "title": "Fixing CUDA Stream Sync Races in PyTorch",
+        "slug": "pytorch-cuda-stream-sync-races",
+        "language": "Python",
+        "code": "CUDARaceCondition",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/pytorch-cuda-stream-sync-races.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778983694,
+        "title": "Debugging JSI Memory Leaks in React Native",
+        "slug": "react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "JSIMemoryLeak",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1778983695,
+        "title": "OrcaSlicer: The Powerhouse of Bambu Lab Tuning",
+        "slug": "orcaslicer-bambulab-trend-analysis",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-05-17",
+        "path": "data/posts/2026-05/orcaslicer-bambulab-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "C++"
+        ]
+    },
+    {
         "id": 1778926072,
         "title": "Mitigating Go Scheduler Latency in Tight Loops",
         "slug": "go-scheduler-latency-asynchronous-preemption",

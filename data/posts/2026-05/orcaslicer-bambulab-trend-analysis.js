@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "OrcaSlicer: The 3D Printing Revolution for Bambu Lab",
+    "title": "OrcaSlicer: The Powerhouse of Bambu Lab Tuning",
     "slug": "orcaslicer-bambulab-trend-analysis",
     "language": "C++",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Infra"
+        "C++"
     ],
-    "analysis": "<p>OrcaSlicer has surged in popularity as the premier open-source fork of Bambu Studio. While Bambu Lab's proprietary ecosystem is excellent, power users felt limited by the stock slicer's restricted tuning parameters. OrcaSlicer bridges this gap by merging advanced features from PrusaSlicer and SuperSlicer back into the Bambu codebase. It is trending because it democratizes high-speed printing optimizations, allowing users to squeeze maximum performance out of both Bambu and non-Bambu hardware alike.</p>",
-    "root_cause": "Key Features include: 1. Built-in Auto-Calibration (Flow rate, Pressure Advance, VFA). 2. 'Sandwich Mode' for improved surface finish. 3. Precise wall-order control (Inner/Outer/Inner). 4. Multi-vendor support for Voron, Klipper, and Creality machines.",
-    "bad_code": "git clone https://github.com/SoftFever/OrcaSlicer.git\ncd OrcaSlicer && ./build_linux.sh",
-    "solution_desc": "Adopt OrcaSlicer when you need precise material calibration beyond the Bambu 'Auto-Calibrate' presets, or when managing a fleet of diverse printers under a single UI.",
-    "good_code": "// Example: Enabling 'Pressure Advance' in OrcaSlicer G-code\nSET_PRESSURE_ADVANCE ADVANCE=0.025",
-    "verification": "OrcaSlicer is likely to become the de-facto standard for high-performance FDM printing, forcing first-party manufacturers to open up more firmware parameters.",
-    "date": "2026-05-16",
-    "id": 1778917831,
+    "analysis": "<p>OrcaSlicer-bambulab has exploded in popularity because it bridges the gap between the user-friendly Bambu Studio and the deep customization of PrusaSlicer. It introduces advanced calibration tools (like Pressure Advance and Flow Rate tests) directly into the UI, which are absent in the official Bambu software. For the Fulu-Foundation fork specifically, it focuses on high-performance builds optimized for specific hardware architectures, making it a favorite for power users seeking maximum throughput on Bambu and Klipper-based machines.</p>",
+    "root_cause": "Key Features: Built-in auto-calibration patterns, 'Sandwich' mode for better overhangs, support for diverse printer firmware (Klipper/Marlin), and fine-grained control over multi-material (AMS) purges.",
+    "bad_code": "git clone https://github.com/FULU-Foundation/OrcaSlicer-bambulab.git\ncd OrcaSlicer-bambulab && ./build_linux.sh",
+    "solution_desc": "Adopt OrcaSlicer when you need to fine-tune third-party filaments on Bambu hardware or when running a mixed fleet of Bambu and custom Klipper printers.",
+    "good_code": "{\n  \"printer_settings\": {\n    \"pressure_advance\": 0.022,\n    \"motion_ability\": {\n      \"max_accel\": 20000,\n      \"jerk\": 9.0\n    }\n  }\n}",
+    "verification": "The project is set to dominate the 'prosumer' 3D printing space, likely influencing the official Bambu Studio roadmap as users demand more transparent calibration logic.",
+    "date": "2026-05-17",
+    "id": 1778983695,
     "type": "trend"
 });
