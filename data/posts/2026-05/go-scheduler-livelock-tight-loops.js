@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing Go Scheduler Livelocks in Non-Preemptible Loops",
+    "title": "Debugging Go Scheduler Livelock in Tight Loops",
     "slug": "go-scheduler-livelock-tight-loops",
     "language": "Go",
-    "code": "GOSCHED-001",
+    "code": "GOMAXPROCS Starvation",
     "tags": [
         "Go",
         "Backend",
         "Concurrency",
         "Error Fix"
     ],
-    "analysis": "<p>In Go's concurrency model, the scheduler traditionally relied on cooperative preemption during function calls (stack checks). In specific scenarios involving tight, computation-heavy loops without function calls, a goroutine can monopolize a logical processor (P), preventing the Go scheduler from preempting it for garbage collection (GC) or other goroutines.</p><p>While Go 1.14+ introduced asynchronous preemption via OS signals (SIGURG), certain edge cases\u2014such as tight loops on architectures with limited signal support or code compiled with specific flags\u2014can still cause 'livelocks' where the system appears frozen while one core hits 100% utilization.</p>",
-    "root_cause": "The Go scheduler cannot find a safe point to preempt a goroutine that is executing a loop without function calls or I/O, leading to 'STW' (Stop The World) latency spikes during GC.",
-    "bad_code": "func compute() {\n\tfor i := 0; i < 1e10; i++ {\n\t\t// Tight loop with no function calls\n\t\t// This can block GC and other goroutines on this P\n\t\ttotal += i\n\t}\n}",
-    "solution_desc": "Manually invoke the scheduler using runtime.Gosched() to yield the processor, or ensure the loop contains a preemptible operation. In modern Go, ensure your environment supports asynchronous preemption, but for critical tight loops, explicit yielding remains a robust defensive pattern.",
-    "good_code": "import \"runtime\"\n\nfunc compute() {\n\tfor i := 0; i < 1e10; i++ {\n\t\ttotal += i\n\t\tif i%1e6 == 0 {\n\t\t\t// Manually yield to allow other goroutines and GC to run\n\t\t\truntime.Gosched()\n\t\t}\n\t}\n}",
-    "verification": "Run the code with GODEBUG=schedtrace=1000 and monitor if other goroutines are being starved or if GC 'sweep termination' takes an excessive amount of time.",
-    "date": "2026-05-01",
-    "id": 1777623410,
+    "analysis": "<p>In Go versions prior to 1.14, the scheduler used a cooperative preemption model. This meant that a goroutine could only be preempted if it made a function call, allowing the scheduler to hook into the stack growth check. However, in scenarios involving tight, non-preemptive loops (loops with no function calls), a goroutine could effectively 'livelock' a P (Processor), preventing other goroutines or even the Garbage Collector (GC) from running.</p><p>Even with the introduction of asynchronous preemption in Go 1.14+, highly optimized loops that manipulate memory directly can sometimes bypass the signal-based preemption triggers if the OS signals are blocked or if the loop executes faster than the preemptive signal's resolution, leading to significant tail latency.</p>",
+    "root_cause": "The Go scheduler fails to regain control of a thread because the running goroutine does not reach a preemption point (stack check) and ignores or delays asynchronous preemption signals during heavy CPU-bound computation.",
+    "bad_code": "func computeSum(data []int) int {\n    sum := 0\n    // Tight loop with no function calls can starve the scheduler\n    for i := 0; i < len(data); i++ {\n        sum += data[i]\n    }\n    return sum\n}",
+    "solution_desc": "Manually invoke the scheduler using runtime.Gosched() in long-running loops or ensure the Go version is 1.14+ and the loop structure allows for signal-based preemption. For extreme performance cases, break the loop into smaller chunks processed by different goroutines to ensure the GC can trigger a STW (Stop The World) event when necessary.",
+    "good_code": "import \"runtime\"\n\nfunc computeSum(data []int) int {\n    sum := 0\n    for i := 0; i < len(data); i++ {\n        sum += data[i]\n        // Periodically yield control back to the scheduler\n        if i%1e6 == 0 {\n            runtime.Gosched()\n        }\n    }\n    return sum\n}",
+    "verification": "Use 'GODEBUG=schedtrace=1000' to monitor scheduler activity and check if threads are being blocked for extended periods during the execution of the loop.",
+    "date": "2026-05-18",
+    "id": 1779106898,
     "type": "error"
 });

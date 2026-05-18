@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779106898,
+        "title": "Debugging Go Scheduler Livelock in Tight Loops",
+        "slug": "go-scheduler-livelock-tight-loops",
+        "language": "Go",
+        "code": "GOMAXPROCS Starvation",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/go-scheduler-livelock-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779106899,
+        "title": "Mitigating Cassandra Tombstone Overload",
+        "slug": "cassandra-tombstone-overload-high-churn",
+        "language": "Java",
+        "code": "TombstoneOverwhelmingException",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/cassandra-tombstone-overload-high-churn.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779106900,
+        "title": "Resolving Istio Egress Gateway Bottlenecks",
+        "slug": "istio-egress-gateway-bottlenecks-fix",
+        "language": "Go",
+        "code": "Envoy Downstream Reset",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/istio-egress-gateway-bottlenecks-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779106901,
+        "title": "YellowKey: Bitlocker Key Extraction via SPI Sniffing",
+        "slug": "yellowkey-bitlocker-bypass-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/yellowkey-bitlocker-bypass-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779086741,
         "title": "Fixing Linux RCU Stalls in High-Concurrency Systems",
         "slug": "linux-kernel-rcu-stall-soft-lockup",
