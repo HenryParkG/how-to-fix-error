@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Mitigating Kafka Consumer Rebalance Storms",
+    "title": "Fixing Kafka Consumer Rebalance Storms",
     "slug": "kafka-consumer-rebalance-storms",
-    "language": "Java",
+    "language": "Kafka",
     "code": "RebalanceStorm",
     "tags": [
-        "Java",
-        "Backend",
         "Kafka",
+        "Java",
+        "Infra",
         "Error Fix"
     ],
-    "analysis": "<p>In massive-scale Kafka deployments, a 'rebalance storm' occurs when a group of consumers repeatedly stop and start the rebalancing process. This typically happens when a single consumer fails to poll within the 'max.poll.interval.ms' due to heavy processing or GC pauses. When one consumer leaves, the coordinator triggers a rebalance for the whole group, which increases the load on remaining consumers, causing them to also miss their poll intervals, leading to a cascading failure across the cluster.</p>",
-    "root_cause": "The max.poll.interval.ms is set lower than the actual peak processing time of a batch, combined with the lack of Static Membership.",
-    "bad_code": "Properties props = new Properties();\nprops.put(\"bootstrap.servers\", \"localhost:9092\");\nprops.put(\"group.id\", \"massive-group\");\n// Default or too low interval for heavy ETL\nprops.put(\"max.poll.interval.ms\", \"300000\"); \nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);",
-    "solution_desc": "Increase 'max.poll.interval.ms' to exceed the worst-case processing time. More importantly, implement 'Static Membership' by providing a unique 'group.instance.id' to each consumer instance, allowing them to restart without triggering a global rebalance.",
-    "good_code": "Properties props = new Properties();\nprops.put(\"group.id\", \"massive-group\");\n// 1. Unique ID for Static Membership\nprops.put(\"group.instance.id\", System.getenv(\"HOSTNAME\"));\n// 2. Increase interval for safety\nprops.put(\"max.poll.interval.ms\", \"900000\");\n// 3. Use Incremental Cooperative Rebalancing\nprops.put(\"partition.assignment.strategy\", \"org.apache.kafka.clients.consumer.CooperativeStickyAssignor\");\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);",
-    "verification": "Monitor the 'kafka_consumer_group_rebalance_total' metric in Prometheus. Rebalance counts should drop to near-zero during routine rolling restarts.",
-    "date": "2026-05-14",
-    "id": 1778724848,
+    "analysis": "<p>Kafka rebalance storms occur in high-partition environments when the 'Eager Rebalance' protocol is used. During a rebalance, all consumers in a group stop processing, revoke their partitions, and wait to be reassigned.</p><p>In large clusters, the time taken to reassign thousands of partitions exceeds the <code>max.poll.interval.ms</code>, causing consumers to drop out again and triggering an infinite loop of rebalancing where no work is completed.</p>",
+    "root_cause": "The default Eager Rebalance protocol revokes all partitions globally, combined with tight poll intervals in high-latency environments.",
+    "bad_code": "partition.assignment.strategy=org.apache.kafka.clients.consumer.RangeAssignor\nsession.timeout.ms=10000\nmax.poll.interval.ms=300000",
+    "solution_desc": "Switch to the 'Cooperative Sticky' assignor which implements incremental rebalancing. Only partitions that need to move are revoked. Also, implement Static Membership by providing a unique <code>group.instance.id</code> to prevent rebalances on transient restarts.",
+    "good_code": "partition.assignment.strategy=org.apache.kafka.clients.consumer.CooperativeStickyAssignor\ngroup.instance.id=consumer-node-1\nsession.timeout.ms=45000\nmax.poll.interval.ms=600000",
+    "verification": "Check Kafka logs for 'Rebalancing' events. With CooperativeSticky, the 'Revoking partitions' log count should drop significantly.",
+    "date": "2026-05-18",
+    "id": 1779071378,
     "type": "error"
 });

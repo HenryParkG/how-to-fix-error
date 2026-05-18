@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779071377,
+        "title": "Mitigating Elixir GenServer Selective Receive Bottlenecks",
+        "slug": "elixir-genserver-mailbox-bottlenecks",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/elixir-genserver-mailbox-bottlenecks.js",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779071378,
+        "title": "Fixing Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779071379,
+        "title": "Resolving Zig Comptime Pointer Invalidation",
+        "slug": "zig-comptime-pointer-invalidation",
+        "language": "Zig",
+        "code": "ComptimePtrErr",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/zig-comptime-pointer-invalidation.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779071380,
+        "title": "YellowKey: Bitlocker TPM SPI Bypass Explained",
+        "slug": "yellowkey-bitlocker-bypass-analysis",
+        "language": "C / Hardware",
+        "code": "Trend",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/yellowkey-bitlocker-bypass-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AWS"
+        ]
+    },
+    {
         "id": 1779013072,
         "title": "Mitigating eBPF Verifier Complexity Limits",
         "slug": "ebpf-verifier-complexity-limits",
