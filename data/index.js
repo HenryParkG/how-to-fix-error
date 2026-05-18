@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779086741,
+        "title": "Fixing Linux RCU Stalls in High-Concurrency Systems",
+        "slug": "linux-kernel-rcu-stall-soft-lockup",
+        "language": "Go",
+        "code": "Soft Lockup",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/linux-kernel-rcu-stall-soft-lockup.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779086742,
+        "title": "Mitigating PostgreSQL Transaction ID Wraparound",
+        "slug": "postgresql-txid-wraparound-mitigation",
+        "language": "SQL",
+        "code": "TXID Wraparound",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/postgresql-txid-wraparound-mitigation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779086743,
+        "title": "Fixing Haskell Space Leaks in Recursive Data Pipelines",
+        "slug": "haskell-space-leak-recursive-pipelines",
+        "language": "Rust",
+        "code": "Space Leak",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/haskell-space-leak-recursive-pipelines.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779086744,
+        "title": "Analyzing YellowKey: The Bitlocker Bypass Trend",
+        "slug": "yellowkey-bitlocker-bypass-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-05-18",
+        "path": "data/posts/2026-05/yellowkey-bitlocker-bypass-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779071377,
         "title": "Mitigating Elixir GenServer Selective Receive Bottlenecks",
         "slug": "elixir-genserver-mailbox-bottlenecks",

@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "YellowKey: Bitlocker TPM SPI Bypass Explained",
+    "title": "Analyzing YellowKey: The Bitlocker Bypass Trend",
     "slug": "yellowkey-bitlocker-bypass-analysis",
-    "language": "C / Hardware",
+    "language": "Python",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "AWS"
+        "Python"
     ],
-    "analysis": "<p>YellowKey is trending because it provides an automated, low-cost method to bypass Windows Bitlocker encryption by sniffing the SPI bus. Most modern laptops use a Discrete TPM (Trusted Platform Module) to store the Volume Master Key (VMK).</p><p>The vulnerability exists because, by default, the communication between the CPU and the TPM over the SPI bus is unencrypted. YellowKey leverages inexpensive hardware (like a Raspberry Pi or Logic Analyzer) to capture the key as it is sent to the CPU during the boot sequence.</p>",
-    "root_cause": "Lack of 'Parameter Encryption' in TPM 2.0 specifications as implemented by many OEMs, allowing plain-text key extraction from the SPI bus.",
-    "bad_code": "git clone https://github.com/Nightmare-Eclipse/YellowKey\ncd YellowKey && pip install -r requirements.txt",
-    "solution_desc": "YellowKey is best used for security auditing and data recovery. Organizations should adopt Bitlocker with a Pre-Boot PIN (which prevents the key from being released to the bus without user input) or enable 'Hardware-based Encryption' if supported.",
-    "good_code": "# Example: Sniffing logic pattern\nsignal = spi.sniff(pin_cs=0, pin_clk=1)\nif signal.matches(TPM_GET_KEY_COMMAND):\n    vmk = signal.extract_payload()\n    print(f\"Extracted Bitlocker VMK: {vmk.hex()}\")",
-    "verification": "As TPM 2.0 implementations evolve, we expect 'TPM Bus Encryption' to become the standard, eventually rendering hardware sniffers like YellowKey obsolete without physical chip-decapping.",
+    "analysis": "<p>YellowKey is a trending security research repository that demonstrates a Bitlocker bypass vulnerability targeting the SPI (Serial Peripheral Interface) bus communication between the CPU and the TPM (Trusted Platform Module). It has gained massive popularity because it lowers the barrier for executing 'Cold Boot' style attacks on encrypted Windows machines.</p><p>By sniffing the communication during the boot process, YellowKey can extract the Volume Master Key (VMK) as it is sent from the TPM to the CPU. It highlights a critical hardware-level architectural weakness where encryption keys are transmitted in plaintext across motherboard traces.</p>",
+    "root_cause": "Exploits unencrypted SPI bus communication between the TPM chip and the CPU to sniff Bitlocker keys during the pre-boot authentication phase.",
+    "bad_code": "# Installation for Security Auditing\ngit clone https://github.com/Nightmare-Eclipse/YellowKey.git\ncd YellowKey\npip install -r requirements.txt\n# Requires Saleae Logic Analyzer or Raspberry Pi for sniffing",
+    "solution_desc": "Best used by security professionals to audit enterprise hardware. Organizations should adopt 'TPM + PIN' protectors to ensure the key isn't released until a secret is provided, mitigating simple sniffing.",
+    "good_code": "# Usage example: Processing a captured SPI trace\npython3 yellowkey.py --trace capture.csv --output vmk_key.txt\n# The tool then parses the SPI protocol to find the VMK pattern",
+    "verification": "Expect Microsoft to push for increased adoption of 'TPM Parameter Encryption' and hardware manufacturers to move towards integrated fTPMs within the SoC.",
     "date": "2026-05-18",
-    "id": 1779071380,
+    "id": 1779086744,
     "type": "trend"
 });
