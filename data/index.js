@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779172951,
+        "title": "Fixing Rust Pinning in Custom Futures",
+        "slug": "rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "E0277",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779172952,
+        "title": "Mitigating Spark Data Skew in Broadcast Joins",
+        "slug": "spark-data-skew-broadcast-hash-join",
+        "language": "Java",
+        "code": "OOM-Skew",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/spark-data-skew-broadcast-hash-join.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779172953,
+        "title": "Fixing WebGPU Buffer Mapping Stalls",
+        "slug": "webgpu-buffer-alignment-stalls",
+        "language": "TypeScript",
+        "code": "BufferStall",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/webgpu-buffer-alignment-stalls.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779172954,
+        "title": "Analyzing Zero: The Sync Engine for Agents",
+        "slug": "vercel-labs-zero-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/vercel-labs-zero-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1779157722,
         "title": "Fixing PyTorch DDP Deadlocks in Multi-Node Training",
         "slug": "pytorch-ddp-deadlock-fix",
