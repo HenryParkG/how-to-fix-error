@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1779157722,
+        "title": "Fixing PyTorch DDP Deadlocks in Multi-Node Training",
+        "slug": "pytorch-ddp-deadlock-fix",
+        "language": "Python",
+        "code": "RuntimeDeadlock",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/pytorch-ddp-deadlock-fix.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779157723,
+        "title": "Fixing OCaml 5.x Parallel Minor GC Contention",
+        "slug": "ocaml-multicore-gc-fix",
+        "language": "OCaml",
+        "code": "GCLatencySpike",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/ocaml-multicore-gc-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779157724,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-fix",
+        "language": "SQL",
+        "code": "CacheStall",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/mongodb-wiredtiger-eviction-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779157725,
+        "title": "Analyzing Zero: The Programming Language for AI Agents",
+        "slug": "vercel-labs-zero-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/vercel-labs-zero-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1779106898,
         "title": "Debugging Go Scheduler Livelock in Tight Loops",
         "slug": "go-scheduler-livelock-tight-loops",
