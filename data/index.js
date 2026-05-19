@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1779191761,
+        "title": "Debugging eBPF Verifier Complexity Limits",
+        "slug": "debugging-ebpf-verifier-complexity-limits",
+        "language": "Go / C",
+        "code": "BPF_PROG_LOAD_EACCES",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/debugging-ebpf-verifier-complexity-limits.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "eBPF",
+            "C",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779191762,
+        "title": "Mitigating HNSW Index Fragmentation in Vector DBs",
+        "slug": "mitigating-hnsw-index-fragmentation",
+        "language": "Rust / SQL",
+        "code": "Search-Recall-Degradation",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/mitigating-hnsw-index-fragmentation.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Infra",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779191763,
+        "title": "Resolving Akka Cluster Split-Brain Scenarios",
+        "slug": "akka-cluster-split-brain-fix",
+        "language": "Java / Scala",
+        "code": "Cluster-Partitioning",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/akka-cluster-split-brain-fix.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Akka",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779191764,
+        "title": "Analyze Zero: The Programming Language for Agents",
+        "slug": "vercel-labs-zero-agent-language",
+        "language": "TypeScript / Rust",
+        "code": "Trend",
+        "date": "2026-05-19",
+        "path": "data/posts/2026-05/vercel-labs-zero-agent-language.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1779172951,
         "title": "Fixing Rust Pinning in Custom Futures",
         "slug": "rust-async-pinning-violations",

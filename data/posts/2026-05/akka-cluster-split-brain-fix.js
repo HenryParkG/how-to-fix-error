@@ -1,21 +1,22 @@
 window.onPostDataLoaded({
-    "title": "Solving Akka Cluster Split-Brain Scenarios",
+    "title": "Resolving Akka Cluster Split-Brain Scenarios",
     "slug": "akka-cluster-split-brain-fix",
     "language": "Java / Scala",
-    "code": "SplitBrain",
+    "code": "Cluster-Partitioning",
     "tags": [
         "Java",
-        "Infra",
         "Backend",
+        "Akka",
+        "Distributed Systems",
         "Error Fix"
     ],
-    "analysis": "<p>Split-brain is a critical failure state in Akka Clusters where a network partition divides the cluster into two or more independent groups. Each group believes the other has failed, leading to multiple 'Singleton' actors or concurrent write operations on shared data (like Akka Persistence). This occurs because the default 'downing' mechanism is manual or naive, failing to reach a consensus on which nodes should be removed from the cluster during a partition.</p>",
-    "root_cause": "Missing automated Split Brain Resolver (SBR) configuration or using 'auto-down-unreachable-after' which is unsafe for partitions.",
-    "bad_code": "akka {\n  cluster {\n    # DANGEROUS: Leads to split-brain during network blips\n    auto-down-unreachable-after = 10s\n    seed-nodes = [\"akka://Sys@host1:2552\"]\n  }\n}",
-    "solution_desc": "Configure the Akka Split Brain Resolver (SBR) with a strategy like 'keep-majority'. This ensures that during a partition, only the partition with the majority of nodes remains active, while the minority partition shuts itself down (or 'downs' itself), preserving data consistency.",
-    "good_code": "akka {\n  cluster {\n    # Enable SBR\n    downing-provider-class = \"akka.cluster.sbr.SplitBrainResolverProvider\"\n    split-brain-resolver {\n      active-strategy = \"keep-majority\"\n      keep-majority {\n        # If exactly 50/50, keep the one with the lowest address\n        role = \"\"\n      }\n    }\n  }\n}",
-    "verification": "Simulate a network partition using 'iptables -A INPUT -s <node_ip> -j DROP' and verify that the minority group nodes terminate while the majority group remains healthy.",
-    "date": "2026-05-14",
-    "id": 1778724849,
+    "analysis": "<p>In cross-region Akka deployments, transient network partitions can split a single cluster into two or more independent islands. This is the 'Split-Brain' scenario. If both sides believe they are the authoritative cluster, they will both start singleton actors, manage shards independently, and cause massive data corruption in persistent stores as they compete for the same entity IDs.</p>",
+    "root_cause": "Relying on default 'auto-downing' which downs unreachable nodes without consensus, or failing to configure a Split Brain Resolver (SBR) that accounts for regional quorum requirements.",
+    "bad_code": "akka.cluster {\n  # DANGEROUS: Automatically downs nodes after 10s\n  auto-down-unreachable-after = 10s\n  allow-weakly-up-members = on\n}",
+    "solution_desc": "Enable the Akka Split Brain Resolver with a 'keep-majority' or 'static-quorum' strategy. In cross-region setups, 'keep-majority' is preferred as it ensures that only the partition with more than half the nodes survives, while the smaller partition shuts itself down.",
+    "good_code": "akka.cluster.split-brain-resolver {\n  active-strategy = keep-majority\n  stable-after = 20s\n  keep-majority {\n    role = \"backend-node\"\n  }\n}",
+    "verification": "Simulate a network partition using 'tc qdisc' (packet loss) between regions and verify via logs that the minority partition performs a CoordinatedShutdown.",
+    "date": "2026-05-19",
+    "id": 1779191763,
     "type": "error"
 });
