@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779259267,
+        "title": "Debugging io_uring CQE Overflows in Storage Engines",
+        "slug": "debugging-iouring-cqe-overflows-high-throughput",
+        "language": "Rust",
+        "code": "CQE Overflow",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/debugging-iouring-cqe-overflows-high-throughput.js",
+        "tags": [
+            "Rust",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779259268,
+        "title": "Resolving vLLM PagedAttention KV Cache Failures",
+        "slug": "vllm-pagedattention-kv-cache-allocation-failures",
+        "language": "Python",
+        "code": "KV Cache OOM",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/vllm-pagedattention-kv-cache-allocation-failures.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779259269,
+        "title": "Fixing Postgres MultiXact ID Wraparound Shutdowns",
+        "slug": "postgres-multixact-id-wraparound-shutdown",
+        "language": "SQL",
+        "code": "MultiXact Wraparound",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/postgres-multixact-id-wraparound-shutdown.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Postgres",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779259270,
+        "title": "Analyzing Vercel Zerolang: The Agentic Programming Language",
+        "slug": "analyzing-vercel-zerolang-agentic-programming-language",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/analyzing-vercel-zerolang-agentic-programming-language.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1779244123,
         "title": "Fixing C++20 Coroutine Lifetime & Dangling Ref Errors",
         "slug": "fixing-cpp20-coroutine-lifetime-dangling-references",
