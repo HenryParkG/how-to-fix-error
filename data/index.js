@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779244123,
+        "title": "Fixing C++20 Coroutine Lifetime & Dangling Ref Errors",
+        "slug": "fixing-cpp20-coroutine-lifetime-dangling-references",
+        "language": "C++20",
+        "code": "DanglingReferenceError",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-lifetime-dangling-references.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779244124,
+        "title": "Mitigating Kafka Rebalance Storms (Max Poll Interval)",
+        "slug": "mitigating-kafka-rebalance-storms-max-poll-interval",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/mitigating-kafka-rebalance-storms-max-poll-interval.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779244125,
+        "title": "Fixing GenStage Backpressure Deadlocks in Elixir OTP",
+        "slug": "elixir-genstage-backpressure-deadlock-fix",
+        "language": "Elixir",
+        "code": "GenStageDeadlock",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/elixir-genstage-backpressure-deadlock-fix.js",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779244126,
+        "title": "Analyzing Vercel's Zerolang: The Language for Agents",
+        "slug": "vercel-labs-zerolang-agent-language-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-20",
+        "path": "data/posts/2026-05/vercel-labs-zerolang-agent-language-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1779191761,
         "title": "Debugging eBPF Verifier Complexity Limits",
         "slug": "debugging-ebpf-verifier-complexity-limits",
