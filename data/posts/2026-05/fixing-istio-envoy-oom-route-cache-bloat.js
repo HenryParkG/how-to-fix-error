@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Istio Envoy OOM due to Route Cache Bloat",
+    "slug": "fixing-istio-envoy-oom-route-cache-bloat",
+    "language": "Go",
+    "code": "OOMKilled (Envoy)",
+    "tags": [
+        "Kubernetes",
+        "Istio",
+        "Go",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>In large Kubernetes clusters with thousands of services, Istio's default behavior of broadcasting every cluster's routing information to every single Envoy sidecar proxy can lead to critical Out-of-Memory (OOM) crashes. As the mesh grows, Envoy\u2019s internal routing tables, VirtualHost configurations, and RouteConfigurations balloon. This issue is compounded when dynamic routing configurations (such as complex regex-matching VirtualServices) trigger frequent Route Discovery Service (RDS) updates. The sidecar\u2019s memory footprint scales linearly with the total number of endpoints and routes in the mesh, eventually breaching the container\u2019s cgroup memory limit and causing a kernel OOM kill.</p><p>When Envoy parses RDS updates, it temporarily duplicates route-matching structures to ensure hitless reloads. Under a write-heavy or highly dynamic deployment pipeline, these transient allocations create significant heap spikes. Without strict configuration scoping, sidecar proxies allocated with standard memory limits (e.g., 256MB\u2013512MB) will crash systematically, degrading application availability and interrupting service-to-service communication.</p>",
+    "root_cause": "The global propagation of routing tables (State of the World RDS) coupled with a lack of localized egress traffic scoping. When thousands of routes are synchronized to sidecars that only consume a fraction of those services, Envoy's configuration memory caches saturate, leading to heap fragmentation and eventual OOM-kills during config updates.",
+    "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: VirtualService\nmetadata:\n  name: wildcard-global-routing\n  namespace: default\nspec:\n  hosts:\n  - \"*\"\n  http:\n  - match:\n    - uri:\n        regex: \"/api/v[0-9]+/.*\"\n    route:\n    - destination:\n        host: global-backend-service.default.svc.cluster.local\n# BUG: No Sidecar resource is defined in the namespaces.\n# This forces every Envoy proxy in the entire cluster to load this wildcard\n# routing rule and maintain routes for all services in the mesh.",
+    "solution_desc": "To fix this, implement localized egress traffic scoping using the Istio 'Sidecar' resource. This configuration instructs the Istio control plane (istiod) to only push configuration updates (LDS, RDS, CDS) for services that are explicitly declared as dependencies for the workloads in that namespace. Reducing the routing table size from thousands of entries to a handful of required dependencies completely mitigates the route cache bloat and reduces sidecar memory consumption by up to 90%.",
+    "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: Sidecar\nmetadata:\n  name: default-egress-scope\n  namespace: order-processing\nspec:\n  workloadSelector:\n    labels:\n      app: order-service\n  egress:\n  - hosts:\n    - \"./*\" # Allows communication to services in the same namespace\n    - \"istio-system/*\" # Allows communication to control plane services\n    - \"payment-gateway/*.payment-gateway.svc.cluster.local\" # Only import specific external namespace dependencies\n---\napiVersion: networking.istio.io/v1alpha3\nkind: VirtualService\nmetadata:\n  name: scoped-route\n  namespace: order-processing\nspec:\n  hosts:\n  - \"order-service.order-processing.svc.cluster.local\"\n  http:\n  - match:\n    - uri:\n        prefix: \"/api/v1/orders\"\n    route:\n    - destination:\n        host: order-service.order-processing.svc.cluster.local",
+    "verification": "Deploy the Sidecar resource and run 'istioctl proxy-config routes <pod-name> -n order-processing' to verify that only local and explicitly defined routes are present. Monitor memory utilization using the Prometheus query: 'container_memory_working_set_bytes{container=\"istio-proxy\"}' to confirm that Envoy memory usage stabilizes below critical limits.",
+    "date": "2026-05-21",
+    "id": 1779330553,
+    "type": "error"
+});
