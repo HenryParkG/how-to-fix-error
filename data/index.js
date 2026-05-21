@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1779365291,
+        "title": "Debugging React Native JSI Memory Corruption",
+        "slug": "debug-react-native-jsi-memory-corruption",
+        "language": "C++ / React Native",
+        "code": "UseAfterFree",
+        "date": "2026-05-21",
+        "path": "data/posts/2026-05/debug-react-native-jsi-memory-corruption.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "JSI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779365292,
+        "title": "Resolving GHC Runtime Deadlocks in Haskell FFI",
+        "slug": "ghc-runtime-deadlocks-haskell-ffi",
+        "language": "Haskell / C",
+        "code": "RuntimeDeadlock",
+        "date": "2026-05-21",
+        "path": "data/posts/2026-05/ghc-runtime-deadlocks-haskell-ffi.js",
+        "tags": [
+            "Rust",
+            "Haskell",
+            "FFI",
+            "GHC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779365293,
+        "title": "Fixing Elasticsearch Fielddata LimitExceededException",
+        "slug": "elasticsearch-fielddata-limit-exceeded",
+        "language": "Elasticsearch DSL / JVM",
+        "code": "LimitExceededException",
+        "date": "2026-05-21",
+        "path": "data/posts/2026-05/elasticsearch-fielddata-limit-exceeded.js",
+        "tags": [
+            "Docker",
+            "Elasticsearch",
+            "JVM",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779365294,
+        "title": "Analyzing ZeroLang: The Agent-Native Programming Language",
+        "slug": "analyzing-zerolang-agentic-programming",
+        "language": "TypeScript / Rust",
+        "code": "Trend",
+        "date": "2026-05-21",
+        "path": "data/posts/2026-05/analyzing-zerolang-agentic-programming.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Next.js",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1779330553,
         "title": "Fixing Istio Envoy OOM due to Route Cache Bloat",
         "slug": "fixing-istio-envoy-oom-route-cache-bloat",
