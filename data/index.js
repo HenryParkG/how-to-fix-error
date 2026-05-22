@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1779417060,
+        "title": "Fixing WebGPU BindGroup Leaks on High-Frequency Redraws",
+        "slug": "fixing-webgpu-bindgroup-leaks-high-frequency-redraws",
+        "language": "TypeScript",
+        "code": "GPUOutOfMemoryError",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/fixing-webgpu-bindgroup-leaks-high-frequency-redraws.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779417061,
+        "title": "Resolving eBPF Verifier Failures on Pointer Arithmetic",
+        "slug": "resolving-ebpf-verifier-pointer-arithmetic-failures",
+        "language": "Go",
+        "code": "VerifierError",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/resolving-ebpf-verifier-pointer-arithmetic-failures.js",
+        "tags": [
+            "Go",
+            "eBPF",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779417062,
+        "title": "Mitigating HNSW Index Graph OOMs in Vector Databases",
+        "slug": "mitigating-hnsw-index-graph-ooms-vector-databases",
+        "language": "Rust",
+        "code": "OutOfMemory",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/mitigating-hnsw-index-graph-ooms-vector-databases.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "Databases",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779417063,
+        "title": "Inside GuJumpgate: Next-Gen Zero-Trust Secure Tunneling",
+        "slug": "inside-gujumpgate-zero-trust-secure-tunneling",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/inside-gujumpgate-zero-trust-secure-tunneling.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Kubernetes"
+        ]
+    },
+    {
         "id": 1779365291,
         "title": "Debugging React Native JSI Memory Corruption",
         "slug": "debug-react-native-jsi-memory-corruption",

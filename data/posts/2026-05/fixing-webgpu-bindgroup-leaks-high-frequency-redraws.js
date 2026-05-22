@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing WebGPU BindGroup Leaks on High-Frequency Redraws",
+    "slug": "fixing-webgpu-bindgroup-leaks-high-frequency-redraws",
+    "language": "TypeScript",
+    "code": "GPUOutOfMemoryError",
+    "tags": [
+        "TypeScript",
+        "WebGPU",
+        "Graphics",
+        "Error Fix"
+    ],
+    "analysis": "<p>In WebGPU applications executing high-frequency redraws (such as 60fps/120fps render loops), developer-managed memory allocations are a common source of performance degradation and application crashes. Unlike WebGL, which abstractly manages resource lifecycles behind context states, WebGPU provides low-level control over memory allocations on the GPU. This means developers must explicitly manage the lifecycles of bind groups, vertex buffers, and uniform buffers. When transient GPU resources are created frame-over-frame without proactive destruction, the browser's Garbage Collector (GC) cannot reclaim the underlying GPU memory quickly enough, leading to catastrophic GPUOutOfMemoryError exceptions.</p>",
+    "root_cause": "The specific technical reason for failure is the decoupling of JavaScript Garbage Collection from GPU VRAM reclamation. Instantiating a new GPUBindGroup and dynamic GPUBuffer on every render tick leaves orphan JS wrappers. Until the JS engine triggers GC, the GPU driver maintains active references to these allocations, leading to rapid VRAM exhaustion and OOM crashes.",
+    "bad_code": "async function renderLoop() {\n  // BAD: Allocating a new uniform buffer and bind group on every single frame\n  const uniformBuffer = device.createBuffer({\n    size: 64,\n    usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST\n  });\n  \n  device.queue.writeBuffer(uniformBuffer, 0, new Float32Array([Math.random()]));\n\n  const bindGroup = device.createBindGroup({\n    layout: pipeline.getBindGroupLayout(0),\n    entries: [{ binding: 0, resource: { buffer: uniformBuffer } }]\n  });\n\n  const commandEncoder = device.createCommandEncoder();\n  const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);\n  passEncoder.setPipeline(pipeline);\n  passEncoder.setBindGroup(0, bindGroup);\n  passEncoder.draw(3);\n  passEncoder.end();\n  device.queue.submit([commandEncoder.finish()]);\n\n  requestAnimationFrame(renderLoop);\n}",
+    "solution_desc": "To resolve the OOM error, refactor the application to use a persistent buffer allocation strategy. Allocate a single global GPUBuffer and GPUBindGroup during the initialization phase. On each high-frequency redraw, update the buffer's contents in-place using the highly optimized `device.queue.writeBuffer` API. This completely avoids allocating or deallocating resources inside the requestAnimationFrame loop.",
+    "good_code": "// GOOD: Allocate uniform buffer and bind group ONCE during initialization\nconst uniformBuffer = device.createBuffer({\n  size: 64,\n  usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST\n});\n\nconst bindGroup = device.createBindGroup({\n  layout: pipeline.getBindGroupLayout(0),\n  entries: [{ binding: 0, resource: { buffer: uniformBuffer } }]\n});\n\nconst dataFrameArray = new Float32Array(16); // Reusable local array\n\nasync function renderLoop() {\n  // In-place updates do not allocate new GPU memory\n  dataFrameArray[0] = Math.random();\n  device.queue.writeBuffer(uniformBuffer, 0, dataFrameArray);\n\n  const commandEncoder = device.createCommandEncoder();\n  const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);\n  passEncoder.setPipeline(pipeline);\n  passEncoder.setBindGroup(0, bindGroup);\n  passEncoder.draw(3);\n  passEncoder.end();\n  device.queue.submit([commandEncoder.finish()]);\n\n  requestAnimationFrame(renderLoop);\n}",
+    "verification": "Open Chrome DevTools, navigate to the Performance monitor or use the `about:gpu` page. Track 'GPU Memory' metrics over 10 minutes of continuous redraws. The memory profile must remain perfectly flat, showing 0 bytes of dynamic VRAM growth after initial page load.",
+    "date": "2026-05-22",
+    "id": 1779417060,
+    "type": "error"
+});

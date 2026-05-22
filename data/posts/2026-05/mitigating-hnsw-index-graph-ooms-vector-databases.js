@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Mitigating HNSW Index Graph OOMs in Vector Databases",
+    "slug": "mitigating-hnsw-index-graph-ooms-vector-databases",
+    "language": "Rust",
+    "code": "OutOfMemory",
+    "tags": [
+        "Rust",
+        "VectorDB",
+        "Databases",
+        "Error Fix"
+    ],
+    "analysis": "<p>Hierarchical Navigable Small World (HNSW) graphs are the gold standard for nearest neighbor searches in vector databases. However, scaling HNSW indexes to handle high-dimensional vectors (such as 1536-dimension embedding vectors) poses extreme memory overhead and allocator fragmentation challenges. During high-throughput insert operations, the index continuously updates dense graph structures across multiple layers. This causes extensive virtual memory fragmentation, leading to sudden Out-of-Memory (OOM) killer terminations long before the physical vector data size itself exceeds system limits.</p>",
+    "root_cause": "The root cause is heap fragmentation caused by allocating thousands of tiny, variable-sized vectors representing the adjacency lists of HNSW graph nodes on standard memory allocators, compounded by keeping raw, uncompressed high-dimensional float vectors entirely in DRAM.",
+    "bad_code": "use std::collections::HashMap;\n\n// BAD: Standard vector allocations for node connections lead to massive heap fragmentation\nstruct HNSWGraph {\n    m: usize,\n    ef_construction: usize,\n    // Dynamic nested vectors cause tiny allocations scattered across heap\n    layers: Vec<HashMap<usize, Vec<usize>>>,\n    vectors: Vec<Vec<f32>>, // Raw, uncompressed dimensions in memory\n}\n\nimpl HNSWGraph {\n    fn insert(&mut self, id: usize, vector: Vec<f32>) {\n        self.vectors.push(vector);\n        // Unconstrained dynamic allocations on insertion\n        let mut neighbors = Vec::with_capacity(self.m);\n        // insertion logic...\n        self.layers[0].insert(id, neighbors);\n    }\n}",
+    "solution_desc": "Mitigate building OOMs by implementing two distinct architectural strategies: first, compress high-dimensional vectors using Scalar Quantization (SQ) or Product Quantization (PQ) to reduce in-memory size up to 4x. Second, replace standard heap allocation with a system-aware memory allocator like `jemalloc` configured with background threads, and flatten adjacency lists into single, pre-allocated contiguous memory blocks (slabs).",
+    "good_code": "// GOOD: Use jemalloc to handle heavy fragmentation and flatten the graph vectors\nuse jemallocator::Jemalloc;\n#[global_allocator]\nstatic GLOBAL: Jemalloc = Jemalloc;\n\nstruct FlattenedHNSW {\n    m: usize,\n    vector_dim: usize,\n    // Flattened contiguous buffer for all vector data (using f16 scalar quantization)\n    quantized_vectors: Vec<u16>, \n    // Single contiguous array for edges; offset indexed instead of nested collections\n    flat_edges: Vec<u32>,\n    max_elements: usize,\n}\n\nimpl FlattenedHNSW {\n    fn new(max_elements: usize, m: usize, dim: usize) -> Self {\n        Self {\n            m,\n            vector_dim: dim,\n            quantized_vectors: vec![0u16; max_elements * dim], // Pre-allocated slab\n            flat_edges: vec![0u32; max_elements * m * 2],       // Pre-allocated edge slab\n            max_elements,\n        }\n    }\n\n    fn insert_vector(&mut self, id: usize, vector: &[f32]) {\n        // Perform scalar quantization down to half-precision (f16)\n        let start_idx = id * self.vector_dim;\n        for (i, &val) in vector.iter().enumerate() {\n            let f16_val = half::f16::from_f32(val);\n            self.quantized_vectors[start_idx + i] = f16_val.to_bits();\n        }\n    } \n}",
+    "verification": "Profile memory usage during insertion of 1,000,000 1536-dim vectors. Compare standard allocator vs. flattened slab structures with `jemalloc` using `malloc_stats_print`. Confirm a reduction in RSS (Resident Set Size) overhead of >60% and flatline heap fragmentation.",
+    "date": "2026-05-22",
+    "id": 1779417062,
+    "type": "error"
+});
