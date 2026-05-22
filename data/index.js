@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1779432059,
+        "title": "Fixing BEAM Memory Bloat in Elixir Pipelines",
+        "slug": "fixing-beam-memory-bloat-elixir-pipelines",
+        "language": "Elixir",
+        "code": "BEAM Memory Leak",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/fixing-beam-memory-bloat-elixir-pipelines.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779432060,
+        "title": "Fixing C++20 Coroutine Symmetric Transfer Leaks",
+        "slug": "fixing-cpp20-coroutine-symmetric-transfer-leaks",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-symmetric-transfer-leaks.js",
+        "tags": [
+            "C++",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779432061,
+        "title": "Fixing Kafka Cooperative Sticky Assignor Deadlocks",
+        "slug": "fixing-kafka-cooperative-sticky-deadlocks",
+        "language": "Kafka",
+        "code": "Consumer Deadlock",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/fixing-kafka-cooperative-sticky-deadlocks.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779432062,
+        "title": "Exploring GuJumpgate: High-Speed Proxy Gateway",
+        "slug": "exploring-gujumpgate-high-speed-proxy-gateway",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-22",
+        "path": "data/posts/2026-05/exploring-gujumpgate-high-speed-proxy-gateway.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Docker"
+        ]
+    },
+    {
         "id": 1779417060,
         "title": "Fixing WebGPU BindGroup Leaks on High-Frequency Redraws",
         "slug": "fixing-webgpu-bindgroup-leaks-high-frequency-redraws",
