@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779524473,
+        "title": "Fixing Go Scheduler Starvation in Tight Loops",
+        "slug": "fixing-go-scheduler-starvation-tight-loops",
+        "language": "Go",
+        "code": "Scheduler Starvation",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/fixing-go-scheduler-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779524474,
+        "title": "Fixing Elasticsearch Heap OOM on Segment Merges",
+        "slug": "elasticsearch-jvm-heap-oom-lucene-merges",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/elasticsearch-jvm-heap-oom-lucene-merges.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Elasticsearch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779524475,
+        "title": "Fixing Haskell Space Leaks in StateT Monads",
+        "slug": "fixing-haskell-state-monad-transformer-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/fixing-haskell-state-monad-transformer-space-leaks.js",
+        "tags": [
+            "Docker",
+            "Backend",
+            "Haskell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779524476,
+        "title": "GuJumpgate: Secure High-Performance Network Proxy",
+        "slug": "gu-jumpgate-high-performance-network-proxy",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/gu-jumpgate-high-performance-network-proxy.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779515977,
         "title": "Fixing PyTorch CUDA Memory Fragmentation in DDP",
         "slug": "fixing-pytorch-cuda-memory-fragmentation-ddp",
