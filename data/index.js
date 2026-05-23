@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1779502050,
+        "title": "Fixing Rust Pin-Projection Violations in Streams",
+        "slug": "fixing-rust-pin-projection-violations-streams",
+        "language": "Rust",
+        "code": "PinProjectionViolation",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/fixing-rust-pin-projection-violations-streams.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Streams",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779502051,
+        "title": "Fixing Redis COW Latency Spikes During RDB Forks",
+        "slug": "fixing-redis-cow-latency-spikes-rdb-fork",
+        "language": "Redis",
+        "code": "COWLatencySpike",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/fixing-redis-cow-latency-spikes-rdb-fork.js",
+        "tags": [
+            "Redis",
+            "Performance",
+            "Linux",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779502052,
+        "title": "Fixing WASM Memory Fragmentation in Edge Runtimes",
+        "slug": "fixing-wasm-memory-fragmentation-edge-runtimes",
+        "language": "WebAssembly",
+        "code": "WasmMemoryFragmentation",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/fixing-wasm-memory-fragmentation-edge-runtimes.js",
+        "tags": [
+            "WebAssembly",
+            "Rust",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779502053,
+        "title": "Exploring FoundZiGu/GuJumpgate: A Fast Relay",
+        "slug": "foundzigu-gujumpgate-high-performance-network-relayer",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-23",
+        "path": "data/posts/2026-05/foundzigu-gujumpgate-high-performance-network-relayer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779449954,
         "title": "Fixing io_uring CQE Drops Under High Network Load",
         "slug": "fixing-iouring-cqe-drops",
