@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779588960,
+        "title": "Fixing C++20 Coroutine Leaks in Multi-Threaded Executors",
+        "slug": "cpp20-coroutine-executor-memory-leak",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/cpp20-coroutine-executor-memory-leak.js",
+        "tags": [
+            "C++20",
+            "Concurrency",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779588961,
+        "title": "Fixing Kafka Rebalance Storms in PySpark Processing Loops",
+        "slug": "kafka-pyspark-rebalance-storms",
+        "language": "Python",
+        "code": "Rebalance Storm",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/kafka-pyspark-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "PySpark",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779588962,
+        "title": "Fix Istio Sidecar Memory Exhaustion from gRPC Stream Leaks",
+        "slug": "istio-sidecar-grpc-stream-leak",
+        "language": "Go",
+        "code": "OOMKilled",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/istio-sidecar-grpc-stream-leak.js",
+        "tags": [
+            "Kubernetes",
+            "gRPC",
+            "Istio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779588963,
+        "title": "Analyzing GuJumpgate: High-Performance Network Gateway",
+        "slug": "analyzing-gu-jumpgate-network-gateway",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/analyzing-gu-jumpgate-network-gateway.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779531745,
         "title": "Fixing eBPF Verifier Rejections on State Pruning Limits",
         "slug": "fixing-ebpf-verifier-state-pruning-limits",
