@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779604144,
+        "title": "Fixing Elixir OTP Supervisor Deadlocks",
+        "slug": "fixing-elixir-otp-supervisor-deadlocks",
+        "language": "Elixir",
+        "code": "OTP_SUPERVISOR_DEADLOCK",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/fixing-elixir-otp-supervisor-deadlocks.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779604145,
+        "title": "Fixing PostgreSQL Autovacuum Bloat",
+        "slug": "postgres-autovacuum-bloat-partitioned-tables",
+        "language": "SQL",
+        "code": "POSTGRES_AUTOVACUUM_BLOAT",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/postgres-autovacuum-bloat-partitioned-tables.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779604146,
+        "title": "Fixing WebGPU Out-of-Memory Crashes",
+        "slug": "webgpu-oom-command-buffer-crashes",
+        "language": "TypeScript",
+        "code": "WEBGPU_OOM_CRASH",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/webgpu-oom-command-buffer-crashes.js",
+        "tags": [
+            "WebGPU",
+            "WebGraphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779604147,
+        "title": "Exploring GuJumpgate: Next-Gen Network Tunneling",
+        "slug": "gu-jumpgate-network-tunneling-tool",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/gu-jumpgate-network-tunneling-tool.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779588960,
         "title": "Fixing C++20 Coroutine Leaks in Multi-Threaded Executors",
         "slug": "cpp20-coroutine-executor-memory-leak",
