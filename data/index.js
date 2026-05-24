@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779618413,
+        "title": "Fixing Rust Async Lifetime Conflicts with Send Bounds",
+        "slug": "fixing-rust-async-lifetime-send-bounds",
+        "language": "Rust",
+        "code": "lifetime-send-error",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/fixing-rust-async-lifetime-send-bounds.js",
+        "tags": [
+            "Rust",
+            "Tokio",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779618414,
+        "title": "Fixing Qdrant Memory Saturation during HNSW Rebuilds",
+        "slug": "fixing-qdrant-memory-saturation-hnsw-rebuilds",
+        "language": "Rust",
+        "code": "OOM-Killed-HNSW",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/fixing-qdrant-memory-saturation-hnsw-rebuilds.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779618415,
+        "title": "Fixing CoreDNS Rate-Limiting Pod CrashLoopBackOffs",
+        "slug": "kubernetes-coredns-rate-limiting-dns-failures",
+        "language": "Go",
+        "code": "K8s-DNS-Timeout",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/kubernetes-coredns-rate-limiting-dns-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779618416,
+        "title": "FoundZiGu GuJumpgate: High-Performance Network Tunnelling",
+        "slug": "foundzigu-gujumpgate-high-performance-tunnelling",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-24",
+        "path": "data/posts/2026-05/foundzigu-gujumpgate-high-performance-tunnelling.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779604144,
         "title": "Fixing Elixir OTP Supervisor Deadlocks",
         "slug": "fixing-elixir-otp-supervisor-deadlocks",
