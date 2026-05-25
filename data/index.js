@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779711607,
+        "title": "Fixing eBPF Verifier State-Pruning Failures in XDP",
+        "slug": "fixing-ebpf-verifier-state-pruning-failures-xdp",
+        "language": "C",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-05-25",
+        "path": "data/posts/2026-05/fixing-ebpf-verifier-state-pruning-failures-xdp.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "C",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779711608,
+        "title": "Fixing React Native JSI Thread Deadlocks in Bridges",
+        "slug": "react-native-jsi-thread-deadlocks-high-frequency-bridge",
+        "language": "C++ / TypeScript",
+        "code": "JSI_DEADLOCK",
+        "date": "2026-05-25",
+        "path": "data/posts/2026-05/react-native-jsi-thread-deadlocks-high-frequency-bridge.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779711609,
+        "title": "Fixing Spark Driver OOMs from Broadcast Join Bottlenecks",
+        "slug": "fixing-spark-driver-oom-broadcast-join-serialization",
+        "language": "Scala",
+        "code": "SPARK_OOM",
+        "date": "2026-05-25",
+        "path": "data/posts/2026-05/fixing-spark-driver-oom-broadcast-join-serialization.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779711610,
+        "title": "Why FoundZiGu/GuJumpgate Is the Next Big Thing in SecOps",
+        "slug": "github-trending-gu-jumpgate-secops-gateway",
+        "language": "Go / TypeScript",
+        "code": "Trend",
+        "date": "2026-05-25",
+        "path": "data/posts/2026-05/github-trending-gu-jumpgate-secops-gateway.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1779692639,
         "title": "Fixing WiredTiger Cache Eviction Stalls",
         "slug": "fixing-wiredtiger-cache-eviction-stalls",

@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing eBPF Verifier State-Pruning Failures in XDP",
+    "slug": "fixing-ebpf-verifier-state-pruning-failures-xdp",
+    "language": "C",
+    "code": "BPF_VERIFIER_ERR",
+    "tags": [
+        "Kubernetes",
+        "Go",
+        "C",
+        "Error Fix"
+    ],
+    "analysis": "<p>When developing high-throughput XDP (eXpress Data Path) packet filters, engineers often hit the <code>BPF_VERIFIER_ERR</code> during program loading. The eBPF verifier uses a technique called <strong>state pruning</strong> to verify programs in finite time. It maintains a set of verified states; when it encounters a state equivalent to an already verified one, it prunes the search path. However, when parsing complex packet headers (such as nested tunnels or variable-length options), minor differences in tracked registers\u2014especially packet boundary registers (<code>data_end</code>)\u2014prevent the verifier from recognizing state equivalence. This forces the verifier to explore too many states, hitting the instruction limit (1 million instructions) and rejecting the program with false loop or out-of-bounds errors.</p>",
+    "root_cause": "The verifier fails to prune states because variables holding packet offsets are updated inside branches or loops, creating a combinatorial explosion of register states (varying upper/lower bounds on offset registers) that the verifier treats as distinct.",
+    "bad_code": "#define MAX_ENVELOPE_LAYERS 3\n\nSEC(\"xdp\")\nint xdp_filter(struct xdp_md *ctx) {\n    void *data = (void *)(long)ctx->data;\n    void *data_end = (void *)(long)ctx->data_end;\n    struct ethhdr *eth = data;\n    \n    if ((void *)(eth + 1) > data_end)\n        return XDP_PASS;\n\n    u16 proto = eth->h_proto;\n    u32 offset = sizeof(*eth);\n\n    // Variable offset updates inside dynamic checks confuse state pruning\n    for (int i = 0; i < MAX_ENVELOPE_LAYERS; i++) {\n        if (proto == __constant_htons(ETH_P_8021Q)) {\n            struct vlan_hdr *vlan = data + offset;\n            if ((void *)(vlan + 1) > data_end)\n                return XDP_PASS;\n            proto = vlan->h_vlan_encapsulated_proto;\n            offset += sizeof(*vlan); // Mutates offset dynamic bounds\n        } else {\n            break;\n        }\n    }\n    return XDP_DROP;\n}",
+    "solution_desc": "To make register states equivalent, we must make boundary calculations deterministic. Instead of maintaining a continuously mutated, dynamic offset register, we parse packets by casting sequential structs at fixed, absolute offsets or by masking the variable offsets to force explicit, static upper bounds that the verifier can merge.",
+    "good_code": "#define MAX_ENVELOPE_LAYERS 3\n\nSEC(\"xdp\")\nint xdp_filter(struct xdp_md *ctx) {\n    void *data = (void *)(long)ctx->data;\n    void *data_end = (void *)(long)ctx->data_end;\n    struct ethhdr *eth = data;\n    \n    if ((void *)(eth + 1) > data_end)\n        return XDP_PASS;\n\n    u16 proto = eth->h_proto;\n    u32 offset = sizeof(*eth);\n\n    #pragma unroll\n    for (int i = 0; i < MAX_ENVELOPE_LAYERS; i++) {\n        if (proto != __constant_htons(ETH_P_8021Q))\n            break;\n\n        // Masking offset to prove strict constraints to the verifier\n        u32 safe_offset = offset & 0x7F; \n        struct vlan_hdr *vlan = data + safe_offset;\n        \n        if ((void *)(vlan + 1) > data_end)\n            return XDP_PASS;\n\n        proto = vlan->h_vlan_encapsulated_proto;\n        offset = safe_offset + sizeof(*vlan);\n    }\n    return XDP_DROP;\n}",
+    "verification": "Compile your program using LLVM/Clang and load it into the kernel using <code>bpftool prog load</code> with log level 2: <code>bpftool prog load xdp_filter.o /sys/fs/bpf/xdp_filter errlog log_level 2</code>. Inspect the output to verify the verifier logs \"processed X insns\" (where X is significantly reduced) and look for \"safe\" status markings on register pruning junctions.",
+    "date": "2026-05-25",
+    "id": 1779711607,
+    "type": "error"
+});
