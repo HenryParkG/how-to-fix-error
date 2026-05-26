@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779761674,
+        "title": "Fixing C++20 Coroutine Frame Leaks under Symmetric Transfer",
+        "slug": "fixing-cpp20-coroutine-frame-leaks-symmetric-transfer",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-frame-leaks-symmetric-transfer.js",
+        "tags": [
+            "Rust",
+            "C++",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779761675,
+        "title": "Fixing Kafka Rebalance Storms under High Heap Pressure",
+        "slug": "fixing-kafka-rebalance-storms-high-heap-pressure",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/fixing-kafka-rebalance-storms-high-heap-pressure.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779761676,
+        "title": "Fixing Elasticsearch Fielddata Cache Blowups during Aggregations",
+        "slug": "fixing-elasticsearch-fielddata-cache-blowups",
+        "language": "Elasticsearch",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/fixing-elasticsearch-fielddata-cache-blowups.js",
+        "tags": [
+            "Docker",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779761677,
+        "title": "Deep Dive into Perplexity AI's Bumblebee Scanner",
+        "slug": "perplexity-bumblebee-security-scanner",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/perplexity-bumblebee-security-scanner.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779711607,
         "title": "Fixing eBPF Verifier State-Pruning Failures in XDP",
         "slug": "fixing-ebpf-verifier-state-pruning-failures-xdp",

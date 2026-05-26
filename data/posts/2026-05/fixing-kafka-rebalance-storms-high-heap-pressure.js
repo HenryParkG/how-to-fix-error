@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Kafka Rebalance Storms under High Heap Pressure",
+    "slug": "fixing-kafka-rebalance-storms-high-heap-pressure",
+    "language": "Java",
+    "code": "RebalanceStorm",
+    "tags": [
+        "Kafka",
+        "Java",
+        "Kubernetes",
+        "Error Fix"
+    ],
+    "analysis": "<p>When a Kafka consumer group experiences high JVM heap pressure, long Stop-the-World (STW) garbage collection pauses occur. During these pauses, the consumer's background heartbeat thread or the main polling thread is completely frozen. Consequently, the consumer fails to send heartbeats to the Group Coordinator within the configured <code>session.timeout.ms</code>, or fails to poll within <code>max.poll.interval.ms</code>. The coordinator marks the consumer dead and triggers a rebalance. Once the GC pause ends, the consumer attempts to rejoin the group, sparking a cascading 'rebalance storm' that halts message ingestion.</p>",
+    "root_cause": "The root cause is the combination of large batch fetches ('max.poll.records' set too high), demanding processing logic that triggers long Garbage Collection pauses exceeding the 'session.timeout.ms', and a tight poll timeout configuration that fails to accommodate JVM pauses under memory pressure.",
+    "bad_code": "import org.apache.kafka.clients.consumer.ConsumerConfig;\nimport java.util.Properties;\n\npublic class BadKafkaConsumerConfig {\n    public static Properties getConfigs() {\n        Properties props = new Properties();\n        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"localhost:9092\");\n        props.put(ConsumerConfig.GROUP_ID_CONFIG, \"high-throughput-group\");\n        // BUG: High poll record limits combined with aggressive timeouts under GC pressure cause storms\n        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"10000\"); \n        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"10000\"); // 10 seconds (too short during GC)\n        props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\"); // 5 minutes\n        props.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, \"3000\");\n        return props;\n    }\n}",
+    "solution_desc": "To prevent rebalance storms, tune Kafka properties and JVM garbage collection parameters. Increase 'session.timeout.ms' to allow the coordinator to tolerate longer STW pauses, reduce 'max.poll.records' to decrease memory allocation rates, and utilize modern G1GC or ZGC configurations to keep STW pauses below 100 milliseconds.",
+    "good_code": "import org.apache.kafka.clients.consumer.ConsumerConfig;\nimport java.util.Properties;\n\npublic class FixedKafkaConsumerConfig {\n    public static Properties getConfigs() {\n        Properties props = new Properties();\n        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"localhost:9092\");\n        props.put(ConsumerConfig.GROUP_ID_CONFIG, \"high-throughput-group\");\n        \n        // FIX: Lower poll records to reduce heap allocation spikes\n        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"500\"); \n        \n        // FIX: Increase timeouts to survive GC pauses without triggering rebalance\n        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\"); // 45 seconds\n        props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"600000\"); // 10 minutes\n        props.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, \"15000\"); // 15 seconds\n        \n        // JVM GC Recommended execution options:\n        // -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35\n        return props;\n    }\n}",
+    "verification": "Monitor JVM garbage collection metrics (specifically safepoint pauses) and Kafka consumer metrics 'join-rate' and 'sync-rate' using Prometheus/JMX. Simulate heavy heap pressure using an allocation generator. Verify that even during GC activity, the consumer group stays stable without triggering 'PreparingRebalance' messages in the broker logs.",
+    "date": "2026-05-26",
+    "id": 1779761675,
+    "type": "error"
+});
