@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779777558,
+        "title": "Fixing PostgreSQL TXID Wraparound Outages",
+        "slug": "fixing-postgresql-txid-wraparound-outages",
+        "language": "SQL",
+        "code": "TXID_WRAPAROUND",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/fixing-postgresql-txid-wraparound-outages.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779777559,
+        "title": "Fixing Elixir GenServer Mailbox Flooding",
+        "slug": "elixir-genserver-mailbox-flooding",
+        "language": "Elixir",
+        "code": "MAILBOX_FLOODING",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/elixir-genserver-mailbox-flooding.js",
+        "tags": [
+            "Kubernetes",
+            "Elixir",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779777560,
+        "title": "Fix Go Runtime Scheduler Starvation in Tight Loops",
+        "slug": "go-runtime-scheduler-starvation",
+        "language": "Go",
+        "code": "SCHEDULER_STARVATION",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/go-runtime-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779777561,
+        "title": "Perplexity Bumblebee: Supply Chain Scanner",
+        "slug": "perplexity-ai-bumblebee-scanner",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-26",
+        "path": "data/posts/2026-05/perplexity-ai-bumblebee-scanner.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779761674,
         "title": "Fixing C++20 Coroutine Frame Leaks under Symmetric Transfer",
         "slug": "fixing-cpp20-coroutine-frame-leaks-symmetric-transfer",
