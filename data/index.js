@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1779864955,
+        "title": "Fixing PyTorch DDP Deadlocks in Custom Loss Layers",
+        "slug": "fixing-pytorch-ddp-deadlocks-custom-loss",
+        "language": "Python",
+        "code": "DDP Deadlock",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-pytorch-ddp-deadlocks-custom-loss.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Distributed",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779864956,
+        "title": "Fixing Envoy Sidecar OOMs under HTTP/2 Multiplexing",
+        "slug": "fixing-istio-envoy-sidecar-ooms-http2",
+        "language": "Go",
+        "code": "Envoy OOM",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-istio-envoy-sidecar-ooms-http2.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779864957,
+        "title": "Fixing RocksDB Write Stalls from Compaction Lag",
+        "slug": "fixing-rocksdb-write-stalls-compaction-lag",
+        "language": "Rust",
+        "code": "Write Stall",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-rocksdb-write-stalls-compaction-lag.js",
+        "tags": [
+            "Rust",
+            "RocksDB",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779864958,
+        "title": "smartNode: The Ultimate Decentralized Node Runner",
+        "slug": "smartnode-decentralized-node-runner",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/smartnode-decentralized-node-runner.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Docker",
+            "Kubernetes"
+        ]
+    },
+    {
         "id": 1779849238,
         "title": "Fixing Rust Async Cancellation Safety in Tokio Pipelines",
         "slug": "rust-async-cancellation-safety-tokio",
