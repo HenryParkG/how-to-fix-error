@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779849238,
+        "title": "Fixing Rust Async Cancellation Safety in Tokio Pipelines",
+        "slug": "rust-async-cancellation-safety-tokio",
+        "language": "Rust",
+        "code": "CancellationSafety",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/rust-async-cancellation-safety-tokio.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779849239,
+        "title": "Fixing Cassandra Latency Spikes from Tombstones",
+        "slug": "cassandra-tombstone-saturation-latency-spikes",
+        "language": "Cassandra",
+        "code": "ReadTimeoutException",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/cassandra-tombstone-saturation-latency-spikes.js",
+        "tags": [
+            "SQL",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779849240,
+        "title": "Fixing WebGPU Uniform Buffer Alignment and OOM Failures",
+        "slug": "webgpu-uniform-buffer-alignment-oom-fixes",
+        "language": "TypeScript",
+        "code": "GPUDeviceError",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/webgpu-uniform-buffer-alignment-oom-fixes.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779849241,
+        "title": "Deep Dive into smartNode: The Ultimate Automation Node Manager",
+        "slug": "smartnode-automation-node-manager-guide",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/smartnode-automation-node-manager-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js",
+            "Docker"
+        ]
+    },
+    {
         "id": 1779777558,
         "title": "Fixing PostgreSQL TXID Wraparound Outages",
         "slug": "fixing-postgresql-txid-wraparound-outages",
