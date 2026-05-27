@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1779883929,
+        "title": "Fixing WiredTiger Cache Eviction Stalls & Ticket Exhaustion",
+        "slug": "fixing-wiredtiger-eviction-stalls-ticket-exhaustion",
+        "language": "MongoDB / Go",
+        "code": "WiredTiger Cache Eviction Stall",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-wiredtiger-eviction-stalls-ticket-exhaustion.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779883930,
+        "title": "Fixing Qdrant HNSW Recall Degradation and Memory Bloat",
+        "slug": "fixing-qdrant-hnsw-recall-degradation-memory-bloat",
+        "language": "Rust / Python",
+        "code": "Qdrant HNSW Degradation",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-qdrant-hnsw-recall-degradation-memory-bloat.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779883931,
+        "title": "Fixing WASM Linear Memory Fragmentation in Long-Runs",
+        "slug": "fixing-wasm-linear-memory-fragmentation-wasi",
+        "language": "Rust / WASM",
+        "code": "Wasm Linear Memory OOM",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/fixing-wasm-linear-memory-fragmentation-wasi.js",
+        "tags": [
+            "Rust",
+            "Kubernetes",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779883932,
+        "title": "Inside smartNode: Automated Rocket Pool Node Operations",
+        "slug": "inside-smartnode-rocket-pool-node-operations",
+        "language": "Go / Docker",
+        "code": "Trend",
+        "date": "2026-05-27",
+        "path": "data/posts/2026-05/inside-smartnode-rocket-pool-node-operations.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Docker",
+            "Go"
+        ]
+    },
+    {
         "id": 1779864955,
         "title": "Fixing PyTorch DDP Deadlocks in Custom Loss Layers",
         "slug": "fixing-pytorch-ddp-deadlocks-custom-loss",
