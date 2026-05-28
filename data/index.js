@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779970776,
+        "title": "Fixing C++20 Coroutine Frame Memory Leaks",
+        "slug": "fixing-cpp20-coroutine-frame-memory-leaks",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-frame-memory-leaks.js",
+        "tags": [
+            "C++",
+            "Rust",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779970777,
+        "title": "Fixing Kafka Rebalance Storms in Slow Batches",
+        "slug": "fixing-kafka-rebalance-storms-slow-batch-processing",
+        "language": "Kafka / Java",
+        "code": "CommitFailedException",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-kafka-rebalance-storms-slow-batch-processing.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779970778,
+        "title": "Fixing React Native JSI Memory Leaks",
+        "slug": "fixing-react-native-jsi-memory-leaks",
+        "language": "React Native / C++",
+        "code": "OOM Crash",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Mobile",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779970779,
+        "title": "Analyzing Get Shit Done Redux",
+        "slug": "analyzing-get-shit-done-redux",
+        "language": "Python / Shell",
+        "code": "Trend",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/analyzing-get-shit-done-redux.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779950646,
         "title": "Fixing eBPF Verifier Complexity Limit Violations",
         "slug": "fixing-ebpf-verifier-complexity-limit-violations",
