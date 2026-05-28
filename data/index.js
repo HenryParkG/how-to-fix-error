@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1779950646,
+        "title": "Fixing eBPF Verifier Complexity Limit Violations",
+        "slug": "fixing-ebpf-verifier-complexity-limit-violations",
+        "language": "C / Go",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-ebpf-verifier-complexity-limit-violations.js",
+        "tags": [
+            "eBPF",
+            "Networking",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779950647,
+        "title": "Fixing Redis BGSAVE OOM Failures from CoW",
+        "slug": "fixing-redis-bgsave-oom-copy-on-write",
+        "language": "Redis / C",
+        "code": "OOM_KILLED_BGSAVE",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-redis-bgsave-oom-copy-on-write.js",
+        "tags": [
+            "Redis",
+            "Performance",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779950648,
+        "title": "Fixing Haskell Space Leaks in Monadic State",
+        "slug": "fixing-haskell-space-leaks-monadic-state",
+        "language": "Haskell",
+        "code": "SPACE_LEAK_LAZY_ST",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/fixing-haskell-space-leaks-monadic-state.js",
+        "tags": [
+            "Haskell",
+            "Compiler",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1779950649,
+        "title": "Why open-gsd/get-shit-done-redux is Trending",
+        "slug": "open-gsd-get-shit-done-redux-analysis",
+        "language": "Bash / Python",
+        "code": "Trend",
+        "date": "2026-05-28",
+        "path": "data/posts/2026-05/open-gsd-get-shit-done-redux-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1779883929,
         "title": "Fixing WiredTiger Cache Eviction Stalls & Ticket Exhaustion",
         "slug": "fixing-wiredtiger-eviction-stalls-ticket-exhaustion",
