@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1780056589,
+        "title": "Debugging Go Goroutine Leaks from Channels & Contexts",
+        "slug": "debugging-go-goroutine-leaks-channels-contexts",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/debugging-go-goroutine-leaks-channels-contexts.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Memory Leak",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780056590,
+        "title": "Resolving Airflow DAG Deadlocks from Concurrency",
+        "slug": "resolving-airflow-dag-deadlocks-concurrency",
+        "language": "Airflow",
+        "code": "DAG Deadlock",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/resolving-airflow-dag-deadlocks-concurrency.js",
+        "tags": [
+            "Python",
+            "Airflow",
+            "Scheduler",
+            "Concurrency",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780056591,
+        "title": "Kubernetes CrashLoopBackOff: Init Containers & Probes",
+        "slug": "kubernetes-crashloopbackoff-init-containers-probes",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/kubernetes-crashloopbackoff-init-containers-probes.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Container",
+            "Probes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780056592,
+        "title": "Analyze Trending GitHub Repo: guizang-social-card-skill",
+        "slug": "analyze-trending-github-repo-guizang-social-card-skill",
+        "language": "HTML, CSS, JavaScript",
+        "code": "Trend",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/analyze-trending-github-repo-guizang-social-card-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Design",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1780020823,
         "title": "Fixing Elixir GenServer Mailbox Bloat under Burst Load",
         "slug": "fixing-elixir-genserver-mailbox-bloat",
