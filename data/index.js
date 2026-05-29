@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780020823,
+        "title": "Fixing Elixir GenServer Mailbox Bloat under Burst Load",
+        "slug": "fixing-elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "OOM / Mailbox Bloat",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/fixing-elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Elixir",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780020824,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound Failures",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780020825,
+        "title": "Fixing Spark OOM from Partition Skew in Shuffled Joins",
+        "slug": "fixing-spark-oom-partition-skew",
+        "language": "Apache Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/fixing-spark-oom-partition-skew.js",
+        "tags": [
+            "Spark",
+            "Java",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780020826,
+        "title": "Mastering guizang-social-card-skill for Automated Design",
+        "slug": "master-guizang-social-card-skill",
+        "language": "HTML / CSS / JS",
+        "code": "Trend",
+        "date": "2026-05-29",
+        "path": "data/posts/2026-05/master-guizang-social-card-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1779970776,
         "title": "Fixing C++20 Coroutine Frame Memory Leaks",
         "slug": "fixing-cpp20-coroutine-frame-memory-leaks",

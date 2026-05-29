@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Mastering guizang-social-card-skill for Automated Design",
+    "slug": "master-guizang-social-card-skill",
+    "language": "HTML / CSS / JS",
+    "code": "Trend",
+    "tags": [
+        "Tech Trend",
+        "GitHub",
+        "CSS"
+    ],
+    "analysis": "<p>The <code>op7418/guizang-social-card-skill</code> repository is capturing developer and creator mindshare on GitHub. It introduces a highly efficient, single-file HTML rendering pattern designed to convert structured text directly into visually stunning graphics. By utilizing Swiss design guidelines\u2014noted for precise grids, clean asymmetric typography, and a minimalist aesthetic\u2014this repository allows AI assistants like Claude Code and Codex to programmatically generate Xiaohongshu (Red) carousels and WeChat WeChat 21:9 and 1:1 cover graphics. It leverages Tailwind CSS and raw HTML to deliver lightweight, instantly renderable assets without heavy canvas-drawing libraries.</p>",
+    "root_cause": "Key Features & Innovations include dynamic layout switching with 28 predefined layouts and 10 themes, seamless compatibility with headless browser snapshot pipelines (like Puppeteer or Playwright), high-fidelity typographic hierarchy, and a zero-dependency local workflow.",
+    "bad_code": "# Quick Setup and Asset Initialization\ngit clone https://github.com/op7418/guizang-social-card-skill.git\ncd guizang-social-card-skill\nopen template.html",
+    "solution_desc": "Best Use Cases: Automating production pipelines for social media managers, creating high-conversion blog headers, batch-generating e-commerce visual assets, and integrating lightweight web preview cards into modern headless CMS ecosystems.",
+    "good_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <script src=\"https://cdn.tailwindcss.com\"></script>\n  <style>\n    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');\n    body { font-family: 'Inter', sans-serif; }\n  </style>\n</head>\n<body class=\"bg-[#0F0F11] text-[#F3F4F6] flex items-center justify-center min-h-screen\">\n  <!-- Swiss Graphic layout template (WeChat 1:1 Aspect Ratio) -->\n  <div class=\"w-[800px] h-[800px] p-16 bg-[#16161A] border border-[#24242B] flex flex-col justify-between relative overflow-hidden\">\n    <div class=\"absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-purple-600 to-transparent opacity-20 blur-3xl\"></div>\n    <header class=\"flex justify-between items-center z-10\">\n      <span class=\"text-xs tracking-[0.25em] uppercase font-bold text-purple-400\">Swiss Minimal</span>\n      <span class=\"text-xs text-zinc-500\">Vol. 01 // Issue 24</span>\n    </header>\n    <main class=\"my-auto z-10\">\n      <h1 class=\"text-6xl font-black tracking-tight leading-[1.1] mb-6\">\n        Design<br/><span class=\"text-purple-500\">Engineered</span>\n      </h1>\n      <p class=\"text-lg text-zinc-400 max-w-lg leading-relaxed\">\n        Deploy structural Swiss typographic grids with raw Tailwind CSS speed. Perfect for automated batch exports.\n      </p>\n    </main>\n    <footer class=\"flex justify-between items-end border-t border-zinc-800 pt-8 z-10\">\n      <div>\n        <p class=\"text-xs text-zinc-500\">AUTHOR</p>\n        <p class=\"text-sm font-semibold text-zinc-300\">@Guizang</p>\n      </div>\n      <div class=\"text-right\">\n        <p class=\"text-xs text-zinc-500\">LAYOUT</p>\n        <p class=\"text-sm font-semibold text-zinc-300\">Swiss Grid 04/28</p>\n      </div>\n    </footer>\n  </div>\n</body>\n</html>",
+    "verification": "The project represents a broader transition towards 'programmatic design systems' where static layout formats (Figma files, PSDs) are replaced with semantic HTML templates driven directly by AI API scripts to deliver instant, customized visual cards.",
+    "date": "2026-05-29",
+    "id": 1780020826,
+    "type": "trend"
+});
