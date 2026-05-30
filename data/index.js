@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1780106963,
+        "title": "Fix PyTorch CUDA Fragmentation & LLM OOMs",
+        "slug": "fix-pytorch-cuda-fragmentation-llm-oom",
+        "language": "PyTorch",
+        "code": "CUDA out of memory",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/fix-pytorch-cuda-fragmentation-llm-oom.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "LLM",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780106964,
+        "title": "Fix Rust Async Pinning & Self-Referential Streams",
+        "slug": "fix-rust-async-pinning-self-referential-streams",
+        "language": "Rust",
+        "code": "lifetime error / Pin violation",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/fix-rust-async-pinning-self-referential-streams.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780106965,
+        "title": "Fixing Elasticsearch Fielddata Bloat and Aggregations",
+        "slug": "fix-elasticsearch-fielddata-bloat-aggregation-oom",
+        "language": "Elasticsearch",
+        "code": "CircuitBreakingException",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/fix-elasticsearch-fielddata-bloat-aggregation-oom.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780106966,
+        "title": "Mastering the Claude-Powered Guizang Social Card Skill",
+        "slug": "guizang-social-card-skill-design-automation",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/guizang-social-card-skill-design-automation.js",
+        "tags": [
+            "TypeScript",
+            "CSS",
+            "GitHub",
+            "Tech Trend"
+        ]
+    },
+    {
         "id": 1780056589,
         "title": "Debugging Go Goroutine Leaks from Channels & Contexts",
         "slug": "debugging-go-goroutine-leaks-channels-contexts",
