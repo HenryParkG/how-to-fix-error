@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Debugging WebGPU Memory Leaks in Bind Groups",
+    "slug": "debugging-webgpu-memory-leaks-bind-groups",
+    "language": "TypeScript",
+    "code": "WEBGPU_MEMORY_LEAK",
+    "tags": [
+        "TypeScript",
+        "CSS",
+        "Frontend",
+        "Error Fix"
+    ],
+    "analysis": "<p>WebGPU transfers the responsibility of system resource lifecycles entirely to the application layer. Unlike the CPU-side Javascript VM which is dynamically garbage-collected, the GPU-side driver structures remain pinned in virtual device memory until explicitly decoupled.</p><p>Dynamic rendering scripts that construct fresh GPU resources\u2014like Bind Groups, dynamic Uniform Buffers, or Render Pipelines\u2014inside a 60fps frame loop will trigger immediate out-of-memory errors on client machines because JS GC sweep intervals do not reflect the dynamic frequency of hardware allocations. Active command encoders waiting for completion context are kept locked in dynamic memory buffers, quickly overflowing available VRAM limits.</p>",
+    "root_cause": "Re-allocating Bind Groups and pipeline state variables during every single frame loop, and relying entirely on the host browser's asynchronous Garbage Collector to release deep GPU bindings instead of implementing a recycled buffer strategy or using explicit resource teardown calls.",
+    "bad_code": "function renderLoop(device: GPUDevice, context: GPUCanvasContext, pipeline: GPURenderPipeline, buffer: GPUBuffer) {\n    const commandEncoder = device.createCommandEncoder();\n    \n    // BUG: Creating bind groups every frame creates unbound leaks in VRAM\n    const dynamicBindGroup = device.createBindGroup({\n        layout: pipeline.getBindGroupLayout(0),\n        entries: [{ binding: 0, resource: { buffer } }]\n    });\n\n    const pass = commandEncoder.beginRenderPass({ /* ... descriptor ... */ });\n    pass.setPipeline(pipeline);\n    pass.setBindGroup(0, dynamicBindGroup);\n    pass.draw(3);\n    pass.end();\n\n    device.queue.submit([commandEncoder.finish()]);\n    requestAnimationFrame(() => renderLoop(device, context, pipeline, buffer));\n}",
+    "solution_desc": "Refactor application-level assets to separate fixed descriptors from dynamic frame variables. Prepare reusable Bind Groups on system initialization, use dynamic offset mechanisms inside dynamic buffers to supply runtime parameters, reuse command buffer infrastructure, and call clear sequences explicitly.",
+    "good_code": "class WebGPURenderer {\n    private device: GPUDevice;\n    private pipeline: GPURenderPipeline;\n    private staticBindGroup: GPUBindGroup;\n    private dynamicUniformBuffer: GPUBuffer;\n\n    constructor(device: GPUDevice, pipeline: GPURenderPipeline, buffer: GPUBuffer) {\n        this.device = device;\n        this.pipeline = pipeline;\n        this.dynamicUniformBuffer = buffer;\n        \n        // FIX: Instantiate bind group ONCE and reuse throughout the render lifecycle\n        this.staticBindGroup = this.device.createBindGroup({\n            layout: this.pipeline.getBindGroupLayout(0),\n            entries: [{ binding: 0, resource: { buffer: this.dynamicUniformBuffer } }]\n        });\n    }\n\n    public render() {\n        const commandEncoder = this.device.createCommandEncoder();\n        const pass = commandEncoder.beginRenderPass({\n            colorAttachments: [{\n                view: this.device.createTexture({ size: [1, 1], format: 'rgba8unorm', usage: GPUTextureUsage.RENDER_ATTACHMENT }).createView(),\n                clearValue: { r: 0.0, g: 0.0, b: 0.0, a: 1.0 },\n                loadOp: 'clear',\n                storeOp: 'store'\n            }]\n        });\n\n        pass.setPipeline(this.pipeline);\n        pass.setBindGroup(0, this.staticBindGroup);\n        pass.draw(3);\n        pass.end();\n\n        // Explicit cleanup of transient canvas textures\n        this.device.queue.submit([commandEncoder.finish()]);\n    }\n}",
+    "verification": "Inspect execution runs within Google Chrome DevTools by selecting the 'Memory' profiling panel and running dedicated GPU allocation tasks. Correlate total page buffers with real-time process monitoring stats to confirm memory levels remain steady over sustained periods.",
+    "date": "2026-05-30",
+    "id": 1780121755,
+    "type": "error"
+});
