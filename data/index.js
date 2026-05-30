@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780137828,
+        "title": "Fixing eBPF Verifier Failures from Unbounded Loops",
+        "slug": "fixing-ebpf-verifier-failures-unbounded-loops",
+        "language": "C",
+        "code": "Verifier Reject (Loop/Map Tracking)",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/fixing-ebpf-verifier-failures-unbounded-loops.js",
+        "tags": [
+            "Kubernetes",
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780137829,
+        "title": "Fixing Redis OOM from COW Memory Spikes during BGSAVE",
+        "slug": "redis-oom-copy-on-write-bgsave",
+        "language": "Redis",
+        "code": "OOM Killer (COW Spike)",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/redis-oom-copy-on-write-bgsave.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780137830,
+        "title": "Debugging Haskell Space Leaks and Thunk Accumulation",
+        "slug": "debug-haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "Out Of Memory (Space Leak)",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/debug-haskell-space-leaks-lazy-evaluation.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780137831,
+        "title": "Mastering Guizang Social Card Skill for Content Creation",
+        "slug": "guizang-social-card-skill-editorial-layouts",
+        "language": "HTML",
+        "code": "Trend",
+        "date": "2026-05-30",
+        "path": "data/posts/2026-05/guizang-social-card-skill-editorial-layouts.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780121753,
         "title": "Fixing gRPC HTTP/2 Flow Control Exhaustion",
         "slug": "fixing-grpc-http2-flow-control-exhaustion",
