@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1780194907,
+        "title": "Fixing C++20 Coroutine Frame Memory Leaks",
+        "slug": "fixing-cpp20-coroutine-frame-memory-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/fixing-cpp20-coroutine-frame-memory-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780194908,
+        "title": "Resolving Kafka Consumer Group Rebalance Storms",
+        "slug": "resolving-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/resolving-kafka-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780194909,
+        "title": "Debugging React Native JSI Memory Corruption",
+        "slug": "debugging-react-native-jsi-memory-corruption",
+        "language": "React",
+        "code": "Segmentation Fault",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/debugging-react-native-jsi-memory-corruption.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780194910,
+        "title": "Visual Systems: Guizang Social Card Skill",
+        "slug": "guizang-social-card-skill-analysis",
+        "language": "HTML / CSS",
+        "code": "Trend",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/guizang-social-card-skill-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1780137828,
         "title": "Fixing eBPF Verifier Failures from Unbounded Loops",
         "slug": "fixing-ebpf-verifier-failures-unbounded-loops",
