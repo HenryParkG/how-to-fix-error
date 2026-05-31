@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780210283,
+        "title": "Zig Memory Corruption in Nested Arena Allocators",
+        "slug": "zig-memory-corruption-nested-arena-allocators",
+        "language": "Zig",
+        "code": "UseAfterFree",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/zig-memory-corruption-nested-arena-allocators.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780210284,
+        "title": "Debugging Elixir GenServer Mailbox Bloat",
+        "slug": "debugging-elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "OutOfMemory",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/debugging-elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780210285,
+        "title": "Preventing PostgreSQL TxID Wraparound Failures",
+        "slug": "preventing-postgresql-txid-wraparound",
+        "language": "SQL",
+        "code": "WriteBlockage",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/preventing-postgresql-txid-wraparound.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780210286,
+        "title": "Inside Guizang Social Card Skill's Design Engine",
+        "slug": "guizang-social-card-skill-visual-engine",
+        "language": "HTML / CSS",
+        "code": "Trend",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/guizang-social-card-skill-visual-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1780194907,
         "title": "Fixing C++20 Coroutine Frame Memory Leaks",
         "slug": "fixing-cpp20-coroutine-frame-memory-leaks",
