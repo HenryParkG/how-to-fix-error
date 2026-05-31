@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1780224741,
+        "title": "Fixing Spark Executor OOMs in Skewed Shuffle Joins",
+        "slug": "fixing-spark-executor-ooms-skewed-shuffle-joins",
+        "language": "Scala / Apache Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/fixing-spark-executor-ooms-skewed-shuffle-joins.js",
+        "tags": [
+            "Apache Spark",
+            "Scala",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780224742,
+        "title": "Debugging WASM Linear Memory Fragmentation in Rust",
+        "slug": "debugging-wasm-linear-memory-fragmentation-rust",
+        "language": "Rust / WebAssembly",
+        "code": "alloc_error",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/debugging-wasm-linear-memory-fragmentation-rust.js",
+        "tags": [
+            "Rust",
+            "WebAssembly",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780224743,
+        "title": "Fixing Istio Envoy Sidecar OOMs from Metrics Bloat",
+        "slug": "fixing-istio-envoy-oom-metrics-bloat",
+        "language": "YAML / Kubernetes",
+        "code": "OOMKilled",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/fixing-istio-envoy-oom-metrics-bloat.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Istio",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780224744,
+        "title": "Inside op7418/guizang-social-card-skill Layout Gen",
+        "slug": "guizang-social-card-skill-editorial-swiss-visuals",
+        "language": "TypeScript / HTML",
+        "code": "Trend",
+        "date": "2026-05-31",
+        "path": "data/posts/2026-05/guizang-social-card-skill-editorial-swiss-visuals.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "CSS"
+        ]
+    },
+    {
         "id": 1780210283,
         "title": "Zig Memory Corruption in Nested Arena Allocators",
         "slug": "zig-memory-corruption-nested-arena-allocators",

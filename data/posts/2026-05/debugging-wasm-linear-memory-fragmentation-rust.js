@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Debugging WASM Linear Memory Fragmentation in Rust",
+    "slug": "debugging-wasm-linear-memory-fragmentation-rust",
+    "language": "Rust / WebAssembly",
+    "code": "alloc_error",
+    "tags": [
+        "Rust",
+        "WebAssembly",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>WebAssembly (WASM) relies on a structured, continuous block of memory known as linear memory, which can be dynamically grown using pages of 64KB. Because the linear memory space is continuous, all allocated objects (such as vectors, strings, and structures inside Rust) reside within this single address space managed by Rust's custom allocator (usually <code>dlmalloc</code> or the lightweight <code>wee_alloc</code>).</p><p>When runtimes process transient, high-churn visual or parsing tasks (such as dynamic JSON payloads or dynamic image resizing), they frequently allocate and deallocate memory blocks of varied sizes. Over time, this leads to heap fragmentation: small patches of allocated memory are scattered across the address space, leaving no continuous chunks large enough to satisfy new, large allocation requests. Even if there are megabytes of total free memory, a request for a contiguous 500KB block will fail, throwing an <code>alloc_error</code> or panicking with 'out of memory' because linear memory cannot easily shrink or rearrange itself.</p>",
+    "root_cause": "Frequent dynamic allocations of varied lifetimes on WebAssembly's flat, unmanaged linear memory space cause severe heap fragmentation. Default allocators fail to consolidate non-adjacent free blocks, leading to allocation failure when requesting large contiguous memory slices.",
+    "bad_code": "use wasm_bindgen::prelude::*;\n\n#[wasm_bindgen]\npub fn batch_process_payloads(payloads: Vec<String>) -> Vec<String> {\n    let mut results = Vec::new();\n    for payload in payloads {\n        // High-churn dynamic allocations without capacity pre-allocation or arena pooling.\n        // This repeatedly reallocates vectors and strings on the flat heap, fragmenting the address space.\n        let serialized = format!(\"{{\\\"processed\\\": true, \\\"data\\\": \\\"{}\\\"}}\", payload.to_uppercase());\n        results.push(serialized);\n    }\n    results\n}",
+    "solution_desc": "To combat memory fragmentation in WASM runtime contexts, replace lightweight, naive allocators with fragmentation-resistant allocators or implement regional arena allocation. By using an arena allocator like <code>bumpalo</code>, we can isolate dynamic transformations within a scope. When the scope ends, the entire arena is torn down and its memory is reclaimed in a single constant-time operation. Additionally, pre-allocating memory allocations using <code>with_capacity</code> blocks dynamic relocations, ensuring that linear memory growth remains deterministic and flat.",
+    "good_code": "use wasm_bindgen::prelude::*;\nuse bumpalo::Bump;\n\n#[wasm_bindgen]\npub fn batch_process_payloads_fixed(payloads: Vec<String>) -> Vec<String> {\n    // Pre-allocate vector capacity to prevent resizing and dynamic allocation churn\n    let mut results = Vec::with_capacity(payloads.len());\n    \n    // Use an Arena Allocator for transient string manipulations\n    let bump = Bump::new();\n    \n    for payload in payloads {\n        // Reset the bump arena at the start of each iteration to recycle linear memory slots\n        bump.reset();\n        \n        let upper = bumpalo::format!(in &bump, \"{}\", payload.to_uppercase());\n        let serialized = bumpalo::format!(in &bump, \"{{\\\"processed\\\": true, \\\"data\\\": \\\"{}\\\"}}\", upper);\n        \n        // Transfer the final output safely back to standard heap ownership\n        results.push(serialized.into_bump_str().to_string());\n    }\n    results\n}",
+    "verification": "Compile the rust code with WASM target and run inside Chrome DevTools or the Wasmtime runtime profiler. Generate a memory heap profile over 10,000 iterations. Verify that the memory consumption chart follows a clean sawtooth pattern with a stable baseline, rather than an ever-climbing staircase indicating fragmentation-induced virtual memory growth.",
+    "date": "2026-05-31",
+    "id": 1780224742,
+    "type": "error"
+});
