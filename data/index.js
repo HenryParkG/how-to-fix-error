@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1780281996,
+        "title": "Fixing Rust Async Pinning Violations in Custom Streams",
+        "slug": "fixing-rust-async-pinning-violations-custom-streams",
+        "language": "Rust",
+        "code": "Compiler Error: type cannot be unpinned",
+        "date": "2026-06-01",
+        "path": "data/posts/2026-06/fixing-rust-async-pinning-violations-custom-streams.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780281997,
+        "title": "Fixing PyTorch CUDA OOMs via Activation Partitioning",
+        "slug": "fixing-pytorch-cuda-ooms-activation-partitioning",
+        "language": "Python",
+        "code": "RuntimeError: CUDA out of memory",
+        "date": "2026-06-01",
+        "path": "data/posts/2026-06/fixing-pytorch-cuda-ooms-activation-partitioning.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780281998,
+        "title": "Fixing Elasticsearch Fielddata Cache Circuit Breakers",
+        "slug": "fixing-elasticsearch-fielddata-cache-circuit-breakers",
+        "language": "Java",
+        "code": "CircuitBreakingException: [fielddata]",
+        "date": "2026-06-01",
+        "path": "data/posts/2026-06/fixing-elasticsearch-fielddata-cache-circuit-breakers.js",
+        "tags": [
+            "Java",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780281999,
+        "title": "Odysseus: The Self-Hosted Private AI Workspace",
+        "slug": "odysseus-self-hosted-private-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-01",
+        "path": "data/posts/2026-06/odysseus-self-hosted-private-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Docker"
+        ]
+    },
+    {
         "id": 1780224741,
         "title": "Fixing Spark Executor OOMs in Skewed Shuffle Joins",
         "slug": "fixing-spark-executor-ooms-skewed-shuffle-joins",
