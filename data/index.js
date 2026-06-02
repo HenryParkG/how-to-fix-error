@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1780385322,
+        "title": "eBPF Verifier State Limit in Packet Processing",
+        "slug": "ebpf-verifier-state-limit-failures-high-throughput",
+        "language": "eBPF, C, Linux Kernel",
+        "code": "BPF_VERIFIER_LIMIT_EXCEEDED",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/ebpf-verifier-state-limit-failures-high-throughput.js",
+        "tags": [
+            "eBPF",
+            "Networking",
+            "Linux Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780385323,
+        "title": "Redis Replication OOMs: CoW Bloat during BGSAVE",
+        "slug": "redis-replication-ooms-cow-memory-bloat-bgsave",
+        "language": "Redis, Linux, C",
+        "code": "OOM",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/redis-replication-ooms-cow-memory-bloat-bgsave.js",
+        "tags": [
+            "Redis",
+            "Database",
+            "Memory Management",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780385324,
+        "title": "Haskell Space Leaks in Stream Processing",
+        "slug": "haskell-lazy-evaluation-space-leaks-stream-processing",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/haskell-lazy-evaluation-space-leaks-stream-processing.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780385325,
+        "title": "Odysseus: Self-hosted AI Workspace - Why it's Trending",
+        "slug": "odysseus-self-hosted-ai-workspace-trend",
+        "language": "Python, JavaScript, Docker",
+        "code": "Trend",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Machine Learning",
+            "Developer Tools",
+            "Self-Hosted",
+            "Backend"
+        ]
+    },
+    {
         "id": 1780368220,
         "title": "Fixing gRPC HTTP/2 Flow Control Window Starvation",
         "slug": "grpc-http2-flow-control-window-starvation",
