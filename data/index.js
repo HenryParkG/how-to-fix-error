@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1780403765,
+        "title": "Debugging C++20 Coroutine Frame Allocation Leaks",
+        "slug": "cpp20-coroutine-halo-allocation-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/cpp20-coroutine-halo-allocation-leaks.js",
+        "tags": [
+            "C++",
+            "C++20",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780403766,
+        "title": "Fixing HNSW Index Memory Saturation in Vector DBs",
+        "slug": "hnsw-index-memory-saturation-vector-db",
+        "language": "Rust",
+        "code": "OOM Error",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/hnsw-index-memory-saturation-vector-db.js",
+        "tags": [
+            "Rust",
+            "Vector Database",
+            "HNSW",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780403767,
+        "title": "Fixing WebGPU Uniform Buffer Alignment Mismatches",
+        "slug": "webgpu-uniform-buffer-alignment-mismatches",
+        "language": "TypeScript",
+        "code": "Alignment Error",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/webgpu-uniform-buffer-alignment-mismatches.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "WGSL",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780403768,
+        "title": "Exploring Odysseus: Self-Hosted AI Workspace Hub",
+        "slug": "odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript / Docker",
+        "code": "Trend",
+        "date": "2026-06-02",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Docker",
+            "TypeScript",
+            "Python",
+            "Infra"
+        ]
+    },
+    {
         "id": 1780385322,
         "title": "eBPF Verifier State Limit in Packet Processing",
         "slug": "ebpf-verifier-state-limit-failures-high-throughput",
