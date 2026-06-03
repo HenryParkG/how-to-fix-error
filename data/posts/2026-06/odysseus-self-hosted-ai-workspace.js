@@ -1,21 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Inside Odysseus: Self-Hosted AI Workspace",
+    "title": "Inside Odysseus: The Trending Self-Hosted AI Workspace",
     "slug": "odysseus-self-hosted-ai-workspace",
-    "language": "TypeScript",
+    "language": "TypeScript / Python",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript",
-        "Docker"
+        "TypeScript"
     ],
-    "analysis": "<p>The GitHub repository 'pewdiepie-archdaemon/odysseus' is rapidly trending as developers search for private, local-first alternatives to commercial AI platforms like Cursor or Replit. Odysseus provides a robust, self-hosted AI workspace that brings high-grade LLMs, local terminal orchestrations, and interactive user interfaces directly to your local hardware. By putting data security, privacy, and zero licensing costs at its foundation, it bypasses the security risks of transmitting sensitive intellectual property to third-party public cloud endpoints.</p>",
-    "root_cause": "Key Features & Innovations:\n- Private Sandbox Execution: Isolated file system and command-line execution sandboxes prevent LLMs from executing destructive commands directly on host hardware.\n- Local LLM Orchestration: Deep integration with Ollama and llama.cpp allows for offline, high-performance inferences.\n- Extensible Agent Workflows: Easily plug in custom agent architectures with modular tools for web scraping, database querying, and runtime visualization.",
-    "bad_code": "# Clone and bootstrap the Odysseus local-first workspace with Docker Compose\ngit clone https://github.com/pewdiepie-archdaemon/odysseus.git\ncd odysseus\ndocker-compose up -d --build",
-    "solution_desc": "Best Use Cases & When to adopt: Odysseus is ideal for software enterprises with rigid regulatory compliance profiles, financial technology operations handling private client data, or developers building offline pipelines. Adopt it when you need fine-grained control over LLM agent execution logs, or when working in air-gapped secure environments.",
-    "good_code": "{\n  \"model\": \"llama3.1:8b\",\n  \"provider\": \"ollama\",\n  \"workspace\": {\n    \"sandbox_path\": \"/var/tmp/odysseus_sandbox\",\n    \"allowed_tools\": [\"file_reader\", \"terminal_run\", \"web_search\"],\n    \"security\": {\n      \"restrict_network\": true,\n      \"max_execution_time_seconds\": 60\n    }\n  }\n}",
-    "verification": "Future Outlook: As open-weight LLMs continue to reach parity with closed alternatives, self-hosted developer workspaces like Odysseus will transition from experimental setups to enterprise staples. Expect deeper integration with specialized NPU acceleration hardware, native IDE plugin ecosystems, and fine-tuning features.",
+    "analysis": "<p>Privacy-centric local computing has emerged as a massive trend, driving the popularity of 'pewdiepie-archdaemon/odysseus'. Odysseus is an open-source, self-hosted AI workspace designed to orchestrate local LLMs, agents, RAG pipelines, and tools in a single, unified environment. Users are shifting away from centralized, privacy-compromising AI portals (like ChatGPT or Claude) in favor of private, air-gapped workspaces where they maintain absolute control over their sensitive data, documents, and API costs.</p><p>Odysseus has rapidly climbed GitHub's trending charts because it bridges the gap between complex backend LLM orchestrators (like LangChain or Ollama) and a user-friendly, polished document editor layout. It allows non-technical users and developers alike to run advanced AI agents natively on their hardware with plug-and-play ease.</p>",
+    "root_cause": "Key Features & Innovations",
+    "bad_code": "docker-compose up -d --build",
+    "solution_desc": "Best Use Cases & When to adopt",
+    "good_code": "version: '3.8'\n\nservices:\n  odysseus-server:\n    image: ghcr.io/pewdiepie-archdaemon/odysseus:latest\n    ports:\n      - \"3000:3000\"\n    environment:\n      - DATABASE_URL=postgresql://postgres:postgres@db:5432/odysseus\n      - OLLAMA_HOST=http://host.docker.internal:11434\n      - ENCRYPTION_KEY=super-secret-key-change-me\n    volumes:\n      - odysseus_data:/app/data\n    depends_on:\n      - db\n\n  db:\n    image: postgres:15-alpine\n    environment:\n      - POSTGRES_USER=postgres\n      - POSTGRES_PASSWORD=postgres\n      - POSTGRES_DB=odysseus\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n\nvolumes:\n  odysseus_data:\n  pgdata:",
+    "verification": "Future Outlook",
     "date": "2026-06-03",
-    "id": 1780455063,
+    "id": 1780492283,
     "type": "trend"
 });

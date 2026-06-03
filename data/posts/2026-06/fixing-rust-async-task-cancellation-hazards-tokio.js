@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Rust Async Task Cancellation Hazards in Tokio",
+    "slug": "fixing-rust-async-task-cancellation-hazards-tokio",
+    "language": "Rust",
+    "code": "AsyncCancellation",
+    "tags": [
+        "Rust",
+        "Tokio",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Rust's async ecosystem, particularly with the Tokio runtime, futures are demand-driven and execution is polled. A critical architectural consequence of this design is that task cancellation is cooperative and occurs implicitly when a future is dropped. When a future is dropped, its execution stops immediately at the last yielded <code>.await</code> point.</p><p>This design introduces severe safety and state-consistency hazards. If an asynchronous block is cancelled while maintaining an invariant (e.g., halfway through an multi-step non-atomic operations, or while holding a lock-free data structure in an intermediate state), that invariant is permanently broken. This often occurs when using APIs like <code>tokio::select!</code>, <code>tokio::time::timeout</code>, or futures-util's <code>select_next_some()</code>, which drop losing futures immediately. Developers mistakenly assume that code after an <code>.await</code> will eventually execute, but under cancellation, execution abruptly halts, leaking resources or leaving databases and memory states corrupted.</p>",
+    "root_cause": "The root cause is relying on implicit future dropping for tasks that contain non-atomic state updates across yield (.await) points inside a cancellable context, such as a tokio::select! branch.",
+    "bad_code": "use std::time::Duration;\nuse tokio::time::sleep;\n\nasync fn process_transaction(id: u64) {\n    // BAD: If tokio::select! cancels this branch at any yield point,\n    // the database connection is released, but the state machine remains out of sync.\n    step_one_write_db(id).await; \n    \n    // If cancelled here, step_two never runs, leaving invalid state!\n    sleep(Duration::from_millis(100)).await; \n    \n    step_two_confirm_db(id).await;\n}\n\n#[tokio::main]\nasync fn main() {\n    tokio::select! {\n        _ = process_transaction(42) => println!(\"Done\"),\n        _ = sleep(Duration::from_millis(50)) => println!(\"Timeout! Transaction dropped midway!\"),\n    }\n}",
+    "solution_desc": "To fix async cancellation hazards, critical multi-step tasks must be decoupled from the cancellation context. Instead of executing the critical future directly within a cancellable select! branch, spawn the critical future as an independent, uncancellable task using tokio::spawn. Communicate the result back to the cancellable context via a one-shot channel. This guarantees that once the transaction starts, it runs to completion regardless of whether the receiving end is dropped.",
+    "good_code": "use std::time::Duration;\nuse tokio::sync::oneshot;\nuse tokio::time::sleep;\n\nasync fn process_transaction(id: u64) {\n    step_one_write_db(id).await;\n    sleep(Duration::from_millis(100)).await;\n    step_two_confirm_db(id).await;\n}\n\nasync fn step_one_write_db(_id: u64) {}\nasync fn step_two_confirm_db(_id: u64) {}\n\n#[tokio::main]\nasync fn main() {\n    let (tx, rx) = oneshot::channel();\n    \n    // Spawning detaches the task lifecycle from the current execution context's select! block\n    tokio::spawn(async move {\n        process_transaction(42).await;\n        let _ = tx.send(());\n    });\n\n    tokio::select! {\n        _ = rx => println!(\"Transaction completed safely.\"),\n        _ = sleep(Duration::from_millis(50)) => {\n            println!(\"Timeout occurred, but background task continues to guarantee safety.\");\n        }\n    }\n}",
+    "verification": "Compile and run the binary. Observe that even if the 'Timeout occurred' message prints, the background task completes both DB operations safely. Validate using integration testing by introducing delays and verifying state invariants in a test DB.",
+    "date": "2026-06-03",
+    "id": 1780492280,
+    "type": "error"
+});

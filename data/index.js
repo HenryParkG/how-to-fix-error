@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780492280,
+        "title": "Fixing Rust Async Task Cancellation Hazards in Tokio",
+        "slug": "fixing-rust-async-task-cancellation-hazards-tokio",
+        "language": "Rust",
+        "code": "AsyncCancellation",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/fixing-rust-async-task-cancellation-hazards-tokio.js",
+        "tags": [
+            "Rust",
+            "Tokio",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780492281,
+        "title": "Fixing PyTorch CUDA Stream Deadlocks in Distributed DDP",
+        "slug": "pytorch-cuda-stream-synchronization-deadlocks",
+        "language": "Python",
+        "code": "CudaStreamDeadlock",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/pytorch-cuda-stream-synchronization-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780492282,
+        "title": "Fixing Envoy OOM From Istio Configuration Bloat",
+        "slug": "envoy-sidecar-memory-exhaustion-istio-bloat",
+        "language": "Go / YAML",
+        "code": "EnvoyOOMKilled",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/envoy-sidecar-memory-exhaustion-istio-bloat.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780492283,
+        "title": "Inside Odysseus: The Trending Self-Hosted AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript / Python",
+        "code": "Trend",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780474068,
         "title": "Debugging Kubernetes CFS CPU Throttling",
         "slug": "debugging-kubernetes-cfs-cpu-throttling",
