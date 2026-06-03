@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1780455060,
+        "title": "Debugging Elixir GenServer Mailbox Bloat",
+        "slug": "elixir-genserver-mailbox-bloat-selective-receive",
+        "language": "Elixir",
+        "code": "SelectiveReceiveOverflow",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/elixir-genserver-mailbox-bloat-selective-receive.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780455061,
+        "title": "Fixing Kafka Rebalance Storms from JVM GC Pauses",
+        "slug": "kafka-consumer-rebalance-jvm-gc-pauses",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/kafka-consumer-rebalance-jvm-gc-pauses.js",
+        "tags": [
+            "Kafka",
+            "JVM",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780455062,
+        "title": "Resolving PostgreSQL TXID Wraparound Blockages",
+        "slug": "postgresql-txid-wraparound-blockages",
+        "language": "SQL",
+        "code": "TransactionIDWraparoundError",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/postgresql-txid-wraparound-blockages.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780455063,
+        "title": "Inside Odysseus: Self-Hosted AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-03",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Docker"
+        ]
+    },
+    {
         "id": 1780403765,
         "title": "Debugging C++20 Coroutine Frame Allocation Leaks",
         "slug": "cpp20-coroutine-halo-allocation-leaks",
