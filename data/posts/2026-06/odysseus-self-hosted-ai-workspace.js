@@ -1,20 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Inside Odysseus: The Trending Self-Hosted AI Workspace",
+    "title": "Why Odysseus Is the Ultimate Self-Hosted AI Workspace",
     "slug": "odysseus-self-hosted-ai-workspace",
-    "language": "TypeScript / Python",
+    "language": "TypeScript",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "TypeScript"
+        "TypeScript",
+        "Docker"
     ],
-    "analysis": "<p>Privacy-centric local computing has emerged as a massive trend, driving the popularity of 'pewdiepie-archdaemon/odysseus'. Odysseus is an open-source, self-hosted AI workspace designed to orchestrate local LLMs, agents, RAG pipelines, and tools in a single, unified environment. Users are shifting away from centralized, privacy-compromising AI portals (like ChatGPT or Claude) in favor of private, air-gapped workspaces where they maintain absolute control over their sensitive data, documents, and API costs.</p><p>Odysseus has rapidly climbed GitHub's trending charts because it bridges the gap between complex backend LLM orchestrators (like LangChain or Ollama) and a user-friendly, polished document editor layout. It allows non-technical users and developers alike to run advanced AI agents natively on their hardware with plug-and-play ease.</p>",
+    "analysis": "<p>With privacy concerns, localized deployments, and data sovereignty driving the next iteration of the generative AI boom, developers are moving away from proprietary cloud-locked AI solutions. The trending GitHub repository <code>pewdiepie-archdaemon/odysseus</code> addresses this shift directly. It acts as an open-source, highly customizable self-hosted AI operating system and visual workspace.</p><p>Odysseus allows users to aggregate local models (via Ollama or Llama.cpp) and cloud APIs into a single dashboard. Unlike simple chat interfaces, it provides full visual canvas features, localized storage sandboxes, custom agent execution loops, and local document parsing pipelines (RAG), putting the user in absolute control over their sensitive operational workflows.</p>",
     "root_cause": "Key Features & Innovations",
-    "bad_code": "docker-compose up -d --build",
+    "bad_code": "git clone https://github.com/pewdiepie-archdaemon/odysseus.git\ncd odysseus\ndocker-compose up -d --build",
     "solution_desc": "Best Use Cases & When to adopt",
-    "good_code": "version: '3.8'\n\nservices:\n  odysseus-server:\n    image: ghcr.io/pewdiepie-archdaemon/odysseus:latest\n    ports:\n      - \"3000:3000\"\n    environment:\n      - DATABASE_URL=postgresql://postgres:postgres@db:5432/odysseus\n      - OLLAMA_HOST=http://host.docker.internal:11434\n      - ENCRYPTION_KEY=super-secret-key-change-me\n    volumes:\n      - odysseus_data:/app/data\n    depends_on:\n      - db\n\n  db:\n    image: postgres:15-alpine\n    environment:\n      - POSTGRES_USER=postgres\n      - POSTGRES_PASSWORD=postgres\n      - POSTGRES_DB=odysseus\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n\nvolumes:\n  odysseus_data:\n  pgdata:",
+    "good_code": "# Example Configuration for Odysseus integration using Local Ollama Models\nversion: '3.8'\nservices:\n  odysseus:\n    image: ghcr.io/pewdiepie-archdaemon/odysseus:latest\n    container_name: odysseus_workspace\n    ports:\n      - \"8000:8000\"\n    environment:\n      - OLLAMA_BASE_URL=http://host.docker.internal:11434\n      - DB_PROVIDER=sqlite\n      - PERSISTENT_DIR=/app/data\n    volumes:\n      - ./odysseus_data:/app/data\n    extra_hosts:\n      - \"host.docker.internal:host-gateway\"\n    restart: unless-stopped",
     "verification": "Future Outlook",
-    "date": "2026-06-03",
-    "id": 1780492283,
+    "date": "2026-06-04",
+    "id": 1780573636,
     "type": "trend"
 });

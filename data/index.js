@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1780573633,
+        "title": "Fixing eBPF Unbounded Loops and Stack Violations",
+        "slug": "fixing-ebpf-verifier-loops-stack-violations",
+        "language": "C",
+        "code": "VerifierError",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/fixing-ebpf-verifier-loops-stack-violations.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780573634,
+        "title": "Fixing Redis OOM Crashes from BGSAVE CoW Spikes",
+        "slug": "redis-oom-bgsave-copy-on-write",
+        "language": "Redis",
+        "code": "OOMCrash",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/redis-oom-bgsave-copy-on-write.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780573635,
+        "title": "Fixing gRPC Starvation from HTTP/2 Flow Control",
+        "slug": "grpc-starvation-http2-flow-control",
+        "language": "Go",
+        "code": "FlowControlStarvation",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/grpc-starvation-http2-flow-control.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780573636,
+        "title": "Why Odysseus Is the Ultimate Self-Hosted AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Docker"
+        ]
+    },
+    {
         "id": 1780557458,
         "title": "Fixing Go Scheduler Starvation from Blocking Cgo Calls",
         "slug": "go-scheduler-starvation-blocking-cgo-calls",
