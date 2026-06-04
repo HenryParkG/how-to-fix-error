@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780557458,
+        "title": "Fixing Go Scheduler Starvation from Blocking Cgo Calls",
+        "slug": "go-scheduler-starvation-blocking-cgo-calls",
+        "language": "Go",
+        "code": "GoRuntimeStarvation",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/go-scheduler-starvation-blocking-cgo-calls.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780557459,
+        "title": "Fixing Pekko Cluster Split-Brain in Unstable Networks",
+        "slug": "pekko-akka-cluster-split-brain-unstable-networks",
+        "language": "Java",
+        "code": "SplitBrainPartitioning",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/pekko-akka-cluster-split-brain-unstable-networks.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780557460,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "WiredTigerCacheStall",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Docker",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780557461,
+        "title": "Inside Odysseus: The Ultimate Self-Hosted AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-04",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780492280,
         "title": "Fixing Rust Async Task Cancellation Hazards in Tokio",
         "slug": "fixing-rust-async-task-cancellation-hazards-tokio",
