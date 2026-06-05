@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1780642729,
+        "title": "Fixing Postgres TXID Wraparound from Abandoned Slots",
+        "slug": "fixing-postgres-txid-wraparound-abandoned-slots",
+        "language": "SQL",
+        "code": "TXID Wraparound",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/fixing-postgres-txid-wraparound-abandoned-slots.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780642730,
+        "title": "Fixing Elixir GenServer Mailbox Flooding",
+        "slug": "fixing-elixir-genserver-mailbox-flooding",
+        "language": "Elixir",
+        "code": "Mailbox Flooding",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/fixing-elixir-genserver-mailbox-flooding.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780642731,
+        "title": "Fixing WebGPU Uniform Buffer Alignment in WGSL",
+        "slug": "fixing-webgpu-uniform-buffer-alignment-wgsl",
+        "language": "TypeScript",
+        "code": "Layout Mismatch",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/fixing-webgpu-uniform-buffer-alignment-wgsl.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780642732,
+        "title": "Analyzing Odysseus: Self-Hosted AI Workspace",
+        "slug": "analyzing-odysseus-self-hosted-ai-workspace",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/analyzing-odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1780626784,
         "title": "Fixing C++20 Coroutine Dangling References & Leaks",
         "slug": "cpp20-coroutine-dangling-references-leaks",
