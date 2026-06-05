@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780660598,
+        "title": "Fixing Apache Kafka Rebalance Storms",
+        "slug": "fixing-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/fixing-kafka-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780660599,
+        "title": "Debugging Zig Memory Corruption from errdefer Violations",
+        "slug": "debugging-zig-errdefer-corruption",
+        "language": "Zig",
+        "code": "MemoryCorruption",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/debugging-zig-errdefer-corruption.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780660600,
+        "title": "Fixing Kubernetes Conntrack Table Exhaustion",
+        "slug": "fixing-kubernetes-conntrack-exhaustion",
+        "language": "Kubernetes",
+        "code": "NF_CONNTRACK_FULL",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/fixing-kubernetes-conntrack-exhaustion.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780660601,
+        "title": "Unlocking Local AI: A Guide to the Odysseus AI Workspace",
+        "slug": "guide-to-odysseus-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/guide-to-odysseus-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780642729,
         "title": "Fixing Postgres TXID Wraparound from Abandoned Slots",
         "slug": "fixing-postgres-txid-wraparound-abandoned-slots",
