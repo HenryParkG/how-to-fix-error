@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1780626784,
+        "title": "Fixing C++20 Coroutine Dangling References & Leaks",
+        "slug": "cpp20-coroutine-dangling-references-leaks",
+        "language": "C++",
+        "code": "Lifetime Leak",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/cpp20-coroutine-dangling-references-leaks.js",
+        "tags": [
+            "Rust",
+            "C++",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780626785,
+        "title": "Fixing Vector DB HNSW Index OOM Crashes",
+        "slug": "vector-db-oom-hnsw-index-construction",
+        "language": "Rust",
+        "code": "OOM Crash",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/vector-db-oom-hnsw-index-construction.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Vector DB",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780626786,
+        "title": "Debugging Haskell Lazy Stream Space Leaks",
+        "slug": "debugging-haskell-space-leaks-lazy-evaluation",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/debugging-haskell-space-leaks-lazy-evaluation.js",
+        "tags": [
+            "Docker",
+            "Haskell",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780626787,
+        "title": "Inside Odysseus: The Ultimate Self-Hosted AI Workspace",
+        "slug": "inside-odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-05",
+        "path": "data/posts/2026-06/inside-odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1780573633,
         "title": "Fixing eBPF Unbounded Loops and Stack Violations",
         "slug": "fixing-ebpf-verifier-loops-stack-violations",

@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Vector DB HNSW Index OOM Crashes",
+    "slug": "vector-db-oom-hnsw-index-construction",
+    "language": "Rust",
+    "code": "OOM Crash",
+    "tags": [
+        "Rust",
+        "Docker",
+        "Vector DB",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>Constructing Hierarchical Navigable Small World (HNSW) graphs for high-dimensional vectors (e.g., 1536-dimensional embeddings) is extremely memory-intensive. HNSW relies heavily on storing high-speed link lists representing multi-layered graph relationships in RAM. During high-concurrency index insertion pipelines, memory consumption surges due to concurrent allocations of candidate lists, dynamic edge adjustments, and unbounded thread pools. This often triggers the Linux kernel Out-Of-Memory (OOM) killer, abruptly crashing the database process.</p><p>A core issue with many native allocators (like the default glibc malloc) is virtual memory fragmentation. When billions of tiny nodes and link lists are allocated and modified concurrently across multiple threads, the allocator fails to return memory pages to the OS efficiently. Moreover, configuring aggressive HNSW parameters like high <code>M</code> (maximum outgoing connections per node) and high <code>efConstruction</code> (size of dynamic candidate list during build) multiplies the heap requirements exponentially, leading to catastrophic OOM states.</p>",
+    "root_cause": "Unbounded concurrent indexing threads combined with high M/efConstruction parameters cause explosive memory growth during link-graph traversals. This is severely compounded by the default system memory allocator's fragmentation when handling millions of microscopic heap allocations under high thread-contention.",
+    "bad_code": "use std::thread;\n\nstruct HNSWIndex {\n    m: usize,\n    ef_construction: usize,\n    // Internal high-dimensional vector storage\n}\n\nfn main() {\n    // BUG: Unbounded configuration and default allocator on high-dim vectors\n    let index = HNSWIndex { m: 64, ef_construction: 500 }; \n    let batch_vectors = vec![vec![0.15; 1536]; 500_000];\n\n    // Spawning unbounded threads to construct the index concurrently\n    let mut handles = vec![];\n    for vec in batch_vectors {\n        let handle = thread::spawn(move || {\n            // Simulates dynamic insertion into the shared graph\n            // Allocates memory for neighborhood search and updates graph links without limits\n            insert_into_hnsw_graph(vec);\n        });\n        handles.push(handle);\n    }\n    for h in handles { h.join().unwrap(); }\n}",
+    "solution_desc": "To mitigate HNSW OOM issues: 1) Switch the memory allocator to jemalloc, which is optimized to prevent fragmentation in multi-threaded allocation patterns. 2) Limit build-time concurrency using a bounded worker pool. 3) Reduce `M` and `efConstruction` to optimal trade-off levels (e.g., M=16, ef=64 for standard accuracy needs). 4) Implement memory-mapped files or batch-and-flush steps if vector ingestion exceeds physical memory limits.",
+    "good_code": "use threadpool::ThreadPool;\nuse tikv_jemallocator::Jemalloc;\n\n// FIXED: Use jemalloc to radically reduce memory fragmentation under high thread usage\n#[global_allocator]\nstatic GLOBAL: Jemalloc = Jemalloc;\n\nstruct BoundedHNSW {\n    m: usize,\n    ef_construction: usize,\n}\n\nfn main() {\n    // FIXED: Tuned configuration parameters for lower memory consumption\n    let index = BoundedHNSW { m: 16, ef_construction: 64 };\n    let batch_vectors = vec![vec![0.15f32; 1536]; 500_000];\n\n    // FIXED: Bounded thread pool limiting concurrent indexers to CPU cores\n    let pool = ThreadPool::new(num_cpus::get());\n\n    for vec in batch_vectors {\n        pool.execute(move || {\n            // Insert with optimized memory layout\n            insert_into_hnsw_graph_optimized(&index, vec);\n        });\n    }\n    pool.join();\n}\n\nfn insert_into_hnsw_graph_optimized(_index: &BoundedHNSW, _vec: Vec<f32>) {\n    // Process vector insertion securely\n}",
+    "verification": "Monitor the resident set size (RSS) during index build using a monitoring tool like `prometheus` or `ps` profiling. Verify that memory consumption hits a flat ceiling matching the thread pool limit instead of scaling up indefinitely until an OOM crash occurs.",
+    "date": "2026-06-05",
+    "id": 1780626785,
+    "type": "error"
+});
