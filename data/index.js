@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1780742999,
+        "title": "Fixing eBPF Verifier Unbounded Loop Rejections",
+        "slug": "ebpf-verifier-unbounded-loop-rejections",
+        "language": "Rust",
+        "code": "VerifierRejectException",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/ebpf-verifier-unbounded-loop-rejections.js",
+        "tags": [
+            "eBPF",
+            "C",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780743000,
+        "title": "Fixing Envoy Sidecar OOM under HTTP/2 Multiplexing",
+        "slug": "envoy-sidecar-oom-http2-multiplexing",
+        "language": "Kubernetes",
+        "code": "OOMKilled",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/envoy-sidecar-oom-http2-multiplexing.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780743001,
+        "title": "Fixing Redis Fork Latency from THP Copy-on-Write",
+        "slug": "redis-fork-latency-thp-cow",
+        "language": "SQL",
+        "code": "RedisLatencySpike",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/redis-fork-latency-thp-cow.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780743002,
+        "title": "Odysseus: The Premier Self-Hosted Collaborative AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ]
+    },
+    {
         "id": 1780726917,
         "title": "Fixing Spark Executor OOM from Partition Skew",
         "slug": "fixing-spark-executor-oom-partition-skew",
