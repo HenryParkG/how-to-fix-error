@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1780711941,
+        "title": "Fixing PyTorch CUDA OOM from Caching Allocator Fragmentation",
+        "slug": "fixing-pytorch-cuda-oom-caching-allocator-fragmentation",
+        "language": "Python",
+        "code": "CUDA out of memory",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/fixing-pytorch-cuda-oom-caching-allocator-fragmentation.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780711942,
+        "title": "Fixing Rust Async Deadlocks: Mutex Across Await Points",
+        "slug": "rust-async-deadlocks-mutex-guard-await",
+        "language": "Rust",
+        "code": "MutexGuard Held Across Await",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/rust-async-deadlocks-mutex-guard-await.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Tokio",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780711943,
+        "title": "Debugging Next.js ISR Cache Poisoning under High-Concurrency",
+        "slug": "nextjs-isr-cache-poisoning-concurrency-races",
+        "language": "TypeScript",
+        "code": "ISR Cache Poisoning",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/nextjs-isr-cache-poisoning-concurrency-races.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780711944,
+        "title": "Odysseus: The Open-Source Private Self-Hosted AI Workspace",
+        "slug": "odysseus-self-hosted-ai-workspace-analysis",
+        "language": "Docker",
+        "code": "Trend",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/odysseus-self-hosted-ai-workspace-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Docker",
+            "AI"
+        ]
+    },
+    {
         "id": 1780660598,
         "title": "Fixing Apache Kafka Rebalance Storms",
         "slug": "fixing-kafka-rebalance-storms",
