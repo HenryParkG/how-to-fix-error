@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1780726917,
+        "title": "Fixing Spark Executor OOM from Partition Skew",
+        "slug": "fixing-spark-executor-oom-partition-skew",
+        "language": "Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/fixing-spark-executor-oom-partition-skew.js",
+        "tags": [
+            "Java",
+            "Scala",
+            "Spark",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780726918,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "WriteTicketStarvation",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/fixing-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Docker",
+            "MongoDB",
+            "NoSQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780726919,
+        "title": "Debugging Go Runtime GC Latency Spikes",
+        "slug": "debugging-go-runtime-gc-latency-spikes",
+        "language": "Go",
+        "code": "GCLatency",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/debugging-go-runtime-gc-latency-spikes.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Memory",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780726920,
+        "title": "Demystifying Odysseus: Self-Hosted AI Workspace",
+        "slug": "demystifying-odysseus-self-hosted-ai-workspace",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-06",
+        "path": "data/posts/2026-06/demystifying-odysseus-self-hosted-ai-workspace.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Docker"
+        ]
+    },
+    {
         "id": 1780711941,
         "title": "Fixing PyTorch CUDA OOM from Caching Allocator Fragmentation",
         "slug": "fixing-pytorch-cuda-oom-caching-allocator-fragmentation",
