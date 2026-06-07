@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Vector DB Latency Spikes in HNSW Merges",
+    "slug": "fixing-vector-db-hnsw-latency-spikes",
+    "language": "Rust",
+    "code": "Latency Spike",
+    "tags": [
+        "Rust",
+        "Go",
+        "Docker",
+        "Database",
+        "Error Fix"
+    ],
+    "analysis": "<p>In real-time vector databases using Hierarchical Navigable Small World (HNSW) indexes, background segment merging is crucial for maintaining query accuracy and consolidating deleted records. However, HNSW graph construction is highly CPU-bound and cache-unfriendly. When large background segments merge concurrently, they spawn multiple threads to perform nearest-neighbor searches on the new index layers.</p><p>This unregulated background activity saturates the system CPU caches (L2/L3) and blocks the read path via lock contention on shared index pointers, causing dramatic tail latency spikes (p99 > 150ms) for ongoing search queries.</p>",
+    "root_cause": "The system triggers background merging on the same global thread pool or thread group used by search queries, without rate-limiting or priority-based resource scheduling. Concurrent writes hold exclusive read-write locks (RwLock) on index segments for too long during graph linking, starving the latency-sensitive read threads.",
+    "bad_code": "use std::sync::Arc;\nuse tokio::sync::RwLock;\n\nstruct VectorDB {\n    index: Arc<RwLock<HNSWIndex>>,\n}\n\nimpl VectorDB {\n    // BUG: Spawns resource-intensive CPU work directly in parallel without\n    // prioritization or rate-limiting, causing instant CPU starvation for reads.\n    async fn trigger_background_merge(&self, new_vectors: Vec<Vec<f32>>) {\n        let index_clone = self.index.clone();\n        tokio::spawn(async move {\n            let mut write_lock = index_clone.write().await;\n            for vector in new_vectors {\n                // Heavy CPU calculation inside write-lock\n                write_lock.insert(&vector);\n            }\n        });\n    }\n}",
+    "solution_desc": "Isolate write/merge tasks into a dedicated, low-priority thread pool (using cooperative scheduling or nice levels). Additionally, implement a Copy-on-Write (CoW) pattern or lock-free double-buffering so that reads can query a stable snapshot of the graph entirely unblocked while the background merge builds a new segment. Finally, apply token-bucket rate-limiting to restrict active merge execution rates during high-traffic windows.",
+    "good_code": "use std::sync::Arc;\nuse tokio::sync::Semaphore;\nuse std::thread;\n\nstruct VectorDB {\n    // Use atomic reference swapping for lock-free reads during background builds\n    index: arc_swap::ArcSwap<HNSWIndex>,\n    merge_semaphore: Arc<Semaphore>,\n}\n\nimpl VectorDB {\n    async fn trigger_background_merge(self: Arc<Self>, new_vectors: Vec<Vec<f32>>) {\n        let sem = self.merge_semaphore.clone();\n        // Throttles background merges to limit concurrent CPU consumption\n        let _permit = sem.acquire().await.unwrap();\n\n        let current_index = self.index.load_full();\n        \n        // Offload build to a dedicated background low-priority thread pool\n        let updated_index = tokio::task::spawn_blocking(move || {\n            let mut new_index = (*current_index).clone(); // Deep copy/CoW segment\n            for vector in new_vectors {\n                new_index.insert_with_priority(&vector, false); // Low priority build\n                thread::yield_now(); // Cooperatively yield to prevent CPU starvation\n            }\n            new_index\n        }).await.unwrap();\n\n        // Atomically swap the new pointer. Readers are never blocked.\n        self.index.store(Arc::new(updated_index));\n    }\n}\n\nstruct HNSWIndex {}\nimpl HNSWIndex {\n    fn insert_with_priority(&mut self, _v: &[f32], _high_priority: bool) {}\n}",
+    "verification": "Execute concurrent search load using a tool like k6, while simultaneously introducing rapid vector inserts. Monitor tail latency metrics using Prometheus. The p99 search latency should remain flat under <15ms, showing no correlation with background merge execution.",
+    "date": "2026-06-07",
+    "id": 1780799910,
+    "type": "error"
+});

@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Frame Leaks in Async Nets",
+    "slug": "fixing-cpp20-coroutine-frame-leaks",
+    "language": "C++",
+    "code": "Memory Leak",
+    "tags": [
+        "Rust",
+        "Go",
+        "C++",
+        "Networking",
+        "Error Fix"
+    ],
+    "analysis": "<p>In high-throughput networking services built on C++20 coroutines, memory leaks frequently manifest as linear heap growth under heavy load. This behavior stems from the failure of the compiler's Heap Allocation Elision (HALO). When a coroutine is suspended and its lifetime cannot be proven by the compiler to be strictly nested within the caller's lifetime, the coroutine frame must be allocated on the heap.</p><p>If the lifetime of the returning awaitable or the promise object is managed poorly\u2014especially when encountering network timeouts, aborted connections, or unhandled exceptions\u2014the corresponding <code>std::coroutine_handle::destroy()</code> is never called. This leads to leaked coroutine frames containing the local variables, parameters, and promise state of the suspended execution path.</p>",
+    "root_cause": "The coroutine frame allocation is not automatically managed by a GC. If a coroutine returns a raw handle or custom task wrapper that lacks strict RAII ownership semantics (e.g., permits silent copy operations or lacks explicit destruction on exception paths), the underlying coroutine frame remains permanently allocated on the heap when execution is prematurely terminated.",
+    "bad_code": "#include <coroutine>\n#include <iostream>\n\nstruct LeakyTask {\n    struct promise_type {\n        LeakyTask get_return_object() {\n            return LeakyTask{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::initial_suspend initial_suspend() { return {}; }\n        std::final_suspend final_suspend() noexcept { return {}; }\n        void unhandled_exception() { std::terminate(); }\n        void return_void() {}\n    };\n\n    // BUG: Missing strict RAII. Copy constructor allows multiple references,\n    // and the destructor does not destroy the handle, leading to silent leaks.\n    std::coroutine_handle<promise_type> handle;\n    \n    LeakyTask(std::coroutine_handle<promise_type> h) : handle(h) {}\n    ~LeakyTask() {}\n};",
+    "solution_desc": "Implement strict RAII semantics within the task wrapper. Delete copy constructors and assignment operators to enforce unique ownership of the coroutine frame. Implement move semantics so that ownership can be safely transferred across threads or async event loops. In the destructor, ensure that if the handle is valid and has not completed, it is explicitly destroyed using `handle.destroy()`.",
+    "good_code": "#include <coroutine>\n#include <utility>\n\nclass [[nodiscard]] SafeTask {\npublic:\n    struct promise_type {\n        SafeTask get_return_object() {\n            return SafeTask{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::initial_suspend initial_suspend() { return {}; }\n        std::final_suspend final_suspend() noexcept { return {}; }\n        void unhandled_exception() { throw; }\n        void return_void() {}\n    };\n\n    std::coroutine_handle<promise_type> handle = nullptr;\n\n    explicit SafeTask(std::coroutine_handle<promise_type> h) : handle(h) {}\n    \n    // Prevent copying\n    SafeTask(const SafeTask&) = delete;\n    SafeTask& operator=(const SafeTask&) = delete;\n\n    // Allow moving\n    SafeTask(SafeTask&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}\n    SafeTask& operator=(SafeTask&& other) noexcept {\n        if (this != &other) {\n            if (handle) handle.destroy();\n            handle = std::exchange(other.handle, nullptr);\n        }\n        return *this;\n    }\n\n    ~SafeTask() {\n        if (handle) {\n            handle.destroy();\n        }\n    }\n};",
+    "verification": "Compile with `-fsanitize=address,leak` using Clang or GCC. Run high-throughput stress tests simulating rapid socket disconnects and verify that the resident set size (RSS) remains completely flat and AddressSanitizer reports zero leaked blocks upon process exit.",
+    "date": "2026-06-07",
+    "id": 1780799909,
+    "type": "error"
+});

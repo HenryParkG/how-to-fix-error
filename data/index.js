@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1780799909,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Async Nets",
+        "slug": "fixing-cpp20-coroutine-frame-leaks",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-cpp20-coroutine-frame-leaks.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "C++",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780799910,
+        "title": "Fixing Vector DB Latency Spikes in HNSW Merges",
+        "slug": "fixing-vector-db-hnsw-latency-spikes",
+        "language": "Rust",
+        "code": "Latency Spike",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-vector-db-hnsw-latency-spikes.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Docker",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780799911,
+        "title": "Fixing RN UI Thread Starvation from Bridge Traffic",
+        "slug": "fixing-react-native-ui-bridge-starvation",
+        "language": "TypeScript",
+        "code": "UI Starvation",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-react-native-ui-bridge-starvation.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Next.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780799912,
+        "title": "Exploring Goose: Git TUI Written in Swift",
+        "slug": "exploring-goose-git-tui-swift",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/exploring-goose-git-tui-swift.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Rust"
+        ]
+    },
+    {
         "id": 1780742999,
         "title": "Fixing eBPF Verifier Unbounded Loop Rejections",
         "slug": "ebpf-verifier-unbounded-loop-rejections",
