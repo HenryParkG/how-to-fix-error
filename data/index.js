@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780815696,
+        "title": "Fixing Elixir OTP Mailbox Bloat: Debugging Selective Receive",
+        "slug": "fixing-elixir-otp-mailbox-bloat-selective-receive",
+        "language": "Elixir",
+        "code": "Selective Receive Degradation",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-elixir-otp-mailbox-bloat-selective-receive.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780815697,
+        "title": "Fixing PostgreSQL TXID Wraparound Autovacuum Starvation",
+        "slug": "postgresql-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "Autovacuum Starvation",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/postgresql-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780815698,
+        "title": "Fixing gRPC Connection Pinning on Kubernetes L4 Services",
+        "slug": "grpc-connection-pinning-kubernetes-l4-imbalance",
+        "language": "Go",
+        "code": "gRPC Load Imbalance",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/grpc-connection-pinning-kubernetes-l4-imbalance.js",
+        "tags": [
+            "Kubernetes",
+            "gRPC",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780815699,
+        "title": "Inside Goose: The Swift-Based Magit Clone Taking Over GitHub",
+        "slug": "goose-swift-magit-tui-github-trend",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/goose-swift-magit-tui-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1780799909,
         "title": "Fixing C++20 Coroutine Frame Leaks in Async Nets",
         "slug": "fixing-cpp20-coroutine-frame-leaks",
