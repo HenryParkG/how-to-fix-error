@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780830231,
+        "title": "Fixing Haskell Space Leaks: Thunk Accumulation",
+        "slug": "fixing-haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-haskell-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780830232,
+        "title": "Fixing Kafka Rebalance Storms under High Lag",
+        "slug": "fixing-kafka-rebalance-storms-commit-timeouts",
+        "language": "Kafka",
+        "code": "ConsumerRebalanceException",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-kafka-rebalance-storms-commit-timeouts.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780830233,
+        "title": "Fixing Cassandra Tombstone Saturation Read Spikes",
+        "slug": "fixing-cassandra-tombstone-saturation-latency",
+        "language": "Cassandra",
+        "code": "ReadTimeoutException",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/fixing-cassandra-tombstone-saturation-latency.js",
+        "tags": [
+            "Cassandra",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780830234,
+        "title": "Analyze the Trending b-nnett/goose TUI Engine",
+        "slug": "analyze-b-nnett-goose-swift-poc",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-06-07",
+        "path": "data/posts/2026-06/analyze-b-nnett-goose-swift-poc.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1780815696,
         "title": "Fixing Elixir OTP Mailbox Bloat: Debugging Selective Receive",
         "slug": "fixing-elixir-otp-mailbox-bloat-selective-receive",
