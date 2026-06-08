@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1780923573,
+        "title": "Fixing eBPF Verifier Bounded Loop Failures",
+        "slug": "fixing-ebpf-verifier-bounded-loop-failures",
+        "language": "C / Rust",
+        "code": "BPF_VERIFY_ERR",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fixing-ebpf-verifier-bounded-loop-failures.js",
+        "tags": [
+            "Rust",
+            "eBPF",
+            "Network",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780923574,
+        "title": "Fixing PyTorch DDP Dynamic Shape Deadlocks",
+        "slug": "pytorch-ddp-dynamic-shape-deadlocks",
+        "language": "Python",
+        "code": "NCCL_TIMEOUT",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/pytorch-ddp-dynamic-shape-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780923575,
+        "title": "Fixing Redis Copy-on-Write OOM Panics",
+        "slug": "redis-cow-oom-panics",
+        "language": "Docker",
+        "code": "OOM_KILLED",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/redis-cow-oom-panics.js",
+        "tags": [
+            "Docker",
+            "Redis",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780923576,
+        "title": "Real-Time Sky Projection with Skylight",
+        "slug": "skylight-rtl-sdr-projector",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/skylight-rtl-sdr-projector.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780903445,
         "title": "Fixing Zig Memory Corruption in Custom Allocators",
         "slug": "fixing-zig-memory-corruption-custom-allocators",
