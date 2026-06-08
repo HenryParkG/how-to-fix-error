@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1780886565,
+        "title": "Fixing Rust Async Cancellation Safety in Tokio Select",
+        "slug": "fixing-rust-async-cancellation-safety-tokio-select",
+        "language": "Rust",
+        "code": "Cancellation Safety Violation",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fixing-rust-async-cancellation-safety-tokio-select.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Tokio",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780886566,
+        "title": "Fixing PyTorch CUDA Memory Fragmentation in Dynamic Shapes",
+        "slug": "pytorch-cuda-memory-fragmentation-dynamic-shapes",
+        "language": "Python",
+        "code": "CUDA Out Of Memory (OOM)",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/pytorch-cuda-memory-fragmentation-dynamic-shapes.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780886567,
+        "title": "Fixing Elasticsearch Parent-Child Heap Exhaustion",
+        "slug": "fixing-elasticsearch-parent-child-heap-exhaustion",
+        "language": "Java",
+        "code": "OutOfMemoryError (Heap Exhaustion)",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fixing-elasticsearch-parent-child-heap-exhaustion.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780886568,
+        "title": "Projecting Real-Time Air Traffic with Skylight",
+        "slug": "projecting-real-time-air-traffic-skylight",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/projecting-real-time-air-traffic-skylight.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1780830231,
         "title": "Fixing Haskell Space Leaks: Thunk Accumulation",
         "slug": "fixing-haskell-space-leaks-thunk-accumulation",
