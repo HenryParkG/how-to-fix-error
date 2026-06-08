@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1780903445,
+        "title": "Fixing Zig Memory Corruption in Custom Allocators",
+        "slug": "fixing-zig-memory-corruption-custom-allocators",
+        "language": "Zig",
+        "code": "Memory Corruption",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fixing-zig-memory-corruption-custom-allocators.js",
+        "tags": [
+            "Zig",
+            "Memory Management",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780903446,
+        "title": "Fix Envoy OOM with High-Churn Headless Services",
+        "slug": "fix-envoy-oom-high-churn-headless",
+        "language": "Go",
+        "code": "Out Of Memory (OOM)",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fix-envoy-oom-high-churn-headless.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Envoy",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780903447,
+        "title": "Fix MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fix-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Go",
+        "code": "Database Write Stall",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/fix-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780903448,
+        "title": "Skylight: Projecting Real-Time Overheads Onto Ceilings",
+        "slug": "cpaczek-skylight-realtime-overhead-aircraft-projection",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-08",
+        "path": "data/posts/2026-06/cpaczek-skylight-realtime-overhead-aircraft-projection.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1780886565,
         "title": "Fixing Rust Async Cancellation Safety in Tokio Select",
         "slug": "fixing-rust-async-cancellation-safety-tokio-select",
