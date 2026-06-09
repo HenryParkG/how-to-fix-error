@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1781006080,
+        "title": "Kubernetes DNS Latency: ndots & Conntrack Race",
+        "slug": "kubernetes-dns-latency-ndots-conntrack-race-conditions",
+        "language": "Kubernetes, Networking",
+        "code": "DNS Latency",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/kubernetes-dns-latency-ndots-conntrack-race-conditions.js",
+        "tags": [
+            "Kubernetes",
+            "DNS",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781006081,
+        "title": "Elixir Mailbox Overflow: Backpressure Failures",
+        "slug": "elixir-otp-mailbox-overflow-backpressure-failures",
+        "language": "Elixir, OTP",
+        "code": "Mailbox Overflow",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/elixir-otp-mailbox-overflow-backpressure-failures.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781006082,
+        "title": "PostgreSQL Transaction ID Wraparound: Autovacuum",
+        "slug": "postgresql-transaction-id-wraparound-emergency-autovacuum-blockages",
+        "language": "PostgreSQL, SQL",
+        "code": "Wraparound",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/postgresql-transaction-id-wraparound-emergency-autovacuum-blockages.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Maintenance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781006083,
+        "title": "Diffusionstudio/Lottie: AI-Powered Lottie Animations",
+        "slug": "diffusionstudio-lottie-github-trend-ai-animation-generation",
+        "language": "Python, AI, JavaScript (Lottie)",
+        "code": "Trend",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/diffusionstudio-lottie-github-trend-ai-animation-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Animation",
+            "Python",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1780987457,
         "title": "Fixing C++20 Coroutine Leaks: Lifetime Mismatches",
         "slug": "fixing-cpp20-coroutine-memory-leaks-lifetime-mismatches-custom-async-runtimes",
