@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1780987457,
+        "title": "Fixing C++20 Coroutine Leaks: Lifetime Mismatches",
+        "slug": "fixing-cpp20-coroutine-memory-leaks-lifetime-mismatches-custom-async-runtimes",
+        "language": "C++",
+        "code": "Coroutine Leak",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/fixing-cpp20-coroutine-memory-leaks-lifetime-mismatches-custom-async-runtimes.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780987458,
+        "title": "Fixing ClickHouse 'Too Many Parts' Write Blocks",
+        "slug": "fixing-clickhouse-too-many-parts-write-blocks-high-frequency-insert-spikes",
+        "language": "ClickHouse, SQL",
+        "code": "DB Write Block",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/fixing-clickhouse-too-many-parts-write-blocks-high-frequency-insert-spikes.js",
+        "tags": [
+            "ClickHouse",
+            "Database",
+            "Performance",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780987459,
+        "title": "Fixing WebGPU Memory Leaks: Buffer Fragmentation",
+        "slug": "fixing-webgpu-memory-leaks-buffer-fragmentation-high-frame-rate-canvas-render-loops",
+        "language": "WebGPU, JavaScript",
+        "code": "Memory Leak",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/fixing-webgpu-memory-leaks-buffer-fragmentation-high-frame-rate-canvas-render-loops.js",
+        "tags": [
+            "WebGPU",
+            "JavaScript",
+            "Graphics",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1780987460,
+        "title": "Diffusion Studio Lottie: AI-Powered Animation Generation",
+        "slug": "diffusionstudio-lottie-ai-powered-animation-generation",
+        "language": "Python, Lottie, AI/ML",
+        "code": "Trend",
+        "date": "2026-06-09",
+        "path": "data/posts/2026-06/diffusionstudio-lottie-ai-powered-animation-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Lottie",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1780923573,
         "title": "Fixing eBPF Verifier Bounded Loop Failures",
         "slug": "fixing-ebpf-verifier-bounded-loop-failures",
