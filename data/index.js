@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781093951,
+        "title": "Fixing Zig Multi-Threaded Arena Use-After-Free",
+        "slug": "zig-multithreaded-arena-uaf",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/zig-multithreaded-arena-uaf.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781093952,
+        "title": "Fixing Spark Driver OOM in Broadcast Hash Join",
+        "slug": "spark-driver-oom-broadcast-hash-join",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/spark-driver-oom-broadcast-hash-join.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781093953,
+        "title": "Fixing Next.js Hydration State Desynchronization",
+        "slug": "nextjs-hydration-state-desync",
+        "language": "TypeScript",
+        "code": "Hydration Mismatch",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/nextjs-hydration-state-desync.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781093954,
+        "title": "Generating Lottie Animations with AI: diffusionstudio/lottie",
+        "slug": "diffusionstudio-lottie-generative-animations",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/diffusionstudio-lottie-generative-animations.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1781074764,
         "title": "Fixing Rust Async Pinning Violations",
         "slug": "fixing-rust-async-pinning-violations",
