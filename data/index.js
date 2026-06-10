@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1781074764,
+        "title": "Fixing Rust Async Pinning Violations",
+        "slug": "fixing-rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "Undefined Behavior",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fixing-rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781074765,
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "fixing-kafka-consumer-rebalance-storms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fixing-kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781074766,
+        "title": "Fixing Haskell Space Leaks in Stream Processing",
+        "slug": "fixing-haskell-stream-space-leaks",
+        "language": "Haskell",
+        "code": "OutOfMemory",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fixing-haskell-stream-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781074767,
+        "title": "Analyze the trending diffusionstudio/lottie Engine",
+        "slug": "diffusionstudio-lottie-engine-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/diffusionstudio-lottie-engine-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1781058923,
         "title": "Fixing Vector DB HNSW Compaction OOM under Load",
         "slug": "fixing-vector-db-hnsw-compaction-oom",
