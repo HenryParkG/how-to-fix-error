@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781058923,
+        "title": "Fixing Vector DB HNSW Compaction OOM under Load",
+        "slug": "fixing-vector-db-hnsw-compaction-oom",
+        "language": "Rust",
+        "code": "OOMKilled / Heap Exhaustion",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fixing-vector-db-hnsw-compaction-oom.js",
+        "tags": [
+            "Rust",
+            "Vector Search",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781058924,
+        "title": "Fixing Envoy Sidecar Terminations in Istio Shutdowns",
+        "slug": "fix-istio-envoy-shutdown-app-exit",
+        "language": "Kubernetes",
+        "code": "HTTP 503 Service Unavailable",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fix-istio-envoy-shutdown-app-exit.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781058925,
+        "title": "Fix Go Goroutine Starvation in Non-Cooperative CGO",
+        "slug": "fixing-go-goroutine-starvation-cgo",
+        "language": "Go",
+        "code": "Scheduler Latency / Starvation",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/fixing-go-goroutine-starvation-cgo.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781058926,
+        "title": "Why diffusionstudio/lottie Is Transforming Animations",
+        "slug": "diffusionstudio-lottie-programmatic-animation",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-10",
+        "path": "data/posts/2026-06/diffusionstudio-lottie-programmatic-animation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1781006080,
         "title": "Kubernetes DNS Latency: ndots & Conntrack Race",
         "slug": "kubernetes-dns-latency-ndots-conntrack-race-conditions",
