@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1781145861,
+        "title": "Fixing eBPF Map Race Conditions under Multicore Load",
+        "slug": "fixing-ebpf-map-race-conditions-bpf-map-type-hash",
+        "language": "Go",
+        "code": "Data Race",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-ebpf-map-race-conditions-bpf-map-type-hash.js",
+        "tags": [
+            "Go",
+            "eBPF",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781145862,
+        "title": "Fixing PyTorch CUDA OOM: Fragmented Memory Pools",
+        "slug": "fixing-pytorch-cuda-oom-fragmented-memory-pools",
+        "language": "Python",
+        "code": "CUDA OOM",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-pytorch-cuda-oom-fragmented-memory-pools.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781145863,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Docker",
+        "code": "WiredTiger Stall",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Docker",
+            "MongoDB",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781145864,
+        "title": "Offline WHOOP Companion: Why NoopApp/noop is Trending",
+        "slug": "offline-whoop-companion-noopapp-noop-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/offline-whoop-companion-noopapp-noop-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1781093951,
         "title": "Fixing Zig Multi-Threaded Arena Use-After-Free",
         "slug": "zig-multithreaded-arena-uaf",
