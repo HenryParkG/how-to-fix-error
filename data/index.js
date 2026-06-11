@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781162587,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Async Loops",
+        "slug": "fixing-cpp20-coroutine-frame-leaks-in-async-loops",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-cpp20-coroutine-frame-leaks-in-async-loops.js",
+        "tags": [
+            "C++",
+            "Asynchronous",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781162588,
+        "title": "Fixing PyTorch DDP Deadlocks on Gradient Sync",
+        "slug": "fixing-pytorch-ddp-bucket-deadlocks",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-pytorch-ddp-bucket-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781162589,
+        "title": "Fixing Redis Copy-on-Write Spikes during BGSAVE",
+        "slug": "fixing-redis-cow-memory-spikes-bgsave",
+        "language": "Redis",
+        "code": "OOM / Memory Spike",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/fixing-redis-cow-memory-spikes-bgsave.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781162590,
+        "title": "Xiaomi MiMo-Code: Next-Gen Embodied AI Control",
+        "slug": "xiaomi-mimo-code-embodied-ai-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-embodied-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781145861,
         "title": "Fixing eBPF Map Race Conditions under Multicore Load",
         "slug": "fixing-ebpf-map-race-conditions-bpf-map-type-hash",
