@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1781181739,
+        "title": "Debugging Linux Kernel OOM Killer Thrashing",
+        "slug": "debugging-linux-kernel-oom-killer-thrashing-cgroup-v2",
+        "language": "Linux Kernel, cgroup v2",
+        "code": "OOM Thrashing",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/debugging-linux-kernel-oom-killer-thrashing-cgroup-v2.js",
+        "tags": [
+            "Linux",
+            "cgroup",
+            "OOM Killer",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781181740,
+        "title": "Airflow DAG Deadlocks: Circular Sensors & External Triggers",
+        "slug": "airflow-dag-deadlocks-circular-sensors-external-triggers",
+        "language": "Python, Airflow",
+        "code": "DAG Deadlock",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/airflow-dag-deadlocks-circular-sensors-external-triggers.js",
+        "tags": [
+            "Airflow",
+            "Python",
+            "DAG",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781181741,
+        "title": "Diagnosing K8s CrashLoopBackOff: Lifecycle Hook Failures",
+        "slug": "diagnosing-kubernetes-crashloopbackoff-lifecycle-hook-failures",
+        "language": "Kubernetes, Docker",
+        "code": "CrashLoopBackOff",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/diagnosing-kubernetes-crashloopbackoff-lifecycle-hook-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781181742,
+        "title": "MiMo-Code: A Trending GitHub Repository for LLM Evals",
+        "slug": "mimo-code-trending-github-repository-llm-evals",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-11",
+        "path": "data/posts/2026-06/mimo-code-trending-github-repository-llm-evals.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1781162587,
         "title": "Fixing C++20 Coroutine Frame Leaks in Async Loops",
         "slug": "fixing-cpp20-coroutine-frame-leaks-in-async-loops",
