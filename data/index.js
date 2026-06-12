@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1781231946,
+        "title": "Fixing gRPC HTTP/2 Flow Control Window Starvation",
+        "slug": "grpc-http2-flow-control-window-starvation",
+        "language": "Go",
+        "code": "HTTP2_FLOW_CONTROL_STARVATION",
+        "date": "2026-06-12",
+        "path": "data/posts/2026-06/grpc-http2-flow-control-window-starvation.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781231947,
+        "title": "Fixing Elixir GenServer Mailbox Bottlenecks",
+        "slug": "elixir-genserver-mailbox-bottleneck-backpressure",
+        "language": "Elixir",
+        "code": "GENSERVER_MAILBOX_OVERFLOW",
+        "date": "2026-06-12",
+        "path": "data/posts/2026-06/elixir-genserver-mailbox-bottleneck-backpressure.js",
+        "tags": [
+            "Elixir",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781231948,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound Outages",
+        "slug": "postgresql-transaction-id-wraparound-outage",
+        "language": "SQL",
+        "code": "POSTGRES_TXID_WRAPAROUND",
+        "date": "2026-06-12",
+        "path": "data/posts/2026-06/postgresql-transaction-id-wraparound-outage.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781231949,
+        "title": "Xiaomi MiMo-Code: Edge AI Model Compilation",
+        "slug": "xiaomi-mimo-code-edge-ai-runtime",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-12",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-edge-ai-runtime.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781181739,
         "title": "Debugging Linux Kernel OOM Killer Thrashing",
         "slug": "debugging-linux-kernel-oom-killer-thrashing-cgroup-v2",
