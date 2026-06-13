@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing WebGPU Buffer Mapping Deadlocks",
+    "slug": "fixing-webgpu-buffer-mapping-deadlocks",
+    "language": "TypeScript",
+    "code": "BufferDeadlock",
+    "tags": [
+        "TypeScript",
+        "WebGPU",
+        "Frontend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In multi-pass WebGPU compute pipelines, transferring data back and forth between the CPU and GPU requires strict memory state coordination. A WebGPU GPUBuffer cannot be mapped on the CPU timeline (via `mapAsync`) while it is actively registered for use inside a GPU-side queue or dynamic command encoder. Attempting to call `mapAsync` on a buffer that is currently in a 'locked' or 'queued' state without awaiting the complete execution pipeline submission triggers an asynchronous execution deadlock. The map promise never resolves, halting your application execution loop.</p>",
+    "root_cause": "The application issues a `mapAsync()` request on a GPU resource immediately after command submission without registering/awaiting a sync barrier on the device queue, or without explicitly duplicating raw data into a dedicated staging buffer.",
+    "bad_code": "async function runComputePipeline(device: GPUDevice, pipeline: GPUComputePipeline, bindGroup: GPUBindGroup, outputBuffer: GPUBuffer) {\n    const encoder = device.createCommandEncoder();\n    const pass = encoder.beginComputePass();\n    pass.setPipeline(pipeline);\n    pass.setBindGroup(0, bindGroup);\n    pass.dispatchWorkgroups(64);\n    pass.end();\n\n    device.queue.submit([encoder.finish()]);\n\n    // BUG: Attempting to map the buffer immediately while the GPU command execution\n    // is still pending and referencing this buffer. Deadlocks the command queue.\n    await outputBuffer.mapAsync(GPUMapMode.READ);\n    const result = new Float32Array(outputBuffer.getMappedRange());\n    console.log(result);\n    outputBuffer.unmap();\n}",
+    "solution_desc": "Implement a staging buffer pattern. Use a primary GPU-only storage buffer (with dynamic storage usage) for pipeline operations. When execution finishes, encode a copy command to move data to a dedicated CPU-readable staging buffer (created with MAP_READ and COPY_DST capabilities). Finally, execute `device.queue.onSubmittedWorkDone()` to establish an execution fence before safely resolving the CPU mapping promise.",
+    "good_code": "async function runComputePipelineFixed(device: GPUDevice, pipeline: GPUComputePipeline, bindGroup: GPUBindGroup, gpuBuffer: GPUBuffer, bufferSize: number) {\n    // Create a dedicated staging buffer for CPU reads\n    const stagingBuffer = device.createBuffer({\n        size: bufferSize,\n        usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ\n    });\n\n    const encoder = device.createCommandEncoder();\n    const pass = encoder.beginComputePass();\n    pass.setPipeline(pipeline);\n    pass.setBindGroup(0, bindGroup);\n    pass.dispatchWorkgroups(64);\n    pass.end();\n\n    // Safely copy GPU internal buffer contents to our CPU-accessible staging buffer\n    encoder.copyBufferToBuffer(gpuBuffer, 0, stagingBuffer, 0, bufferSize);\n    device.queue.submit([encoder.finish()]);\n\n    // Correct synchronization: wait for GPU queue execution to fully clear before mapping\n    await device.queue.onSubmittedWorkDone();\n\n    // Safely execute async mapping on staging buffer\n    await stagingBuffer.mapAsync(GPUMapMode.READ);\n    \n    // Read out contents and make a copy to keep memory unblocked\n    const outputData = stagingBuffer.getMappedRange().slice(0);\n    stagingBuffer.unmap();\n\n    return new Float32Array(outputData);\n}",
+    "verification": "Run your application with the Chrome Developer Console open with experimental WebGPU validation enabled. Ensure that no validation warnings regarding 'GPUBuffer is currently mapped/destroyed' appear. The staging buffer mapping promise now resolves consistently within 1-2 frames without execution stalls.",
+    "date": "2026-06-13",
+    "id": 1781333454,
+    "type": "error"
+});

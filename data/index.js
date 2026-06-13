@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781333453,
+        "title": "Fixing Go GC Pacer Latency Spikes in Massive Heaps",
+        "slug": "fixing-go-gc-pacer-latency-spikes-massive-heaps",
+        "language": "Go",
+        "code": "LatencySpike",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-go-gc-pacer-latency-spikes-massive-heaps.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781333454,
+        "title": "Fixing WebGPU Buffer Mapping Deadlocks",
+        "slug": "fixing-webgpu-buffer-mapping-deadlocks",
+        "language": "TypeScript",
+        "code": "BufferDeadlock",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-webgpu-buffer-mapping-deadlocks.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781333455,
+        "title": "Fixing Elasticsearch Segment Merging Stalls",
+        "slug": "fixing-elasticsearch-segment-merging-stalls",
+        "language": "Java",
+        "code": "WriteAmplification",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-elasticsearch-segment-merging-stalls.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781333456,
+        "title": "Exploring Xiaomi MiMo-Code: Edge AI and IoT Power",
+        "slug": "xiaomi-mimo-code-edge-ai-iot",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-edge-ai-iot.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781317944,
         "title": "Fixing Rust Async Pin Projection Violations",
         "slug": "fixing-rust-async-pin-projection-violations",
