@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781349068,
+        "title": "Fixing eBPF Verifier Rejections on Loops",
+        "slug": "fixing-ebpf-verifier-loop-pointer-rejections",
+        "language": "Rust",
+        "code": "VerifierError",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-ebpf-verifier-loop-pointer-rejections.js",
+        "tags": [
+            "eBPF",
+            "Rust",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781349069,
+        "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "fixing-wiredtiger-cache-eviction-stalls-mongodb",
+        "language": "MongoDB",
+        "code": "CacheEvictionStall",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-wiredtiger-cache-eviction-stalls-mongodb.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781349070,
+        "title": "Fixing React Native JSI Memory Leaks in C++ Modules",
+        "slug": "fixing-react-native-jsi-c-plus-plus-memory-leaks",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-react-native-jsi-c-plus-plus-memory-leaks.js",
+        "tags": [
+            "React Native",
+            "C++",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781349071,
+        "title": "Exploring Xiaomi MiMo-Code: Smart Embedded Dev",
+        "slug": "exploring-xiaomi-mimo-code-embedded-development",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/exploring-xiaomi-mimo-code-embedded-development.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781333453,
         "title": "Fixing Go GC Pacer Latency Spikes in Massive Heaps",
         "slug": "fixing-go-gc-pacer-latency-spikes-massive-heaps",
