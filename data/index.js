@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781317944,
+        "title": "Fixing Rust Async Pin Projection Violations",
+        "slug": "fixing-rust-async-pin-projection-violations",
+        "language": "Rust",
+        "code": "PinProjectionViolation",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-rust-async-pin-projection-violations.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781317945,
+        "title": "Fixing Kafka Consumer Rebalance Storms",
+        "slug": "fixing-kafka-consumer-group-rebalance-storms",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-kafka-consumer-group-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781317946,
+        "title": "Fixing Haskell Lazy State Monad Space Leaks",
+        "slug": "fixing-haskell-lazy-state-monad-space-leaks",
+        "language": "Haskell",
+        "code": "OutOfMemory",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/fixing-haskell-lazy-state-monad-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781317947,
+        "title": "Inside Xiaomi MiMo-Code: Efficient Edge Code LLMs",
+        "slug": "xiaomi-mimo-code-efficient-edge-code-llms",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-13",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-efficient-edge-code-llms.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781231946,
         "title": "Fixing gRPC HTTP/2 Flow Control Window Starvation",
         "slug": "grpc-http2-flow-control-window-starvation",
