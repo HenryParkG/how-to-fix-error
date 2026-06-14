@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781436252,
+        "title": "Fix Elixir GenServer Mailbox Congestion",
+        "slug": "fix-elixir-genserver-mailbox-congestion",
+        "language": "Elixir",
+        "code": "GenServer Mailbox Bottleneck",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/fix-elixir-genserver-mailbox-congestion.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781436253,
+        "title": "Mitigate Postgres Autovacuum Freeze Starvation",
+        "slug": "postgres-autovacuum-freeze-starvation-fix",
+        "language": "SQL",
+        "code": "TXID Wraparound Starvation",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/postgres-autovacuum-freeze-starvation-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781436254,
+        "title": "Fix Next.js Hydration & Memory Leaks in ISR",
+        "slug": "nextjs-hydration-mismatches-memory-leaks-edge",
+        "language": "TypeScript",
+        "code": "Hydration Mismatch & Edge Memory Leak",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/nextjs-hydration-mismatches-memory-leaks-edge.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781436255,
+        "title": "Analysis of XiaomiMiMo/MiMo-Code Automation",
+        "slug": "xiaomi-mimo-code-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781421396,
         "title": "Fixing Zig Arena Allocator UAF in Multi-Threaded Runtimes",
         "slug": "fixing-zig-arena-allocator-uaf-multithreaded",
