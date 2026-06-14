@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Istio Envoy OOMs under mTLS Handshake Bursts",
+    "slug": "fixing-istio-envoy-oom-mtls-bursts",
+    "language": "Envoy / Go / C++",
+    "code": "OOMKilled",
+    "tags": [
+        "Istio",
+        "Envoy",
+        "Kubernetes",
+        "Error Fix"
+    ],
+    "analysis": "<p>When high-density microservice clusters running Istio experience sudden, high-volume connection spikes (e.g., during recovery from network partitions or morning login surges), the Envoy sidecars can trigger Kubernetes Out-Of-Memory (OOM) Kills. During these bursts, hundreds or thousands of simultaneous mutual TLS (mTLS) handshakes are initiated.</p><p>mTLS handshakes are computationally and memory-wise expensive. Each pending connection creates an SSL handshake buffer, handles cryptographic keys, and queries Secret Discovery Service (SDS) structures. Because the default Envoy limits do not constrain incoming TCP handshakes or buffer allocations stringently enough, memory usage spikes violently beyond the sidecar container's cgroup limit, prompting the Linux kernel to terminate the Envoy process.</p>",
+    "root_cause": "The root cause is the absence of rate-limiting configurations for downstream connection handshakes coupled with oversized write/read buffers on the sidecar's listener configurations. Under sudden bursts, Envoy consumes all container-allotted memory before the connections can transition to an active/established state.",
+    "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: EnvoyFilter\nmetadata:\n  name: default-unrestricted-listener\n  namespace: istio-system\nspec:\n  configPatches:\n  - applyTo: LISTENER\n    match:\n      context: SIDECAR_INBOUND\n    patch:\n      operation: MERGE\n      value:\n        # Unbounded parameters allow memory consumption to scale exponentially under connection bursts\n        per_connection_buffer_limit_bytes: 104857600 # 100MB per connection - extremely hazardous!",
+    "solution_desc": "To remediate this, define safe downstream buffer limits utilizing Istio's <code>EnvoyFilter</code> CRD to regulate connection resource allocation. Crucially, activate Envoy's Overload Manager to shed loads (e.g., reject new connections or terminate existing handshakes) once heap usage exceeds custom thresholds (e.g., 85% of cgroup limit), maintaining sidecar availability.",
+    "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: EnvoyFilter\nmetadata:\n  name: limit-and-overload-listener\n  namespace: istio-system\nspec:\n  configPatches:\n  - applyTo: LISTENER\n    match:\n      context: SIDECAR_INBOUND\n    patch:\n      operation: MERGE\n      value:\n        # Restrict downstream buffer limit per connection to 256KB to minimize handshake footprint\n        per_connection_buffer_limit_bytes: 262144\n  - applyTo: OVERLOAD_MANAGER\n    match:\n      context: ANY\n    patch:\n      operation: MERGE\n      value:\n        refresh_interval: 0.25s\n        resource_monitors:\n        - name: \"envoy.resource_monitors.fixed_heap\"\n          typed_config:\n            \"@type\": type.googleapis.com/envoy.extensions.resource_monitors.fixed_heap.v3.FixedHeapConfig\n            max_heap_size_bytes: 536870912 # 512MB sidecar threshold\n        actions:\n        - name: \"envoy.overload_actions.disable_http_keepalive\"\n          triggers:\n          - name: \"envoy.resource_monitors.fixed_heap\"\n            threshold:\n              value: 0.85\n        - name: \"envoy.overload_actions.stop_accepting_connections\"\n          triggers:\n          - name: \"envoy.resource_monitors.fixed_heap\"\n            threshold:\n              value: 0.95",
+    "verification": "Deploy the updated <code>EnvoyFilter</code> configuration. Execute a heavy connection burst simulation using load generators such as <code>fortio</code> with mTLS verification enabled. Monitor Envoy memory metrics via PromQL (<code>container_memory_working_set_bytes{container=\"istio-proxy\"}</code>) to verify memory flattens stably and doesn't trigger OOM Kills.",
+    "date": "2026-06-14",
+    "id": 1781421398,
+    "type": "error"
+});

@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781421396,
+        "title": "Fixing Zig Arena Allocator UAF in Multi-Threaded Runtimes",
+        "slug": "fixing-zig-arena-allocator-uaf-multithreaded",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/fixing-zig-arena-allocator-uaf-multithreaded.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781421397,
+        "title": "Fix Spark Driver OOMs on Broadcast Hash Joins",
+        "slug": "fix-spark-driver-oom-broadcast-hash-joins",
+        "language": "Scala / Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/fix-spark-driver-oom-broadcast-hash-joins.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781421398,
+        "title": "Fixing Istio Envoy OOMs under mTLS Handshake Bursts",
+        "slug": "fixing-istio-envoy-oom-mtls-bursts",
+        "language": "Envoy / Go / C++",
+        "code": "OOMKilled",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/fixing-istio-envoy-oom-mtls-bursts.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781421399,
+        "title": "Inside Xiaomi MiMo-Code: Next-Gen TinyML Code Assistant",
+        "slug": "xiaomi-mimo-code-tinyml-agent-analysis",
+        "language": "Python / C++",
+        "code": "Trend",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-tinyml-agent-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781404991,
         "title": "Fixing PyTorch CUDA Fragmentation in Dynamic LLMs",
         "slug": "pytorch-cuda-memory-fragmentation-llm",
