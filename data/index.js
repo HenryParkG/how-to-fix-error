@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1781404991,
+        "title": "Fixing PyTorch CUDA Fragmentation in Dynamic LLMs",
+        "slug": "pytorch-cuda-memory-fragmentation-llm",
+        "language": "Python",
+        "code": "CUDA Out of Memory (OOM)",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/pytorch-cuda-memory-fragmentation-llm.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "LLM",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781404992,
+        "title": "Fixing Redis BGSAVE Copy-on-Write Memory Bloat",
+        "slug": "redis-bgsave-copy-on-write-memory-bloat",
+        "language": "Docker",
+        "code": "OOM Killer (SIGKILL)",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/redis-bgsave-copy-on-write-memory-bloat.js",
+        "tags": [
+            "Docker",
+            "Redis",
+            "Infra",
+            "Sysadmin",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781404993,
+        "title": "Fixing C++20 Coroutine Frame Leakage in Engines",
+        "slug": "cpp20-coroutine-frame-leakage-network",
+        "language": "Rust",
+        "code": "Memory Leak (Heap Growth)",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/cpp20-coroutine-frame-leakage-network.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "C++",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781404994,
+        "title": "Analyzing Xiaomi's MiMo-Code: Trend & Guide",
+        "slug": "xiaomi-mimo-code-trending-github-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-14",
+        "path": "data/posts/2026-06/xiaomi-mimo-code-trending-github-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Open Source"
+        ]
+    },
+    {
         "id": 1781349068,
         "title": "Fixing eBPF Verifier Rejections on Loops",
         "slug": "fixing-ebpf-verifier-loop-pointer-rejections",
