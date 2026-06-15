@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781513451,
+        "title": "Fixing Qdrant HNSW Index & Segment Merge Stalls",
+        "slug": "fixing-qdrant-hnsw-index-segment-merge-stalls",
+        "language": "Rust",
+        "code": "OOM / Write Stall",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/fixing-qdrant-hnsw-index-segment-merge-stalls.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781513452,
+        "title": "Fixing Wasm Linear Memory Fragmentation & OOMs",
+        "slug": "fixing-wasm-linear-memory-fragmentation-oom",
+        "language": "Rust",
+        "code": "OOM Crash",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/fixing-wasm-linear-memory-fragmentation-oom.js",
+        "tags": [
+            "Rust",
+            "TypeScript",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781513453,
+        "title": "Fixing Go GC Latency Spikes Under CFS Quotas",
+        "slug": "fixing-go-gc-latency-spikes-cfs-quotas",
+        "language": "Go",
+        "code": "Latency Spike",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/fixing-go-gc-latency-spikes-cfs-quotas.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781513454,
+        "title": "Inside Ponytail: Make AI Agents Think Like Lazy Devs",
+        "slug": "ponytail-ai-agent-lazy-senior-dev",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/ponytail-ai-agent-lazy-senior-dev.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781491688,
         "title": "Resolving Rust Async Borrow Checker Errors in Tokio",
         "slug": "rust-async-borrow-checker-tokio-lifetimes",

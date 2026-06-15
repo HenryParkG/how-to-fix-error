@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Qdrant HNSW Index & Segment Merge Stalls",
+    "slug": "fixing-qdrant-hnsw-index-segment-merge-stalls",
+    "language": "Rust",
+    "code": "OOM / Write Stall",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>In high-throughput vector database workloads, Qdrant relies on standard LSM-like segment structures to store points, payloads, and vector indices. As new data flows in, Qdrant constructs temporary segments that are subsequently merged via background optimization tasks. During this merge phase, the Hierarchical Navigable Small World (HNSW) graph index must be rebuilt for the newly consolidated segment. Because HNSW construction is both CPU and memory-intensive, concurrent index builds can starve the system's execution threads. Under resource-constrained environments (such as Kubernetes pods with strict limits), this leads to a critical bottleneck: memory footprint spikes exponentially due to parallel graph allocations, triggering Out-Of-Memory (OOM) kills, or the storage engine's thread pool becomes fully saturated, causing write stalls and continuous 503 errors.</p>",
+    "root_cause": "The default configuration of Qdrant relies on auto-detecting host CPU cores for indexing thread allocations (setting max_indexing_threads to 0). In containerized systems, this causes Qdrant to spawn threads relative to physical hardware rather than cgroup limits. Furthermore, when the segment optimizer threshold (indexing_threshold_kb) is set too low, small segments are constantly merged, forcing premature, redundant, and highly parallel HNSW reconstructions that deplete memory resources.",
+    "bad_code": "# Default / Unoptimized config.yaml causing segment merge stalls and OOM under write load\nstorage:\n  performance:\n    max_indexing_threads: 0 # Spawns threads matching physical cores, ignoring cgroups\n\noptimizers:\n  default:\n    indexing_threshold_kb: 10000 # Too small: triggers HNSW index builds on very small segments\n    memmap_threshold_kb: 10000\n    max_segment_size_kb: 1048576\n    vacuum_min_vector_number: 1000\n    flush_interval_sec: 5",
+    "solution_desc": "To mitigate segment merge stalls and HNSW-induced OOM crashes, we must optimize the Qdrant configuration to bound resource consumption. First, explicitly define `max_indexing_threads` to map directly to the container's allocated CPU limits (typically 1 or 2 threads per allocated vCPU core). Second, increase the `indexing_threshold_kb` so that indexing is delayed until segments reach a substantial size, preventing constant small-scale, high-churn merges. Third, tune the optimizer settings to run fewer parallel optimization processes by utilizing the `max_optimization_threads` directive.",
+    "good_code": "# Optimized config.yaml for stable index building and deterministic resource consumption\nstorage:\n  performance:\n    max_indexing_threads: 2 # Hard-bounded to match cgroup limits, preventing thread starvation\n\noptimizers:\n  default:\n    # Only index segments larger than 50MB to minimize redundant builds\n    indexing_threshold_kb: 51200\n    # Use mmap for vectors beyond 20MB to save heap allocation overhead\n    memmap_threshold_kb: 20480\n    max_segment_size_kb: 2097152\n    vacuum_min_vector_number: 5000\n    flush_interval_sec: 15\n\n# Limit concurrent segment mergers to reduce Disk I/O and RAM spikes\nservice:\n  max_optimization_threads: 1",
+    "verification": "Deploy the updated configuration to the Qdrant instance. Run a high-concurrency ingestion script inserting 1,000,000 high-dimensional vectors. Monitor system performance via Qdrant's `/telemetry` endpoint and system metrics. Verify that `pending_operations` does not grow unbounded, memory usage flatlines below the limit without OOM kills, and the log shows orderly segment merge accomplishments without worker thread timeouts.",
+    "date": "2026-06-15",
+    "id": 1781513451,
+    "type": "error"
+});
