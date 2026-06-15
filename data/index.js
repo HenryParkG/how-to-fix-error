@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1781491688,
+        "title": "Resolving Rust Async Borrow Checker Errors in Tokio",
+        "slug": "rust-async-borrow-checker-tokio-lifetimes",
+        "language": "Rust",
+        "code": "Lifetime Error",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/rust-async-borrow-checker-tokio-lifetimes.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781491689,
+        "title": "Fixing Kafka Consumer Group Rebalance Storms",
+        "slug": "fixing-kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/fixing-kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781491690,
+        "title": "Fixing gRPC HTTP/2 Flow Control Window Starvation",
+        "slug": "grpc-http2-flow-control-starvation",
+        "language": "Go",
+        "code": "FlowControlError",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/grpc-http2-flow-control-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "gRPC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781491691,
+        "title": "Demystifying Xiaomi's MiMo-Code Repository",
+        "slug": "analyzing-xiaomi-mimo-code-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-15",
+        "path": "data/posts/2026-06/analyzing-xiaomi-mimo-code-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1781436252,
         "title": "Fix Elixir GenServer Mailbox Congestion",
         "slug": "fix-elixir-genserver-mailbox-congestion",
