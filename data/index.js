@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1781578295,
+        "title": "Fixing eBPF Verifier Complexity Limit Exhaustion in XDP",
+        "slug": "fixing-ebpf-verifier-limit-exhaustion-xdp",
+        "language": "eBPF, C, Linux Kernel",
+        "code": "VerifierExhaustion",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/fixing-ebpf-verifier-limit-exhaustion-xdp.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Linux",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781578296,
+        "title": "MongoDB WiredTiger Ticket Starvation & Cache Stalls",
+        "slug": "fixing-mongodb-wiredtiger-ticket-starvation-cache-stalls",
+        "language": "MongoDB, WiredTiger",
+        "code": "TicketStarvation",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/fixing-mongodb-wiredtiger-ticket-starvation-cache-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781578297,
+        "title": "Fixing WebGPU Bind Group Exhaustion & Pipeline Stutters",
+        "slug": "fixing-webgpu-bind-group-exhaustion-pipeline-stutters",
+        "language": "WebGPU, TypeScript, JavaScript",
+        "code": "BindGroupExhaustion",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/fixing-webgpu-bind-group-exhaustion-pipeline-stutters.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "Real-time Rendering",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781578298,
+        "title": "DietrichGebert/ponytail: The Lazy Senior Dev AI Prompt",
+        "slug": "dietrichgebert-ponytail-ai-trend",
+        "language": "AI, LLM, Prompt Engineering",
+        "code": "Trend",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/dietrichgebert-ponytail-ai-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Prompt Engineering",
+            "LLM",
+            "Python"
+        ]
+    },
+    {
         "id": 1781513451,
         "title": "Fixing Qdrant HNSW Index & Segment Merge Stalls",
         "slug": "fixing-qdrant-hnsw-index-segment-merge-stalls",
