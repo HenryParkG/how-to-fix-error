@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1781616973,
+        "title": "Haskell Space Leaks & Thunk Accumulation in Lazy Streams",
+        "slug": "haskell-space-leaks-thunk-accumulation-lazy-streams",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/haskell-space-leaks-thunk-accumulation-lazy-streams.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781616974,
+        "title": "Spark Netty OOMs and Off-Heap Leaks in Large Shuffles",
+        "slug": "spark-netty-ooms-off-heap-memory-leaks-shuffles",
+        "language": "Apache Spark",
+        "code": "OOM / Off-Heap Leak",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/spark-netty-ooms-off-heap-memory-leaks-shuffles.js",
+        "tags": [
+            "Apache Spark",
+            "JVM",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781616975,
+        "title": "CoreDNS NDOTS Latency & Packet Drops in K8s",
+        "slug": "coredns-ndots-latency-packet-drops-kubernetes",
+        "language": "Kubernetes",
+        "code": "DNS Latency",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/coredns-ndots-latency-packet-drops-kubernetes.js",
+        "tags": [
+            "Kubernetes",
+            "DNS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781616976,
+        "title": "Ponytail: The Lazy Senior Dev AI Agent",
+        "slug": "ponytail-ai-agent-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/ponytail-ai-agent-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1781599212,
         "title": "Fixing C++20 Coroutine HALO Failure Memory Leaks",
         "slug": "fixing-cpp20-coroutine-halo-failure-memory-leaks",
