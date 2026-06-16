@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1781599212,
+        "title": "Fixing C++20 Coroutine HALO Failure Memory Leaks",
+        "slug": "fixing-cpp20-coroutine-halo-failure-memory-leaks",
+        "language": "C++20 / Clang",
+        "code": "Heap Allocation Elision Failure (HALO)",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/fixing-cpp20-coroutine-halo-failure-memory-leaks.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781599213,
+        "title": "Fixing PyTorch CUDA Fragmentation & IPC Leaks",
+        "slug": "pytorch-cuda-fragmentation-ipc-leaks",
+        "language": "Python / PyTorch",
+        "code": "CUDA OOM / IPC Handle Leak",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/pytorch-cuda-fragmentation-ipc-leaks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781599214,
+        "title": "Fixing Redis OOM-Kills Under BGSAVE CoW",
+        "slug": "resolving-redis-oom-kills-bgsave-cow",
+        "language": "Redis / Linux",
+        "code": "Linux OOM-Killer Triggered during BGSAVE",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/resolving-redis-oom-kills-bgsave-cow.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781599215,
+        "title": "Ponytail: The Lazy Senior Dev AI Agent",
+        "slug": "dietrichgebert-ponytail-lazy-senior-dev-ai",
+        "language": "Python / AI / LLMs",
+        "code": "Trend",
+        "date": "2026-06-16",
+        "path": "data/posts/2026-06/dietrichgebert-ponytail-lazy-senior-dev-ai.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781578295,
         "title": "Fixing eBPF Verifier Complexity Limit Exhaustion in XDP",
         "slug": "fixing-ebpf-verifier-limit-exhaustion-xdp",
