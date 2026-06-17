@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Rust Async Cancellation in Tokio Select Blocks",
+    "slug": "fixing-rust-async-cancellation-tokio-select",
+    "language": "Rust",
+    "code": "Cancellation Safety",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Async",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Rust's async ecosystem, <code>tokio::select!</code> is a powerful macro used to poll multiple futures simultaneously. However, it introduces subtle runtime hazards due to its design: when one branch completes, all other polled futures are immediately dropped. If a dropped future was yielded midway through an operation that is not cancellation-safe (such as holding partial data in a socket buffer, writing to a database transaction, or mutating shared memory), that operation is abruptly aborted. This leads to silent data corruption, orphaned states, and hard-to-debug race conditions.</p>",
+    "root_cause": "When a future in a tokio::select! block yields at an await point and is subsequently dropped because another branch completed first, its internal stack frames are deallocated. Any state stored inside the future that wasn't successfully flushed or committed is permanently lost. This is particularly problematic when reading from an AsyncRead stream without wrapping it in a persistent buffer or codec, as partially read bytes are dropped from the stack.",
+    "bad_code": "use tokio::net::TcpStream;\nuse tokio::io::AsyncReadExt;\nuse tokio::time::{sleep, Duration};\n\nasync fn handle_connection(mut stream: TcpStream) -> Result<(), Box<dyn std::error::Error>> {\n    let mut buffer = vec![0; 1024];\n    loop {\n        tokio::select! {\n            // BAD: If the timeout fires, any partial data read into the stream's \n            // internal buffer but not yet returned to `buffer` is lost forever.\n            res = stream.read(&mut buffer) => {\n                let bytes_read = res?;\n                if bytes_read == 0 { break; }\n                println!(\"Received: {:?}\", &buffer[..bytes_read]);\n            }\n            _ = sleep(Duration::from_secs(5)) => {\n                println!(\"Connection timed out due to inactivity.\");\n                break;\n            }\n        }\n    }\n    Ok(())\n}",
+    "solution_desc": "To make this code cancellation-safe, the state (the stream and the read buffer) must persist across select iterations. Instead of calling a non-safe async method like `read()` directly inside the select macro, we should pin the future or use a persistent buffer utility like `tokio_util::codec` or keep the socket out of the raw select block. A common architectural fix is to use a pinned reader or to read into a persistent buffer owned outside the select loop, utilizing `tokio::pin!` on the reader stream.",
+    "good_code": "use tokio::net::TcpStream;\nuse tokio::time::{sleep, Duration};\nuse tokio_util::codec::{Decoder, BytesCodec};\nuse futures_util::StreamExt;\n\nasync fn handle_connection_safe(stream: TcpStream) -> Result<(), Box<dyn std::error::Error>> {\n    // GOOD: Using a codec decouples framing from the select block\n    let mut framed_reader = BytesCodec::new().framed(stream);\n    tokio::pin!(framed_reader);\n\n    loop {\n        tokio::select! {\n            // The stream state is kept intact outside the select! block.\n            // Dropping the stream's next() future does not lose buffered bytes.\n            Some(frame) = framed_reader.next() => {\n                let bytes = frame?;\n                println!(\"Received safely: {:?}\", bytes);\n            }\n            _ = sleep(Duration::from_secs(5)) => {\n                println!(\"Connection timed out safely.\");\n                break;\n            }\n        }\n    }\n    Ok(())\n}",
+    "verification": "Compile and run the program. Simulate slow network packets (TCP segmentation) where packets are split. Verify that the timeout branch does not lose partial payloads and that the data is successfully reconstructed by the codec when network throughput resumes. Check for compilation safety warnings under heavy concurrent connection simulation.",
+    "date": "2026-06-17",
+    "id": 1781684641,
+    "type": "error"
+});

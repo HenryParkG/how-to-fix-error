@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Kafka Rebalance Storms from Poll Violations",
+    "slug": "debugging-kafka-rebalance-storms-poll-violations",
+    "language": "Kafka",
+    "code": "CommitFailedException",
+    "tags": [
+        "Java",
+        "Backend",
+        "Kafka",
+        "Error Fix"
+    ],
+    "analysis": "<p>Kafka consumer group rebalance storms occur when consumers are repeatedly kicked out of a consumer group, forcing partitions to constantly reassign. This is frequently triggered by a breach of the <code>max.poll.interval.ms</code> configuration. If a consumer takes longer to process a single batch of pulled records than this interval, the Kafka coordinator assumes the consumer has died, removes it from the group, and triggers a rebalance. The records are then assigned to another consumer, which also times out processing them, causing an endless cascade of rebalances.</p>",
+    "root_cause": "The consumer's main thread is performing synchronous, long-running processing (e.g., database writes, heavy computation, external API calls) inside the poll loop. If the total processing duration for all records returned in a single poll exceeds 'max.poll.interval.ms', the heartbeat thread (which runs in the background) cannot prevent the broker from marking the consumer as failed.",
+    "bad_code": "import org.apache.kafka.clients.consumer.KafkaConsumer;\nimport org.apache.kafka.clients.consumer.ConsumerRecords;\nimport java.time.Duration;\nimport java.util.Collections;\n\npublic class DangerousConsumer {\n    public void startConsumer() {\n        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(configs);\n        consumer.subscribe(Collections.singletonList(\"orders-topic\"));\n\n        while (true) {\n            // BAD: This returns up to 500 records by default\n            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n            for (var record : records) {\n                // BAD: Synchronous heavy operation (e.g., takes 2 seconds per record)\n                // Total processing time: 500 records * 2s = 1000s, far exceeding max.poll.interval.ms (default 300s)\n                processOrderWithDatabaseAndHttpCall(record.value());\n            }\n            consumer.commitSync();\n        }\n    }\n}",
+    "solution_desc": "Architecturally decouple the polling thread from the worker threads. Use a thread pool (ExecutorService) to process messages asynchronously, or strictly limit the maximum records returned per poll using `max.poll.records`, while increasing `max.poll.interval.ms` to give workers a comfortable window to complete executions safely.",
+    "good_code": "import org.apache.kafka.clients.consumer.KafkaConsumer;\nimport org.apache.kafka.clients.consumer.ConsumerRecords;\nimport java.time.Duration;\nimport java.util.Collections;\nimport java.util.Properties;\n\npublic class SafeConsumer {\n    public void startConsumer() {\n        Properties configs = new Properties();\n        // Set configurations to limit fetch batch size\n        configs.put(\"max.poll.records\", \"10\"); // Process small chunks\n        configs.put(\"max.poll.interval.ms\", \"600000\"); // 10 minutes timeout window\n        \n        KafkaConsumer<String, String> consumer = new KafkaConsumer<>(configs);\n        consumer.subscribe(Collections.singletonList(\"orders-topic\"));\n\n        while (true) {\n            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n            for (var record : records) {\n                // GOOD: Short processing time guarantees completion well within the 10-minute limit\n                processOrderSafely(record.value());\n            }\n            consumer.commitSync();\n        }\n    }\n    \n    private void processOrderSafely(String value) {\n        // Optimized execution logic goes here\n    }\n}",
+    "verification": "Monitor the consumer logs for 'CommitFailedException' and Kafka coordinator logs for 'PrepareRebalance'. Verify with Prometheus/Grafana metrics that the 'join-rate' and 'rebalance-latency' metrics drop to near zero during high-load processing.",
+    "date": "2026-06-17",
+    "id": 1781684642,
+    "type": "error"
+});

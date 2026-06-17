@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781684641,
+        "title": "Fixing Rust Async Cancellation in Tokio Select Blocks",
+        "slug": "fixing-rust-async-cancellation-tokio-select",
+        "language": "Rust",
+        "code": "Cancellation Safety",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/fixing-rust-async-cancellation-tokio-select.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781684642,
+        "title": "Fixing Kafka Rebalance Storms from Poll Violations",
+        "slug": "debugging-kafka-rebalance-storms-poll-violations",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/debugging-kafka-rebalance-storms-poll-violations.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781684643,
+        "title": "Fixing JSI Reference Leaks in React Native TurboModules",
+        "slug": "fixing-jsi-reference-leaks-react-native-turbomodules",
+        "language": "C++ / React Native",
+        "code": "Fatal Exception: JSI",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/fixing-jsi-reference-leaks-react-native-turbomodules.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781684644,
+        "title": "DietrichGebert/ponytail: The Laziest AI Agent Framework",
+        "slug": "dietrichgebert-ponytail-lazy-ai-agent",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/dietrichgebert-ponytail-lazy-ai-agent.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781664467,
         "title": "Fixing BEAM Scheduler Starvation in Elixir Dirty NIFs",
         "slug": "fixing-beam-scheduler-starvation-elixir-dirty-nifs",
