@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781664467,
+        "title": "Fixing BEAM Scheduler Starvation in Elixir Dirty NIFs",
+        "slug": "fixing-beam-scheduler-starvation-elixir-dirty-nifs",
+        "language": "Elixir / Rust",
+        "code": "Scheduler Starvation",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/fixing-beam-scheduler-starvation-elixir-dirty-nifs.js",
+        "tags": [
+            "Elixir",
+            "Rust",
+            "NIF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781664468,
+        "title": "Fixing Postgres Bloat from Abandoned Replication Slots",
+        "slug": "postgres-bloat-abandoned-replication-slots",
+        "language": "SQL",
+        "code": "Table Bloat & WAL Exhaustion",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/postgres-bloat-abandoned-replication-slots.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781664469,
+        "title": "Mitigating Envoy Sidecar OOMs in Istio Config Bloat",
+        "slug": "mitigating-envoy-sidecar-ooms-istio-config-bloat",
+        "language": "Kubernetes YAML",
+        "code": "Out Of Memory (OOM) Killer",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/mitigating-envoy-sidecar-ooms-istio-config-bloat.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781664470,
+        "title": "Ponytail: The Laziest Senior Developer AI Agent",
+        "slug": "ponytail-laziest-senior-developer-ai-agent",
+        "language": "Python / LLM",
+        "code": "Trend",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/ponytail-laziest-senior-developer-ai-agent.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1781616973,
         "title": "Haskell Space Leaks & Thunk Accumulation in Lazy Streams",
         "slug": "haskell-space-leaks-thunk-accumulation-lazy-streams",
