@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1781700451,
+        "title": "Diagnosing Go Goroutine Leaks & Deadlocks",
+        "slug": "diagnosing-go-goroutine-leaks-deadlocks",
+        "language": "Go",
+        "code": "Goroutine Leak, Deadlock",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/diagnosing-go-goroutine-leaks-deadlocks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781700452,
+        "title": "Mitigating AWS Lambda Cold Starts",
+        "slug": "mitigating-aws-lambda-cold-starts",
+        "language": "Python",
+        "code": "Cold Start",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/mitigating-aws-lambda-cold-starts.js",
+        "tags": [
+            "AWS",
+            "Infra",
+            "Python",
+            "Serverless",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781700453,
+        "title": "Debugging Akka Mailbox Congestion & Dead Letters",
+        "slug": "debugging-akka-mailbox-congestion-dead-letters",
+        "language": "Akka",
+        "code": "Mailbox Congestion, Dead Letters",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/debugging-akka-mailbox-congestion-dead-letters.js",
+        "tags": [
+            "Akka",
+            "Java",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781700454,
+        "title": "Ponytail: The Lazy Senior Dev's AI Agent",
+        "slug": "ponytail-ai-agent-lazy-senior-dev",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-17",
+        "path": "data/posts/2026-06/ponytail-ai-agent-lazy-senior-dev.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Developer Tools"
+        ]
+    },
+    {
         "id": 1781684641,
         "title": "Fixing Rust Async Cancellation in Tokio Select Blocks",
         "slug": "fixing-rust-async-cancellation-tokio-select",
