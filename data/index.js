@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1781750725,
+        "title": "eBPF Verifier Errors & Performance Debugging",
+        "slug": "ebpf-verifier-errors-performance-debugging-kernel-tracing",
+        "language": "C, BPF, Linux Kernel",
+        "code": "VerifierError",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/ebpf-verifier-errors-performance-debugging-kernel-tracing.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781750726,
+        "title": "Next.js Hydration Mismatches & Client-Side Errors",
+        "slug": "nextjs-hydration-mismatches-client-side-rendering-errors",
+        "language": "Next.js",
+        "code": "HydrationMismatch",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/nextjs-hydration-mismatches-client-side-rendering-errors.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781750727,
+        "title": "Airflow DAG Deadlocks & Backfills Gone Wild",
+        "slug": "airflow-dag-deadlocks-backfills-gone-wild-resource-contention",
+        "language": "Airflow",
+        "code": "DAGDeadlock",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/airflow-dag-deadlocks-backfills-gone-wild-resource-contention.js",
+        "tags": [
+            "Airflow",
+            "DAGs",
+            "Resource Contention",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781750728,
+        "title": "Ponytail: The Lazy Senior Dev for Your AI Agent",
+        "slug": "analyze-github-repo-dietrichgebert-ponytail-lazy-senior-dev-ai-agent",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/analyze-github-repo-dietrichgebert-ponytail-lazy-senior-dev-ai-agent.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Prompt Engineering",
+            "Python"
+        ]
+    },
+    {
         "id": 1781700451,
         "title": "Diagnosing Go Goroutine Leaks & Deadlocks",
         "slug": "diagnosing-go-goroutine-leaks-deadlocks",
