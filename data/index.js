@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1781785092,
+        "title": "Debugging C++20 Coroutine Lifetime & Stack Unwinding",
+        "slug": "cpp20-coroutine-lifetime-stack-unwinding-debug",
+        "language": "C++",
+        "code": "Coroutine Lifetime",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/cpp20-coroutine-lifetime-stack-unwinding-debug.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Debugging",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781785093,
+        "title": "PyTorch CUDA OOM with Mixed Precision & Quantization",
+        "slug": "pytorch-cuda-oom-mixed-precision-quantization",
+        "language": "PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/pytorch-cuda-oom-mixed-precision-quantization.js",
+        "tags": [
+            "Python",
+            "Deep Learning",
+            "CUDA",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781785094,
+        "title": "PostgreSQL Transaction ID Wraparound Prevention & Recovery",
+        "slug": "postgresql-transaction-id-wraparound-prevention-recovery",
+        "language": "PostgreSQL",
+        "code": "Transaction ID Wraparound",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/postgresql-transaction-id-wraparound-prevention-recovery.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781785095,
+        "title": "DietrichGebert/ponytail: The Laziest AI Dev",
+        "slug": "github-trend-dietrichgebert-ponytail-lazy-ai",
+        "language": "AI, Python",
+        "code": "Trend",
+        "date": "2026-06-18",
+        "path": "data/posts/2026-06/github-trend-dietrichgebert-ponytail-lazy-ai.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1781750725,
         "title": "eBPF Verifier Errors & Performance Debugging",
         "slug": "ebpf-verifier-errors-performance-debugging-kernel-tracing",
