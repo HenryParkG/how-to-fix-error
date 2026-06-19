@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1781872912,
+        "title": "Mitigating Kafka Rebalance Storms & Session Timeouts",
+        "slug": "mitigating-kafka-rebalance-storms-session-timeouts",
+        "language": "Kafka",
+        "code": "KafkaRebalance",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/mitigating-kafka-rebalance-storms-session-timeouts.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Message Queue",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781872913,
+        "title": "Debugging React Native JSI Memory Leaks & Host Object Deallocation",
+        "slug": "debugging-react-native-jsi-memory-leaks-cpp-host-object-deallocation",
+        "language": "React Native, C++",
+        "code": "JSIMemoryLeak",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/debugging-react-native-jsi-memory-leaks-cpp-host-object-deallocation.js",
+        "tags": [
+            "React Native",
+            "C++",
+            "JavaScript",
+            "Mobile Development",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781872914,
+        "title": "MongoDB WiredTiger Cache Stalls & Write Ticket Exhaustion",
+        "slug": "troubleshooting-mongodb-wiredtiger-cache-eviction-stalls-write-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "WiredTigerStalls",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/troubleshooting-mongodb-wiredtiger-cache-eviction-stalls-write-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "NoSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781872915,
+        "title": "Kage: Offline Website Viewing, JavaScript Stripped",
+        "slug": "kage-offline-website-viewing-javascript-stripped",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/kage-offline-website-viewing-javascript-stripped.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Web Scraping",
+            "Offline First",
+            "Backend"
+        ]
+    },
+    {
         "id": 1781858707,
         "title": "Elixir GenStage Deadlocks & Mailbox Overflows Debugging",
         "slug": "elixir-genstage-deadlock-mailbox-overflow",
