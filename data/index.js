@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1781838020,
+        "title": "Debugging Advanced Rust Borrow Checker Lifetime Mismatches",
+        "slug": "debugging-rust-borrow-checker-lifetime-mismatches",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/debugging-rust-borrow-checker-lifetime-mismatches.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Memory Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781838021,
+        "title": "Troubleshooting Spark Shuffle Spills & OOMs",
+        "slug": "troubleshooting-spark-shuffle-spills-and-ooms",
+        "language": "Spark",
+        "code": "SparkOOM",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/troubleshooting-spark-shuffle-spills-and-ooms.js",
+        "tags": [
+            "Java",
+            "Big Data",
+            "Apache Spark",
+            "Infra",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781838022,
+        "title": "Debugging gRPC HTTP/2 Stream Errors & Connection Lifecycle",
+        "slug": "debugging-grpc-http2-stream-errors-connection-lifecycle",
+        "language": "gRPC",
+        "code": "gRPCError",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/debugging-grpc-http2-stream-errors-connection-lifecycle.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "Distributed Systems",
+            "Backend",
+            "API",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781838023,
+        "title": "Kage: Offline Website Viewing & JavaScript Stripping",
+        "slug": "tamnd-kage-github-trend-offline-js-strip",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/tamnd-kage-github-trend-offline-js-strip.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Web Scraping",
+            "Offline Tools",
+            "Privacy",
+            "Python"
+        ]
+    },
+    {
         "id": 1781785092,
         "title": "Debugging C++20 Coroutine Lifetime & Stack Unwinding",
         "slug": "cpp20-coroutine-lifetime-stack-unwinding-debug",
