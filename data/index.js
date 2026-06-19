@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1781858707,
+        "title": "Elixir GenStage Deadlocks & Mailbox Overflows Debugging",
+        "slug": "elixir-genstage-deadlock-mailbox-overflow",
+        "language": "Elixir",
+        "code": "GenStageDeadlock",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/elixir-genstage-deadlock-mailbox-overflow.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "Flow Control",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781858708,
+        "title": "Resolving Redis CoW Memory Spikes & Fork Failures",
+        "slug": "redis-cow-memory-spike-fork-failure",
+        "language": "Redis",
+        "code": "RedisCoWFailure",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/redis-cow-memory-spike-fork-failure.js",
+        "tags": [
+            "Redis",
+            "Memory Management",
+            "Persistence",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781858709,
+        "title": "Debugging WebGPU Compute Shader Race Conditions & OOB Access",
+        "slug": "webgpu-compute-shader-race-oob-access",
+        "language": "WebGPU",
+        "code": "ShaderError",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/webgpu-compute-shader-race-oob-access.js",
+        "tags": [
+            "WebGPU",
+            "GPU Programming",
+            "Concurrency",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781858710,
+        "title": "Kage: Offline Website Shadowing Without JavaScript",
+        "slug": "kage-github-trend-offline-website",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-06-19",
+        "path": "data/posts/2026-06/kage-github-trend-offline-website.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go",
+            "Offline First",
+            "Web Archiving",
+            "Backend"
+        ]
+    },
+    {
         "id": 1781838020,
         "title": "Debugging Advanced Rust Borrow Checker Lifetime Mismatches",
         "slug": "debugging-rust-borrow-checker-lifetime-mismatches",
