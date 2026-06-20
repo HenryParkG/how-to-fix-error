@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1781953767,
+        "title": "Fixing C++20 Coroutine Leaks in Symmetric Transfer",
+        "slug": "cpp20-coroutine-symmetric-transfer-leaks",
+        "language": "C++20",
+        "code": "UAF & Memory Leak",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/cpp20-coroutine-symmetric-transfer-leaks.js",
+        "tags": [
+            "Coroutines",
+            "Memory-Safety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781953768,
+        "title": "Fixing PyTorch CUDA Fragmentation in LLM Inference",
+        "slug": "pytorch-cuda-fragmentation-dynamic-shape-llm",
+        "language": "Python",
+        "code": "CUDA OOM",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/pytorch-cuda-fragmentation-dynamic-shape-llm.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781953769,
+        "title": "Fixing PostgreSQL TxID Wraparound and Autovacuum Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "Transaction ID Wraparound",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781953770,
+        "title": "Inside Kage: Shadowing Websites Without JavaScript",
+        "slug": "inside-kage-shadowing-websites-offline-no-js",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/inside-kage-shadowing-websites-offline-no-js.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1781938531,
         "title": "Fixing eBPF XDP Verifier Stack & Pointer Limits",
         "slug": "fixing-ebpf-xdp-verifier-stack-pointer-limits",

@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Inside Kage: Shadowing Websites Without JavaScript",
+    "slug": "inside-kage-shadowing-websites-offline-no-js",
+    "language": "Go",
+    "code": "Trend",
+    "tags": [
+        "Tech Trend",
+        "GitHub",
+        "Go"
+    ],
+    "analysis": "<p>The trending GitHub repository <code>tamnd/kage</code> has rapidly gained traction among privacy advocates, archival enthusiasts, and minimalist developers. Kage (which translates to 'shadow' in Japanese) is a local proxy/archiving engine that acts as an intermediary, pulling web content and completely stripping away the heavy JavaScript frameworks, tracking scripts, tracking beacons, and inline script behaviors that plague the modern web.</p><p>Its popularity is driven by a growing pushback against client-side bloat, cookie consent banners, and the ubiquitous tracking associated with dynamic web pages. By converting bloated JavaScript-heavy applications into lightweight, static, readable HTML versions, Kage drastically reduces resource consumption, speeds up page load times on weak connections, and provides an offline archival format that is secure against dynamic cross-site scripting (XSS) vectors.</p>",
+    "root_cause": "Key Features & Innovations of Kage include:\n- **No-JS Pipeline**: Automatically parses incoming HTML, strips script tags, and rewrites elements to eliminate active client-side scripting while preserving core layouts.\n- **Asset Bundling and Rewriting**: Downwards-proxies CSS, images, and fonts, changing remote asset paths to point to locally hosted or packaged offline directories.\n- **Fast Compilation**: Built in Go, it runs with extremely low resource overhead, serving as an on-the-fly local proxy with minimal latency.\n- **Readability Extraction**: Integrates readability parsers that clean layout noise, turning busy web portals into clean reader-mode documents.",
+    "bad_code": "# Install and run kage directly from source\ngit clone https://github.com/tamnd/kage.git\ncd kage\ngo build -o kage main.go\n./kage --port 8080 --shadow-dir ./offline-shadows",
+    "solution_desc": "Adopt Kage for localized offline documentation hosting, building secure reading portals in locked-down environments, saving bandwidth on limited mobile/satellite networks, or scraping websites cleanly for analytical parsing. It is best implemented as an edge proxy or local daemon that acts as an on-demand translation layer for content ingestion.",
+    "good_code": "// Example pattern showing how to programmatically use Kage concepts in Go to clean HTML streams\npackage main\n\nimport (\n\t\"fmt\"\n\t\"io\"\n\t\"net/http\"\n\t\"strings\"\n\t\"github.com/PuerkitoBio/goquery\"\n)\n\nfunc ShadowPage(url string) (string, error) {\n\tresp, err := http.Get(url)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tdefer resp.Body.Close()\n\n\tdoc, err := goquery.NewDocumentFromReader(resp.Body)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\t// Strip all script tags\n\tdoc.Find(\"script\").Each(func(i int, s *goquery.Selection) {\n\t\ts.Remove()\n\t})\n\n\t// Strip inline event listeners\n\tdoc.Find(\"*\").Each(func(i int, s *goquery.Selection) {\n\t\tfor _, attr := range s.Nodes[0].Attr {\n\t\t\tif strings.HasPrefix(attr.Key, \"on\") {\n\t\t\t\ts.RemoveAttr(attr.Key)\n\t\t\t}\n\t\t}\n\t})\n\n\thtmlContent, err := doc.Html()\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn htmlContent, nil\n}\n\nfunc main() {\n\tcleanHTML, _ := ShadowPage(\"https://example.com\")\n\tfmt.Println(\"Cleaned HTML length:\", len(cleanHTML))\n}",
+    "verification": "The demand for 'No-JS shadow' websites will expand as regulatory laws around cookie popups multiply and users prioritize low-power, lightweight consumption. Future iterations of tools like Kage are expected to implement automated headless rendering backends to archive Single Page Applications (SPAs) before stripping out the engine that built them.",
+    "date": "2026-06-20",
+    "id": 1781953770,
+    "type": "trend"
+});

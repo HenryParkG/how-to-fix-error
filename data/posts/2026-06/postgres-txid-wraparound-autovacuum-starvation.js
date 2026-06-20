@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing PostgreSQL TxID Wraparound and Autovacuum Starvation",
+    "slug": "postgres-txid-wraparound-autovacuum-starvation",
+    "language": "SQL",
+    "code": "Transaction ID Wraparound",
+    "tags": [
+        "PostgreSQL",
+        "Database",
+        "SQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>PostgreSQL relies on Multi-Version Concurrency Control (MVCC) to ensure isolation. To track row visibility, it uses 32-bit transaction IDs (TxIDs), giving a maximum addressable space of approximately 4 billion transactions. To prevent transaction ID wraparound (where older transactions suddenly appear to be in the future), PostgreSQL requires an autovacuum process to periodically 'freeze' old rows.</p><p>However, when long-running analytical queries, uncommitted transaction sessions, or orphaned replication slots are present, the database's minimum active transaction ID (<code>xmin</code>) is held back. This starves the autovacuum process, preventing it from advancing the database's <code>datfrozenxid</code>. When the difference between the current transaction counter and the oldest unfrozen transaction age reaches 2 billion, PostgreSQL halts all write operations to protect data integrity, throwing a fatal wraparound error.</p>",
+    "root_cause": "The root cause is autovacuum starvation caused by long-running transactions (often associated with reporting or analytical tasks) and uncommitted active sessions holding back the global transaction horizon. Under these conditions, autovacuum cannot clean up dead tuples or freeze historical transaction IDs because those rows must remain visible to the older, still-running transactions.",
+    "bad_code": "-- Analytical query that runs for hours on end, holding back the oldest xmin horizon\nBEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;\n\nSELECT COUNT(*), AVG(sales_amount) \nFROM order_history \nWHERE order_date >= '2020-01-01';\n\n-- The session is left open or executes extremely slow queries repeatedly,\n-- preventing autovacuum from freezing tuples across the entire cluster.\n-- Meanwhile, high-throughput write transactions continue to increment the txid.",
+    "solution_desc": "To resolve this, configure aggressive autovacuum settings and set safe timeouts to proactively terminate stalled transactions. Architecturally, set `idle_in_transaction_session_timeout` and `statement_timeout` to release locks, and tune the vacuum freeze settings (`autovacuum_freeze_max_age`, `vacuum_freeze_min_age`) to start freezing tuples long before reaching dangerous limits. Additionally, utilize read-replicas for heavy analytical queries to decouple long-running transactions from the primary database's transactional horizon.",
+    "good_code": "-- 1. Set global safety limits in postgresql.conf to auto-terminate orphaned sessions\nALTER SYSTEM SET idle_in_transaction_session_timeout = '60000'; -- 1 minute\nALTER SYSTEM SET statement_timeout = '3600000'; -- 1 hour limit on analytical queries\n\n-- 2. Force aggressive autovacuum thresholds globally\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 2000; -- Allow autovacuum to run faster\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.05; -- Trigger vacuum at 5% tuple modification\nALTER SYSTEM SET autovacuum_freeze_max_age = 200000000; -- Force freeze at 200M transactions\nSELECT pg_reload_conf();\n\n-- 3. Run a query to find and terminate blocking sessions holding back xmin:\nSELECT pid, age(backend_xmin), query, state\nFROM pg_stat_activity\nWHERE backend_xmin IS NOT NULL AND age(backend_xmin) > 10000000\nORDER BY age(backend_xmin) DESC;\n\n-- To terminate a specific blocking backend:\n-- SELECT pg_terminate_backend(pid);",
+    "verification": "Check the age of the oldest transaction in the database using the query: `SELECT datname, age(datfrozenxid) FROM pg_database;`. Ensure that `age(datfrozenxid)` actively drops after autovacuum operations and remains safely below the configured `autovacuum_freeze_max_age` limit.",
+    "date": "2026-06-20",
+    "id": 1781953769,
+    "type": "error"
+});
