@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1781938531,
+        "title": "Fixing eBPF XDP Verifier Stack & Pointer Limits",
+        "slug": "fixing-ebpf-xdp-verifier-stack-pointer-limits",
+        "language": "C / eBPF",
+        "code": "VerifierError",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/fixing-ebpf-xdp-verifier-stack-pointer-limits.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781938532,
+        "title": "Resolving Qdrant HNSW Index Memory Saturation",
+        "slug": "resolving-qdrant-hnsw-index-memory-saturation",
+        "language": "Rust / Qdrant",
+        "code": "OOMKilled",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/resolving-qdrant-hnsw-index-memory-saturation.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781938533,
+        "title": "Fixing Pekko Actor Stash Leaks & Starvation",
+        "slug": "fixing-pekko-actor-stash-leaks-starvation",
+        "language": "Scala / Pekko",
+        "code": "ActorStashOverflowException",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/fixing-pekko-actor-stash-leaks-starvation.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781938534,
+        "title": "Analyzing Kage: Shadow Websites Offline Without JS",
+        "slug": "analyzing-kage-shadow-websites-offline-without-js",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/analyzing-kage-shadow-websites-offline-without-js.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1781922779,
         "title": "Debugging Zig Arena Allocator: Fragmentation & UAF",
         "slug": "zig-arena-allocator-fragmentation-uaf-event-loops",
