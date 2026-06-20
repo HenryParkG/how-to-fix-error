@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1781922779,
+        "title": "Debugging Zig Arena Allocator: Fragmentation & UAF",
+        "slug": "zig-arena-allocator-fragmentation-uaf-event-loops",
+        "language": "Zig",
+        "code": "MemHazard",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/zig-arena-allocator-fragmentation-uaf-event-loops.js",
+        "tags": [
+            "Zig",
+            "Memory Management",
+            "High Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781922780,
+        "title": "Haskell Space Leaks: Thunks in Lazy State Monads",
+        "slug": "haskell-space-leaks-accumulator-thunks-lazy-state-monads",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/haskell-space-leaks-accumulator-thunks-lazy-state-monads.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Lazy Evaluation",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781922781,
+        "title": "Elasticsearch Master Node OOMs & Cluster-State Blockage",
+        "slug": "elasticsearch-master-node-ooms-cluster-state-blockage-dynamic-mapping",
+        "language": "Elasticsearch",
+        "code": "OOM/Blockage",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/elasticsearch-master-node-ooms-cluster-state-blockage-dynamic-mapping.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "Data Storage",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1781922782,
+        "title": "Kage: Offline Web Archiving, JavaScript Stripped",
+        "slug": "kage-offline-web-archiving-javascript-stripped-tech-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-06-20",
+        "path": "data/posts/2026-06/kage-offline-web-archiving-javascript-stripped-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Web Development",
+            "Go"
+        ]
+    },
+    {
         "id": 1781872912,
         "title": "Mitigating Kafka Rebalance Storms & Session Timeouts",
         "slug": "mitigating-kafka-rebalance-storms-session-timeouts",
