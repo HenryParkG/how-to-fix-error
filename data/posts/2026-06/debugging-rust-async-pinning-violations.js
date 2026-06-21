@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Rust Async Pinning and Self-Referential Futures",
+    "slug": "debugging-rust-async-pinning-violations",
+    "language": "Rust",
+    "code": "PinningViolation",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Memory Safety",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Rust's async runtime model, futures are compiled into state machines. When a future contains references to its own fields (self-referential structures), moving the future in memory invalidates these internal references, leading to silent memory corruption and undefined behavior. To prevent this, the <code>Pin</code> wrapper is used to guarantee that the data it points to will not be moved. However, implementing manual <code>Future</code> polls or improper unsafe projections can easily violate the pinning contract.</p><p>Memory corruption typically manifests during high-concurrency runtime execution where futures are dynamically boxed, unboxed, or swapped. When a self-referential future is moved after its first <code>poll</code> invocation, pointers inside the state machine still point to the old stack or heap location. Under load, these dangling pointers are written to, corrupting other active futures and causing arbitrary runtime segmentation faults.</p>",
+    "root_cause": "A manual Future implementation or custom future wrapper moved a self-referential struct after polling had commenced, invalidating internal pointers because the compiler assumed Unpin without explicit static guards or safe projection wrappers.",
+    "bad_code": "use std::future::Future;\nuse std::pin::Pin;\nuse std::task::{Context, Poll};\n\nstruct SelfReferential {\n    value: String,\n    pointer: *const String,\n}\n\nstruct MyFuture {\n    data: SelfReferential,\n}\n\nimpl Future for MyFuture {\n    type Output = ();\n\n    fn poll(mut self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<Self::Output> {\n        // UNSAFE: Violating pinning by projecting Pin<&mut Self> to &mut SelfReferential\n        // without structural pinning guarantees, allowing the data to be moved.\n        let unsafe_self = unsafe { self.get_unchecked_mut() };\n        \n        if unsafe_self.data.pointer.is_null() {\n            unsafe_self.data.pointer = &unsafe_self.data.value as *const String;\n        } else {\n            // If MyFuture was moved in memory, pointer is now dangling!\n            println!(\"Value: {}\", unsafe { &*unsafe_self.data.pointer });\n        }\n        Poll::Ready(())\n    }\n}",
+    "solution_desc": "To fix this, we must ensure that we never obtain an unpinned mutable reference to a self-referential field without handling its pinning invariant. This is best achieved by using the `pin-project-lite` crate to safely declare structural pinning, or by using `PhantomPinned` to explicitly prevent the compiler from auto-implementing `Unpin` for our types, ensuring the structure remains pinned in memory throughout its lifecycle.",
+    "good_code": "use std::future::Future;\nuse std::marker::PhantomPinned;\nuse std::pin::Pin;\nuse std::task::{Context, Poll};\nuse pin_project_lite::pin_project;\n\npin_project! {\n    struct MyFuture {\n        value: String,\n        // Storing offset or avoiding raw self-referential pointers entirely in safe Rust\n        // is preferred. If manual implementation is needed, use PhantomPinned.\n        #[pin]\n        _pin: PhantomPinned,\n    }\n}\n\nimpl Future for MyFuture {\n    type Output = ();\n\n    fn poll(self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<Self::Output> {\n        // Pin projection is handled safely; pin-project-lite guarantees we cannot\n        // move individual fields out of the pinned state.\n        let _projected = self.project();\n        \n        // Instead of unsafe self-reference pointers, rely on clean, state-driven\n        // state machines without explicit unsafe self-references.\n        Poll::Ready(())\n    }\n}",
+    "verification": "Compile with Rust's Miri interpreter (`cargo miri run`) to detect any undefined behavior, pointer validation errors, or stacked borrows violations during runtime execution.",
+    "date": "2026-06-21",
+    "id": 1782010066,
+    "type": "error"
+});

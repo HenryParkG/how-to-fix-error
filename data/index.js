@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782010066,
+        "title": "Fixing Rust Async Pinning and Self-Referential Futures",
+        "slug": "debugging-rust-async-pinning-violations",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/debugging-rust-async-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Memory Safety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782010067,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "fixing-grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "FlowControlDeadlock",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/fixing-grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782010068,
+        "title": "Resolving Spark Driver OOMs and Partition Skew",
+        "slug": "resolving-spark-driver-ooms-partition-skew",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/resolving-spark-driver-ooms-partition-skew.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782010069,
+        "title": "Exploring Vercel Eve: The Ultimate Agentic Framework",
+        "slug": "vercel-eve-framework-building-agents",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/vercel-eve-framework-building-agents.js",
+        "tags": [
+            "Tech Trend",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1781953767,
         "title": "Fixing C++20 Coroutine Leaks in Symmetric Transfer",
         "slug": "cpp20-coroutine-symmetric-transfer-leaks",
