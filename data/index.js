@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1782026858,
+        "title": "Fixing Elixir BEAM NIF Scheduler Collapse",
+        "slug": "fixing-elixir-beam-nif-scheduler-collapse",
+        "language": "Elixir / Rust",
+        "code": "BEAM Reduction Starvation",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/fixing-elixir-beam-nif-scheduler-collapse.js",
+        "tags": [
+            "Rust",
+            "Elixir",
+            "Erlang",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782026859,
+        "title": "Fixing WebGPU Command Buffer Race Conditions",
+        "slug": "fixing-webgpu-race-conditions-web-workers",
+        "language": "TypeScript",
+        "code": "GPUDeviceLost / Race Condition",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/fixing-webgpu-race-conditions-web-workers.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782026860,
+        "title": "Fixing Redis Client Output Buffer Limit Exhaustion",
+        "slug": "fixing-redis-client-output-buffer-limit-exhaustion",
+        "language": "Go",
+        "code": "OOM / COBL Replication Loop",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/fixing-redis-client-output-buffer-limit-exhaustion.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "Redis",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782026861,
+        "title": "Why Vercel's 'Eve' is the Future of AI Agent Frameworks",
+        "slug": "vercel-eve-agent-framework-guide",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-21",
+        "path": "data/posts/2026-06/vercel-eve-agent-framework-guide.js",
+        "tags": [
+            "TypeScript",
+            "GitHub",
+            "Next.js",
+            "Tech Trend"
+        ]
+    },
+    {
         "id": 1782010066,
         "title": "Fixing Rust Async Pinning and Self-Referential Futures",
         "slug": "debugging-rust-async-pinning-violations",
