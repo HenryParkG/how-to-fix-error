@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782118280,
+        "title": "Fixing eBPF Verifier Tail Call Failures",
+        "slug": "fixing-ebpf-verifier-tail-call-failures",
+        "language": "C",
+        "code": "Verifier Error",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-ebpf-verifier-tail-call-failures.js",
+        "tags": [
+            "eBPF",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782118281,
+        "title": "Fixing Qdrant OOMs in Parallel HNSW Builds",
+        "slug": "fixing-qdrant-ooms-parallel-hnsw-builds",
+        "language": "Rust",
+        "code": "Out Of Memory (OOM)",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-qdrant-ooms-parallel-hnsw-builds.js",
+        "tags": [
+            "Qdrant",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782118282,
+        "title": "Fixing Flutter Skia Shader Compilation Jank",
+        "slug": "fixing-flutter-skia-shader-jank",
+        "language": "TypeScript",
+        "code": "Frame Drops / Jank",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-flutter-skia-shader-jank.js",
+        "tags": [
+            "Flutter",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782118283,
+        "title": "Analyzing vercel/eve: The Agent Framework",
+        "slug": "analyzing-vercel-eve-agent-framework",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/analyzing-vercel-eve-agent-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1782096622,
         "title": "Fixing WiredTiger Cache Eviction Deadlocks",
         "slug": "fixing-wiredtiger-cache-eviction-deadlocks",
