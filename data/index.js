@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1782096622,
+        "title": "Fixing WiredTiger Cache Eviction Deadlocks",
+        "slug": "fixing-wiredtiger-cache-eviction-deadlocks",
+        "language": "MongoDB / Go",
+        "code": "WiredTiger Deadlock",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-wiredtiger-cache-eviction-deadlocks.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782096623,
+        "title": "Fixing Istio Envoy OOM via Headless Service",
+        "slug": "fixing-istio-envoy-oom-headless-service",
+        "language": "Kubernetes",
+        "code": "Envoy OOMKilled",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-istio-envoy-oom-headless-service.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782096624,
+        "title": "Fixing Haskell Space Leaks in Streams",
+        "slug": "fixing-haskell-space-leaks-in-streams",
+        "language": "Haskell",
+        "code": "Memory Leak (OOM)",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/fixing-haskell-space-leaks-in-streams.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782096625,
+        "title": "Exploring vercel/eve: Next-Gen Agentic Framework",
+        "slug": "exploring-vercel-eve-agentic-framework",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-22",
+        "path": "data/posts/2026-06/exploring-vercel-eve-agentic-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1782042011,
         "title": "Fixing Linux io_uring SQPOLL Thread Starvation and Ring Leaks",
         "slug": "fixing-linux-iouring-sqpoll-starvation-leaks",
