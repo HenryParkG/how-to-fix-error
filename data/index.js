@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1782216419,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "fixing-cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "CoroutineLifetimeError",
+        "date": "2026-06-23",
+        "path": "data/posts/2026-06/fixing-cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "C++",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782216420,
+        "title": "Fixing PyTorch DDP Gradient Desync & OOMs",
+        "slug": "pytorch-ddp-gradient-desync-cuda-ooms",
+        "language": "Python",
+        "code": "DDPDesyncOOM",
+        "date": "2026-06-23",
+        "path": "data/posts/2026-06/pytorch-ddp-gradient-desync-cuda-ooms.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Distributed",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782216421,
+        "title": "Fixing Postgres TXID Wraparound and Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "TXIDWraparound",
+        "date": "2026-06-23",
+        "path": "data/posts/2026-06/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782216422,
+        "title": "Analyzing Cowart: Next-Gen Collaborative Canvas",
+        "slug": "analyzing-github-cowart-collaborative-canvas",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-06-23",
+        "path": "data/posts/2026-06/analyzing-github-cowart-collaborative-canvas.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1782118280,
         "title": "Fixing eBPF Verifier Tail Call Failures",
         "slug": "fixing-ebpf-verifier-tail-call-failures",

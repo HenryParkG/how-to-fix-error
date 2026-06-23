@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Lifetime Violations",
+    "slug": "fixing-cpp20-coroutine-lifetime-violations",
+    "language": "C++",
+    "code": "CoroutineLifetimeError",
+    "tags": [
+        "Rust",
+        "C++",
+        "Async",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines offer high-performance asynchronous patterns but introduce complex lifetime semantics. Unlike traditional call stacks, a coroutine's state is allocated on the heap (or optimized to the stack) and outlives the caller's frame. A major point of failure is passing arguments by reference to a coroutine that suspends.</p><p>When a coroutine suspends, the calling context continues execution. If the caller passed a temporary object or a stack-allocated variable by reference, that object is destroyed at the end of the full-expression. When the coroutine resumes, any access to that reference results in undefined behavior (dangling reference), memory corruption, or heap-use-after-free.</p>",
+    "root_cause": "Coroutines capture arguments in their frame by copying or moving them only if passed by value. If passed by reference (lvalue or rvalue reference), the coroutine frame stores a raw pointer/reference to the original object. Since the coroutine's lifetime is decoupled from the calling thread's stack frame, the referenced object often goes out of scope before the coroutine resumes.",
+    "bad_code": "#include <iostream>\n#include <coroutine>\n#include <string>\n\nstruct MyTask {\n    struct promise_type {\n        MyTask get_return_object() { return MyTask{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void unhandled_exception() {}\n        void return_void() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// BUG: Capturing std::string by const reference\nMyTask run_async(const std::string& message) {\n    std::cout << \"Starting async task...\" << std::endl;\n    co_await std::suspend_always{}; // Suspend point\n    // Undefined Behavior: 'message' is a dangling reference if a temporary was passed\n    std::cout << \"Message: \" << message << std::endl;\n}\n\nint main() {\n    // Temporary string is destroyed after this line\n    auto task = run_async(\"Temporary String Object\"); \n    task.handle.resume(); // Resuming after temporary is dead\n    task.handle.destroy();\n}",
+    "solution_desc": "To guarantee safety, avoid passing references to asynchronous coroutines. Always pass arguments by value. If the object is heavy, use std::move to transfer ownership into the coroutine frame, or use shared pointers to keep the resource alive.",
+    "good_code": "#include <iostream>\n#include <coroutine>\n#include <string>\n\nstruct MyTask {\n    struct promise_type {\n        MyTask get_return_object() { return MyTask{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void unhandled_exception() {}\n        void return_void() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// FIXED: Capture by value. The string is copied/moved directly into the coroutine frame.\nMyTask run_async(std::string message) {\n    std::cout << \"Starting async task...\" << std::endl;\n    co_await std::suspend_always{}; \n    std::cout << \"Message: \" << message << std::endl; // Safe\n}\n\nint main() {\n    auto task = run_async(\"Temporary String Object\"); \n    task.handle.resume(); // Safe resumption\n    task.handle.destroy();\n}",
+    "verification": "Compile with Clang/GCC using '-fsanitize=address,undefined'. AddressSanitizer will detect use-after-free or stack-use-after-return if lifetimes are violated. Verify that memory leaks are avoided by ensuring the coroutine handle is correctly destroyed using handle.destroy() inside the RAII wrapper.",
+    "date": "2026-06-23",
+    "id": 1782216419,
+    "type": "error"
+});

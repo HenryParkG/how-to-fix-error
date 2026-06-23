@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing PyTorch DDP Gradient Desync & OOMs",
+    "slug": "pytorch-ddp-gradient-desync-cuda-ooms",
+    "language": "Python",
+    "code": "DDPDesyncOOM",
+    "tags": [
+        "Python",
+        "PyTorch",
+        "Distributed",
+        "Error Fix"
+    ],
+    "analysis": "<p>DistributedDataParallel (DDP) in PyTorch works by synchronizing gradients across multiple GPUs during the backward pass. When scaling model training with gradient accumulation, developers often naively accumulate gradients across multiple forward/backward passes. This causes PyTorch to trigger collective communication (AllReduce) on every backward pass, which is wasteful and leads to desynchronization bugs.</p><p>Furthermore, without active gradient synchronization control, un-synchronized frames pile up in the CUDA memory cache, leading to severe fragmentation and CUDA Out-Of-Memory (OOM) errors on worker nodes, especially when dealing with variable sequence lengths.</p>",
+    "root_cause": "By default, PyTorch DDP triggers gradient reduction on every backward() call. When accumulating gradients across N steps, you only need to sync on the N-th step. Doing it earlier triggers redundant network synchronization and holds active gradient buffers in memory, exhausting the CUDA memory pool.",
+    "bad_code": "import torch\nimport torch.distributed as dist\nfrom torch.nn.parallel import DistributedDataParallel as DDP\n\n# ... Setup DDP model and optimizer ...\nmodel = DDP(MyModel().cuda(), device_ids=[local_rank])\noptimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)\naccumulation_steps = 4\n\nfor epoch in range(1):\n    for i, (inputs, targets) in enumerate(dataloader):\n        inputs, targets = inputs.cuda(), targets.cuda()\n        \n        outputs = model(inputs)\n        loss = criterion(outputs, targets) / accumulation_steps\n        \n        # BUG: This triggers AllReduce communication on EVERY backward pass!\n        loss.backward()\n        \n        if (i + 1) % accumulation_steps == 0:\n            optimizer.step()\n            optimizer.zero_grad()",
+    "solution_desc": "Wrap all intermediate accumulation steps (where synchronization is not needed) within the model.no_sync() context manager. This disables gradient AllReduce during those backward passes. Only release the context manager on the final accumulation step, allowing DDP to aggregate gradients once before running optimizer.step().",
+    "good_code": "import torch\nimport torch.distributed as dist\nfrom torch.nn.parallel import DistributedDataParallel as DDP\n\n# ... Setup DDP model and optimizer ...\nmodel = DDP(MyModel().cuda(), device_ids=[local_rank])\noptimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)\naccumulation_steps = 4\n\nfor epoch in range(1):\n    optimizer.zero_grad()\n    for i, (inputs, targets) in enumerate(dataloader):\n        inputs, targets = inputs.cuda(), targets.cuda()\n        \n        # Check if synchronization is required on this step\n        is_accumulation_step = (i + 1) % accumulation_steps != 0\n        \n        if is_accumulation_step:\n            # FIXED: no_sync() prevents premature AllReduce communication\n            with model.no_sync():\n                outputs = model(inputs)\n                loss = criterion(outputs, targets) / accumulation_steps\n                loss.backward()\n        else: \n            # Final step triggers synchronization\n            outputs = model(inputs)\n            loss = criterion(outputs, targets) / accumulation_steps\n            loss.backward()\n            \n            optimizer.step()\n            optimizer.zero_grad()",
+    "verification": "Monitor network bandwidth and GPU utilization using torch.cuda.memory_summary(). Verify that AllReduce communications only occur on (i + 1) % accumulation_steps == 0 steps. Memory consumption profiles should show a linear staircase pattern resetting periodically instead of escalating to CUDA OOM.",
+    "date": "2026-06-23",
+    "id": 1782216420,
+    "type": "error"
+});
