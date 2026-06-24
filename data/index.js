@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1782268171,
+        "title": "Fixing Rust Async Task Cancellation Hazards",
+        "slug": "fixing-rust-async-cancellation-drop-safety",
+        "language": "Rust",
+        "code": "AsyncCancellationHazard",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/fixing-rust-async-cancellation-drop-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782268172,
+        "title": "Fixing Cassandra Tombstone Saturation Latency",
+        "slug": "fixing-cassandra-tombstone-saturation-latency",
+        "language": "Cassandra",
+        "code": "TombstoneOverwhelmingException",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/fixing-cassandra-tombstone-saturation-latency.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Cassandra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782268173,
+        "title": "Fixing Next.js App Router Edge Memory Leaks",
+        "slug": "nextjs-app-router-edge-memory-leaks",
+        "language": "Next.js",
+        "code": "EdgeRuntimeOutOfMemory",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/nextjs-app-router-edge-memory-leaks.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782268174,
+        "title": "Analyzing baidu/Unlimited-OCR: Era of One-Shot Parsing",
+        "slug": "analyzing-baidu-unlimited-ocr-one-shot-parsing",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/analyzing-baidu-unlimited-ocr-one-shot-parsing.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1782216419,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "fixing-cpp20-coroutine-lifetime-violations",
