@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1782283051,
+        "title": "Go Goroutine Starvation: Blocking CGO Call Fix",
+        "slug": "go-goroutine-starvation-blocking-cgo-fix",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/go-goroutine-starvation-blocking-cgo-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "CGO",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782283052,
+        "title": "Spark Shuffle Spills: OOMs and Latency Fix",
+        "slug": "spark-shuffle-spills-ooms-latency-fix",
+        "language": "Java",
+        "code": "SparkOOM",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/spark-shuffle-spills-ooms-latency-fix.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Big Data",
+            "Infra",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782283053,
+        "title": "Redis Persistence Pauses: Excessive Fork Time Fix",
+        "slug": "redis-persistence-pauses-fork-time-fix",
+        "language": "Infra",
+        "code": "RedisPause",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/redis-persistence-pauses-fork-time-fix.js",
+        "tags": [
+            "Redis",
+            "Database",
+            "Infra",
+            "Performance",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782283054,
+        "title": "Unlimited-OCR: One-shot Long-horizon Parsing",
+        "slug": "unlimited-ocr-one-shot-long-horizon-parsing",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-24",
+        "path": "data/posts/2026-06/unlimited-ocr-one-shot-long-horizon-parsing.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Machine Learning",
+            "Python"
+        ]
+    },
+    {
         "id": 1782268171,
         "title": "Fixing Rust Async Task Cancellation Hazards",
         "slug": "fixing-rust-async-cancellation-drop-safety",
