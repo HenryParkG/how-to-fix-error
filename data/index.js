@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1782387829,
+        "title": "Kubernetes CrashLoopBackOff: Hidden Startup Probe Failures",
+        "slug": "kubernetes-crashloopbackoff-startup-probe-failures",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-06-25",
+        "path": "data/posts/2026-06/kubernetes-crashloopbackoff-startup-probe-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782387830,
+        "title": "Rust Borrow Checker Errors: Navigating Concurrency",
+        "slug": "rust-borrow-checker-errors-concurrency",
+        "language": "Rust",
+        "code": "Borrow Checker",
+        "date": "2026-06-25",
+        "path": "data/posts/2026-06/rust-borrow-checker-errors-concurrency.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782387831,
+        "title": "Kafka Rebalancing Storms: Diagnosing Thrashing",
+        "slug": "kafka-rebalancing-storms-diagnosing-thrashing",
+        "language": "Kafka",
+        "code": "Rebalancing Storm",
+        "date": "2026-06-25",
+        "path": "data/posts/2026-06/kafka-rebalancing-storms-diagnosing-thrashing.js",
+        "tags": [
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782387832,
+        "title": "Codex Orange Book: Practical AI Coding Guide",
+        "slug": "codex-orange-book-trend",
+        "language": "AI/ML, Python",
+        "code": "Trend",
+        "date": "2026-06-25",
+        "path": "data/posts/2026-06/codex-orange-book-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Python"
+        ]
+    },
+    {
         "id": 1782354514,
         "title": "Linux Net Stack Drops: Diagnose Latency & Packet Loss",
         "slug": "linux-net-stack-drops-diagnose-latency-packet-loss",

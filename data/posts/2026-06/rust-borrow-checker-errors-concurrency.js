@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Rust Borrow Checker Errors: Navigating Concurrency",
+    "slug": "rust-borrow-checker-errors-concurrency",
+    "language": "Rust",
+    "code": "Borrow Checker",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>Rust's borrow checker is a compile-time guardian that enforces its ownership and borrowing rules, guaranteeing memory safety and preventing data races without a garbage collector. While immensely powerful, encountering borrow checker errors, especially in concurrent contexts, can be challenging for newcomers. The core principle is that there can be either one mutable reference OR any number of immutable references to a piece of data at any given time, but not both simultaneously. When trying to share mutable state across threads or asynchronous tasks, this rule often gets violated, leading to compilation failures like 'cannot borrow `x` as mutable more than once' or '`x` does not live long enough'.</p><p>These errors are Rust's way of preventing common concurrency bugs like data races, where multiple threads access the same memory location without synchronization, with at least one access being a write. Understanding lifetimes, which describe how long a reference is valid, is also crucial, particularly when dealing with references passed between different scopes or threads.</p>",
+    "root_cause": "Attempting to share or mutate data across multiple threads or asynchronous tasks without adhering to Rust's ownership rules or providing proper synchronization mechanisms, leading to multiple mutable references or references outliving their data.",
+    "bad_code": "```rust\nuse std::thread;\n\nfn main() {\n    let mut counter = 0;\n    let mut handles = vec![];\n\n    for _ in 0..10 {\n        let handle = thread::spawn(move || {\n            // ERROR: `counter` cannot be mutably borrowed here\n            // because it's not Sync and cannot be safely moved into multiple threads\n            counter += 1; \n        });\n        handles.push(handle);\n    }\n\n    for handle in handles {\n        handle.join().unwrap();\n    }\n    println!(\"Counter: {}\", counter);\n}\n```",
+    "solution_desc": "To safely share mutable state across threads in Rust, you typically combine `Arc` (Atomic Reference Counted) for shared ownership and `Mutex` (Mutual Exclusion) for synchronized mutable access. `Arc` allows multiple owners to safely share data across threads, while `Mutex` ensures that only one thread can access the inner data at a time, preventing data races. For read-heavy, write-light scenarios, `RwLock` (Read-Write Lock) can offer better performance by allowing multiple readers simultaneously. For very specific single-threaded interior mutability, `RefCell` can be used, but it's not thread-safe and panics at runtime if rules are violated.",
+    "good_code": "```rust\nuse std::sync::{Arc, Mutex};\nuse std::thread;\n\nfn main() {\n    let counter = Arc::new(Mutex::new(0)); // Shared, atomic, mutex-protected counter\n    let mut handles = vec![];\n\n    for _ in 0..10 {\n        let counter_arc = Arc::clone(&counter); // Clone the Arc for each thread\n        let handle = thread::spawn(move || {\n            let mut num = counter_arc.lock().unwrap(); // Acquire the lock\n            *num += 1; // Mutate the protected data\n            // Lock is automatically released when `num` goes out of scope\n        });\n        handles.push(handle);\n    }\n\n    for handle in handles {\n        handle.join().unwrap();\n    }\n\n    println!(\"Counter: {}\", *counter.lock().unwrap());\n}\n```",
+    "verification": "The Rust code should compile without any borrow checker errors (`cargo check` or `cargo build`). When run, the program should execute successfully and print the expected final value for `counter`, demonstrating that all threads correctly incremented the shared state without data races or panics.",
+    "date": "2026-06-25",
+    "id": 1782387830,
+    "type": "error"
+});
