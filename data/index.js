@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782474039,
+        "title": "Fixing WiredTiger Cache Eviction & Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+        "language": "Go",
+        "code": "WT_CACHE_FULL / Write Ticket Exhaustion",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "Go",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782474040,
+        "title": "Fixing Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks-heap-bloat",
+        "language": "Haskell",
+        "code": "Heap Bloat / Space Leak",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/haskell-lazy-evaluation-space-leaks-heap-bloat.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782474041,
+        "title": "Fixing WebGPU Buffer Mapping Race Conditions",
+        "slug": "webgpu-buffer-mapping-race-conditions",
+        "language": "TypeScript",
+        "code": "OperationError (Buffer Mapped State)",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/webgpu-buffer-mapping-race-conditions.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782474042,
+        "title": "Unlocking AI Agents: The Codex Orange Book Guide",
+        "slug": "codex-orange-book-ai-agent-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/codex-orange-book-ai-agent-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1782456305,
         "title": "C++20 Coroutine Stack Unwinding & Lifetime Issues",
         "slug": "cxx20-coroutine-stack-unwinding-lifetime-issues",
