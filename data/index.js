@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1782441060,
+        "title": "eBPF Verifier Failures: Diagnosing In-Kernel Rejection",
+        "slug": "ebpf-verifier-failures-diagnosing-in-kernel-rejection",
+        "language": "C, Linux Kernel",
+        "code": "eBPF_VERIFIER_ERROR",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/ebpf-verifier-failures-diagnosing-in-kernel-rejection.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Observability",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782441061,
+        "title": "Istio mTLS Interception: Debugging Connectivity Issues",
+        "slug": "istio-mtls-interception-debugging-connectivity",
+        "language": "Kubernetes, Go",
+        "code": "mTLS_INTERCEPTION_FAILURE",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/istio-mtls-interception-debugging-connectivity.js",
+        "tags": [
+            "Istio",
+            "Service Mesh",
+            "Kubernetes",
+            "mTLS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782441062,
+        "title": "Elasticsearch Shard Rebalancing Storms: Cluster Instability",
+        "slug": "elasticsearch-shard-rebalancing-storms-cluster-instability",
+        "language": "Java, Elasticsearch",
+        "code": "SHARD_REBALANCING_STORM",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/elasticsearch-shard-rebalancing-storms-cluster-instability.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "Data Storage",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782441063,
+        "title": "Codex Orange Book: A Practical Guide to AI Coding",
+        "slug": "codex-orange-book-practical-guide-ai-coding",
+        "language": "Python, AI",
+        "code": "Trend",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/codex-orange-book-practical-guide-ai-coding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Generative AI",
+            "Code Generation",
+            "Python"
+        ]
+    },
+    {
         "id": 1782387829,
         "title": "Kubernetes CrashLoopBackOff: Hidden Startup Probe Failures",
         "slug": "kubernetes-crashloopbackoff-startup-probe-failures",
