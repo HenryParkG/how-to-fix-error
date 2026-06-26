@@ -1,5 +1,74 @@
 var postsIndex = [
     {
+        "id": 1782456305,
+        "title": "C++20 Coroutine Stack Unwinding & Lifetime Issues",
+        "slug": "cxx20-coroutine-stack-unwinding-lifetime-issues",
+        "language": "C++",
+        "code": "CoroutineLifetime",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/cxx20-coroutine-stack-unwinding-lifetime-issues.js",
+        "tags": [
+            "C++",
+            "C++20",
+            "Coroutine",
+            "Lifetime",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782456306,
+        "title": "PyTorch Mixed-Precision Training Instability: Diagnosing NaN/Inf",
+        "slug": "pytorch-mixed-precision-nan-inf-diagnosis",
+        "language": "Python",
+        "code": "MixedPrecisionNaN",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/pytorch-mixed-precision-nan-inf-diagnosis.js",
+        "tags": [
+            "PyTorch",
+            "AI/ML",
+            "Mixed Precision",
+            "NaN/Inf",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782456307,
+        "title": "PostgreSQL Transaction ID Wraparound Prevention & Recovery",
+        "slug": "postgresql-txid-wraparound-prevention-recovery",
+        "language": "SQL",
+        "code": "TxIDWraparound",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/postgresql-txid-wraparound-prevention-recovery.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Transaction ID",
+            "Wraparound",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782456308,
+        "title": "Codex Orange Book: Unofficial OpenAI Codex Guide",
+        "slug": "codex-orange-book-github-trend-analysis",
+        "language": "AI/ML",
+        "code": "Trend",
+        "date": "2026-06-26",
+        "path": "data/posts/2026-06/codex-orange-book-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Codex",
+            "OpenAI",
+            "Python"
+        ]
+    },
+    {
         "id": 1782441060,
         "title": "eBPF Verifier Failures: Diagnosing In-Kernel Rejection",
         "slug": "ebpf-verifier-failures-diagnosing-in-kernel-rejection",
