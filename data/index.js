@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782557640,
+        "title": "Fixing Rust Async Pinning & Self-Referential Borrows",
+        "slug": "fixing-rust-async-pinning-self-referential-borrows",
+        "language": "Rust",
+        "code": "SelfReferenceError",
+        "date": "2026-06-27",
+        "path": "data/posts/2026-06/fixing-rust-async-pinning-self-referential-borrows.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782557641,
+        "title": "Fixing Kafka Rebalance Storms in Long-Running Tasks",
+        "slug": "fixing-kafka-rebalance-storms-long-tasks",
+        "language": "Kafka / Java",
+        "code": "CommitFailedException",
+        "date": "2026-06-27",
+        "path": "data/posts/2026-06/fixing-kafka-rebalance-storms-long-tasks.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782557642,
+        "title": "Fixing React Native JSI C++ Memory Leaks",
+        "slug": "fixing-react-native-jsi-cpp-memory-leaks",
+        "language": "React Native / C++",
+        "code": "JSIMemoryLeak",
+        "date": "2026-06-27",
+        "path": "data/posts/2026-06/fixing-react-native-jsi-cpp-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782557643,
+        "title": "Inside Codex Orange Book: The Unofficial Guide",
+        "slug": "codex-orange-book-unofficial-guide",
+        "language": "AI / Large Language Models",
+        "code": "Trend",
+        "date": "2026-06-27",
+        "path": "data/posts/2026-06/codex-orange-book-unofficial-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1782541365,
         "title": "Fixing gRPC HTTP/2 Flow Control Starvation",
         "slug": "grpc-http2-flow-control-window-starvation",

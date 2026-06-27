@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Rust Async Pinning & Self-Referential Borrows",
+    "slug": "fixing-rust-async-pinning-self-referential-borrows",
+    "language": "Rust",
+    "code": "SelfReferenceError",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Async",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Rust, asynchronous functions generate a state machine behind the scenes. When a local variable is borrowed across an <code>.await</code> yield point, the compiler must store that reference inside the generated future's state struct. This creates a self-referential struct because the reference points to a field within the exact same struct. If this future is subsequently moved in memory (which can happen when moving it to another thread, boxing it, or swapping it), the physical memory address of the target field changes, but the stored pointer still points to the old, now-invalid memory location, resulting in undefined behavior.</p><p>To prevent this, Rust's borrow checker rejects self-referential structs by default. The <code>Pin</code> wrapper guarantees that the underlying data will not be moved in memory, allowing safe self-referential pointers. However, managing <code>Pin</code> correctly when implementing custom futures or manual polling loops is notoriously challenging and often leads to cryptic lifetime compiler errors.</p>",
+    "root_cause": "The future holds a self-referential reference across an .await boundary. When the future is moved (e.g., inside a poll loop or during thread migration) without being pinned, the pointer becomes invalid, triggering compile-time borrow-checker violations or runtime memory corruption.",
+    "bad_code": "struct SelfReferential {\n    data: String,\n    // This pointer is intended to reference the field 'data'\n    reference: *const String,\n}\n\nasync fn invalid_async_flow() {\n    let mut local_str = String::from(\"hello\");\n    // Creating a reference that persists across an await yield point\n    let ref_to_local = &local_str;\n    \n    tokio::spawn(async move {\n        // Error: local_str cannot be moved here because it is borrowed\n        tokio::time::sleep(tokio::time::Duration::from_millis(10)).await;\n        println!(\"{}\", ref_to_local);\n    });\n}",
+    "solution_desc": "To resolve self-referential borrow violations, we use the `Pin` wrapper alongside pinning pinning macros like `tokio::pin!` or `Box::pin` to lock the future's memory address. For custom self-referential structs, we should avoid manual raw pointer tracking and instead use safe abstractions like the `ouroboros` crate, or architecturally split the state into separate owned objects and transient borrowed scopes.",
+    "good_code": "use std::pin::Pin;\nuse std::future::Future;\nuse std::task::{Context, Poll};\n\nstruct SafeRunner<F> {\n    // Pin the inner future to the heap to guarantee its memory address remains stable\n    future: Pin<Box<F>>,\n}\n\nimpl<F: Future> SafeRunner<F> {\n    fn new(fut: F) -> Self {\n        Self {\n            future: Box::pin(fut),\n        }\n    }\n\n    fn poll_inner(&mut self, cx: &mut Context<'_>) -> Poll<F::Output> {\n        // Safe to poll because the inner future is pinned on the heap\n        self.future.as_mut().poll(cx)\n    }\n}\n\nasync fn valid_async_flow() {\n    let mut my_future = async {\n        let mut local_str = String::from(\"hello\");\n        tokio::time::sleep(tokio::time::Duration::from_millis(10)).await;\n        println!(\"{}\", local_str);\n    };\n    \n    // Pin stack-allocated future using tokio::pin!\n    tokio::pin!(my_future);\n    let mut runner = SafeRunner::new(my_future);\n}",
+    "verification": "Compile the code using `cargo build`. Ensure that no self-referential lifetime errors are thrown by `rustc`. Run tests with `cargo test` and run dynamic checking with Miri via `cargo miri test` to guarantee no stacked borrows violations occur at runtime.",
+    "date": "2026-06-27",
+    "id": 1782557640,
+    "type": "error"
+});

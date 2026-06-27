@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Kafka Rebalance Storms in Long-Running Tasks",
+    "slug": "fixing-kafka-rebalance-storms-long-tasks",
+    "language": "Kafka / Java",
+    "code": "CommitFailedException",
+    "tags": [
+        "Java",
+        "Backend",
+        "Kafka",
+        "Error Fix"
+    ],
+    "analysis": "<p>Kafka consumer group rebalances occur when the coordinator suspects a consumer has died. In systems dealing with long-running, CPU-bound, or network-bound message processing, consumers often run into 'Rebalance Storms'. This happens because a consumer fetches a batch of messages, but processing that batch takes longer than the configured <code>max.poll.interval.ms</code>. While processing, the consumer fails to call <code>poll()</code> in time.</p><p>Seeing this delay, the Kafka coordinator assumes the consumer has crashed, kicks it out of the consumer group, and triggers a rebalance. When the slow consumer finally finishes its work and attempts to commit offsets, Kafka throws a <code>CommitFailedException</code>. The displaced consumer then rejoins the group, triggering another rebalance. This cyclic behavior can halt processing entirely across your cluster.</p>",
+    "root_cause": "The processing time of messages polled in a single batch exceeds the max.poll.interval.ms setting, preventing the consumer from calling poll() within the deadline, leading to group exclusion and cascading rebalances.",
+    "bad_code": "Properties props = new Properties();\nprops.put(\"bootstrap.servers\", \"localhost:9092\");\nprops.put(\"group.id\", \"payment-processor\");\nprops.put(\"max.poll.interval.ms\", \"300000\"); // 5 minutes\nprops.put(\"max.poll.records\", \"500\"); // Too high for slow tasks\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"transactions\"));\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // If processing takes 1.5 seconds per message:\n        // 500 records * 1.5s = 750 seconds (12.5 mins). This exceeds 5 mins!\n        processTransaction(record);\n    }\n    consumer.commitSync();\n}",
+    "solution_desc": "Architecturally decouple the message retrieval thread from the work processing pool. Limit the max records polled in a single step with `max.poll.records`, and increase `max.poll.interval.ms` to give the processing pipeline an explicit safety margin. Alternatively, implement a worker thread pool (ExecutorService) combined with consumer pause/resume mechanics so the polling loop continues to check in with the broker while workers process the backlog.",
+    "good_code": "Properties props = new Properties();\nprops.put(\"bootstrap.servers\", \"localhost:9092\");\nprops.put(\"group.id\", \"payment-processor\");\n// 1. Give ample time for slow processes\nprops.put(\"max.poll.interval.ms\", \"600000\"); // 10 minutes\n// 2. Reduce the batch size to match processing capacity\nprops.put(\"max.poll.records\", \"20\"); // 20 * 1.5s = 30 seconds max\nprops.put(\"enable.auto.commit\", \"false\");\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"transactions\"));\n\ntry {\n    while (!Thread.currentThread().isInterrupted()) {\n        ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n        if (records.isEmpty()) continue;\n        \n        for (ConsumerRecord<String, String> record : records) {\n            processTransaction(record);\n        }\n        // Safely commit within max.poll.interval.ms limit\n        consumer.commitSync();\n    }\n} catch (CommitFailedException e) {\n    System.err.println(\"Commit failed due to rebalance: \" + e.getMessage());\n} finally {\n    consumer.close();\n}",
+    "verification": "Deploy the updated consumer and simulate a high-load spikes on long-running tasks. Monitor the broker logs for 'Group rebalance' triggers and check client-side metrics for 'join-rate' and 'rebalance-latency-avg'. The consumer should maintain stable partition ownership without throwing CommitFailedException.",
+    "date": "2026-06-27",
+    "id": 1782557641,
+    "type": "error"
+});

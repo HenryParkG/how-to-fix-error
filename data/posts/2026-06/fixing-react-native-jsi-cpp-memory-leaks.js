@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing React Native JSI C++ Memory Leaks",
+    "slug": "fixing-react-native-jsi-cpp-memory-leaks",
+    "language": "React Native / C++",
+    "code": "JSIMemoryLeak",
+    "tags": [
+        "React",
+        "TypeScript",
+        "Frontend",
+        "Error Fix"
+    ],
+    "analysis": "<p>The React Native JavaScript Interface (JSI) allows direct, synchronous interaction between JavaScript engines (like Hermes or V8) and native C++ code without serializing data over the legacy React Native bridge. While this yields enormous performance benefits, it exposes developers to complex cross-boundary memory management challenges. JavaScript objects are garbage collected automatically, whereas C++ objects rely on RAII and manual resource allocations.</p><p>A memory leak typically occurs when a long-lived C++ object holds a strong reference to a JavaScript object via <code>jsi::Value</code> or <code>jsi::Object</code>. Conversely, if a JavaScript callback is bound to a host C++ object, a circular reference cycle can prevent the garbage collector from freeing either instance. Because the JS engine has no visibility into the size of the associated native C++ heap allocations, it may delay GC cycles, leading to high native memory consumption and out-of-memory crashes.</p>",
+    "root_cause": "Holding strong, persistent jsi::Value or jsi::Function references inside native C++ HostObjects, creating un-collectable cycle graphs across the JS-to-C++ boundaries.",
+    "bad_code": "class NativeCalculator : public jsi::HostObject {\npublic:\n    jsi::Value jsCallback;\n\n    jsi::Value get(jsi::Runtime& rt, const jsi::PropNameID& name) override {\n        auto prop = name.utf8(rt);\n        if (prop == \"registerListener\") {\n            return jsi::Function::createFromHostFunction(\n                rt, name, 1,\n                [this](jsi::Runtime& rt, const jsi::Value& thisVal, const jsi::Value* args, size_t count) -> jsi::Value {\n                    // BUG: Storing a strong reference to JS function persistently inside C++ HostObject\n                    this->jsCallback = jsi::Value(rt, args[0]);\n                    return jsi::Value::undefined();\n                });\n        }\n        return jsi::Value::undefined();\n    }\n};",
+    "solution_desc": "Instead of storing raw strong references, break the cycle by using `jsi::WeakObject` or wrapping persistent native references inside smart pointers (`std::shared_ptr` / `std::weak_ptr`). Explicitly clear callbacks when they are no longer needed (e.g., during React Component unmounting), and ensure that native C++ wrappers clean up resources in their destructors.",
+    "good_code": "class NativeCalculator : public jsi::HostObject {\nprivate:\n    // Resolve memory cycle by keeping a weak or explicitly cleared reference\n    std::unique_ptr<jsi::WeakObject> weakJsCallback;\n\npublic: \n    jsi::Value get(jsi::Runtime& rt, const jsi::PropNameID& name) override {\n        auto prop = name.utf8(rt);\n        if (prop == \"registerListener\") {\n            return jsi::Function::createFromHostFunction(\n                rt, name, 1,\n                [this](jsi::Runtime& rt, const jsi::Value& thisVal, const jsi::Value* args, size_t count) -> jsi::Value {\n                    if (args[0].isObject()) {\n                        // Store as a weak object to break the cyclic reference graph\n                        this->weakJsCallback = std::make_unique<jsi::WeakObject>(\n                            rt, args[0].getObject(rt)\n                        );\n                    }\n                    return jsi::Value::undefined();\n                });\n        }\n        return jsi::Value::undefined();\n    }\n\n    ~NativeCalculator() {\n        // Explicit cleanup of native wrappers on destruction\n        weakJsCallback.reset();\n    }\n};",
+    "verification": "Profile memory usage using Xcode Instruments (Leaks / Allocations template) on iOS, or Android Studio Profiler on Android. Run scenario tests (mounting and unmounting the component repeatedly) and verify that native C++ heap usage remains flat and does not step upwards progressively.",
+    "date": "2026-06-27",
+    "id": 1782557642,
+    "type": "error"
+});
