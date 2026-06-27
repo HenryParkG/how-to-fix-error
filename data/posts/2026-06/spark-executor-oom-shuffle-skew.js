@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Fixing Spark Executor OOM & Skewed Shuffle GC Pauses",
+    "slug": "spark-executor-oom-shuffle-skew",
+    "language": "Java",
+    "code": "OutOfMemoryError",
+    "tags": [
+        "Java",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Apache Spark deployments, data skew stands as a primary driver of Out-Of-Memory (OOM) failures and prolonged Stop-The-World (STW) JVM Garbage Collection pauses during shuffle stages. When joining or grouping datasets on unbalanced keys, Spark's HashPartitioner maps all data records sharing the identical key hash to the same destination partition.</p><p>This causes a small subset of executors to pull disproportionately massive volumes of intermediate shuffle blocks. The JVM heap space on these skewed executors becomes flooded with high-lived objects, exhausting the Execution/Storage memory fractions. As memory limits are reached, the garbage collector runs continuously to reclaim space, leading to extreme GC overhead pauses and eventually crashing with an OOM exception or causing executor loss due to heartbeat timeouts.</p>",
+    "root_cause": "Severe data skew on joining keys causes a vast majority of dataset items to route to a single partition, overloading target JVM heaps during the Shuffle Fetch stage and triggering fatal OutOfMemory/GC overhead limit exceptions.",
+    "bad_code": "import org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\nimport org.apache.spark.sql.SparkSession;\n\npublic class SkewedJoin {\n    public void execute(SparkSession spark, Dataset<Row> transactions, Dataset<Row> stores) {\n        // Transactions dataset has massive skew on 'store_id' (e.g., millions of NULL or 0 keys)\n        // This results in a highly skewed join, concentrating data in single executors\n        Dataset<Row> joinedResult = transactions.join(stores, \"store_id\");\n        joinedResult.write().mode(\"overwrite\").parquet(\"/output/joined_transactions\");\n    }\n}",
+    "solution_desc": "Resolve data skew using key salting. Append a randomized suffix to the skewed key in the primary transaction dataset, and duplicate corresponding key entries in the lookup table. This distributes the matching workload across multiple partition handlers, balancing the JVM heap memory footprint and preventing GC pauses.",
+    "good_code": "import org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\nimport org.apache.spark.sql.SparkSession;\nimport static org.apache.spark.sql.functions.*;\n\npublic class SaltedJoin {\n    public void execute(SparkSession spark, Dataset<Row> transactions, Dataset<Row> stores) {\n        int saltFactor = 8;\n\n        // Salt the transaction skewed key\n        Dataset<Row> saltedTx = transactions.withColumn(\"salted_store_id\", \n            concat(col(\"store_id\"), lit(\"_\"), round(rand().multiply(saltFactor - 1))));\n\n        // Duplicate the store reference lookup keys to match all generated salts\n        Dataset<Row> explodedStores = stores.withColumn(\"salt_array\", sequence(lit(0), lit(saltFactor - 1)))\n            .withColumn(\"exploded_salt\", explode(col(\"salt_array\")))\n            .withColumn(\"salted_store_id\", concat(col(\"store_id\"), lit(\"_\"), col(\"exploded_salt\")));\n\n        // Perform the balanced join on salted keys\n        Dataset<Row> joinedResult = saltedTx.join(explodedStores, \"salted_store_id\")\n            .drop(\"salted_store_id\", \"exploded_salt\", \"salt_array\");\n            \n        joinedResult.write().mode(\"overwrite\").parquet(\"/output/joined_transactions\");\n    }\n}",
+    "verification": "Deploy the Spark job and inspect the Spark UI's 'Stages' interface. Confirm that the execution times and input shuffle sizes are distributed evenly across tasks, eliminating outliers with long durations or high garbage collection pauses.",
+    "date": "2026-06-27",
+    "id": 1782526508,
+    "type": "error"
+});
