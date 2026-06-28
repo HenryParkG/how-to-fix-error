@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1782630565,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound Emergency Shutdowns",
+        "slug": "postgresql-transaction-id-wraparound-fix",
+        "language": "PostgreSQL",
+        "code": "Transaction Wraparound",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/postgresql-transaction-id-wraparound-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782630566,
+        "title": "Debugging C++20 Coroutine Frame Memory Leaks and Dangling Refs",
+        "slug": "cpp20-coroutine-memory-leaks-dangling-references",
+        "language": "C++",
+        "code": "Coroutine Leak/Dangling",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/cpp20-coroutine-memory-leaks-dangling-references.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782630567,
+        "title": "Resolving HNSW Index Graph Disconnection and Recall Decay",
+        "slug": "hnsw-index-graph-disconnection-recall-decay",
+        "language": "Vector Databases",
+        "code": "HNSW Decay",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/hnsw-index-graph-disconnection-recall-decay.js",
+        "tags": [
+            "Vector Database",
+            "HNSW",
+            "AI/ML",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782630568,
+        "title": "Codex Orange Book: Full-Stack Usage Guide & Analysis",
+        "slug": "codex-orange-book-github-trend-analysis",
+        "language": "AI, LLM, Python",
+        "code": "Trend",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/codex-orange-book-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Python"
+        ]
+    },
+    {
         "id": 1782614250,
         "title": "eBPF Verification & JIT Bugs: Debugging Kernel Fails",
         "slug": "ebpf-verification-jit-compiler-bugs",
