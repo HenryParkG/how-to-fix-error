@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1782644377,
+        "title": "Linux Kernel Panics: Debugging Race Conditions in Device Drivers",
+        "slug": "linux-kernel-panics-race-conditions-device-drivers",
+        "language": "C",
+        "code": "Kernel Panic",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/linux-kernel-panics-race-conditions-device-drivers.js",
+        "tags": [
+            "Race Condition",
+            "Linux Kernel",
+            "Device Driver",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782644378,
+        "title": "Kubernetes CrashLoopBackOff: Init Container Race Conditions",
+        "slug": "kubernetes-crashloopbackoff-init-container-race-conditions",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/kubernetes-crashloopbackoff-init-container-race-conditions.js",
+        "tags": [
+            "Kubernetes",
+            "Init Container",
+            "Race Condition",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782644379,
+        "title": "Fixing Elasticsearch Shard Relocation Storms & Imbalance",
+        "slug": "elasticsearch-shard-relocation-storms-cluster-imbalance",
+        "language": "Elasticsearch",
+        "code": "Shard Relocation Storm",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/elasticsearch-shard-relocation-storms-cluster-imbalance.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed System",
+            "Cluster Management",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782644380,
+        "title": "Trending GitHub: Codex 橙皮书 - Unofficial Codex Guide",
+        "slug": "trending-github-codex-orange-book-unofficial-guide",
+        "language": "AI/ML",
+        "code": "Trend",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/trending-github-codex-orange-book-unofficial-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Large Language Models",
+            "Python"
+        ]
+    },
+    {
         "id": 1782630565,
         "title": "Fixing PostgreSQL Transaction ID Wraparound Emergency Shutdowns",
         "slug": "postgresql-transaction-id-wraparound-fix",
