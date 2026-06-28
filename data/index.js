@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1782614250,
+        "title": "eBPF Verification & JIT Bugs: Debugging Kernel Fails",
+        "slug": "ebpf-verification-jit-compiler-bugs",
+        "language": "Rust",
+        "code": "EBPF_VERIFIER_FAIL",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/ebpf-verification-jit-compiler-bugs.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Security",
+            "Rust",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782614251,
+        "title": "Airflow DAG Gaps & Backfill: Idempotency Fixes",
+        "slug": "airflow-dag-scheduling-gaps-backfill-idempotency",
+        "language": "Python",
+        "code": "DAG_SCHEDULING_GAP, IDEMPOTENCY_FAIL",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/airflow-dag-scheduling-gaps-backfill-idempotency.js",
+        "tags": [
+            "Airflow",
+            "ETL",
+            "Data Engineering",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782614252,
+        "title": "Next.js Hydration Mismatch & SEO Impacts: Fixes",
+        "slug": "nextjs-hydration-mismatch-seo-impacts",
+        "language": "Next.js, React",
+        "code": "HYDRATION_ERROR",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/nextjs-hydration-mismatch-seo-impacts.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "SEO",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782614253,
+        "title": "Codex Orange Book: Mastering AI Code Generation",
+        "slug": "codex-orange-book-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-28",
+        "path": "data/posts/2026-06/codex-orange-book-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Code Generation",
+            "Python"
+        ]
+    },
+    {
         "id": 1782557640,
         "title": "Fixing Rust Async Pinning & Self-Referential Borrows",
         "slug": "fixing-rust-async-pinning-self-referential-borrows",
