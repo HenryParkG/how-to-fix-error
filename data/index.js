@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1782700611,
+        "title": "Debugging Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "debugging-go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/debugging-go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Debugging",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782700612,
+        "title": "Fixing Spark OOMs: Data Skew and Shuffle Tune-ups",
+        "slug": "fixing-spark-ooms-data-skew-shuffle-tune-ups",
+        "language": "Apache Spark",
+        "code": "SparkOOM",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/fixing-spark-ooms-data-skew-shuffle-tune-ups.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782700613,
+        "title": "Diagnosing MongoDB WiredTiger Cache Pressure & Eviction Storms",
+        "slug": "diagnosing-mongodb-wiredtiger-cache-pressure-eviction-storms",
+        "language": "MongoDB",
+        "code": "WiredTigerCache",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/diagnosing-mongodb-wiredtiger-cache-pressure-eviction-storms.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782700614,
+        "title": "DeepSpec: Full-Stack Speculative Decoding for LLMs",
+        "slug": "deepspec-full-stack-speculative-decoding-llms",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/deepspec-full-stack-speculative-decoding-llms.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Python"
+        ]
+    },
+    {
         "id": 1782644377,
         "title": "Linux Kernel Panics: Debugging Race Conditions in Device Drivers",
         "slug": "linux-kernel-panics-race-conditions-device-drivers",
