@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782737922,
+        "title": "Rust: Fixing Pin-Projection Lifetime Violations",
+        "slug": "rust-pin-projection-lifetime-violations",
+        "language": "Rust",
+        "code": "UndefinedBehavior",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/rust-pin-projection-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Unsafe",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782737923,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlocks",
+        "language": "Go",
+        "code": "Deadlock",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/grpc-http2-flow-control-deadlocks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "gRPC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782737924,
+        "title": "Resolving Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "TimeoutCascade",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782737925,
+        "title": "DeepSpec: Training Speculative Decoding",
+        "slug": "deepspec-speculative-decoding-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/deepspec-speculative-decoding-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1782717766,
         "title": "Debugging Zig WASM/FFI Undefined Behavior & Memory Safety",
         "slug": "zig-wasm-ffi-undefined-behavior-memory-safety",
