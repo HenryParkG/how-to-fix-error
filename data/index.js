@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1782717766,
+        "title": "Debugging Zig WASM/FFI Undefined Behavior & Memory Safety",
+        "slug": "zig-wasm-ffi-undefined-behavior-memory-safety",
+        "language": "Zig, WASM",
+        "code": "Undefined Behavior",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/zig-wasm-ffi-undefined-behavior-memory-safety.js",
+        "tags": [
+            "Zig",
+            "WASM",
+            "FFI",
+            "Memory Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782717767,
+        "title": "PyTorch: Diagnosing GPU Memory Fragmentation & Underutilization",
+        "slug": "pytorch-gpu-memory-fragmentation-underutilization",
+        "language": "PyTorch, Python",
+        "code": "GPU Memory Issues",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/pytorch-gpu-memory-fragmentation-underutilization.js",
+        "tags": [
+            "PyTorch",
+            "GPU",
+            "Deep Learning",
+            "Performance",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782717768,
+        "title": "Redis: Mitigating Forking Latency & Memory Duplication",
+        "slug": "redis-forking-latency-memory-duplication",
+        "language": "Redis",
+        "code": "Persistence Latency",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/redis-forking-latency-memory-duplication.js",
+        "tags": [
+            "Redis",
+            "Persistence",
+            "Forking",
+            "Latency",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782717769,
+        "title": "GitHub Trend: bikini/exploitarium - The Ethical Hacking Archive",
+        "slug": "github-trend-bikini-exploitarium",
+        "language": "Cybersecurity",
+        "code": "Trend",
+        "date": "2026-06-29",
+        "path": "data/posts/2026-06/github-trend-bikini-exploitarium.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Exploits",
+            "Vulnerability Research",
+            "Backend"
+        ]
+    },
+    {
         "id": 1782700611,
         "title": "Debugging Go Goroutine Leaks & Scheduler Starvation",
         "slug": "debugging-go-goroutine-leaks-scheduler-starvation",
