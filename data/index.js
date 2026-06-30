@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1782786736,
+        "title": "Fixing eBPF Stack Limits & Map Lock Race Conditions",
+        "slug": "fixing-ebpf-stack-limits-map-lock-race-conditions",
+        "language": "C / Go (eBPF)",
+        "code": "BPF_VERIFIER_ERR_STACK_LIMIT",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/fixing-ebpf-stack-limits-map-lock-race-conditions.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "eBPF",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782786737,
+        "title": "Fixing GenServer Mailbox Bloat & ETS Races under Load",
+        "slug": "fixing-genserver-mailbox-bloat-ets-race-conditions",
+        "language": "Elixir / OTP",
+        "code": "GENSERVER_MAILBOX_FLOOD",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/fixing-genserver-mailbox-bloat-ets-race-conditions.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Elixir",
+            "OTP",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782786738,
+        "title": "Fixing WebGPU Bind Group Mismatches & Pipeline Stalls",
+        "slug": "webgpu-bind-group-mismatches-pipeline-stalls",
+        "language": "WebGPU / TypeScript",
+        "code": "WEBGPU_BIND_GROUP_MISMATCH",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/webgpu-bind-group-mismatches-pipeline-stalls.js",
+        "tags": [
+            "TypeScript",
+            "Rust",
+            "WebGPU",
+            "Shaders",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782786739,
+        "title": "DeepSpec: Training & Evaluating Speculative Decoding",
+        "slug": "deepspec-speculative-decoding-framework",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/deepspec-speculative-decoding-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Machine Learning",
+            "Backend"
+        ]
+    },
+    {
         "id": 1782737922,
         "title": "Rust: Fixing Pin-Projection Lifetime Violations",
         "slug": "rust-pin-projection-lifetime-violations",
