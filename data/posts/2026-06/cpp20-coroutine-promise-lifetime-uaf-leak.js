@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "C++20 Coroutines: Fix Promise Lifetime Use-After-Free",
+    "slug": "cpp20-coroutine-promise-lifetime-uaf-leak",
+    "language": "C++",
+    "code": "Use-After-Free",
+    "tags": [
+        "C++",
+        "Coroutines",
+        "Rust",
+        "Systems",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines allocate a coroutine state (frame) on the heap to store the promise object, local variables, and formal parameters across suspension points. Managing this state's lifetime is complex because destruction control transitions between the compiler-generated boilerplate and the custom-designed wrapper object. A major source of undefined behavior is mismatching the suspension behavior inside the promise's <code>final_suspend</code> method with the wrapper object's destructor. If <code>final_suspend</code> returns <code>std::suspend_never</code>, the coroutine state is automatically destroyed upon completion. If the wrapper object then attempts to call <code>std::coroutine_handle::destroy()</code>, it triggers a double-free or Use-After-Free (UAF) of the underlying frame metadata.</p><p>Conversely, returning <code>std::suspend_always</code> keeps the coroutine frame alive at the final suspension point, transferring ownership of the cleanup to the caller. Failing to call <code>destroy()</code> in this configuration causes a silent memory leak.</p>",
+    "root_cause": "The coroutine state is automatically cleaned up when final_suspend returns std::suspend_never. The custom Task wrapper destructor calls handle.destroy() anyway, leading to a Use-After-Free of already deallocated coroutine memory.",
+    "bad_code": "#include <iostream>\n#include <coroutine>\n\nstruct BadTask {\n    struct promise_type {\n        BadTask get_return_object() {\n            return {std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_never initial_suspend() { return {}; }\n        std::suspend_never final_suspend() noexcept { return {}; } // Auto-destructs the frame!\n        void return_void() {}\n        void unhandled_exception() { std::terminate(); }\n    };\n\n    std::coroutine_handle<promise_type> handle;\n\n    BadTask(std::coroutine_handle<promise_type> h) : handle(h) {}\n    ~BadTask() {\n        if (handle) {\n            handle.destroy(); // BUG: Double-free / Use-After-Free!\n        }\n    }\n};",
+    "solution_desc": "To fix this issue, design the coroutine wrapper to follow move-only semantics and enforce that the coroutine is suspended at its final suspension point (std::suspend_always). This ensures that the caller maintains explicit, deterministic ownership of the coroutine state, and that the wrapper's destructor is solely responsible for destroying the handle.",
+    "good_code": "#include <iostream>\n#include <coroutine>\n#include <utility>\n\nstruct GoodTask {\n    struct promise_type {\n        GoodTask get_return_object() {\n            return GoodTask{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; } // Safe: Handled by caller\n        void return_void() {}\n        void unhandled_exception() { std::terminate(); }\n    };\n\n    std::coroutine_handle<promise_type> handle;\n\n    explicit GoodTask(std::coroutine_handle<promise_type> h) : handle(h) {}\n    \n    // Prevent copying to avoid multiple handle destructions\n    GoodTask(const GoodTask&) = delete;\n    GoodTask& operator=(const GoodTask&) = delete;\n\n    // Allow moving\n    GoodTask(GoodTask&& other) noexcept : handle(other.handle) {\n        other.handle = nullptr;\n    }\n    GoodTask& operator=(GoodTask&& other) noexcept {\n        if (this != &other) {\n            if (handle) handle.destroy();\n            handle = other.handle;\n            other.handle = nullptr;\n        }\n        return *this;\n    }\n\n    ~GoodTask() {\n        if (handle) {\n            handle.destroy(); // Safe: Explicitly managed\n        }\n    }\n\n    void resume() {\n        if (handle && !handle.done()) {\n            handle.resume();\n        }\n    }\n};",
+    "verification": "Compile the code using AddressSanitizer and LeakSanitizer (e.g., `g++ -std=c++20 -fsanitize=address,leak main.cpp`). Verify that execution finishes with exit code 0 and reports zero memory leaks and no use-after-free diagnostics.",
+    "date": "2026-06-30",
+    "id": 1782802277,
+    "type": "error"
+});

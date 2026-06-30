@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1782802277,
+        "title": "C++20 Coroutines: Fix Promise Lifetime Use-After-Free",
+        "slug": "cpp20-coroutine-promise-lifetime-uaf-leak",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/cpp20-coroutine-promise-lifetime-uaf-leak.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Rust",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782802278,
+        "title": "PostgreSQL: Fixing TxID Wraparound Exhaustion",
+        "slug": "postgres-txid-wraparound-exhaustion-mitigation",
+        "language": "SQL",
+        "code": "TxID Exhaustion",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/postgres-txid-wraparound-exhaustion-mitigation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782802279,
+        "title": "Vector DB: Fixing HNSW Index Memory Bloat and Recall Loss",
+        "slug": "hnsw-memory-bloat-recall-degradation-fix",
+        "language": "Python",
+        "code": "Recall Degradation",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/hnsw-memory-bloat-recall-degradation-fix.js",
+        "tags": [
+            "Python",
+            "Vector-Database",
+            "HNSW",
+            "Machine-Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782802280,
+        "title": "DeepSeek-AI DeepSpec: Training Speculative Decoding Systems",
+        "slug": "deepseek-deepspec-speculative-decoding",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/deepseek-deepspec-speculative-decoding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "LLM",
+            "Deep Learning"
+        ]
+    },
+    {
         "id": 1782786736,
         "title": "Fixing eBPF Stack Limits & Map Lock Race Conditions",
         "slug": "fixing-ebpf-stack-limits-map-lock-race-conditions",
