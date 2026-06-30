@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Haskell Space Leaks in Long-Running Daemons",
+    "slug": "haskell-space-leaks-lazy-evaluation-thunks",
+    "language": "Haskell",
+    "code": "Space Leak",
+    "tags": [
+        "Haskell",
+        "Rust",
+        "Performance",
+        "Error Fix"
+    ],
+    "analysis": "<p>Haskell's default evaluation strategy is lazy, meaning computations are deferred until their results are strictly required. While highly expressive, laziness can lead to severe memory issues in long-running processes like background daemons. When a state variable is continuously updated without being evaluated, the compiler builds a chain of nested, unevaluated expressions on the heap known as a 'thunk structure'.</p><p>Over hours or days of execution, these thunks accumulate silently, consuming virtual memory. This causes slow, linear heap growth (a space leak) until the operating system's Out-Of-Memory (OOM) killer terminates the daemon. Identifying these leaks is notoriously difficult because standard memory profilers only show high memory usage without revealing which inactive thunks are holding onto references.</p>",
+    "root_cause": "The accumulation of unevaluated expressions (thunks) on the heap. This occurs when updates to recursive data structures or state records (such as those inside state monads or loops) are evaluated lazily, preventing the garbage collector from reclaiming the memory of intermediate computation steps.",
+    "bad_code": "module Main where\n\nimport Control.Monad.State\nimport Control.Concurrent (threadDelay)\n\n-- A state record tracking statistics for a continuous network daemon\ndata DaemonState = DaemonState \n  { requestCount :: Int\n  , totalBytes   :: Double \n  }\n\ninitialState :: DaemonState\ninitialState = DaemonState 0 0.0\n\n-- Lazy update logic: new fields are stored as thunks referencing previous states\nupdateState :: DaemonState -> Double -> DaemonState\nupdateState state bytes = DaemonState\n  { requestCount = requestCount state + 1\n  , totalBytes   = totalBytes state + bytes\n  }\n\n-- Daemon loop accumulating memory over time due to lazy evaluation of 'state'\ndaemonLoop :: StateT DaemonState IO ()\ndaemonLoop = do\n  liftIO $ threadDelay 1000  -- Simulate network polling\n  let incomingBytes = 512.0\n  modify (\\s -> updateState s incomingBytes)\n  daemonLoop\n\nmain :: IO ()\nmain = evalStateT daemonLoop initialState",
+    "solution_desc": "To resolve the space leak, enforce strict evaluation of state updates. This is achieved by: 1) applying strictness annotations (`!`) to the fields of the state record to prevent thunk creation inside the constructor, and 2) using strict state monad variants or enforcing evaluation using functions like `seq` or compiler extensions like `BangPatterns` inside state transitions to force immediate evaluation of numeric expressions.",
+    "good_code": "{-# LANGUAGE BangPatterns #-}\nmodule Main where\n\nimport Control.Monad.State.Strict\nimport Control.Concurrent (threadDelay)\n\n-- Strict data constructor forces evaluation of count and bytes to WHNF immediately\ndata DaemonState = DaemonState \n  { requestCount :: !Int\n  , totalBytes   :: !Double \n  }\n\ninitialState :: DaemonState\ninitialState = DaemonState 0 0.0\n\n-- State update function evaluating the accumulated arguments strictly\nupdateState :: DaemonState -> Double -> DaemonState\nupdateState !state !bytes = DaemonState\n  { requestCount = requestCount state + 1\n  , totalBytes   = totalBytes state + bytes\n  }\n\n-- Loop utilizing the strict variant of StateT and forced state updates\ndaemonLoop :: StateT DaemonState IO ()\ndaemonLoop = do\n  liftIO $ threadDelay 1000\n  let !incomingBytes = 512.0\n  modify' (\\s -> updateState s incomingBytes) -- modify' is strict\n  daemonLoop\n\nmain :: IO ()\nmain = evalStateT daemonLoop initialState",
+    "verification": "Compile the daemon with profiling flags: 'ghc -prof -fprof-auto -rtsopts Main.hs'. Run the executable with run-time stats enabled: './Main +RTS -hc -p'. Use 'hp2ps' to generate a PostScript graphical representation of the heap usage. Verify that the heap profile shows a flat line (constant memory usage) over time, rather than a linear upward ramp.",
+    "date": "2026-06-30",
+    "id": 1782819833,
+    "type": "error"
+});

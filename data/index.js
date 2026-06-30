@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782819833,
+        "title": "Fixing Haskell Space Leaks in Long-Running Daemons",
+        "slug": "haskell-space-leaks-lazy-evaluation-thunks",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/haskell-space-leaks-lazy-evaluation-thunks.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782819834,
+        "title": "Fixing K8s Connection Drops via Conntrack Tuning",
+        "slug": "k8s-conntrack-exhaustion-keepalive-mismatch",
+        "language": "Kubernetes",
+        "code": "Conntrack Table Exhaustion",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/k8s-conntrack-exhaustion-keepalive-mismatch.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782819835,
+        "title": "Mitigating Cassandra Tombstones and Read Latency",
+        "slug": "cassandra-tombstone-saturation-read-latency",
+        "language": "Java",
+        "code": "TombstoneOverloadedException",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/cassandra-tombstone-saturation-read-latency.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Cassandra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782819836,
+        "title": "DeepSpec: Speculative Decoding LLM Inference",
+        "slug": "deepspec-speculative-decoding-llm-inference",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-06-30",
+        "path": "data/posts/2026-06/deepspec-speculative-decoding-llm-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1782802277,
         "title": "C++20 Coroutines: Fix Promise Lifetime Use-After-Free",
         "slug": "cpp20-coroutine-promise-lifetime-uaf-leak",
