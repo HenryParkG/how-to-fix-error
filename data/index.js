@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1782991613,
+        "title": "Solving Async Rust Pinning Violations and Use-After-Free",
+        "slug": "solving-async-rust-pinning-violations-use-after-free",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-07-02",
+        "path": "data/posts/2026-07/solving-async-rust-pinning-violations-use-after-free.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782991614,
+        "title": "Fixing Kafka Rebalance Storms in Cooperative Sticky Assignor",
+        "slug": "kafka-rebalance-storms-cooperative-sticky",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-07-02",
+        "path": "data/posts/2026-07/kafka-rebalance-storms-cooperative-sticky.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782991615,
+        "title": "Mitigating Redis Fork Latency Spikes and OOM Errors",
+        "slug": "redis-fork-latency-spikes-cow-oom",
+        "language": "Redis",
+        "code": "RedisForkOOM",
+        "date": "2026-07-02",
+        "path": "data/posts/2026-07/redis-fork-latency-spikes-cow-oom.js",
+        "tags": [
+            "Redis",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1782991616,
+        "title": "DeepSpec: Training and Evaluating Speculative Decoding",
+        "slug": "deepseek-deepspec-speculative-decoding",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-02",
+        "path": "data/posts/2026-07/deepseek-deepspec-speculative-decoding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1782959201,
         "title": "Debugging Linux Kernel I/O Scheduler Deadlocks",
         "slug": "debugging-linux-kernel-io-scheduler-deadlocks",
