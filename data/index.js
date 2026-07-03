@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783059829,
+        "title": "Debugging C++20 Coroutine Lifetime Issues",
+        "slug": "debugging-cpp20-coroutine-lifetime-suspension",
+        "language": "C++20",
+        "code": "UAF / Lifetime",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/debugging-cpp20-coroutine-lifetime-suspension.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783059830,
+        "title": "Fixing Spark Shuffle Spill and Skew OOMs",
+        "slug": "spark-shuffle-spill-data-skew-oom",
+        "language": "Scala/Spark",
+        "code": "OOM / Spill",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/spark-shuffle-spill-data-skew-oom.js",
+        "tags": [
+            "Apache Spark",
+            "Scala",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783059831,
+        "title": "Fixing PostgreSQL TXID Wraparound Failures",
+        "slug": "postgresql-transaction-id-wraparound-vacuum",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/postgresql-transaction-id-wraparound-vacuum.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783059832,
+        "title": "Inside Krishnagangwal/CS-Fundamentals Repo",
+        "slug": "github-trending-cs-fundamentals-guide",
+        "language": "Markdown / CS Prep",
+        "code": "Trend",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/github-trending-cs-fundamentals-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783044090,
         "title": "Resolving eBPF Verifier Packet Filter Rejections",
         "slug": "ebpf-verifier-rejection-packet-filters",
