@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1783044090,
+        "title": "Resolving eBPF Verifier Packet Filter Rejections",
+        "slug": "ebpf-verifier-rejection-packet-filters",
+        "language": "Go",
+        "code": "VerifierError",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/ebpf-verifier-rejection-packet-filters.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783044091,
+        "title": "Debugging Airflow DAG Idempotency Failures",
+        "slug": "airflow-dag-idempotency-data-inconsistency",
+        "language": "Python",
+        "code": "IdempotencyError",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/airflow-dag-idempotency-data-inconsistency.js",
+        "tags": [
+            "Python",
+            "SQL",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783044092,
+        "title": "Fixing Elixir OTP Supervisor Tree Collapses",
+        "slug": "elixir-otp-supervisor-tree-collapse",
+        "language": "Docker",
+        "code": "SupervisorCollapseError",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/elixir-otp-supervisor-tree-collapse.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783044093,
+        "title": "Mastering Interview Prep with CS-Fundamentals",
+        "slug": "github-trend-cs-fundamentals",
+        "language": "Java",
+        "code": "Trend",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/github-trend-cs-fundamentals.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Java",
+            "SQL",
+            "Go"
+        ]
+    },
+    {
         "id": 1782991613,
         "title": "Solving Async Rust Pinning Violations and Use-After-Free",
         "slug": "solving-async-rust-pinning-violations-use-after-free",
