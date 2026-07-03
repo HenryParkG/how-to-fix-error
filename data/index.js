@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783078036,
+        "title": "Fixing WebGPU Bind Group Mismatches and Alignment Issues",
+        "slug": "fixing-webgpu-bind-group-mismatches-alignment",
+        "language": "TypeScript",
+        "code": "GPUPipelineError",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/fixing-webgpu-bind-group-mismatches-alignment.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783078037,
+        "title": "Fixing Akka Mailbox Overflows and Heap Exhaustion",
+        "slug": "resolving-akka-mailbox-overflows-heap-exhaustion",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/resolving-akka-mailbox-overflows-heap-exhaustion.js",
+        "tags": [
+            "Java",
+            "Akka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783078038,
+        "title": "Resolving Elasticsearch Circuit Breaker Tripping Issues",
+        "slug": "resolving-elasticsearch-circuit-breaker-tripping",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/resolving-elasticsearch-circuit-breaker-tripping.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783078039,
+        "title": "Analyzing the CS-Fundamentals Placement Prep Repository",
+        "slug": "analyzing-cs-fundamentals-placement-prep-repo",
+        "language": "SQL",
+        "code": "Trend",
+        "date": "2026-07-03",
+        "path": "data/posts/2026-07/analyzing-cs-fundamentals-placement-prep-repo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "SQL"
+        ]
+    },
+    {
         "id": 1783059829,
         "title": "Debugging C++20 Coroutine Lifetime Issues",
         "slug": "debugging-cpp20-coroutine-lifetime-suspension",
