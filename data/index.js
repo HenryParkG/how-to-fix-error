@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783162167,
+        "title": "Fixing Rust Async Task Starvation and Pin Invariants",
+        "slug": "debugging-rust-async-starvation-pinning-violations",
+        "language": "Rust",
+        "code": "Future Poll / Task Starvation",
+        "date": "2026-07-04",
+        "path": "data/posts/2026-07/debugging-rust-async-starvation-pinning-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Asynchronous",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783162168,
+        "title": "Mitigating Kafka Consumer Rebalance Storms under Lag",
+        "slug": "mitigating-kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-07-04",
+        "path": "data/posts/2026-07/mitigating-kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783162169,
+        "title": "Fixing Istio mTLS Handshake Timeouts in K8s",
+        "slug": "resolving-istio-mtls-handshake-timeouts",
+        "language": "Kubernetes",
+        "code": "Envoy Handshake Timeout",
+        "date": "2026-07-04",
+        "path": "data/posts/2026-07/resolving-istio-mtls-handshake-timeouts.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783162170,
+        "title": "Analyzing Krishnagangwal/CS-Fundamentals",
+        "slug": "analyzing-krishnagangwal-cs-fundamentals-repo",
+        "language": "Markdown / C++",
+        "code": "Trend",
+        "date": "2026-07-04",
+        "path": "data/posts/2026-07/analyzing-krishnagangwal-cs-fundamentals-repo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "SQL"
+        ]
+    },
+    {
         "id": 1783145485,
         "title": "Fixing PyTorch DDP Silent Deadlocks in Multi-Node",
         "slug": "pytorch-ddp-silent-deadlocks-multi-node",

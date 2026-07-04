@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Mitigating Kafka Consumer Rebalance Storms under Lag",
+    "slug": "mitigating-kafka-consumer-rebalance-storms",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "tags": [
+        "Java",
+        "Backend",
+        "Kafka",
+        "Error Fix"
+    ],
+    "analysis": "<p>When a Kafka consumer group experiences high-throughput lag, a catastrophic scenario known as a 'rebalance storm' can occur. During peak traffic or backlog recovery, the processing time of a message batch pulled via <code>.poll()</code> can exceed the configured <code>max.poll.interval.ms</code>. When this timeout is breached, the Kafka Coordinator presumes the consumer has died, evicts it from the group, and triggers a partition reassignment. Because the rebalancing process halts message consumption across the entire group, overall processing latency spikes further. When the evicted consumer attempts to commit offsets, it encounters a <code>CommitFailedException</code>, and the rebalance cycle repeats endlessly, trapping the system in a loop.</p>",
+    "root_cause": "The time spent processing the polled batch exceeds 'max.poll.interval.ms', causing the coordinator to assume consumer death and trigger a group rebalance.",
+    "bad_code": "Properties props = new Properties();\nprops.put(\"bootstrap.servers\", \"localhost:9092\");\nprops.put(\"group.id\", \"payment-group\");\nprops.put(\"max.poll.interval.ms\", \"300000\"); // 5 minutes\nprops.put(\"max.poll.records\", \"1000\"); // High limit\n\nKafkaConsumer<String, PaymentEvent> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"payments\"));\n\nwhile (true) {\n    ConsumerRecords<String, PaymentEvent> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, PaymentEvent> record : records) {\n        // BAD: Sync DB write/HTTP call inside the consumer poll loop blocks offset commits\n        processPaymentWithExternalAPICall(record.value());\n    }\n    consumer.commitSync();\n}",
+    "solution_desc": "To stop the rebalance storm, we decouple the polling loop from the execution logic by offloading message processing to a dedicated thread pool. This allows the consumer thread to continuously issue heartbeats and call '.poll()' well within the timeout threshold, while a downstream worker group handles processing and commits offsets asynchronously.",
+    "good_code": "import org.apache.kafka.clients.consumer.*;\nimport java.time.Duration;\nimport java.util.*;\nimport java.util.concurrent.*;\n\npublic class ResilientConsumer {\n    private final KafkaConsumer<String, String> consumer;\n    private final ExecutorService executor = Executors.newFixedThreadPool(8);\n\n    public ResilientConsumer(Properties config) {\n        // Decouple configurations: limit poll records and increase interval\n        config.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"50\"); \n        config.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"600000\"); // 10 minutes\n        config.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, \"false\");\n        this.consumer = new KafkaConsumer<>(config);\n    }\n\n    public void start() {\n        consumer.subscribe(Collections.singletonList(\"payments\"));\n        try {\n            while (true) {\n                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n                if (!records.isEmpty()) {\n                    executor.submit(() -> {\n                        for (ConsumerRecord<String, String> record : records) {\n                            process(record.value());\n                        }\n                        // Commit asynchronously or manage offset tracking\n                        consumer.commitAsync();\n                    });\n                }\n            } \n        } finally {\n            consumer.close();\n        }\n    }\n\n    private void process(String payload) { /* Downstream execution */ }\n}",
+    "verification": "Monitor the consumer group status using 'kafka-consumer-groups.sh' and look for rebalance events. Ensure that consumer thread logs do not display 'CommitFailedException' under simulated peak lag conditions.",
+    "date": "2026-07-04",
+    "id": 1783162168,
+    "type": "error"
+});
