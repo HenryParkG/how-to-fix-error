@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783233059,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "fixing-cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "C++",
+            "Asynchronous",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783233060,
+        "title": "Resolving Haskell Lazy Evaluation Space Leaks",
+        "slug": "resolving-haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/resolving-haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783233061,
+        "title": "Mitigating Postgres TXID Wraparound",
+        "slug": "mitigating-postgres-txid-wraparound",
+        "language": "SQL",
+        "code": "TxIDWraparound",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/mitigating-postgres-txid-wraparound.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783233062,
+        "title": "Analyzing mekos2772/ios-location-spoofer",
+        "slug": "mastering-ios-location-spoofer",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/mastering-ios-location-spoofer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783217224,
         "title": "Fixing eBPF Verifier Rejections from Loop Unrolling",
         "slug": "fixing-ebpf-verifier-loop-unrolling-complexity",
