@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783249162,
+        "title": "Fix WebGPU Device Lost from Write-after-Write Hazard",
+        "slug": "webgpu-device-lost-texture-write-after-write-hazard",
+        "language": "TypeScript",
+        "code": "GPUDeviceLostError",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/webgpu-device-lost-texture-write-after-write-hazard.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783249163,
+        "title": "Fix Spark OOM Errors from Broadcast Join Memory Skew",
+        "slug": "spark-oom-broadcast-join-memory-skew",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/spark-oom-broadcast-join-memory-skew.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783249164,
+        "title": "Fix Zig Memory Overwrites in Misaligned Arenas",
+        "slug": "zig-misaligned-allocations-custom-arenas",
+        "language": "Zig",
+        "code": "AccessViolation",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/zig-misaligned-allocations-custom-arenas.js",
+        "tags": [
+            "Rust",
+            "Zig",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783249165,
+        "title": "Deep Dive into ios-location-spoofer GPS Tech",
+        "slug": "ios-location-spoofer-non-jailbreak-gps",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/ios-location-spoofer-non-jailbreak-gps.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783233059,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "fixing-cpp20-coroutine-lifetime-violations",
