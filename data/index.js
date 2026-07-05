@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783217224,
+        "title": "Fixing eBPF Verifier Rejections from Loop Unrolling",
+        "slug": "fixing-ebpf-verifier-loop-unrolling-complexity",
+        "language": "Rust / C",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-loop-unrolling-complexity.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783217225,
+        "title": "Fixing Redis Replica Disconnection under High Load",
+        "slug": "redis-replica-disconnection-loop-high-write-load",
+        "language": "Redis",
+        "code": "REPL_LOOP_ERR",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/redis-replica-disconnection-loop-high-write-load.js",
+        "tags": [
+            "Kubernetes",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783217226,
+        "title": "Fixing Elixir GenStage Backpressure Mailbox Bloat",
+        "slug": "elixir-genstage-backpressure-mailbox-bloat",
+        "language": "Elixir / Erlang",
+        "code": "GENSTAGE_BLOAT",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/elixir-genstage-backpressure-mailbox-bloat.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783217227,
+        "title": "Why mekos2772/ios-location-spoofer is Trending",
+        "slug": "ios-location-spoofer-no-jailbreak-guide",
+        "language": "Swift / Objective-C",
+        "code": "Trend",
+        "date": "2026-07-05",
+        "path": "data/posts/2026-07/ios-location-spoofer-no-jailbreak-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783162167,
         "title": "Fixing Rust Async Task Starvation and Pin Invariants",
         "slug": "debugging-rust-async-starvation-pinning-violations",
