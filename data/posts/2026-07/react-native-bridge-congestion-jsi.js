@@ -1,0 +1,23 @@
+window.onPostDataLoaded({
+    "title": "Resolving React Native Bridge Congestion via JSI",
+    "slug": "react-native-bridge-congestion-jsi",
+    "language": "React Native",
+    "code": "Bridge Congestion",
+    "tags": [
+        "React Native",
+        "JSI",
+        "Performance",
+        "Frontend",
+        "Optimization",
+        "Error Fix"
+    ],
+    "analysis": "<p>High-frequency event emissions (e.g., gyroscope, accelerometer, touch events, real-time sensor data, or extensive UI updates) from the native side to JavaScript can overwhelm the React Native bridge. The bridge, which is essentially a serialized JSON communication channel, becomes a bottleneck. Each event incurs serialization/deserialization overhead and adds to the message queue. When events arrive faster than the JS thread can process them, the queue grows, leading to UI freezes, delayed responses, and a poor user experience. This \"congestion\" severely degrades application responsiveness and overall performance.</p>",
+    "root_cause": "Excessive serialization/deserialization and asynchronous message passing overhead across the React Native bridge for high-frequency data streams. The JavaScript thread cannot keep up with the volume of messages, leading to a backlog.",
+    "bad_code": "```javascript\n// Native (e.g., iOS Swift)\n@objc func sendSensorData(_ data: [String: Any]) {\n    // Incurs bridge overhead for every single data point\n    self.bridge?.eventDispatcher()?.sendAppEvent(name: \"SensorData\", body: data)\n}\n\n// React Native JS\nuseEffect(() => {\n  const subscription = NativeAppEventEmitter.addListener('SensorData', (data) => {\n    // Processes data frequently, potentially causing UI jank\n    updateState(data);\n  });\n  return () => subscription.remove();\n}, []);\n```",
+    "solution_desc": "JSI (JavaScript Interface) allows direct, synchronous communication between JavaScript and native code, bypassing the asynchronous, serialized bridge. Instead of sending discrete events over the bridge, a JSI-powered module can expose native functions directly to JavaScript, or vice-versa, allowing for high-throughput, low-latency data access or event streaming. For high-frequency data, it's ideal to push data directly into a shared memory buffer or a JSI-exposed C++ object that JS can poll or access synchronously, significantly reducing bridge traffic. Debouncing or throttling on the native side can also help, but JSI provides a more fundamental solution for truly high-rate data.",
+    "good_code": "```c++\n// JSI C++ Module (example for shared memory or direct call)\n#include <react/renderer/jsi/JSIInstaller.h>\n#include <jsi/jsi.h>\n\nvoid installSensorDataJSI(facebook::jsi::Runtime& jsiRuntime, std::shared_ptr<facebook::react::CallInvoker> jsCallInvoker) {\n    auto getSensorValue = facebook::jsi::Function::createFromHostFunction(\n        jsiRuntime,\n        facebook::jsi::PropNameID::forAscii(jsiRuntime, \"getSensorValue\"),\n        0, // numArgs\n        [](facebook::jsi::Runtime& runtime, const facebook::jsi::Value& thisValue, const facebook::jsi::Value* arguments, size_t count) -> facebook::jsi::Value {\n            // Directly access a shared memory buffer or a native sensor object\n            // No serialization/deserialization overhead\n            double value = NativeSensorManager::getLatestSensorReading(); // Example native call\n            return facebook::jsi::Value(value);\n        }\n    );\n    jsiRuntime.global().setProperty(jsiRuntime, \"getSensorValue\", std::move(getSensorValue));\n}\n\n// React Native JS\nuseEffect(() => {\n  const interval = setInterval(() => {\n    // Polls data directly via JSI, bypassing the bridge\n    const sensorValue = global.getSensorValue(); // Synchronous JSI call\n    updateState(sensorValue);\n  }, 16); // ~60 FPS\n  return () => clearInterval(interval);\n}, []);\n```",
+    "verification": "Monitor the React Native bridge message queue size using performance tools (e.g., Flipper, Chrome DevTools profiling for the JS thread) before and after JSI implementation. Observe a significant reduction in queued messages and less time spent on bridge communication. Also, visually verify smoother UI updates and improved responsiveness, especially during periods of high data throughput. Benchmarking with high-frequency event simulations will show a marked improvement in FPS and reduced JS thread blocking.",
+    "date": "2026-07-06",
+    "id": 1783323318,
+    "type": "error"
+});
