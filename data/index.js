@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1783304803,
+        "title": "Resolving PyTorch CUDA OOM from KV Cache Fragmentation",
+        "slug": "pytorch-cuda-oom-kv-cache-fragmentation-llm-serving",
+        "language": "PyTorch, CUDA, LLM",
+        "code": "CUDA OOM",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/pytorch-cuda-oom-kv-cache-fragmentation-llm-serving.js",
+        "tags": [
+            "PyTorch",
+            "LLM",
+            "CUDA",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783304804,
+        "title": "WebAssembly Memory Leaks: Orphaned Rust-JS References",
+        "slug": "wasm-memory-leak-rust-js-references",
+        "language": "Rust, WebAssembly, JavaScript",
+        "code": "Memory Leak",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/wasm-memory-leak-rust-js-references.js",
+        "tags": [
+            "Rust",
+            "WebAssembly",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783304805,
+        "title": "MongoDB WiredTiger Cache Eviction Stalls: Write-Heavy",
+        "slug": "mongodb-wiredtiger-cache-stalls-write-heavy",
+        "language": "MongoDB, WiredTiger",
+        "code": "Cache Stall",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/mongodb-wiredtiger-cache-stalls-write-heavy.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Database",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783304806,
+        "title": "T3MP3ST: Autonomous Red Teaming with Multi-Agent AI",
+        "slug": "t3mp3st-autonomous-red-teaming-ai-offensive-security",
+        "language": "Python, AI, Offensive Security",
+        "code": "Trend",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/t3mp3st-autonomous-red-teaming-ai-offensive-security.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Cybersecurity",
+            "Offensive Security",
+            "Python"
+        ]
+    },
+    {
         "id": 1783249162,
         "title": "Fix WebGPU Device Lost from Write-after-Write Hazard",
         "slug": "webgpu-device-lost-texture-write-after-write-hazard",
