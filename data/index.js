@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1783343099,
+        "title": "Unraveling Rust Borrow Checker: Lifetimes & Mutability",
+        "slug": "unraveling-rust-borrow-checker-lifetimes-mutability",
+        "language": "Rust",
+        "code": "BorrowChecker",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/unraveling-rust-borrow-checker-lifetimes-mutability.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Memory Safety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783343100,
+        "title": "Diagnosing Kafka Consumer Group Rebalancing Storms",
+        "slug": "diagnosing-kafka-consumer-group-rebalancing-storms",
+        "language": "Kafka",
+        "code": "RebalancingStorm",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/diagnosing-kafka-consumer-group-rebalancing-storms.js",
+        "tags": [
+            "Kafka",
+            "Infra",
+            "Messaging",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783343101,
+        "title": "Mitigating Kubernetes Pod Eviction Storms from Node Pressure",
+        "slug": "mitigating-kubernetes-pod-eviction-storms-node-pressure",
+        "language": "Kubernetes",
+        "code": "PodEvictionStorm",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/mitigating-kubernetes-pod-eviction-storms-node-pressure.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Containerization",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783343102,
+        "title": "T3MP3ST: Autonomous Red Teaming with Multi-Agent AI",
+        "slug": "t3mp3st-autonomous-red-teaming-multi-agent-ai",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-06",
+        "path": "data/posts/2026-07/t3mp3st-autonomous-red-teaming-multi-agent-ai.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend",
+            "Cybersecurity",
+            "AI/ML",
+            "Offensive Security"
+        ]
+    },
+    {
         "id": 1783323318,
         "title": "Resolving React Native Bridge Congestion via JSI",
         "slug": "react-native-bridge-congestion-jsi",
