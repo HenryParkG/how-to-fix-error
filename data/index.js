@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1783390132,
+        "title": "eBPF Verifier Rejection & Performance Degradation",
+        "slug": "ebpf-verifier-rejection-performance-degradation",
+        "language": "Rust",
+        "code": "BPF_VERIFIER_REJECT",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/ebpf-verifier-rejection-performance-degradation.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Performance",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783390133,
+        "title": "Istio Sidecar & mTLS Handshake Failures",
+        "slug": "istio-sidecar-mtls-handshake-errors",
+        "language": "Kubernetes",
+        "code": "ISTIO_INJECTION_FAIL",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/istio-sidecar-mtls-handshake-errors.js",
+        "tags": [
+            "Istio",
+            "Kubernetes",
+            "mTLS",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783390134,
+        "title": "Redis RDB/AOF Forking Stalls & Memory",
+        "slug": "redis-rdb-aof-forking-stalls-memory-overcommit",
+        "language": "Infra",
+        "code": "REDIS_FORK_STALL",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/redis-rdb-aof-forking-stalls-memory-overcommit.js",
+        "tags": [
+            "Redis",
+            "Persistence",
+            "Memory",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783390135,
+        "title": "T3MP3ST: Autonomous Red Teaming Platform",
+        "slug": "t3mp3st-autonomous-red-teaming-platform",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/t3mp3st-autonomous-red-teaming-platform.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Red Teaming",
+            "AI",
+            "Cybersecurity",
+            "Python"
+        ]
+    },
+    {
         "id": 1783343099,
         "title": "Unraveling Rust Borrow Checker: Lifetimes & Mutability",
         "slug": "unraveling-rust-borrow-checker-lifetimes-mutability",
