@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "PostgreSQL: Preventing Transaction ID Wraparound & Freezing",
+    "slug": "postgresql-transaction-id-wraparound-freezing",
+    "language": "PostgreSQL",
+    "code": "WraparoundError",
+    "tags": [
+        "PostgreSQL",
+        "Database",
+        "SQL",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>PostgreSQL relies on transaction IDs (XIDs) to manage MVCC (Multi-Version Concurrency Control) and ensure data consistency. Each new transaction is assigned a sequential XID. The XID is a 32-bit unsigned integer, meaning it can only store values up to 2^32, or approximately 4 billion transactions. When the XID counter approaches its maximum value, it faces a phenomenon known as 'transaction ID wraparound'.</p><p>If the XID counter wraps around without old transactions being 'frozen' (i.e., marked as permanently completed and visible to all future transactions), PostgreSQL would mistakenly perceive older, active transactions as being in the future. This leads to data corruption, potential data loss, and eventually, PostgreSQL will shut down the database to prevent further damage, often with an error message like 'database is going to shut down to prevent transaction ID wraparound'.</p><p>Database freezing is the process of marking old rows with XIDs older than a certain threshold as 'frozen', making them eternally visible. Autovacuum is designed to handle this automatically, but misconfigured or overwhelmed autovacuum processes can fail to keep up, leading to the dreaded wraparound.</p>",
+    "root_cause": "The specific technical reason for failure is the exhaustion of the 32-bit transaction ID space because old transactions/rows are not marked as 'frozen' before the XID counter wraps around. This typically happens when the `autovacuum_freeze_max_age` setting is reached (default 200 million transactions) for a table, and autovacuum is either disabled, misconfigured, or cannot process tables fast enough.",
+    "bad_code": "```sql\n-- Example of checking XID age on tables, indicating potential issues\nSELECT \n    datname, \n    age(datfrozenxid) AS xid_age, \n    datfrozenxid, \n    current_setting('autovacuum_freeze_max_age') AS max_age\nFROM pg_database\nORDER BY xid_age DESC;\n\n-- Or tables that are not being vacuumed frequently enough\nSELECT \n    relname, \n    pg_relation_size(oid) AS size,\n    last_autovacuum,\n    last_autoanalyze\nFROM pg_stat_user_tables\nORDER BY age(relfrozenxid) DESC;\n```",
+    "solution_desc": "To prevent transaction ID wraparound, proactive monitoring and proper autovacuum tuning are crucial. Monitor `age(datfrozenxid)` for databases and `age(relfrozenxid)` for individual tables. Ensure `autovacuum` is enabled and configured to run frequently enough. For tables approaching the `autovacuum_freeze_max_age` limit, increase autovacuum workers, adjust `autovacuum_vacuum_cost_delay`, `autovacuum_vacuum_scale_factor`, and `autovacuum_vacuum_threshold`. In critical situations, manual `VACUUM FREEZE` or `VACUUM (FREEZE)` can be run on problematic tables or the entire database to explicitly mark old transactions as frozen.",
+    "good_code": "```sql\n-- Monitoring XID age (should be well below autovacuum_freeze_max_age)\nSELECT \n    datname, \n    age(datfrozenxid) AS xid_age,\n    current_setting('autovacuum_freeze_max_age') AS freeze_max_age\nFROM pg_database\nORDER BY xid_age DESC;\n\n-- Manually force a freeze on a specific table if needed (during maintenance window)\nVACUUM (FREEZE, VERBOSE) my_problematic_table;\n\n-- Adjusting autovacuum parameters (example, apply with caution)\nALTER SYSTEM SET autovacuum_vacuum_cost_delay = '10ms';\nALTER SYSTEM SET autovacuum_max_workers = '5';\nSELECT pg_reload_conf();\n\n-- Per-table autovacuum tuning (e.g., for very large, active tables)\nALTER TABLE my_high_activity_table SET (autovacuum_vacuum_scale_factor = 0.01, autovacuum_vacuum_threshold = 1000);\n```",
+    "verification": "Regularly monitor `pg_stat_database` and `pg_stat_user_tables` for `xid_age` and `relfrozenxid` values. Ensure `age(datfrozenxid)` for your database remains significantly below `autovacuum_freeze_max_age` (e.g., under 150 million). Check PostgreSQL logs for autovacuum activity and any warnings related to XID age. Implement alerting for high XID age thresholds to respond before a critical shutdown occurs. Confirm that `VACUUM` commands (manual or autovacuum) successfully reduce the `relfrozenxid` age.",
+    "date": "2026-07-07",
+    "id": 1783406265,
+    "type": "error"
+});

@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1783406265,
+        "title": "PostgreSQL: Preventing Transaction ID Wraparound & Freezing",
+        "slug": "postgresql-transaction-id-wraparound-freezing",
+        "language": "PostgreSQL",
+        "code": "WraparoundError",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/postgresql-transaction-id-wraparound-freezing.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783406266,
+        "title": "gRPC: Context Cancellation & Deadlines in Microservices",
+        "slug": "grpc-context-cancellation-deadlines-microservices",
+        "language": "Go",
+        "code": "ContextCancellation",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/grpc-context-cancellation-deadlines-microservices.js",
+        "tags": [
+            "gRPC",
+            "Go",
+            "Microservices",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783406267,
+        "title": "C++20 Coroutine Stackless Unwinding & Resource Leaks",
+        "slug": "cpp20-coroutine-stackless-unwinding-resource-leaks",
+        "language": "C++",
+        "code": "CoroutineLeak",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/cpp20-coroutine-stackless-unwinding-resource-leaks.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Resource Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783406268,
+        "title": "T3MP3ST: Autonomous Red Teaming with Multi-Agent LLMs",
+        "slug": "t3mp3st-autonomous-red-teaming-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/t3mp3st-autonomous-red-teaming-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Cybersecurity",
+            "AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1783390132,
         "title": "eBPF Verifier Rejection & Performance Degradation",
         "slug": "ebpf-verifier-rejection-performance-degradation",
