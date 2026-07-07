@@ -1,5 +1,74 @@
 var postsIndex = [
     {
+        "id": 1783424626,
+        "title": "Go Goroutine Starvation & Deadlock: A Deep Dive",
+        "slug": "go-goroutine-starvation-deadlock-fix",
+        "language": "Go",
+        "code": "Starvation/Deadlock",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/go-goroutine-starvation-deadlock-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Goroutines",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783424627,
+        "title": "Spark Data Skew: OOMs & Performance Degradation Fix",
+        "slug": "spark-data-skew-oom-performance-fix",
+        "language": "Spark",
+        "code": "Data Skew/OOM",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/spark-data-skew-oom-performance-fix.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "Distributed Computing",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783424628,
+        "title": "K8s CrashLoopBackOff: Liveness/Readiness Probe Fix",
+        "slug": "kubernetes-crashloopbackoff-probes-fix",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/kubernetes-crashloopbackoff-probes-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "DevOps",
+            "Probes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783424629,
+        "title": "T3MP3ST: Autonomous Red Teaming Platform Analysis",
+        "slug": "t3mp3st-autonomous-red-teaming-platform",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-07",
+        "path": "data/posts/2026-07/t3mp3st-autonomous-red-teaming-platform.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Cybersecurity",
+            "AI",
+            "Multi-Agent Systems",
+            "Python"
+        ]
+    },
+    {
         "id": 1783406265,
         "title": "PostgreSQL: Preventing Transaction ID Wraparound & Freezing",
         "slug": "postgresql-transaction-id-wraparound-freezing",
