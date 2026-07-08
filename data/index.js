@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783498268,
+        "title": "Rust Async Pinning: Diagnosing Undefined Behavior",
+        "slug": "rust-async-pinning-undefined-behavior",
+        "language": "Rust",
+        "code": "Lifetime Violation",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/rust-async-pinning-undefined-behavior.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783498269,
+        "title": "Mitigating HNSW Index Construction Memory OOM",
+        "slug": "hnsw-index-oom-memory-saturation",
+        "language": "Python",
+        "code": "Out of Memory",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/hnsw-index-oom-memory-saturation.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Databases",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783498270,
+        "title": "Resolving RN JSI GC Deadlocks & Leaks",
+        "slug": "react-native-jsi-gc-deadlocks",
+        "language": "TypeScript",
+        "code": "Garbage Collection Leak",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/react-native-jsi-gc-deadlocks.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783498271,
+        "title": "Analyzing T3MP3ST: Multi-Agent Security Harness",
+        "slug": "t3mp3st-multi-agent-security-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/t3mp3st-multi-agent-security-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783489443,
         "title": "Resolving WebGPU BindGroup & Texture Memory Leaks",
         "slug": "webgpu-memory-leaks-bindgroups-textures",
