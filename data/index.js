@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1783489443,
+        "title": "Resolving WebGPU BindGroup & Texture Memory Leaks",
+        "slug": "webgpu-memory-leaks-bindgroups-textures",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/webgpu-memory-leaks-bindgroups-textures.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783489444,
+        "title": "Fixing Haskell Lazy Evaluation Space Leaks",
+        "slug": "haskell-lazy-evaluation-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/haskell-lazy-evaluation-space-leaks.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783489445,
+        "title": "Tuning WiredTiger Cache Eviction Starvation",
+        "slug": "mongodb-wiredtiger-cache-eviction-starvation",
+        "language": "MongoDB",
+        "code": "Eviction Starvation",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/mongodb-wiredtiger-cache-eviction-starvation.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783489446,
+        "title": "Inside T3MP3ST: Multi-Agent AI Safety Testing Harness",
+        "slug": "t3mp3st-multi-agent-red-teaming-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-08",
+        "path": "data/posts/2026-07/t3mp3st-multi-agent-red-teaming-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783475382,
         "title": "Fixing Elixir Selective Receive Mailbox Bloat",
         "slug": "elixir-selective-receive-mailbox-bloat",
