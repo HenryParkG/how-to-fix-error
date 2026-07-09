@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783597684,
+        "title": "Fixing C++20 Coroutine Lifetime & Unwinding Bugs",
+        "slug": "cpp20-coroutine-lifetime-stack-unwinding",
+        "language": "C++",
+        "code": "Lifetime-Error",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/cpp20-coroutine-lifetime-stack-unwinding.js",
+        "tags": [
+            "C++",
+            "Rust",
+            "Debugging",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783597685,
+        "title": "Solving Kafka Consumer Rebalance Storms",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783597686,
+        "title": "Preventing PostgreSQL TXID Wraparound Outages",
+        "slug": "postgres-txid-wraparound-corruption",
+        "language": "SQL",
+        "code": "TXID-Wraparound",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/postgres-txid-wraparound-corruption.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783597687,
+        "title": "X4G: High-Performance Go Networking Matrix",
+        "slug": "x4g-high-performance-go-networking-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/x4g-high-performance-go-networking-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1783562827,
         "title": "Debugging eBPF Packet Loss & Verifier Failures",
         "slug": "debugging-ebpf-packet-loss-verifier-failures",
