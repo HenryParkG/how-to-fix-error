@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1783562827,
+        "title": "Debugging eBPF Packet Loss & Verifier Failures",
+        "slug": "debugging-ebpf-packet-loss-verifier-failures",
+        "language": "eBPF, C",
+        "code": "eBPF_VERIFIER_ERR",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/debugging-ebpf-packet-loss-verifier-failures.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783562828,
+        "title": "Redis COW OOM Kills: Mitigating BGSAVE Issues",
+        "slug": "redis-cow-oom-kills-bgsave",
+        "language": "Redis",
+        "code": "OOM_KILL",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/redis-cow-oom-kills-bgsave.js",
+        "tags": [
+            "Redis",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783562829,
+        "title": "Wasm Memory Fragmentation in Rust-V8 Runtimes",
+        "slug": "wasm-memory-fragmentation-rust-v8",
+        "language": "Rust, WebAssembly",
+        "code": "WASM_OOM",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/wasm-memory-fragmentation-rust-v8.js",
+        "tags": [
+            "Rust",
+            "WebAssembly",
+            "V8",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783562830,
+        "title": "Trending GitHub: 'x4gKing/X4G' Analysis",
+        "slug": "trending-github-x4gking-x4g-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-09",
+        "path": "data/posts/2026-07/trending-github-x4gking-x4g-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Developer Tool"
+        ]
+    },
+    {
         "id": 1783498268,
         "title": "Rust Async Pinning: Diagnosing Undefined Behavior",
         "slug": "rust-async-pinning-undefined-behavior",
