@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1783685811,
+        "title": "Debugging WebGPU Pipeline Stalls & Bind Group Limit Exhaustion",
+        "slug": "debugging-webgpu-pipeline-stalls-bind-group-exhaustion",
+        "language": "WebGPU, TypeScript",
+        "code": "WebGPUErrors",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/debugging-webgpu-pipeline-stalls-bind-group-exhaustion.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783685812,
+        "title": "Mitigating MongoDB WiredTiger Cache Eviction Stalls & Ticket Starvation",
+        "slug": "mongodb-wiredtiger-cache-stalls-ticket-starvation",
+        "language": "MongoDB, Database",
+        "code": "MongoDBPerf",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/mongodb-wiredtiger-cache-stalls-ticket-starvation.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "NoSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783685813,
+        "title": "Diagnosing gRPC Keepalive & HTTP/2 Flow Control Deadlocks in Service Meshes",
+        "slug": "grpc-keepalive-http2-flow-control-deadlocks-service-meshes",
+        "language": "gRPC, HTTP/2, Service Mesh",
+        "code": "NetworkDeadlock",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/grpc-keepalive-http2-flow-control-deadlocks-service-meshes.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Service Mesh",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783685814,
+        "title": "Analyze Trending GitHub Repo: x4gKing/X4G - AI-Powered Automation Hub",
+        "slug": "analyze-github-repo-x4gking-x4g-ai-automation-hub",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/analyze-github-repo-x4gking-x4g-ai-automation-hub.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783665346,
         "title": "Resolving io_uring CQ Overflows & Kernel Page Leaks",
         "slug": "resolving-io-uring-cq-overflows-page-leaks",
