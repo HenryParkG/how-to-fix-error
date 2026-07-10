@@ -1,5 +1,76 @@
 var postsIndex = [
     {
+        "id": 1783650385,
+        "title": "Rust: Borrow Checker, Lifetimes & Trait Object Conundrums",
+        "slug": "rust-borrow-checker-lifetimes-trait-object-conundrums",
+        "language": "Rust",
+        "code": "CompileError",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/rust-borrow-checker-lifetimes-trait-object-conundrums.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Lifetimes",
+            "Trait Objects",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783650386,
+        "title": "Spark Executor JVM OOMs: Data Skew & Kryo Overheads",
+        "slug": "spark-executor-jvm-ooms-data-skew-kryo-overheads",
+        "language": "Java",
+        "code": "OOM",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/spark-executor-jvm-ooms-data-skew-kryo-overheads.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "JVM",
+            "Data Skew",
+            "Kryo",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783650387,
+        "title": "Mitigating Istio Envoy Sidecar Resource Exhaustion & Configuration Drift",
+        "slug": "istio-envoy-sidecar-resource-exhaustion-configuration-drift",
+        "language": "Kubernetes",
+        "code": "ResourceExhaustion",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/istio-envoy-sidecar-resource-exhaustion-configuration-drift.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Microservices",
+            "Infra",
+            "Observability",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783650388,
+        "title": "X4G: Unleashing Developer Productivity with Cross-Platform Automation",
+        "slug": "x4g-unleashing-developer-productivity-cross-platform-automation",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/x4g-unleashing-developer-productivity-cross-platform-automation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Developer Tools",
+            "Automation",
+            "CLI",
+            "Go",
+            "Backend"
+        ]
+    },
+    {
         "id": 1783597684,
         "title": "Fixing C++20 Coroutine Lifetime & Unwinding Bugs",
         "slug": "cpp20-coroutine-lifetime-stack-unwinding",
