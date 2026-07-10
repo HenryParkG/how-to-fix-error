@@ -1,5 +1,78 @@
 var postsIndex = [
     {
+        "id": 1783665346,
+        "title": "Resolving io_uring CQ Overflows & Kernel Page Leaks",
+        "slug": "resolving-io-uring-cq-overflows-page-leaks",
+        "language": "C/C++, Linux Kernel",
+        "code": "io_uring_overflow, MemLeak",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/resolving-io-uring-cq-overflows-page-leaks.js",
+        "tags": [
+            "io_uring",
+            "Linux",
+            "Asynchronous I/O",
+            "Kernel",
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783665347,
+        "title": "Diagnosing PyTorch CUDA Mem Fragmentation with ZeRO-3",
+        "slug": "diagnosing-pytorch-cuda-memory-fragmentation-deepspeed-zero3",
+        "language": "Python, PyTorch, DeepSpeed",
+        "code": "CUDAMemoryError, Fragmentation",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/diagnosing-pytorch-cuda-memory-fragmentation-deepspeed-zero3.js",
+        "tags": [
+            "PyTorch",
+            "DeepSpeed",
+            "CUDA",
+            "GPU",
+            "Distributed Training",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783665348,
+        "title": "Debugging Elixir OTP Deadlocks & GenStage Failures",
+        "slug": "debugging-elixir-otp-deadlocks-genstage-backpressure-failures",
+        "language": "Elixir, OTP, GenStage",
+        "code": "Deadlock, Backpressure",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/debugging-elixir-otp-deadlocks-genstage-backpressure-failures.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Distributed Systems",
+            "GenStage",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783665349,
+        "title": "X4G: A Multimodal AI Prompt Engineering Framework",
+        "slug": "x4g-multimodal-ai-prompt-engineering-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-10",
+        "path": "data/posts/2026-07/x4g-multimodal-ai-prompt-engineering-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Generative AI",
+            "Prompt Engineering",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1783650385,
         "title": "Rust: Borrow Checker, Lifetimes & Trait Object Conundrums",
         "slug": "rust-borrow-checker-lifetimes-trait-object-conundrums",
