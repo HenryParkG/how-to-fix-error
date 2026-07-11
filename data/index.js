@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783747969,
+        "title": "Fixing Go Scheduler Starvation in GC-Heavy Loads",
+        "slug": "go-scheduler-starvation-gc-heavy-workloads",
+        "language": "Go",
+        "code": "GoRuntimeStarvation",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/go-scheduler-starvation-gc-heavy-workloads.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783747970,
+        "title": "Mitigating HNSW Vector Index Construction OOMs",
+        "slug": "hnsw-vector-index-construction-oom-fix",
+        "language": "Rust",
+        "code": "VectorDB-OOM",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/hnsw-vector-index-construction-oom-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783747971,
+        "title": "Fixing Next.js RSC Cache Poisoning & SWR Races",
+        "slug": "nextjs-rsc-cache-poisoning-swr-race",
+        "language": "Next.js",
+        "code": "NextJS-RSC-Poison",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/nextjs-rsc-cache-poisoning-swr-race.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783747972,
+        "title": "Unlocking standardization with withmarbleapp/os-taxonomy",
+        "slug": "withmarbleapp-os-taxonomy-trending",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/withmarbleapp-os-taxonomy-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783685811,
         "title": "Debugging WebGPU Pipeline Stalls & Bind Group Limit Exhaustion",
         "slug": "debugging-webgpu-pipeline-stalls-bind-group-exhaustion",
