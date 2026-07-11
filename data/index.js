@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1783755690,
+        "title": "Fixing eBPF Verifier Complexity & Pointer Rejection",
+        "slug": "ebpf-verifier-complexity-pointer-arithmetic-xdp",
+        "language": "Rust",
+        "code": "BPF_VERIFY_ERR",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/ebpf-verifier-complexity-pointer-arithmetic-xdp.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Rust",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783755691,
+        "title": "Fixing Haskell Space Leaks in Monadic Streams",
+        "slug": "haskell-space-leaks-thunk-monadic-streams",
+        "language": "Haskell",
+        "code": "OutOfMemory",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/haskell-space-leaks-thunk-monadic-streams.js",
+        "tags": [
+            "Haskell",
+            "Monad",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783755692,
+        "title": "Fixing Redis BGSAVE Copy-on-Write OOM",
+        "slug": "redis-bgsave-copy-on-write-memory-exhaustion",
+        "language": "Redis / Bash",
+        "code": "OOM-Killed",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/redis-bgsave-copy-on-write-memory-exhaustion.js",
+        "tags": [
+            "Redis",
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783755693,
+        "title": "Analyzing 'withmarbleapp/os-taxonomy' Repository",
+        "slug": "withmarbleapp-os-taxonomy-github-trend",
+        "language": "YAML / Python",
+        "code": "Trend",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/withmarbleapp-os-taxonomy-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ]
+    },
+    {
         "id": 1783747969,
         "title": "Fixing Go Scheduler Starvation in GC-Heavy Loads",
         "slug": "go-scheduler-starvation-gc-heavy-workloads",
