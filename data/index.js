@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783764583,
+        "title": "Fixing C++20 Coroutine Lifetime Leaks",
+        "slug": "fixing-cpp20-coroutine-lifetime-leaks",
+        "language": "C++",
+        "code": "LifetimeViolation",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-lifetime-leaks.js",
+        "tags": [
+            "C++",
+            "Rust",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783764584,
+        "title": "Mitigating Kafka Rebalance Storms",
+        "slug": "mitigating-kafka-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/mitigating-kafka-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783764585,
+        "title": "Fixing Postgres Autovacuum Lock & Wraparound",
+        "slug": "postgres-autovacuum-lock-wraparound",
+        "language": "SQL",
+        "code": "TxIDWraparound",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/postgres-autovacuum-lock-wraparound.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783764586,
+        "title": "Unpacking os-taxonomy: Open Source OS Matching",
+        "slug": "unpacking-os-taxonomy-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-11",
+        "path": "data/posts/2026-07/unpacking-os-taxonomy-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783755690,
         "title": "Fixing eBPF Verifier Complexity & Pointer Rejection",
         "slug": "ebpf-verifier-complexity-pointer-arithmetic-xdp",
