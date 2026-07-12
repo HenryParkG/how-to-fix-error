@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Flutter Impeller Shader Compilation Jank",
+    "slug": "flutter-impeller-shader-compilation-jank",
+    "language": "Dart",
+    "code": "Frame Drop / Jank",
+    "tags": [
+        "TypeScript",
+        "Mobile",
+        "Flutter",
+        "Error Fix"
+    ],
+    "analysis": "<p>Flutter introduced the Impeller rendering engine to address severe shader compilation jank caused by Skia's runtime GLSL compilation. Impeller precompiles shaders to Vulkan, Metal, or OpenGL at application build time. However, developers still notice dropping frames (jank) during animations, page transitions, and complex canvas operations.</p><p>This performance degradation is rarely the result of uncompiled shaders. Instead, it occurs because of dynamic Pipeline State Object (PSO) creation at runtime. When code uses varying blend modes, nested backdrop filters, dynamic stroke attributes, or complex clip paths inside a <code>CustomPainter</code>, Impeller is forced to generate a new rendering pipeline state mid-frame on the UI thread, causing instant frame drops.</p>",
+    "root_cause": "The rendering thread encounters varying drawing parameters (e.g., dynamic stroke widths, custom shaders with dynamic uniform bindings) that fail to utilize cached Pipeline State Objects (PSOs). The GPU rasterizer halts execution to compile these transient PSOs, dropping frames on high refresh-rate screens.",
+    "bad_code": "class DynamicJankyPainter extends CustomPainter {\n  @override\n  void paint(Canvas canvas, Size size) {\n    final paint = Paint()\n      ..shader = null // Generating dynamic gradients every frame\n      ..style = PaintingStyle.stroke;\n\n    for (int i = 0; i < 100; i++) {\n      // BAD: Modifying stroke properties dynamically causes pipeline mutations\n      paint.strokeWidth = i.toDouble() * 0.15;\n      paint.color = Color.fromARGB(255, i * 2, 100, 200);\n      \n      final path = Path();\n      path.arcTo(Rect.fromLTWH(0, 0, size.width, size.height), 0, 3.14, true);\n      canvas.drawPath(path, paint); // Triggers pipeline state updates\n    }\n  }\n\n  @override\n  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;\n}",
+    "solution_desc": "To optimize Impeller performance, reuse static `Paint` configurations and cache complex `Path` structures. Avoid dynamic modifications of paint properties like stroke width or color in continuous loops; instead, isolate layers using dedicated layers or pre-compile paths into a single path drawing operation. For dynamic color gradients, use uniform buffers in custom shaders instead of creating multiple distinct `Paint` objects.",
+    "good_code": "import 'dart:ui' as ui;\nimport 'package:flutter/material.dart';\n\nclass OptimizedImpellerPainter extends CustomPainter {\n  final Path _cachedPath;\n  final Paint _staticPaint;\n\n  // Pre-compile state and path structure during widget initialization\n  OptimizedImpellerPainter() \n    : _cachedPath = Path(),\n      _staticPaint = Paint()\n        ..color = const Color(0xFF3F51B5)\n        ..style = PaintingStyle.stroke\n        ..strokeWidth = 2.0 {\n    _initializePath();\n  }\n\n  void _initializePath() {\n    // Avoid recreating this structure in the paint hot-path\n    _cachedPath.addArc(\n      const Rect.fromLTWH(0, 0, 300, 300),\n      0,\n      3.14159,\n    );\n  }\n\n  @override\n  void paint(Canvas canvas, Size size) {\n    // Use drawAtlas or drawPoints where multiple variations are needed\n    // Drawing static cached path requires only single pipeline execution\n    canvas.drawPath(_cachedPath, _staticPaint);\n  }\n\n  @override\n  bool shouldRepaint(covariant OptimizedImpellerPainter oldDelegate) {\n    // Do not repaint unless state changes, saving GPU render passes\n    return false;\n  }\n}",
+    "verification": "Enable the Performance Overlay in Flutter DevTools. Run your app profiling in profile mode using `flutter run --profile`. Filter by 'GPURasterizer::Draw' execution timings. Verify that the UI and Raster thread bars remain green and consistently below the 8.3ms threshold for 120Hz screens during animations.",
+    "date": "2026-07-12",
+    "id": 1783851523,
+    "type": "error"
+});

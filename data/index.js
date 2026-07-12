@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783851521,
+        "title": "Fixing Linux io_uring SQ Thread Stall & Starvation",
+        "slug": "mitigating-linux-iouring-sq-thread-stall",
+        "language": "Rust",
+        "code": "IORING_SQ_NEED_WAKEUP",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/mitigating-linux-iouring-sq-thread-stall.js",
+        "tags": [
+            "Rust",
+            "Linux",
+            "Sysprog",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783851522,
+        "title": "Fixing Vector DB HNSW Index Memory & Latency Spikes",
+        "slug": "fixing-vector-db-hnsw-memory-explosion",
+        "language": "Rust",
+        "code": "OOM_KILLED",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/fixing-vector-db-hnsw-memory-explosion.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783851523,
+        "title": "Fixing Flutter Impeller Shader Compilation Jank",
+        "slug": "flutter-impeller-shader-compilation-jank",
+        "language": "Dart",
+        "code": "Frame Drop / Jank",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/flutter-impeller-shader-compilation-jank.js",
+        "tags": [
+            "TypeScript",
+            "Mobile",
+            "Flutter",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783851524,
+        "title": "How os-taxonomy Standardizes Operating System Detection",
+        "slug": "os-taxonomy-github-trend",
+        "language": "JSON / Python",
+        "code": "Trend",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/os-taxonomy-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783843257,
         "title": "Fix gRPC HTTP/2 Flow Control Deadlock & Starvation",
         "slug": "grpc-http2-flow-control-deadlock",
