@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783835284,
+        "title": "Fixing Rust Async Pin Projection & Unpin Errors",
+        "slug": "fixing-rust-async-pin-projection-unpin-violations",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/fixing-rust-async-pin-projection-unpin-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783835285,
+        "title": "Fixing PyTorch CUDA OOM & Memory Fragmentation",
+        "slug": "fixing-pytorch-cuda-oom-activation-fragmentation",
+        "language": "Python",
+        "code": "CUDA_OOM",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/fixing-pytorch-cuda-oom-activation-fragmentation.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783835286,
+        "title": "Resolving Elixir BEAM Scheduler NIF Blocking",
+        "slug": "resolving-elixir-beam-scheduler-nif-blocking",
+        "language": "Rust",
+        "code": "SchedulerCollapse",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/resolving-elixir-beam-scheduler-nif-blocking.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783835287,
+        "title": "Exploring OS Taxonomy: Unified System Metadata",
+        "slug": "exploring-os-taxonomy-github-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/exploring-os-taxonomy-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783821024,
         "title": "Fixing React Native JSI Memory Leaks & GC Thrashing",
         "slug": "fixing-react-native-jsi-memory-leaks",
