@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783821024,
+        "title": "Fixing React Native JSI Memory Leaks & GC Thrashing",
+        "slug": "fixing-react-native-jsi-memory-leaks",
+        "language": "React Native / C++",
+        "code": "MemoryLeak",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/fixing-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React Native",
+            "C++",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783821025,
+        "title": "Fixing Akka/Pekko Mailbox Starvation & Deadlocks",
+        "slug": "fixing-akka-pekko-mailbox-starvation-deadlocks",
+        "language": "Scala / Akka",
+        "code": "Deadlock",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/fixing-akka-pekko-mailbox-starvation-deadlocks.js",
+        "tags": [
+            "Scala",
+            "Akka",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783821026,
+        "title": "Resolving Elasticsearch Circuit Breaker & GC Pauses",
+        "slug": "resolving-elasticsearch-circuit-breaker-gc-pauses",
+        "language": "Elasticsearch",
+        "code": "CircuitBreakingException",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/resolving-elasticsearch-circuit-breaker-gc-pauses.js",
+        "tags": [
+            "Elasticsearch",
+            "JVM",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783821027,
+        "title": "Exploring withmarbleapp/os-taxonomy: Insurance Standard",
+        "slug": "exploring-withmarbleapp-os-taxonomy",
+        "language": "Python / YAML",
+        "code": "Trend",
+        "date": "2026-07-12",
+        "path": "data/posts/2026-07/exploring-withmarbleapp-os-taxonomy.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783764583,
         "title": "Fixing C++20 Coroutine Lifetime Leaks",
         "slug": "fixing-cpp20-coroutine-lifetime-leaks",

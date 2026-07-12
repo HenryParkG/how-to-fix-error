@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Akka/Pekko Mailbox Starvation & Deadlocks",
+    "slug": "fixing-akka-pekko-mailbox-starvation-deadlocks",
+    "language": "Scala / Akka",
+    "code": "Deadlock",
+    "tags": [
+        "Scala",
+        "Akka",
+        "Java",
+        "Error Fix"
+    ],
+    "analysis": "<p>In highly concurrent systems built with Scala Akka or Pekko, actor mailbox starvation and backpressure deadlocks frequently arise under heavy Reactive Stream loads. This pattern usually occurs when system components mix asynchronous message-passing with blocking operations inside the same execution context. When thread resources become saturated, actors responsible for forwarding backpressure signals (such as demand signals in Akka Streams) cannot process their internal control messages.</p><p>As a result, upstream publishers stop producing data while downstream consumers wait infinitely for the thread-pool to free up, resulting in a systemic backpressure deadlock where the actor system completely stalls and thread dumps reveal all ForkJoinPool workers in a waiting state.</p>",
+    "root_cause": "The root cause is executing blocking synchronous operations (such as JDBC queries or synchronized HTTP calls) directly inside an actor's `receive` block using the default dispatcher. This exhausts the underlying thread pool (usually the default ForkJoinPool), leaving no available threads to execute the actor's mailbox processing or stream control messages.",
+    "bad_code": "import akka.actor.Actor\nimport scala.concurrent.Await\nimport scala.concurrent.duration._\n\nclass StarvationActor extends Actor {\n  implicit val ec = context.dispatcher\n\n  def receive: Receive = {\n    case ProcessData(id) =>\n      // BAD: Blocking call on the default dispatcher starves the mailbox thread pool\n      val result = Await.result(queryDatabaseAsync(id), 10.seconds)\n      sender() ! ProcessedResult(result)\n  }\n\n  def queryDatabaseAsync(id: String) = scala.concurrent.Future {\n    Thread.sleep(2000) // Simulating synchronous DB latency\n    s\"data-$id\"\n  }\n}",
+    "solution_desc": "To resolve mailbox starvation, apply the bulkheading pattern. Isolate all blocking, resource-intensive execution logic onto a dedicated, isolated execution context configured with a bounded thread pool (using a ThreadPoolExecutor with a rejected execution handler). For actor message responses, completely eliminate blocking `Await` calls by using the non-blocking `pipeTo` pattern to safely pipe Future results directly back to the sender.",
+    "good_code": "import akka.actor.{Actor, ActorRef}\nimport akka.pattern.pipe\nimport scala.concurrent.{ExecutionContext, Future}\n\nclass NonBlockingActor extends Actor {\n  // Define a dedicated execution context for database operations\n  // Configured in application.conf under \"blocking-io-dispatcher\"\n  implicit val blockingEc: ExecutionContext = context.system.dispatchers.lookup(\"blocking-io-dispatcher\")\n  implicit val defaultEc: ExecutionContext = context.dispatcher\n\n  def receive: Receive = {\n    case ProcessData(id) =>\n      val originalSender = sender()\n      // Delegate blocking work to isolated thread pool and pipe the result back safely\n      queryDatabaseAsync(id)(blockingEc)\n        .map(result => ProcessedResult(result))\n        .pipeTo(originalSender)\n  }\n\n  def queryDatabaseAsync(id: String)(implicit ec: ExecutionContext): Future[String] = Future {\n    Thread.sleep(2000) // Blocking is safe here as it occurs only inside blockingEc threads\n    s\"data-$id\"\n  }\n}",
+    "verification": "Generate a thread dump using `jstack` during simulated peak traffic to verify that default actor-dispatcher threads remain non-blocking (in RUNNABLE or TIMED_WAITING state rather than waiting on locks). Additionally, monitor actor mailbox size metrics using Lightbend Telemetry or Kamon to ensure mailbox queues drain down to zero.",
+    "date": "2026-07-12",
+    "id": 1783821025,
+    "type": "error"
+});
