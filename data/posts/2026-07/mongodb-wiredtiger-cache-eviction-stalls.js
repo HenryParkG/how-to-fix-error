@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing WiredTiger Cache Eviction Stalls in MongoDB",
+    "title": "Resolve MongoDB WiredTiger Cache Eviction Stalls",
     "slug": "mongodb-wiredtiger-cache-eviction-stalls",
-    "language": "MongoDB",
-    "code": "WiredTiger Cache Eviction & Ticket Exhaustion",
+    "language": "SQL",
+    "code": "WiredTiger Ticket Starvation",
     "tags": [
-        "Docker",
         "SQL",
+        "MongoDB",
         "Infra",
         "Error Fix"
     ],
-    "analysis": "<p>Under extreme write-heavy workloads, MongoDB's WiredTiger storage engine can experience severe throughput degradation. As data is written, it accumulates in the WiredTiger cache as dirty pages. If the rate of incoming writes exceeds the background thread eviction capability, the dirty cache ratio rises above critical thresholds. Once it hits the high-water mark (typically 20%), WiredTiger forces client threads to execute synchronous page evictions, leading to write ticket exhaustion, massive lock contention, and connection pileups.</p>",
-    "root_cause": "The imbalance between disk I/O capabilities and write throughput causes dirty pages to aggregate rapidly. When dirty cache reaches the synchronous eviction limit, MongoDB switches from non-blocking background thread eviction to blocking, synchronous application-thread eviction. This monopolizes client threads, delaying transactions and consuming all available read/write tickets (defaulting to 128), locking up the server.",
-    "bad_code": "// Running with default configurations under sustained high-throughput write spikes\ndb.adminCommand({\n  setParameter: 1,\n  wiredTigerEngineConfiguration: \"cache_size=4G\"\n  // Missing eviction parameter tuning, relying on default high-water marks\n})",
-    "solution_desc": "Configure and tune WiredTiger's proactive eviction parameters to start background eviction sooner, prevent dirty cache spikes from hitting the 20% limit, and scale up the eviction worker threads. Additionally, configure client write concerns and throttling mechanisms to manage throughput surges.",
-    "good_code": "// Configure aggressive proactive eviction thresholds via admin command\ndb.adminCommand({\n  setParameter: 1,\n  wiredTigerConcurrentWriteTransactions: 256, // Safely scale transactions if hardware allows\n  // Force background eviction to start earlier (defaults are 80% total / 20% dirty)\n  \"wiredTiger.eviction_dirty_trigger\": 5,     // Start aggressive eviction at 5% dirty cache\n  \"wiredTiger.eviction_dirty_target\": 2,      // Target to reduce dirty cache down to 2%\n  \"wiredTiger.eviction_workers_max\": 16       // Increase background eviction threads (default is 4)\n})",
-    "verification": "Run `db.serverStatus().wiredTiger.cache` to verify that the 'tracked dirty bytes in the cache' does not consistently exceed 5%. Inspect `db.serverStatus().wiredTiger.concurrentTransactions` to ensure write tickets are not depleted or queuing.",
-    "date": "2026-07-01",
-    "id": 1782889559,
+    "analysis": "<p>MongoDB's WiredTiger storage engine utilizes internal read and write tickets to throttle concurrency. Under high write loads with unoptimized memory targets, the WiredTiger cache can become filled with dirty pages faster than background threads can evict them. When dirty pages surpass the critical threshold (typically 20% of cache size), client request threads are forced to perform emergency inline eviction, causing a spiral of ticket depletion, severe read/write latency spikes, and eventual connection timeouts.</p>",
+    "root_cause": "Default eviction settings allow dirty data to pile up until client threads are hijacked for inline eviction. These hijacked threads retain read/write tickets for long durations, starving incoming client connections of tickets.",
+    "bad_code": "# Buggy: Starting mongod with high memory pressures and default thresholds\nmongod --dbpath /data/db --wiredTigerCacheSizeGB 4",
+    "solution_desc": "Adjust WiredTiger's parameters dynamically to start eviction earlier in the background. Lowering the trigger thresholds for dirty data eviction prevents user threads from executing inline eviction tasks and guarantees tickets are returned promptly.",
+    "good_code": "// Solved: Run administrative command to tune WiredTiger eviction thresholds\ndb.adminCommand({\n  setParameter: 1,\n  \"wiredTigerEngineRuntimeConfig\": \"eviction_target=75,eviction_trigger=90,eviction_dirty_target=5,eviction_dirty_trigger=15\"\n});\n\n// Explanation of configured options:\n// eviction_dirty_target=5: Keep dirty data below 5% of cache (default 10%)\n// eviction_dirty_trigger=15: Start aggressive background eviction at 15% (default 20%) to avoid client thread hijacking",
+    "verification": "Monitor execution patterns via mongostat. Ensure 'r/w' queue metrics remain stable and dirty cache sizes consistently hover below 15% without triggering sudden increases in active write queues.",
+    "date": "2026-07-12",
+    "id": 1783843259,
     "type": "error"
 });
