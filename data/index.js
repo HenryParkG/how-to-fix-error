@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783907561,
+        "title": "Fixing eBPF Verifier Complexity Limits",
+        "slug": "fixing-ebpf-verifier-complexity-limits",
+        "language": "C / eBPF",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-complexity-limits.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783907562,
+        "title": "Fixing Haskell Space Leaks in Concurrent Pipelines",
+        "slug": "fixing-haskell-space-leaks-concurrent-pipelines",
+        "language": "Haskell",
+        "code": "SPACE_LEAK_HEAPP_ERR",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/fixing-haskell-space-leaks-concurrent-pipelines.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783907563,
+        "title": "Fixing Redis CoW Memory Bloat and Latency",
+        "slug": "fixing-redis-cow-memory-bloat-and-latency",
+        "language": "Redis / Bash",
+        "code": "OOM_KILLED_COW_SPIKE",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/fixing-redis-cow-memory-bloat-and-latency.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783907564,
+        "title": "Analyzing the withmarbleapp/os-taxonomy Repo",
+        "slug": "analyzing-the-withmarbleapp-os-taxonomy-repo",
+        "language": "YAML / Python",
+        "code": "Trend",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/analyzing-the-withmarbleapp-os-taxonomy-repo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1783851521,
         "title": "Fixing Linux io_uring SQ Thread Stall & Starvation",
         "slug": "mitigating-linux-iouring-sq-thread-stall",
