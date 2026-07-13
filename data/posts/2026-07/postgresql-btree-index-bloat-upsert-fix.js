@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing PostgreSQL B-Tree Bloat under Heavy UPSERTs",
+    "slug": "postgresql-btree-index-bloat-upsert-fix",
+    "language": "SQL",
+    "code": "Postgres Index Bloat",
+    "tags": [
+        "SQL",
+        "Infra",
+        "PostgreSQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>High-concurrency UPSERT operations (<code>INSERT ... ON CONFLICT DO UPDATE</code>) in PostgreSQL are highly prone to massive B-Tree index bloat and write amplification. When an UPSERT updates an existing row, PostgreSQL writes a new version of the row tuple (MVCC model). If the table has several secondary indexes, even if the updated columns are not indexed, PostgreSQL must create new index pointers pointing to the new tuple version unless Heap-Only Tuple (HOT) optimization is triggered. Under high concurrency, page-level concurrency and rapid row versioning quickly exhaust data page free space, breaking HOT updates. Consequently, indexes experience massive page splits and bloat, which degrades query read performance and triggers heavy write amplification.</p>",
+    "root_cause": "MVCC updates write a new physical row version. Without Heap-Only Tuple (HOT) optimizations, every row update forces an insertion of a new pointer into every B-Tree index on the table. Heavy concurrent UPSERTs quickly consume the page's free space (defined by fillfactor), disabling HOT and resulting in heavy B-Tree index page-splitting.",
+    "bad_code": "-- Standard table creation with default configuration (highly vulnerable to UPSERT bloat)\nCREATE TABLE user_telemetry (\n    id UUID PRIMARY KEY,\n    user_id INT NOT NULL,\n    last_seen TIMESTAMP NOT NULL,\n    payload JSONB\n);\n\nCREATE INDEX idx_user_telemetry_user ON user_telemetry(user_id);\nCREATE INDEX idx_user_telemetry_last_seen ON user_telemetry(last_seen);\n\n-- Heavy high-concurrency UPSERT updating both payload and last_seen columns\n-- This breaks HOT updates because the indexed column 'last_seen' is continually modified.\nINSERT INTO user_telemetry (id, user_id, last_seen, payload)\nVALUES ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 42, NOW(), '{\"clicks\": 1}')\nON CONFLICT (id) DO UPDATE \nSET last_seen = EXCLUDED.last_seen, payload = EXCLUDED.payload;",
+    "solution_desc": "To fix write amplification and B-Tree index bloat: 1. Avoid updating indexed columns (such as last_seen) during UPSERT if possible. 2. Tune the table's FILLFACTOR parameter downwards (e.g., to 75-80%) to reserve physical space on each data page for new MVCC versions, guaranteeing HOT updates. 3. Adjust autovacuum parameters for the targeted table so cleanup keeps pace with the transactional volume, preventing index page-splitting.",
+    "good_code": "-- Recreate table with configured fillfactor to optimize for HOT updates\nCREATE TABLE user_telemetry (\n    id UUID PRIMARY KEY,\n    user_id INT NOT NULL,\n    last_seen TIMESTAMP NOT NULL,\n    payload JSONB\n) WITH (fillfactor = 75);\n\n-- Keep index count low; remove index from highly volatile fields if possible\nCREATE INDEX idx_user_telemetry_user ON user_telemetry(user_id);\n\n-- Tune aggressive autovacuum thresholds specifically for this high-throughput table\nALTER TABLE user_telemetry SET (\n    autovacuum_vacuum_scale_factor = 0.05,\n    autovacuum_vacuum_threshold = 1000,\n    autovacuum_analyze_scale_factor = 0.02,\n    autovacuum_analyze_threshold = 500\n);\n\n-- Clean UPSERT updating ONLY the non-indexed volatile columns to enable HOT updates\nINSERT INTO user_telemetry (id, user_id, last_seen, payload)\nVALUES ('a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 42, '2023-10-27 10:00:00', '{\"clicks\": 1}')\nON CONFLICT (id) DO UPDATE \nSET payload = EXCLUDED.payload; -- last_seen remains unchanged, qualifying the update for HOT",
+    "verification": "Install the pgstattuple extension and run 'SELECT * FROM pg_stat_index('idx_user_telemetry_user');' after running a high-load simulation. Verify that index_size remains stable and the percentage of dead tuples stays low compared to default table parameters.",
+    "date": "2026-07-13",
+    "id": 1783934794,
+    "type": "error"
+});

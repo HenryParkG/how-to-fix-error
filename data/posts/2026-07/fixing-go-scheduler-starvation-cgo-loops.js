@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Go Scheduler Starvation in Tight Cgo Loops",
+    "slug": "fixing-go-scheduler-starvation-cgo-loops",
+    "language": "Go",
+    "code": "Cgo Scheduler Starvation",
+    "tags": [
+        "Go",
+        "Backend",
+        "Concurrency",
+        "Error Fix"
+    ],
+    "analysis": "<p>Go's scheduler uses cooperative preemption alongside signal-based preemption (introduced in Go 1.14) to prevent long-running goroutines from hogging operating system threads (M). However, this mechanism breaks down at the Cgo boundary. When a goroutine enters a Cgo call, the Go runtime transitions the thread (M) into a system call state. This detaches the logical processor (P) from the running thread, allowing other goroutines to run on other threads. If a goroutine runs a high-frequency, extremely tight loop that crosses the Cgo boundary millions of times, the overhead of shifting P back and forth combined with the lack of cooperative preemption checkpoints inside the C code can saturate the Go runtime's thread allocator, leading to global latency spikes, starvation of background workers, and severe response delays.</p>",
+    "root_cause": "When entering a Cgo call, the runtime calls entersyscall(), which transitions the current M into a syscall state, releasing its P. When the Cgo call returns, exitsyscall() must re-acquire a P. In tight loops, this continuous cycle of releasing and acquiring P prevents Go's signal-based preemption from interrupting the goroutine because preemption signals cannot safely target a thread while it is executing external C code. This causes thread pool thrashing and starves other goroutines waiting on the run queue.",
+    "bad_code": "package main\n\n/*\n#include <stdint.h>\n// Simulate a quick computational task in C\nuint64_t compute_fast(uint64_t val) {\n    return val * 1103515245 + 12345;\n}\n*/\nimport \"C\"\nimport (\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc main() {\n\t// Start a background worker\n\tgo func() {\n\t\tfor {\n\t\t\t// This worker will experience severe starvation\n\t\t\t_ = \"background progress\"\n\t\t\ttime.Sleep(1 * time.Millisecond)\n\t\t}\n\t}()\n\n\t// Tight loop making high-frequency Cgo calls\n\tfor i := uint64(0); i < 100000000; i++ {\n\t\t_ = C.compute_fast(C.uint64_t(i))\n\t}\n\tfmt.Println(\"Processing complete\")\n}",
+    "solution_desc": "To resolve Cgo loop starvation, reduce the frequency of boundary transitions. Batch processing inside the C layer so that a single Cgo call processes a slice of work rather than a single item. If batching is not possible, explicitly yield the processor by calling runtime.Gosched() within the loop or execute the high-frequency Cgo workload on dedicated OS threads using runtime.LockOSThread() to prevent P thrashing.",
+    "good_code": "package main\n\n/*\n#include <stdint.h>\n// Batch process array to minimize Cgo boundary transitions\nvoid compute_batch(uint64_t* data, int len) {\n    for (int i = 0; i < len; i++) {\n        data[i] = data[i] * 1103515245 + 12345;\n    }\n}\n*/\nimport \"C\"\nimport (\n\t\"fmt\"\n\t\"runtime\"\n\t\"time\"\n)\n\nfunc main() {\n\truntime.GOMAXPROCS(2)\n\n\tgo func() {\n\t\tfor {\n\t\t\t// Now executing smoothly without starvation\n\t\t\ttime.Sleep(1 * time.Millisecond)\n\t\t}\n\t}()\n\n\tconst totalElements = 100000000\n\tconst batchSize = 10000\n\tdata := make([]C.uint64_t, batchSize)\n\n\tfor i := 0; i < totalElements; i += batchSize {\n\t\t// Initialize batch slice safely\n\t\tfor j := 0; j < batchSize; j++ {\n\t\t\tdata[j] = C.uint64_t(i + j)\n\t\t}\n\n\t\t// Pass slice pointer to Cgo once per batch\n\t\tC.compute_batch(&data[0], C.int(batchSize))\n\n\t\t// Cooperatively yield the processor to allow other goroutines to run\n\t\t// if the processing loop runs for a long duration\n\t\t if (i % (batchSize * 10)) == 0 {\n\t\t\truntime.Gosched()\n\t\t }\n\t}\n\tfmt.Println(\"Batch processing complete\")\n}",
+    "verification": "Compile and run the optimized code with the environment variable GODEBUG=schedtrace=1000. Verify in the trace that goroutines run concurrently and that the background worker does not experience thread lockups or starvation latency spikes.",
+    "date": "2026-07-13",
+    "id": 1783934792,
+    "type": "error"
+});

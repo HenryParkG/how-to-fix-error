@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783934792,
+        "title": "Fixing Go Scheduler Starvation in Tight Cgo Loops",
+        "slug": "fixing-go-scheduler-starvation-cgo-loops",
+        "language": "Go",
+        "code": "Cgo Scheduler Starvation",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/fixing-go-scheduler-starvation-cgo-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783934793,
+        "title": "Fixing PyTorch DDP Unsynchronized Collective Deadlocks",
+        "slug": "fixing-pytorch-ddp-unsynchronized-collective-deadlocks",
+        "language": "Python",
+        "code": "PyTorch DDP Deadlock",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/fixing-pytorch-ddp-unsynchronized-collective-deadlocks.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Distributed-Training",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783934794,
+        "title": "Fixing PostgreSQL B-Tree Bloat under Heavy UPSERTs",
+        "slug": "postgresql-btree-index-bloat-upsert-fix",
+        "language": "SQL",
+        "code": "Postgres Index Bloat",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/postgresql-btree-index-bloat-upsert-fix.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783934795,
+        "title": "Standardizing Platform Metadata with os-taxonomy",
+        "slug": "analyzing-withmarbleapp-os-taxonomy-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/analyzing-withmarbleapp-os-taxonomy-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783922368,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "cpp20-coroutine-lifetime-violations",
