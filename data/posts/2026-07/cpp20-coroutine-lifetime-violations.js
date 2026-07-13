@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Lifetime Violations",
+    "slug": "cpp20-coroutine-lifetime-violations",
+    "language": "C++",
+    "code": "Dangling Reference / Use-After-Free",
+    "tags": [
+        "C++20",
+        "Coroutines",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines introduce lightweight cooperative multitasking but shift complete memory management responsibility to the developer. Unlike traditional functions, a coroutine's lifetime is non-linear and suspended states persist across stack frames. A major pitfall occurs when passing arguments by reference (e.g., const T& or T&&) into a coroutine. The reference binds to an object on the caller's stack frame. Once the coroutine yields execution via co_await or co_yield, the calling function may exit, dismantling its stack frame and destroying the referenced object. When the coroutine resumes, dereferencing the argument results in undefined behavior or severe memory corruption.</p>",
+    "root_cause": "The coroutine state machine allocates a coroutine frame on the heap where parameters are copied or moved. However, when arguments are passed by reference, only the pointer/reference address is copied into the coroutine frame, not the underlying object itself. Once the caller's scope terminates, the underlying object is destroyed while the coroutine frame retains a dangling reference.",
+    "bad_code": "#include <iostream>\n#include <coroutine>\n#include <future>\n#include <string>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::initial_suspend initial_suspend() { return {}; }\n        std::final_suspend final_suspend() noexcept { return {}; }\n        void unhandled_exception() {}\n        void return_void() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// BUG: Passing by const reference creates a dangling reference once suspended\nTask async_print(const std::string& message) {\n    co_await std::suspend_always{};\n    std::cout << message << std::endl; // Undefined Behavior: message is a dangling reference\n}\n\nint main() {\n    auto task = async_print(std::string(\"Temporary Stack String\")); // Temporary string destroyed immediately\n    task.handle.resume(); // CRASH or garbage output\n    task.handle.destroy();\n}",
+    "solution_desc": "To fix this architectural flaw, always pass parameters to asynchronous coroutines by value. When passed by value, the coroutine frame moves or copies the object directly into its own heap-allocated frame, safely extending the parameter's lifetime to match the lifetime of the coroutine itself. If copying is expensive, use std::shared_ptr or explicit move semantics to transfer ownership safely.",
+    "good_code": "#include <iostream>\n#include <coroutine>\n#include <string>\n#include <utility>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::initial_suspend initial_suspend() { return {}; }\n        std::final_suspend final_suspend() noexcept { return {}; }\n        void unhandled_exception() {}\n        void return_void() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// FIXED: Passing by value copies/moves the string directly into the coroutine frame\nTask async_print(std::string message) {\n    co_await std::suspend_always{};\n    std::cout << message << std::endl; // Perfectly safe\n}\n\nint main() {\n    // The string literal is converted to std::string and moved into the coroutine frame\n    auto task = async_print(\"Safe Heap Allocated String\");\n    task.handle.resume();\n    task.handle.destroy();\n}",
+    "verification": "Compile the code using GCC or Clang with AddressSanitizer enabled (`-fsanitize=address -g`). Running the bad code with ASan will immediately trigger a heap-use-after-free or stack-use-after-scope error report. The fixed code will execute cleanly and output the string without warnings.",
+    "date": "2026-07-13",
+    "id": 1783922368,
+    "type": "error"
+});

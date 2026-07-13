@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1783922368,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "Dangling Reference / Use-After-Free",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783922369,
+        "title": "Fixing Kafka Consumer Rebalance Storms",
+        "slug": "kafka-rebalance-storms-heartbeat-starvation",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/kafka-rebalance-storms-heartbeat-starvation.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783922370,
+        "title": "Preventing PostgreSQL Transaction ID Wraparound",
+        "slug": "postgres-xid-wraparound-prevention",
+        "language": "SQL",
+        "code": "FATAL: database is not accepting commands",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/postgres-xid-wraparound-prevention.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783922371,
+        "title": "Analyzing withmarbleapp/os-taxonomy",
+        "slug": "analyzing-withmarbleapp-os-taxonomy",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-13",
+        "path": "data/posts/2026-07/analyzing-withmarbleapp-os-taxonomy.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783907561,
         "title": "Fixing eBPF Verifier Complexity Limits",
         "slug": "fixing-ebpf-verifier-complexity-limits",
