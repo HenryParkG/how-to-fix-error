@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1783992616,
+        "title": "Fixing Rust Async Cancellation and Drop Safety",
+        "slug": "rust-async-cancellation-drop-safety",
+        "language": "Rust",
+        "code": "Drop Safety",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/rust-async-cancellation-drop-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783992617,
+        "title": "Fixing Elixir OTP Mailbox Bloat and Starvation",
+        "slug": "elixir-otp-mailbox-bloat-starvation",
+        "language": "Elixir",
+        "code": "Mailbox Bloat",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/elixir-otp-mailbox-bloat-starvation.js",
+        "tags": [
+            "Docker",
+            "Backend",
+            "Elixir",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783992618,
+        "title": "Fixing Cassandra Tombstone Latency Spikes",
+        "slug": "cassandra-tombstone-latency-spikes",
+        "language": "Cassandra",
+        "code": "Tombstone Overload",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/cassandra-tombstone-latency-spikes.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "NoSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1783992619,
+        "title": "Analyzing the Trending OS Taxonomy Repository",
+        "slug": "withmarbleapp-os-taxonomy-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/withmarbleapp-os-taxonomy-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1783934792,
         "title": "Fixing Go Scheduler Starvation in Tight Cgo Loops",
         "slug": "fixing-go-scheduler-starvation-cgo-loops",
