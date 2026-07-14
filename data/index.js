@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784025074,
+        "title": "Fixing React Native JSI Threading & Double-Free Errors",
+        "slug": "fixing-react-native-jsi-threading-double-free",
+        "language": "C++ / Objective-C++",
+        "code": "JSI Thread Violation",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/fixing-react-native-jsi-threading-double-free.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784025075,
+        "title": "Fixing Spark Driver OOM & Executor Heartbeat Timeouts",
+        "slug": "fixing-spark-driver-oom-executor-heartbeat-timeouts",
+        "language": "Scala / Spark",
+        "code": "OutOfMemoryError / Timeout",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/fixing-spark-driver-oom-executor-heartbeat-timeouts.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784025076,
+        "title": "Fixing Elasticsearch Circuit Breaker & GC Pauses",
+        "slug": "fixing-elasticsearch-circuit-breaker-gc-pauses",
+        "language": "Java / Elasticsearch",
+        "code": "CircuitBreakingException",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/fixing-elasticsearch-circuit-breaker-gc-pauses.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784025077,
+        "title": "Exploring withmarbleapp/os-taxonomy for FinTech Engine",
+        "slug": "exploring-withmarbleapp-os-taxonomy",
+        "language": "TypeScript / JSON",
+        "code": "Trend",
+        "date": "2026-07-14",
+        "path": "data/posts/2026-07/exploring-withmarbleapp-os-taxonomy.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784006515,
         "title": "Fixing Kubernetes CFS Throttling under High Concurrency",
         "slug": "fixing-kubernetes-cfs-throttling-high-concurrency",

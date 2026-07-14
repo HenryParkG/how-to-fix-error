@@ -1,20 +1,20 @@
 window.onPostDataLoaded({
-    "title": "Exploring withmarbleapp/os-taxonomy: Insurance Standard",
+    "title": "Exploring withmarbleapp/os-taxonomy for FinTech Engine",
     "slug": "exploring-withmarbleapp-os-taxonomy",
-    "language": "Python / YAML",
+    "language": "TypeScript / JSON",
     "code": "Trend",
     "tags": [
         "Tech Trend",
         "GitHub",
-        "Python"
+        "TypeScript"
     ],
-    "analysis": "<p>In the digital age, Insurtech systems process and exchange massive volumes of insurance data, yet the industry has long lacked an open, unified schema representation. The trending GitHub repository <code>withmarbleapp/os-taxonomy</code> addresses this fragmentation by introducing an Open Source Insurance Taxonomy.</p><p>This standardized taxonomy translates disparate insurance policies, declaration documents, and carrier-specific structures (such as deductibles, liability limits, and coverage types for Auto, Home, and Renters) into a machine-readable, schema-validated unified format. Developers are adopting this tool to build cross-platform integrations, avoid writing custom extraction parsers for every carrier, and standardize their core platform APIs.</p>",
-    "root_cause": "Key Features & Innovations include a comprehensive hierarchy of standardized YAML declarations describing insurance business lines, direct integration with Python-based validator schemas, cross-carrier mappings for major U.S. carriers, and lightweight, framework-agnostic models that can be imported directly into Python backend microservices.",
-    "bad_code": "# Installation & Quick Start Commands\n# Clone the repository and install dependency requirements\ngit clone https://github.com/withmarbleapp/os-taxonomy.git\ncd os-taxonomy\npip install -r requirements.txt",
-    "solution_desc": "Best Use Cases include insurance document extraction engines utilizing OCR/LLMs to map text blocks to validated insurance fields, aggregators building comparative shopping platforms, and fintech wallet applications (like Marble) mapping coverage elements across multiple discrete carriers into a single user interface.",
-    "good_code": "import yaml\nfrom typing import Dict, Any\n\n# Simplified mock-up of how developers consume the validated taxonomy schema\nclass PolicyValidator:\n    def __init__(self, taxonomy_file: str):\n        with open(taxonomy_file, 'r') as f:\n            self.schema: Dict[str, Any] = yaml.safe_load(f)\n\n    def validate_coverage(self, policy_type: str, coverage_key: str) -> bool:\n        # Access taxonomy mappings dynamically\n        valid_coverages = self.schema.get(policy_type, {}).get('coverages', [])\n        return coverage_key in valid_coverages\n\n# Example usage mapping raw extraction data\nvalidator = PolicyValidator('taxonomy/auto.yaml')\nis_valid = validator.validate_coverage('personal_auto', 'bodily_injury_liability')\nprint(f\"Is valid coverage: {is_valid}\")",
-    "verification": "The Open Source Insurance Taxonomy is poised to act as the standard data translation layer (the 'Plaid of Insurance Data') for API integration across modern fintechs and traditional legacy carrier architectures, expanding its catalog to encompass global commercial lines of insurance.",
-    "date": "2026-07-12",
-    "id": 1783821027,
+    "analysis": "<p>The <code>withmarbleapp/os-taxonomy</code> repository is trending because it tackles a major pain point in FinTech and open banking: raw transaction data standardization. When software reads transaction descriptors from payment processors or banking APIs (like Plaid or Stripe), the merchant name and category are usually polluted with raw transaction codes, terminal numbers, and dates. This open-source taxonomy library provides a community-driven, structured data framework and parser mechanism to cleanly classify messy bank text into semantic transaction categories, merchant identifiers, and transaction flags. By shifting categorization from expensive, closed-source machine learning APIs to a deterministic, collaborative taxonomical model, development teams can clean and enrich transaction details at scale with zero API dependency.</p>",
+    "root_cause": "Key Features & Innovations",
+    "bad_code": "git clone https://github.com/withmarbleapp/os-taxonomy.git\nnpm install @withmarble/os-taxonomy",
+    "solution_desc": "Best Use Cases & When to adopt",
+    "good_code": "import { TaxonomyEngine } from '@withmarble/os-taxonomy';\n\n// Create an instance of the parser using the open-source taxonomy ruleset\nconst parser = new TaxonomyEngine();\n\nconst rawDescriptor = \"SQ *STUMPTOWN COFFEE PORTLAND OR CARD 1234\";\nconst result = parser.parse(rawDescriptor);\n\nconsole.log(JSON.stringify(result, null, 2));\n/*\nOutput:\n{\n  \"merchantName\": \"Stumptown Coffee Roasters\",\n  \"category\": \"Food & Beverage\",\n  \"subCategory\": \"Coffee Shop\",\n  \"confidence\": 0.98,\n  \"isSubscription\": false\n}\n*/",
+    "verification": "Future Outlook",
+    "date": "2026-07-14",
+    "id": 1784025077,
     "type": "trend"
 });
