@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784112155,
+        "title": "Fixing Elixir OTP GenServer Queue Bloat",
+        "slug": "fixing-elixir-genserver-queue-bloat",
+        "language": "Elixir",
+        "code": "GenServer Mailbox Bloat",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-elixir-genserver-queue-bloat.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784112156,
+        "title": "Fixing Kafka Coordinator Rebalance Storms",
+        "slug": "fixing-kafka-coordinator-rebalance-storms",
+        "language": "Kafka",
+        "code": "Rebalance Storm",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-kafka-coordinator-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784112157,
+        "title": "Fixing Rust Pin-to-Unpin Violations in Async",
+        "slug": "fixing-rust-pin-to-unpin-violations",
+        "language": "Rust",
+        "code": "Pin Violation",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-rust-pin-to-unpin-violations.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784112158,
+        "title": "Analyzing GPT-5.6-Instruct Codex Jailbreak",
+        "slug": "analyzing-gpt-5-6-instruct-codex-jailbreak",
+        "language": "Shell / Python",
+        "code": "Trend",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/analyzing-gpt-5-6-instruct-codex-jailbreak.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784101888,
         "title": "Fixing C++20 Coroutine Lifetimes & Memory Leaks",
         "slug": "fixing-cpp20-coroutine-lifetime-violations-memory-leaks",
