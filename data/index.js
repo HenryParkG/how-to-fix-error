@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784078782,
+        "title": "Fixing eBPF Verifier Complexity Limit Violations",
+        "slug": "fixing-ebpf-verifier-complexity-limit-violations",
+        "language": "C / eBPF",
+        "code": "VerifierLimitError",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-complexity-limit-violations.js",
+        "tags": [
+            "eBPF",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784078783,
+        "title": "Fixing Qdrant HNSW Index OOM & Merge Failures",
+        "slug": "fixing-qdrant-hnsw-index-oom-merge-failures",
+        "language": "Rust / Qdrant",
+        "code": "OOM / SegmentMergeError",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-qdrant-hnsw-index-oom-merge-failures.js",
+        "tags": [
+            "VectorDB",
+            "Rust",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784078784,
+        "title": "Fixing gRPC Keepalive & HTTP/2 Flow Deadlocks",
+        "slug": "grpc-keepalive-http2-flow-control-deadlocks",
+        "language": "Go / gRPC",
+        "code": "FlowControlDeadlock",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/grpc-keepalive-http2-flow-control-deadlocks.js",
+        "tags": [
+            "gRPC",
+            "Go",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784078785,
+        "title": "MDX-Tom gpt-5.6-instruct Jailbreak Analysis",
+        "slug": "analyzing-mdx-tom-gpt-5-6-instruct-jailbreak",
+        "language": "Python / LLM Security",
+        "code": "Trend",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/analyzing-mdx-tom-gpt-5-6-instruct-jailbreak.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784025074,
         "title": "Fixing React Native JSI Threading & Double-Free Errors",
         "slug": "fixing-react-native-jsi-threading-double-free",
