@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784092991,
+        "title": "Fixing Zig Alignment Panics in Zero-Copy Deserialization",
+        "slug": "fixing-zig-alignment-panics-zero-copy",
+        "language": "Zig",
+        "code": "AlignmentPanic",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-zig-alignment-panics-zero-copy.js",
+        "tags": [
+            "Zig",
+            "Systems",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784092992,
+        "title": "Fixing Haskell Lazy StateT Monad Space Leaks",
+        "slug": "fixing-haskell-statet-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-haskell-statet-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Monads",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784092993,
+        "title": "Fixing Redis Copy-On-Write Memory Exhaustion",
+        "slug": "redis-cow-memory-exhaustion-bgsave",
+        "language": "Redis",
+        "code": "OOMSpike",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/redis-cow-memory-exhaustion-bgsave.js",
+        "tags": [
+            "Redis",
+            "Infra",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784092994,
+        "title": "Analyzing 'danielmiessler/fabric': Modular AI Pipelines",
+        "slug": "analyzing-danielmiessler-fabric-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/analyzing-danielmiessler-fabric-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784078782,
         "title": "Fixing eBPF Verifier Complexity Limit Violations",
         "slug": "fixing-ebpf-verifier-complexity-limit-violations",
