@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Postgres TXID Wraparound & Autovacuum",
+    "slug": "fixing-postgres-txid-wraparound-autovacuum-starvation",
+    "language": "SQL",
+    "code": "Database Lockup / Out of TXIDs",
+    "tags": [
+        "PostgreSQL",
+        "Database",
+        "SQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>PostgreSQL uses a 32-bit integer system for Transaction IDs (TXIDs), allowing up to 4 billion transactions. At any given point, transactions occurring within a modulo window of 2 billion are considered in the past, and those in the next 2 billion are in the future. To prevent transaction ID wraparound (where past transactions suddenly appear in the future, destroying data visibility integrity), PostgreSQL requires older transactions to be \"frozen\" using the <code>VACUUM</code> operation.</p><p>Autovacuum starvation occurs when long-running transactions, abandoned replication slots, or uncommitted two-phase prepared transactions hold back the minimum active TXID (<code>xmin</code>). This prevents Autovacuum from advancing the database's <code>datfrozenxid</code>. If the transaction count continues to rise and reaches 200 million transactions since the last freeze, PostgreSQL initiates an aggressive emergency autovacuum. If it cannot resolve the lock, the database halts writes entirely and enters read-only emergency mode to protect data integrity.</p>",
+    "root_cause": "Long-running analytical queries, dead replication slots, or abandoned hot-standby transactions holding back the global database 'xmin' threshold, starving autovacuum tasks and preventing transactional freezing.",
+    "bad_code": "-- Identify bad configurations causing slow autovacuum and starvation\nALTER SYSTEM SET autovacuum = off; -- CRITICAL BUG: Turning off autovacuum entirely\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.8; -- BUG: Extremely high threshold (waits for 80% change)\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 100; -- BUG: Low cost limit restricts vacuum I/O budget throttles\nSELECT pg_reload_conf();\n\n-- Example of a neglected prepared transaction holding the xmin horizon back\nBEGIN TRANSACTION;\nINSERT INTO accounts VALUES (1, 'Leaked Session');\nPREPARE TRANSACTION 'forgotten_tx_123'; -- Left uncommitted permanently",
+    "solution_desc": "To resolve TXID starvation, you must find and terminate the blockers keeping the `xmin` horizon back: active long-running sessions, stale prepared transactions, and inactive replication slots. Once cleared, aggressively configure the autovacuum settings so the engine runs cleanup tasks rapidly, and manually trigger a forced database-wide `VACUUM FREEZE` in verbose mode.",
+    "good_code": "-- 1. Find and drop stale physical or logical replication slots holding back xmin\nSELECT slot_name, active, xmin, catalog_xmin \nFROM pg_replication_slots \nWHERE active = false OR xmin IS NOT NULL;\n\n-- To fix: Drop the problematic slot\n-- SELECT pg_drop_replication_slot('stale_slot_name');\n\n-- 2. Find and roll back abandoned prepared transactions\nSELECT gid, prepared, owner, database FROM pg_prepared_xacts;\n-- To fix: ROLLBACK PREPARED 'forgotten_tx_123';\n\n-- 3. Tune Autovacuum configuration parameters for aggressive cleanup\nALTER SYSTEM SET autovacuum = on;\nALTER SYSTEM SET autovacuum_max_workers = 8;\nALTER SYSTEM SET autovacuum_vacuum_cost_limit = 2000; -- Increase I/O throughput limits for vacuum processes\nALTER SYSTEM SET autovacuum_vacuum_cost_delay = 2;     -- Minimize sleep times during page cleanups\nALTER SYSTEM SET autovacuum_vacuum_scale_factor = 0.05; -- Trigger vacuum after 5% rows updated/deleted\nSELECT pg_reload_conf();\n\n-- 4. Manually trigger aggressive freezing on the oldest table\nVACUUM FREEZE VERBOSE ANALYZE;",
+    "verification": "Run the query: `SELECT datname, age(datfrozenxid) FROM pg_database;` before and after operations. You will see the age metrics fall from near-critical zones (e.g., 150M+) down to baseline levels (< 10M), indicating transaction IDs have successfully frozen and the wraparound risk is resolved.",
+    "date": "2026-07-15",
+    "id": 1784101890,
+    "type": "error"
+});

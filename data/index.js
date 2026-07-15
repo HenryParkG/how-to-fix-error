@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784101888,
+        "title": "Fixing C++20 Coroutine Lifetimes & Memory Leaks",
+        "slug": "fixing-cpp20-coroutine-lifetime-violations-memory-leaks",
+        "language": "C++20",
+        "code": "Memory Leak & Use-After-Free",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-lifetime-violations-memory-leaks.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784101889,
+        "title": "Fixing PyTorch DDP Deadlocks & Grad Desync",
+        "slug": "fixing-pytorch-ddp-deadlocks-gradient-desynchronization",
+        "language": "Python",
+        "code": "Deadlock & Desynchronization",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-pytorch-ddp-deadlocks-gradient-desynchronization.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784101890,
+        "title": "Fixing Postgres TXID Wraparound & Autovacuum",
+        "slug": "fixing-postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "Database Lockup / Out of TXIDs",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/fixing-postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784101891,
+        "title": "Inside the MDX-Tom/gpt-5.6-instruct Exploit Pack",
+        "slug": "inside-mdxtom-gpt56-instruct-jailbreak-pack",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-15",
+        "path": "data/posts/2026-07/inside-mdxtom-gpt56-instruct-jailbreak-pack.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784092991,
         "title": "Fixing Zig Alignment Panics in Zero-Copy Deserialization",
         "slug": "fixing-zig-alignment-panics-zero-copy",
