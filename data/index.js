@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784199011,
+        "title": "Fixing eBPF Verifier Backtrack Limit Exceeded",
+        "slug": "fixing-ebpf-verifier-backtrack-limit-exceeded-xdp",
+        "language": "C / Rust",
+        "code": "VerifierLimitError",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-backtrack-limit-exceeded-xdp.js",
+        "tags": [
+            "Rust",
+            "XDP",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784199012,
+        "title": "Fixing ES Circuit Breakers & Lucene Heap Exhaustion",
+        "slug": "fixing-elasticsearch-circuit-breakers-lucene-heap-exhaustion",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-elasticsearch-circuit-breakers-lucene-heap-exhaustion.js",
+        "tags": [
+            "Java",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784199013,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "fixing-grpc-http2-flow-control-deadlocks-proxy",
+        "language": "Go",
+        "code": "FlowControlDeadlock",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-grpc-http2-flow-control-deadlocks-proxy.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784199014,
+        "title": "Inside grok-build: xAI's Coding Agent Harness & TUI",
+        "slug": "inside-grok-build-xai-coding-agent-tui",
+        "language": "Python / Shell",
+        "code": "Trend",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/inside-grok-build-xai-coding-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784179941,
         "title": "Fixing Go Scheduler Work-Stealing Starvation",
         "slug": "fixing-go-scheduler-work-stealing-starvation",

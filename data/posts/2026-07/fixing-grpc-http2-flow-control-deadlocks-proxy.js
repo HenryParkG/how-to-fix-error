@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+    "slug": "fixing-grpc-http2-flow-control-deadlocks-proxy",
+    "language": "Go",
+    "code": "FlowControlDeadlock",
+    "tags": [
+        "Go",
+        "Backend",
+        "Kubernetes",
+        "Error Fix"
+    ],
+    "analysis": "<p>When implementing transparent gRPC reverse proxies or service meshes, developers often run into silent deadlocks under high-throughput conditions. HTTP/2 employs a strict flow-control mechanism using connection-level and stream-level window allocations. If a proxy consumes data from a fast producer but is blocked by a slow consumer on the outgoing side, its internal buffers fill up. If the proxy does not actively read the upstream connection and update the flow control windows in a non-blocking fashion, the upstream sender runs out of window credits, stalling the entire TCP connection, including unrelated streams (head-of-line blocking).</p>",
+    "root_cause": "The issue occurs when the proxy uses synchronous forwarding buffers that do not decouple upstream reads from downstream writes, paired with default low gRPC window sizes (64KB). When the downstream connection stalls, the proxy blocks on writing, which prevents it from reading the upstream stream. Consequently, the upstream connection flow-control window is never updated, deadlocking both streams.",
+    "bad_code": "func (p *Proxy) ForwardStream_Bad(stream grpc.ServerStream) error {\n    // Bad: Synchronous forwarding loop without explicit channel decoupling or flow control adjustments\n    outCtx, cancel := context.WithCancel(stream.Context())\n    defer cancel()\n\n    clientStream, err := p.backendClient.Connect(outCtx)\n    if err != nil {\n        return err\n    }\n\n    for {\n        req, err := stream.RecvMsg()\n        if err == io.EOF {\n            return nil\n        }\n        if err != nil {\n            return err\n        }\n\n        // Blocking write: If clientStream blocks, this loop blocks completely.\n        // Upstream window updates are halted, deadlocking the connection.\n        err = clientStream.SendMsg(req)\n        if err != nil {\n            return err\n        }\n    }\n}",
+    "solution_desc": "Configure larger initial connection and stream flow-control windows on both the client dialer and the server builder. Decouple upstream reads and downstream writes inside the proxy by using separate goroutines with bounded memory channels or non-blocking pipes, and let gRPC's internal window managers handle dynamic sizing without synchronous lockups.",
+    "good_code": "func (p *Proxy) ForwardStream_Good(stream grpc.ServerStream) error {\n    outCtx, cancel := context.WithCancel(stream.Context())\n    defer cancel()\n\n    // Establish client connection with optimized HTTP/2 flow control windows\n    conn, err := grpc.Dial(\"backend:50051\", \n        grpc.WithInitialWindowSize(8*1024*1024),     // 8MB Stream Window\n        grpc.WithInitialConnWindowSize(64*1024*1024), // 64MB Conn Window\n        grpc.WithInsecure(),\n    )\n    if err != nil {\n        return err\n    }\n    defer conn.Close()\n\n    clientStream, err := p.backendClient.Connect(outCtx)\n    if err != nil {\n        return err\n    }\n\n    errChan := make(chan error, 2)\n\n    // Decouple read and write tasks into concurrent goroutines\n    go func() {\n        for {\n            req, err := stream.RecvMsg()\n            if err == io.EOF {\n                errChan <- nil\n                return\n            }\n            if err != nil {\n                errChan <- err\n                return\n            }\n            if err := clientStream.SendMsg(req); err != nil {\n                errChan <- err\n                return\n            }\n        }\n    }()\n\n    select {\n    case err := <-errChan:\n        return err\n    case <-stream.Context().Done():\n        return stream.Context().Err()\n    }\n}",
+    "verification": "Compile the Go application, run a benchmark with 10,000 concurrent streaming requests, and use `GODEBUG=http2debug=2` to track HTTP/2 frame windows. Verify that `WINDOW_UPDATE` frames are dynamically sent and that goroutine count remains static using `go tool pprof`.",
+    "date": "2026-07-16",
+    "id": 1784199013,
+    "type": "error"
+});
