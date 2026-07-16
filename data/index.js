@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1784179941,
+        "title": "Fixing Go Scheduler Work-Stealing Starvation",
+        "slug": "fixing-go-scheduler-work-stealing-starvation",
+        "language": "Go",
+        "code": "Latency/Starvation",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-go-scheduler-work-stealing-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784179942,
+        "title": "Fixing Spark Executor OOMs and Skewed Shuffles",
+        "slug": "fixing-spark-executor-ooms-and-skewed-shuffles",
+        "language": "Scala",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-spark-executor-ooms-and-skewed-shuffles.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Scala",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784179943,
+        "title": "Fixing RN JSI Memory Leaks and GC Thrashing",
+        "slug": "fixing-react-native-jsi-memory-leaks",
+        "language": "TypeScript",
+        "code": "Memory Leak",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/fixing-react-native-jsi-memory-leaks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "React Native",
+            "CSS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784179944,
+        "title": "Deep Dive: grok-build Coding Agent & TUI",
+        "slug": "deep-dive-grok-build-coding-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-16",
+        "path": "data/posts/2026-07/deep-dive-grok-build-coding-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Terminal"
+        ]
+    },
+    {
         "id": 1784166387,
         "title": "Fixing Ray Distributed Object Store OOM and Actor Storms",
         "slug": "fixing-ray-object-store-oom-actor-storms",
