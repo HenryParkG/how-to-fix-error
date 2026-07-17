@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784284217,
+        "title": "Fixing WiredTiger Cache Eviction Choke",
+        "slug": "fixing-wiredtiger-cache-eviction-choke",
+        "language": "MongoDB",
+        "code": "Write Ticket Starvation",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/fixing-wiredtiger-cache-eviction-choke.js",
+        "tags": [
+            "AWS",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784284218,
+        "title": "Fixing Haskell Streaming Space Leaks",
+        "slug": "fixing-haskell-streaming-space-leaks",
+        "language": "Haskell",
+        "code": "Thunk Accumulation",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/fixing-haskell-streaming-space-leaks.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784284219,
+        "title": "Fixing Linux io_uring CQE Overflow and Page Leak",
+        "slug": "fixing-linux-iouring-cqe-overflow-page-leak",
+        "language": "Rust",
+        "code": "Kernel Page Leak",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/fixing-linux-iouring-cqe-overflow-page-leak.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784284220,
+        "title": "Grok-Build: SpaceXAI's Keyboard-Optimized Coding TUI",
+        "slug": "grok-build-spacexai-keyboard-optimized-coding-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/grok-build-spacexai-keyboard-optimized-coding-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784274774,
         "title": "Fixing Postgres TXID Wraparound & Autovacuum Starvation",
         "slug": "postgres-txid-wraparound-autovacuum-starvation",
