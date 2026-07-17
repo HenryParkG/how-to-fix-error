@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784266379,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
+        "slug": "fixing-cpp20-coroutine-frame-lifetime-violations",
+        "language": "C++20",
+        "code": "Lifetime Violation / Use-After-Free",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-frame-lifetime-violations.js",
+        "tags": [
+            "C++20",
+            "Asynchronous",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784266380,
+        "title": "Fixing PyTorch CUDA OOM in Pipeline Parallelism",
+        "slug": "pytorch-cuda-oom-pipeline-parallelism",
+        "language": "Python",
+        "code": "CUDA Out of Memory (OOM)",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/pytorch-cuda-oom-pipeline-parallelism.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784266381,
+        "title": "Fixing Redis CoW Spikes & Replication Timeouts",
+        "slug": "redis-cow-memory-spikes-replication-timeouts",
+        "language": "Bash / Redis",
+        "code": "Redis OOM / Replication Timeout",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/redis-cow-memory-spikes-replication-timeouts.js",
+        "tags": [
+            "Redis",
+            "DevOps",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784266382,
+        "title": "Deep Dive: grok-build - SpaceXAI's Coding Harness",
+        "slug": "deep-dive-grok-build-spacexai-tui",
+        "language": "Python / TUI",
+        "code": "Trend",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/deep-dive-grok-build-spacexai-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784252999,
         "title": "Rust Borrow Checker Lifetimes in Concurrent Code",
         "slug": "rust-borrow-checker-lifetime-concurrent",
