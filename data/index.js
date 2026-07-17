@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1784252999,
+        "title": "Rust Borrow Checker Lifetimes in Concurrent Code",
+        "slug": "rust-borrow-checker-lifetime-concurrent",
+        "language": "Rust",
+        "code": "Lifetime Error",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/rust-borrow-checker-lifetime-concurrent.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784253000,
+        "title": "Fixing Airflow DAG Idempotency & Data Skew on Retries",
+        "slug": "airflow-dag-idempotency-data-skew",
+        "language": "Python",
+        "code": "Idempotency Failure",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/airflow-dag-idempotency-data-skew.js",
+        "tags": [
+            "Python",
+            "Airflow",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784253001,
+        "title": "Fixing Kubernetes CrashLoopBackOff: Deep Dive & Debugging",
+        "slug": "kubernetes-crashloopbackoff-debugging",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/kubernetes-crashloopbackoff-debugging.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784253002,
+        "title": "Trending Grok-Build: SpaceXAI's Coding Agent Harness & TUI",
+        "slug": "grok-build-xai-org-trending",
+        "language": "Rust, AI, CLI/TUI",
+        "code": "Trend",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/grok-build-xai-org-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "AI",
+            "Backend"
+        ]
+    },
+    {
         "id": 1784199011,
         "title": "Fixing eBPF Verifier Backtrack Limit Exceeded",
         "slug": "fixing-ebpf-verifier-backtrack-limit-exceeded-xdp",
