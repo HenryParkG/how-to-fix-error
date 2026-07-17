@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784274774,
+        "title": "Fixing Postgres TXID Wraparound & Autovacuum Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "TXID Wraparound / Autovacuum Starvation",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784274775,
+        "title": "Fixing Elixir GenServer Mailbox Bloat & Memory Exhaustion",
+        "slug": "elixir-genserver-mailbox-bloat-memory-exhaustion",
+        "language": "Elixir",
+        "code": "GenServer Mailbox Bloat",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/elixir-genserver-mailbox-bloat-memory-exhaustion.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Elixir",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784274776,
+        "title": "Fixing Kafka Rebalance Storms and Heartbeat Timeouts",
+        "slug": "kafka-rebalance-storms-heartbeat-timeouts",
+        "language": "Java",
+        "code": "Consumer Rebalance Storm",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/kafka-rebalance-storms-heartbeat-timeouts.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784274777,
+        "title": "Deep Dive into grok-build: SpaceXAI's Agent Harness & TUI",
+        "slug": "deep-dive-grok-build-spacexai-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-17",
+        "path": "data/posts/2026-07/deep-dive-grok-build-spacexai-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1784266379,
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations",
         "slug": "fixing-cpp20-coroutine-frame-lifetime-violations",
