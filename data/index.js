@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784359675,
+        "title": "Fixing Go GC Latency Spikes in Pointer-Dense Heaps",
+        "slug": "go-gc-latency-write-barrier-pointer-dense-heaps",
+        "language": "Go",
+        "code": "GC Latency",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/go-gc-latency-write-barrier-pointer-dense-heaps.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784359676,
+        "title": "Fixing React Native JSI Memory Leaks in Cross-Runtime",
+        "slug": "react-native-jsi-cpp-memory-leaks-cross-runtime",
+        "language": "C++ / JS",
+        "code": "Memory Leak",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/react-native-jsi-cpp-memory-leaks-cross-runtime.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "C++",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784359677,
+        "title": "Fixing PyTorch DDP AllReduce Deadlocks in Multi-Node Runs",
+        "slug": "pytorch-ddp-allreduce-deadlock-unbalanced-steps",
+        "language": "Python",
+        "code": "Deadlock",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/pytorch-ddp-allreduce-deadlock-unbalanced-steps.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784359678,
+        "title": "Deep Dive into Grok-Build: SpaceXAI's Next-Gen TUI Harness",
+        "slug": "grok-build-spacexai-coding-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/grok-build-spacexai-coding-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784351777,
         "title": "Fixing eBPF Map Race Conditions and Verifier Failures",
         "slug": "fixing-ebpf-map-race-conditions-verifier-failures",
