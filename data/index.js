@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784351777,
+        "title": "Fixing eBPF Map Race Conditions and Verifier Failures",
+        "slug": "fixing-ebpf-map-race-conditions-verifier-failures",
+        "language": "C / Go",
+        "code": "eBPF Map Race & Verifier Error",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-ebpf-map-race-conditions-verifier-failures.js",
+        "tags": [
+            "eBPF",
+            "Go",
+            "Backend",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784351778,
+        "title": "Fixing gRPC Connection Pinning in Kubernetes Services",
+        "slug": "fixing-grpc-connection-pinning-kubernetes",
+        "language": "Go",
+        "code": "gRPC Load Imbalance / Connection Pinning",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-grpc-connection-pinning-kubernetes.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "gRPC",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784351779,
+        "title": "Fixing WebGPU Out-Of-Memory and Buffer Alignments",
+        "slug": "fixing-webgpu-oom-buffer-alignment-violations",
+        "language": "TypeScript",
+        "code": "WebGPU Alignment & OOM Panic",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-webgpu-oom-buffer-alignment-violations.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784351780,
+        "title": "Why xai-org/grok-build is the Top Dev-Agent TUI",
+        "slug": "why-xai-grok-build-is-top-dev-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/why-xai-grok-build-is-top-dev-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1784338236,
         "title": "Fixing Zig Arena UAF in Multi-Threaded Runtimes",
         "slug": "fixing-zig-arena-uaf-multithreaded-runtimes",
