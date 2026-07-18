@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Zig Arena UAF in Multi-Threaded Runtimes",
+    "slug": "fixing-zig-arena-uaf-multithreaded-runtimes",
+    "language": "Zig",
+    "code": "Use-After-Free",
+    "tags": [
+        "Rust",
+        "Systems",
+        "Zig",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Zig, the <code>std.heap.ArenaAllocator</code> is an extremely efficient, single-threaded memory allocator. It is designed to group allocations together and free them all at once using a single call to <code>deinit()</code>. This design pattern works perfectly for short-lived tasks or request-response lifecycles.</p><p>However, when developer-managed runtimes attempt to span arena-allocated memory across thread boundaries without explicit synchronizations, catastrophic use-after-free (UAF) violations occur. In high-performance, multi-threaded Zig programs, spawning threads that reference memory inside an arena while another worker thread triggers <code>deinit()</code> leads to silent memory corruption, segmentation faults, or undefined behavior as the underlying allocator reclaims the backing system memory.</p>",
+    "root_cause": "The main thread calls arena.deinit() while background threads are still actively reading or writing to pointers allocated from that same arena. This is caused by a lack of proper lifetime orchestration and thread synchronization.",
+    "bad_code": "const std = @import(\"std\");\n\nconst UserPayload = struct {\n    username: []const u8,\n};\n\nfn worker(payload: *UserPayload) void {\n    // Problem: This thread accesses payload memory asynchronously\n    std.time.sleep(10 * std.time.ns_per_ms);\n    std.debug.print(\"User: {s}\\n\", .{payload.username});\n}\n\npub fn main() !void {\n    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\n    defer arena.deinit(); // Dealllocates everything when main exits!\n    const allocator = arena.allocator();\n\n    var payload = try allocator.create(UserPayload);\n    payload.username = try allocator.dupe(u8, \"grok_developer\");\n\n    const thread = try std.Thread.spawn(.{}, worker, .{payload});\n    thread.detach(); // Main thread exits, arena.deinit() is called immediately while worker is sleeping!\n}",
+    "solution_desc": "To resolve this, transfer ownership of the ArenaAllocator to the background thread, or manage the lifetime of the arena with an atomic reference counter so that `deinit()` is only called when the final working thread finishes its execution context.",
+    "good_code": "const std = @import(\"std\");\n\nconst UserPayload = struct {\n    arena: *std.heap.ArenaAllocator,\n    username: []const u8,\n};\n\nfn worker(payload: *UserPayload) void {\n    defer {\n        // The worker thread takes responsibility for deallocating the arena\n        payload.arena.deinit();\n        std.heap.page_allocator.destroy(payload.arena);\n    }\n    std.time.sleep(10 * std.time.ns_per_ms);\n    std.debug.print(\"User: {s}\\n\", .{payload.username});\n}\n\npub fn main() !void {\n    // Dynamically allocate the arena wrapper to pass ownership cleanly\n    var arena_ptr = try std.heap.page_allocator.create(std.heap.ArenaAllocator);\n    arena_ptr.* = std.heap.ArenaAllocator.init(std.heap.page_allocator);\n    errdefer {\n        arena_ptr.deinit();\n        std.heap.page_allocator.destroy(arena_ptr);\n    }\n    const allocator = arena_ptr.allocator();\n\n    var payload = try allocator.create(UserPayload);\n    payload.arena = arena_ptr;\n    payload.username = try allocator.dupe(u8, \"grok_developer\");\n\n    const thread = try std.Thread.spawn(.{}, worker, .{payload});\n    thread.detach(); // Safe: The worker thread owns the arena lifecycle now\n}",
+    "verification": "Compile the code using 'zig build-exe -fsanitize=thread' to verify that no race conditions or data hazard panics are detected, and ensure the background thread completes its print sequence before safe destruction.",
+    "date": "2026-07-18",
+    "id": 1784338236,
+    "type": "error"
+});

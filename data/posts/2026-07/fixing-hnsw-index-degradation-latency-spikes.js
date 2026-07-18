@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing HNSW Index Degradation & Latency Spikes",
+    "slug": "fixing-hnsw-index-degradation-latency-spikes",
+    "language": "Rust",
+    "code": "Performance Degradation",
+    "tags": [
+        "Rust",
+        "Go",
+        "SQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>Hierarchical Navigable Small World (HNSW) graphs are the industry standard for high-performance approximate nearest neighbor (ANN) searches in vector databases. However, during high-ingestion write loads, databases often experience massive latency spikes and index degradation.</p><p>This occurs because HNSW index construction is highly CPU-bound and memory-bound. Each write insertion requires executing a search through the current multi-layer graph to find the nearest neighbors, establishing bidirectional links, and executing pruning heuristics. Concurrent writes and reads compete for locks on the same graph nodes, causing severe thread starvation and massive query latency degradation.</p>",
+    "root_cause": "Unthrottled immediate insertions into a shared HNSW graph cause heavy lock contention on the RwLocks wrapping graph nodes. Additionally, global garbage collection/compaction runs block reader threads entirely.",
+    "bad_code": "use std::sync::{Arc, RwLock};\nuse std::thread;\n\nstruct SimpleHNSW {\n    // Naive direct lock synchronization causes extreme query lock contention under write load\n    nodes: RwLock<Vec<Vec<usize>>>,\n}\n\nfn concurrent_ingest(hnsw: Arc<SimpleHNSW>, new_vectors: Vec<Vec<f32>>) {\n    let mut handles = vec![];\n    for vec in new_vectors {\n        let hnsw_clone = Arc::clone(&hnsw);\n        handles.push(thread::spawn(move || {\n            let mut write_guard = hnsw_clone.nodes.write().unwrap();\n            // Directly mutating the graph layers while blocking reader search queries\n            write_guard.push(vec![write_guard.len() + 1]);\n        }));\n    }\n    for handle in handles { handle.join().unwrap(); }\n}",
+    "solution_desc": "To maintain low P99 query latency during heavy writes, separate the mutable write buffer from the immutable read-optimized graph (similar to an LSM-tree architecture). Buffer writes to a Write-Ahead Log (WAL) and an in-memory flat index, and perform background asynchronous batch merging into the main HNSW index. Use thread-safe copy-on-write pointers or double-buffering patterns to completely isolate reads from background updates.",
+    "good_code": "use std::sync::atomic::{AtomicBool, Ordering};\nuse std::sync::mpsc::{channel, Sender};\nuse std::sync::Arc;\nuse std::thread;\n\nstruct VectorBatch {\n    vector: Vec<f32>,\n}\n\nstruct AsyncHNSWIndexer {\n    tx: Sender<VectorBatch>,\n    is_running: Arc<AtomicBool>,\n}\n\nimpl AsyncHNSWIndexer {\n    pub fn new() -> Self {\n        let (tx, rx) = channel::<VectorBatch>();\n        let is_running = Arc::new(AtomicBool::new(true));\n        let run_clone = Arc::clone(&is_running);\n\n        // Spin up background worker thread for batched indexing\n        thread::spawn(move || {\n            let mut write_buffer = Vec::new();\n            while run_clone.load(Ordering::Relaxed) {\n                if let Ok(batch) = rx.recv() {\n                    write_buffer.push(batch);\n                    // Perform async batch updates, constructing indices without blocking current read snapshots\n                    if write_buffer.len() >= 1000 {\n                        // Merge write_buffer into read-only graph snapshot cleanly here...\n                        write_buffer.clear();\n                    }\n                }\n            }\n        });\n\n        AsyncHNSWIndexer { tx, is_running }\n    }\n\n    pub fn submit_vector(&self, vector: Vec<f32>) {\n        let _ = self.tx.send(VectorBatch { vector });\n    }\n}",
+    "verification": "Simulate high ingestion rates (e.g., 20,000 vectors/sec) while running concurrent search queries. Use telemetry to verify that the P99 search latencies remain stable under 5ms, without any locking spikes.",
+    "date": "2026-07-18",
+    "id": 1784338237,
+    "type": "error"
+});

@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784338236,
+        "title": "Fixing Zig Arena UAF in Multi-Threaded Runtimes",
+        "slug": "fixing-zig-arena-uaf-multithreaded-runtimes",
+        "language": "Zig",
+        "code": "Use-After-Free",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-zig-arena-uaf-multithreaded-runtimes.js",
+        "tags": [
+            "Rust",
+            "Systems",
+            "Zig",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784338237,
+        "title": "Fixing HNSW Index Degradation & Latency Spikes",
+        "slug": "fixing-hnsw-index-degradation-latency-spikes",
+        "language": "Rust",
+        "code": "Performance Degradation",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-hnsw-index-degradation-latency-spikes.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784338238,
+        "title": "Fixing Envoy Memory Exhaustion from xDS Bloat",
+        "slug": "fixing-envoy-memory-exhaustion-xds-bloat",
+        "language": "Go",
+        "code": "Out of Memory (OOM)",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/fixing-envoy-memory-exhaustion-xds-bloat.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784338239,
+        "title": "Deep Dive into xai-org/grok-build Agent Harness",
+        "slug": "deep-dive-xai-org-grok-build",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/deep-dive-xai-org-grok-build.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784284217,
         "title": "Fixing WiredTiger Cache Eviction Choke",
         "slug": "fixing-wiredtiger-cache-eviction-choke",
