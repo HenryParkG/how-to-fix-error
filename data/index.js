@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784369396,
+        "title": "Fixing Rust Async Mutex Deadlocks Across Await Points",
+        "slug": "rust-async-mutex-deadlocks-await-points",
+        "language": "Rust",
+        "code": "Deadlock / Send Sync Violation",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/rust-async-mutex-deadlocks-await-points.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784369397,
+        "title": "Fixing Redis BGSAVE Fork Failures under High Write Load",
+        "slug": "redis-cow-bgsave-fork-failures",
+        "language": "Redis",
+        "code": "OOM / ENOMEM on fork()",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/redis-cow-bgsave-fork-failures.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784369398,
+        "title": "Fixing Spark Shuffle Partition Skew OOMs",
+        "slug": "spark-shuffle-partition-skew-oom",
+        "language": "Spark / Scala",
+        "code": "Executor OutOfMemoryError / Skew Join",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/spark-shuffle-partition-skew-oom.js",
+        "tags": [
+            "AWS",
+            "Infra",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784369399,
+        "title": "Demystifying Grok-Build: SpaceXAI's Agentic TUI Harness",
+        "slug": "xai-grok-build-tui-agent-harness",
+        "language": "Python / Rust",
+        "code": "Trend",
+        "date": "2026-07-18",
+        "path": "data/posts/2026-07/xai-grok-build-tui-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784359675,
         "title": "Fixing Go GC Latency Spikes in Pointer-Dense Heaps",
         "slug": "go-gc-latency-write-barrier-pointer-dense-heaps",

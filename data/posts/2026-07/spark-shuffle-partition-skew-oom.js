@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Spark Shuffle Partition Skew OOMs",
+    "slug": "spark-shuffle-partition-skew-oom",
+    "language": "Spark / Scala",
+    "code": "Executor OutOfMemoryError / Skew Join",
+    "tags": [
+        "AWS",
+        "Infra",
+        "Python",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Apache Spark, data skew is a common bottleneck and source of Executor OutOfMemory (OOM) errors. When executing operations like <code>join</code>, <code>groupByKey</code>, or <code>reduceByKey</code>, Spark shuffles data using the hash value of the partition key. If a particular key is highly overrepresented in the dataset (e.g., millions of <code>null</code>, default, or empty values), Spark routes all corresponding records to a single partition on a single executor. This executor runs out of heap memory and crashes, while other executors sit idle.</p>",
+    "root_cause": "The default Spark partitioning scheme maps keys to partition IDs using `hash(key) % numPartitions`. When a key is extremely frequent, its target partition balloons in size. This imbalances memory usage during the shuffle phase, causing a single JVM executor to exhaust its `spark.executor.memory` allocation while performing merge/sort operations.",
+    "bad_code": "from pyspark.sql import SparkSession\n\nspark = SparkSession.builder.appName(\"SkewedJoinBug\").getOrCreate()\n\n# Large transaction dataset with millions of default or missing customer IDs (e.g., -1 or null)\nlarge_transactions = spark.read.parquet(\"s3://bucket/transactions\")\ncustomer_metadata = spark.read.parquet(\"s3://bucket/customers\")\n\n# CRITICAL BUG: Direct join on a highly skewed key ('customer_id')\n# This causes a single partition to swell, resulting in Executor OOM.\njoined_df = large_transactions.join(\ncustomer_metadata, \n\"customer_id\", \n\"inner\"\n)",
+    "solution_desc": "Architecturally address this by implementing key 'salting'. Salting appends a random prefix/suffix to the skewed key in the large dataset to disperse it across multiple partitions. In the lookup table, the corresponding rows are duplicated with all possible prefixes/suffixes to ensure joins remain correct. Alternatively, enable Adaptive Query Execution (AQE) skew join optimization in Spark 3.x, which automatically detects and splits skewed partitions into smaller sub-partitions at runtime.",
+    "good_code": "from pyspark.sql import SparkSession\nimport pyspark.sql.functions as F\n\nspark = SparkSession.builder \\\n    .appName(\"SaltingFixedJoin\") \\\n    .config(\"spark.sql.adaptive.enabled\", \"true\") \\\n    .config(\"spark.sql.adaptive.skewJoin.enabled\", \"true\") \\\n    .getOrCreate()\n\n# Read inputs\nlarge_df = spark.read.parquet(\"s3://bucket/transactions\")\nsmall_df = spark.read.parquet(\"s3://bucket/customers\")\n\n# Define salting factor\nsalt_factor = 4\n\n# 1. Salt the primary skewed key in the large DataFrame\nsalted_large_df = large_df.withColumn(\n    \"salt_key\", \n    F.concat(F.col(\"customer_id\"), F.lit(\"_\"), F.floor(F.rand() * salt_factor))\n)\n\n# 2. Replicate the lookup (small) DataFrame to match salted keys\n# Explode small DataFrame to have an entry for each salt value\nsalted_small_df = small_df.withColumn(\n    \"salt_array\", \n    F.array([F.lit(i) for i in range(salt_factor)])\n).withColumn(\n    \"salt_val\", \n    F.explode(\"salt_array\")\n).withColumn(\n    \"salt_key\", \n    F.concat(F.col(\"customer_id\"), F.lit(\"_\"), F.col(\"salt_val\"))\n).drop(\"salt_array\", \"salt_val\")\n\n# 3. Perform the join on the salted key\nfixed_joined_df = salted_large_df.join(\n    salted_small_df,\n    on=\"salt_key\",\n    how=\"inner\"\n).drop(\"salt_key\")",
+    "verification": "Deploy the job and inspect the Spark History Server UI. Navigate to the SQL tab, locate the join phase, and ensure that the 'skew join' optimization node is active under AQE. Confirm that the distribution of task execution times is relatively flat, and verify that the standard deviation of data processed per task is minimized, signaling balanced partitions.",
+    "date": "2026-07-18",
+    "id": 1784369398,
+    "type": "error"
+});
