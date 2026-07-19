@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing gRPC HTTP/2 Stream Exhaustion",
+    "slug": "grpc-http2-stream-exhaustion-goaway",
+    "language": "Go",
+    "code": "RESOURCE_EXHAUSTED",
+    "tags": [
+        "Go",
+        "gRPC",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In highly concurrent gRPC microservice architectures, clients communicate with servers via multiplexed HTTP/2 connections. While multiplexing is highly efficient, HTTP/2 specifies a dynamic limit on the maximum number of concurrent active streams (calls) per connection, defaulting to 100 in many environments. When a high-throughput microservice attempts to issue thousands of concurrent requests over a single shared gRPC connection, it quickly hits the limit. This triggers direct client-side blocking or throws <code>RESOURCE_EXHAUSTED: concurrent stream limit exceeded</code>. If handled poorly, the server responds by issuing <code>GOAWAY</code> frames to force connection termination, resulting in massive reconnection storms and severe backend service degradation.</p>",
+    "root_cause": "The client application reuses a single raw gRPC physical connection (Subchannel) to execute thousands of concurrent goroutines without managing a connection pool or dynamically adjusting the transport configuration, exceeding the server-enforced MaxConcurrentStreams threshold.",
+    "bad_code": "package main\n\nimport (\n\t\"context\"\n\t\"google.golang.org/grpc\"\n\t\"log\"\n\t\"sync\"\n)\n\nfunc startUnsafeRequests(target string) {\n\t// A single connection will easily exhaust the 100 concurrent streams limit under peak load\n\tconn, err := grpc.Dial(target, grpc.WithInsecure())\n\tif err != nil {\n\t\tlog.Fatalf(\"Failed to connect: %v\", err)\n\t}\n\tdefer conn.Close()\n\n\tclient := NewMyServiceClient(conn)\n\tvar wg sync.WaitGroup\n\n\tfor i := 0; i < 5000; i++ {\n\t\twg.Add(1)\n\t\tgo func() {\n\t\t\tdefer wg.Done()\n\t\t\t_, err := client.ExecuteTask(context.Background(), &TaskRequest{})\n\t\t\tif err != nil {\n\t\t\t\tlog.Printf(\"Error executing task: %v\", err) // Will flood with 'stream limit exceeded'\n\t\t\t}\n\t\t}()\n\t}\n\twg.Wait()\n}",
+    "solution_desc": "Architect a custom gRPC connection pool wrapper to load balance operations across multiple underlying physical TCP connections, implement a client-side round-robin load balancer, and configure sensible Keepalive options to gracefully handle server-side connection teardowns without triggering packet storms.",
+    "good_code": "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/keepalive\"\n\t\"sync/atomic\"\n\t\"time\"\n)\n\ntype ClientPool struct {\n\tconns []*grpc.ClientConn\n\tindex uint32\n\tcount uint32\n}\n\nfunc NewClientPool(target string, poolSize int) (*ClientPool, error) {\n\tpool := &ClientPool{\n\t\tconns: make([]*grpc.ClientConn, poolSize),\n\t\tcount: uint32(poolSize),\n\t}\n\n\tkp := keepalive.ClientParameters{\n\t\tTime:                10 * time.Second,\n\t\tTimeout:             3 * time.Second,\n\t\tPermitWithoutStream: true,\n\t}\n\n\tfor i := 0; i < poolSize; i++ {\n\t\t// Dial multiple independent subchannels to distribute HTTP/2 stream allocations\n\t\tconn, err := grpc.Dial(target, \n\t\t\tgrpc.WithInsecure(),\n\t\t\tgrpc.WithKeepaliveParams(kp),\n\t\t\tgrpc.WithDefaultServiceConfig(`{\"loadBalancingConfig\": [{\"round_robin\":{}}]}`),\n\t\t)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to init pool connection %d: %w\", i, err)\n\t\t}\n\t\tpool.conns[i] = conn\n\t}\n\treturn pool, nil\n}\n\nfunc (p *ClientPool) Get() *grpc.ClientConn {\n\tidx := atomic.AddUint32(&p.index, 1)\n\treturn p.conns[idx%p.count]\n}\n\nfunc (p *ClientPool) Close() {\n\tfor _, conn := range p.conns {\n\t\t_ = conn.Close()\n\t}\n}",
+    "verification": "Compile and run a load generator against the pool with `export GRPC_GO_LOG_SEVERITY_LEVEL=info` enabled. Verify that the client no longer emits `stream limit exceeded` errors and that the load is evenly split over multiple underlying TCP connections.",
+    "date": "2026-07-19",
+    "id": 1784456349,
+    "type": "error"
+});

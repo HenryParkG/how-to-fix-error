@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784456348,
+        "title": "Fixing Qdrant HNSW Index Build OOMs",
+        "slug": "qdrant-hnsw-index-oom-high-dim",
+        "language": "Rust",
+        "code": "OOMKilled",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/qdrant-hnsw-index-oom-high-dim.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784456349,
+        "title": "Fixing gRPC HTTP/2 Stream Exhaustion",
+        "slug": "grpc-http2-stream-exhaustion-goaway",
+        "language": "Go",
+        "code": "RESOURCE_EXHAUSTED",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/grpc-http2-stream-exhaustion-goaway.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784456350,
+        "title": "Fixing WebGPU Buffer Allocation Leaks",
+        "slug": "webgpu-device-loss-buffer-leaks",
+        "language": "TypeScript",
+        "code": "GPUDeviceLostInfo",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/webgpu-device-loss-buffer-leaks.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784456351,
+        "title": "Deep Dive: xai-org/grok-build Agent Harness",
+        "slug": "grok-build-xai-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/grok-build-xai-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784447989,
         "title": "Fixing Kafka Rebalance Storms under CPU Saturation",
         "slug": "fixing-kafka-rebalance-storms-cpu-saturation",
