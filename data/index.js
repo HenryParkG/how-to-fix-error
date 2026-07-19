@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784447989,
+        "title": "Fixing Kafka Rebalance Storms under CPU Saturation",
+        "slug": "fixing-kafka-rebalance-storms-cpu-saturation",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-kafka-rebalance-storms-cpu-saturation.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784447990,
+        "title": "Fixing Zig GPA Deadlocks under Thread Contention",
+        "slug": "fixing-zig-gpa-deadlocks-thread-contention",
+        "language": "Zig",
+        "code": "Thread Deadlock",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-zig-gpa-deadlocks-thread-contention.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784447991,
+        "title": "Fixing WASM Linear Memory Fragmentation in Edge Workers",
+        "slug": "wasm-linear-memory-fragmentation-edge-workers",
+        "language": "WebAssembly",
+        "code": "OutOfMemory",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/wasm-linear-memory-fragmentation-edge-workers.js",
+        "tags": [
+            "WebAssembly",
+            "TypeScript",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784447992,
+        "title": "Inside Grok-Build: SpaceXAI's Coding Agent TUI",
+        "slug": "grok-build-spacexai-coding-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/grok-build-spacexai-coding-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784439736,
         "title": "Fixing Haskell Space Leaks in Strict State Monads",
         "slug": "fixing-haskell-space-leaks-strict-state-monad",
