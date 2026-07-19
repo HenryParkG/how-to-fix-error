@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784425644,
+        "title": "Fixing C++20 Coroutine Lifetime Violations",
+        "slug": "fixing-cpp20-coroutine-lifetime-violations",
+        "language": "C++",
+        "code": "Lifetime Violation",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-lifetime-violations.js",
+        "tags": [
+            "C++",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784425645,
+        "title": "Fixing PostgreSQL XID Wraparound Emergencies",
+        "slug": "fixing-postgresql-xid-wraparound-emergencies",
+        "language": "SQL",
+        "code": "XID Wraparound",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-postgresql-xid-wraparound-emergencies.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784425646,
+        "title": "Fixing Elixir GenServer Mailbox Bloat",
+        "slug": "fixing-elixir-genserver-mailbox-bloat",
+        "language": "Elixir",
+        "code": "Mailbox Bloat",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-elixir-genserver-mailbox-bloat.js",
+        "tags": [
+            "Go",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784425647,
+        "title": "Inside Grok-Build: SpaceXAI's Agent Harness and TUI",
+        "slug": "inside-grok-build-spacexai-tui",
+        "language": "Python / Textual",
+        "code": "Trend",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/inside-grok-build-spacexai-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784369396,
         "title": "Fixing Rust Async Mutex Deadlocks Across Await Points",
         "slug": "rust-async-mutex-deadlocks-await-points",
