@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784439736,
+        "title": "Fixing Haskell Space Leaks in Strict State Monads",
+        "slug": "fixing-haskell-space-leaks-strict-state-monad",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-haskell-space-leaks-strict-state-monad.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784439737,
+        "title": "Fixing Istio mTLS Handshake Timeouts",
+        "slug": "fixing-istio-mtls-handshake-timeouts-cpu-throttling",
+        "language": "Go",
+        "code": "mTLS Timeout",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-istio-mtls-handshake-timeouts-cpu-throttling.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784439738,
+        "title": "Fixing WiredTiger Cache Eviction Deadlocks",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-deadlocks",
+        "language": "C++",
+        "code": "Cache Eviction Deadlock",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/fixing-mongodb-wiredtiger-cache-eviction-deadlocks.js",
+        "tags": [
+            "Docker",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784439739,
+        "title": "Analyzing grok-build: SpaceXAI's Agent Harness & TUI",
+        "slug": "analyzing-grok-build-spacexai-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-19",
+        "path": "data/posts/2026-07/analyzing-grok-build-spacexai-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784425644,
         "title": "Fixing C++20 Coroutine Lifetime Violations",
         "slug": "fixing-cpp20-coroutine-lifetime-violations",
