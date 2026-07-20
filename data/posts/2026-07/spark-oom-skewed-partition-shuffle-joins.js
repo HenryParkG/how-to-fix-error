@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Spark OOM from Skewed Shuffle Joins",
+    "slug": "spark-oom-skewed-partition-shuffle-joins",
+    "language": "Java",
+    "code": "OutOfMemoryError",
+    "tags": [
+        "Java",
+        "SQL",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Apache Spark, physical execution of a join requires shuffling rows with the same join keys to the same partition. If data is heavily skewed (i.e., a few join keys represent the majority of records), a single executor gets a disproportionately massive chunk of data. This key skew forces Spark to read more records into that partition's JVM memory buffer than can fit, resulting in <code>java.lang.OutOfMemoryError: Java heap space</code> or executor heartbeat timeouts.</p>",
+    "root_cause": "Unbalanced distribution of join keys causing a high density of records on a single key. During shuffle-join phases (SortMergeJoin), all records containing this skewed key are allocated to one partition, exceeding the executor JVM heap capacity.",
+    "bad_code": "// A standard Spark SQL Join execution with heavy skew on the 'tenant_id' key\nimport org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\n\nDataset<Row> transactions = spark.read().parquet(\"s3://bucket/large_transactions\"); // Skewed key: tenant_id\nDataset<Row> tenants = spark.read().parquet(\"s3://bucket/tenants\");\n\n// BAD: Standard join fails with OOM when processing the single dominant 'tenant_id' partition\nDataset<Row> joinedDf = transactions.join(tenants, \"tenant_id\");\njoinedDf.write().format(\"parquet\").save(\"s3://bucket/output\");",
+    "solution_desc": "Architecturally, we resolve join skew by either enabling Spark's Adaptive Query Execution (AQE) skew join optimization, or by using a technique called 'Salting' to break up skewed keys. Salting adds a random prefix/suffix to the skewed keys in the large DataFrame, and replicates matching records across the salted keys in the smaller DataFrame, evenly distributing execution partitions across multiple cluster executors.",
+    "good_code": "// Robust join implementation using Spark's Adaptive Query Execution (AQE) and key salting\nimport org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\nimport static org.apache.spark.sql.functions.*;\n\n// 1. Configure Spark Session to auto-detect and mitigate skew joins via AQE\nspark.conf().set(\"spark.sql.adaptive.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"5\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"268435456\"); // 256MB\n\nDataset<Row> transactions = spark.read().parquet(\"s3://bucket/large_transactions\");\nDataset<Row> tenants = spark.read().parquet(\"s3://bucket/tenants\");\n\n// 2. Fallback / Explicit handling: Manual Salting if AQE is insufficient\nint numSaltPartitions = 10;\n\n// Add a random salt to the skewed key\nDataset<Row> saltedTransactions = transactions.withColumn(\"salted_tenant_id\", \n    concat(col(\"tenant_id\"), lit(\"_\"), round(rand().multiply(numSaltPartitions - 1)))\n);\n\n// Replicate the lookup side keys across all potential salt combinations\nDataset<Row> explodedTenants = tenants\n    .withColumn(\"salt_array\", array_repeat(lit(0), numSaltPartitions))\n    .withColumn(\"salt\", posexplode(col(\"salt_array\")))\n    .withColumn(\"salted_tenant_id\", concat(col(\"tenant_id\"), lit(\"_\"), col(\"salt\")))\n    .drop(\"salt_array\", \"salt\");\n\n// Safe shuffle join executed uniformly over executors\nDataset<Row> joinedDf = saltedTransactions.join(explodedTenants, \"salted_tenant_id\");",
+    "verification": "Check the Spark UI (DAG Visualization and Event Timeline). Verify that execution partitions for the stage are balanced, and look for 'skew join' optimizations listed in the physical query execution plan using `joinedDf.explain()`.",
+    "date": "2026-07-20",
+    "id": 1784527225,
+    "type": "error"
+});

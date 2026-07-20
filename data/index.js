@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784527224,
+        "title": "Fixing Rust Pinning Violations in Custom Futures",
+        "slug": "fixing-rust-pinning-violations-custom-futures",
+        "language": "Rust",
+        "code": "PinningViolation",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/fixing-rust-pinning-violations-custom-futures.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Asynchronous",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784527225,
+        "title": "Fixing Spark OOM from Skewed Shuffle Joins",
+        "slug": "spark-oom-skewed-partition-shuffle-joins",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/spark-oom-skewed-partition-shuffle-joins.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784527226,
+        "title": "Fixing Redis CoW Memory Bloat during BGSAVE",
+        "slug": "redis-cow-memory-bloat-bgsave",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/redis-cow-memory-bloat-bgsave.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784527227,
+        "title": "Grok-Build: SpaceXAI's Fullscreen TUI Coding Agent",
+        "slug": "grok-build-spacexai-tui-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/grok-build-spacexai-tui-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784513072,
         "title": "Fixing eBPF Verifier Complexity Limit Exhaustion",
         "slug": "fixing-ebpf-verifier-complexity-limit-exhaustion",
