@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing eBPF Verifier Complexity Limit Exhaustion",
+    "slug": "fixing-ebpf-verifier-complexity-limit-exhaustion",
+    "language": "Rust",
+    "code": "BPF_COMPLEXITY_LIMIT_EXCEEDED",
+    "tags": [
+        "Rust",
+        "C",
+        "eBPF",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>When compiling and loading complex eBPF programs, developers frequently encounter the dreaded verifier complexity limit error. The eBPF verifier performs a depth-first search static analysis of all possible execution paths to guarantee memory safety and program termination. Historically, this analysis was limited to 1 million instructions (often less on older kernels). When loops are unrolled using compiler directives, or when multiple complex branches are combined, the state space explodes exponentially.</p><p>This path explosion forces the verifier to prune states or fail with an error when it reaches its complexity bounds, even if the program is logically correct and memory-safe. To resolve this, we must assist the verifier by reducing branch depth, utilizing bounded loops natively supported by modern kernels, or outsourcing complex state manipulation to modern BPF helpers.</p>",
+    "root_cause": "The clang compiler's automatic or forced loop unrolling (#pragma unroll) translates high-level loops into long sequences of linear instructions with duplicated branch paths. This causes the kernel's state verification engine to reach its complexity instruction threshold (1,000,000 instructions analyzed) trying to trace every possible combination of loop outcomes.",
+    "bad_code": "#define MAX_ENTRIES 64\n\nSEC(\"socket\")\nint filter_packets(struct __sk_buff *skb) {\n    void *data_end = (void *)(long)skb->data_end;\n    void *data = (void *)(long)skb->data;\n    \n    struct hdr *header = data;\n    if ((void *)(header + 1) > data_end) {\n        return 0;\n    }\n\n    // Forced loop unrolling creates 64 copies of the complex internal logic\n    #pragma unroll\n    for (int i = 0; i < MAX_ENTRIES; i++) {\n        if (header->options[i] == 0xFF) {\n            // Complex processing and conditional checks\n            if (data + i * 4 + 4 <= data_end) {\n                __u32 val = *(__u32 *)(data + i * 4);\n                if (val == 0xDEADBEEF) {\n                    return 1;\n                }\n            }\n        }\n    }\n    return 0;\n}",
+    "solution_desc": "Replace classic loop unrolling with bounded loops or the `bpf_loop` helper interface introduced in modern Linux kernels (5.17+). Additionally, use `asm volatile` barriers to prevent the Clang optimizer from excessively duplicating branch logic, keeping the program complexity footprint low.",
+    "good_code": "#include <vmlinux.h>\n#include <bpf/bpf_helpers.h>\n\n#define MAX_ENTRIES 64\n\nstruct loop_ctx {\n    void *data;\n    void *data_end;\n    bool found;\n};\n\nstatic int process_entry(__u32 index, struct loop_ctx *ctx) {\n    if (ctx->data + index * 4 + 4 > ctx->data_end) {\n        return 1; // Stop loop if out of bounds\n    }\n    __u32 val = *(__u32 *)(ctx->data + index * 4);\n    if (val == 0xDEADBEEF) {\n        ctx->found = true;\n        return 1; // Terminate iteration early\n    }\n    return 0; // Continue iteration\n}\n\nSEC(\"socket\")\nint filter_packets_optimized(struct __sk_buff *skb) {\n    void *data_end = (void *)(long)skb->data_end;\n    void *data = (void *)(long)skb->data;\n    \n    struct loop_ctx ctx = {\n        .data = data,\n        .data_end = data_end,\n        .found = false\n    };\n\n    // Using bpf_loop prevents the verifier from expanding the loop unrolled paths\n    bpf_loop(MAX_ENTRIES, process_entry, &ctx, 0);\n\n    if (ctx.found) {\n        return 1;\n    }\n    return 0;\n}",
+    "verification": "Load the compiled object file into the kernel using bpftool with verifier logs enabled: `bpftool prog load filter.o /sys/fs/bpf/filter_prog type socket`. Verify that the verifier output shows a successfully completed pass with a drastically reduced instruction count (e.g., under 1,000 processed instructions instead of 1,000,000+).",
+    "date": "2026-07-20",
+    "id": 1784513072,
+    "type": "error"
+});

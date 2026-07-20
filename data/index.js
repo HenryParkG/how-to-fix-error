@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784513072,
+        "title": "Fixing eBPF Verifier Complexity Limit Exhaustion",
+        "slug": "fixing-ebpf-verifier-complexity-limit-exhaustion",
+        "language": "Rust",
+        "code": "BPF_COMPLEXITY_LIMIT_EXCEEDED",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-complexity-limit-exhaustion.js",
+        "tags": [
+            "Rust",
+            "C",
+            "eBPF",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784513073,
+        "title": "Fixing PyTorch CUDA OOMs in Gradient Accumulation",
+        "slug": "pytorch-cuda-oom-gradient-accumulation-fragmentation",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/pytorch-cuda-oom-gradient-accumulation-fragmentation.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784513074,
+        "title": "Fixing AWS Lambda VPC Cold Starts and ENI Exhaustion",
+        "slug": "aws-lambda-vpc-cold-starts-eni-exhaustion",
+        "language": "Go",
+        "code": "LAMBDA_CONNECTION_TIMEOUT",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/aws-lambda-vpc-cold-starts-eni-exhaustion.js",
+        "tags": [
+            "AWS",
+            "Go",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784513075,
+        "title": "Inside grok-build: xAI's Coding Agent & Interactive TUI",
+        "slug": "xai-grok-build-coding-agent-tui",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/xai-grok-build-coding-agent-tui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784456348,
         "title": "Fixing Qdrant HNSW Index Build OOMs",
         "slug": "qdrant-hnsw-index-oom-high-dim",
