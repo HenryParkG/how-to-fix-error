@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784539127,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Event Loops",
+        "slug": "fixing-cpp20-coroutine-frame-leaks-event-loops",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-frame-leaks-event-loops.js",
+        "tags": [
+            "C++",
+            "Asio",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784539128,
+        "title": "Fixing PostgreSQL TXID Wraparound Failures",
+        "slug": "fixing-postgresql-txid-wraparound-failures",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/fixing-postgresql-txid-wraparound-failures.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784539129,
+        "title": "Fixing Elixir GenStage Backpressure Collapse",
+        "slug": "fixing-elixir-genstage-backpressure-collapse",
+        "language": "Elixir",
+        "code": "Backpressure Fail",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/fixing-elixir-genstage-backpressure-collapse.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784539130,
+        "title": "Inside Grok-Build: SpaceXAI's Agent Harness",
+        "slug": "inside-grok-build-spacexai-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-20",
+        "path": "data/posts/2026-07/inside-grok-build-spacexai-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784527224,
         "title": "Fixing Rust Pinning Violations in Custom Futures",
         "slug": "fixing-rust-pinning-violations-custom-futures",
