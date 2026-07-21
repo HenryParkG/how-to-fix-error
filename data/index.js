@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1784632017,
+        "title": "Fixing eBPF Deadlocks in XDP Pipelines",
+        "slug": "fixing-ebpf-deadlocks-xdp-pipelines",
+        "language": "C, eBPF",
+        "code": "Deadlock",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/fixing-ebpf-deadlocks-xdp-pipelines.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Linux Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784632018,
+        "title": "Fixing Kafka Rebalance Storms in Async Pipelines",
+        "slug": "kafka-rebalance-storms-async-pipelines",
+        "language": "Java, Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/kafka-rebalance-storms-async-pipelines.js",
+        "tags": [
+            "Kafka",
+            "Messaging",
+            "Distributed Systems",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784632019,
+        "title": "Fixing WebGPU Mem Leaks & Command Desync",
+        "slug": "webgpu-memory-leaks-command-desynchronization",
+        "language": "JavaScript, WebGPU",
+        "code": "MemLeak, Desync",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/webgpu-memory-leaks-command-desynchronization.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "WebGL",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784632020,
+        "title": "Codex Dream Skin: The Trending VS Code Theme",
+        "slug": "codex-dream-skin-trending-vscode-theme",
+        "language": "JSON, CSS (VS Code Theme)",
+        "code": "Trend",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/codex-dream-skin-trending-vscode-theme.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Developer Tools",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1784612475,
         "title": "Fixing Zig Arena Allocator Concurrent Corruption",
         "slug": "fix-zig-arena-allocator-concurrent-corruption",

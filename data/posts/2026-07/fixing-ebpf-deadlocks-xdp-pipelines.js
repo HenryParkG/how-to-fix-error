@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing eBPF Deadlocks in XDP Pipelines",
+    "slug": "fixing-ebpf-deadlocks-xdp-pipelines",
+    "language": "C, eBPF",
+    "code": "Deadlock",
+    "tags": [
+        "eBPF",
+        "XDP",
+        "Linux Kernel",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>Nested map updates, especially for per-CPU maps or when using map-in-map constructs, can introduce complex locking scenarios in the Linux kernel context. If an eBPF program, triggered by an XDP hook, attempts to update multiple maps in a sequence that doesn't respect a global locking order, or if it re-enters a critical section implicitly, deadlocks can occur. This is particularly prevalent in high-throughput environments where race conditions are amplified. The kernel uses spinlocks for map operations, and if one BPF program holds a lock on map A, then tries to acquire a lock on map B, while another program holds a lock on map B and tries to acquire a lock on map A, a classic deadlock ensues. This often manifests as system hangs or RCU-stall warnings.</p>",
+    "root_cause": "Inconsistent locking order or re-entry issues when performing nested eBPF map operations within kernel context, leading to mutually dependent resource acquisition. Specifically, `bpf_map_update_elem` on different maps or a map-in-map could lead to deadlock if the internal map also has locking.",
+    "bad_code": "```c\n// Example snippet illustrating potential bad pattern\n// Assume map_A and map_B are global BPF maps\nSEC(\"xdp\")\nint xdp_prog_deadlock(struct xdp_md *ctx) {\n    long key = 0;\n    long *value_A = bpf_map_lookup_elem(&map_A, &key); // Acquires lock for map_A\n    if (value_A) {\n        // ... some logic ...\n        // Attempt to update map_B while holding map_A's lock implicitly\n        bpf_map_update_elem(&map_B, &key, value_A, BPF_ANY); // Acquires lock for map_B\n        // Deadlock if another thread does map_B then map_A\n    }\n    bpf_map_delete_elem(&map_A, &key); // Releases lock for map_A\n    return XDP_PASS;\n}\n```",
+    "solution_desc": "The primary solution involves redesigning eBPF programs to avoid nested map updates that could lead to deadlocks. This can be achieved by: 1) Using RCU-protected map lookups (`BPF_F_RDONLY` for map-in-map values) where possible. 2) Employing lock-free algorithms or atomic operations where suitable for simpler data structures. 3) Consolidating data into a single, larger map to reduce multi-map interactions. 4) For complex state, using a combination of `bpf_map_lookup_and_delete_elem` with subsequent atomic re-insertion or leveraging per-CPU maps for temporary, thread-local state to minimize global contention. Ensuring a strict, global order for acquiring locks (even if implicit through `bpf_map_update_elem` calls) is crucial but difficult to enforce without explicit mechanisms.",
+    "good_code": "```c\n// Using a single map with a structured value to avoid multiple map interactions\n// Or using RCU for lookups on inner maps\nstruct my_value {\n    __u32 counter;\n    // ... other data ...\n};\nstruct {\n    __uint(type, BPF_MAP_TYPE_HASH);\n    __uint(key_size, sizeof(__u32));\n    __uint(value_size, sizeof(struct my_value));\n    __uint(max_entries, 1024);\n} my_unified_map SEC(\".maps\");\n\nSEC(\"xdp\")\nint xdp_prog_no_deadlock(struct xdp_md *ctx) {\n    __u32 key = 0;\n    struct my_value *val = bpf_map_lookup_elem(&my_unified_map, &key);\n    if (val) {\n        __sync_fetch_and_add(&val->counter, 1); // Atomic update\n    } else {\n        struct my_value new_val = { .counter = 1 };\n        bpf_map_update_elem(&my_unified_map, &key, &new_val, BPF_ANY);\n    }\n    return XDP_PASS;\n}\n\n// For map-in-map, ensuring inner map lookup is read-only\n// Or careful design of access patterns.\n```",
+    "verification": "Extensive stress testing under high-load conditions, using tools like `pktgen` or `iperf3` to generate network traffic. Monitoring kernel logs (`dmesg`) for RCU stall warnings, deadlock detection messages, or system freezes. Employing `perf lock` to analyze kernel lock contention and identify potential cycles. Utilizing `bpftool` to inspect map states and ensure consistency.",
+    "date": "2026-07-21",
+    "id": 1784632017,
+    "type": "error"
+});
