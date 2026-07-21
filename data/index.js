@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1784598473,
+        "title": "Fixing WiredTiger Cache Eviction Stalls",
+        "slug": "fixing-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "CacheEvictionStall",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/fixing-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784598474,
+        "title": "Fixing Haskell Space Leaks in State Transformers",
+        "slug": "fixing-haskell-state-transformer-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/fixing-haskell-state-transformer-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784598475,
+        "title": "Fixing Envoy Memory Leaks from Route Churn",
+        "slug": "fixing-envoy-memory-leaks-route-churn",
+        "language": "Go",
+        "code": "EnvoyMemoryLeak",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/fixing-envoy-memory-leaks-route-churn.js",
+        "tags": [
+            "Envoy",
+            "Istio",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784598476,
+        "title": "Analyzing Fei-Away Codex Dream Skin",
+        "slug": "codex-dream-skin-trend-guide",
+        "language": "CSS",
+        "code": "Trend",
+        "date": "2026-07-21",
+        "path": "data/posts/2026-07/codex-dream-skin-trend-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784539127,
         "title": "Fixing C++20 Coroutine Frame Leaks in Event Loops",
         "slug": "fixing-cpp20-coroutine-frame-leaks-event-loops",
