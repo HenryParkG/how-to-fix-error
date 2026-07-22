@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784698814,
+        "title": "Fix Vector DB HNSW Index Memory Spikes on Ingestion",
+        "slug": "fix-vector-db-hnsw-memory-spikes-concurrent-ingestion",
+        "language": "Rust",
+        "code": "OOM / MemorySpike",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-vector-db-hnsw-memory-spikes-concurrent-ingestion.js",
+        "tags": [
+            "Vector DB",
+            "HNSW",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784698815,
+        "title": "Fix Redis CoW OOM Cascades During High-Throughput BGSAVE",
+        "slug": "fix-redis-cow-oom-cascades-bgsave",
+        "language": "C / Redis",
+        "code": "OOM / CoW Exhaustion",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-redis-cow-oom-cascades-bgsave.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784698816,
+        "title": "Fix Next.js App Router RSC Memory Leaks in Edge SSR",
+        "slug": "fix-nextjs-app-router-rsc-memory-leaks-edge-ssr",
+        "language": "TypeScript",
+        "code": "ERR_OUT_OF_MEMORY",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-nextjs-app-router-rsc-memory-leaks-edge-ssr.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784698817,
+        "title": "Exploring lopopolo/harness-engineering: Agent Context Bundle",
+        "slug": "exploring-lopopolo-harness-engineering-agent-context-bundle",
+        "language": "TypeScript / Shell",
+        "code": "Trend",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/exploring-lopopolo-harness-engineering-agent-context-bundle.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1784684790,
         "title": "Fix PyTorch CUDA Async Stream Race Conditions",
         "slug": "fix-pytorch-cuda-async-stream-race-conditions",
