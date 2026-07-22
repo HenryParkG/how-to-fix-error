@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784717993,
+        "title": "Fixing C++20 Coroutine UAF in Async Schedulers",
+        "slug": "fixing-cpp20-coroutine-uaf-async-schedulers",
+        "language": "C++",
+        "code": "Use-After-Free (UAF)",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-uaf-async-schedulers.js",
+        "tags": [
+            "Concurrency",
+            "Asynchronous",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784717994,
+        "title": "Fixing PG TXID Wraparound Deadlocks",
+        "slug": "fixing-postgresql-txid-wraparound-deadlocks",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound Deadlock",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fixing-postgresql-txid-wraparound-deadlocks.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784717995,
+        "title": "Fixing Elixir Mailbox Explosions in GenStage",
+        "slug": "fixing-elixir-mailbox-explosions-genstage",
+        "language": "Elixir",
+        "code": "Mailbox Explosion",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fixing-elixir-mailbox-explosions-genstage.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "GenStage",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784717996,
+        "title": "Harness Engineering: Lopopolo's Anthology & Guide",
+        "slug": "harness-engineering-ryan-lopopolo-anthology",
+        "language": "Multi-faceted (Software Engineering)",
+        "code": "Trend",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/harness-engineering-ryan-lopopolo-anthology.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Software Engineering",
+            "Infra"
+        ]
+    },
+    {
         "id": 1784698814,
         "title": "Fix Vector DB HNSW Index Memory Spikes on Ingestion",
         "slug": "fix-vector-db-hnsw-memory-spikes-concurrent-ingestion",
