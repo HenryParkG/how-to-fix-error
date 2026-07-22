@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784684790,
+        "title": "Fix PyTorch CUDA Async Stream Race Conditions",
+        "slug": "fix-pytorch-cuda-async-stream-race-conditions",
+        "language": "Python",
+        "code": "CUDA Async Race Condition",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-pytorch-cuda-async-stream-race-conditions.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Python",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784684791,
+        "title": "Fix gRPC HTTP/2 Stream Cancellation Memory Leaks",
+        "slug": "fix-grpc-http2-stream-cancellation-memory-leaks",
+        "language": "Go",
+        "code": "gRPC Resource Leak",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-grpc-http2-stream-cancellation-memory-leaks.js",
+        "tags": [
+            "gRPC",
+            "Go",
+            "HTTP/2",
+            "Microservices",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784684792,
+        "title": "Fix React Native Fabric C++ Mutex Deadlocks in UI",
+        "slug": "fix-react-native-fabric-cpp-mutex-deadlocks",
+        "language": "React",
+        "code": "Fabric C++ Deadlock",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/fix-react-native-fabric-cpp-mutex-deadlocks.js",
+        "tags": [
+            "React",
+            "React Native",
+            "C++",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784684793,
+        "title": "Harness Engineering: Ryan Lopopolo's AI Field Guide",
+        "slug": "harness-engineering-ryan-lopopolo-agent-context-bundle",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-22",
+        "path": "data/posts/2026-07/harness-engineering-ryan-lopopolo-agent-context-bundle.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI Agents"
+        ]
+    },
+    {
         "id": 1784632017,
         "title": "Fixing eBPF Deadlocks in XDP Pipelines",
         "slug": "fixing-ebpf-deadlocks-xdp-pipelines",
