@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784794358,
+        "title": "Fix eBPF Verifier Bounds Tracking Failures in XDP",
+        "slug": "fix-ebpf-verifier-bounds-xdp-parsing",
+        "language": "C / eBPF",
+        "code": "VerifierError",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fix-ebpf-verifier-bounds-xdp-parsing.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Linux",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784794359,
+        "title": "Fix Elasticsearch Segment Merge Tombstone Memory Spikes",
+        "slug": "elasticsearch-segment-merge-tombstone-memory-spike",
+        "language": "Java / Lucene",
+        "code": "MemorySpike",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/elasticsearch-segment-merge-tombstone-memory-spike.js",
+        "tags": [
+            "Elasticsearch",
+            "Lucene",
+            "JVM",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784794360,
+        "title": "Fix WebAssembly SharedArrayBuffer Atomic Deadlocks",
+        "slug": "wasm-sharedarraybuffer-atomic-deadlock-fix",
+        "language": "Rust / WASM",
+        "code": "Deadlock",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/wasm-sharedarraybuffer-atomic-deadlock-fix.js",
+        "tags": [
+            "WebAssembly",
+            "JavaScript",
+            "Rust",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784794361,
+        "title": "Harness Engineering: Ryan Lopopolo's Context Bundle",
+        "slug": "harness-engineering-lopopolo-agent-context-bundle",
+        "language": "Markdown / Agent Framework",
+        "code": "Trend",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/harness-engineering-lopopolo-agent-context-bundle.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784785510,
         "title": "Fixing Tokio Runtime Starvation from Blocking I/O",
         "slug": "fixing-tokio-runtime-starvation-blocking-io",
