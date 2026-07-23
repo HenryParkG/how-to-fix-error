@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1784804447,
+        "title": "Fix Rust Pin Projection Memory Unsafety in io_uring Queues",
+        "slug": "fix-rust-pin-projection-memory-unsafety-io-uring",
+        "language": "Rust",
+        "code": "Memory Safety",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fix-rust-pin-projection-memory-unsafety-io-uring.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "io_uring",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784804448,
+        "title": "Fix PyTorch CUDA Stream Race Conditions in Distributed DDP",
+        "slug": "fix-pytorch-cuda-stream-synchronization-race-ddp",
+        "language": "Python",
+        "code": "Race Condition",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fix-pytorch-cuda-stream-synchronization-race-ddp.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784804449,
+        "title": "Fix gRPC HTTP/2 Flow Control Window Starvation",
+        "slug": "fix-grpc-http2-flow-control-window-starvation",
+        "language": "Go",
+        "code": "Flow Control",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fix-grpc-http2-flow-control-window-starvation.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "HTTP/2",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784804450,
+        "title": "Analyzing lopopolo/harness-engineering: Agent Harnesses",
+        "slug": "analyzing-lopopolo-harness-engineering-agent-context",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/analyzing-lopopolo-harness-engineering-agent-context.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1784794358,
         "title": "Fix eBPF Verifier Bounds Tracking Failures in XDP",
         "slug": "fix-ebpf-verifier-bounds-xdp-parsing",
