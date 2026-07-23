@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1784771629,
+        "title": "Fixing Haskell Space Leaks in Event Streaming Pipelines",
+        "slug": "fixing-haskell-space-leaks-in-event-streaming-pipelines",
+        "language": "Haskell",
+        "code": "Space Leak / Non-Strict Accumulator",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fixing-haskell-space-leaks-in-event-streaming-pipelines.js",
+        "tags": [
+            "Haskell",
+            "Streaming",
+            "Rust",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784771630,
+        "title": "Fixing Spark Driver OOMs in Broadcast Hash Joins",
+        "slug": "fixing-spark-driver-ooms-in-broadcast-hash-joins",
+        "language": "Scala / Apache Spark",
+        "code": "java.lang.OutOfMemoryError",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fixing-spark-driver-ooms-in-broadcast-hash-joins.js",
+        "tags": [
+            "Apache Spark",
+            "Java",
+            "SQL",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784771631,
+        "title": "Fixing MongoDB WiredTiger Eviction Deadlocks",
+        "slug": "fixing-mongodb-wiredtiger-eviction-deadlocks",
+        "language": "MongoDB / C++",
+        "code": "WT_ROLLBACK / Cache Full Stall",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/fixing-mongodb-wiredtiger-eviction-deadlocks.js",
+        "tags": [
+            "MongoDB",
+            "SQL",
+            "Docker",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784771632,
+        "title": "Exploring lopopolo/harness-engineering Agent Toolkit",
+        "slug": "exploring-lopopolo-harness-engineering-agent-toolkit",
+        "language": "Markdown / System Architecture",
+        "code": "Trend",
+        "date": "2026-07-23",
+        "path": "data/posts/2026-07/exploring-lopopolo-harness-engineering-agent-toolkit.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784717993,
         "title": "Fixing C++20 Coroutine UAF in Async Schedulers",
         "slug": "fixing-cpp20-coroutine-uaf-async-schedulers",
