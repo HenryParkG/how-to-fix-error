@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1784880518,
+        "title": "Fixing Haskell Streaming Monad Space Leaks",
+        "slug": "haskell-streaming-monad-transformer-space-leak",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/haskell-streaming-monad-transformer-space-leak.js",
+        "tags": [
+            "Haskell",
+            "FunctionalProgramming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784880519,
+        "title": "Fixing Next.js Server Action Race in RSC Contexts",
+        "slug": "nextjs-app-router-server-action-race-condition",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/nextjs-app-router-server-action-race-condition.js",
+        "tags": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784880520,
+        "title": "Fixing MongoDB WiredTiger Eviction Stall Cascades",
+        "slug": "mongodb-wiredtiger-cache-eviction-stall-cascades",
+        "language": "MongoDB",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/mongodb-wiredtiger-cache-eviction-stall-cascades.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784880521,
+        "title": "Harness Engineering: Ryan Lopopolo's Context Bundle",
+        "slug": "harness-engineering-agent-context-bundle-ryan-lopopolo",
+        "language": "Markdown / Shell",
+        "code": "Trend",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/harness-engineering-agent-context-bundle-ryan-lopopolo.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784871683,
         "title": "Fixing C++20 Coroutine Lifetime Hazards in Custom Executors",
         "slug": "fixing-cpp20-coroutine-lifetime-hazards",
