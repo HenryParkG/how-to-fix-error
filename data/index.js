@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784871683,
+        "title": "Fixing C++20 Coroutine Lifetime Hazards in Custom Executors",
+        "slug": "fixing-cpp20-coroutine-lifetime-hazards",
+        "language": "C++",
+        "code": "Dangling Reference / Use-After-Free",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-lifetime-hazards.js",
+        "tags": [
+            "C++",
+            "Async",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784871684,
+        "title": "Fixing BEAM Mailbox Exhaustion in Elixir GenServers",
+        "slug": "fixing-beam-mailbox-exhaustion-elixir-genservers",
+        "language": "Elixir",
+        "code": "Mailbox Exhaustion / O(N) Scan",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/fixing-beam-mailbox-exhaustion-elixir-genservers.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784871685,
+        "title": "Fixing PostgreSQL TXID Wraparound Lock Contention",
+        "slug": "postgresql-txid-wraparound-lock-contention",
+        "language": "PostgreSQL",
+        "code": "Lock Contention / Stale Snapshot Horizon",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/postgresql-txid-wraparound-lock-contention.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784871686,
+        "title": "Harness Engineering: Agent Context & Field Guide Anthology",
+        "slug": "harness-engineering-ryan-lopopolo-agent-context",
+        "language": "Markdown / Polyglot",
+        "code": "Trend",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/harness-engineering-ryan-lopopolo-agent-context.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784857775,
         "title": "Fixing Kafka Cooperative Sticky Rebalance Storms",
         "slug": "fixing-kafka-cooperative-sticky-rebalance-storms",
