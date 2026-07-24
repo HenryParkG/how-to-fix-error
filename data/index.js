@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784857775,
+        "title": "Fixing Kafka Cooperative Sticky Rebalance Storms",
+        "slug": "fixing-kafka-cooperative-sticky-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/fixing-kafka-cooperative-sticky-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784857776,
+        "title": "Fixing WebGPU Compute Shader Memory Barrier Races",
+        "slug": "webgpu-compute-shader-memory-barrier-race-condition",
+        "language": "TypeScript",
+        "code": "RaceCondition",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/webgpu-compute-shader-memory-barrier-race-condition.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784857777,
+        "title": "Fixing Redis Copy-on-Write Memory Exhaustion During BGSAVE",
+        "slug": "fixing-redis-copy-on-write-memory-exhaustion-bgsave",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/fixing-redis-copy-on-write-memory-exhaustion-bgsave.js",
+        "tags": [
+            "Redis",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784857778,
+        "title": "Harness Engineering: Ryan Lopopolo's Agent Field Guide",
+        "slug": "harness-engineering-ryan-lopopolo-agent-context",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-24",
+        "path": "data/posts/2026-07/harness-engineering-ryan-lopopolo-agent-context.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784804447,
         "title": "Fix Rust Pin Projection Memory Unsafety in io_uring Queues",
         "slug": "fix-rust-pin-projection-memory-unsafety-io-uring",
