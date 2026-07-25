@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1784944175,
+        "title": "Fixing eBPF Verifier Memory Truncation in Tail Calls",
+        "slug": "fixing-ebpf-verifier-memory-truncation-tail-calls",
+        "language": "C / eBPF",
+        "code": "E2BIG",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-ebpf-verifier-memory-truncation-tail-calls.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "C",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784944176,
+        "title": "Fixing Spark AQE Memory Spills in Skewed Data Joins",
+        "slug": "fixing-spark-aqe-memory-spills-skewed-joins",
+        "language": "Scala / Apache Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-spark-aqe-memory-spills-skewed-joins.js",
+        "tags": [
+            "Apache Spark",
+            "AQE",
+            "Big Data",
+            "Java",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784944177,
+        "title": "Fixing Lucene Segment Merge Starvation in Elasticsearch",
+        "slug": "fixing-elasticsearch-lucene-segment-merge-starvation",
+        "language": "Java / Elasticsearch",
+        "code": "EsRejectedExecutionException",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-elasticsearch-lucene-segment-merge-starvation.js",
+        "tags": [
+            "Elasticsearch",
+            "Lucene",
+            "Java",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784944178,
+        "title": "Analyzing OpenWorker: Andrew Ng's Agent Microservices",
+        "slug": "analyzing-openworker-andrew-ng-agent-microservices",
+        "language": "Python / TypeScript",
+        "code": "Trend",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/analyzing-openworker-andrew-ng-agent-microservices.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1784890445,
         "title": "Fix Go Runtime Preemption Deadlock in Cgo Signals",
         "slug": "fix-go-runtime-preemption-cgo-signal-deadlock",
