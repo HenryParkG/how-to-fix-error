@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1784965882,
+        "title": "Fixing Zig TLS Corruption in Musl Cross-Compilation",
+        "slug": "fixing-zig-tls-corruption-musl-cross-compilation",
+        "language": "Zig",
+        "code": "TLSCorruption",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-zig-tls-corruption-musl-cross-compilation.js",
+        "tags": [
+            "Zig",
+            "Musl",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784965883,
+        "title": "Fixing Kafka Cooperative Sticky Assignor State Desync",
+        "slug": "fixing-kafka-cooperative-sticky-assignor-state-desync",
+        "language": "Java",
+        "code": "StateDesync",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-kafka-cooperative-sticky-assignor-state-desync.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784965884,
+        "title": "Fixing WebGPU Uniform Buffer Alignment Faults",
+        "slug": "fixing-webgpu-uniform-buffer-alignment-faults",
+        "language": "TypeScript",
+        "code": "AlignmentFault",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-webgpu-uniform-buffer-alignment-faults.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784965885,
+        "title": "Exploring OpenWorker: AI Agent Execution Framework",
+        "slug": "exploring-openworker-ai-agent-execution-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/exploring-openworker-ai-agent-execution-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784957729,
         "title": "Fixing io_uring CQ Overflow Drops in Network Engines",
         "slug": "fixing-io-uring-cq-overflow-drops-network-engines",
