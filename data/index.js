@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1784957729,
+        "title": "Fixing io_uring CQ Overflow Drops in Network Engines",
+        "slug": "fixing-io-uring-cq-overflow-drops-network-engines",
+        "language": "Rust",
+        "code": "CQ Ring Overflow",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-io-uring-cq-overflow-drops-network-engines.js",
+        "tags": [
+            "Linux",
+            "io_uring",
+            "Rust",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784957730,
+        "title": "Fixing PyTorch DDP Bucket Deadlocks in Dynamic Batching",
+        "slug": "fixing-pytorch-ddp-bucket-deadlocks-dynamic-batching",
+        "language": "Python",
+        "code": "DDP Synchronization Deadlock",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-pytorch-ddp-bucket-deadlocks-dynamic-batching.js",
+        "tags": [
+            "PyTorch",
+            "Distributed",
+            "Python",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784957731,
+        "title": "Fixing gRPC Stream Buffer Exhaustion in K8s Ingress",
+        "slug": "fixing-grpc-stream-buffer-exhaustion-k8s-ingress",
+        "language": "Go",
+        "code": "HTTP/2 Stream Exhaustion",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/fixing-grpc-stream-buffer-exhaustion-k8s-ingress.js",
+        "tags": [
+            "Kubernetes",
+            "gRPC",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1784957732,
+        "title": "Exploring OpenWorker: AI Agent Execution Engine",
+        "slug": "exploring-openworker-ai-agent-execution-engine",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-25",
+        "path": "data/posts/2026-07/exploring-openworker-ai-agent-execution-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784944175,
         "title": "Fixing eBPF Verifier Memory Truncation in Tail Calls",
         "slug": "fixing-ebpf-verifier-memory-truncation-tail-calls",
