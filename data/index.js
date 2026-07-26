@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785045079,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Invalidations",
+        "slug": "fixing-cpp20-coroutine-frame-lifetime-invalidations",
+        "language": "C++20",
+        "code": "UseAfterFree",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-frame-lifetime-invalidations.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Multi-Threading",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785045080,
+        "title": "Fixing Postgres TXID Wraparound Lock Contention",
+        "slug": "fixing-postgres-txid-wraparound-lock-contention",
+        "language": "PostgreSQL",
+        "code": "LockContention",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-postgres-txid-wraparound-lock-contention.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785045081,
+        "title": "Fixing Elixir GenServer Selective Receive Bloat",
+        "slug": "fixing-elixir-genserver-selective-receive-bloat",
+        "language": "Elixir",
+        "code": "MailboxBloat",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-elixir-genserver-selective-receive-bloat.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Concurrency",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785045082,
+        "title": "Analyzing andrewyng/openworker: Open AI Worker Platform",
+        "slug": "analyzing-andrewyng-openworker-open-ai-worker-platform",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/analyzing-andrewyng-openworker-open-ai-worker-platform.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1784965882,
         "title": "Fixing Zig TLS Corruption in Musl Cross-Compilation",
         "slug": "fixing-zig-tls-corruption-musl-cross-compilation",
