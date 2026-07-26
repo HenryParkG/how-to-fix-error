@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785061780,
+        "title": "Fixing Go GC STW Latency Spikes from Off-Heap Slices",
+        "slug": "fixing-go-gc-stw-latency-spikes-off-heap-slice-headers",
+        "language": "Go",
+        "code": "GCLatencySpike",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-go-gc-stw-latency-spikes-off-heap-slice-headers.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785061781,
+        "title": "Fixing Qdrant HNSW Index Memory Bloat & Recall Drop",
+        "slug": "fixing-qdrant-hnsw-memory-bloat-recall-drop",
+        "language": "Rust",
+        "code": "HNSWIndexDegradation",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-qdrant-hnsw-memory-bloat-recall-drop.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785061782,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "C++",
+        "code": "WiredTigerEvictionStall",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "AWS",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785061783,
+        "title": "Analyzing openworker: AI Workflow Runtime Engine",
+        "slug": "analyzing-andrewyng-openworker-ai-workflow-runtime",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/analyzing-andrewyng-openworker-ai-workflow-runtime.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785053343,
         "title": "Fixing Haskell Space Leaks in Streaming Pipelines",
         "slug": "fixing-haskell-space-leaks-unevaluated-thunks",
