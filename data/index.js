@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1785053343,
+        "title": "Fixing Haskell Space Leaks in Streaming Pipelines",
+        "slug": "fixing-haskell-space-leaks-unevaluated-thunks",
+        "language": "Haskell",
+        "code": "Space Leak / Thunk Accumulation",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-haskell-space-leaks-unevaluated-thunks.js",
+        "tags": [
+            "Haskell",
+            "Streaming",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785053344,
+        "title": "Fixing Redis Copy-On-Write Memory Spikes in RDB Snapshots",
+        "slug": "fixing-redis-copy-on-write-memory-spikes-rdb",
+        "language": "Redis / C",
+        "code": "OOM Killer / Memory Spike",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-redis-copy-on-write-memory-spikes-rdb.js",
+        "tags": [
+            "Redis",
+            "Memory",
+            "Docker",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785053345,
+        "title": "Fixing Next.js RSC Hydration Desyncs in Edge Streaming",
+        "slug": "fixing-nextjs-rsc-hydration-desyncs-edge-streaming",
+        "language": "TypeScript / Next.js",
+        "code": "Hydration Mismatch / Content Desync",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/fixing-nextjs-rsc-hydration-desyncs-edge-streaming.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785053346,
+        "title": "Exploring andrewyng/openworker: Open AI Worker Platform",
+        "slug": "exploring-andrewyng-openworker-open-ai-worker-platform",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-26",
+        "path": "data/posts/2026-07/exploring-andrewyng-openworker-open-ai-worker-platform.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785045079,
         "title": "Fixing C++20 Coroutine Frame Lifetime Invalidations",
         "slug": "fixing-cpp20-coroutine-frame-lifetime-invalidations",
