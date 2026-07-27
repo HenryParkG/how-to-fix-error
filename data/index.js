@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785154306,
+        "title": "Fixing Kafka Cooperative Sticky Rebalance Storms",
+        "slug": "fixing-kafka-cooperative-sticky-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceException",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-kafka-cooperative-sticky-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785154307,
+        "title": "Fixing Async Task Cancellation Hazards in Rust",
+        "slug": "fixing-rust-async-task-cancellation-drop-hazards",
+        "language": "Rust",
+        "code": "DropHazard",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-rust-async-task-cancellation-drop-hazards.js",
+        "tags": [
+            "Async",
+            "Memory Safety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785154308,
+        "title": "Fixing WebGPU Uniform Buffer Alignment Stalls",
+        "slug": "fixing-webgpu-uniform-buffer-alignment-stalls",
+        "language": "TypeScript",
+        "code": "AlignmentError",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-webgpu-uniform-buffer-alignment-stalls.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785154309,
+        "title": "Exploring esp32-ai: On-Device Edge AI",
+        "slug": "exploring-esp32-ai-microcontroller-ml",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/exploring-esp32-ai-microcontroller-ml.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785133066,
         "title": "Fixing Linux io_uring CQE Ring Overflow and Deadlocks",
         "slug": "fixing-linux-io-uring-cqe-ring-overflow-deadlocks",
