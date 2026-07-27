@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785133066,
+        "title": "Fixing Linux io_uring CQE Ring Overflow and Deadlocks",
+        "slug": "fixing-linux-io-uring-cqe-ring-overflow-deadlocks",
+        "language": "C / Linux Kernel",
+        "code": "IORING_CQE_F_OVERFLOW",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-linux-io-uring-cqe-ring-overflow-deadlocks.js",
+        "tags": [
+            "Linux",
+            "C",
+            "Rust",
+            "Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785133067,
+        "title": "Fixing PyTorch DDP AllReduce Deadlocks in Parallelism",
+        "slug": "fixing-pytorch-ddp-allreduce-deadlocks-pipeline-parallelism",
+        "language": "Python / PyTorch",
+        "code": "NCCL_DEADLOCK",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-pytorch-ddp-allreduce-deadlocks-pipeline-parallelism.js",
+        "tags": [
+            "PyTorch",
+            "Python",
+            "Distributed",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785133068,
+        "title": "Fixing gRPC Head-of-Line Blocking and Flow Control",
+        "slug": "fixing-grpc-head-of-line-blocking-http2-flow-control",
+        "language": "Go / gRPC",
+        "code": "RESOURCE_EXHAUSTED",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-grpc-head-of-line-blocking-http2-flow-control.js",
+        "tags": [
+            "gRPC",
+            "Go",
+            "HTTP/2",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785133069,
+        "title": "Trending: slvDev/esp32-ai - On-Device AI for ESP32",
+        "slug": "trending-slvdev-esp32-ai-edge-ai-framework",
+        "language": "C++ / Python / C",
+        "code": "Trend",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/trending-slvdev-esp32-ai-edge-ai-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Embedded"
+        ]
+    },
+    {
         "id": 1785117631,
         "title": "Fixing eBPF Ring Buffer Event Drops Under High Throughput",
         "slug": "fixing-ebpf-ring-buffer-event-drops",
