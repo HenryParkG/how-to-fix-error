@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785117631,
+        "title": "Fixing eBPF Ring Buffer Event Drops Under High Throughput",
+        "slug": "fixing-ebpf-ring-buffer-event-drops",
+        "language": "C / Go",
+        "code": "BPF_RINGBUF_OVERFLOW",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-ebpf-ring-buffer-event-drops.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785117632,
+        "title": "Fixing Istio Envoy xDS State Desyncs & Route Dropouts",
+        "slug": "fixing-istio-envoy-xds-state-desyncs",
+        "language": "Go / YAML",
+        "code": "XDS_STATE_DESYNC",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-istio-envoy-xds-state-desyncs.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785117633,
+        "title": "Fixing RocksDB Write Stall Cascades Driven by Compaction Lag",
+        "slug": "fixing-rocksdb-write-stall-compaction-lag",
+        "language": "Rust / C++",
+        "code": "ROCKSDB_WRITE_STALL",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/fixing-rocksdb-write-stall-compaction-lag.js",
+        "tags": [
+            "RocksDB",
+            "Rust",
+            "C++",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785117634,
+        "title": "Exploring esp32-ai: On-Device Intelligence for Microcontrollers",
+        "slug": "exploring-esp32-ai-on-device-intelligence",
+        "language": "C++ / Python",
+        "code": "Trend",
+        "date": "2026-07-27",
+        "path": "data/posts/2026-07/exploring-esp32-ai-on-device-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "C++"
+        ]
+    },
+    {
         "id": 1785061780,
         "title": "Fixing Go GC STW Latency Spikes from Off-Heap Slices",
         "slug": "fixing-go-gc-stw-latency-spikes-off-heap-slice-headers",
