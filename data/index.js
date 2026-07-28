@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1785226488,
+        "title": "Fix Go Scheduler Preemption Starvation in Cgo-Bound Hot Loops",
+        "slug": "fix-go-scheduler-preemption-starvation-cgo-hot-loops",
+        "language": "Go / C",
+        "code": "GoSchedulerStarvation",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-go-scheduler-preemption-starvation-cgo-hot-loops.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Cgo",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785226489,
+        "title": "Fix HNSW Vector Index Memory Exhaustion Cascades",
+        "slug": "fix-hnsw-vector-index-memory-exhaustion-cascades",
+        "language": "Rust",
+        "code": "OOMKilled",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-hnsw-vector-index-memory-exhaustion-cascades.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "VectorDB",
+            "HNSW",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785226490,
+        "title": "Fix MongoDB WiredTiger Cache Eviction Deadlocks",
+        "slug": "fix-mongodb-wiredtiger-cache-eviction-deadlocks",
+        "language": "MongoDB / C++",
+        "code": "WiredTigerCacheFull",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-mongodb-wiredtiger-cache-eviction-deadlocks.js",
+        "tags": [
+            "SQL",
+            "Backend",
+            "MongoDB",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785226491,
+        "title": "Analyze GitHub Repository 'MoonshotAI/Kimi-K3'",
+        "slug": "trending-moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/trending-moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "LLM"
+        ]
+    },
+    {
         "id": 1785217081,
         "title": "Fix Haskell Thunk Leaks in High-Throughput Pipelines",
         "slug": "fixing-haskell-lazy-evaluation-thunk-space-leaks",
