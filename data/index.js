@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785202991,
+        "title": "Fixing C++20 Coroutine Stack Frame Memory Leaks",
+        "slug": "c20-coroutine-frame-leak-symmetric-transfer",
+        "language": "C++",
+        "code": "CoroutineFrameLeak",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/c20-coroutine-frame-leak-symmetric-transfer.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "MemoryManagement",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785202992,
+        "title": "Fixing PostgreSQL TXID Wraparound Lockups Under Heavy Writes",
+        "slug": "postgresql-txid-wraparound-lockups-heavy-writes",
+        "language": "PostgreSQL",
+        "code": "TXIDWraparoundLockup",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/postgresql-txid-wraparound-lockups-heavy-writes.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785202993,
+        "title": "Fixing Elixir GenServer Mailbox Bloat & Process Crashes",
+        "slug": "elixir-beam-mailbox-bloat-genserver-crashes",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/elixir-beam-mailbox-bloat-genserver-crashes.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "GenServer",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785202994,
+        "title": "Analyzing vercel-labs/scriptc: TypeScript-to-Native Compiler",
+        "slug": "trend-vercel-labs-scriptc-typescript-native-compiler",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/trend-vercel-labs-scriptc-typescript-native-compiler.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1785154306,
         "title": "Fixing Kafka Cooperative Sticky Rebalance Storms",
         "slug": "fixing-kafka-cooperative-sticky-rebalance-storms",

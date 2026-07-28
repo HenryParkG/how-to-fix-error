@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Stack Frame Memory Leaks",
+    "slug": "c20-coroutine-frame-leak-symmetric-transfer",
+    "language": "C++",
+    "code": "CoroutineFrameLeak",
+    "tags": [
+        "C++",
+        "Coroutines",
+        "MemoryManagement",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>Symmetric transfer in C++20 coroutines enables one coroutine to suspend and yield control directly to another via <code>std::coroutine_handle&lt;&gt;</code> inside <code>await_suspend</code> without accumulating stack frames. However, when destroying coroutine chains, developers frequently assume that transferring control automatically handles lifetime management of the yielding frame.</p><p>If the final suspend point yields to a parent executor without calling <code>destroy()</code> on finished handles, or if custom awaiters return new handles without explicit ownership transfers, heap-allocated coroutine frames remain leaked. In long-running asynchronous engines, this manifests as a slow, continuous memory leak under high workload stress.</p>",
+    "root_cause": "The engine returned std::coroutine_handle<> from await_suspend to initiate symmetric transfer, but the caller frame reached std::suspend_always at final_suspend without its handle ever being explicitly destroyed by the parent or task manager.",
+    "bad_code": "struct Task {\n    struct promise_type {\n        std::coroutine_handle<> parent_handle;\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        \n        // BUG: Yields to parent via symmetric transfer, but caller's frame memory is never destroyed!\n        auto final_suspend() noexcept {\n            struct FinalAwaiter {\n                bool await_ready() noexcept { return false; }\n                std::coroutine_handle<> await_suspend(std::coroutine_handle<promise_type> h) noexcept {\n                    return h.promise().parent_handle; // Leak! Handle 'h' is left suspended on heap forever.\n                }\n                void await_resume() noexcept {}\n            };\n            return FinalAwaiter{};\n        }\n        void unhandled_exception() { std::terminate(); }\n        void return_void() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};",
+    "solution_desc": "To fix frame leaks in symmetric transfer architectures, ensure that the consumer of the completed task destroys the child's handle after resuming, or maintain an explicit handle holder class (like RAII wrappers) that calls handle.destroy() when execution finishes.",
+    "good_code": "struct Task {\n    struct promise_type {\n        std::coroutine_handle<> parent_handle;\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        \n        auto final_suspend() noexcept {\n            struct FinalAwaiter {\n                bool await_ready() noexcept { return false; }\n                std::coroutine_handle<> await_suspend(std::coroutine_handle<promise_type> h) noexcept {\n                    auto parent = h.promise().parent_handle;\n                    // Destroy current coroutine frame if parent handles state, or pass destroy ownership\n                    if (parent) return parent;\n                    return std::noop_coroutine();\n                }\n                void await_resume() noexcept {}\n            };\n            return FinalAwaiter{};\n        }\n        void unhandled_exception() { std::terminate(); }\n        void return_void() {}\n    };\n    \n    std::coroutine_handle<promise_type> handle;\n    ~Task() {\n        if (handle) handle.destroy(); // RAII Cleanup ensures frame deallocation\n    }\n    Task(Task&& o) noexcept : handle(std::exchange(o.handle, {})) {}\n    Task& operator=(Task&& o) noexcept {\n        if (handle) handle.destroy();\n        handle = std::exchange(o.handle, {});\n        return *this;\n    }\n};",
+    "verification": "Compile with AddressSanitizer and LeakSanitizer (-fsanitize=address,leak). Run a high-frequency loop spawning and completing symmetric transfer tasks; verify 0 memory leaks in ASAN reports.",
+    "date": "2026-07-28",
+    "id": 1785202991,
+    "type": "error"
+});
