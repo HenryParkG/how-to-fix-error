@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785236946,
+        "title": "Fix eBPF Ring Buffer Event Drops & Kernel Contention",
+        "slug": "fix-ebpf-ring-buffer-event-drops-kernel-contention",
+        "language": "Rust",
+        "code": "ENOBUFS",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-ebpf-ring-buffer-event-drops-kernel-contention.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Rust",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785236947,
+        "title": "Fix Spark Netty Direct Memory OOM in Skewed Joins",
+        "slug": "fix-spark-netty-direct-memory-oom-skewed-joins",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-spark-netty-direct-memory-oom-skewed-joins.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Java",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785236948,
+        "title": "Fix Istio Envoy Memory Exhaustion from EDS Endpoint Churn",
+        "slug": "fix-istio-envoy-memory-exhaustion-eds-endpoint-churn",
+        "language": "Go",
+        "code": "OOMKilled",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-istio-envoy-memory-exhaustion-eds-endpoint-churn.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785236949,
+        "title": "MoonshotAI Kimi-K3: Next-Gen Long-Context AI Architecture",
+        "slug": "moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AWS"
+        ]
+    },
+    {
         "id": 1785226488,
         "title": "Fix Go Scheduler Preemption Starvation in Cgo-Bound Hot Loops",
         "slug": "fix-go-scheduler-preemption-starvation-cgo-hot-loops",
