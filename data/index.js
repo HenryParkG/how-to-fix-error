@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785217081,
+        "title": "Fix Haskell Thunk Leaks in High-Throughput Pipelines",
+        "slug": "fixing-haskell-lazy-evaluation-thunk-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fixing-haskell-lazy-evaluation-thunk-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785217082,
+        "title": "Fix Redis BGSAVE Memory Spikes Caused by Linux THP",
+        "slug": "fix-redis-bgsave-cow-memory-spikes-linux-thp",
+        "language": "C / Redis",
+        "code": "OOM / Memory Spike",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-redis-bgsave-cow-memory-spikes-linux-thp.js",
+        "tags": [
+            "Redis",
+            "Kubernetes",
+            "Docker",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785217083,
+        "title": "Fix K8s cgroup v2 OOMKills from Page Cache Thrashing",
+        "slug": "fix-kubernetes-cgroupv2-oomkills-page-cache-thrashing",
+        "language": "Go / Kubernetes",
+        "code": "OOMKilled (Exit 137)",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/fix-kubernetes-cgroupv2-oomkills-page-cache-thrashing.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785217084,
+        "title": "Exploring MoonshotAI Kimi-K3: Open Frontier AI Architecture",
+        "slug": "moonshot-ai-kimi-k3-architecture-and-usage",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-07-28",
+        "path": "data/posts/2026-07/moonshot-ai-kimi-k3-architecture-and-usage.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AWS"
+        ]
+    },
+    {
         "id": 1785202991,
         "title": "Fixing C++20 Coroutine Stack Frame Memory Leaks",
         "slug": "c20-coroutine-frame-leak-symmetric-transfer",
