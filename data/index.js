@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785313267,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Violations in Async I/O",
+        "slug": "fixing-cpp20-coroutine-frame-lifetime-violations-async-io",
+        "language": "C++",
+        "code": "Use-After-Free",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-cpp20-coroutine-frame-lifetime-violations-async-io.js",
+        "tags": [
+            "C++",
+            "Async",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785313268,
+        "title": "Fixing PostgreSQL Multixact Wraparound Lock Contention",
+        "slug": "fixing-postgres-multixact-wraparound-lock-contention",
+        "language": "SQL",
+        "code": "TXID Lock Contention",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-postgres-multixact-wraparound-lock-contention.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785313269,
+        "title": "Fixing Elixir GenServer Mailbox Flooding under High Load",
+        "slug": "fixing-elixir-genserver-mailbox-flooding-backpressure",
+        "language": "Elixir",
+        "code": "Mailbox Flooding",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-elixir-genserver-mailbox-flooding-backpressure.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785313270,
+        "title": "Analyzing MoonshotAI/Kimi-K3: Open Frontier Intelligence",
+        "slug": "exploring-moonshotai-kimi-k3-next-gen-long-context-ai",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/exploring-moonshotai-kimi-k3-next-gen-long-context-ai.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785303795,
         "title": "Fixing io_uring Buffer Ring Exhaustion Under Backpressure",
         "slug": "fixing-io-uring-provided-buffer-ring-exhaustion",
