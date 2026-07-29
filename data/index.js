@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785323650,
+        "title": "Fixing WebGPU Pipeline Stalls & Buffer Leaks",
+        "slug": "fixing-webgpu-pipeline-stalls-uniform-buffer-leaks",
+        "language": "TypeScript",
+        "code": "GPUOutOfMemoryError",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-webgpu-pipeline-stalls-uniform-buffer-leaks.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785323651,
+        "title": "Fixing Redis CoW Memory Exhaustion in BGREWRITEAOF",
+        "slug": "fixing-redis-cow-memory-exhaustion-bgrewriteaof",
+        "language": "Go",
+        "code": "OOMKilled",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-redis-cow-memory-exhaustion-bgrewriteaof.js",
+        "tags": [
+            "Redis",
+            "Docker",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785323652,
+        "title": "Fixing Haskell Space Leaks in Streaming Pipelines",
+        "slug": "fixing-haskell-space-leaks-streaming-pipelines",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/fixing-haskell-space-leaks-streaming-pipelines.js",
+        "tags": [
+            "Haskell",
+            "Python",
+            "Streaming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785323653,
+        "title": "MoonshotAI Kimi-K3: Open Frontier LLM Architecture",
+        "slug": "kimi-k3-open-frontier-intelligence-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-29",
+        "path": "data/posts/2026-07/kimi-k3-open-frontier-intelligence-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785313267,
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations in Async I/O",
         "slug": "fixing-cpp20-coroutine-frame-lifetime-violations-async-io",
