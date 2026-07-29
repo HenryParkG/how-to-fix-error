@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing io_uring Buffer Ring Exhaustion Under Backpressure",
+    "slug": "fixing-io-uring-provided-buffer-ring-exhaustion",
+    "language": "C / Rust",
+    "code": "ENOBUFS",
+    "tags": [
+        "Linux",
+        "Networking",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>Under high-throughput network loads, applications utilizing Linux <code>io_uring</code> provided buffer rings (such as <code>IORING_SETUP_PBUF_RING</code> introduced in kernel 5.19) can suffer from rapid buffer ring exhaustion. When downstream application processing creates backpressure, incoming socket read requests continuously pull buffers from the kernel-managed ring. If buffers are consumed faster than the application can recycle them back via <code>io_uring_prep_provide_buffers</code> or manual ring ring-head updates, the kernel returns <code>-ENOBUFS</code> on subsequent completions, causing TCP stream stalls or unrecoverable socket drops.</p>",
+    "root_cause": "The application fails to decouple kernel buffer consumption from downstream pipeline latency. When network ingress runs using multishot receive operations (<code>IORING_RECV_MULTISHOT</code>), the kernel continuously assigns buffers from the ring for incoming packets without enforcing flow control when the ring watermark drops below a safe threshold.",
+    "bad_code": "// Buggy pattern: Continuous multishot receive without monitoring available ring buffers\nstruct io_uring_sqe *sqe = io_uring_get_sqe(&ring);\nio_uring_prep_recv_multishot(sqe, client_fd, NULL, 0, 0);\nsqe->buf_group = BGID;\nsqe->flags |= IOSQE_BUFFER_SELECT;\nio_uring_submit(&ring);\n\n// Event loop processes completions without checking ring capacity\nwhile (io_uring_peek_cqe(&ring, &cqe) == 0) {\n    if (cqe->res == -ENOBUFS) {\n        // Panic or unhandled drop: buffer ring completely exhausted!\n        fprintf(stderr, \"Buffer ring exhausted: %s\\n\", strerror(-cqe->res));\n    } else {\n        process_payload_slowly(cqe->flags >> IORING_CQE_BUFFER_SHIFT);\n        // Recycles buffer long after ring has emptied under load\n    }\n    io_uring_cqe_seen(&ring, cqe);\n}",
+    "solution_desc": "Implement dynamic watermark tracking for the provided buffer ring along with socket flow control. When available buffers in the ring drop below a critical threshold (e.g., 20% capacity), disable multishot receive mode or stop submitting read SQEs. Re-arm reading only after downstream processing releases buffers back to the ring ring-head using lockless atomic commits.",
+    "good_code": "#define RING_SIZE 1024\n#define WATERMARK_LOW 128\n\nstatic uint16_t avail_buffers = RING_SIZE;\n\nvoid recycle_buffer(struct io_uring_buf_ring *br, int bgid, int buf_id, void *addr) {\n    io_uring_buf_ring_add(br, addr, BUF_LEN, buf_id, io_uring_buf_ring_mask(RING_SIZE), 0);\n    io_uring_buf_ring_advance(br, 1);\n    avail_buffers++;\n}\n\nvoid handle_cqe(struct io_uring *ring, struct io_uring_cqe *cqe, struct io_uring_buf_ring *br) {\n    if (cqe->res == -ENOBUFS) {\n        // Backpressure triggered: transiently stop multishot recv\n        pause_socket_reads(cqe->fd);\n        return;\n    }\n    \n    uint16_t buf_id = cqe->flags >> IORING_CQE_BUFFER_SHIFT;\n    avail_buffers--;\n    \n    // Process work asynchronously\n    dispatch_to_worker(cqe, buf_id);\n    \n    // Resume socket reading if buffer pool recovered above safe margin\n    if (avail_buffers > WATERMARK_LOW && is_socket_paused(cqe->fd)) {\n        rearm_multishot_recv(ring, cqe->fd);\n    }\n}",
+    "verification": "Simulate heavy network load using `iperf3` or `wrk` with intentional artificial delays in payload handling. Monitor `/proc/net/softnet_stat` and track application metric counters for `-ENOBUFS` returns. The fix is verified when buffer usage stays within defined watermarks and throughput scales cleanly under downstream latency spikes without dropped CQEs.",
+    "date": "2026-07-29",
+    "id": 1785303795,
+    "type": "error"
+});
