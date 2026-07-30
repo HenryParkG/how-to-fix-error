@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785389488,
+        "title": "Fix Tokio Worker Thread Deadlocks in Async Drop",
+        "slug": "fix-tokio-worker-thread-async-drop-deadlocks",
+        "language": "Rust",
+        "code": "TokioThreadDeadlock",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fix-tokio-worker-thread-async-drop-deadlocks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785389489,
+        "title": "Fix MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fix-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "CacheEvictionStall",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fix-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Docker",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785389490,
+        "title": "Fix Vector DB HNSW Memory Exhaustion in Reindexing",
+        "slug": "fix-vector-db-hnsw-memory-exhaustion-reindexing",
+        "language": "Python",
+        "code": "HNSWMemoryExhaustion",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fix-vector-db-hnsw-memory-exhaustion-reindexing.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785389491,
+        "title": "Analyze MoonshotAI/Kimi-K3: Open Frontier Intelligence",
+        "slug": "analyze-moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/analyze-moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785323650,
         "title": "Fixing WebGPU Pipeline Stalls & Buffer Leaks",
         "slug": "fixing-webgpu-pipeline-stalls-uniform-buffer-leaks",
