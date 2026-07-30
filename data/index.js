@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785398890,
+        "title": "Fixing eBPF RingBuffer Drops Under High-Throughput XDP",
+        "slug": "fixing-ebpf-ringbuffer-drops-xdp-tracing",
+        "language": "C / eBPF / Rust",
+        "code": "RingBufferFull",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fixing-ebpf-ringbuffer-drops-xdp-tracing.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Linux",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785398891,
+        "title": "Fixing vLLM PagedAttention Races in Tensor Parallelism",
+        "slug": "fixing-vllm-pagedattention-kv-cache-races",
+        "language": "Python / CUDA",
+        "code": "CUDA SyncError",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fixing-vllm-pagedattention-kv-cache-races.js",
+        "tags": [
+            "vLLM",
+            "CUDA",
+            "TensorParallelism",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785398892,
+        "title": "Fixing Lucene Term Dictionary Heap Exhaustion in ES",
+        "slug": "fixing-lucene-term-dictionary-heap-exhaustion",
+        "language": "Java / Elasticsearch",
+        "code": "OutOfMemoryError",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/fixing-lucene-term-dictionary-heap-exhaustion.js",
+        "tags": [
+            "Elasticsearch",
+            "Lucene",
+            "JVM",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785398893,
+        "title": "MoonshotAI Kimi-K3: Next-Gen Open Frontier Intelligence",
+        "slug": "kimi-k3-open-frontier-intelligence-architecture",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-07-30",
+        "path": "data/posts/2026-07/kimi-k3-open-frontier-intelligence-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785389488,
         "title": "Fix Tokio Worker Thread Deadlocks in Async Drop",
         "slug": "fix-tokio-worker-thread-async-drop-deadlocks",
