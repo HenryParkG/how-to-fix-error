@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785496889,
+        "title": "Fix C++20 Coroutine Frame Leaks in Symmetric Transfer",
+        "slug": "fix-cpp20-coroutine-frame-leaks-symmetric-transfer",
+        "language": "C++",
+        "code": "MemoryLeak",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/fix-cpp20-coroutine-frame-leaks-symmetric-transfer.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Memory",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785496890,
+        "title": "Fix PostgreSQL MultiXact ID Wraparound Outages",
+        "slug": "postgresql-multixact-id-wraparound-fix",
+        "language": "SQL",
+        "code": "WraparoundError",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/postgresql-multixact-id-wraparound-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785496891,
+        "title": "Fix BEAM Scheduler Reduction Starvation in Elixir",
+        "slug": "fix-beam-scheduler-reduction-starvation-elixir",
+        "language": "Elixir",
+        "code": "SchedulerStarvation",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/fix-beam-scheduler-reduction-starvation-elixir.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Concurrency",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785496892,
+        "title": "Kimi-K3 Analysis: Open Frontier Intelligence by Moonshot",
+        "slug": "kimi-k3-moonshot-ai-open-frontier-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/kimi-k3-moonshot-ai-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1785477391,
         "title": "Fix PyArrow Vectorized UDF Off-Heap OOM Cascades in Spark",
         "slug": "fix-spark-pyarrow-offheap-oom-cascades",
