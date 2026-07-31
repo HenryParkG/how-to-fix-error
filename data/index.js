@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785477391,
+        "title": "Fix PyArrow Vectorized UDF Off-Heap OOM Cascades in Spark",
+        "slug": "fix-spark-pyarrow-offheap-oom-cascades",
+        "language": "Python",
+        "code": "OOMKilled",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/fix-spark-pyarrow-offheap-oom-cascades.js",
+        "tags": [
+            "Python",
+            "Apache Spark",
+            "PyArrow",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785477392,
+        "title": "Fix Istio Sidecar TCP Connection Resets in K8s Updates",
+        "slug": "fix-istio-sidecar-tcp-connection-resets-rolling-updates",
+        "language": "Go",
+        "code": "ECONNRESET",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/fix-istio-sidecar-tcp-connection-resets-rolling-updates.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785477393,
+        "title": "Fix React Native Fabric Shadow Tree Synchronous Deadlocks",
+        "slug": "fix-react-native-fabric-shadow-tree-deadlocks",
+        "language": "TypeScript",
+        "code": "Deadlock",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/fix-react-native-fabric-shadow-tree-deadlocks.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785477394,
+        "title": "MoonshotAI Kimi-K3: Open Frontier Intelligence Trend",
+        "slug": "moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-07-31",
+        "path": "data/posts/2026-07/moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1785409397,
         "title": "Fixing Go GC Pacer Churn and Cgroup OOM Kills",
         "slug": "fix-go-gc-pacer-cgroup-oom-kills",
