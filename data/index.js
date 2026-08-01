@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785571469,
+        "title": "Fix eBPF Ring Buffer Drops Under High XDP Ingress Bursts",
+        "slug": "fix-ebpf-ring-buffer-drops-xdp-ingress",
+        "language": "C / eBPF",
+        "code": "ENOBUFS",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fix-ebpf-ring-buffer-drops-xdp-ingress.js",
+        "tags": [
+            "eBPF",
+            "XDP",
+            "Linux",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785571470,
+        "title": "Fix Haskell Lazy Evaluation Space Leaks in Conduit Pipelines",
+        "slug": "fix-haskell-space-leak-conduit-streaming",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fix-haskell-space-leak-conduit-streaming.js",
+        "tags": [
+            "Haskell",
+            "Conduit",
+            "Functional Programming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785571471,
+        "title": "Fix WiredTiger Cache Eviction Contention in MongoDB Upserts",
+        "slug": "fix-mongodb-wiredtiger-cache-eviction-lock-contention",
+        "language": "MongoDB / C++",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fix-mongodb-wiredtiger-cache-eviction-lock-contention.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785571472,
+        "title": "MoonshotAI Kimi-K3: Frontier Intelligence Open Model",
+        "slug": "moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785563179,
         "title": "Fixing Tokio Thread Starvation from Mutex Guards Across Await",
         "slug": "fixing-tokio-thread-starvation-async-mutex-guard-await",
