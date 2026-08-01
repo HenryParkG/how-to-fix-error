@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785549346,
+        "title": "Fixing Linux io_uring Registered Buffer Exhaustion",
+        "slug": "fixing-linux-io-uring-registered-buffer-exhaustion",
+        "language": "Rust",
+        "code": "ENOMEM",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fixing-linux-io-uring-registered-buffer-exhaustion.js",
+        "tags": [
+            "io_uring",
+            "Linux",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785549347,
+        "title": "Fix Kafka Cooperative Sticky Assignor Lockups",
+        "slug": "fix-kafka-cooperative-sticky-assignor-lockups",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fix-kafka-cooperative-sticky-assignor-lockups.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785549348,
+        "title": "Fix WebGPU Uniform Buffer Alignment & Layout Skew",
+        "slug": "fix-webgpu-uniform-buffer-alignment-skew",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/fix-webgpu-uniform-buffer-alignment-skew.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785549349,
+        "title": "MoonshotAI Kimi-K3: Scaling Open Frontier Intelligence",
+        "slug": "moonshot-ai-kimi-k3-open-frontier-intelligence",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-01",
+        "path": "data/posts/2026-08/moonshot-ai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785496889,
         "title": "Fix C++20 Coroutine Frame Leaks in Symmetric Transfer",
         "slug": "fix-cpp20-coroutine-frame-leaks-symmetric-transfer",

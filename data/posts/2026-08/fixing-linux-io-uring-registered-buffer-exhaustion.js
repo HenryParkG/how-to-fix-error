@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing Linux io_uring Registered Buffer Exhaustion",
+    "slug": "fixing-linux-io-uring-registered-buffer-exhaustion",
+    "language": "Rust",
+    "code": "ENOMEM",
+    "tags": [
+        "io_uring",
+        "Linux",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>Under high-throughput asynchronous I/O saturation, high-performance networking and storage engines leveraging Linux <code>io_uring</code> with registered fixed buffers (<code>IORING_REGISTER_BUFFERS</code>) can fail under peak load spikes. When submission queue (SQ) depth scales rapidly, worker threads encounter memory allocation failures (<code>ENOMEM</code>) or ring allocation errors (<code>EBUSY</code>). This failure occurs because fixed buffer registrations create static kernel pin mapping bounds that do not automatically scale with dynamic flight demands during saturation.</p>",
+    "root_cause": "The kernel io_uring subsystem pre-pins user pages registered via `io_uring_register_buffers`. If application submission loop logic blindly leases fixed buffer indices from a static pool without tracking in-flight submission queue entries (SQEs), or if the memory lock limit (`RLIMIT_MEMLOCK`) is exceeded when dynamically re-registering larger buffer arrays during high ring depth, submission operations fail with ENOMEM or EBUSY.",
+    "bad_code": "use io_uring::{opcode, io_uring, IoUring};\nuse std::os::unix::io::AsRawFd;\n\nfn submit_bad_batch(ring: &mut IoUring, fd: i32, bufs: &[Vec<u8>]) {\n    // STATIC ALLOCATION without tracking dynamic leased slots\n    for (idx, buf) in bufs.iter().enumerate() {\n        let read_e = opcode::ReadFixed::new(\n            opcode::Target::Fd(fd),\n            buf.as_ptr(),\n            buf.len() as u32,\n            idx as u16, // Assuming slot idx is always available!\n        ).build();\n        \n        unsafe {\n            ring.submission()\n                .push(&read_e)\n                .expect(\"SQ overflow or exhausted registered buffer slot\");\n        }\n    }\n    ring.submit().unwrap();\n}",
+    "solution_desc": "Architect a lock-free buffer ring pool that tracks available registered buffer slot indices. Pair this pool with explicit backpressure on the Submission Queue using semaphore-based slot acquisition or non-blocking lease handles, ensuring no SQE references an active or unassigned fixed buffer index.",
+    "good_code": "use std::sync::Arc;\nuse crossbeam_queue::ArrayQueue;\nuse io_uring::{opcode, types, IoUring};\n\npub struct RegisteredBufferPool {\n    slots: Arc<ArrayQueue<u16>>,\n}\n\nimpl RegisteredBufferPool {\n    pub fn new(capacity: u16) -> Self {\n        let slots = Arc::new(ArrayQueue::new(capacity as usize));\n        for i in 0..capacity {\n            slots.push(i).unwrap();\n        }\n        Self { slots }\n    }\n\n    pub fn acquire_slot(&self) -> Option<u16> {\n        self.slots.pop()\n    }\n\n    pub fn release_slot(&self, slot: u16) {\n        let _ = self.slots.push(slot);\n    }\n}\n\nfn submit_safe_batch(\n    ring: &mut IoUring,\n    fd: i32,\n    buf_ptr: *const u8,\n    len: u32,\n    pool: &RegisteredBufferPool,\n) -> Result<(), &'static str> {\n    let slot = pool.acquire_slot().ok_or(\"Buffer pool exhausted: throttled\")?;\n    let read_e = opcode::ReadFixed::new(\n        types::Fd(fd),\n        buf_ptr,\n        len,\n        slot,\n    ).build().user_data(slot as u64);\n\n    unsafe {\n        if ring.submission().push(&read_e).is_err() {\n            pool.release_slot(slot);\n            return Err(\"Submission queue full\");\n        }\n    }\n    ring.submit().map_err(|_| \"Submit failed\")?;\n    Ok(())\n}",
+    "verification": "Verify using `bpftrace` to monitor `io_uring_register` kernel tracepoints while generating traffic saturation with `fio` (ioengine=io_uring, iodepth=128+). Ensure zero submission errors occur and system metrics report stable memory locking without `ENOMEM`.",
+    "date": "2026-08-01",
+    "id": 1785549346,
+    "type": "error"
+});
