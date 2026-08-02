@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785649667,
+        "title": "Fix Fabric UI Thread Lockups from Rapid Shadow Tree Mutations",
+        "slug": "fix-react-native-fabric-ui-thread-lockups",
+        "language": "C++ / React Native",
+        "code": "UI_THREAD_LOCKUP",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fix-react-native-fabric-ui-thread-lockups.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "React Native",
+            "Fabric",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785649668,
+        "title": "Fix Envoy Latency Spikes from Circuit Breaker Contention",
+        "slug": "fix-envoy-latency-spikes-istio-circuit-breaker",
+        "language": "C++ / Istio",
+        "code": "WORKER_THREAD_CONTENTION",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fix-envoy-latency-spikes-istio-circuit-breaker.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Istio",
+            "Envoy",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785649669,
+        "title": "Fix Spark Driver OOM Outages from Uncollected Broadcast Vars",
+        "slug": "fix-spark-driver-oom-uncollected-broadcast-variables",
+        "language": "Scala / Spark",
+        "code": "OutOfMemoryError",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fix-spark-driver-oom-uncollected-broadcast-variables.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Scala",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785649670,
+        "title": "MoonshotAI Kimi-K3: Open Frontier Intelligence Model",
+        "slug": "moonshotai-kimi-k3-open-frontier-intelligence",
+        "language": "Python / PyTorch",
+        "code": "Trend",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/moonshotai-kimi-k3-open-frontier-intelligence.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1785580072,
         "title": "Fixing PyTorch DDP CUDA Memory Fragmentation",
         "slug": "fixing-pytorch-ddp-cuda-memory-fragmentation",
