@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785666406,
+        "title": "Fixing Go Runtime GC Pause Spikes from Cgo Pinning",
+        "slug": "fixing-go-runtime-gc-pause-spikes-cgo-pointer-pinning",
+        "language": "Go",
+        "code": "GC_PAUSE_SPIKE",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fixing-go-runtime-gc-pause-spikes-cgo-pointer-pinning.js",
+        "tags": [
+            "Go",
+            "Cgo",
+            "Performance",
+            "GC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785666407,
+        "title": "Fixing K8s CNI Subnet IPAM Exhaustion During HPA Bursts",
+        "slug": "fixing-k8s-cni-subnet-ipam-exhaustion-hpa-bursts",
+        "language": "Kubernetes",
+        "code": "IPAM_EXHAUSTION",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fixing-k8s-cni-subnet-ipam-exhaustion-hpa-bursts.js",
+        "tags": [
+            "Kubernetes",
+            "CNI",
+            "AWS",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785666408,
+        "title": "Fixing Elasticsearch Vector Aggregation Circuit Breakers",
+        "slug": "fixing-elasticsearch-vector-aggregation-circuit-breaker",
+        "language": "Java",
+        "code": "CIRCUIT_BREAKER_OPEN",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/fixing-elasticsearch-vector-aggregation-circuit-breaker.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785666409,
+        "title": "MoonshotAI/Kimi-K3: Open Frontier Intelligence Trend",
+        "slug": "moonshotai-kimi-k3-open-frontier-intelligence-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/moonshotai-kimi-k3-open-frontier-intelligence-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785658007,
         "title": "Fixing C++20 Coroutine Frame Lifetime Violations in ASIO",
         "slug": "cpp20-coroutine-frame-lifetime-violations-asio",
