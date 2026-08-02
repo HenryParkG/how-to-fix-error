@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Frame Lifetime Violations in ASIO",
+    "slug": "cpp20-coroutine-frame-lifetime-violations-asio",
+    "language": "C++",
+    "code": "Lifetime Violation",
+    "tags": [
+        "C++",
+        "ASIO",
+        "Coroutines",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>When combining C++20 coroutines with asynchronous I/O frameworks like Boost.Asio or Asio, developers often encounter subtle use-after-free bugs and segmentation faults. These issues stem from coroutine frame lifetime mismatch: temporary variables or references passed into asynchronous operations are destroyed before the asynchronous operation completes on the event loop executor.</p><p>In standard synchronous execution, object destruction follows stack frame unwinding predictably. However, in C++20 coroutines, a `co_await` suspends execution and returns control to the caller or executor. If the underlying buffer, reference, or lambda capture bound to an async operation relies on local stack storage that decays or gets invalidated while the coroutine frame is reallocated or suspended, memory corruption occurs.</p>",
+    "root_cause": "Dangling reference or buffer lifetime decay across coroutine suspension points (`co_await`). Stack-allocated buffers or references passed into asynchronous Boost.Asio handlers decay when the coroutine frame is destroyed or moved before async operation completion.",
+    "bad_code": "#include <boost/asio.hpp>\n#include <iostream>\n\nboost::asio::awaitable<void> async_read_data(boost::asio::ip::tcp::socket& socket) {\n    // BUG: std::string temporary created on coroutine stack\n    std::string buffer;\n    buffer.resize(1024);\n\n    // Passing local buffer to async read using asio::buffer\n    // If coroutine is cancelled or frame is prematurely destroyed,\n    // completion handler references dangling buffer.\n    auto bytes_transferred = co_await socket.async_read_some(\n        boost::asio::buffer(buffer),\n        boost::asio::use_awaitable\n    );\n    \n    std::cout << \"Read \" << bytes_transferred << \" bytes\\n\";\n}\n\n// Caller spawning coroutine without managing lifetime\nvoid RunSession(boost::asio::ip::tcp::socket socket) {\n    // Dangerous detached spawn where parameter socket is moved/destroyed early\n    boost::asio::co_spawn(socket.get_executor(), async_read_data(socket), boost::asio::detached);\n}",
+    "solution_desc": "To prevent coroutine frame lifetime violations, ensure that all buffers, sockets, and asynchronous states are bound to shared state (`std::shared_ptr`) or explicitly owned inside the coroutine frame without premature destruction. Additionally, use `asio::use_awaitable_t` with explicit cancellation slots and bind socket objects by reference to dynamically heap-allocated session objects that outlive the async pipeline execution.",
+    "good_code": "#include <boost/asio.hpp>\n#include <memory>\n#include <iostream>\n#include <vector>\n\nclass Session : public std::enable_shared_from_this<Session> {\n    boost::asio::ip::tcp::socket socket_;\n    std::vector<char> buffer_;\n\npublic:\n    explicit Session(boost::asio::ip::tcp::socket socket)\n        : socket_(std::move(socket)), buffer_(1024) {}\n\n    boost::asio::awaitable<void> start() {\n        auto self = shared_from_this(); // Keep frame state alive\n        try {\n            std::size_t bytes_transferred = co_await socket_.async_read_some(\n                boost::asio::buffer(self->buffer_),\n                boost::asio::use_awaitable\n            );\n            std::cout << \"Read \" << bytes_transferred << \" bytes\\n\";\n        } catch (const std::exception& e) {\n            std::cerr << \"Error: \" << e.what() << \"\\n\";\n        }\n    }\n};\n\nvoid RunSession(boost::asio::ip::tcp::socket socket) {\n    auto session = std::make_shared<Session>(std::move(socket));\n    boost::asio::co_spawn(\n        session->get_executor(),\n        [session]() -> boost::asio::awaitable<void> {\n            co_await session->start();\n        },\n        boost::asio::detached\n    );\n}",
+    "verification": "Compile the code using GCC or Clang with `-fsanitize=address,undefined` enabled. Run stress/load tests with concurrent connections via `wrk` or `h2load` to verify no AddressSanitizer reports of stack-use-after-return or heap-use-after-free occur.",
+    "date": "2026-08-02",
+    "id": 1785658007,
+    "type": "error"
+});

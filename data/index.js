@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785658007,
+        "title": "Fixing C++20 Coroutine Frame Lifetime Violations in ASIO",
+        "slug": "cpp20-coroutine-frame-lifetime-violations-asio",
+        "language": "C++",
+        "code": "Lifetime Violation",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-lifetime-violations-asio.js",
+        "tags": [
+            "C++",
+            "ASIO",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785658008,
+        "title": "Fixing PostgreSQL MultiXact ID Wraparound Lockups",
+        "slug": "postgresql-multixact-id-wraparound-lockup-fix",
+        "language": "SQL",
+        "code": "MultiXactId Wraparound",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/postgresql-multixact-id-wraparound-lockup-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785658009,
+        "title": "Fixing Elixir GenServer Mailbox Bottlenecks & Stalls",
+        "slug": "elixir-genserver-mailbox-bottlenecks-beam-stalls",
+        "language": "Elixir",
+        "code": "Mailbox Bottleneck",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/elixir-genserver-mailbox-bottlenecks-beam-stalls.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Concurrency",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785658010,
+        "title": "MoonshotAI Kimi-K3: Open Frontier Intelligence Analysis",
+        "slug": "moonshotai-kimi-k3-analysis-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-02",
+        "path": "data/posts/2026-08/moonshotai-kimi-k3-analysis-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1785649667,
         "title": "Fix Fabric UI Thread Lockups from Rapid Shadow Tree Mutations",
         "slug": "fix-react-native-fabric-ui-thread-lockups",
