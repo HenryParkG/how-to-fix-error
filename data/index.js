@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1785759172,
+        "title": "Fixing eBPF Verifier Stack Limit Exhaustion",
+        "slug": "ebpf-verifier-stack-limit-exhaustion-tail-calls",
+        "language": "C / eBPF",
+        "code": "StackExhaustion",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/ebpf-verifier-stack-limit-exhaustion-tail-calls.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785759173,
+        "title": "Fixing Haskell Lazy Space Leaks in Stream Accumulation",
+        "slug": "fix-haskell-lazy-space-leak-stream-accumulation",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/fix-haskell-lazy-space-leak-stream-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Performance",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785759174,
+        "title": "Fixing MongoDB WiredTiger Eviction Stalls",
+        "slug": "mongodb-wiredtiger-eviction-stalls-dirty-pages",
+        "language": "MongoDB",
+        "code": "EvictionStall",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-eviction-stalls-dirty-pages.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "SQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785759175,
+        "title": "Analyzing yc-software/qm: Multiplayer Agent Harness",
+        "slug": "analyze-github-yc-software-qm-multiplayer-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/analyze-github-yc-software-qm-multiplayer-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1785722071,
         "title": "Fix Rust Async Cancellation Safety & State Corruption",
         "slug": "fixing-rust-async-cancellation-safety-violations",
