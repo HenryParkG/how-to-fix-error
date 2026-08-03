@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1785722071,
+        "title": "Fix Rust Async Cancellation Safety & State Corruption",
+        "slug": "fixing-rust-async-cancellation-safety-violations",
+        "language": "Rust",
+        "code": "CancellationSafetyError",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/fixing-rust-async-cancellation-safety-violations.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785722072,
+        "title": "Fix Kafka Cooperative Sticky Assignor Rebalance Cascades",
+        "slug": "fixing-kafka-cooperative-sticky-assignor-rebalance-cascades",
+        "language": "Java",
+        "code": "RebalanceInProgressException",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/fixing-kafka-cooperative-sticky-assignor-rebalance-cascades.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785722073,
+        "title": "Fix Redis OOM Kills During RDB Snapshots & Kernel CoW",
+        "slug": "fixing-redis-oom-kills-kernel-cow-memory-bloat",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/fixing-redis-oom-kills-kernel-cow-memory-bloat.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785722074,
+        "title": "Exploring yc-software/qm: Multiplayer Agent Harness",
+        "slug": "exploring-yc-software-qm-multiplayer-agent-harness",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-03",
+        "path": "data/posts/2026-08/exploring-yc-software-qm-multiplayer-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ]
+    },
+    {
         "id": 1785666406,
         "title": "Fixing Go Runtime GC Pause Spikes from Cgo Pinning",
         "slug": "fixing-go-runtime-gc-pause-spikes-cgo-pointer-pinning",
