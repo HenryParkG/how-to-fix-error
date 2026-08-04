@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1785831696,
+        "title": "Fixing Triton OOB CUDA Violations in LLM Batches",
+        "slug": "fixing-triton-oob-cuda-violations-llm-batches",
+        "language": "Python",
+        "code": "CUDA_ERROR_ILLEGAL_ADDRESS",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fixing-triton-oob-cuda-violations-llm-batches.js",
+        "tags": [
+            "Triton",
+            "CUDA",
+            "LLM",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785831697,
+        "title": "Fixing Istio Envoy Resets Under HTTP/2 Exhaustion",
+        "slug": "fixing-istio-envoy-resets-http2-stream-exhaustion",
+        "language": "Kubernetes",
+        "code": "ERR_HTTP2_SERVER_REFUSED_STREAM",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fixing-istio-envoy-resets-http2-stream-exhaustion.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Service Mesh",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785831698,
+        "title": "Fixing WASM SharedArrayBuffer Deadlocks in Rust",
+        "slug": "fixing-wasm-sharedarraybuffer-deadlocks-rust",
+        "language": "Rust",
+        "code": "WASM_THREAD_DEADLOCK",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fixing-wasm-sharedarraybuffer-deadlocks-rust.js",
+        "tags": [
+            "WebAssembly",
+            "Multithreading",
+            "Atomics",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785831699,
+        "title": "Analyzing qm: Multiplayer Agent Harness for Work",
+        "slug": "analyzing-qm-multiplayer-agent-harness-for-work",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/analyzing-qm-multiplayer-agent-harness-for-work.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785821971,
         "title": "Fix PyTorch DDP Async AllReduce Buffer Deadlocks",
         "slug": "fix-pytorch-ddp-async-allreduce-deadlock",
