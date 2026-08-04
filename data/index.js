@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1785821971,
+        "title": "Fix PyTorch DDP Async AllReduce Buffer Deadlocks",
+        "slug": "fix-pytorch-ddp-async-allreduce-deadlock",
+        "language": "Python",
+        "code": "DDP_BUFFER_MISMATCH",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fix-pytorch-ddp-async-allreduce-deadlock.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Systems",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785821972,
+        "title": "Fix gRPC HTTP/2 Window Auto-Tuning Deadlocks",
+        "slug": "fix-grpc-http2-window-auto-tuning-deadlocks",
+        "language": "Go",
+        "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fix-grpc-http2-window-auto-tuning-deadlocks.js",
+        "tags": [
+            "gRPC",
+            "Microservices",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785821973,
+        "title": "Fix WebGPU Dynamic Uniform Buffer Alignment Faults",
+        "slug": "fix-webgpu-uniform-buffer-alignment-faults",
+        "language": "TypeScript",
+        "code": "WEBGPU_ALIGNMENT_FAULT",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/fix-webgpu-uniform-buffer-alignment-faults.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785821974,
+        "title": "Exploring yc-software/qm: Multiplayer Agent Harness",
+        "slug": "explore-yc-software-qm-multiplayer-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-04",
+        "path": "data/posts/2026-08/explore-yc-software-qm-multiplayer-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1785759172,
         "title": "Fixing eBPF Verifier Stack Limit Exhaustion",
         "slug": "ebpf-verifier-stack-limit-exhaustion-tail-calls",
