@@ -1,5 +1,94 @@
 var postsIndex = [
     {
+        "id": 1785908297,
+        "title": "Go Scheduler Starvation: Long Blocking Operations Fix",
+        "slug": "go-scheduler-starvation-blocking-operations-fix",
+        "language": "Go",
+        "code": "SchedulerStarvation",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/go-scheduler-starvation-blocking-operations-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Goroutines",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785908298,
+        "title": "Vector DB Index Corruption: Concurrent Ops & Schema Migration",
+        "slug": "vector-db-index-corruption-concurrent-ops-schema-migration-fix",
+        "language": "Vector DB",
+        "code": "IndexCorruption",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/vector-db-index-corruption-concurrent-ops-schema-migration-fix.js",
+        "tags": [
+            "Vector DB",
+            "Concurrency",
+            "Database",
+            "Data Integrity",
+            "SQL",
+            "AI/ML",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785908299,
+        "title": "Terraform State Corruption: Concurrent Applies & Manual Changes",
+        "slug": "terraform-state-corruption-concurrent-applies-manual-changes-fix",
+        "language": "Terraform",
+        "code": "StateCorruption",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/terraform-state-corruption-concurrent-applies-manual-changes-fix.js",
+        "tags": [
+            "Terraform",
+            "IaC",
+            "Cloud",
+            "DevOps",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785908300,
+        "title": "trycompai/crm: The Agentic-First Open-Source CRM Revolution",
+        "slug": "trycompai-crm-agentic-first-open-source-crm-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/trycompai-crm-agentic-first-open-source-crm-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CRM",
+            "AI",
+            "Agents",
+            "Open Source",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785908301,
+        "title": "trycompai/crm: The Agentic-First Open-Source CRM Revolution",
+        "slug": "trycompai-crm-agentic-first-open-source-crm-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/trycompai-crm-agentic-first-open-source-crm-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CRM",
+            "AI",
+            "Agents",
+            "Open Source",
+            "Python"
+        ]
+    },
+    {
         "id": 1785894230,
         "title": "Fix C++20 Coroutine Frame Lifespan Corruption",
         "slug": "fix-cpp20-coroutine-frame-lifespan-corruption",
