@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1785894230,
+        "title": "Fix C++20 Coroutine Frame Lifespan Corruption",
+        "slug": "fix-cpp20-coroutine-frame-lifespan-corruption",
+        "language": "C++",
+        "code": "UseAfterFree",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/fix-cpp20-coroutine-frame-lifespan-corruption.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Multithreading",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785894231,
+        "title": "Fixing BEAM Mailbox Overflow in Elixir GenServers",
+        "slug": "fix-beam-mailbox-overflow-genserver-backpressure",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/fix-beam-mailbox-overflow-genserver-backpressure.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Erlang",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785894232,
+        "title": "Fixing Postgres Subtransaction Overflow & Tuple Lock Spikes",
+        "slug": "fix-postgres-subtransaction-overflow-tuple-lock",
+        "language": "PostgreSQL",
+        "code": "LockContention",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/fix-postgres-subtransaction-overflow-tuple-lock.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785894233,
+        "title": "Exploring Comp AI CRM: The Open-Source Agentic CRM",
+        "slug": "explore-comp-ai-agentic-crm-github",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-05",
+        "path": "data/posts/2026-08/explore-comp-ai-agentic-crm-github.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React",
+            "Python"
+        ]
+    },
+    {
         "id": 1785831696,
         "title": "Fixing Triton OOB CUDA Violations in LLM Batches",
         "slug": "fixing-triton-oob-cuda-violations-llm-batches",
