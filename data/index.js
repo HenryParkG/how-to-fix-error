@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1785980591,
+        "title": "Fix Kafka Rebalance Storms in Batch Deserialization",
+        "slug": "fix-kafka-consumer-rebalance-storms-batch-deserialization",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fix-kafka-consumer-rebalance-storms-batch-deserialization.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785980592,
+        "title": "Fix React Native Fabric UI Deadlocks in Synchronous JSI",
+        "slug": "fix-react-native-fabric-ui-deadlocks-synchronous-jsi",
+        "language": "TypeScript",
+        "code": "ThreadDeadlock",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fix-react-native-fabric-ui-deadlocks-synchronous-jsi.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "React Native",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785980593,
+        "title": "Fix Redis Memory Spikes During RDB Snapshots",
+        "slug": "fix-redis-copy-on-write-memory-spikes-rdb-snapshots",
+        "language": "C",
+        "code": "OOMKilled",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fix-redis-copy-on-write-memory-spikes-rdb-snapshots.js",
+        "tags": [
+            "Docker",
+            "Linux",
+            "Infra",
+            "Redis",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1785980594,
+        "title": "Exploring CompAI CRM: The Open-Source Agentic CRM Platform",
+        "slug": "exploring-compai-crm-open-source-agentic-crm",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/exploring-compai-crm-open-source-agentic-crm.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1785908297,
         "title": "Go Scheduler Starvation: Long Blocking Operations Fix",
         "slug": "go-scheduler-starvation-blocking-operations-fix",
