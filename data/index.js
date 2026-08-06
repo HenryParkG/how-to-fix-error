@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786004197,
+        "title": "Fixing eBPF RingBuffer Event Loss in Ingress Filters",
+        "slug": "fixing-ebpf-ringbuffer-event-loss-backpressure-stalls",
+        "language": "Go",
+        "code": "RingBufDrop",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fixing-ebpf-ringbuffer-event-loss-backpressure-stalls.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "eBPF",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786004198,
+        "title": "Fix Elasticsearch Merge Starvation Under Heavy Bulk Ingestion",
+        "slug": "fix-elasticsearch-lucene-segment-merge-starvation",
+        "language": "Java",
+        "code": "MergeStarvation",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fix-elasticsearch-lucene-segment-merge-starvation.js",
+        "tags": [
+            "Elasticsearch",
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786004199,
+        "title": "Fix Next.js Server Action Memory Leaks in Streaming SSR",
+        "slug": "fix-nextjs-server-action-memory-leaks-streaming-ssr",
+        "language": "TypeScript",
+        "code": "ERR_MEM_LEAK",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fix-nextjs-server-action-memory-leaks-streaming-ssr.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786004200,
+        "title": "Analyzing trycompai/crm: Open Source Agentic CRM Architecture",
+        "slug": "analyzing-trycompai-crm-agentic-first-open-source-crm",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/analyzing-trycompai-crm-agentic-first-open-source-crm.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React",
+            "Python"
+        ]
+    },
+    {
         "id": 1785980591,
         "title": "Fix Kafka Rebalance Storms in Batch Deserialization",
         "slug": "fix-kafka-consumer-rebalance-storms-batch-deserialization",

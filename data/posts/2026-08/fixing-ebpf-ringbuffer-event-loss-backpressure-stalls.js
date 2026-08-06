@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing eBPF RingBuffer Event Loss in Ingress Filters",
+    "slug": "fixing-ebpf-ringbuffer-event-loss-backpressure-stalls",
+    "language": "Go",
+    "code": "RingBufDrop",
+    "tags": [
+        "Go",
+        "Backend",
+        "eBPF",
+        "Linux",
+        "Error Fix"
+    ],
+    "analysis": "<p>When running high-throughput eBPF ingress filters on 10Gbps+ interfaces, BPF programs frequently write telemetry and packet headers to a shared BPF ring buffer via <code>bpf_ringbuf_reserve</code> and <code>bpf_ringbuf_submit</code>. Under heavy packet bursts, user-space consumers reading from the ring buffer ring can fail to keep pace with kernel-space submissions. When the kernel ring buffer fills up, <code>bpf_ringbuf_reserve</code> returns a NULL pointer, forcing the eBPF program to drop telemetry events or drop the underlying packet altogether to prevent uncontrolled kernel backpressure.</p><p>This issue stems from single-threaded synchronous ring buffer polling in user space, insufficient buffer ring allocation sizing, and heavy lock contention when handling kernel-to-user-space event submission loops.</p>",
+    "root_cause": "The eBPF program attempts to reserve space in a full BPF ring buffer using bpf_ringbuf_reserve without a graceful fallback or backpressure dynamic scaling, while the user-space Go consumer uses a single worker poll loop that blocks on epoll syscalls during burst processing.",
+    "bad_code": "// Kernel eBPF (bad.c)\nSEC(\"tc\")\nint filter_ingress(struct __sk_buff *skb) {\n    struct event_t *event;\n    event = bpf_ringbuf_reserve(&events_buf, sizeof(*event), 0);\n    if (!event) {\n        // Dropping telemetry without fallback tracking or notification\n        return TC_ACT_SHOT; // Causing unnecessary backpressure stalls\n    }\n    event->pid = bpf_get_current_pid_tgid();\n    bpf_ringbuf_submit(event, 0);\n    return TC_ACT_OK;\n}\n\n// User-space Go Reader (bad.go)\nfunc consume(reader *ringbuf.Reader) {\n    for {\n        record, err := reader.Read()\n        if err != nil { continue }\n        processRecordSync(record) // Blocking synchronous processing delays ring buffer consumption\n    }\n}",
+    "solution_desc": "To eliminate dropped events and backpressure stalls: 1) Expand the ring buffer size in the BPF map definition (must be a power of two page size). 2) In eBPF kernel code, implement a per-CPU fallback array map to log dropped event counts when ringbuf reservation fails. 3) In Go user space, decoupling ring buffer reading from processing using a lock-free worker pool architecture driven by epoll.",
+    "good_code": "// Kernel eBPF (good.c)\nstruct {\n    __uint(type, BPF_MAP_TYPE_RINGBUF);\n    __uint(max_entries, 1 << 24); // 16MB ring buffer\n} events_buf SEC(\".maps\");\n\nstruct {\n    __uint(type, BPF_MAP_TYPE_PERCPU_ARRAY);\n    __type(key, u32);\n    __type(value, u64);\n    __uint(max_entries, 1);\n} drops_counter SEC(\".maps\");\n\nSEC(\"tc\")\nint filter_ingress(struct __sk_buff *skb) {\n    struct event_t *event = bpf_ringbuf_reserve(&events_buf, sizeof(*event), 0);\n    if (!event) {\n        u32 key = 0;\n        u64 *drops = bpf_map_lookup_elem(&drops_counter, &key);\n        if (drops) { __sync_fetch_and_add(drops, 1); }\n        return TC_ACT_OK; // Pass packet through, log telemetry drop via per-CPU map\n    }\n    event->pid = bpf_get_current_pid_tgid();\n    bpf_ringbuf_submit(event, 0);\n    return TC_ACT_OK;\n}\n\n// User-space Go Reader (good.go)\nfunc consumeConcurrent(reader *ringbuf.Reader, workers int) {\n    eventsChan := make(chan []byte, 65536)\n    for i := 0; i < workers; i++ {\n        go func() {\n            for raw := range eventsChan {\n                processRecordAsync(raw)\n            }\n        }()\n    }\n    for {\n        record, err := reader.Read()\n        if err != nil { continue }\n        buf := make([]byte, len(record.RawSample))\n        copy(buf, record.RawSample)\n        eventsChan <- buf\n    }\n}",
+    "verification": "Deploy the updated BPF byte code and user-space binary. Generate heavy traffic bursts (e.g. using `pktgen` or `iperf3`). Monitor telemetry counters via `bpftool map dump name drops_counter` to ensure zero drops occur under peak load.",
+    "date": "2026-08-06",
+    "id": 1786004197,
+    "type": "error"
+});
