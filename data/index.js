@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786014761,
+        "title": "Fixing Linux io_uring CQE Overflow Stalls in Storage Engines",
+        "slug": "fixing-linux-io-uring-cqe-overflow-stalls",
+        "language": "C++ / Linux",
+        "code": "IORING_SQ_CQ_OVERFLOW",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fixing-linux-io-uring-cqe-overflow-stalls.js",
+        "tags": [
+            "Linux",
+            "io_uring",
+            "C++",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786014762,
+        "title": "Fixing PyTorch DDP Autograd Memory Leaks in Distributed LLMs",
+        "slug": "fixing-pytorch-ddp-autograd-memory-leaks",
+        "language": "Python / PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fixing-pytorch-ddp-autograd-memory-leaks.js",
+        "tags": [
+            "PyTorch",
+            "LLM",
+            "Distributed",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786014763,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB / WiredTiger",
+        "code": "Read Ticket Exhaustion",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/fixing-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786014764,
+        "title": "Analyzing trycompai/crm: The Open-Source Agentic CRM",
+        "slug": "analyzing-trycompai-crm-open-source-agentic-crm",
+        "language": "TypeScript / Next.js",
+        "code": "Trend",
+        "date": "2026-08-06",
+        "path": "data/posts/2026-08/analyzing-trycompai-crm-open-source-agentic-crm.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1786004197,
         "title": "Fixing eBPF RingBuffer Event Loss in Ingress Filters",
         "slug": "fixing-ebpf-ringbuffer-event-loss-backpressure-stalls",
