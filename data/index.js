@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786078095,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Custom Allocators",
+        "slug": "cpp20-coroutine-frame-memory-leak-custom-allocator",
+        "language": "C++20",
+        "code": "MemoryLeak",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-memory-leak-custom-allocator.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Memory Management",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786078096,
+        "title": "Fixing PostgreSQL XID Wraparound Autovacuum Lock Stalls",
+        "slug": "postgres-xid-wraparound-autovacuum-lock-stalls",
+        "language": "PostgreSQL / C",
+        "code": "XIDWraparoundStall",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/postgres-xid-wraparound-autovacuum-lock-stalls.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786078097,
+        "title": "Fixing Elixir GenStage Mailbox Explosions in Backpressure",
+        "slug": "elixir-genstage-mailbox-explosion-backpressure",
+        "language": "Elixir / BEAM",
+        "code": "MailboxOverflow",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/elixir-genstage-mailbox-explosion-backpressure.js",
+        "tags": [
+            "Elixir",
+            "GenStage",
+            "BEAM",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786078098,
+        "title": "Firecrawl Anydoc: Fast Multi-Format Document to Clean Markdown",
+        "slug": "firecrawl-anydoc-document-to-markdown-rust",
+        "language": "Rust / Python / Node.js",
+        "code": "Trend",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/firecrawl-anydoc-document-to-markdown-rust.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786068518,
         "title": "Fixing Rust Tokio Runtime Deadlocks Across Await Points",
         "slug": "fixing-rust-tokio-deadlocks-across-await-points",
