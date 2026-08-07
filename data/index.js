@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786096318,
+        "title": "Fix Qdrant Vector DB HNSW Memory Explosion in Compaction",
+        "slug": "fix-qdrant-vector-db-hnsw-memory-explosion-compaction",
+        "language": "Rust",
+        "code": "OOMKilled",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/fix-qdrant-vector-db-hnsw-memory-explosion-compaction.js",
+        "tags": [
+            "Qdrant",
+            "VectorDB",
+            "HNSW",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786096319,
+        "title": "Fix WebGPU Uniform Buffer Alignment and Memory Leaks",
+        "slug": "fix-webgpu-uniform-buffer-alignment-memory-leaks",
+        "language": "TypeScript",
+        "code": "ValidationError",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/fix-webgpu-uniform-buffer-alignment-memory-leaks.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786096320,
+        "title": "Fix Haskell GHC Lazy Space Leaks in Streaming Pipelines",
+        "slug": "fix-haskell-ghc-lazy-space-leak-streaming",
+        "language": "Haskell",
+        "code": "HeapOverflow",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/fix-haskell-ghc-lazy-space-leak-streaming.js",
+        "tags": [
+            "Haskell",
+            "Streaming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786096321,
+        "title": "Anydoc: Fast Document to Clean Markdown in Rust",
+        "slug": "firecrawl-anydoc-document-to-markdown-rust",
+        "language": "Rust / Python / Node.js",
+        "code": "Trend",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/firecrawl-anydoc-document-to-markdown-rust.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786078095,
         "title": "Fixing C++20 Coroutine Frame Leaks in Custom Allocators",
         "slug": "cpp20-coroutine-frame-memory-leak-custom-allocator",
