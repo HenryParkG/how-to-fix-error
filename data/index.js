@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786068518,
+        "title": "Fixing Rust Tokio Runtime Deadlocks Across Await Points",
+        "slug": "fixing-rust-tokio-deadlocks-across-await-points",
+        "language": "Rust",
+        "code": "Tokio Mutex Deadlock",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/fixing-rust-tokio-deadlocks-across-await-points.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786068519,
+        "title": "Fixing Spark Executor OOM From Skewed Shuffle Spills",
+        "slug": "spark-executor-oom-skewed-shuffle-partition-spills",
+        "language": "Java",
+        "code": "Spark Executor OOM",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/spark-executor-oom-skewed-shuffle-partition-spills.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Apache Spark",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786068520,
+        "title": "Fixing Istio Envoy Proxy HTTP/2 Stalls Under Pod Churn",
+        "slug": "istio-envoy-http2-stream-multiplexing-stalls-pod-churn",
+        "language": "Kubernetes",
+        "code": "Envoy HTTP/2 Stall",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/istio-envoy-http2-stream-multiplexing-stalls-pod-churn.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Istio",
+            "Envoy",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786068521,
+        "title": "Firecrawl Anydoc: Fast Multi-Format Document Parsing",
+        "slug": "firecrawl-anydoc-markdown-converter-rust-bindings",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-08-07",
+        "path": "data/posts/2026-08/firecrawl-anydoc-markdown-converter-rust-bindings.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786014761,
         "title": "Fixing Linux io_uring CQE Overflow Stalls in Storage Engines",
         "slug": "fixing-linux-io-uring-cqe-overflow-stalls",
