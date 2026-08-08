@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1786170916,
+        "title": "Fixing eBPF Verifier Stack Depth Limit in BPF Tail Calls",
+        "slug": "fix-ebpf-verifier-stack-depth-limit-tail-calls",
+        "language": "C / eBPF",
+        "code": "BPF_VERIFIER_STACK_EXCEEDED",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fix-ebpf-verifier-stack-depth-limit-tail-calls.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kernel",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786170917,
+        "title": "Fixing Fabric JSI Native Memory Leaks in C++ TurboModules",
+        "slug": "fix-react-native-fabric-jsi-c-turbomodule-memory-leak",
+        "language": "C++ / React Native",
+        "code": "JSI_HOST_OBJECT_LEAK",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fix-react-native-fabric-jsi-c-turbomodule-memory-leak.js",
+        "tags": [
+            "React Native",
+            "C++",
+            "JSI",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786170918,
+        "title": "Fixing RocksDB Write Stall Cascade Under L0 Compaction Backlog",
+        "slug": "fix-rocksdb-write-stall-cascade-l0-compaction-backlog",
+        "language": "C++",
+        "code": "ROCKSDB_WRITE_STALL",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fix-rocksdb-write-stall-cascade-l0-compaction-backlog.js",
+        "tags": [
+            "RocksDB",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786170919,
+        "title": "Firecrawl Anydoc: High-Speed Document to Markdown Engine",
+        "slug": "firecrawl-anydoc-document-to-markdown-conversion-rust",
+        "language": "Rust / Node.js / Python",
+        "code": "Trend",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/firecrawl-anydoc-document-to-markdown-conversion-rust.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786150538,
         "title": "Fixing Go GC Pause Spikes Caused by Cgo Pointer Pinning",
         "slug": "fixing-go-gc-pause-spikes-cgo-pointer-pinning",
