@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786181466,
+        "title": "Fixing PyTorch DDP CUDA Memory Fragmentation",
+        "slug": "fixing-pytorch-ddp-cuda-memory-fragmentation",
+        "language": "Python / PyTorch",
+        "code": "CUDA OOM Error",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-pytorch-ddp-cuda-memory-fragmentation.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "DDP",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786181467,
+        "title": "Fixing SharedArrayBuffer Data Races in Rust Wasm",
+        "slug": "fixing-sharedarraybuffer-data-races-rust-wasm",
+        "language": "Rust / WebAssembly",
+        "code": "Data Race / Corruption",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-sharedarraybuffer-data-races-rust-wasm.js",
+        "tags": [
+            "Rust",
+            "WebAssembly",
+            "Wasm",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786181468,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls",
+        "slug": "fixing-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB / C++",
+        "code": "WT_CACHE_FULL Stalls",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786181469,
+        "title": "Firecrawl Anydoc: Fast Document to Markdown",
+        "slug": "firecrawl-anydoc-fast-document-to-markdown",
+        "language": "Rust / Python / Node.js",
+        "code": "Trend",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/firecrawl-anydoc-fast-document-to-markdown.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Node.js",
+            "Python"
+        ]
+    },
+    {
         "id": 1786170916,
         "title": "Fixing eBPF Verifier Stack Depth Limit in BPF Tail Calls",
         "slug": "fix-ebpf-verifier-stack-depth-limit-tail-calls",
