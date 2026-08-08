@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1786150538,
+        "title": "Fixing Go GC Pause Spikes Caused by Cgo Pointer Pinning",
+        "slug": "fixing-go-gc-pause-spikes-cgo-pointer-pinning",
+        "language": "Go",
+        "code": "Go GC Pause / Cgo Pinning",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-go-gc-pause-spikes-cgo-pointer-pinning.js",
+        "tags": [
+            "Go",
+            "Cgo",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786150539,
+        "title": "Fixing Kafka Rebalance Storms in Cooperative Assignors",
+        "slug": "fixing-kafka-rebalance-storms-cooperative-sticky",
+        "language": "Java",
+        "code": "Kafka CommitFailedException",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-kafka-rebalance-storms-cooperative-sticky.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786150540,
+        "title": "Fixing Redis Copy-on-Write OOM Panics During Snapshots",
+        "slug": "fixing-redis-cow-oom-panics-rdb-snapshots",
+        "language": "Redis",
+        "code": "OOM Command Not Allowed",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/fixing-redis-cow-oom-panics-rdb-snapshots.js",
+        "tags": [
+            "Redis",
+            "Docker",
+            "Linux",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786150541,
+        "title": "Trend Analysis: firecrawl/anydoc Doc-to-Markdown Tool",
+        "slug": "exploring-firecrawl-anydoc-rust-doc-converter",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-08-08",
+        "path": "data/posts/2026-08/exploring-firecrawl-anydoc-rust-doc-converter.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Node.js",
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1786096318,
         "title": "Fix Qdrant Vector DB HNSW Memory Explosion in Compaction",
         "slug": "fix-qdrant-vector-db-hnsw-memory-explosion-compaction",
