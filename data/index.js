@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786248651,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Async Executors",
+        "slug": "fixing-cpp20-coroutine-frame-leaks-custom-async-executors",
+        "language": "C++20",
+        "code": "Memory Leak",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-cpp20-coroutine-frame-leaks-custom-async-executors.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Memory Leak",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786248652,
+        "title": "Fixing PostgreSQL Transaction ID Wraparound Lock Contention",
+        "slug": "fixing-postgresql-xid-wraparound-lock-contention",
+        "language": "PostgreSQL",
+        "code": "Lock Contention",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-postgresql-xid-wraparound-lock-contention.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786248653,
+        "title": "Fixing Elixir GenServer Mailbox Exhaustion Under Load",
+        "slug": "fixing-elixir-genserver-mailbox-exhaustion-backpressure",
+        "language": "Elixir",
+        "code": "Mailbox Overflow",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-elixir-genserver-mailbox-exhaustion-backpressure.js",
+        "tags": [
+            "Elixir",
+            "Erlang/OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786248654,
+        "title": "firecrawl/anydoc: Fast Rust-Powered Markdown Conversion",
+        "slug": "firecrawl-anydoc-universal-markdown-converter-rust",
+        "language": "Rust / Node.js / Python",
+        "code": "Tech Trend",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/firecrawl-anydoc-universal-markdown-converter-rust.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786237083,
         "title": "Fixing vLLM KV Cache Exhaustion Under Prompt Bursts",
         "slug": "fix-vllm-pagedattention-kv-cache-exhaustion",
