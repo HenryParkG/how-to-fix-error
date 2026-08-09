@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786237083,
+        "title": "Fixing vLLM KV Cache Exhaustion Under Prompt Bursts",
+        "slug": "fix-vllm-pagedattention-kv-cache-exhaustion",
+        "language": "Python / vLLM",
+        "code": "OutOfMemoryError",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fix-vllm-pagedattention-kv-cache-exhaustion.js",
+        "tags": [
+            "vLLM",
+            "Python",
+            "PyTorch",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786237084,
+        "title": "Fix K8s Ingress TCP TIME_WAIT Port Exhaustion Under Spikes",
+        "slug": "k8s-ingress-tcp-timewait-port-exhaustion",
+        "language": "Kubernetes / NGINX",
+        "code": "EADDRNOTAVAIL",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/k8s-ingress-tcp-timewait-port-exhaustion.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "NGINX",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786237085,
+        "title": "Fix Zig Arena Allocator Pointer Invalidation in Slices",
+        "slug": "zig-arena-allocator-pointer-invalidation",
+        "language": "Zig",
+        "code": "SegmentationFault",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/zig-arena-allocator-pointer-invalidation.js",
+        "tags": [
+            "Zig",
+            "Rust",
+            "Backend",
+            "C",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786237086,
+        "title": "firecrawl/anydoc: Fast Document to Markdown Engine in Rust",
+        "slug": "firecrawl-anydoc-document-markdown-converter-rust",
+        "language": "Rust / Python / Node.js",
+        "code": "Trend",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/firecrawl-anydoc-document-markdown-converter-rust.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786181466,
         "title": "Fixing PyTorch DDP CUDA Memory Fragmentation",
         "slug": "fixing-pytorch-ddp-cuda-memory-fragmentation",
