@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786257536,
+        "title": "Fixing Spark Executor OOMs in Broadcast Joins",
+        "slug": "fixing-spark-executor-ooms-broadcast-hash-join-skew",
+        "language": "Java",
+        "code": "Spark Executor OOM",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-spark-executor-ooms-broadcast-hash-join-skew.js",
+        "tags": [
+            "Spark",
+            "Memory Skew",
+            "Java",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786257537,
+        "title": "Fixing Haskell Lazy ByteString Space Leaks",
+        "slug": "fixing-haskell-lazy-bytestring-space-leak-streaming",
+        "language": "Haskell",
+        "code": "Heap Space Leak",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-haskell-lazy-bytestring-space-leak-streaming.js",
+        "tags": [
+            "Haskell",
+            "Space Leak",
+            "Rust",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786257538,
+        "title": "Fixing Istio Envoy OOMs from HTTP/2 Metadata",
+        "slug": "fixing-istio-envoy-sidecar-oom-unbounded-http2-metadata",
+        "language": "Go",
+        "code": "Envoy Sidecar OOM",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/fixing-istio-envoy-sidecar-oom-unbounded-http2-metadata.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786257539,
+        "title": "Trending: firecrawl/anydoc Document to Markdown",
+        "slug": "firecrawl-anydoc-document-to-markdown-converter",
+        "language": "Rust",
+        "code": "Tech Trend",
+        "date": "2026-08-09",
+        "path": "data/posts/2026-08/firecrawl-anydoc-document-to-markdown-converter.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1786248651,
         "title": "Fixing C++20 Coroutine Frame Leaks in Async Executors",
         "slug": "fixing-cpp20-coroutine-frame-leaks-custom-async-executors",
