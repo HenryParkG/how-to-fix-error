@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786345863,
+        "title": "Fixing PyTorch DDP CUDA Stream Deadlocks in Multi-GPU",
+        "slug": "pytorch-ddp-cuda-stream-deadlocks-multi-gpu",
+        "language": "Python",
+        "code": "CUDA_DEADLOCK",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/pytorch-ddp-cuda-stream-deadlocks-multi-gpu.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786345864,
+        "title": "Fixing gRPC Connection Thrashing Driven by MAX_CONNECTION_AGE",
+        "slug": "grpc-connection-thrashing-http2-max-connection-age",
+        "language": "Go",
+        "code": "HTTP2_GOAWAY_THRASH",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/grpc-connection-thrashing-http2-max-connection-age.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786345865,
+        "title": "Fixing MongoDB WiredTiger Cache Eviction Stalls in Writes",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls-write-bursts",
+        "language": "SQL",
+        "code": "WIREDTIGER_CACHE_STALL",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-eviction-stalls-write-bursts.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786345866,
+        "title": "Analyzing KKKKhazix/human-writing for AI Text Humanization",
+        "slug": "analyzing-kkkkhazix-human-writing-ai-prompt-skill",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/analyzing-kkkkhazix-human-writing-ai-prompt-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786335758,
         "title": "Fixing eBPF Ring Buffer Event Drops in Kernel Tracing",
         "slug": "fixing-ebpf-ring-buffer-event-drops-kernel-tracing",
