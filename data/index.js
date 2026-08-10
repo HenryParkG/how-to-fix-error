@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1786323618,
+        "title": "Fixing Kafka Consumer Group Rebalance Cascades",
+        "slug": "fixing-kafka-consumer-group-rebalance-cascades",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-kafka-consumer-group-rebalance-cascades.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786323619,
+        "title": "Fixing WebGPU Buffer Alignment Faults in Multi-Pass Pipelines",
+        "slug": "fixing-webgpu-buffer-alignment-faults",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-webgpu-buffer-alignment-faults.js",
+        "tags": [
+            "WebGPU",
+            "WGSL",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786323620,
+        "title": "Fixing Redis Copy-on-Write Memory Spikes During BGSAVE",
+        "slug": "fixing-redis-copy-on-write-memory-spikes-bgsave",
+        "language": "Redis",
+        "code": "OOMKilled",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-redis-copy-on-write-memory-spikes-bgsave.js",
+        "tags": [
+            "Redis",
+            "Database",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786323621,
+        "title": "Analyzing KKKKhazix/human-writing: Humanizing AI Text",
+        "slug": "analyzing-kkkkhazix-human-writing-ai-prompts",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/analyzing-kkkkhazix-human-writing-ai-prompts.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786257536,
         "title": "Fixing Spark Executor OOMs in Broadcast Joins",
         "slug": "fixing-spark-executor-ooms-broadcast-hash-join-skew",
