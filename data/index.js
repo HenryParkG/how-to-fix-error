@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786356543,
+        "title": "Fix Tokio Async Starvation from Sync Mutexes in Rust",
+        "slug": "fix-tokio-async-thread-starvation-sync-mutex-rust",
+        "language": "Rust",
+        "code": "TokioStarvation",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fix-tokio-async-thread-starvation-sync-mutex-rust.js",
+        "tags": [
+            "Rust",
+            "Tokio",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786356544,
+        "title": "Fix RocksDB Write Stall Cascades Under Ingestion",
+        "slug": "fix-rocksdb-write-stall-cascades-memtable-flush",
+        "language": "C++",
+        "code": "RocksDBWriteStall",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fix-rocksdb-write-stall-cascades-memtable-flush.js",
+        "tags": [
+            "SQL",
+            "RocksDB",
+            "C++",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786356545,
+        "title": "Fix Next.js Streaming SSR Hydration Mismatches",
+        "slug": "fix-nextjs-streaming-ssr-hydration-mismatches",
+        "language": "TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fix-nextjs-streaming-ssr-hydration-mismatches.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786356546,
+        "title": "Analyze GitHub Trend: KKKKhazix/human-writing",
+        "slug": "human-writing-chinese-ai-prompt-skill",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/human-writing-chinese-ai-prompt-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786345863,
         "title": "Fixing PyTorch DDP CUDA Stream Deadlocks in Multi-GPU",
         "slug": "pytorch-ddp-cuda-stream-deadlocks-multi-gpu",
