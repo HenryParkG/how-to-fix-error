@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786335758,
+        "title": "Fixing eBPF Ring Buffer Event Drops in Kernel Tracing",
+        "slug": "fixing-ebpf-ring-buffer-event-drops-kernel-tracing",
+        "language": "C / eBPF",
+        "code": "BPF_RINGBUF_FULL",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-ebpf-ring-buffer-event-drops-kernel-tracing.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Go",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786335759,
+        "title": "Fixing Qdrant HNSW Recall Degradation During Merges",
+        "slug": "fixing-qdrant-hnsw-recall-degradation- concurrent-merges",
+        "language": "Rust",
+        "code": "HNSW_MERGE_RECALL_DROP",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-qdrant-hnsw-recall-degradation- concurrent-merges.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "Qdrant",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786335760,
+        "title": "Fixing Akka Cluster Split-Brain Quorum Loss in Network Cut",
+        "slug": "fixing-akka-cluster-sbr-quorum-loss-asymmetric",
+        "language": "Java",
+        "code": "SBR_QUORUM_LOSS",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/fixing-akka-cluster-sbr-quorum-loss-asymmetric.js",
+        "tags": [
+            "Java",
+            "Akka",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786335761,
+        "title": "Analyzing 'KKKKhazix/human-writing' for Authentic AI Writing",
+        "slug": "trending-kkkkhazix-human-writing-ai-prompting",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-10",
+        "path": "data/posts/2026-08/trending-kkkkhazix-human-writing-ai-prompting.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1786323618,
         "title": "Fixing Kafka Consumer Group Rebalance Cascades",
         "slug": "fixing-kafka-consumer-group-rebalance-cascades",
