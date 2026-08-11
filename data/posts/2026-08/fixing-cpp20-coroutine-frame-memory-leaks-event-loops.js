@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Frame Leaks in Event Loops",
+    "slug": "fixing-cpp20-coroutine-frame-memory-leaks-event-loops",
+    "language": "C++",
+    "code": "Memory Leak",
+    "tags": [
+        "Rust",
+        "Go",
+        "Async",
+        "Memory Management",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines introduce dynamic heap allocations for coroutine frames storing parameters, local variables, and execution state. In asynchronous event-driven architectures (such as ASIO or custom libuv-backed loops), memory leaks occur when coroutines are cancelled, dropped, or fail to reach an <code>co_return</code> or final suspension point. If an awaitable's completion handler is destroyed or abandoned before resuming the coroutine, or if the <code>promise_type::final_suspend</code> returns <code>std::suspend_never</code> while task wrappers hold manual handles, the underlying heap memory allocated by <code>operator new</code> is never released.</p><p>This leak is often invisible to compiler diagnostics because coroutine frames bypass standard scope-bound RAII semantics. AddressSanitizer (ASan) flags these as unfreed heap allocations originating from <code>coroutine_handle::from_address</code> allocations.</p>",
+    "root_cause": "The task wrapper fails to call `std::coroutine_handle::destroy()` upon early cancellation or task drop, and the promise frame uses asymmetric lifetime ownership between the event loop executor and the caller task wrapper.",
+    "bad_code": "#include <coroutine>\n#include <iostream>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() {\n            return Task{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_always initial_suspend() { return {}; }\n        // BUG: Returning suspend_never automatically destroys frame ONLY IF no handle ownership exists,\n        // causing double-free or dangling handles when wrapped by RAII wrappers.\n        std::suspend_never final_suspend() noexcept { return {}; }\n        void return_void() {}\n        void unhandled_exception() { std::terminate(); }\n    };\n\n    std::coroutine_handle<promise_type> handle;\n    ~Task() {\n        // BUG: handle is not destroyed if task is dropped prior to execution!\n    }\n};\n\nTask async_work() {\n    co_await std::suspend_always{};\n}",
+    "solution_desc": "To prevent coroutine frame memory leaks, enforce RAII ownership over `std::coroutine_handle<>`. Set `final_suspend` to `std::suspend_always` so the coroutine frame remains alive until the outer task owner explicitly calls `.destroy()`. Ensure copy constructors are deleted and move semantics manage handle ownership cleanly.",
+    "good_code": "#include <coroutine>\n#include <utility>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() {\n            return Task{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        // Keep frame alive at final suspension so RAII owner controls destruction\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void return_void() noexcept {}\n        void unhandled_exception() { std::terminate(); }\n    };\n\n    std::coroutine_handle<promise_type> handle;\n\n    explicit Task(std::coroutine_handle<promise_type> h) : handle(h) {}\n    Task(const Task&) = delete;\n    Task& operator=(const Task&) = delete;\n    \n    Task(Task&& other) noexcept : handle(std::exchange(other.handle, {})) {}\n    Task& operator=(Task&& other) noexcept {\n        if (this != &other) {\n            if (handle) handle.destroy();\n            handle = std::exchange(other.handle, {});\n        }\n        return *this;\n    }\n\n    ~Task() {\n        if (handle) {\n            handle.destroy();\n        }\n    }\n};",
+    "verification": "Compile with GCC/Clang using `-fsanitize=address -g` and run test iterations where coroutines are spawned and cancelled abruptly. AddressSanitizer should report zero memory leaks across thousands of dynamic coroutine allocations.",
+    "date": "2026-08-11",
+    "id": 1786409996,
+    "type": "error"
+});

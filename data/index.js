@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786409996,
+        "title": "Fixing C++20 Coroutine Frame Leaks in Event Loops",
+        "slug": "fixing-cpp20-coroutine-frame-memory-leaks-event-loops",
+        "language": "C++",
+        "code": "Memory Leak",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-cpp20-coroutine-frame-memory-leaks-event-loops.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Async",
+            "Memory Management",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786409997,
+        "title": "Fixing Postgres TXID Wraparound Autovacuum Lockouts",
+        "slug": "fixing-postgres-txid-wraparound-autovacuum-lockouts",
+        "language": "PostgreSQL",
+        "code": "TXID Lockout",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-postgres-txid-wraparound-autovacuum-lockouts.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Infra",
+            "PostgreSQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786409998,
+        "title": "Fixing vLLM PagedAttention KV-Cache Memory Fragmentation",
+        "slug": "fixing-vllm-pagedattention-kv-cache-fragmentation",
+        "language": "Python",
+        "code": "OOM CUDA",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-vllm-pagedattention-kv-cache-fragmentation.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "AI",
+            "vLLM",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786409999,
+        "title": "Analyzing KKKKhazix/human-writing: Humanizing AI Text",
+        "slug": "analyzing-kkkkhazix-human-writing-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/analyzing-kkkkhazix-human-writing-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1786356543,
         "title": "Fix Tokio Async Starvation from Sync Mutexes in Rust",
         "slug": "fix-tokio-async-thread-starvation-sync-mutex-rust",
