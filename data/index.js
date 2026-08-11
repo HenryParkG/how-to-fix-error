@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1786430964,
+        "title": "Fix Elixir GenServer Mailbox Growth During Backpressure",
+        "slug": "fix-elixir-genserver-mailbox-growth-during-backpressure",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fix-elixir-genserver-mailbox-growth-during-backpressure.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786430965,
+        "title": "Fix Istio Envoy Memory Leaks Under High HTTP/2",
+        "slug": "fix-istio-envoy-memory-leaks-under-high-http2",
+        "language": "Envoy",
+        "code": "EnvoyOOMKilled",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fix-istio-envoy-memory-leaks-under-high-http2.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786430966,
+        "title": "Fix Spark Executor OOMs from Hash Partition Skew",
+        "slug": "fix-spark-executor-oom-hash-partition-skew",
+        "language": "Scala",
+        "code": "SparkExecutorOOM",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fix-spark-executor-oom-hash-partition-skew.js",
+        "tags": [
+            "Apache Spark",
+            "Scala",
+            "Java",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786430967,
+        "title": "Analysis of KKKKhazix/human-writing GitHub Trend",
+        "slug": "analysis-kkkkhazix-human-writing-github-trend",
+        "language": "Markdown",
+        "code": "Trend",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/analysis-kkkkhazix-human-writing-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786409996,
         "title": "Fixing C++20 Coroutine Frame Leaks in Event Loops",
         "slug": "fixing-cpp20-coroutine-frame-memory-leaks-event-loops",
