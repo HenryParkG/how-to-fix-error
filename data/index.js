@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1786441910,
+        "title": "Fixing Go Goroutine Preemption Starvation in Unsafe Cgo Calls",
+        "slug": "fixing-go-goroutine-preemption-starvation-unsafe-cgo",
+        "language": "Go",
+        "code": "Cgo Starvation",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-go-goroutine-preemption-starvation-unsafe-cgo.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Cgo",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786441911,
+        "title": "Fixing Kafka Cooperative Sticky Assignor Rebalance Livelocks",
+        "slug": "fixing-kafka-cooperative-sticky-assignor-livelock",
+        "language": "Java",
+        "code": "Rebalance Livelock",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-kafka-cooperative-sticky-assignor-livelock.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786441912,
+        "title": "Fixing Redis BGSAVE Memory Bloat & THP Latency Spikes",
+        "slug": "fixing-redis-bgsave-memory-bloat-transparent-huge-pages",
+        "language": "Docker",
+        "code": "CoW Memory Bloat",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/fixing-redis-bgsave-memory-bloat-transparent-huge-pages.js",
+        "tags": [
+            "Docker",
+            "Redis",
+            "Infra",
+            "Linux",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786441913,
+        "title": "Analyzing 'KKKKhazix/human-writing': Eliminating AI Tone",
+        "slug": "analyzing-kkkkhazix-human-writing-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-11",
+        "path": "data/posts/2026-08/analyzing-kkkkhazix-human-writing-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Prompt Engineering"
+        ]
+    },
+    {
         "id": 1786430964,
         "title": "Fix Elixir GenServer Mailbox Growth During Backpressure",
         "slug": "fix-elixir-genserver-mailbox-growth-during-backpressure",

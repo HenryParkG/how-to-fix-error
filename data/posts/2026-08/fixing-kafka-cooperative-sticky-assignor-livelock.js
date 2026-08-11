@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Kafka Cooperative Sticky Assignor Rebalance Livelocks",
+    "slug": "fixing-kafka-cooperative-sticky-assignor-livelock",
+    "language": "Java",
+    "code": "Rebalance Livelock",
+    "tags": [
+        "Java",
+        "Kafka",
+        "Backend",
+        "Distributed Systems",
+        "Error Fix"
+    ],
+    "analysis": "<p>The CooperativeStickyAssignor in Apache Kafka was designed to prevent stop-the-world rebalance events by enabling incremental cooperative rebalancing. However, under conditions of high consumer lag or slow record processing, consumer threads may exceed the max.poll.interval.ms window while processing accumulated batches. When a consumer fails to poll within this interval, the group coordinator marks it dead and triggers a rebalance. During incremental rebalancing with high lag, assigned partitions are continuously revoked and re-assigned in cascading rounds, leading to a permanent rebalance livelock where consumers spend all execution time rejoining groups rather than processing messages.</p>",
+    "root_cause": "The livelock occurs because CooperativeStickyAssignor requires two or more consecutive rebalance cycles to fully reassign revoked partitions. If consumer processing loops take longer than max.poll.interval.ms due to synchronous long-running operations per batch, the heartbeat/poll thread triggers member eviction. When the evicted consumer rejoins, it revokes partitions, triggering yet another rebalance before previous assignments stabilize.",
+    "bad_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"localhost:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"payment-processor\");\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    \"org.apache.kafka.clients.consumer.CooperativeStickyAssignor\");\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"30000\"); // 30s too short for heavy batch\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"1000\");\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"payment-events\"));\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));\n    for (ConsumerRecord<String, String> record : records) {\n        // Synchronous DB/API calls taking >50ms per record\n        // 1000 * 50ms = 50s > max.poll.interval.ms (30s) -> Eviction and Livelock\n        processPayment(record.value()); \n    }\n    consumer.commitSync();\n}",
+    "solution_desc": "Decouple message fetching from processing by delegating execution to a worker thread pool with bounded queues and backpressure, or tune max.poll.records down while increasing max.poll.interval.ms. Decoupling ensures that consumer.poll() is invoked reliably within configured boundaries, satisfying the coordinator and permitting rebalance protocols to stabilize.",
+    "good_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"localhost:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"payment-processor\");\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    \"org.apache.kafka.clients.consumer.CooperativeStickyAssignor\");\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\"); // Increased to 5m\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"100\"); // Reduced batch size\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"payment-events\"));\n\n// Bounded worker pool with CallerRunsPolicy backpressure\nExecutorService executor = new ThreadPoolExecutor(8, 8, 0L, TimeUnit.MILLISECONDS,\n    new ArrayBlockingQueue<>(200), new ThreadPoolExecutor.CallerRunsPolicy());\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));\n    for (ConsumerRecord<String, String> record : records) {\n        executor.submit(() -> processPayment(record.value()));\n    }\n    consumer.commitAsync();\n}",
+    "verification": "Inspect consumer state with 'kafka-consumer-groups.sh --describe --group payment-processor'. Verify that group state remains Stable and partition assignments remain consistent without cyclical state transitions to CompletingRebalance.",
+    "date": "2026-08-11",
+    "id": 1786441911,
+    "type": "error"
+});
