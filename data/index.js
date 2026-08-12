@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1786509688,
+        "title": "Fix eBPF Verifier Stack Limit Failures in Tail Calls",
+        "slug": "fix-ebpf-verifier-stack-limit-failures-tail-calls",
+        "language": "C / eBPF",
+        "code": "MAX_TAIL_CALL_STACK_EXCEEDED",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/fix-ebpf-verifier-stack-limit-failures-tail-calls.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786509689,
+        "title": "Fix PyTorch DDP CUDA Stream Desync Deadlocks",
+        "slug": "fix-pytorch-ddp-cuda-stream-desync-deadlocks",
+        "language": "Python / PyTorch",
+        "code": "NCCL_TIMEOUT_DEADLOCK",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/fix-pytorch-ddp-cuda-stream-desync-deadlocks.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786509690,
+        "title": "Resolving WiredTiger Cache Eviction & Ticket Starvation",
+        "slug": "resolving-wiredtiger-cache-eviction-ticket-starvation",
+        "language": "MongoDB / C++",
+        "code": "WIREDTIGER_TICKET_EXHAUSTION",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/resolving-wiredtiger-cache-eviction-ticket-starvation.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786509691,
+        "title": "Analyzing ShawnPana/phone-harness: AI Phone Control",
+        "slug": "analyzing-shawnpana-phone-harness-ai-phone-control",
+        "language": "Python / ADB",
+        "code": "Trend",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/analyzing-shawnpana-phone-harness-ai-phone-control.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786496788,
         "title": "Debugging Linux io_uring Buffer Ring Exhaustion",
         "slug": "linux-iouring-buffer-ring-exhaustion-fix",
