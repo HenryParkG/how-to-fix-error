@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1786528436,
+        "title": "C++20 Coroutine Frame Lifetime Violations in Pipelines",
+        "slug": "cpp20-coroutine-frame-lifetime-violations",
+        "language": "C++",
+        "code": "Use-After-Free / Segmentation Fault",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-lifetime-violations.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Rust",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786528437,
+        "title": "Fixing vLLM PagedAttention Memory Fragmentation",
+        "slug": "vllm-pagedattention-kv-cache-fragmentation",
+        "language": "Python",
+        "code": "CUDA OOM / Block Allocation Overhead",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/vllm-pagedattention-kv-cache-fragmentation.js",
+        "tags": [
+            "Python",
+            "vLLM",
+            "LLM",
+            "CUDA",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786528438,
+        "title": "Fixing PostgreSQL TXID Wraparound Autovacuum Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "ERRDATA: Database Shutdown Imminent",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Database",
+            "Autovacuum",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786528439,
+        "title": "ShawnPana/phone-harness: AI Agent Phone Control",
+        "slug": "shawnpana-phone-harness-agent-phone-control",
+        "language": "Python / TypeScript",
+        "code": "Trend",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/shawnpana-phone-harness-agent-phone-control.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Automation"
+        ]
+    },
+    {
         "id": 1786518535,
         "title": "Fixing WebGPU Dynamic Offset Alignment Faults",
         "slug": "fixing-webgpu-uniform-buffer-dynamic-offset-alignment",
