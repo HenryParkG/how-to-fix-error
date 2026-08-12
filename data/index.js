@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786496788,
+        "title": "Debugging Linux io_uring Buffer Ring Exhaustion",
+        "slug": "linux-iouring-buffer-ring-exhaustion-fix",
+        "language": "C / Linux Kernel / Rust",
+        "code": "ENOBUFS",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/linux-iouring-buffer-ring-exhaustion-fix.js",
+        "tags": [
+            "Linux",
+            "io_uring",
+            "Rust",
+            "C",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786496789,
+        "title": "Fixing Milvus HNSW Index Memory Bloat and Recall Drop",
+        "slug": "fix-milvus-hnsw-memory-bloat-recall-degradation",
+        "language": "Python / C++ / Milvus",
+        "code": "Memory Bloat / OOM",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/fix-milvus-hnsw-memory-bloat-recall-degradation.js",
+        "tags": [
+            "Milvus",
+            "Vector DB",
+            "Python",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786496790,
+        "title": "Resolving Haskell Space Leaks in Streaming Monads",
+        "slug": "resolve-haskell-streaming-monad-transformer-space-leak",
+        "language": "Haskell",
+        "code": "Space Leak / OOM",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/resolve-haskell-streaming-monad-transformer-space-leak.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786496791,
+        "title": "ShawnPana/phone-harness: AI Agent Mobile Control",
+        "slug": "phone-harness-ai-agent-mobile-control-trend",
+        "language": "Python / TypeScript / Android ADB",
+        "code": "Trend",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/phone-harness-ai-agent-mobile-control-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1786441910,
         "title": "Fixing Go Goroutine Preemption Starvation in Unsafe Cgo Calls",
         "slug": "fixing-go-goroutine-preemption-starvation-unsafe-cgo",
