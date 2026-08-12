@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786518535,
+        "title": "Fixing WebGPU Dynamic Offset Alignment Faults",
+        "slug": "fixing-webgpu-uniform-buffer-dynamic-offset-alignment",
+        "language": "TypeScript",
+        "code": "AlignmentFault",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/fixing-webgpu-uniform-buffer-dynamic-offset-alignment.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "WGSL",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786518536,
+        "title": "Debugging Envoy gRPC HTTP/2 RST_STREAM Storms",
+        "slug": "debugging-envoy-grpc-http2-rst-stream-storms",
+        "language": "Go",
+        "code": "RST_STREAM_STORM",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/debugging-envoy-grpc-http2-rst-stream-storms.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786518537,
+        "title": "Fixing Elasticsearch Parent Breaker Livelocks",
+        "slug": "fixing-elasticsearch-parent-circuit-breaker-livelocks",
+        "language": "Java",
+        "code": "BreakerLivelock",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/fixing-elasticsearch-parent-circuit-breaker-livelocks.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "Docker",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786518538,
+        "title": "ShawnPana/phone-harness: AI Mobile Agent Harness",
+        "slug": "shawnpana-phone-harness-llm-agent-control",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-12",
+        "path": "data/posts/2026-08/shawnpana-phone-harness-llm-agent-control.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1786509688,
         "title": "Fix eBPF Verifier Stack Limit Failures in Tail Calls",
         "slug": "fix-ebpf-verifier-stack-limit-failures-tail-calls",
