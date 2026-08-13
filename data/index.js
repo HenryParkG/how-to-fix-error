@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1786596288,
+        "title": "Debugging Rust Async Pin Violations & Cancellation Hazards",
+        "slug": "debug-rust-async-pinning-cancellation-hazards",
+        "language": "Rust",
+        "code": "AsyncPinErr",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/debug-rust-async-pinning-cancellation-hazards.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Streams",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786596289,
+        "title": "Fixing Kafka Cooperative Sticky Assignor Rebalance Storms",
+        "slug": "kafka-cooperative-sticky-assignor-rebalance-storms",
+        "language": "Java",
+        "code": "RebalanceStorm",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/kafka-cooperative-sticky-assignor-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786596290,
+        "title": "Resolving Redis Copy-on-Write Bloat and BGSAVE OOM",
+        "slug": "redis-cow-memory-bloat-bgsave-oom-fix",
+        "language": "C",
+        "code": "OOMKilled",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/redis-cow-memory-bloat-bgsave-oom-fix.js",
+        "tags": [
+            "Redis",
+            "Docker",
+            "Memory Management",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786596291,
+        "title": "Analyzing guillaumemeyer/watermarks-remover AI Hygiene",
+        "slug": "analyzing-guillaumemeyer-watermarks-remover",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/analyzing-guillaumemeyer-watermarks-remover.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786583273,
         "title": "Fixing BEAM Scheduler Reduction Exhaustion in Elixir NIFs",
         "slug": "fixing-beam-scheduler-reduction-exhaustion-elixir-nifs",
