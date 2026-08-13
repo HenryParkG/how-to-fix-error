@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786605246,
+        "title": "Fix Go Scheduler Deadlocks in Cgo Signal Handlers",
+        "slug": "go-scheduler-deadlock-cgo-signal-handler",
+        "language": "Go",
+        "code": "GoDeadlockCgo",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/go-scheduler-deadlock-cgo-signal-handler.js",
+        "tags": [
+            "Go",
+            "Cgo",
+            "Concurrency",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786605247,
+        "title": "Fix Spark Driver OOMs From Broadcast Join Skew",
+        "slug": "spark-driver-oom-broadcast-join-skew",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/spark-driver-oom-broadcast-join-skew.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "SQL",
+            "Big Data",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786605248,
+        "title": "Fix CockroachDB Raft Leaseholder Livelocks",
+        "slug": "cockroachdb-raft-leaseholder-livelock-partition",
+        "language": "SQL",
+        "code": "LivelockError",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/cockroachdb-raft-leaseholder-livelock-partition.js",
+        "tags": [
+            "SQL",
+            "Go",
+            "Distributed Systems",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786605249,
+        "title": "Analyzing guillaumemeyer/watermarks-remover",
+        "slug": "guillaumemeyer-watermarks-remover-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/guillaumemeyer-watermarks-remover-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786596288,
         "title": "Debugging Rust Async Pin Violations & Cancellation Hazards",
         "slug": "debug-rust-async-pinning-cancellation-hazards",
