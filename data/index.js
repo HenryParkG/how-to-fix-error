@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786583273,
+        "title": "Fixing BEAM Scheduler Reduction Exhaustion in Elixir NIFs",
+        "slug": "fixing-beam-scheduler-reduction-exhaustion-elixir-nifs",
+        "language": "Elixir / C",
+        "code": "SchedulerStarvation",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/fixing-beam-scheduler-reduction-exhaustion-elixir-nifs.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786583274,
+        "title": "Fixing Terraform State Lock Deadlocks in CI/CD",
+        "slug": "fixing-terraform-state-lock-deadlocks-cicd",
+        "language": "Terraform / AWS",
+        "code": "StateLockDeadlock",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/fixing-terraform-state-lock-deadlocks-cicd.js",
+        "tags": [
+            "Terraform",
+            "CI/CD",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786583275,
+        "title": "Fixing Next.js Hydration Mismatches Under Edge Pressure",
+        "slug": "fixing-nextjs-hydration-mismatches-edge-pressure",
+        "language": "Next.js / TypeScript",
+        "code": "RSCStreamingHydrationMismatch",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/fixing-nextjs-hydration-mismatches-edge-pressure.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786583276,
+        "title": "guillaumemeyer/watermarks-remover: AI Provenance Stripper",
+        "slug": "guillaumemeyer-watermarks-remover-ai-provenance",
+        "language": "Python / CLI",
+        "code": "Trend",
+        "date": "2026-08-13",
+        "path": "data/posts/2026-08/guillaumemeyer-watermarks-remover-ai-provenance.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786528436,
         "title": "C++20 Coroutine Frame Lifetime Violations in Pipelines",
         "slug": "cpp20-coroutine-frame-lifetime-violations",
