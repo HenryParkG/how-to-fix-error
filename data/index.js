@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786691427,
+        "title": "C++20 Coroutine Frame Lifetime Hazards in Symmetric Transfer",
+        "slug": "cpp20-coroutine-frame-lifetime-hazards-symmetric-transfer",
+        "language": "C++",
+        "code": "Memory Error",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-lifetime-hazards-symmetric-transfer.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786691428,
+        "title": "Mitigating PostgreSQL MultiXact ID Wraparound Emergency Shutdowns",
+        "slug": "postgresql-multixact-id-wraparound",
+        "language": "PostgreSQL",
+        "code": "DB Error",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/postgresql-multixact-id-wraparound.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786691429,
+        "title": "Envoy Graceful Drain Timeouts & Reset Streams in Istio Upgrades",
+        "slug": "envoy-drain-timeouts-reset-streams-istio-upgrades",
+        "language": "Kubernetes",
+        "code": "Network Error",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/envoy-drain-timeouts-reset-streams-istio-upgrades.js",
+        "tags": [
+            "Kubernetes",
+            "Envoy",
+            "Istio",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786691430,
+        "title": "DeepSeek Harness: Plugin-Driven LLM Evaluation",
+        "slug": "deepseek-harness-llm-evaluation-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/deepseek-harness-llm-evaluation-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1786682596,
         "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
         "slug": "fixing-grpc-http2-flow-control-deadlocks",
