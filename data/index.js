@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786669598,
+        "title": "Fix eBPF Verifier Stack Limit with Nested Tail Calls",
+        "slug": "ebpf-verifier-stack-limit-nested-tail-calls",
+        "language": "C / eBPF",
+        "code": "EINVAL",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/ebpf-verifier-stack-limit-nested-tail-calls.js",
+        "tags": [
+            "Rust",
+            "Docker",
+            "Linux Kernel",
+            "eBPF",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786669599,
+        "title": "Fix PyTorch DDP Deadlocks in Heterogeneous Clusters",
+        "slug": "pytorch-ddp-gradient-sync-deadlocks-heterogeneous",
+        "language": "Python",
+        "code": "NCCL Timeout",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/pytorch-ddp-gradient-sync-deadlocks-heterogeneous.js",
+        "tags": [
+            "Python",
+            "Docker",
+            "Kubernetes",
+            "PyTorch",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786669600,
+        "title": "Resolve WiredTiger Cache Eviction Stalls in MongoDB",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "Go",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Docker",
+            "MongoDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786669601,
+        "title": "DeepSeek Harness: Modular AI Agent Plugin Framework",
+        "slug": "deepseek-harness-everything-as-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/deepseek-harness-everything-as-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1786605246,
         "title": "Fix Go Scheduler Deadlocks in Cgo Signal Handlers",
         "slug": "go-scheduler-deadlock-cgo-signal-handler",
