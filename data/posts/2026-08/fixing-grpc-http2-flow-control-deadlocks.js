@@ -1,0 +1,23 @@
+window.onPostDataLoaded({
+    "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+    "slug": "fixing-grpc-http2-flow-control-deadlocks",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
+    "tags": [
+        "Go",
+        "gRPC",
+        "Networking",
+        "Concurrency",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In high-concurrency gRPC environments with long-lived bidirectional streaming, services frequently experience sudden stream stalls and deadlocks under heavy load. This issue occurs due to the interplay between HTTP/2 stream-level and connection-level flow control windows.</p><p>HTTP/2 assigns an individual flow control window to each active stream and a shared window to the overall TCP connection. When a single stream produces data faster than the remote peer consumes it, the connection-level window can become fully depleted. As a result, all sibling streams multiplexed over that same TCP connection are blocked from transmitting `DATA` frames, even if their individual stream windows have available capacity. If the peer is waiting for metadata or response frames across stalled sibling streams before reading, both endpoints enter an unrecoverable flow control deadlock.</p>",
+    "root_cause": "Exhaustion of the shared HTTP/2 connection-level flow control window (CONN_WINDOW) caused by unbounded concurrent stream writes without cooperative transport-level backpressure, stalling all multiplexed streams.",
+    "bad_code": "func (s *StreamService) ProcessStream(stream pb.Service_ProcessStreamServer) error {\n    // Naive streaming loop without flow control checks or window tuning\n    for {\n        data, err := stream.Recv()\n        if err == io.EOF {\n            return nil\n        }\n        if err != nil {\n            return err\n        }\n        \n        // Unbounded concurrent writes saturate the HTTP/2 connection window\n        go func(payload []byte) {\n            resp := processPayload(payload)\n            // Blocks indefinitely if connection window is 0, halting sibling streams\n            _ = stream.Send(&pb.StreamResponse{Result: resp})\n        }(data.GetPayload())\n    }\n}",
+    "solution_desc": "Configure custom HTTP/2 initial window sizes on both gRPC client and server configurations (`InitialWindowSize` and `InitialConnWindowSize`). Implement explicit channel-based producer-consumer backpressure per stream to prevent goroutine explosion and connection window starvation.",
+    "good_code": "func NewGRPCServer() *grpc.Server {\n    return grpc.NewServer(\n        // Expand stream and connection windows to prevent premature starvation\n        grpc.InitialWindowSize(4 * 1024 * 1024),     // 4MB per stream\n        grpc.InitialConnWindowSize(16 * 1024 * 1024), // 16MB per connection\n        grpc.MaxConcurrentStreams(1000),\n    )\n}\n\nfunc (s *StreamService) ProcessStream(stream pb.Service_ProcessStreamServer) error {\n    ctx := stream.Context()\n    // Bounded worker queue to enforce strict backpressure\n    workQueue := make(chan []byte, 64)\n    errChan := make(chan error, 1)\n\n    go func() {\n        for {\n            select {\n            case <-ctx.Done():\n                return\n            case payload, ok := <-workQueue:\n                if !ok {\n                    return\n                }\n                resp := processPayload(payload)\n                if err := stream.Send(&pb.StreamResponse{Result: resp}); err != nil {\n                    errChan <- err\n                    return\n                }\n            }\n        }\n    }()\n\n    for {\n        data, err := stream.Recv()\n        if err == io.EOF {\n            close(workQueue)\n            return nil\n        }\n        if err != nil {\n            return err\n        }\n        select {\n        case <-ctx.Done():\n            return ctx.Err()\n        case err := <-errChan:\n            return err\n        case workQueue <- data.GetPayload():\n            // Backpressure exerted if queue is saturated\n        }\n    }\n}",
+    "verification": "Execute high-concurrency benchmarks using `ghz` with 500+ concurrent bidirectional streams. Verify via Prometheus metrics (`grpc_server_handled_total`, `grpc_transport_flow_control_window`) that flow control windows remain positive and no goroutines leak in `gRPC-Stream-Write` states.",
+    "date": "2026-08-14",
+    "id": 1786682596,
+    "type": "error"
+});

@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1786682596,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "fixing-grpc-http2-flow-control-deadlocks",
+        "language": "Go",
+        "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/fixing-grpc-http2-flow-control-deadlocks.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Networking",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786682597,
+        "title": "Fix Qdrant HNSW Segment Compaction Lock Starvation",
+        "slug": "fix-qdrant-hnsw-compaction-lock-starvation",
+        "language": "Rust",
+        "code": "HNSW_COMPACTION_LOCK_STARVATION",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/fix-qdrant-hnsw-compaction-lock-starvation.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Backend",
+            "Concurrency",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786682598,
+        "title": "Fix WebGPU Compute Barrier Races & Alignment Faults",
+        "slug": "webgpu-compute-barrier-races-alignment-faults",
+        "language": "TypeScript",
+        "code": "GPU_ALIGNMENT_BARRIER_FAULT",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/webgpu-compute-barrier-races-alignment-faults.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Graphics",
+            "WebGPU",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786682599,
+        "title": "DeepSeek Harness: Modular Plugin Framework for AI",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker",
+            "Backend"
+        ]
+    },
+    {
         "id": 1786669598,
         "title": "Fix eBPF Verifier Stack Limit with Nested Tail Calls",
         "slug": "ebpf-verifier-stack-limit-nested-tail-calls",
