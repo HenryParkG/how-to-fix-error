@@ -1,5 +1,74 @@
 var postsIndex = [
     {
+        "id": 1786701334,
+        "title": "Fixing BEAM Mailbox Bloat & Selective Receive Starvation",
+        "slug": "elixir-otp-mailbox-bloat-starvation",
+        "language": "Elixir OTP",
+        "code": "BEAM Mailbox Bloat",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/elixir-otp-mailbox-bloat-starvation.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "OTP",
+            "Concurrency",
+            "Memory",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786701335,
+        "title": "Mitigating Kubernetes CFS Quota Throttling Latency Spikes",
+        "slug": "kubernetes-cfs-throttling-go-microservices",
+        "language": "Go, Kubernetes",
+        "code": "CFS Throttling",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/kubernetes-cfs-throttling-go-microservices.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786701336,
+        "title": "Resolving ClickHouse MergeTree Mutation Livelocks",
+        "slug": "clickhouse-mergetree-mutation-livelocks",
+        "language": "ClickHouse",
+        "code": "Mutation Livelock",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/clickhouse-mergetree-mutation-livelocks.js",
+        "tags": [
+            "ClickHouse",
+            "SQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786701337,
+        "title": "DeepSeek Harness: Everything is a Plugin (Trending GitHub Repo)",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-14",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "LLM",
+            "Backend"
+        ]
+    },
+    {
         "id": 1786691427,
         "title": "C++20 Coroutine Frame Lifetime Hazards in Symmetric Transfer",
         "slug": "cpp20-coroutine-frame-lifetime-hazards-symmetric-transfer",
