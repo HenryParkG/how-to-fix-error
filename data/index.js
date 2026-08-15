@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786785430,
+        "title": "Fixing eBPF Verifier Complexity Limit & Tail Calls",
+        "slug": "ebpf-verifier-complexity-tail-call-hazards",
+        "language": "C / Linux Kernel",
+        "code": "BPF_COMPLEXITY_LIMIT_EXCEEDED",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/ebpf-verifier-complexity-tail-call-hazards.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kernel",
+            "Rust",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786785431,
+        "title": "Resolving PyTorch DDP Dynamic Graph Deadlocks",
+        "slug": "pytorch-ddp-gradient-bucketing-deadlocks",
+        "language": "Python",
+        "code": "DDP_BUCKET_ALLREDUCE_TIMEOUT",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/pytorch-ddp-gradient-bucketing-deadlocks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Deep Learning",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786785432,
+        "title": "Mitigating MongoDB WiredTiger Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-ticket-starvation",
+        "language": "Go / MongoDB",
+        "code": "WT_CACHE_DIRTY_EVICTION_STALL",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-eviction-ticket-starvation.js",
+        "tags": [
+            "MongoDB",
+            "Docker",
+            "Go",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786785433,
+        "title": "DeepSeek Harness: Modular AI Agent Plugin Engine",
+        "slug": "deepseek-harness-everything-is-a-plugin-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Deep Learning"
+        ]
+    },
+    {
         "id": 1786774965,
         "title": "Debugging Go Scheduler Latency Spikes on NUMA Architectures",
         "slug": "debugging-go-scheduler-latency-spikes-numa",
