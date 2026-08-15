@@ -1,5 +1,75 @@
 var postsIndex = [
     {
+        "id": 1786774965,
+        "title": "Debugging Go Scheduler Latency Spikes on NUMA Architectures",
+        "slug": "debugging-go-scheduler-latency-spikes-numa",
+        "language": "Go",
+        "code": "Scheduler Latency",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/debugging-go-scheduler-latency-spikes-numa.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "NUMA",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786774966,
+        "title": "Kafka Consumer Group Rebalance Storms & Fencing Errors",
+        "slug": "kafka-consumer-group-rebalance-storms-fencing-errors-high-load",
+        "language": "Kafka",
+        "code": "Rebalance Storm",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/kafka-consumer-group-rebalance-storms-fencing-errors-high-load.js",
+        "tags": [
+            "Kafka",
+            "Messaging",
+            "Distributed Systems",
+            "Java",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786774967,
+        "title": "Fixing Elasticsearch Cluster Red State from Shard Allocation",
+        "slug": "elasticsearch-cluster-red-state-shard-allocation-failures-disk-watermarks",
+        "language": "Elasticsearch",
+        "code": "Cluster Red State",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/elasticsearch-cluster-red-state-shard-allocation-failures-disk-watermarks.js",
+        "tags": [
+            "Elasticsearch",
+            "Search",
+            "NoSQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786774968,
+        "title": "DeepSeek Harness: The Plugin-Centric LLM Toolkit",
+        "slug": "deepseek-harness-everything-is-a-plugin-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLM",
+            "Python",
+            "Plugins",
+            "Agents"
+        ]
+    },
+    {
         "id": 1786764743,
         "title": "Debugging io_uring Fixed Buffer Leaks & SQPOLL Starvation",
         "slug": "debugging-linux-io-uring-fixed-buffer-leaks-sqpoll-starvation",
