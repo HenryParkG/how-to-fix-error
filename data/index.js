@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1786764743,
+        "title": "Debugging io_uring Fixed Buffer Leaks & SQPOLL Starvation",
+        "slug": "debugging-linux-io-uring-fixed-buffer-leaks-sqpoll-starvation",
+        "language": "C/C++, Linux Kernel",
+        "code": "Resource Leak, Concurrency Issue",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/debugging-linux-io-uring-fixed-buffer-leaks-sqpoll-starvation.js",
+        "tags": [
+            "Linux",
+            "io_uring",
+            "C/C++",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786764744,
+        "title": "Fixing Triton CUDA Graph Memory Hazards with Dynamic Batching",
+        "slug": "fixing-triton-cuda-graph-memory-hazards-dynamic-batching",
+        "language": "C++, CUDA, Python",
+        "code": "Memory Hazard, CUDA Error",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/fixing-triton-cuda-graph-memory-hazards-dynamic-batching.js",
+        "tags": [
+            "Triton",
+            "CUDA",
+            "AI/ML",
+            "Memory Management",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786764745,
+        "title": "Eliminating Haskell Unbounded Thunk Accumulation & Space Leaks",
+        "slug": "eliminating-haskell-unbounded-thunk-accumulation-space-leaks",
+        "language": "Haskell",
+        "code": "Space Leak, Memory Exhaustion",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/eliminating-haskell-unbounded-thunk-accumulation-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Lazy Evaluation",
+            "Space Leaks",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786764746,
+        "title": "DeepSeek Harness: Everything is a Plugin - A New LLM Evaluation Paradigm",
+        "slug": "deepseek-harness-everything-is-a-plugin-llm-evaluation-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-llm-evaluation-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Plugin Architecture",
+            "Python"
+        ]
+    },
+    {
         "id": 1786754461,
         "title": "Fixing Rust Async Cancellation Safety in Tokio select!",
         "slug": "rust-async-cancellation-safety-tokio-select",
