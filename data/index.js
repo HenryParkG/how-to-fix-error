@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786754461,
+        "title": "Fixing Rust Async Cancellation Safety in Tokio select!",
+        "slug": "rust-async-cancellation-safety-tokio-select",
+        "language": "Rust",
+        "code": "CancellationHazard",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/rust-async-cancellation-safety-tokio-select.js",
+        "tags": [
+            "Rust",
+            "Tokio",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786754462,
+        "title": "Fix vLLM PagedAttention KV Cache Preemption Cascades",
+        "slug": "vllm-pagedattention-kv-cache-preemption-cascades",
+        "language": "Python",
+        "code": "OutOfKVCacheMemoryError",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/vllm-pagedattention-kv-cache-preemption-cascades.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "Docker",
+            "LLM",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786754463,
+        "title": "Mitigate Redis CoW Memory Spikes During BGSAVE",
+        "slug": "redis-fork-cow-memory-exhaustion-bgsave",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/redis-fork-cow-memory-exhaustion-bgsave.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786754464,
+        "title": "DeepSeek Harness: Modular Plugin AI Evaluation",
+        "slug": "deepseek-ai-deepseek-harness-plugin-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-15",
+        "path": "data/posts/2026-08/deepseek-ai-deepseek-harness-plugin-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "LLM"
+        ]
+    },
+    {
         "id": 1786701334,
         "title": "Fixing BEAM Mailbox Bloat & Selective Receive Starvation",
         "slug": "elixir-otp-mailbox-bloat-starvation",
