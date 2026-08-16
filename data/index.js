@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1786851663,
+        "title": "Fixing Elixir GenServer Mailbox Bloat & Supervisor Cascades",
+        "slug": "elixir-genserver-mailbox-bloat-supervision-restarts",
+        "language": "Elixir",
+        "code": "GenServerMailboxOverflow",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/elixir-genserver-mailbox-bloat-supervision-restarts.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786851664,
+        "title": "Resolving K8s CNI IPAM Exhaustion & Sandbox Creation Stalls",
+        "slug": "k8s-cni-ipam-exhaustion-pod-sandbox-deadlocks",
+        "language": "Kubernetes",
+        "code": "FailedCreatePodSandBox",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/k8s-cni-ipam-exhaustion-pod-sandbox-deadlocks.js",
+        "tags": [
+            "Kubernetes",
+            "AWS",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786851665,
+        "title": "Fixing WebGPU Async Pipeline Stalls & Alignment Faults",
+        "slug": "webgpu-async-pipeline-stalls-uniform-alignment-faults",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/webgpu-async-pipeline-stalls-uniform-alignment-faults.js",
+        "tags": [
+            "TypeScript",
+            "React",
+            "CSS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786851666,
+        "title": "DeepSeek Harness: Modular Plugin Framework for AI Agents",
+        "slug": "deepseek-harness-plugin-architecture-ai-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/deepseek-harness-plugin-architecture-ai-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786840941,
         "title": "Fixing C++20 Coroutine Dangling Frames & Recursion",
         "slug": "cpp20-coroutine-frame-lifetime-symmetric-transfer",
