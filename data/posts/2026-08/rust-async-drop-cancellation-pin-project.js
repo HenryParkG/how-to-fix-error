@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Fixing Async Drop Cancellation Hazards in Streams",
+    "slug": "rust-async-drop-cancellation-pin-project",
+    "language": "Rust",
+    "code": "AsyncCancelHazard",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In asynchronous Rust, futures can be dropped at any <code>.await</code> or polling yield point if a caller (such as <code>tokio::select!</code>) cancels execution. When building custom pinned streams or stateful futures with <code>pin-project</code>, cancellation mid-execution can discard intermediate progress, leaving uncommitted buffers, half-consumed channel states, or broken invariants across successive calls to <code>poll_next</code>.</p>",
+    "root_cause": "The stream state machine modifies internal state before ensuring the yield point succeeds. Dropping the future during an intermediate await point causes state loss because the partially updated state is abandoned on drop without running cleanup or rollbacks.",
+    "bad_code": "use std::pin::Pin;\nuse std::task::{Context, Poll};\nuse futures::Stream;\nuse pin_project::pin_project;\n\n#[pin_project]\npub struct IngestStream<S> {\n    #[pin]\n    upstream: S,\n    buffer: Vec<u8>,\n}\n\nimpl<S: Stream<Item = Vec<u8>>> Stream for IngestStream<S> {\n    type Item = Vec<u8>;\n\n    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {\n        let mut this = self.project();\n        // BUG: Ingests item into internal buffer, but if caller cancels\n        // during downstream polling or downstream yields, buffer remains half-processed\n        while let Poll::Ready(Some(chunk)) = this.upstream.as_mut().poll_next(cx) {\n            this.buffer.extend_from_slice(&chunk);\n            if this.buffer.len() >= 1024 {\n                // Draining directly without cancellation guard drops remaining bytes if aborted\n                let result = this.buffer.drain(..1024).collect();\n                return Poll::Ready(Some(result));\n            }\n        }\n        Poll::Pending\n    }\n}",
+    "solution_desc": "Decouple state transitions using an explicit two-phase commit state machine or an atomic staging guard. Use an inner state enum managed by `pin_project` to ensure that item consumption only commits when the transition is completely materialized and cannot be partially dropped.",
+    "good_code": "use std::pin::Pin;\nuse std::task::{Context, Poll};\nuse futures::Stream;\nuse pin_project::pin_project;\n\n#[pin_project]\npub struct IngestStream<S> {\n    #[pin]\n    upstream: S,\n    buffer: Vec<u8>,\n    offset: usize,\n}\n\nimpl<S: Stream<Item = Vec<u8>>> Stream for IngestStream<S> {\n    type Item = Vec<u8>;\n\n    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Option<Self::Item>> {\n        let mut this = self.project();\n\n        while this.buffer.len() - *this.offset < 1024 {\n            match this.upstream.as_mut().poll_next(cx) {\n                Poll::Ready(Some(chunk)) => this.buffer.extend_from_slice(&chunk),\n                Poll::Ready(None) if this.buffer.len() > *this.offset => {\n                    let remaining = this.buffer[*this.offset..].to_vec();\n                    this.buffer.clear();\n                    *this.offset = 0;\n                    return Poll::Ready(Some(remaining));\n                }\n                Poll::Ready(None) => return Poll::Ready(None),\n                Poll::Pending => return Poll::Pending,\n            }\n        }\n\n        let output = this.buffer[*this.offset..*this.offset + 1024].to_vec();\n        *this.offset += 1024;\n        if *this.offset >= this.buffer.len() {\n            this.buffer.clear();\n            *this.offset = 0;\n        }\n        Poll::Ready(Some(output))\n    }\n}",
+    "verification": "Construct a test using `tokio_test::task::spawn` and simulate early drops between iterations with `tokio::select!`. Verify that no bytes are skipped or duplicated across task cancellations.",
+    "date": "2026-08-16",
+    "id": 1786861398,
+    "type": "error"
+});

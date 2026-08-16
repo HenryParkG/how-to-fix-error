@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1786861398,
+        "title": "Fixing Async Drop Cancellation Hazards in Streams",
+        "slug": "rust-async-drop-cancellation-pin-project",
+        "language": "Rust",
+        "code": "AsyncCancelHazard",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/rust-async-drop-cancellation-pin-project.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786861399,
+        "title": "Fixing Spark Executor Netty Off-Heap Memory Leaks",
+        "slug": "spark-executor-netty-offheap-oom",
+        "language": "Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/spark-executor-netty-offheap-oom.js",
+        "tags": [
+            "Java",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786861400,
+        "title": "Mitigating Redis BGSAVE Fork Spikes & THP Memory Bloat",
+        "slug": "redis-bgsave-fork-latency-thp-bloat",
+        "language": "Docker",
+        "code": "LatencySpike",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/redis-bgsave-fork-latency-thp-bloat.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786861401,
+        "title": "DeepSeek Harness: Modular AI Plugin Architecture",
+        "slug": "deepseek-harness-plugin-architecture-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/deepseek-harness-plugin-architecture-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786851663,
         "title": "Fixing Elixir GenServer Mailbox Bloat & Supervisor Cascades",
         "slug": "elixir-genserver-mailbox-bloat-supervision-restarts",
