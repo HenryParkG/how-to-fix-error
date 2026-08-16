@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786840941,
+        "title": "Fixing C++20 Coroutine Dangling Frames & Recursion",
+        "slug": "cpp20-coroutine-frame-lifetime-symmetric-transfer",
+        "language": "C++20",
+        "code": "CoroutineDanglingFrame",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-lifetime-symmetric-transfer.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "MemorySafety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786840942,
+        "title": "Fixing PostgreSQL TXID Wraparound Autovacuum Starvation",
+        "slug": "postgres-txid-wraparound-autovacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "TxidWraparoundError",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/postgres-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Autovacuum",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786840943,
+        "title": "Resolving gRPC HTTP/2 Stream Flow Control Deadlocks",
+        "slug": "grpc-http2-stream-flow-control-deadlock",
+        "language": "Go",
+        "code": "FlowControlExhaustion",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/grpc-http2-stream-flow-control-deadlock.js",
+        "tags": [
+            "gRPC",
+            "HTTP2",
+            "Concurrency",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786840944,
+        "title": "DeepSeek Harness: Pluggable Modular LLM Evaluation",
+        "slug": "deepseek-harness-pluggable-llm-evaluation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/deepseek-harness-pluggable-llm-evaluation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1786785430,
         "title": "Fixing eBPF Verifier Complexity Limit & Tail Calls",
         "slug": "ebpf-verifier-complexity-tail-call-hazards",

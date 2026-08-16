@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Resolving gRPC HTTP/2 Stream Flow Control Deadlocks",
+    "slug": "grpc-http2-stream-flow-control-deadlock",
+    "language": "Go",
+    "code": "FlowControlExhaustion",
+    "tags": [
+        "gRPC",
+        "HTTP2",
+        "Concurrency",
+        "Go",
+        "Error Fix"
+    ],
+    "analysis": "<p>HTTP/2 uses credit-based flow control at both the connection level and individual stream levels via <code>WINDOW_UPDATE</code> frames. In high-throughput gRPC streaming services, if a consumer stops reading from a stream or reads slower than the producer writes, the stream's flow control window drops to 0, preventing additional data frames.</p><p>A critical deadlock occurs when multiple streams share a single multiplexed TCP connection: if the global connection window is exhausted by unacknowledged bytes across blocked streams, no stream on that transport can send data. If downstream handlers are synchronously waiting on upstream responses across interdependent streams, the entire HTTP/2 transport reader thread blocks indefinitely.</p>",
+    "root_cause": "Default small initial window sizes (64KB) under heavy concurrency, coupled with unbuffered synchronous reads and cross-stream dependencies that exhaust connection-wide flow control credits.",
+    "bad_code": "package main\n\nimport (\n\t\"context\"\n\t\"google.golang.org/grpc\"\n\t\"io\"\n\t\"net\"\n)\n\n// Bad configuration: Default small windows with unbuffered blocking reads\nfunc startBadServer(srv pb.StreamServiceServer) {\n\t// Default settings allocate 64KB initial stream/conn windows\n\ts := grpc.NewServer()\n\tpb.RegisterStreamServiceServer(s, srv)\n\tlis, _ := net.Listen(\"tcp\", \":50051\")\n\t_ = s.Serve(lis)\n}\n\nfunc (s *BadServer) StreamData(stream pb.StreamService_StreamDataServer) error {\n\tfor {\n\t\t// Synchronous RPC call to another service on every message without draining stream\n\t\tmsg, err := stream.Recv()\n\t\tif err == io.EOF { return nil }\n\t\tif err != nil { return err }\n\t\t\n\t\t// Blocking RPC dependent on the same client transport causes mutual lockup\n\t\ts.callDownstreamRpc(stream.Context(), msg)\n\t}\n}",
+    "solution_desc": "Configure larger initial connection and stream window sizes using `grpc.InitialWindowSize` and `grpc.InitialConnWindowSize`, enable HTTP/2 BDP (Bandwidth-Delay Product) auto-tuning, and decouple message ingestion from downstream processing using bounded worker channels.",
+    "good_code": "package main\n\nimport (\n\t\"context\"\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/keepalive\"\n\t\"net\"\n\t\"time\"\n)\n\nfunc startOptimizedServer(srv pb.StreamServiceServer) {\n\ts := grpc.NewServer(\n\t\t// Increase initial window sizes from 64KB to 4MB/8MB to prevent flow exhaustion\n\t\tgrpc.InitialWindowSize(4 * 1024 * 1024),\n\t\tgrpc.InitialConnWindowSize(8 * 1024 * 1024),\n\t\tgrpc.MaxConcurrentStreams(1000),\n\t\tgrpc.KeepaliveParams(keepalive.ServerParameters{\n\t\t\tMaxConnectionIdle:     15 * time.Minute,\n\t\t\tMaxConnectionAge:      30 * time.Minute,\n\t\t\tTime:                  20 * time.Second,\n\t\t\tTimeout:               5 * time.Second,\n\t\t}),\n\t)\n\tpb.RegisterStreamServiceServer(s, srv)\n\tlis, _ := net.Listen(\"tcp\", \":50051\")\n\t_ = s.Serve(lis)\n}\n\nfunc (s *OptimizedServer) StreamData(stream pb.StreamService_StreamDataServer) error {\n\tctx, cancel := context.WithCancel(stream.Context())\n\tdefer cancel()\n\t\n\tmsgChan := make(chan *pb.DataMessage, 128)\n\terrChan := make(chan error, 1)\n\n\t// Async reader worker decoupled from downstream calls to continually consume WINDOW_UPDATE\n\tgo func() {\n\t\tfor {\n\t\t\tmsg, err := stream.Recv()\n\t\t\tif err != nil {\n\t\t\t\terrChan <- err\n\t\t\t\treturn\n\t\t\t}\n\t\t\tselect {\n\t\t\tcase msgChan <- msg:\n\t\t\tcase <-ctx.Done():\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}()\n\n\t// Process messages independently\n\tfor {\n\t\tselect {\n\t\tcase msg := <-msgChan:\n\t\t\ts.processAsync(ctx, msg)\n\t\tcase err := <-errChan:\n\t\t\tif err == io.EOF { return nil }\n\t\t\treturn err\n\t\t}\n\t}\n}",
+    "verification": "Run `GODEBUG=http2debug=2` to observe HTTP/2 frame traces. Ensure `WINDOW_UPDATE` frames are transmitted promptly without reaching 0-window conditions under concurrent streaming benchmarks with `ghz`.",
+    "date": "2026-08-16",
+    "id": 1786840943,
+    "type": "error"
+});
