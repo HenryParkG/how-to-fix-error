@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1786871921,
+        "title": "Resolving io_uring CQE Overflows & Registered Buffer Starvation",
+        "slug": "linux-io-uring-cqe-overflows-registered-buffer-starvation",
+        "language": "C, Linux Kernel",
+        "code": "IO_URING_CQE_OVERFLOW",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/linux-io-uring-cqe-overflows-registered-buffer-starvation.js",
+        "tags": [
+            "io_uring",
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786871922,
+        "title": "Debugging Haskell Lazy Space Leaks & Thunk Accumulation",
+        "slug": "haskell-lazy-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "SPACE_LEAK",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/haskell-lazy-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786871923,
+        "title": "Mitigating Istio Envoy Conn Pool Exhaustion & Circuit Breaking",
+        "slug": "istio-envoy-connection-pool-exhaustion-circuit-breaking",
+        "language": "Istio, Envoy, Kubernetes",
+        "code": "ENVOY_CONN_POOL_EXHAUSTION",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/istio-envoy-connection-pool-exhaustion-circuit-breaking.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Microservices",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786871924,
+        "title": "DeepSeek Harness: The Modular AI Development Platform",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-16",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLM",
+            "Plugins",
+            "Backend"
+        ]
+    },
+    {
         "id": 1786861398,
         "title": "Fixing Async Drop Cancellation Hazards in Streams",
         "slug": "rust-async-drop-cancellation-pin-project",
