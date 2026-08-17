@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786938381,
+        "title": "PyTorch DDP Sync Deadlocks & CUDA Memory Fragmentation",
+        "slug": "pytorch-ddp-sync-deadlocks-cuda-memory-fragmentation",
+        "language": "PyTorch, Python",
+        "code": "DDP Sync Deadlocks",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/pytorch-ddp-sync-deadlocks-cuda-memory-fragmentation.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Training",
+            "CUDA",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786938382,
+        "title": "MongoDB WiredTiger Ticket Exhaustion & Stalls",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion-cache-eviction",
+        "language": "MongoDB, Database",
+        "code": "WiredTiger Stalls",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-ticket-exhaustion-cache-eviction.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786938383,
+        "title": "eBPF Verifier Complexity & Stack Overflow Hazards",
+        "slug": "ebpf-verifier-complexity-tail-call-stack-overflow",
+        "language": "eBPF, Linux Kernel",
+        "code": "eBPF Verifier Error",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/ebpf-verifier-complexity-tail-call-stack-overflow.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786938384,
+        "title": "DeepSeek Harness: Everything is a Plugin.",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python, AI/ML",
+        "code": "Trend",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Python"
+        ]
+    },
+    {
         "id": 1786927237,
         "title": "Fixing Kafka Cooperative Sticky Rebalance Storms & Zombie Fencing",
         "slug": "kafka-cooperative-sticky-rebalance-zombie-fencing",
