@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1786927237,
+        "title": "Fixing Kafka Cooperative Sticky Rebalance Storms & Zombie Fencing",
+        "slug": "kafka-cooperative-sticky-rebalance-zombie-fencing",
+        "language": "Java",
+        "code": "FencedInstanceIdException",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/kafka-cooperative-sticky-rebalance-zombie-fencing.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Backend",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786927238,
+        "title": "Mitigating RocksDB Write Stalls & L0 Compaction Cascades",
+        "slug": "rocksdb-write-stalls-l0-compaction-cascades",
+        "language": "Rust",
+        "code": "Status::Incomplete",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/rocksdb-write-stalls-l0-compaction-cascades.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786927239,
+        "title": "Fixing React Native JSI Native Retain Cycles & Thread Jitter",
+        "slug": "react-native-jsi-retain-cycles-thread-jitter",
+        "language": "TypeScript",
+        "code": "EXC_BAD_ACCESS",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/react-native-jsi-retain-cycles-thread-jitter.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786927240,
+        "title": "DeepSeek Harness: Modular AI Agent & Evaluation Engine",
+        "slug": "deepseek-ai-deepseek-harness-everything-is-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/deepseek-ai-deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1786871921,
         "title": "Resolving io_uring CQE Overflows & Registered Buffer Starvation",
         "slug": "linux-io-uring-cqe-overflows-registered-buffer-starvation",
