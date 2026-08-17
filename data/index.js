@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1786959450,
+        "title": "C++20 Coroutine Frame Lifetime Hazards & Promise Leaks",
+        "slug": "cpp20-coroutine-frame-lifetime-hazards-promise-leaks",
+        "language": "C++20",
+        "code": "CoroutineLifetime, MemoryLeak",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/cpp20-coroutine-frame-lifetime-hazards-promise-leaks.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786959451,
+        "title": "Mitigating Elixir GenServer Mailbox Congestion & Traps",
+        "slug": "mitigating-elixir-genservel-mailbox-congestion-traps",
+        "language": "Elixir, Erlang/OTP",
+        "code": "MailboxCongestion, Performance",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/mitigating-elixir-genservel-mailbox-congestion-traps.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786959452,
+        "title": "Resolving Elasticsearch Parent Circuit Breaker Trips & Shard Recovery Cascades",
+        "slug": "resolving-elasticsearch-parent-circuit-breaker-trips-shard-recovery-cascades",
+        "language": "Elasticsearch, Java",
+        "code": "CircuitBreaker, Stability",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/resolving-elasticsearch-parent-circuit-breaker-trips-shard-recovery-cascades.js",
+        "tags": [
+            "Elasticsearch",
+            "Java",
+            "JVM",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786959453,
+        "title": "DeepSeek Harness: The Modular LLM Evaluation Framework",
+        "slug": "deepseek-harness-everything-is-a-plugin-llm-evaluation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-llm-evaluation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI/ML"
+        ]
+    },
+    {
         "id": 1786948553,
         "title": "Rust Lifetimes & HOFs: Avoiding Borrow Checker Puzzles",
         "slug": "rust-borrow-checker-lifetimes-higher-order-functions",
