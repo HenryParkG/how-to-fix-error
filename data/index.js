@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1786948553,
+        "title": "Rust Lifetimes & HOFs: Avoiding Borrow Checker Puzzles",
+        "slug": "rust-borrow-checker-lifetimes-higher-order-functions",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/rust-borrow-checker-lifetimes-higher-order-functions.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786948554,
+        "title": "Airflow Sensor Deadlocks: Avoiding DAG Cycles & Starvation",
+        "slug": "airflow-sensor-deadlocks-dag-cycle-detection",
+        "language": "Python",
+        "code": "SensorDeadlock",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/airflow-sensor-deadlocks-dag-cycle-detection.js",
+        "tags": [
+            "Python",
+            "Infra",
+            "Airflow",
+            "DAGs",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786948555,
+        "title": "PostgreSQL TxID Wraparound: Prevent Database Freezing",
+        "slug": "postgresql-transaction-id-wraparound-database-freezing",
+        "language": "SQL",
+        "code": "TxIDWraparound",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/postgresql-transaction-id-wraparound-database-freezing.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1786948556,
+        "title": "DeepSeek Harness: The Plugin-Driven AI Model Evaluation Framework",
+        "slug": "deepseek-harness-everything-is-a-plugin-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-17",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Machine Learning",
+            "LLM"
+        ]
+    },
+    {
         "id": 1786938381,
         "title": "PyTorch DDP Sync Deadlocks & CUDA Memory Fragmentation",
         "slug": "pytorch-ddp-sync-deadlocks-cuda-memory-fragmentation",
