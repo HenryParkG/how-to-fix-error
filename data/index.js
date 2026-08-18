@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1787024249,
+        "title": "Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-18",
+        "path": "data/posts/2026-08/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787024250,
+        "title": "Spark OOMs: Shuffle Spills & Skewed Partitions",
+        "slug": "spark-ooms-shuffle-spills-skewed-partitions",
+        "language": "Java",
+        "code": "SparkOOM",
+        "date": "2026-08-18",
+        "path": "data/posts/2026-08/spark-ooms-shuffle-spills-skewed-partitions.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Big Data",
+            "Spark",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787024251,
+        "title": "K8s Probes & Init Container Race Conditions",
+        "slug": "k8s-probes-init-container-race-conditions-crashloopbackoff",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-08-18",
+        "path": "data/posts/2026-08/k8s-probes-init-container-race-conditions-crashloopbackoff.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787024252,
+        "title": "DeepSeek Harness: Everything is a Plugin.",
+        "slug": "deepseek-harness-everything-is-a-plugin-tech-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-18",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Backend",
+            "AI",
+            "LLM",
+            "Agentic AI"
+        ]
+    },
+    {
         "id": 1786959450,
         "title": "C++20 Coroutine Frame Lifetime Hazards & Promise Leaks",
         "slug": "cpp20-coroutine-frame-lifetime-hazards-promise-leaks",
