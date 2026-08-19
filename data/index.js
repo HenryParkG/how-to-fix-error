@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787110713,
+        "title": "Fixing io_uring Ring Overruns & SQPOLL Stalls",
+        "slug": "io-uring-ring-buffer-overruns-sqpoll-stalls",
+        "language": "Rust",
+        "code": "EBUSY / ENOBUFS",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/io-uring-ring-buffer-overruns-sqpoll-stalls.js",
+        "tags": [
+            "Linux",
+            "Rust",
+            "io_uring",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787110714,
+        "title": "Mitigating Kafka Rebalance Storms & Cascades",
+        "slug": "kafka-consumer-rebalance-storms-revocation-cascades",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/kafka-consumer-rebalance-storms-revocation-cascades.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787110715,
+        "title": "Resolving WebGPU Compute Buffer Alignment & Races",
+        "slug": "webgpu-compute-alignment-hazards-storage-race",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/webgpu-compute-alignment-hazards-storage-race.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "Graphics",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787110716,
+        "title": "DeepSeek Harness: Modular AI Evaluation Engine",
+        "slug": "deepseek-harness-everything-is-a-plugin-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1787100078,
         "title": "gRPC HTTP/2 Flow Control Window Starvation",
         "slug": "grpc-http2-flow-control-window-starvation-deadlock",
