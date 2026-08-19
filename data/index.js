@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1787100078,
+        "title": "gRPC HTTP/2 Flow Control Window Starvation",
+        "slug": "grpc-http2-flow-control-window-starvation-deadlock",
+        "language": "Go",
+        "code": "FlowControlDeadlock",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/grpc-http2-flow-control-window-starvation-deadlock.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787100079,
+        "title": "Haskell Thunk Space Leaks: WHNF Accumulator Hazards",
+        "slug": "haskell-thunk-space-leaks-whnf-accumulator-hazards",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/haskell-thunk-space-leaks-whnf-accumulator-hazards.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787100080,
+        "title": "Redis BGSAVE Fork Stalls & CoW Memory Spikes",
+        "slug": "redis-bgsave-fork-stalls-cow-memory-spikes",
+        "language": "Redis",
+        "code": "ForkStall",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/redis-bgsave-fork-stalls-cow-memory-spikes.js",
+        "tags": [
+            "Redis",
+            "Database",
+            "Caching",
+            "Infra",
+            "Linux",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787100081,
+        "title": "DeepSeek Harness: Everything is a Plugin.",
+        "slug": "deepseek-harness-everything-is-a-plugin-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLMs",
+            "Python"
+        ]
+    },
+    {
         "id": 1787024249,
         "title": "Go Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leaks-scheduler-starvation",
