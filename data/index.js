@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1787132180,
+        "title": "PostgreSQL XID Wraparound Stalls & Aggressive Autovacuum",
+        "slug": "postgresql-xid-wraparound-stalls-autovacuum-locks",
+        "language": "PostgreSQL",
+        "code": "XIDWraparoundStall",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/postgresql-xid-wraparound-stalls-autovacuum-locks.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787132181,
+        "title": "Rust Async Pin Invariants & Self-Referential Pointers",
+        "slug": "rust-async-pin-invariants-self-referential-pointers",
+        "language": "Rust",
+        "code": "PinInvariantViolation",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/rust-async-pin-invariants-self-referential-pointers.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Memory Safety",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787132182,
+        "title": "Qdrant HNSW Graph Thrashing & Memory-Mapped Evictions",
+        "slug": "qdrant-hnsw-thrashing-memory-mapped-cache-evictions",
+        "language": "Qdrant",
+        "code": "CacheThrashing",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/qdrant-hnsw-thrashing-memory-mapped-cache-evictions.js",
+        "tags": [
+            "Qdrant",
+            "Vector Database",
+            "Performance",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787132183,
+        "title": "DeepSeek Harness: Everything is a Plugin.",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI/ML",
+            "LLM",
+            "Evaluation"
+        ]
+    },
+    {
         "id": 1787121008,
         "title": "eBPF Verifier Rejections: Kernel Context Mismatches",
         "slug": "ebpf-verifier-rejections-kernel-context-mismatches",
