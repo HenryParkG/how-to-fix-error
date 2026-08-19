@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1787121008,
+        "title": "eBPF Verifier Rejections: Kernel Context Mismatches",
+        "slug": "ebpf-verifier-rejections-kernel-context-mismatches",
+        "language": "C, eBPF",
+        "code": "eBPF Verifier",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/ebpf-verifier-rejections-kernel-context-mismatches.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787121009,
+        "title": "PyTorch CUDA OOMs & Mixed Precision Training Instability",
+        "slug": "pytorch-cuda-ooms-mixed-precision-instability",
+        "language": "Python, PyTorch, CUDA",
+        "code": "CUDA OOM",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/pytorch-cuda-ooms-mixed-precision-instability.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787121010,
+        "title": "Istio Envoy Sidecar Resource Contention & mTLS Failures",
+        "slug": "istio-envoy-sidecar-resource-contention-mtls-failures",
+        "language": "Kubernetes, Istio, Envoy",
+        "code": "Envoy Resource",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/istio-envoy-sidecar-resource-contention-mtls-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Envoy",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787121011,
+        "title": "DeepSeek Harness: The Plugin-Centric AI Evaluation Framework",
+        "slug": "deepseek-harness-everything-is-a-plugin",
+        "language": "Python, AI, LLMs",
+        "code": "Trend",
+        "date": "2026-08-19",
+        "path": "data/posts/2026-08/deepseek-harness-everything-is-a-plugin.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1787110713,
         "title": "Fixing io_uring Ring Overruns & SQPOLL Stalls",
         "slug": "io-uring-ring-buffer-overruns-sqpoll-stalls",

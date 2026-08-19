@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "eBPF Verifier Rejections: Kernel Context Mismatches",
+    "slug": "ebpf-verifier-rejections-kernel-context-mismatches",
+    "language": "C, eBPF",
+    "code": "eBPF Verifier",
+    "tags": [
+        "eBPF",
+        "Kernel",
+        "Linux",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>eBPF (extended Berkeley Packet Filter) programs run directly within the Linux kernel, offering powerful capabilities for tracing, networking, and security. However, this power comes with stringent security checks enforced by the eBPF Verifier. The Verifier ensures program safety and prevents kernel crashes or unauthorized access. A common source of rejection is a 'kernel context mismatch', where an eBPF program attempts to access kernel memory or perform operations in a context where it's not allowed or safe.</p><p>Understanding kernel contexts is crucial. Different eBPF program types (e.g., kprobe, tracepoint, XDP) operate in distinct kernel contexts with varying privileges and available helpers. For instance, a program attached to a tracepoint might have access to certain kernel structures, but attempting to dereference an arbitrary kernel pointer or call a disallowed helper function within that context will trigger a verifier rejection. The verifier tracks pointer origins, types, and their associated memory regions, rejecting any operation that could lead to an out-of-bounds access or use-after-free scenario.</p>",
+    "root_cause": "eBPF programs attempting to dereference invalid kernel pointers, access memory in an unauthorized context, or perform operations without proper bounds checking, leading to potential kernel instability or security vulnerabilities. The verifier rejects these programs to maintain kernel integrity.",
+    "bad_code": "```c\nSEC(\"kprobe/sys_openat\")\nint bpf_prog(struct pt_regs *ctx)\n{\n    // BAD: Directly dereferencing a potentially uninitialized or user-controlled pointer\n    // without proper bounds checking or context validation. This could crash the kernel.\n    void *bad_ptr = (void *)ctx->di;\n    long value = *(long *)bad_ptr; // Verifier will likely reject this\n    \n    bpf_printk(\"Accessed value: %ld\\n\", value);\n    return 0;\n}\n```",
+    "solution_desc": "To resolve eBPF verifier rejections due to context mismatches, one must adhere strictly to eBPF safety rules. This involves using BPF helper functions for memory access (e.g., `bpf_probe_read_kernel`, `bpf_probe_read_user`), ensuring all pointers are validated and bounds-checked before dereferencing, and understanding the specific context and capabilities of the eBPF program type being used. Leverage eBPF maps for shared state instead of raw kernel memory access. For complex data structures, use `bpf_core_read` or `bpf_probe_read_kernel_mem` with explicit size arguments to ensure safe memory access. Always initialize variables and avoid assumptions about register contents.",
+    "good_code": "```c\n#include <linux/bpf.h>\n#include <bpf/bpf_helpers.h>\n#include <bpf/bpf_tracing.h>\n\nchar LICENSE[] SEC(\"license\") = \"GPL\";\n\nSEC(\"kprobe/sys_openat\")\nint bpf_prog(struct pt_regs *ctx)\n{\n    // GOOD: Using bpf_probe_read_user to safely read from a user-space pointer\n    // and performing null checks. The verifier can trace this helper's safety.\n    const char *filename_ptr = (const char *)PT_REGS_PARM2(ctx);\n    char filename[256];\n    int res;\n\n    if (filename_ptr) {\n        res = bpf_probe_read_user_str(&filename, sizeof(filename), filename_ptr);\n        if (res > 0) {\n            bpf_printk(\"Opened file: %s (len: %d)\\n\", filename, res);\n        }\n    }\n    \n    // Example of safely accessing kernel data if it were a valid kernel ptr (e.g. from a map)\n    // unsigned long pid_tgid = bpf_get_current_pid_tgid();\n    // bpf_printk(\"PID: %d\\n\", pid_tgid >> 32);\n\n    return 0;\n}\n```",
+    "verification": "Compile the eBPF program using `clang` and `llvm`. Attempt to load the program into the kernel using `bpf_tool` or a custom loader. Monitor `dmesg` (`sudo dmesg -c` before loading, then `sudo dmesg`) for verifier output. If the program loads successfully, trace its execution using `bpftool prog tracelog` or `perf` to ensure it performs as expected without error. Verify its functionality by triggering the associated kernel event (e.g., calling `openat` for the `sys_openat` kprobe).",
+    "date": "2026-08-19",
+    "id": 1787121008,
+    "type": "error"
+});
