@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1787218008,
+        "title": "Fixing Kafka Rebalance Storms & Heartbeat Deadlocks",
+        "slug": "kafka-consumer-rebalance-storm-heartbeat-deadlock",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/kafka-consumer-rebalance-storm-heartbeat-deadlock.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787218009,
+        "title": "Mitigating Cgroup v2 PSI & OOM Killer Cascades",
+        "slug": "linux-cgroupv2-psi-oom-killer-cascade",
+        "language": "Kubernetes",
+        "code": "OOMKilled / MemoryPressure",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/linux-cgroupv2-psi-oom-killer-cascade.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787218010,
+        "title": "Next.js Streaming SSR Hydration & Suspense Deadlocks",
+        "slug": "nextjs-streaming-ssr-hydration-suspense-deadlock",
+        "language": "Next.js",
+        "code": "HydrationMismatchError",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/nextjs-streaming-ssr-hydration-suspense-deadlock.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787218011,
+        "title": "Deep Dive: yjh051108/dsh-routing-suite Architecture",
+        "slug": "deep-dive-dsh-routing-suite-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/deep-dive-dsh-routing-suite-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1787207466,
         "title": "Go Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leaks-scheduler-starvation",
