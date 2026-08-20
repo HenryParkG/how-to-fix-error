@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1787207466,
+        "title": "Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787207467,
+        "title": "gRPC Connection Backoffs, Jitter, & HoL Blocking",
+        "slug": "grpc-connection-backoffs-jitter-head-of-line-blocking",
+        "language": "gRPC",
+        "code": "Network Latency",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/grpc-connection-backoffs-jitter-head-of-line-blocking.js",
+        "tags": [
+            "gRPC",
+            "Networking",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787207468,
+        "title": "Elasticsearch Shard Relocation Storms & Disk I/O Saturation",
+        "slug": "elasticsearch-shard-relocation-storms-disk-io-saturation",
+        "language": "Elasticsearch",
+        "code": "Disk Saturation",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/elasticsearch-shard-relocation-storms-disk-io-saturation.js",
+        "tags": [
+            "Elasticsearch",
+            "Indexing",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787207469,
+        "title": "dsh-routing-suite: Revolutionizing AI with Task-Aware Reasoning Routers",
+        "slug": "dsh-routing-suite-task-aware-ai-routing-explained",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/dsh-routing-suite-task-aware-ai-routing-explained.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Routing",
+            "Machine Learning",
+            "Backend"
+        ]
+    },
+    {
         "id": 1787197157,
         "title": "Kubernetes CrashLoopBackOff: Probe Misconfiguration",
         "slug": "kubernetes-crashloopbackoff-probe-misconfig",
