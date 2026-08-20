@@ -1,5 +1,63 @@
 var postsIndex = [
     {
+        "id": 1787197157,
+        "title": "Kubernetes CrashLoopBackOff: Probe Misconfiguration",
+        "slug": "kubernetes-crashloopbackoff-probe-misconfig",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/kubernetes-crashloopbackoff-probe-misconfig.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787197158,
+        "title": "C++20 Coroutines: Stack Unwinding & Lifetime Issues",
+        "slug": "cpp20-coroutines-stack-unwinding-lifetime",
+        "language": "C++",
+        "code": "CoroutineLifetime",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/cpp20-coroutines-stack-unwinding-lifetime.js",
+        "tags": [
+            "C++",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787197159,
+        "title": "Spark Shuffle Spills & Network Congestion",
+        "slug": "spark-shuffle-spills-network-congestion",
+        "language": "Spark",
+        "code": "ShufflePerformance",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/spark-shuffle-spills-network-congestion.js",
+        "tags": [
+            "Spark",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787197160,
+        "title": "Trending GitHub: dsh-routing-suite for AI Workflow Optimization",
+        "slug": "trending-github-dsh-routing-suite-ai-routing",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/trending-github-dsh-routing-suite-ai-routing.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI/ML"
+        ]
+    },
+    {
         "id": 1787186438,
         "title": "MongoDB WiredTiger Ticket Exhaustion & Dirty Page Stalls",
         "slug": "mongodb-wiredtiger-ticket-exhaustion-dirty-page-stalls",
