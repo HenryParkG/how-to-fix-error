@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1787186438,
+        "title": "MongoDB WiredTiger Ticket Exhaustion & Dirty Page Stalls",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion-dirty-page-stalls",
+        "language": "MongoDB",
+        "code": "WiredTigerStalls",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-ticket-exhaustion-dirty-page-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787186439,
+        "title": "Elixir GenServer Mailbox Saturation & Selective Receive Latency",
+        "slug": "elixir-genserver-mailbox-saturation-selective-receive-latency",
+        "language": "Elixir",
+        "code": "MailboxSaturation",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/elixir-genserver-mailbox-saturation-selective-receive-latency.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "GenServer",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787186440,
+        "title": "vLLM PagedAttention KV Cache Fragmentation & Preemptions",
+        "slug": "vllm-pagedattention-kv-cache-fragmentation-unscheduled-preemptions",
+        "language": "Python",
+        "code": "KVFragmentation",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/vllm-pagedattention-kv-cache-fragmentation-unscheduled-preemptions.js",
+        "tags": [
+            "vLLM",
+            "LLM",
+            "GPU",
+            "Performance",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787186441,
+        "title": "dsh-routing-suite: Smart AI Task Routing for LLMs",
+        "slug": "dsh-routing-suite-ai-task-routing-llms",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-20",
+        "path": "data/posts/2026-08/dsh-routing-suite-ai-task-routing-llms.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Routing",
+            "Python"
+        ]
+    },
+    {
         "id": 1787132180,
         "title": "PostgreSQL XID Wraparound Stalls & Aggressive Autovacuum",
         "slug": "postgresql-xid-wraparound-stalls-autovacuum-locks",

@@ -1,0 +1,23 @@
+window.onPostDataLoaded({
+    "title": "vLLM PagedAttention KV Cache Fragmentation & Preemptions",
+    "slug": "vllm-pagedattention-kv-cache-fragmentation-unscheduled-preemptions",
+    "language": "Python",
+    "code": "KVFragmentation",
+    "tags": [
+        "vLLM",
+        "LLM",
+        "GPU",
+        "Performance",
+        "Python",
+        "Error Fix"
+    ],
+    "analysis": "<p>vLLM's PagedAttention is a highly efficient algorithm for LLM inference, designed to manage the Key-Value (KV) cache memory on GPUs. It works by dividing the KV cache into fixed-size 'blocks', similar to virtual memory paging. This allows for non-contiguous allocation of KV cache blocks, reducing memory waste and enabling efficient memory sharing during multi-user inference.</p><p>However, even with PagedAttention, 'KV cache fragmentation' can occur. This happens when the available GPU memory for KV cache becomes fragmented into many small, unusable chunks, preventing the allocation of larger, contiguous blocks needed for new or growing sequences. While PagedAttention mitigates external fragmentation, internal fragmentation can still occur if block sizes are not optimal or if many short-lived requests constantly allocate and deallocate blocks. More critically, 'unscheduled block preemptions' arise when the GPU runs out of KV cache memory mid-generation for a new token. To free up space, vLLM might preempt (evict) blocks belonging to *other* active requests, leading to those requests being paused, re-scheduled, or even restarted from a checkpoint, causing significant latency spikes and unpredictable performance.</p>",
+    "root_cause": "Limited GPU memory, high concurrency with diverse sequence lengths, sub-optimal KV cache block size configuration, or sudden bursts of long-sequence requests exceeding available contiguous memory despite PagedAttention's best efforts.",
+    "bad_code": "from vllm import LLM, SamplingParams\n\nllm = LLM(model=\"lmsys/vicuna-7b-v1.5\", gpu_memory_utilization=0.9)\n\nsampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=2048)\n\n# In a high-concurrency scenario, many requests with varying max_tokens\n# could be sent, leading to fragmentation and preemptions.\nfor prompt in get_many_concurrent_prompts():\n    llm.generate(prompt, sampling_params)",
+    "solution_desc": "Optimize GPU memory utilization, especially the proportion dedicated to the KV cache. Tune the `block_size` parameter in vLLM to better match typical sequence lengths and reduce internal fragmentation. Implement admission control or dynamic batching to manage the number of concurrent requests, preventing the system from oversubscribing GPU memory. Prioritize requests based on length or importance to prevent critical requests from being preempted. For extreme cases, consider upgrading GPU memory or employing multiple GPUs (e.g., using vLLM's distributed inference). Monitor vLLM's internal metrics for KV cache usage, fragmentation, and preemption events.",
+    "good_code": "from vllm import LLM, SamplingParams\n\n# Configure block_size and gpu_memory_utilization carefully\n# block_size = 8 or 16 is common, adjust based on observed average token generation.\n# gpu_memory_utilization < 1.0 to leave room for other processes/overhead.\nllm = LLM(\n    model=\"lmsys/vicuna-7b-v1.5\",\n    gpu_memory_utilization=0.85, # Reduced to leave some headroom\n    block_size=16 # Adjusted based on workload analysis\n)\n\nsampling_params = SamplingParams(temperature=0.7, top_p=0.9, max_tokens=2048)\n\n# Implement a request queue with admission control\nimport asyncio\nasync def process_requests(prompts):\n    # This is conceptual; a real system would use a dedicated queue/worker pool\n    tasks = [llm.agenerate(prompt, sampling_params) for prompt in prompts]\n    results = await asyncio.gather(*tasks)\n    return results\n\n# Monitor vLLM logs for 'Block eviction' or 'Preemption' messages.",
+    "verification": "Monitor GPU memory usage (e.g., with `nvidia-smi`). Check vLLM's logs for messages indicating 'block eviction', 'preemption', or 'out of KV cache memory'. Observe the latency distribution of requests; high variance or sudden spikes can indicate preemption events. Experiment with different `block_size` values and `gpu_memory_utilization` to find the optimal balance for your specific workload and hardware.",
+    "date": "2026-08-20",
+    "id": 1787186440,
+    "type": "error"
+});
