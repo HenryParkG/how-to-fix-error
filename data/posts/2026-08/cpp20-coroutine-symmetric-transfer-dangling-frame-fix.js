@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing C++20 Coroutine Symmetric Transfer Dangling Frames",
+    "slug": "cpp20-coroutine-symmetric-transfer-dangling-frame-fix",
+    "language": "C++",
+    "code": "SEGV_DanglingPromise",
+    "tags": [
+        "C++20",
+        "Coroutines",
+        "MemorySafety",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>In C++20 coroutines, symmetric transfer allows yielding execution directly from one coroutine to another by returning a <code>std::coroutine_handle&lt;&gt;</code> from <code>await_suspend()</code>, avoiding unbounded stack growth. However, severe memory corruption occurs if the suspended coroutine's frame is destroyed concurrently or eagerly by the target continuation while the source frame's epilogue is still executing.</p><p>When a coroutine's <code>final_suspend()</code> performs a symmetric transfer to resume a continuation handle, the continuation may immediately destroy the completed coroutine via <code>handle.destroy()</code>. If the completed coroutine executes any teardown code or dereferences its promise after returning the handle, it causes an undefined behavior / use-after-free crash (SIGSEGV).</p>",
+    "root_cause": "The coroutine frame is destroyed by the resumed continuation before the transferring coroutine has fully yielded control, leading to access on a deallocated promise/frame memory block.",
+    "bad_code": "struct Task {\n    struct promise_type {\n        std::coroutine_handle<> continuation;\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        \n        struct FinalAwaiter {\n            bool await_ready() noexcept { return false; }\n            std::coroutine_handle<> await_suspend(std::coroutine_handle<promise_type> h) noexcept {\n                // BUG: Returning continuation directly while caller might destroy 'h' immediately\n                // If continuation invokes h.destroy(), local state access results in UAF\n                auto cont = h.promise().continuation;\n                return cont ? cont : std::noop_coroutine();\n            }\n            void await_resume() noexcept {}\n        };\n        \n        FinalAwaiter final_suspend() noexcept { return {}; }\n        void return_void() noexcept {}\n        void unhandled_exception() { std::terminate(); }\n    };\n    std::coroutine_handle<promise_type> handle;\n};",
+    "solution_desc": "Ensure that symmetric transfer handles are cleanly decoupled from promise destruction. Make sure `final_suspend` returns `std::suspend_always` in custom awaiters or use symmetric transfer strictly when lifetime ownership is guaranteed. The resumed continuation must not synchronously call `.destroy()` on the same stack frame if the caller relies on any residual state.",
+    "good_code": "#include <coroutine>\n#include <utility>\n\nstruct Task {\n    struct promise_type {\n        std::coroutine_handle<> continuation{nullptr};\n        \n        Task get_return_object() noexcept {\n            return Task{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        \n        struct FinalAwaiter {\n            bool await_ready() noexcept { return false; }\n            std::coroutine_handle<> await_suspend(std::coroutine_handle<promise_type> h) noexcept {\n                // Extract continuation handle safely prior to suspension completion\n                std::coroutine_handle<> cont = h.promise().continuation;\n                if (cont) {\n                    return cont;\n                }\n                return std::noop_coroutine();\n            }\n            void await_resume() noexcept {}\n        };\n        \n        FinalAwaiter final_suspend() noexcept { return {}; }\n        void return_void() noexcept {}\n        void unhandled_exception() { std::terminate(); }\n    };\n    \n    std::coroutine_handle<promise_type> handle;\n    ~Task() {\n        if (handle) handle.destroy();\n    }\n};",
+    "verification": "Compile with `-fsanitize=address,undefined -std=c++20`. Execute high-throughput nested coroutine dispatch loops to verify zero heap-use-after-free or invalid memory read errors during coroutine destruction.",
+    "date": "2026-08-21",
+    "id": 1787304769,
+    "type": "error"
+});

@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1787304769,
+        "title": "Fixing C++20 Coroutine Symmetric Transfer Dangling Frames",
+        "slug": "cpp20-coroutine-symmetric-transfer-dangling-frame-fix",
+        "language": "C++",
+        "code": "SEGV_DanglingPromise",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/cpp20-coroutine-symmetric-transfer-dangling-frame-fix.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "MemorySafety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787304770,
+        "title": "Resolving Spark Shuffle Skew & Driver OOM Cascades",
+        "slug": "spark-shuffle-skew-disk-spill-driver-oom-fix",
+        "language": "Apache Spark",
+        "code": "OutOfMemoryError: Java heap space",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/spark-shuffle-skew-disk-spill-driver-oom-fix.js",
+        "tags": [
+            "SQL",
+            "Java",
+            "Kubernetes",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787304771,
+        "title": "Fixing Haskell Space Leaks & Thunk Accumulation",
+        "slug": "haskell-lazy-evaluation-thunk-space-leak-fix",
+        "language": "Haskell",
+        "code": "OutOfMemory: ThunkAccumulation",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/haskell-lazy-evaluation-thunk-space-leak-fix.js",
+        "tags": [
+            "Rust",
+            "Python",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787304772,
+        "title": "Analysis: s1dashu/ip-as-logo-skill Mascot Generator",
+        "slug": "analyzing-ip-as-logo-skill-ai-mascot-logos",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/analyzing-ip-as-logo-skill-ai-mascot-logos.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ]
+    },
+    {
         "id": 1787293797,
         "title": "Rust Concurrency: Lifetime & Send/Sync Misuse",
         "slug": "rust-lifetimes-send-sync-concurrency-misuse",
