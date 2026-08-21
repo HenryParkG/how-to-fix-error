@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787273066,
+        "title": "Fix Redis BGSAVE Fork Latency & COW Memory Spikes",
+        "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
+        "language": "Redis",
+        "code": "OOM_KILLED_COW_SPIKE",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/redis-bgsave-fork-latency-cow-memory-exhaustion.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787273067,
+        "title": "Fix eBPF Verifier Limits & RingBuffer Drop Cascades",
+        "slug": "ebpf-verifier-complexity-ringbuffer-drops",
+        "language": "Rust",
+        "code": "E2BIG_VERIFIER_LIMIT",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/ebpf-verifier-complexity-ringbuffer-drops.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787273068,
+        "title": "Fix PyTorch CUDA Fragmentation & Dynamic Shape OOMs",
+        "slug": "pytorch-cuda-caching-allocator-fragmentation-oom",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/pytorch-cuda-caching-allocator-fragmentation-oom.js",
+        "tags": [
+            "Python",
+            "AWS",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787273069,
+        "title": "Exploring ip-as-logo-skill: Agentic IP Mascot Logos",
+        "slug": "trending-agent-skill-ip-as-logo-mascot",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/trending-agent-skill-ip-as-logo-mascot.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787218008,
         "title": "Fixing Kafka Rebalance Storms & Heartbeat Deadlocks",
         "slug": "kafka-consumer-rebalance-storm-heartbeat-deadlock",
