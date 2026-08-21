@@ -1,5 +1,77 @@
 var postsIndex = [
     {
+        "id": 1787293797,
+        "title": "Rust Concurrency: Lifetime & Send/Sync Misuse",
+        "slug": "rust-lifetimes-send-sync-concurrency-misuse",
+        "language": "Rust",
+        "code": "RustCompileError",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/rust-lifetimes-send-sync-concurrency-misuse.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Lifetimes",
+            "Send",
+            "Sync",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787293798,
+        "title": "Airflow Sensor Overload & Backfill Deadlocks",
+        "slug": "airflow-sensor-overload-backfill-deadlocks",
+        "language": "Apache Airflow",
+        "code": "AirflowDeadlock",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/airflow-sensor-overload-backfill-deadlocks.js",
+        "tags": [
+            "Airflow",
+            "ETL",
+            "DAGs",
+            "Sensors",
+            "Backfill",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787293799,
+        "title": "MongoDB WiredTiger Journal & Checkpoint Blocking",
+        "slug": "mongodb-wiredtiger-journal-checkpoint-blocking",
+        "language": "MongoDB",
+        "code": "MongoPerformance",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-journal-checkpoint-blocking.js",
+        "tags": [
+            "MongoDB",
+            "NoSQL",
+            "Database",
+            "Performance",
+            "WiredTiger",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787293800,
+        "title": "IP-as-Logo: Crafting Neo-Skeuomorphic Mascot Logos",
+        "slug": "ip-as-logo-skill-github-trend-analysis",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/ip-as-logo-skill-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Agent Skills",
+            "Design",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1787283798,
         "title": "PostgreSQL XID Wraparound & Emergency Freeze",
         "slug": "postgresql-xid-wraparound-emergency-autovacuum-freezes",
