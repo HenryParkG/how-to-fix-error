@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1787283798,
+        "title": "PostgreSQL XID Wraparound & Emergency Freeze",
+        "slug": "postgresql-xid-wraparound-emergency-autovacuum-freezes",
+        "language": "PostgreSQL",
+        "code": "PSTG_XID_WRAP",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/postgresql-xid-wraparound-emergency-autovacuum-freezes.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787283799,
+        "title": "Tokio Cancellation Hazards & Resource Drop Issues",
+        "slug": "rust-tokio-cancellation-hazards-resource-drop-inconsistencies",
+        "language": "Rust",
+        "code": "RUST_TOKIO_CANCEL",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/rust-tokio-cancellation-hazards-resource-drop-inconsistencies.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Tokio",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787283800,
+        "title": "Istio mTLS Handshake Draining & 503 Cascades",
+        "slug": "istio-envoy-mtls-handshake-draining-503-uc-connection-cascades",
+        "language": "Istio",
+        "code": "ISTIO_ENVOY_503",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/istio-envoy-mtls-handshake-draining-503-uc-connection-cascades.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787283801,
+        "title": "IP-as-Logo-Skill: Generative IP Mascots Trend",
+        "slug": "ip-as-logo-skill-generative-ip-mascots-trend",
+        "language": "Python",
+        "code": "Generative AI",
+        "date": "2026-08-21",
+        "path": "data/posts/2026-08/ip-as-logo-skill-generative-ip-mascots-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Generative AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1787273066,
         "title": "Fix Redis BGSAVE Fork Latency & COW Memory Spikes",
         "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
