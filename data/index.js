@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1787390365,
+        "title": "Fix eBPF Verifier Complexity & Stack Depth Exhaustion",
+        "slug": "fix-ebpf-verifier-complexity-stack-depth-exhaustion",
+        "language": "C / Rust",
+        "code": "BPF_VERIFIER_STACK_LIMIT",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/fix-ebpf-verifier-complexity-stack-depth-exhaustion.js",
+        "tags": [
+            "Rust",
+            "eBPF",
+            "Linux Kernel",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787390366,
+        "title": "Fix PyTorch CUDA Fragmentation & Graph Detach Leaks",
+        "slug": "pytorch-cuda-memory-fragmentation-tensor-graph-detach-leaks",
+        "language": "Python",
+        "code": "CUDA Out Of Memory",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/pytorch-cuda-memory-fragmentation-tensor-graph-detach-leaks.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787390367,
+        "title": "Resolve Redis BGSAVE Fork COW Thrashing & Latency",
+        "slug": "resolve-redis-bgsave-fork-cow-memory-thrashing",
+        "language": "Redis / Linux",
+        "code": "MISCONF / Fork Stall",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/resolve-redis-bgsave-fork-cow-memory-thrashing.js",
+        "tags": [
+            "Docker",
+            "Linux",
+            "Redis",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787390368,
+        "title": "Inside s1dashu/ip-as-logo-skill: Neo-Skeuomorphic IP Logos",
+        "slug": "s1dashu-ip-as-logo-skill-neo-skeuomorphic-mascot-logos",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/s1dashu-ip-as-logo-skill-neo-skeuomorphic-mascot-logos.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787379792,
         "title": "Fix Kafka Heartbeat Starvation & Rebalance Storms",
         "slug": "fix-kafka-heartbeat-starvation-rebalance-storms",
