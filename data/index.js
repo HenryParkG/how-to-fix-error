@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1787379792,
+        "title": "Fix Kafka Heartbeat Starvation & Rebalance Storms",
+        "slug": "fix-kafka-heartbeat-starvation-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/fix-kafka-heartbeat-starvation-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787379793,
+        "title": "Fix WebGPU Pipeline Stalls & UBO Alignment Faults",
+        "slug": "fix-webgpu-pipeline-stalls-ubo-alignment-faults",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/fix-webgpu-pipeline-stalls-ubo-alignment-faults.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787379794,
+        "title": "Fix Elasticsearch Fielddata Circuit Breaker Errors",
+        "slug": "fix-elasticsearch-fielddata-circuit-breaker-jvm",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/fix-elasticsearch-fielddata-circuit-breaker-jvm.js",
+        "tags": [
+            "Elasticsearch",
+            "Java",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787379795,
+        "title": "Analyze s1dashu/ip-as-logo-skill Agent Trend",
+        "slug": "analyze-s1dashu-ip-as-logo-skill-agent-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/analyze-s1dashu-ip-as-logo-skill-agent-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787369685,
         "title": "Fix Go Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leakage-scheduler-starvation-fix",
