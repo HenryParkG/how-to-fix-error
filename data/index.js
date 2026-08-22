@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1787369685,
+        "title": "Fix Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leakage-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/go-goroutine-leakage-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787369686,
+        "title": "Fix gRPC Flow Control Deadlocks & Backpressure",
+        "slug": "grpc-backpressure-flow-control-deadlocks",
+        "language": "Go",
+        "code": "ResourceExhausted",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/grpc-backpressure-flow-control-deadlocks.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787369687,
+        "title": "Fix OTP Supervision Crashes & Hot Upgrade Bugs",
+        "slug": "elixir-otp-supervision-failure-hot-upgrade-rollback",
+        "language": "Elixir",
+        "code": "MaxRestartReached",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/elixir-otp-supervision-failure-hot-upgrade-rollback.js",
+        "tags": [
+            "Docker",
+            "Backend",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787369688,
+        "title": "Deep Dive: s1dashu/ip-as-logo-skill Agent Tool",
+        "slug": "s1dashu-ip-as-logo-skill-agent-mascot-design",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-22",
+        "path": "data/posts/2026-08/s1dashu-ip-as-logo-skill-agent-mascot-design.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787304769,
         "title": "Fixing C++20 Coroutine Symmetric Transfer Dangling Frames",
         "slug": "cpp20-coroutine-symmetric-transfer-dangling-frame-fix",
