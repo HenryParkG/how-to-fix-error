@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1787456527,
+        "title": "Fix Rust Async Pinning & Self-Referential Structs",
+        "slug": "fix-rust-async-pinning-self-referential-struct-lifetimes",
+        "language": "Rust",
+        "code": "E0597 / E0505",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-rust-async-pinning-self-referential-struct-lifetimes.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Memory Safety",
+            "Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787456528,
+        "title": "Resolve WiredTiger Eviction Stalls & Lock Contention",
+        "slug": "resolve-mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "SQL",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/resolve-mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "SQL",
+            "MongoDB",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787456529,
+        "title": "Debug Istio Envoy HTTP/2 Resets & mTLS Handshake",
+        "slug": "debug-istio-envoy-http2-resets-mtls-handshake-deadlocks",
+        "language": "Go",
+        "code": "ENVOY_RESET_503",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/debug-istio-envoy-http2-resets-mtls-handshake-deadlocks.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Istio",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787456530,
+        "title": "Agent Mascot Generation with s1dashu/ip-as-logo-skill",
+        "slug": "analyze-trending-ip-as-logo-skill-agent-mascots",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/analyze-trending-ip-as-logo-skill-agent-mascots.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787445837,
         "title": "Fix Postgres XID Wraparound & Freeze Starvation",
         "slug": "fix-postgres-xid-wraparound-autovacuum-starvation",
