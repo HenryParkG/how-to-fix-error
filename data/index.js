@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1787445837,
+        "title": "Fix Postgres XID Wraparound & Freeze Starvation",
+        "slug": "fix-postgres-xid-wraparound-autovacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "XIDWraparoundError",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-postgres-xid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787445838,
+        "title": "Fix Kubernetes CoreDNS UDP & Conntrack Races",
+        "slug": "fix-k8s-coredns-udp-conntrack-race-conditions",
+        "language": "Go",
+        "code": "ConntrackRaceUDPTimeout",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-k8s-coredns-udp-conntrack-race-conditions.js",
+        "tags": [
+            "Kubernetes",
+            "CoreDNS",
+            "Networking",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787445839,
+        "title": "Fix vLLM PagedAttention KV Cache Preemption",
+        "slug": "fix-vllm-pagedattention-kv-cache-thrashing",
+        "language": "Python",
+        "code": "KVCacheExhaustionDeadlock",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-vllm-pagedattention-kv-cache-thrashing.js",
+        "tags": [
+            "vLLM",
+            "LLM",
+            "Inference",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787445840,
+        "title": "Inside ip-as-logo-skill: Neo-Skeuomorphic IP Logos",
+        "slug": "trend-ip-as-logo-skill-mascot-generation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/trend-ip-as-logo-skill-mascot-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1787390365,
         "title": "Fix eBPF Verifier Complexity & Stack Depth Exhaustion",
         "slug": "fix-ebpf-verifier-complexity-stack-depth-exhaustion",
