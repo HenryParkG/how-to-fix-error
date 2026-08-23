@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1787466312,
+        "title": "Fix C++20 Coroutine Lifetime & Frame Corruption",
+        "slug": "fix-cpp20-coroutine-lifetime-frame-corruption",
+        "language": "C++",
+        "code": "CoroutineError",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-cpp20-coroutine-lifetime-frame-corruption.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787466313,
+        "title": "Resolve PyTorch DDP NCCL Deadlocks & Communication Hangs",
+        "slug": "resolve-pytorch-ddp-nccl-deadlocks-communication-hangs",
+        "language": "Python",
+        "code": "DDPDeadlock",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/resolve-pytorch-ddp-nccl-deadlocks-communication-hangs.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Distributed Systems",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787466314,
+        "title": "Debug K8s Liveness/Readiness Probe Misconfigurations",
+        "slug": "debug-kubernetes-liveness-readiness-probe-misconfigurations",
+        "language": "Kubernetes",
+        "code": "ProbeFailure",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/debug-kubernetes-liveness-readiness-probe-misconfigurations.js",
+        "tags": [
+            "Kubernetes",
+            "DevOps",
+            "Reliability",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787466315,
+        "title": "Trending: IP as Logo Skill (s1dashu/ip-as-logo-skill)",
+        "slug": "trending-ip-as-logo-skill-s1dashu-ip-as-logo-skill",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/trending-ip-as-logo-skill-s1dashu-ip-as-logo-skill.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Design",
+            "Python"
+        ]
+    },
+    {
         "id": 1787456527,
         "title": "Fix Rust Async Pinning & Self-Referential Structs",
         "slug": "fix-rust-async-pinning-self-referential-struct-lifetimes",
