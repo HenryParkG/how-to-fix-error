@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1787476727,
+        "title": "Fix Elixir BEAM GenServer Mailbox Bottlenecks",
+        "slug": "fix-elixir-beam-genserver-mailbox-bottleneck-scheduler-collapse",
+        "language": "Elixir / BEAM",
+        "code": "ProcessMailboxOverflow",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/fix-elixir-beam-genserver-mailbox-bottleneck-scheduler-collapse.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Concurrency",
+            "Docker",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787476728,
+        "title": "Resolve Apache Spark Skewed Shuffle Spills & OOMs",
+        "slug": "resolve-spark-skewed-shuffle-spill-executor-oom",
+        "language": "Apache Spark / Scala",
+        "code": "ExecutorLostFailure / OOM",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/resolve-spark-skewed-shuffle-spill-executor-oom.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Spark",
+            "DistributedSystems",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787476729,
+        "title": "Debug gRPC Stream Flow-Control Deadlocks & Starvation",
+        "slug": "debug-grpc-stream-flow-control-deadlock-window-starvation",
+        "language": "Go / gRPC",
+        "code": "WINDOW_UPDATE_STARVATION",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/debug-grpc-stream-flow-control-deadlock-window-starvation.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Microservices",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787476730,
+        "title": "Deep Dive: s1dashu/ip-as-logo-skill Mascot AI Skill",
+        "slug": "trend-ip-as-logo-skill-ai-mascot-generation",
+        "language": "AI / TypeScript",
+        "code": "Tech Trend",
+        "date": "2026-08-23",
+        "path": "data/posts/2026-08/trend-ip-as-logo-skill-ai-mascot-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Node.js",
+            "Python"
+        ]
+    },
+    {
         "id": 1787466312,
         "title": "Fix C++20 Coroutine Lifetime & Frame Corruption",
         "slug": "fix-cpp20-coroutine-lifetime-frame-corruption",

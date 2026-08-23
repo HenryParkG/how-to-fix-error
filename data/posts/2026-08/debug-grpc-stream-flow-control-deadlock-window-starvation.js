@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Debug gRPC Stream Flow-Control Deadlocks & Starvation",
+    "slug": "debug-grpc-stream-flow-control-deadlock-window-starvation",
+    "language": "Go / gRPC",
+    "code": "WINDOW_UPDATE_STARVATION",
+    "tags": [
+        "Go",
+        "Kubernetes",
+        "Microservices",
+        "Docker",
+        "Error Fix"
+    ],
+    "analysis": "<p>HTTP/2-based transport mechanisms in gRPC rely on credit-based flow control at both the stream level and the connection level. By default, HTTP/2 sets an initial flow control window size of 64KB (65,535 bytes). As the sender delivers data frames, available credit decreases until the receiver consumes the bytes and emits <code>WINDOW_UPDATE</code> frames back upstream.</p><p>A critical deadlock occurs in bidirectional or multiplexed gRPC streams when the sender blocks synchronously on writing data to a stream whose window is exhausted, while the receiver on the same thread/goroutine is waiting for a response frame before reading further incoming data. Because neither side consumes incoming bytes from the transport buffer, the underlying connection-level window is depleted, completely freezing all multiplexed streams across that gRPC connection.</p>",
+    "root_cause": "Synchronous, coupled read-write loops in bidirectional gRPC streams that fail to acknowledge incoming frames asynchronously, exhausting HTTP/2 flow-control window quotas and deadlocking transport channels.",
+    "bad_code": "package main\n\nimport (\n\t\"io\"\n\t\"google.golang.org/grpc\"\n\tpb \"example.com/proto\"\n)\n\ntype StreamServer struct {\n\tpb.UnimplementedDataExchangeServer\n}\n\nfunc (s *StreamServer) SyncStream(stream pb.DataExchange_SyncStreamServer) error {\n\tfor {\n\t\t// Bug: Synchronous sequential read-then-write deadlocks if client is waiting\n\t\t// for server writes to consume its own read buffer.\n\t\treq, err := stream.Recv()\n\t\tif err == io.EOF {\n\t\t\treturn nil\n\t\t}\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t// If response payload exceeds HTTP/2 window and client isn't reading concurrently,\n\t\t// this call blocks indefinitely, starving the connection.\n\t\tif err := stream.Send(&pb.DataResponse{Payload: make([]byte, 1024*1024)}); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n}",
+    "solution_desc": "Decouple gRPC stream reads and writes into independent goroutines coordinated with buffered Go channels and context cancellation, while tuning transport buffer window sizes via `InitialWindowSize` and `InitialConnWindowSize`.",
+    "good_code": "package main\n\nimport (\n\t\"context\"\n\t\"io\"\n\t\"google.golang.org/grpc\"\n\t\"golang.org/x/sync/errgroup\"\n\tpb \"example.com/proto\"\n)\n\ntype StreamServer struct {\n\tpb.UnimplementedDataExchangeServer\n}\n\nfunc (s *StreamServer) SyncStream(stream pb.DataExchange_SyncStreamServer) error {\n\tctx, cancel := context.WithCancel(stream.Context())\n\tdefer cancel()\n\n\tg, ctx := errgroup.WithContext(ctx)\n\toutboundChan := make(chan *pb.DataResponse, 64)\n\n\t// Goroutine 1: Continuous independent reading to replenish HTTP/2 window\n\tg.Go(func() error {\n\t\tdefer close(outboundChan)\n\t\tfor {\n\t\t\treq, err := stream.Recv()\n\t\t\tif err == io.EOF {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\tselect {\n\t\t\tcase outboundChan <- &pb.DataResponse{Payload: req.Payload}:\n\t\t\tcase <-ctx.Done():\n\t\t\t\treturn ctx.Err()\n\t\t\t}\n\t\t}\n\t})\n\n\t// Goroutine 2: Dedicated writer consuming channel\n\tg.Go(func() error {\n\t\tfor resp := range outboundChan {\n\t\t\tif err := stream.Send(resp); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t})\n\n\treturn g.Wait()\n}\n\nfunc NewGRPCServer() *grpc.Server {\n\t// Configure larger flow control windows to prevent premature throttling\n\treturn grpc.NewServer(\n\t\tgrpc.InitialWindowSize(1024 * 1024),     // 1MB per stream\n\t\tgrpc.InitialConnWindowSize(4 * 1024 * 1024), // 4MB per connection\n\t)\n}",
+    "verification": "Set environment variable `GODEBUG=http2debug=2` to trace HTTP/2 frame flows, ensuring regular `WINDOW_UPDATE` frames are sent and received without blocking stream write routines.",
+    "date": "2026-08-23",
+    "id": 1787476729,
+    "type": "error"
+});
