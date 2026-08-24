@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1787543153,
+        "title": "eBPF Verifier Limits: Debugging Stack Spill Failures",
+        "slug": "ebpf-verifier-complexity-limits-stack-spill-failures",
+        "language": "C, Linux Kernel",
+        "code": "EBPF_VERIFIER_FAILURE",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/ebpf-verifier-complexity-limits-stack-spill-failures.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Observability",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787543154,
+        "title": "Redis BGSAVE: Mitigating Fork Stalls & CoW OOMs",
+        "slug": "redis-bgsave-fork-stalls-copy-on-write-oom-panics",
+        "language": "Redis, Linux",
+        "code": "REDIS_BGSAVE_FAILURE",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/redis-bgsave-fork-stalls-copy-on-write-oom-panics.js",
+        "tags": [
+            "Redis",
+            "Databases",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787543155,
+        "title": "WebGPU: Fixing Buffer Alignment & Staging Buffer Contention",
+        "slug": "webgpu-buffer-alignment-faults-staging-buffer-contention",
+        "language": "TypeScript",
+        "code": "WEBGPU_DATA_ERROR",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/webgpu-buffer-alignment-faults-staging-buffer-contention.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "Performance",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787543156,
+        "title": "WebAssembly Component Model: The Future of Modular WASM",
+        "slug": "webassembly-component-model-wasm-components-tech-trend",
+        "language": "WebAssembly",
+        "code": "Trend",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/webassembly-component-model-wasm-components-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "WebAssembly",
+            "Cloud Native",
+            "Rust",
+            "Backend"
+        ]
+    },
+    {
         "id": 1787532159,
         "title": "Fixing Go Goroutine Leaks & Starvation",
         "slug": "fixing-go-goroutine-leaks-scheduler-starvation",
