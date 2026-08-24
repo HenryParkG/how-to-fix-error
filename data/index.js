@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1787553539,
+        "title": "Linux: Page Cache Thrashing & OOM Killer",
+        "slug": "linux-page-cache-thrashing-oom-killer",
+        "language": "Linux Kernel",
+        "code": "OOM Killer",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/linux-page-cache-thrashing-oom-killer.js",
+        "tags": [
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787553540,
+        "title": "PyTorch: Resolving CUDA Memory Fragmentation & OOM",
+        "slug": "pytorch-cuda-memory-fragmentation-oom",
+        "language": "PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/pytorch-cuda-memory-fragmentation-oom.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787553541,
+        "title": "PostgreSQL: Preventing XID Wraparound",
+        "slug": "postgresql-xid-wraparound-vacuum-freezing",
+        "language": "PostgreSQL",
+        "code": "XID Wraparound",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/postgresql-xid-wraparound-vacuum-freezing.js",
+        "tags": [
+            "SQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787553542,
+        "title": "ip-as-logo-skill: Neo-Skeuomorphic IP Logos",
+        "slug": "ip-as-logo-skill-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/ip-as-logo-skill-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Design"
+        ]
+    },
+    {
         "id": 1787543153,
         "title": "eBPF Verifier Limits: Debugging Stack Spill Failures",
         "slug": "ebpf-verifier-complexity-limits-stack-spill-failures",
