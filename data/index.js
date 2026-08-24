@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1787532159,
+        "title": "Fixing Go Goroutine Leaks & Starvation",
+        "slug": "fixing-go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/fixing-go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Profiling",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787532160,
+        "title": "Resolving Kafka Rebalancing Storms & Livelock",
+        "slug": "resolving-kafka-rebalancing-storms-livelock",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/resolving-kafka-rebalancing-storms-livelock.js",
+        "tags": [
+            "Java",
+            "Kafka",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787532161,
+        "title": "Diagnosing Kubernetes Init Container CrashLoops",
+        "slug": "diagnosing-kubernetes-init-container-crashloopbackoff",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/diagnosing-kubernetes-init-container-crashloopbackoff.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "DevOps",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787532162,
+        "title": "Inside s1dashu/ip-as-logo-skill: Neo-Skeuomorphic Mascot AI",
+        "slug": "analyze-s1dashu-ip-as-logo-skill-mascot-generation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/analyze-s1dashu-ip-as-logo-skill-mascot-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1787476727,
         "title": "Fix Elixir BEAM GenServer Mailbox Bottlenecks",
         "slug": "fix-elixir-beam-genserver-mailbox-bottleneck-scheduler-collapse",
