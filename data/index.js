@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1787565462,
+        "title": "Rust: Debugging Async Borrow Checker Lifetimes",
+        "slug": "rust-async-borrow-checker-lifetimes",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/rust-async-borrow-checker-lifetimes.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Lifetimes",
+            "Borrow Checker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787565463,
+        "title": "PyTorch Quantization: Accuracy & Performance Pitfalls",
+        "slug": "pytorch-quantization-accuracy-performance-pitfalls",
+        "language": "PyTorch",
+        "code": "QuantizationDegradation",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/pytorch-quantization-accuracy-performance-pitfalls.js",
+        "tags": [
+            "PyTorch",
+            "AI/ML",
+            "Optimization",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787565464,
+        "title": "Istio: Diagnosing Sidecar Injection & Traffic Issues",
+        "slug": "istio-sidecar-injection-traffic-failures",
+        "language": "Istio",
+        "code": "SidecarInjectionFailure",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/istio-sidecar-injection-traffic-failures.js",
+        "tags": [
+            "Istio",
+            "Kubernetes",
+            "Microservices",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787565465,
+        "title": "s1dashu/ip-as-logo-skill: Neo-Skeuomorphic IP Logos",
+        "slug": "s1dashu-ip-as-logo-skill-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-24",
+        "path": "data/posts/2026-08/s1dashu-ip-as-logo-skill-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Design",
+            "Python"
+        ]
+    },
+    {
         "id": 1787553539,
         "title": "Linux: Page Cache Thrashing & OOM Killer",
         "slug": "linux-page-cache-thrashing-oom-killer",
