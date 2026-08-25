@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1787639441,
+        "title": "Go: Goroutine Leaks & Scheduler Thrashing Diagnosis",
+        "slug": "go-goroutine-leaks-scheduler-thrashing-diagnosis",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/go-goroutine-leaks-scheduler-thrashing-diagnosis.js",
+        "tags": [
+            "Concurrency",
+            "Performance",
+            "Debugging",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787639442,
+        "title": "Kafka: Rebalancing Storms & Consumer Lag Spikes",
+        "slug": "kafka-rebalancing-storms-consumer-lag-spikes",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/kafka-rebalancing-storms-consumer-lag-spikes.js",
+        "tags": [
+            "Messaging",
+            "Distributed Systems",
+            "Performance",
+            "Kafka",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787639443,
+        "title": "Elasticsearch: Shard Imbalance & Cluster Health",
+        "slug": "elasticsearch-shard-imbalance-cluster-health-degradation",
+        "language": "Elasticsearch",
+        "code": "ShardImbalance",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/elasticsearch-shard-imbalance-cluster-health-degradation.js",
+        "tags": [
+            "Search",
+            "Distributed Systems",
+            "Performance",
+            "Elasticsearch",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787639444,
+        "title": "threeui: Bringing React UI to Three.js 3D Scenes",
+        "slug": "threeui-react-ui-threejs-3d-scenes",
+        "language": "JavaScript, React, Three.js",
+        "code": "Trend",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/threeui-react-ui-threejs-3d-scenes.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "React",
+            "JavaScript"
+        ]
+    },
+    {
         "id": 1787629274,
         "title": "Spark OOMs: Resolving Shuffle Spill & Data Skew",
         "slug": "apache-spark-shuffle-spill-data-skew-ooms",
