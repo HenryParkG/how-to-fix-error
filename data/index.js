@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1787618666,
+        "title": "C++20 Coroutines: Dangling Frames & Promise Lifetime Traps",
+        "slug": "cpp20-coroutines-dangling-frames-promise-lifetime",
+        "language": "C++",
+        "code": "CoroutineError",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/cpp20-coroutines-dangling-frames-promise-lifetime.js",
+        "tags": [
+            "C++",
+            "C++20",
+            "Coroutines",
+            "Debugging",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787618667,
+        "title": "MongoDB WiredTiger: Resolving Cache Eviction Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "CacheStall",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Performance",
+            "Caching",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787618668,
+        "title": "Next.js App Router: RSC Hydration Mismatches & Suspense Deadlocks",
+        "slug": "nextjs-app-router-rsc-hydration-mismatches-suspense-deadlocks",
+        "language": "Next.js",
+        "code": "HydrationError",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/nextjs-app-router-rsc-hydration-mismatches-suspense-deadlocks.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "RSC",
+            "Suspense",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787618669,
+        "title": "ThreeUI: Interactive 3D Components for Modern Web UIs",
+        "slug": "threeui-interactive-3d-web-uis-mengto",
+        "language": "JavaScript / Three.js / React",
+        "code": "Trend",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/threeui-interactive-3d-web-uis-mengto.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Three.js",
+            "React",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1787565462,
         "title": "Rust: Debugging Async Borrow Checker Lifetimes",
         "slug": "rust-async-borrow-checker-lifetimes",
