@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1787629274,
+        "title": "Spark OOMs: Resolving Shuffle Spill & Data Skew",
+        "slug": "apache-spark-shuffle-spill-data-skew-ooms",
+        "language": "Java",
+        "code": "OOM",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/apache-spark-shuffle-spill-data-skew-ooms.js",
+        "tags": [
+            "Spark",
+            "BigData",
+            "DataEngineering",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787629275,
+        "title": "Elixir OTP: GenServer Mailbox Bottlenecks & Starvation",
+        "slug": "elixir-otp-genserver-mailbox-bottlenecks",
+        "language": "Elixir",
+        "code": "Bottleneck",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/elixir-otp-genserver-mailbox-bottlenecks.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787629276,
+        "title": "gRPC: Mitigating HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlocks-starvation",
+        "language": "Go",
+        "code": "Deadlock",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/grpc-http2-flow-control-deadlocks-starvation.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787629277,
+        "title": "ThreeUI: Bringing UI/UX to Three.js in a New Way",
+        "slug": "threeui-github-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/threeui-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Three.js",
+            "UI/UX",
+            "Frontend",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1787618666,
         "title": "C++20 Coroutines: Dangling Frames & Promise Lifetime Traps",
         "slug": "cpp20-coroutines-dangling-frames-promise-lifetime",
