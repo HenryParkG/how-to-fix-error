@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1787651185,
+        "title": "eBPF: Program Verification Failures & Kernel Panics",
+        "slug": "ebpf-verification-failures-kernel-panics",
+        "language": "C (eBPF)",
+        "code": "eBPF Verification Failure",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/ebpf-verification-failures-kernel-panics.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787651186,
+        "title": "Airflow: DAG Dependency Deadlocks & Task Idempotency Issues",
+        "slug": "airflow-dag-deadlocks-idempotency",
+        "language": "Apache Airflow (Python)",
+        "code": "Airflow Deadlock/Idempotency",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/airflow-dag-deadlocks-idempotency.js",
+        "tags": [
+            "Apache Airflow",
+            "Data Orchestration",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787651187,
+        "title": "Kubernetes: CrashLoopBackOff from Probe Misconfiguration",
+        "slug": "kubernetes-crashloopbackoff-probes-misconfiguration",
+        "language": "Kubernetes (YAML)",
+        "code": "CrashLoopBackOff",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/kubernetes-crashloopbackoff-probes-misconfiguration.js",
+        "tags": [
+            "Kubernetes",
+            "Container Orchestration",
+            "Deployment",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787651188,
+        "title": "ThreeUI: Bringing Interactive 3D to the Web with React & Three.js",
+        "slug": "threeui-trending-github-react-threejs",
+        "language": "Three.js, React, TypeScript",
+        "code": "Trend",
+        "date": "2026-08-25",
+        "path": "data/posts/2026-08/threeui-trending-github-react-threejs.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Three.js",
+            "React"
+        ]
+    },
+    {
         "id": 1787639441,
         "title": "Go: Goroutine Leaks & Scheduler Thrashing Diagnosis",
         "slug": "go-goroutine-leaks-scheduler-thrashing-diagnosis",
