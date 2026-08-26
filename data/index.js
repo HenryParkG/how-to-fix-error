@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787715925,
+        "title": "Fixing Rust Borrow Checker & Self-Referential Struct Traps",
+        "slug": "rust-borrow-checker-lifetime-errors-fix",
+        "language": "Rust",
+        "code": "E0506 / E0515",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/rust-borrow-checker-lifetime-errors-fix.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Systems Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787715926,
+        "title": "Fixing Istio Sidecar Injection & Envoy Intercept Glitches",
+        "slug": "istio-sidecar-injection-traffic-interception-fix",
+        "language": "Istio / Kubernetes",
+        "code": "EnvoyInjectionFailure",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/istio-sidecar-injection-traffic-interception-fix.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787715927,
+        "title": "Resolving Haskell Space Leaks from Lazy Accumulators",
+        "slug": "haskell-space-leak-lazy-evaluation-fix",
+        "language": "Haskell",
+        "code": "OutOfMemory / HeapOverflow",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/haskell-space-leak-lazy-evaluation-fix.js",
+        "tags": [
+            "Backend",
+            "Rust",
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787715928,
+        "title": "MengTo/threeui: Modern 3D Interactive UI Components",
+        "slug": "mengto-threeui-3d-interactive-catalog-analysis",
+        "language": "TypeScript / React / Three.js",
+        "code": "Trend",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/mengto-threeui-3d-interactive-catalog-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1787705038,
         "title": "PostgreSQL: XID Wraparound & Autovacuum Starvation",
         "slug": "postgresql-xid-wraparound-autovacuum-starvation",
