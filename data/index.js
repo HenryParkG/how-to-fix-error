@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1787725950,
+        "title": "C++20 Coroutines: Stackless vs. Stackful & Asymmetric Resume Issues",
+        "slug": "cpp20-coroutines-stackless-stackful-asymmetric-resume",
+        "language": "C++",
+        "code": "Coroutine Error",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/cpp20-coroutines-stackless-stackful-asymmetric-resume.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787725951,
+        "title": "Vector DBs: Index Corruption & ANN Accuracy Degradation",
+        "slug": "vector-db-index-corruption-ann-accuracy-degradation",
+        "language": "Vector DB",
+        "code": "Index Corruption",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/vector-db-index-corruption-ann-accuracy-degradation.js",
+        "tags": [
+            "Vector Database",
+            "ANN",
+            "Data Corruption",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787725952,
+        "title": "AWS Lambda: Cold Start Latency Spikes & Provisioned Concurrency Throttling",
+        "slug": "aws-lambda-cold-start-latency-spikes-provisioned-concurrency-throttling",
+        "language": "AWS Lambda",
+        "code": "Latency Spikes",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/aws-lambda-cold-start-latency-spikes-provisioned-concurrency-throttling.js",
+        "tags": [
+            "Serverless",
+            "Cold Start",
+            "Throttling",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787725953,
+        "title": "Analyze the trending GitHub repository 'MengTo/threeui' (Open-source ThreeUI Community catalog with live interactive components and complete Community source.)",
+        "slug": "analyze-mengto-threeui-github-trend",
+        "language": "JavaScript, Three.js",
+        "code": "Trend",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/analyze-mengto-threeui-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D UI",
+            "Three.js",
+            "React"
+        ]
+    },
+    {
         "id": 1787715925,
         "title": "Fixing Rust Borrow Checker & Self-Referential Struct Traps",
         "slug": "rust-borrow-checker-lifetime-errors-fix",
