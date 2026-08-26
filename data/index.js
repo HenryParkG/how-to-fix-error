@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1787705038,
+        "title": "PostgreSQL: XID Wraparound & Autovacuum Starvation",
+        "slug": "postgresql-xid-wraparound-autovacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "XIDWraparound",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/postgresql-xid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Autovacuum",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787705039,
+        "title": "PyTorch DDP: NCCL Hangs & CUDA Stream Races",
+        "slug": "pytorch-ddp-nccl-hangs-cuda-stream-race-conditions",
+        "language": "Python",
+        "code": "NCCLHangs",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/pytorch-ddp-nccl-hangs-cuda-stream-race-conditions.js",
+        "tags": [
+            "PyTorch",
+            "DDP",
+            "NCCL",
+            "GPU",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787705040,
+        "title": "WebGPU: Dynamic Offset Alignment & Stalls",
+        "slug": "webgpu-uniform-buffer-dynamic-offset-alignment-violations-pipeline-stalls",
+        "language": "WebGPU",
+        "code": "UBOAlignment",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/webgpu-uniform-buffer-dynamic-offset-alignment-violations-pipeline-stalls.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "WebGL",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787705041,
+        "title": "Trending GitHub: MengTo/threeui - 3D UI for the Web",
+        "slug": "trending-github-mengto-threeui",
+        "language": "JavaScript/Three.js",
+        "code": "Trend",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/trending-github-mengto-threeui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Three.js",
+            "3D Graphics",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1787651185,
         "title": "eBPF: Program Verification Failures & Kernel Panics",
         "slug": "ebpf-verification-failures-kernel-panics",
