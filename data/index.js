@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1787739830,
+        "title": "gRPC: Connection Exhaustion & LB Policy Mismatches",
+        "slug": "grpc-connection-exhaustion-load-balancing-mismatches",
+        "language": "Go",
+        "code": "ConnectionExhaustion",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/grpc-connection-exhaustion-load-balancing-mismatches.js",
+        "tags": [
+            "gRPC",
+            "Microservices",
+            "Load Balancing",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787739831,
+        "title": "Elixir/Erlang OTP: GenServer State Management Deadlocks",
+        "slug": "elixir-erlang-otp-genserver-state-management-deadlocks",
+        "language": "Elixir",
+        "code": "GenServerDeadlock",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/elixir-erlang-otp-genserver-state-management-deadlocks.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787739832,
+        "title": "Apache Spark: Shuffle Spills & Memory Exhaustion",
+        "slug": "apache-spark-shuffle-spills-memory-exhaustion",
+        "language": "Scala",
+        "code": "ShuffleSpill",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/apache-spark-shuffle-spills-memory-exhaustion.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Performance",
+            "Scala",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787739833,
+        "title": "MengTo/threeui: Revolutionizing 3D UI Development",
+        "slug": "mengto-threeui-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-26",
+        "path": "data/posts/2026-08/mengto-threeui-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D UI",
+            "Three.js",
+            "React",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1787725950,
         "title": "C++20 Coroutines: Stackless vs. Stackful & Asymmetric Resume Issues",
         "slug": "cpp20-coroutines-stackless-stackful-asymmetric-resume",
