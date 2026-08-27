@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787851309,
+        "title": "Fixing eBPF Verifier Instruction Limit & Load Failures",
+        "slug": "ebpf-verifier-complexity-limit-failures",
+        "language": "Rust",
+        "code": "BPF_PROG_LOAD E2BIG",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/ebpf-verifier-complexity-limit-failures.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787851310,
+        "title": "Resolving Akka Actor Mailbox Overflow & Deadlocks",
+        "slug": "akka-actor-mailbox-overflow-deadlocks",
+        "language": "Java",
+        "code": "MailboxOverflowException",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/akka-actor-mailbox-overflow-deadlocks.js",
+        "tags": [
+            "Akka",
+            "Concurrency",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787851311,
+        "title": "Fix Elasticsearch Shard Relocation Failure & Red State",
+        "slug": "elasticsearch-shard-relocation-red-cluster",
+        "language": "Kubernetes",
+        "code": "ClusterBlockException",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/elasticsearch-shard-relocation-red-cluster.js",
+        "tags": [
+            "Elasticsearch",
+            "Kubernetes",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787851312,
+        "title": "MengTo/threeui: Interactive 3D Web UI Components",
+        "slug": "mengto-threeui-interactive-3d-components",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/mengto-threeui-interactive-3d-components.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1787809821,
         "title": "Go Goroutine Leakage & Scheduler Starvation",
         "slug": "go-goroutine-leakage-scheduler-starvation",
