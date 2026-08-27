@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1787809821,
+        "title": "Go Goroutine Leakage & Scheduler Starvation",
+        "slug": "go-goroutine-leakage-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/go-goroutine-leakage-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787809822,
+        "title": "Kafka Rebalance Storms & Message Duplication",
+        "slug": "kafka-consumer-group-rebalancing-storms-message-duplication",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/kafka-consumer-group-rebalancing-storms-message-duplication.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Message Queues",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787809823,
+        "title": "Next.js SSR Hydration Mismatches & SEO Impact",
+        "slug": "nextjs-ssr-hydration-mismatches-seo-impact",
+        "language": "Next.js",
+        "code": "HydrationMismatch",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/nextjs-ssr-hydration-mismatches-seo-impact.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "SEO",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787809824,
+        "title": "MengTo/threeui: Revolutionizing 3D UI Development",
+        "slug": "mengto-threeui-3d-ui-development",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-08-27",
+        "path": "data/posts/2026-08/mengto-threeui-3d-ui-development.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "React",
+            "Three.js",
+            "Design",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1787739830,
         "title": "gRPC: Connection Exhaustion & LB Policy Mismatches",
         "slug": "grpc-connection-exhaustion-load-balancing-mismatches",
