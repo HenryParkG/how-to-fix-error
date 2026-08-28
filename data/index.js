@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787904064,
+        "title": "TCP Bloat & BBR Misinteraction",
+        "slug": "tcp-buffer-bloat-bbr-misinteraction",
+        "language": "Linux Kernel",
+        "code": "TCP Bloat",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/tcp-buffer-bloat-bbr-misinteraction.js",
+        "tags": [
+            "Networking",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787904065,
+        "title": "PyTorch Mixed Precision: Accuracy & Divergence",
+        "slug": "pytorch-fp16-bf16-quantization-accuracy-divergence",
+        "language": "PyTorch",
+        "code": "Quantization Error",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/pytorch-fp16-bf16-quantization-accuracy-divergence.js",
+        "tags": [
+            "Deep Learning",
+            "Python",
+            "GPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787904066,
+        "title": "PostgreSQL TXID Wraparound Inaccessibility",
+        "slug": "postgresql-transaction-id-wraparound-inaccessibility",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/postgresql-transaction-id-wraparound-inaccessibility.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787904067,
+        "title": "Grok Bot 0.18.0 (macOS) Reconstructed - Trend Analysis",
+        "slug": "grok-bot-0-18-reconstructed-macos-trend-analysis",
+        "language": "macOS / Python",
+        "code": "Trend",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/grok-bot-0-18-reconstructed-macos-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "macOS",
+            "Python"
+        ]
+    },
+    {
         "id": 1787851309,
         "title": "Fixing eBPF Verifier Instruction Limit & Load Failures",
         "slug": "ebpf-verifier-complexity-limit-failures",
