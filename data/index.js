@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1787949450,
+        "title": "Rust: Self-Referential Struct Invalidation & Pin Violations",
+        "slug": "rust-self-referential-struct-invalidation-pin-projection-violations-async",
+        "language": "Rust",
+        "code": "PinViolation",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/rust-self-referential-struct-invalidation-pin-projection-violations-async.js",
+        "tags": [
+            "Concurrency",
+            "Memory Safety",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787949451,
+        "title": "Redis CoW Memory Explosion & Kernel Latency During Persistence",
+        "slug": "redis-cow-memory-explosion-kernel-latency-bgsave-aof-rewrite",
+        "language": "Redis",
+        "code": "CoWExplosion",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/redis-cow-memory-explosion-kernel-latency-bgsave-aof-rewrite.js",
+        "tags": [
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787949452,
+        "title": "Istio: Silent Traffic Drops Envoy EDS Warmup Race Conditions",
+        "slug": "istio-silent-traffic-drops-envoy-eds-warmup-race-condition",
+        "language": "Istio",
+        "code": "EDSWarmup",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/istio-silent-traffic-drops-envoy-eds-warmup-race-condition.js",
+        "tags": [
+            "Kubernetes",
+            "Microservices",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787949453,
+        "title": "The Viral GitHub Repo: 'my-girlfriend-jingtian-latex'",
+        "slug": "trending-github-hejustinsun-my-girlfriend-jingtian-latex",
+        "language": "LaTeX",
+        "code": "Trend",
+        "date": "2026-08-28",
+        "path": "data/posts/2026-08/trending-github-hejustinsun-my-girlfriend-jingtian-latex.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Programming Humor"
+        ]
+    },
+    {
         "id": 1787904064,
         "title": "TCP Bloat & BBR Misinteraction",
         "slug": "tcp-buffer-bloat-bbr-misinteraction",
