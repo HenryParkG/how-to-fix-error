@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1787979216,
+        "title": "Fixing Linux Cgroup v2 OOM Thrashing & Limit Issues",
+        "slug": "linux-cgroup-oom-killer-thrashing-memory-limits",
+        "language": "Docker",
+        "code": "OOMKilled / MemoryPressure",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/linux-cgroup-oom-killer-thrashing-memory-limits.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787979217,
+        "title": "Fixing Haskell Thunk Memory Leaks & Space Blowup",
+        "slug": "haskell-lazy-evaluation-thunk-space-leaks",
+        "language": "Rust",
+        "code": "HeapBlowup / SpaceLeak",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/haskell-lazy-evaluation-thunk-space-leaks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787979218,
+        "title": "Resolving WiredTiger Cache Pressure & Journal Sync",
+        "slug": "mongodb-wiredtiger-cache-pressure-journal-sync",
+        "language": "SQL",
+        "code": "WT_CACHE_FULL / WriteStall",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-pressure-journal-sync.js",
+        "tags": [
+            "SQL",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1787979219,
+        "title": "Inside 'my-girlfriend-jingtian-latex' CV Template",
+        "slug": "github-trending-my-girlfriend-jingtian-latex-template",
+        "language": "CSS",
+        "code": "Trend",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/github-trending-my-girlfriend-jingtian-latex-template.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS"
+        ]
+    },
+    {
         "id": 1787949450,
         "title": "Rust: Self-Referential Struct Invalidation & Pin Violations",
         "slug": "rust-self-referential-struct-invalidation-pin-projection-violations-async",
