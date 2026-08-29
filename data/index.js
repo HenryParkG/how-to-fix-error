@@ -1,5 +1,75 @@
 var postsIndex = [
     {
+        "id": 1788005607,
+        "title": "C++20 Coroutines: Frame Lifecycle & Dangling Refs",
+        "slug": "cpp20-coroutines-frame-lifecycle-dangling-refs-halo-failure",
+        "language": "C++20 Coroutines",
+        "code": "Coroutine Error",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/cpp20-coroutines-frame-lifecycle-dangling-refs-halo-failure.js",
+        "tags": [
+            "C++",
+            "C++20",
+            "Coroutines",
+            "Backend",
+            "Memory",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788005608,
+        "title": "Apache Spark: Shuffle Spill, Skewed OOMs & Off-Heap",
+        "slug": "apache-spark-shuffle-spill-skewed-oom-offheap-memory-blowup",
+        "language": "Apache Spark",
+        "code": "Spark OOM",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/apache-spark-shuffle-spill-skewed-oom-offheap-memory-blowup.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Infra",
+            "Java",
+            "Memory",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788005609,
+        "title": "Elixir/BEAM: Mailbox Exhaustion & Selective Receive",
+        "slug": "elixir-beam-mailbox-exhaustion-selective-receive-performance",
+        "language": "Elixir / BEAM",
+        "code": "Mailbox Exhaustion",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/elixir-beam-mailbox-exhaustion-selective-receive-performance.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Backend",
+            "Concurrency",
+            "Performance",
+            "OTP",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788005610,
+        "title": "The HEJustinSun/my-girlfriend-jingtian-latex Phenomenon",
+        "slug": "hejustinsun-my-girlfriend-jingtian-latex-trend",
+        "language": "LaTeX",
+        "code": "Trend",
+        "date": "2026-08-29",
+        "path": "data/posts/2026-08/hejustinsun-my-girlfriend-jingtian-latex-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "LaTeX",
+            "Documentation",
+            "Humor",
+            "Community"
+        ]
+    },
+    {
         "id": 1787979216,
         "title": "Fixing Linux Cgroup v2 OOM Thrashing & Limit Issues",
         "slug": "linux-cgroup-oom-killer-thrashing-memory-limits",
