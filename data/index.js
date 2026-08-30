@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788098801,
+        "title": "Zig: Integer Overflow & Undefined Behavior Explained",
+        "slug": "zig-integer-overflow-undefined-behavior",
+        "language": "Zig",
+        "code": "IntegerOverflow",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/zig-integer-overflow-undefined-behavior.js",
+        "tags": [
+            "Zig",
+            "Runtime Error",
+            "Undefined Behavior",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788098802,
+        "title": "PyTorch CUDA OOM: Quantization & Mixed Precision",
+        "slug": "pytorch-cuda-oom-quantization-mixed-precision",
+        "language": "PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/pytorch-cuda-oom-quantization-mixed-precision.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "GPU",
+            "Performance",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788098803,
+        "title": "K8s CrashLoopBackOff: Probes & Startup Ordering",
+        "slug": "kubernetes-crashloopbackoff-probes-startup",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/kubernetes-crashloopbackoff-probes-startup.js",
+        "tags": [
+            "Kubernetes",
+            "Container Orchestration",
+            "Deployment",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788098804,
+        "title": "PRAXIST: Autonomous Research & Computer-Executable Science",
+        "slug": "praxist-autonomous-research-system-github",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/praxist-autonomous-research-system-github.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Agent Systems",
+            "Research Automation",
+            "Python"
+        ]
+    },
+    {
         "id": 1788079933,
         "title": "eBPF Verifier Rejection & Kernel Panic from Faulty Hooks",
         "slug": "ebpf-verifier-rejection-kernel-panic-faulty-hooks",

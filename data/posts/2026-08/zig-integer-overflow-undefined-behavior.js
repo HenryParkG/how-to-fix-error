@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Zig: Integer Overflow & Undefined Behavior Explained",
+    "slug": "zig-integer-overflow-undefined-behavior",
+    "language": "Zig",
+    "code": "IntegerOverflow",
+    "tags": [
+        "Zig",
+        "Runtime Error",
+        "Undefined Behavior",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>Unlike C or C++, Zig takes a strict stance on integer overflow and underflow, aiming for explicitness and safety. By default, in debug and release-safe build modes, integer operations that overflow or underflow result in *undefined behavior* (UB) \u2013 not silent wrapping. This design choice prevents subtle bugs that arise from unexpected integer wrap-around. However, developers migrating from languages where integers implicitly wrap might inadvertently introduce UB if they don't explicitly handle these scenarios in Zig.</p><p>Understanding Zig's build modes is crucial: `debug` and `release-safe` detect and panic on overflow/underflow, while `release-fast` and `release-small` modes allow UB for performance. This means code that appears to work in `release-fast` could silently corrupt data or crash unpredictably, whereas `debug` would immediately alert you to the problem. The core issue lies in expecting a default wrap-around behavior that Zig intentionally avoids to promote safer, more predictable code.</p>",
+    "root_cause": "The default behavior of arithmetic operations (`+`, `-`, `*`) on integers in Zig's `debug` and `release-safe` build modes is to trigger a panic (UB in `release-fast`/`release-small`) if the result exceeds the type's maximum or minimum value. This contrasts with languages like C, where signed integers often trigger UB on overflow, but unsigned integers are guaranteed to wrap around. Zig requires explicit intent for wrap-around behavior.",
+    "bad_code": "const std = @import(\"std\");\n\npub fn main() void {\n    var a: u8 = 250;\n    var b: u8 = 10;\n    // This will cause a panic in debug/release-safe builds\n    // and undefined behavior in release-fast/release-small.\n    var c = a + b;\n    std.debug.print(\"Result: {}\\n\", .{c});\n\n    var x: i8 = 120;\n    var y: i8 = 10;\n    // Similarly, this will panic/UB.\n    var z = x + y;\n    std.debug.print(\"Result: {}\\n\", .{z});\n}",
+    "solution_desc": "To fix this, Zig provides explicit mechanisms for handling integer overflow: checked arithmetic operations, wrapping arithmetic operations, and saturation. For scenarios where overflow *should* result in an error or panic, use the default operators or `@addWithOverflow`, `@mulWithOverflow`, etc., which return an error on overflow. For cases where wrap-around is the desired behavior (e.g., hash functions, ring buffers), use the wrapping operators like `wrap_add`, `wrap_mul`, or the postfix `.%` operator. Alternatively, consider using wider integer types if the range of values might exceed the current type's capacity.",
+    "good_code": "const std = @import(\"std\");\n\npub fn main() !void {\n    // Solution 1: Explicit Wrapping\n    var a: u8 = 250;\n    var b: u8 = 10;\n    var c = a +% b; // Explicitly wrap-around (u8)\n    std.debug.print(\"Wrapped Sum: {}\\n\", .{c}); // Expected: 4\n\n    // Solution 2: Checked Arithmetic (returns error on overflow)\n    var x: i8 = 120;\n    var y: i8 = 10;\n    var result = @addWithOverflow(i8, x, y); // Checks for overflow\n    if (result.overflow) {\n        std.debug.print(\"Error: i8 overflow detected!\\n\", .{});\n    } else {\n        std.debug.print(\"Checked Sum: {}\\n\", .{result.result});\n    }\n\n    // Solution 3: Using wider types\n    var m: u8 = 250;\n    var n: u8 = 10;\n    var o: u16 = m + n; // Promote to u16 to avoid overflow\n    std.debug.print(\"Wider Type Sum: {}\\n\", .{o}); // Expected: 260\n}",
+    "verification": "Compile and run the `good_code` snippet. Observe that `a +% b` correctly performs a wrap-around calculation, `@addWithOverflow` correctly identifies and reports the overflow for `i8`, and promoting to `u16` avoids the overflow entirely. Test different build modes (`zig build-exe -O ReleaseSafe` vs. `zig build-exe -O ReleaseFast`) with the `bad_code` to confirm the observed panic vs. potential UB.",
+    "date": "2026-08-30",
+    "id": 1788098801,
+    "type": "error"
+});
