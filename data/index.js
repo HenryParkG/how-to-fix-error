@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1788057178,
+        "title": "Fixing Go Goroutine Leaks and Scheduler Starvation",
+        "slug": "fix-go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/fix-go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788057179,
+        "title": "Resolve Kafka Rebalance Storms and Lag Spikes",
+        "slug": "fix-kafka-consumer-rebalance-storms-lag-spikes",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/fix-kafka-consumer-rebalance-storms-lag-spikes.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788057180,
+        "title": "Fixing Next.js Hydration Mismatches & Client JS Fails",
+        "slug": "fix-nextjs-hydration-mismatches-client-js-fails",
+        "language": "Next.js",
+        "code": "HydrationMismatch",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/fix-nextjs-hydration-mismatches-client-js-fails.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788057181,
+        "title": "Inside HEJustinSun/my-girlfriend-jingtian-latex",
+        "slug": "analyze-my-girlfriend-jingtian-latex-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/analyze-my-girlfriend-jingtian-latex-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1788005607,
         "title": "C++20 Coroutines: Frame Lifecycle & Dangling Refs",
         "slug": "cpp20-coroutines-frame-lifecycle-dangling-refs-halo-failure",
