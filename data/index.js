@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788079933,
+        "title": "eBPF Verifier Rejection & Kernel Panic from Faulty Hooks",
+        "slug": "ebpf-verifier-rejection-kernel-panic-faulty-hooks",
+        "language": "C, eBPF, Linux Kernel",
+        "code": "KernelPanic",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/ebpf-verifier-rejection-kernel-panic-faulty-hooks.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "C",
+            "System Programming",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788079934,
+        "title": "Airflow DAG Deadlock & Resource Starvation from `executor_pool`",
+        "slug": "airflow-dag-deadlock-resource-starvation-executor-pool",
+        "language": "Python, Airflow",
+        "code": "Deadlock",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/airflow-dag-deadlock-resource-starvation-executor-pool.js",
+        "tags": [
+            "Python",
+            "Airflow",
+            "Data Orchestration",
+            "Scheduler",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788079935,
+        "title": "Elasticsearch Shard Unassignment Storms & Cluster Instability",
+        "slug": "elasticsearch-shard-unassignment-cluster-instability",
+        "language": "Elasticsearch, Java, Cluster Management",
+        "code": "ClusterInstability",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/elasticsearch-shard-unassignment-cluster-instability.js",
+        "tags": [
+            "Elasticsearch",
+            "Java",
+            "Search",
+            "Infra",
+            "Monitoring",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788079936,
+        "title": "My Girlfriend Jingtian: A LaTeX Love Letter Trend",
+        "slug": "my-girlfriend-jingtian-latex-github-trend",
+        "language": "LaTeX, Overleaf",
+        "code": "Trend",
+        "date": "2026-08-30",
+        "path": "data/posts/2026-08/my-girlfriend-jingtian-latex-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "LaTeX",
+            "Social Coding",
+            "Backend"
+        ]
+    },
+    {
         "id": 1788057178,
         "title": "Fixing Go Goroutine Leaks and Scheduler Starvation",
         "slug": "fix-go-goroutine-leaks-scheduler-starvation",
