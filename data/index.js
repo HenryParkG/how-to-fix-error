@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1788143081,
+        "title": "PostgreSQL: XID Wraparound Panic & Autovacuum Freezing",
+        "slug": "postgresql-xid-wraparound-panic-autovacuum-freezing",
+        "language": "PostgreSQL",
+        "code": "XID Wraparound",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/postgresql-xid-wraparound-panic-autovacuum-freezing.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788143082,
+        "title": "Rust Async: Cancellation Hazards & Mutex Deadlocks",
+        "slug": "rust-async-cancellation-hazards-mutex-deadlocks",
+        "language": "Rust",
+        "code": "Async Cancellation",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/rust-async-cancellation-hazards-mutex-deadlocks.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788143083,
+        "title": "Istio gRPC: 503 UC GOAWAY Storms & Connection Term.",
+        "slug": "istio-grpc-503-uc-goaway-storms",
+        "language": "Istio",
+        "code": "503 UC GOAWAY",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/istio-grpc-503-uc-goaway-storms.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "ServiceMesh",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788143084,
+        "title": "PRAXIST: Autonomous Research System for Executable Science",
+        "slug": "praxist-autonomous-research-system-executable-science",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/praxist-autonomous-research-system-executable-science.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Research",
+            "Python"
+        ]
+    },
+    {
         "id": 1788098801,
         "title": "Zig: Integer Overflow & Undefined Behavior Explained",
         "slug": "zig-integer-overflow-undefined-behavior",
