@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1788167452,
+        "title": "MongoDB WiredTiger Cache Eviction & Ticket Starvation",
+        "slug": "mongodb-wiredtiger-cache-eviction-ticket-starvation",
+        "language": "MongoDB / Go",
+        "code": "WiredTigerTicketExhaustion",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/mongodb-wiredtiger-cache-eviction-ticket-starvation.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788167453,
+        "title": "Haskell: Fixing Lazy Evaluation Space Leaks & Thunks",
+        "slug": "haskell-space-leak-unbounded-thunk-accumulation",
+        "language": "Haskell",
+        "code": "SpaceLeakException",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/haskell-space-leak-unbounded-thunk-accumulation.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788167454,
+        "title": "WebGPU: BindGroup Aliasing Hazards & Pipeline Stalls",
+        "slug": "webgpu-bindgroup-aliasing-pipeline-stalls",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/webgpu-bindgroup-aliasing-pipeline-stalls.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788167455,
+        "title": "Inside PRAXIST: Autonomous Executable Research Engine",
+        "slug": "praxist-autonomous-research-system-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-08-31",
+        "path": "data/posts/2026-08/praxist-autonomous-research-system-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1788143081,
         "title": "PostgreSQL: XID Wraparound Panic & Autovacuum Freezing",
         "slug": "postgresql-xid-wraparound-panic-autovacuum-freezing",
