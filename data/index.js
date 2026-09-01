@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1788231141,
+        "title": "C++20 Coroutines: Dangling References & Frame Leaks",
+        "slug": "cpp20-coroutines-dangling-reference-frame-leaks-custom-awaitables",
+        "language": "C++",
+        "code": "Dangling Reference",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/cpp20-coroutines-dangling-reference-frame-leaks-custom-awaitables.js",
+        "tags": [
+            "C++",
+            "Backend",
+            "Coroutines",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788231142,
+        "title": "GenServer Mailbox Bloat: Backpressure Failure & Crashes",
+        "slug": "elixir-otp-genserver-mailbox-bloat-cascading-crashes",
+        "language": "Elixir, Erlang/OTP",
+        "code": "Mailbox Bloat",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/elixir-otp-genserver-mailbox-bloat-cascading-crashes.js",
+        "tags": [
+            "Elixir",
+            "Backend",
+            "Erlang",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788231143,
+        "title": "Redis CoW Latency & Memory Spikes on BGSAVE/AOF",
+        "slug": "redis-copy-on-write-memory-ballooning-kernel-fork-latency",
+        "language": "Redis",
+        "code": "CoW Latency Spikes",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/redis-copy-on-write-memory-ballooning-kernel-fork-latency.js",
+        "tags": [
+            "Redis",
+            "Infra",
+            "Linux",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788231144,
+        "title": "PRAXIST: Autonomous Research with Computer-Executable Code",
+        "slug": "praxist-autonomous-research-system-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/praxist-autonomous-research-system-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Research",
+            "Automation"
+        ]
+    },
+    {
         "id": 1788167452,
         "title": "MongoDB WiredTiger Cache Eviction & Ticket Starvation",
         "slug": "mongodb-wiredtiger-cache-eviction-ticket-starvation",
