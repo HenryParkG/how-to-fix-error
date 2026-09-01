@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1788250084,
+        "title": "Go: Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Concurrency",
+            "Performance",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788250085,
+        "title": "Kafka: Rebalance Storms & Consumer Group State Corruption",
+        "slug": "kafka-rebalance-storms-consumer-group-state-corruption",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/kafka-rebalance-storms-consumer-group-state-corruption.js",
+        "tags": [
+            "Streaming",
+            "Distributed Systems",
+            "Kafka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788250086,
+        "title": "Terraform: State Corruption & Concurrent Operation Deadlocks",
+        "slug": "terraform-state-corruption-concurrent-operation-deadlocks",
+        "language": "Terraform",
+        "code": "TFStateCorruption",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/terraform-state-corruption-concurrent-operation-deadlocks.js",
+        "tags": [
+            "IaC",
+            "Cloud",
+            "Terraform",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788250087,
+        "title": "PRAXIST: Autonomous Research System for Executable Science",
+        "slug": "praxist-autonomous-research-system-executable-science",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-01",
+        "path": "data/posts/2026-09/praxist-autonomous-research-system-executable-science.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Research",
+            "Automation",
+            "Python"
+        ]
+    },
+    {
         "id": 1788231141,
         "title": "C++20 Coroutines: Dangling References & Frame Leaks",
         "slug": "cpp20-coroutines-dangling-reference-frame-leaks-custom-awaitables",

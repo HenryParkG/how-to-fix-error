@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Terraform: State Corruption & Concurrent Operation Deadlocks",
+    "slug": "terraform-state-corruption-concurrent-operation-deadlocks",
+    "language": "Terraform",
+    "code": "TFStateCorruption",
+    "tags": [
+        "IaC",
+        "Cloud",
+        "Terraform",
+        "Infra",
+        "Error Fix"
+    ],
+    "analysis": "<p>Terraform's state file (`terraform.tfstate`) is the authoritative source of truth, mapping your Terraform configuration to the actual infrastructure resources. State corruption occurs when this file becomes inconsistent with the real-world infrastructure, or when its integrity is compromised. This can lead to resource drift (Terraform believing a resource exists or has a certain configuration when it doesn't or has a different one), unmanageable infrastructure, or even unintended resource destruction during subsequent `terraform apply` operations.</p><p>A primary cause of corruption is concurrent operations. If multiple users or automated pipelines attempt to modify the same state file simultaneously without proper locking, one operation might overwrite or partially update the state based on stale data from another, leading to a deadlock or a corrupted state. This is particularly problematic in collaborative environments or CI/CD pipelines where multiple deployments might run concurrently.</p>",
+    "root_cause": "Absence of a remote state backend with locking (e.g., using local state only), manual modification of the state file, concurrent `terraform apply` or `destroy` operations on the same state, network failures during state writes, or bugs within Terraform providers.",
+    "bad_code": "resource \"aws_s3_bucket\" \"my_bucket\" {\n  bucket = \"my-unique-app-bucket-local-state-example\"\n  acl    = \"private\"\n}\n\n// This configuration implicitly uses a local 'terraform.tfstate' file.\n// If two different machines or CI jobs run `terraform apply` simultaneously\n// against this configuration, they will both attempt to modify the local\n// state without coordination. This is a recipe for state corruption,\n// deadlocks, or unintended changes to the actual AWS S3 bucket.",
+    "solution_desc": "The fundamental architectural solution is to always use a remote backend for your Terraform state. Remote backends (like AWS S3 with DynamoDB locking, Azure Blob Storage, or Google Cloud Storage) provide atomicity and, critically, state locking mechanisms. This ensures that only one `terraform apply` or `terraform destroy` operation can modify the state at a given time, preventing concurrent modification deadlocks and corruption. Additionally, implement strict CI/CD pipeline controls to serialize deployments, even with remote state locking. Avoid manual modifications of the state file; if absolutely necessary, use `terraform state` commands with extreme caution and always back up your state beforehand.",
+    "good_code": "terraform {\n  backend \"s3\" {\n    bucket         = \"my-terraform-state-bucket\"\n    key            = \"environments/dev/app/terraform.tfstate\"\n    region         = \"us-east-1\"\n    encrypt        = true\n    dynamodb_table = \"terraform-lock-table\" # Requires this table to exist with PK 'LockID' (String)\n  }\n}\n\nresource \"aws_s3_bucket\" \"my_bucket\" {\n  bucket = \"my-unique-app-bucket-remote-state-example\"\n  acl    = \"private\"\n}\n\n// To setup the DynamoDB table once (if it doesn't exist):\n// aws dynamodb create-table \\\n//     --table-name terraform-lock-table \\\n//     --attribute-definitions AttributeName=LockID,AttributeType=S \\\n//     --key-schema AttributeName=LockID,KeyType=HASH \\\n//     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \\\n//     --region us-east-1",
+    "verification": "Attempt to run `terraform apply` concurrently from two different terminals or CI jobs pointing to the same remote state. One operation should gracefully fail, indicating a lock is in place, while the other proceeds. Examine the remote state file's modification history (e.g., S3 versioning) to ensure atomic updates. Regularly run `terraform plan` to detect any resource drift between the state and the actual infrastructure. Use `terraform state show [resource_address]` and `terraform console` to inspect the state's integrity. Incorporate automated checks in your CI/CD to validate the state and detect inconsistencies.",
+    "date": "2026-09-01",
+    "id": 1788250086,
+    "type": "error"
+});
