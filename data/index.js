@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1788314682,
+        "title": "Rust: Lifetime & Borrow Violations in Complex Data Structures",
+        "slug": "rust-lifetime-borrow-checker-complex-data-structures",
+        "language": "Rust",
+        "code": "Lifetime Error",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/rust-lifetime-borrow-checker-complex-data-structures.js",
+        "tags": [
+            "Rust",
+            "Memory Safety",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788314683,
+        "title": "Spark: Shuffle Spills & Executor OOM Due to Data Skew",
+        "slug": "spark-shuffle-spills-executor-oom-data-skew",
+        "language": "Spark",
+        "code": "OOM/Shuffle Spills",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/spark-shuffle-spills-executor-oom-data-skew.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788314684,
+        "title": "Elasticsearch: Shard Hotspots & Cluster Imbalance",
+        "slug": "elasticsearch-shard-hotspots-cluster-imbalance",
+        "language": "Elasticsearch",
+        "code": "Cluster Imbalance",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/elasticsearch-shard-hotspots-cluster-imbalance.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "Performance",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788314685,
+        "title": "PRAXIST: Autonomous Research System for Measurable, Computer-Executable Research",
+        "slug": "praxist-autonomous-research-system-trending-github",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/praxist-autonomous-research-system-trending-github.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Research Automation"
+        ]
+    },
+    {
         "id": 1788250084,
         "title": "Go: Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leaks-scheduler-starvation",
