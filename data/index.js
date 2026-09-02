@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788354914,
+        "title": "PostgreSQL: XID Wraparound Outages & Autovacuum Stalls",
+        "slug": "postgresql-xid-wraparound-outages-autovacuum-stalls",
+        "language": "PostgreSQL",
+        "code": "XID Wraparound",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-outages-autovacuum-stalls.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Transactions",
+            "Autovacuum",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788354915,
+        "title": "gRPC/HTTP/2: Flow-Control Deadlocks & HoL Blocking",
+        "slug": "grpc-http2-flow-control-deadlocks-hol-blocking",
+        "language": "gRPC",
+        "code": "Flow Control Deadlock",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-deadlocks-hol-blocking.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backpressure",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788354916,
+        "title": "Vector DBs: HNSW Degeneration & Recall Drops",
+        "slug": "vector-dbs-hnsw-degeneration-recall-drops",
+        "language": "Vector Databases",
+        "code": "HNSW Graph Degeneration",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/vector-dbs-hnsw-degeneration-recall-drops.js",
+        "tags": [
+            "Vector Databases",
+            "HNSW",
+            "ANN",
+            "AI/ML",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788354917,
+        "title": "PRAXIST: Autonomous Research System by sapientinc",
+        "slug": "praxist-autonomous-research-system-sapientinc",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/praxist-autonomous-research-system-sapientinc.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Research Automation",
+            "Python"
+        ]
+    },
+    {
         "id": 1788336173,
         "title": "eBPF Program Verification Failures & Kernel Panics",
         "slug": "ebpf-verification-failures-kernel-panics",
