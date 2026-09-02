@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788336173,
+        "title": "eBPF Program Verification Failures & Kernel Panics",
+        "slug": "ebpf-verification-failures-kernel-panics",
+        "language": "C, eBPF",
+        "code": "Kernel Panic",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/ebpf-verification-failures-kernel-panics.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788336174,
+        "title": "PyTorch: CUDA OOM & Kernel Launch Deadlocks",
+        "slug": "pytorch-cuda-oom-kernel-deadlock",
+        "language": "Python, PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/pytorch-cuda-oom-kernel-deadlock.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "GPU",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788336175,
+        "title": "K8s CrashLoopBackOff: Liveness/Readiness Probe Misconfig",
+        "slug": "k8s-crashloopbackoff-probes-misconfig",
+        "language": "Kubernetes, YAML",
+        "code": "CrashLoopBackOff",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/k8s-crashloopbackoff-probes-misconfig.js",
+        "tags": [
+            "Kubernetes",
+            "Containerization",
+            "DevOps",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788336176,
+        "title": "PRAXIST: Autonomous Research & Executable Science",
+        "slug": "praxist-autonomous-research-system",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-02",
+        "path": "data/posts/2026-09/praxist-autonomous-research-system.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Research Automation",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1788314682,
         "title": "Rust: Lifetime & Borrow Violations in Complex Data Structures",
         "slug": "rust-lifetime-borrow-checker-complex-data-structures",
