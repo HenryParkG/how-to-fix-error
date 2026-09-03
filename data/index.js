@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1788420954,
+        "title": "C++20 Coroutines: Frame Lifetime Invalidation",
+        "slug": "c++20-coroutines-frame-lifetime-invalidation-dangling-reference-escapes",
+        "language": "C++",
+        "code": "Dangling Reference",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/c++20-coroutines-frame-lifetime-invalidation-dangling-reference-escapes.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Coroutines",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788420955,
+        "title": "Elixir OTP: Mailbox Saturation & Call Timeouts",
+        "slug": "elixir-otp-mailbox-saturation-cascading-genservice-call-timeouts",
+        "language": "Elixir",
+        "code": "Mailbox Saturation",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/elixir-otp-mailbox-saturation-cascading-genservice-call-timeouts.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788420956,
+        "title": "Redis: CoW Memory & BGSAVE Stalls (THP)",
+        "slug": "redis-copy-on-write-memory-amplification-bg-save-stalls-transparent-huge-pages",
+        "language": "Redis",
+        "code": "Memory Amplification",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/redis-copy-on-write-memory-amplification-bg-save-stalls-transparent-huge-pages.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788420957,
+        "title": "ChatGPT thinks, Codex works: Bridging AI Models",
+        "slug": "chatgpt-thinks-codex-works-ai-brain-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/chatgpt-thinks-codex-works-ai-brain-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1788401413,
         "title": "Haskell: Fixing Lazy Stream Thunk Accumulation & Leaks",
         "slug": "haskell-lazy-stream-thunk-accumulation-space-leak",
