@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1788401413,
+        "title": "Haskell: Fixing Lazy Stream Thunk Accumulation & Leaks",
+        "slug": "haskell-lazy-stream-thunk-accumulation-space-leak",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/haskell-lazy-stream-thunk-accumulation-space-leak.js",
+        "tags": [
+            "Haskell",
+            "FunctionalProgramming",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788401414,
+        "title": "MongoDB: WiredTiger Eviction Stalls & Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "TicketExhaustion",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788401415,
+        "title": "Istio / Envoy: Graceful Draining Timeouts & Reset Storms",
+        "slug": "istio-envoy-graceful-draining-connection-reset-storms",
+        "language": "Istio / Envoy",
+        "code": "ECONNRESET",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/istio-envoy-graceful-draining-connection-reset-storms.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788401416,
+        "title": "Codex With ChatGPT: Dual-Model Synergy for Coding",
+        "slug": "codex-with-chatgpt-dual-model-workflow",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/codex-with-chatgpt-dual-model-workflow.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1788354914,
         "title": "PostgreSQL: XID Wraparound Outages & Autovacuum Stalls",
         "slug": "postgresql-xid-wraparound-outages-autovacuum-stalls",
