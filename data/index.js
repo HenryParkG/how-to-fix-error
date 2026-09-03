@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1788440876,
+        "title": "Next.js: Hydration Mismatches & Client-Side Re-renders",
+        "slug": "nextjs-hydration-mismatches-client-re-renders",
+        "language": "Next.js",
+        "code": "Hydration Mismatch",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/nextjs-hydration-mismatches-client-re-renders.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788440877,
+        "title": "Scala Akka: Actor Mailbox Backpressure & Unhandled Messages",
+        "slug": "akka-mailbox-backpressure-unhandled-messages",
+        "language": "Scala, Akka",
+        "code": "Backpressure/Unhandled",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/akka-mailbox-backpressure-unhandled-messages.js",
+        "tags": [
+            "Scala",
+            "Akka",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788440878,
+        "title": "Terraform: State Lock Conflicts & Drift Reconciliation",
+        "slug": "terraform-state-lock-conflicts-drift-reconciliation",
+        "language": "Terraform",
+        "code": "State Lock/Drift",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/terraform-state-lock-conflicts-drift-reconciliation.js",
+        "tags": [
+            "Terraform",
+            "Infra",
+            "AWS",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788440879,
+        "title": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+        "slug": "codex-with-chatgpt-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-03",
+        "path": "data/posts/2026-09/codex-with-chatgpt-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "LLM",
+            "Code Generation"
+        ]
+    },
+    {
         "id": 1788420954,
         "title": "C++20 Coroutines: Frame Lifetime Invalidation",
         "slug": "c++20-coroutines-frame-lifetime-invalidation-dangling-reference-escapes",
