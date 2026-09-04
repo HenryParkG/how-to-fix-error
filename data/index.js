@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1788507934,
+        "title": "eBPF Verifier State Explosion & Map Invalidation",
+        "slug": "ebpf-verifier-state-explosion-map-invalidation",
+        "language": "C, eBPF",
+        "code": "BPFVerifFail",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/ebpf-verifier-state-explosion-map-invalidation.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788507935,
+        "title": "PyTorch DDP Desync Deadlocks & CUDA Races",
+        "slug": "pytorch-ddp-desync-deadlocks-cuda-races",
+        "language": "Python, PyTorch",
+        "code": "DDPDeadlock",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/pytorch-ddp-desync-deadlocks-cuda-races.js",
+        "tags": [
+            "PyTorch",
+            "Distributed",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788507936,
+        "title": "WebGPU Device Loss & Buffer Mapping Races",
+        "slug": "webgpu-device-loss-buffer-mapping-races",
+        "language": "JavaScript, WebGPU",
+        "code": "WebGPUFailure",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/webgpu-device-loss-buffer-mapping-races.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788507937,
+        "title": "Anthropics Commerce Agents: A Blueprint for AI in Retail",
+        "slug": "anthropics-commerce-agents-ai-retail",
+        "language": "Python, AI, LLMs",
+        "code": "Trend",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/anthropics-commerce-agents-ai-retail.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLM",
+            "Python"
+        ]
+    },
+    {
         "id": 1788487408,
         "title": "Rust: Borrow Checker Lifetime Mismatches & Unsoundness",
         "slug": "rust-borrow-checker-lifetime-mismatches-unsoundness",
