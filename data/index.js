@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1788487408,
+        "title": "Rust: Borrow Checker Lifetime Mismatches & Unsoundness",
+        "slug": "rust-borrow-checker-lifetime-mismatches-unsoundness",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/rust-borrow-checker-lifetime-mismatches-unsoundness.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "MemorySafety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788487409,
+        "title": "Kafka: Consumer Group Rebalancing Storms & Duplication",
+        "slug": "kafka-consumer-group-rebalancing-storms-message-duplication",
+        "language": "Kafka (Java Client)",
+        "code": "RebalanceStorm",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/kafka-consumer-group-rebalancing-storms-message-duplication.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Infra",
+            "Messaging",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788487410,
+        "title": "Elasticsearch: Split-Brain & Cluster Block Due to Partitions",
+        "slug": "elasticsearch-split-brain-cluster-block-network-partitions",
+        "language": "Elasticsearch",
+        "code": "SplitBrain",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/elasticsearch-split-brain-cluster-block-network-partitions.js",
+        "tags": [
+            "Elasticsearch",
+            "Infra",
+            "Clustering",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788487411,
+        "title": "Anthropic's Commerce Agents: Blueprint for AI in Retail",
+        "slug": "anthropic-commerce-agents-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/anthropic-commerce-agents-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "LLM",
+            "AgenticWorkflows",
+            "Retail"
+        ]
+    },
+    {
         "id": 1788440876,
         "title": "Next.js: Hydration Mismatches & Client-Side Re-renders",
         "slug": "nextjs-hydration-mismatches-client-re-renders",
