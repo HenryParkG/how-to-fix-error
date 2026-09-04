@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788526942,
+        "title": "Go: Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Concurrency",
+            "Performance",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788526943,
+        "title": "Spark: Out-of-Memory Errors & Shuffle Spills",
+        "slug": "spark-out-of-memory-shuffle-spills",
+        "language": "Spark",
+        "code": "OOM / Shuffle Spill",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/spark-out-of-memory-shuffle-spills.js",
+        "tags": [
+            "Big Data",
+            "Performance",
+            "Spark",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788526944,
+        "title": "PostgreSQL: TXID Wraparound & Autovacuum Thrashing",
+        "slug": "postgresql-txid-wraparound-autovacuum-thrashing",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/postgresql-txid-wraparound-autovacuum-thrashing.js",
+        "tags": [
+            "Database",
+            "Maintenance",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788526945,
+        "title": "Claude's Commerce Agents: Building AI for Shopping",
+        "slug": "anthropics-commerce-agents-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-04",
+        "path": "data/posts/2026-09/anthropics-commerce-agents-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLM",
+            "Agent",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1788507934,
         "title": "eBPF Verifier State Explosion & Map Invalidation",
         "slug": "ebpf-verifier-state-explosion-map-invalidation",
