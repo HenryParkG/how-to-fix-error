@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1788592441,
+        "title": "Fix GenServer Call Timeouts & Mailbox Cascades",
+        "slug": "elixir-beam-genserver-timeout-mailbox-saturation",
+        "language": "Elixir",
+        "code": "GenServer.call Timeout",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/elixir-beam-genserver-timeout-mailbox-saturation.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788592442,
+        "title": "Fix gRPC HTTP/2 Flow-Control HOL & GOAWAY Storms",
+        "slug": "grpc-http2-flow-control-hol-blocking-goaway-storm",
+        "language": "Go",
+        "code": "RESOURCE_EXHAUSTED",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-hol-blocking-goaway-storm.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "Kubernetes",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788592443,
+        "title": "Prevent Redis BGSAVE CoW Memory Spikes & OOM Kills",
+        "slug": "redis-bgsave-copy-on-write-oom-killer-evictions",
+        "language": "Redis",
+        "code": "OOM / SIGKILL",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/redis-bgsave-copy-on-write-oom-killer-evictions.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Linux",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788592444,
+        "title": "m3e-canvas: Material 3 Sketching for Vibe Coding",
+        "slug": "m3e-canvas-material-3-vibe-coding",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/m3e-canvas-material-3-vibe-coding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1788573871,
         "title": "RCU Deadlocks & Memory Reclamation Failures",
         "slug": "rcu-deadlocks-memory-reclamation-failures",
