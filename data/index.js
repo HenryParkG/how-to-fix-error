@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1788573871,
+        "title": "RCU Deadlocks & Memory Reclamation Failures",
+        "slug": "rcu-deadlocks-memory-reclamation-failures",
+        "language": "C",
+        "code": "RCU_DEADLOCK",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/rcu-deadlocks-memory-reclamation-failures.js",
+        "tags": [
+            "Linux Kernel",
+            "Concurrency",
+            "RCU",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788573872,
+        "title": "ANN Index Invalidation & Query Consistency Challenges",
+        "slug": "ann-index-invalidation-query-consistency",
+        "language": "Go",
+        "code": "ANN_INCONSISTENCY",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/ann-index-invalidation-query-consistency.js",
+        "tags": [
+            "Vector DB",
+            "ANN",
+            "Consistency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788573873,
+        "title": "WiredTiger Journal Delays & Election Storms",
+        "slug": "mongodb-wiredtiger-journal-delays-election-storms",
+        "language": "Go",
+        "code": "MDB_ELECTION_STORM",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-journal-delays-election-storms.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Replica Set",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788573874,
+        "title": "M3e-canvas: Sketching Expressive UIs & Vibe-Coding",
+        "slug": "m3e-canvas-expressive-ui-vibe-coding",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/m3e-canvas-expressive-ui-vibe-coding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "UI/UX",
+            "Design Tools"
+        ]
+    },
+    {
         "id": 1788526942,
         "title": "Go: Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leaks-scheduler-starvation",
