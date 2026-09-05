@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788610511,
+        "title": "io_uring: CQE Drops, Buffer Exhaustion, Page-Pin Limits",
+        "slug": "linux-io-uring-cqe-drops-buffer-exhaustion-page-pinning-limits",
+        "language": "C/C++",
+        "code": "io_uring_error",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/linux-io-uring-cqe-drops-buffer-exhaustion-page-pinning-limits.js",
+        "tags": [
+            "Linux",
+            "io_uring",
+            "Kernel",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788610512,
+        "title": "K8s: Conntrack Exhaustion, SYN Drops, CoreDNS Latency",
+        "slug": "kubernetes-conntrack-exhaustion-syn-drops-coredns-latency",
+        "language": "Kubernetes",
+        "code": "ConntrackExhaustion",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/kubernetes-conntrack-exhaustion-syn-drops-coredns-latency.js",
+        "tags": [
+            "Kubernetes",
+            "Networking",
+            "CoreDNS",
+            "Troubleshooting",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788610513,
+        "title": "Haskell: Lazy Evaluation Space Leaks & Thunk Exhaustion",
+        "slug": "haskell-lazy-evaluation-space-leaks-thunk-exhaustion",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/haskell-lazy-evaluation-space-leaks-thunk-exhaustion.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788610514,
+        "title": "M3E-Canvas: Vibe-Coding with Material 3 Expressive",
+        "slug": "m3e-canvas-material-3-expressive-vibe-coding-prompts",
+        "language": "React/TypeScript",
+        "code": "Trend",
+        "date": "2026-09-05",
+        "path": "data/posts/2026-09/m3e-canvas-material-3-expressive-vibe-coding-prompts.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Design Tools",
+            "UI/UX",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1788592441,
         "title": "Fix GenServer Call Timeouts & Mailbox Cascades",
         "slug": "elixir-beam-genserver-timeout-mailbox-saturation",
