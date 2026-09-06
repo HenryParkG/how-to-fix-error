@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788660133,
+        "title": "C++20 Coroutines: Broken HALO & Dangling Promises",
+        "slug": "cpp20-coroutines-halo-dangling-promises",
+        "language": "C++",
+        "code": "Coroutines",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/cpp20-coroutines-halo-dangling-promises.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788660134,
+        "title": "Kafka: Cooperative Sticky Rebalance Deadlocks & Heartbeat Starvation",
+        "slug": "kafka-cooperative-sticky-rebalance-deadlocks-heartbeat-starvation",
+        "language": "Kafka",
+        "code": "Rebalance",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/kafka-cooperative-sticky-rebalance-deadlocks-heartbeat-starvation.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Concurrency",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788660135,
+        "title": "React Native: JSI HostObject Lifecycle Leaks & Thread-Hopping Deadlocks",
+        "slug": "react-native-jsi-hostobject-lifecycle-leaks-thread-hopping-deadlocks",
+        "language": "React Native",
+        "code": "JSI",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/react-native-jsi-hostobject-lifecycle-leaks-thread-hopping-deadlocks.js",
+        "tags": [
+            "React Native",
+            "Frontend",
+            "Mobile Development",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788660136,
+        "title": "lnkiai/m3e-canvas: Vibe-Coding with Material 3 Expressive Screens",
+        "slug": "lnkiai-m3e-canvas-vibe-coding-material3-expressive-screens",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-vibe-coding-material3-expressive-screens.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "UI/UX",
+            "Material Design",
+            "React"
+        ]
+    },
+    {
         "id": 1788610511,
         "title": "io_uring: CQE Drops, Buffer Exhaustion, Page-Pin Limits",
         "slug": "linux-io-uring-cqe-drops-buffer-exhaustion-page-pinning-limits",
