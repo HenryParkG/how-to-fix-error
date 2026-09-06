@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1788697741,
+        "title": "eBPF: Verifier State Space Explosion & Ring Buffer Drops",
+        "slug": "ebpf-verifier-state-explosion-ring-buffer-drops",
+        "language": "Linux Kernel, C (eBPF)",
+        "code": "eBPF_VERIFIER_EXPLOSION",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/ebpf-verifier-state-explosion-ring-buffer-drops.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788697742,
+        "title": "PostgreSQL: MultiXact ID Wraparound & Autovacuum Saturation",
+        "slug": "postgresql-multixact-id-wraparound-autovacuum-saturation",
+        "language": "SQL, PostgreSQL",
+        "code": "MultiXactWraparound",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/postgresql-multixact-id-wraparound-autovacuum-saturation.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788697743,
+        "title": "WebGPU: Device Loss, Aliasing & UBO Alignment Faults",
+        "slug": "webgpu-device-loss-aliasing-uniform-buffer-alignment",
+        "language": "WebGPU, JavaScript",
+        "code": "WebGPU_Faults",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/webgpu-device-loss-aliasing-uniform-buffer-alignment.js",
+        "tags": [
+            "WebGPU",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788697744,
+        "title": "lnkiai/m3e-canvas: Vibe-Coding Expressive M3 Screens",
+        "slug": "lnkiai-m3e-canvas-github-trend",
+        "language": "JavaScript, React, Canvas",
+        "code": "Trend",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "React"
+        ]
+    },
+    {
         "id": 1788679607,
         "title": "Rust: Lifetime Mismatches & Ownership Panics",
         "slug": "rust-lifetime-mismatches-ownership-panics",
