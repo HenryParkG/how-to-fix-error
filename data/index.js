@@ -1,5 +1,76 @@
 var postsIndex = [
     {
+        "id": 1788679607,
+        "title": "Rust: Lifetime Mismatches & Ownership Panics",
+        "slug": "rust-lifetime-mismatches-ownership-panics",
+        "language": "Rust",
+        "code": "LifetimeError",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/rust-lifetime-mismatches-ownership-panics.js",
+        "tags": [
+            "Ownership",
+            "Lifetimes",
+            "Borrow Checker",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788679608,
+        "title": "PyTorch: CUDA OOM & Mixed Precision Training Issues",
+        "slug": "pytorch-cuda-oom-mixed-precision",
+        "language": "PyTorch",
+        "code": "CUDA_OOM",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/pytorch-cuda-oom-mixed-precision.js",
+        "tags": [
+            "Deep Learning",
+            "GPU",
+            "Performance",
+            "PyTorch",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788679609,
+        "title": "Akka: Message Delivery Guarantees & Backpressure Deadlocks",
+        "slug": "akka-message-delivery-backpressure-deadlocks",
+        "language": "Akka",
+        "code": "BackpressureDeadlock",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/akka-message-delivery-backpressure-deadlocks.js",
+        "tags": [
+            "Concurrency",
+            "Distributed Systems",
+            "Actor Model",
+            "Akka",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788679610,
+        "title": "Trending: m3e-canvas - Vibe-Coding with Material 3",
+        "slug": "trending-m3e-canvas-vibe-coding-material-3",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-06",
+        "path": "data/posts/2026-09/trending-m3e-canvas-vibe-coding-material-3.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "UI/UX",
+            "Design Tools",
+            "React",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1788660133,
         "title": "C++20 Coroutines: Broken HALO & Dangling Promises",
         "slug": "cpp20-coroutines-halo-dangling-promises",
