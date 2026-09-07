@@ -1,5 +1,75 @@
 var postsIndex = [
     {
+        "id": 1788746211,
+        "title": "Go Runtime: Preemption Delays & Netpoller Starvation",
+        "slug": "go-runtime-preemption-netpoller-starvation-thread-exhaustion",
+        "language": "Go",
+        "code": "PreemptionDelay",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/go-runtime-preemption-netpoller-starvation-thread-exhaustion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Performance",
+            "Runtime",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788746212,
+        "title": "Spark Shuffle Spill Disk Thrashing & OOM Cascades",
+        "slug": "apache-spark-shuffle-spill-disk-thrashing-driver-heartbeat-starvation-oom-cascades",
+        "language": "Java",
+        "code": "SparkOOM",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/apache-spark-shuffle-spill-disk-thrashing-driver-heartbeat-starvation-oom-cascades.js",
+        "tags": [
+            "Java",
+            "Spark",
+            "Big Data",
+            "Distributed Systems",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788746213,
+        "title": "MongoDB WiredTiger: Cache & Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-eviction-inversion-read-write-ticket-exhaustion-checkpoint-spikes",
+        "language": "Backend",
+        "code": "WiredTigerPerf",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-eviction-inversion-read-write-ticket-exhaustion-checkpoint-spikes.js",
+        "tags": [
+            "MongoDB",
+            "SQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788746214,
+        "title": "lnkiai/m3e-canvas: Vibe-Coding with Material 3 Expressive",
+        "slug": "lnkiai-m3e-canvas-vibe-coding-material-3-expressive",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-vibe-coding-material-3-expressive.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Design Tools",
+            "Material Design",
+            "AI",
+            "UX/UI"
+        ]
+    },
+    {
         "id": 1788697741,
         "title": "eBPF: Verifier State Space Explosion & Ring Buffer Drops",
         "slug": "ebpf-verifier-state-explosion-ring-buffer-drops",
