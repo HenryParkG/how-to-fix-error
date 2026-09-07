@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788791966,
+        "title": "cgroup v2 Resource Isolation Failures & OOM Killer",
+        "slug": "linux-kernel-cgroup-v2-oom-killer-failures",
+        "language": "Linux Kernel",
+        "code": "OOM Killer",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/linux-kernel-cgroup-v2-oom-killer-failures.js",
+        "tags": [
+            "Linux Kernel",
+            "cgroup",
+            "Resource Management",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788791967,
+        "title": "gRPC: Connection Pool Exhaustion & Flow Control Deadlocks",
+        "slug": "grpc-connection-pool-exhaustion-flow-control-deadlocks",
+        "language": "gRPC (Go)",
+        "code": "Deadlock",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/grpc-connection-pool-exhaustion-flow-control-deadlocks.js",
+        "tags": [
+            "gRPC",
+            "Concurrency",
+            "Networking",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788791968,
+        "title": "Vector DBs: ANN Index Build Latency & Recall Trade-offs",
+        "slug": "vector-dbs-ann-index-build-latency-recall-tradeoffs",
+        "language": "Vector DBs (e.g., HNSW)",
+        "code": "Performance",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/vector-dbs-ann-index-build-latency-recall-tradeoffs.js",
+        "tags": [
+            "Vector Databases",
+            "ANN",
+            "Indexing",
+            "Machine Learning",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788791969,
+        "title": "M3E Canvas: Vibe-Coding with Material 3 Expressive UI",
+        "slug": "m3e-canvas-vibe-coding-material-3-expressive-ui",
+        "language": "TypeScript, React, Material Design",
+        "code": "Trend",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/m3e-canvas-vibe-coding-material-3-expressive-ui.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "UI/UX",
+            "Design Tools",
+            "Frontend",
+            "React"
+        ]
+    },
+    {
         "id": 1788766954,
         "title": "Elixir GenServer: Mailbox Bloat & Atom Exhaustion Fix",
         "slug": "elixir-genserver-mailbox-bloat-selective-receive-latency-atom-exhaustion",
