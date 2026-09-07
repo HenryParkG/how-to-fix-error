@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1788766954,
+        "title": "Elixir GenServer: Mailbox Bloat & Atom Exhaustion Fix",
+        "slug": "elixir-genserver-mailbox-bloat-selective-receive-latency-atom-exhaustion",
+        "language": "Elixir",
+        "code": "Performance/Resource",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/elixir-genserver-mailbox-bloat-selective-receive-latency-atom-exhaustion.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788766955,
+        "title": "Redis: BGSAVE CoW Spikes & AOF Rewrite Thrashing Fix",
+        "slug": "redis-bgsave-fork-copy-on-write-memory-spikes-aof-rewrite-thrashing",
+        "language": "Redis",
+        "code": "Memory/IO Performance",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/redis-bgsave-fork-copy-on-write-memory-spikes-aof-rewrite-thrashing.js",
+        "tags": [
+            "Redis",
+            "Caching",
+            "Infra",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788766956,
+        "title": "vLLM: PagedAttention KV Cache Fragmentation Fix",
+        "slug": "vllm-pagedattention-kv-cache-fragmentation-continuous-batching-preemption-cascades",
+        "language": "Python",
+        "code": "GPU Memory/Throughput",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/vllm-pagedattention-kv-cache-fragmentation-continuous-batching-preemption-cascades.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "LLM",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788766957,
+        "title": "lnkiai/m3e-canvas: Vibe-Coding Expressive UI Trend",
+        "slug": "lnkiai-m3e-canvas-vibe-coding-expressive-ui-trend",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-07",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-vibe-coding-expressive-ui-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1788746211,
         "title": "Go Runtime: Preemption Delays & Netpoller Starvation",
         "slug": "go-runtime-preemption-netpoller-starvation-thread-exhaustion",
