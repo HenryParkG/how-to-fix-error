@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788873186,
+        "title": "eBPF: Program Verification Failures & JIT Compiler Bugs",
+        "slug": "ebpf-verification-jit-bugs",
+        "language": "C, eBPF, Linux Kernel",
+        "code": "eBPF_VERIF_FAIL",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/ebpf-verification-jit-bugs.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kernel",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788873187,
+        "title": "Airflow: Zombie Tasks & DAG Deadlocks from External Triggers",
+        "slug": "airflow-zombie-deadlocks-external-triggers",
+        "language": "Python, Airflow",
+        "code": "AIRFLOW_DEADLOCK",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/airflow-zombie-deadlocks-external-triggers.js",
+        "tags": [
+            "Airflow",
+            "Python",
+            "Orchestration",
+            "ETL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788873188,
+        "title": "PostgreSQL: Transaction ID Wraparound & Database Freezing",
+        "slug": "postgresql-txid-wraparound-freezing",
+        "language": "SQL, PostgreSQL",
+        "code": "PG_TXID_WRAPAROUND",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/postgresql-txid-wraparound-freezing.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Database",
+            "Data",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788873189,
+        "title": "m3e-canvas: Vibe-Coding with Material 3 Expressive UI",
+        "slug": "m3e-canvas-github-trend",
+        "language": "JavaScript, HTML, CSS, React, Material 3",
+        "code": "Trend",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/m3e-canvas-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "React",
+            "Design"
+        ]
+    },
+    {
         "id": 1788853189,
         "title": "Rust: Pin Projection Invariants & Drop Checker Violations",
         "slug": "rust-pin-projection-invariants-drop-checker-violations-async-self-referential-types",
