@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1788833962,
+        "title": "C++20 Coroutines: Asymmetric Stack Unwinding Pitfalls",
+        "slug": "cpp20-coroutines-asymmetric-unwinding-lifetime-pitfalls",
+        "language": "C++",
+        "code": "Coroutine Lifetime",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/cpp20-coroutines-asymmetric-unwinding-lifetime-pitfalls.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Coroutine",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788833963,
+        "title": "Kafka: Consumer Rebalancing Storms & Sustained Message Lag",
+        "slug": "kafka-consumer-rebalancing-storms-sustained-lag",
+        "language": "Kafka",
+        "code": "ConsumerLag",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/kafka-consumer-rebalancing-storms-sustained-lag.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Message Queue",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788833964,
+        "title": "Istio: Gateway Configuration Drift & mTLS Handshake Failures",
+        "slug": "istio-gateway-config-drift-mtls-failure",
+        "language": "Istio",
+        "code": "mTLS_Failure",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/istio-gateway-config-drift-mtls-failure.js",
+        "tags": [
+            "Istio",
+            "Kubernetes",
+            "Service Mesh",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788833965,
+        "title": "Unleash Creativity: Sketching UI with 'm3e-canvas'",
+        "slug": "lnkiai-m3e-canvas-github-trend-analysis",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "React",
+            "TypeScript",
+            "UI/UX",
+            "Material Design"
+        ]
+    },
+    {
         "id": 1788791966,
         "title": "cgroup v2 Resource Isolation Failures & OOM Killer",
         "slug": "linux-kernel-cgroup-v2-oom-killer-failures",
