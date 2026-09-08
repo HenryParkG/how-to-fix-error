@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788853189,
+        "title": "Rust: Pin Projection Invariants & Drop Checker Violations",
+        "slug": "rust-pin-projection-invariants-drop-checker-violations-async-self-referential-types",
+        "language": "Rust",
+        "code": "Pin Projection Violation",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/rust-pin-projection-invariants-drop-checker-violations-async-self-referential-types.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Memory Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788853190,
+        "title": "PyTorch DDP: Multi-GPU Gradient AllReduce Deadlocks",
+        "slug": "pytorch-ddp-multi-gpu-gradient-allreduce-deadlocks-cuda-stream-race-conditions",
+        "language": "PyTorch",
+        "code": "DDP Deadlock",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/pytorch-ddp-multi-gpu-gradient-allreduce-deadlocks-cuda-stream-race-conditions.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Multi-GPU",
+            "Distributed Training",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788853191,
+        "title": "Elasticsearch: Lucene Merge Throttling & CB Cascades",
+        "slug": "elasticsearch-high-throughput-lucene-merge-throttling-circuit-breaker-cascades",
+        "language": "Elasticsearch",
+        "code": "Merge Throttling",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/elasticsearch-high-throughput-lucene-merge-throttling-circuit-breaker-cascades.js",
+        "tags": [
+            "Elasticsearch",
+            "Lucene",
+            "Performance",
+            "Monitoring",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788853192,
+        "title": "m3e-canvas: Vibe-Coding with Expressive Material 3 Designs",
+        "slug": "lnkiai-m3e-canvas-vibe-coding-prompts-material-3",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-08",
+        "path": "data/posts/2026-09/lnkiai-m3e-canvas-vibe-coding-prompts-material-3.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "AI",
+            "Design"
+        ]
+    },
+    {
         "id": 1788833962,
         "title": "C++20 Coroutines: Asymmetric Stack Unwinding Pitfalls",
         "slug": "cpp20-coroutines-asymmetric-unwinding-lifetime-pitfalls",
