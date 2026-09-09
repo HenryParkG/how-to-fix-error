@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1788919935,
+        "title": "Go: Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leakage-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/go-goroutine-leakage-scheduler-starvation.js",
+        "tags": [
+            "Concurrency",
+            "Performance",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788919936,
+        "title": "Spark: Skewed Partitions & OOM from Shuffle Spills",
+        "slug": "spark-skewed-data-partitions-shuffle-spills-oom",
+        "language": "Spark (Scala/Python/Java)",
+        "code": "SparkOOM",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/spark-skewed-data-partitions-shuffle-spills-oom.js",
+        "tags": [
+            "Big Data",
+            "Performance",
+            "Spark",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788919937,
+        "title": "K8s: Liveness Probe Deadlocks & Init Race",
+        "slug": "kubernetes-liveness-probe-deadlocks-container-init-race-conditions",
+        "language": "Kubernetes",
+        "code": "K8sRaceCondition",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/kubernetes-liveness-probe-deadlocks-container-init-race-conditions.js",
+        "tags": [
+            "Containerization",
+            "Reliability",
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788919938,
+        "title": "Human Atlas: Exploring 3D Anatomy in Your Browser",
+        "slug": "human-atlas-trending-github-3d-anatomy-explorer",
+        "language": "TypeScript, WebGL (Three.js)",
+        "code": "Trend",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/human-atlas-trending-github-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D Visualization",
+            "Frontend",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1788873186,
         "title": "eBPF: Program Verification Failures & JIT Compiler Bugs",
         "slug": "ebpf-verification-jit-bugs",
