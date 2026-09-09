@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1788939766,
+        "title": "Fixing Rust FFI Unsoundness & Pointer Aliasing",
+        "slug": "rust-ffi-boundary-safety-unsoundness",
+        "language": "Rust",
+        "code": "UndefinedBehavior",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/rust-ffi-boundary-safety-unsoundness.js",
+        "tags": [
+            "Rust",
+            "FFI",
+            "MemorySafety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788939767,
+        "title": "Resolving PyTorch CUDA Memory Fragmentation & OOM",
+        "slug": "pytorch-cuda-memory-fragmentation-oom",
+        "language": "Python",
+        "code": "torch.cuda.OutOfMemoryError",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/pytorch-cuda-memory-fragmentation-oom.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788939768,
+        "title": "Fixing Terraform State Drift & Reconciliation Errors",
+        "slug": "terraform-state-drift-reconciliation-conflicts",
+        "language": "AWS",
+        "code": "StateDriftConflict",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/terraform-state-drift-reconciliation-conflicts.js",
+        "tags": [
+            "AWS",
+            "Terraform",
+            "DevOps",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788939769,
+        "title": "Inside human-atlas: 3D BodyParts3D Explorer",
+        "slug": "human-atlas-3d-anatomy-explorer-bodyparts3d",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/human-atlas-3d-anatomy-explorer-bodyparts3d.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1788919935,
         "title": "Go: Goroutine Leaks & Scheduler Starvation",
         "slug": "go-goroutine-leakage-scheduler-starvation",
