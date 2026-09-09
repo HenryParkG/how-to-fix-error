@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1788960144,
+        "title": "Linux Kernel: Page Cache Thrashing & Writeback Starvation",
+        "slug": "linux-kernel-page-cache-thrashing-writeback-starvation",
+        "language": "Linux Kernel",
+        "code": "PageCacheError",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/linux-kernel-page-cache-thrashing-writeback-starvation.js",
+        "tags": [
+            "Linux",
+            "Performance",
+            "Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788960145,
+        "title": "Vector DBs: ANN Index Inconsistencies & Recall Degradation",
+        "slug": "vector-dbs-ann-index-inconsistencies-recall-degradation",
+        "language": "Vector Databases",
+        "code": "RecallDegradation",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/vector-dbs-ann-index-inconsistencies-recall-degradation.js",
+        "tags": [
+            "Vector DB",
+            "ANN",
+            "Machine Learning",
+            "Recall",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788960146,
+        "title": "Redis: Fork Latency Spikes & AOF Rewrite Blocking",
+        "slug": "redis-fork-induced-latency-spikes-aof-rewrite-blocking",
+        "language": "Redis",
+        "code": "RedisLatency",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/redis-fork-induced-latency-spikes-aof-rewrite-blocking.js",
+        "tags": [
+            "Redis",
+            "Performance",
+            "AOF",
+            "Fork",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1788960147,
+        "title": "Human Atlas: Open-Source 3D Anatomy Explorer",
+        "slug": "human-atlas-3d-anatomy-explorer",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-09",
+        "path": "data/posts/2026-09/human-atlas-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D",
+            "Anatomy",
+            "Education",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1788939766,
         "title": "Fixing Rust FFI Unsoundness & Pointer Aliasing",
         "slug": "rust-ffi-boundary-safety-unsoundness",
