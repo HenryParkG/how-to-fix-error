@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1789006623,
+        "title": "C++20: Coroutine Frame Lifetime Invalidation & Suspended Reference Escapes",
+        "slug": "cpp20-coroutine-lifetime-invalidation-suspended-reference-escapes",
+        "language": "C++20",
+        "code": "Coroutine Lifetime",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/cpp20-coroutine-lifetime-invalidation-suspended-reference-escapes.js",
+        "tags": [
+            "Coroutine",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789006624,
+        "title": "Kafka: Consumer Rebalance Storms & Zombie Epoch Commit Failures",
+        "slug": "kafka-consumer-rebalance-storms-zombie-epoch-commit-failures",
+        "language": "Kafka",
+        "code": "Kafka Rebalance",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/kafka-consumer-rebalance-storms-zombie-epoch-commit-failures.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Message Queue",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789006625,
+        "title": "GenServer Mailbox Saturation & Cascading Worker Timeouts",
+        "slug": "elixir-otp-genserver-mailbox-saturation-cascading-worker-timeouts",
+        "language": "Elixir, OTP",
+        "code": "Mailbox Saturation",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/elixir-otp-genserver-mailbox-saturation-cascading-worker-timeouts.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789006626,
+        "title": "Human Atlas: An Open-Source Interactive 3D Anatomy Explorer",
+        "slug": "human-atlas-open-source-3d-anatomy-explorer",
+        "language": "TypeScript, React, Three.js",
+        "code": "Trend",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/human-atlas-open-source-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Education",
+            "Healthcare"
+        ]
+    },
+    {
         "id": 1788960144,
         "title": "Linux Kernel: Page Cache Thrashing & Writeback Starvation",
         "slug": "linux-kernel-page-cache-thrashing-writeback-starvation",
