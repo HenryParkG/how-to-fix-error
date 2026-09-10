@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1789027075,
+        "title": "Haskell: Thunk Accumulation & Space Leaks in State Monads",
+        "slug": "haskell-thunk-accumulation-space-leaks-state-monads",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/haskell-thunk-accumulation-space-leaks-state-monads.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Space Leak",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789027076,
+        "title": "gRPC: HTTP/2 Flow-Control Window Starvation",
+        "slug": "grpc-http2-flow-control-starvation-deadlock",
+        "language": "gRPC, HTTP/2",
+        "code": "FlowControlDeadlock",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-starvation-deadlock.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789027077,
+        "title": "RocksDB: Write Stall Cascades & Compaction Debt",
+        "slug": "rocksdb-write-stalls-lsm-compaction-debt",
+        "language": "RocksDB",
+        "code": "WriteStall",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/rocksdb-write-stalls-lsm-compaction-debt.js",
+        "tags": [
+            "RocksDB",
+            "Database",
+            "Storage",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789027078,
+        "title": "Human-Atlas: Open-source 3D Anatomy Explorer",
+        "slug": "human-atlas-github-trend-3d-anatomy",
+        "language": "JavaScript, WebGL",
+        "code": "Trend",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/human-atlas-github-trend-3d-anatomy.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Education",
+            "3D Visualization"
+        ]
+    },
+    {
         "id": 1789006623,
         "title": "C++20: Coroutine Frame Lifetime Invalidation & Suspended Reference Escapes",
         "slug": "cpp20-coroutine-lifetime-invalidation-suspended-reference-escapes",
