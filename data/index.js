@@ -1,5 +1,76 @@
 var postsIndex = [
     {
+        "id": 1789046309,
+        "title": "PostgreSQL XID Wraparound & Emergency Autovacuum Freezes",
+        "slug": "postgresql-xid-wraparound-emergency-autovacuum-freezes",
+        "language": "SQL",
+        "code": "XIDWraparound",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-emergency-autovacuum-freezes.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789046310,
+        "title": "eBPF Verifier Rejection: State Pruning & Pointer Arithmetic",
+        "slug": "ebpf-verifier-rejection-state-pruning-pointer-arithmetic",
+        "language": "Go",
+        "code": "VerifierRejection",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/ebpf-verifier-rejection-state-pruning-pointer-arithmetic.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Networking",
+            "Security",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789046311,
+        "title": "Istio Envoy: Drain Racing & Upstream 503 UC Outages",
+        "slug": "istio-envoy-graceful-drain-connection-racing-upstream-503-uc-outages",
+        "language": "Kubernetes",
+        "code": "Envoy503Outage",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/istio-envoy-graceful-drain-connection-racing-upstream-503-uc-outages.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Microservices",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789046312,
+        "title": "Human Atlas: Open-source 3D Anatomy Explorer",
+        "slug": "human-atlas-open-source-3d-anatomy-explorer",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-10",
+        "path": "data/posts/2026-09/human-atlas-open-source-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D",
+            "Education",
+            "Medical",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1789027075,
         "title": "Haskell: Thunk Accumulation & Space Leaks in State Monads",
         "slug": "haskell-thunk-accumulation-space-leaks-state-monads",
