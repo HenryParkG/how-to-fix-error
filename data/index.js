@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1789132498,
+        "title": "Next.js Server Components Data Inconsistency",
+        "slug": "nextjs-server-components-data-inconsistency-hydration-mismatches",
+        "language": "Next.js, React, TypeScript",
+        "code": "HydrationMismatch",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/nextjs-server-components-data-inconsistency-hydration-mismatches.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789132499,
+        "title": "Elasticsearch Split-Brain Scenarios",
+        "slug": "elasticsearch-split-brain-data-inconsistency-cluster-reconfiguration",
+        "language": "Elasticsearch",
+        "code": "SplitBrain",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/elasticsearch-split-brain-data-inconsistency-cluster-reconfiguration.js",
+        "tags": [
+            "Elasticsearch",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789132500,
+        "title": "Akka: Message Delivery Guarantees & Dead Letters",
+        "slug": "scala-akka-message-delivery-guarantees-dead-letters",
+        "language": "Scala, Akka",
+        "code": "MessageLoss",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/scala-akka-message-delivery-guarantees-dead-letters.js",
+        "tags": [
+            "Scala",
+            "Akka",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789132501,
+        "title": "Human Atlas: An Open-Source 3D Anatomy Explorer",
+        "slug": "human-atlas-github-trend-3d-anatomy-explorer",
+        "language": "JavaScript, TypeScript, React, Three.js",
+        "code": "Trend",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/human-atlas-github-trend-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "JavaScript",
+            "Frontend",
+            "Medical Visualization"
+        ]
+    },
+    {
         "id": 1789112798,
         "title": "PyTorch Distributed: NCCL Deadlocks & Watchdog Timeouts",
         "slug": "pytorch-distributed-nccl-deadlocks-watchdog-timeouts",
