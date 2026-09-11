@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1789092455,
+        "title": "Apache Spark: Shuffle Skew & Cascading Executor OOMs",
+        "slug": "apache-spark-shuffle-skew-cascading-executor-ooms",
+        "language": "Java",
+        "code": "Shuffle Skew OOM",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/apache-spark-shuffle-skew-cascading-executor-ooms.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789092456,
+        "title": "MongoDB WiredTiger: Eviction Ticket Starvation",
+        "slug": "mongodb-wiredtiger-eviction-ticket-starvation-checkpoint-lock-freezes",
+        "language": "Infra",
+        "code": "WiredTiger Lock",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-eviction-ticket-starvation-checkpoint-lock-freezes.js",
+        "tags": [
+            "MongoDB",
+            "NoSQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789092457,
+        "title": "Go Runtime: Scheduler Starvation & Preemption Failure",
+        "slug": "go-runtime-non-cooperative-preemption-failure-goroutine-scheduler-starvation",
+        "language": "Go",
+        "code": "Scheduler Starvation",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/go-runtime-non-cooperative-preemption-failure-goroutine-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789092458,
+        "title": "Human Atlas: Open-source 3D Anatomy Explorer",
+        "slug": "human-atlas-open-source-3d-anatomy-explorer",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/human-atlas-open-source-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "JavaScript",
+            "3D",
+            "Education"
+        ]
+    },
+    {
         "id": 1789046309,
         "title": "PostgreSQL XID Wraparound & Emergency Autovacuum Freezes",
         "slug": "postgresql-xid-wraparound-emergency-autovacuum-freezes",
