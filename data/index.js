@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1789112798,
+        "title": "PyTorch Distributed: NCCL Deadlocks & Watchdog Timeouts",
+        "slug": "pytorch-distributed-nccl-deadlocks-watchdog-timeouts",
+        "language": "PyTorch, Distributed Training",
+        "code": "NCCL Deadlock",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/pytorch-distributed-nccl-deadlocks-watchdog-timeouts.js",
+        "tags": [
+            "PyTorch",
+            "Distributed",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789112799,
+        "title": "Rust: Pin Projection Invariants & Async Drop Violations",
+        "slug": "rust-pin-projection-invariants-async-drop-violations",
+        "language": "Rust, Async Rust",
+        "code": "Pin Projection Error",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/rust-pin-projection-invariants-async-drop-violations.js",
+        "tags": [
+            "Rust",
+            "Async Rust",
+            "Pinning",
+            "Memory Safety",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789112800,
+        "title": "Kubernetes Conntrack Exhaustion & Silent DNS Drops",
+        "slug": "kubernetes-conntrack-exhaustion-silent-dns-drops",
+        "language": "Kubernetes, Networking",
+        "code": "Conntrack Exhaustion",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/kubernetes-conntrack-exhaustion-silent-dns-drops.js",
+        "tags": [
+            "Kubernetes",
+            "Networking",
+            "Linux",
+            "DNS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789112801,
+        "title": "Human-Atlas: Open-source 3D Anatomy Explorer",
+        "slug": "human-atlas-open-source-3d-anatomy-explorer",
+        "language": "JavaScript, WebGL, Three.js",
+        "code": "Trend",
+        "date": "2026-09-11",
+        "path": "data/posts/2026-09/human-atlas-open-source-3d-anatomy-explorer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "3D Visualization",
+            "Anatomy",
+            "Medical Tech",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789092455,
         "title": "Apache Spark: Shuffle Skew & Cascading Executor OOMs",
         "slug": "apache-spark-shuffle-skew-cascading-executor-ooms",
