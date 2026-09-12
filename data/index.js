@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1789216278,
+        "title": "Fixing C++20 Coroutine Frame Destruction and Dangling Lifetime",
+        "slug": "cpp20-coroutine-suspended-frame-destruction",
+        "language": "C++20",
+        "code": "UseAfterFree",
+        "date": "2026-09-12",
+        "path": "data/posts/2026-09/cpp20-coroutine-suspended-frame-destruction.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "MemorySafety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789216279,
+        "title": "Mitigating Kafka Consumer Rebalance Storms & Starvation",
+        "slug": "kafka-consumer-rebalance-heartbeat-starvation",
+        "language": "Apache Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-09-12",
+        "path": "data/posts/2026-09/kafka-consumer-rebalance-heartbeat-starvation.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789216280,
+        "title": "Fixing Elixir GenServer Mailbox Saturation & Tree Crash",
+        "slug": "elixir-genserver-mailbox-saturation-cascade",
+        "language": "Elixir",
+        "code": "ProcessKilledError",
+        "date": "2026-09-12",
+        "path": "data/posts/2026-09/elixir-genserver-mailbox-saturation-cascade.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "Docker",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789216281,
+        "title": "Analyzing sdli1995/dlssg_for_sm86: RTX 30 Series Frame Gen",
+        "slug": "dlssg-for-sm86-rtx-30-series-analysis",
+        "language": "C++ / CUDA",
+        "code": "Trend",
+        "date": "2026-09-12",
+        "path": "data/posts/2026-09/dlssg-for-sm86-rtx-30-series-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1789132498,
         "title": "Next.js Server Components Data Inconsistency",
         "slug": "nextjs-server-components-data-inconsistency-hydration-mismatches",
