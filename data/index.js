@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1789265271,
+        "title": "Fixing Haskell Space Leaks from Lazy Accumulators",
+        "slug": "haskell-space-leaks-thunk-accumulation-heap-exhaustion",
+        "language": "Haskell",
+        "code": "OutOfMemory",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/haskell-space-leaks-thunk-accumulation-heap-exhaustion.js",
+        "tags": [
+            "Haskell",
+            "MemoryManagement",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789265272,
+        "title": "Redis BGSAVE: THP Stalls & Copy-on-Write Memory Bloat",
+        "slug": "redis-bgsave-transparent-hugepages-cow-memory-bloat",
+        "language": "Redis",
+        "code": "OOMKilled",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/redis-bgsave-transparent-hugepages-cow-memory-bloat.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789265273,
+        "title": "gRPC HTTP/2: Stream Window Starvation and BDP Deadlocks",
+        "slug": "grpc-http2-stream-window-starvation-bdp-deadlock",
+        "language": "Go",
+        "code": "RESOURCE_EXHAUSTED",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/grpc-http2-stream-window-starvation-bdp-deadlock.js",
+        "tags": [
+            "gRPC",
+            "Go",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789265274,
+        "title": "DLSS-G on RTX 30-Series: Inside sdli1995/dlssg_for_sm86",
+        "slug": "dlss-frame-generation-rtx-3000-sm86-analysis",
+        "language": "C++ / Python",
+        "code": "Trend",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/dlss-frame-generation-rtx-3000-sm86-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1789216278,
         "title": "Fixing C++20 Coroutine Frame Destruction and Dangling Lifetime",
         "slug": "cpp20-coroutine-suspended-frame-destruction",
