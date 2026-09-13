@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1789306474,
+        "title": "Go Scheduler: Epoll Worker Starvation & Preemption Blindspots",
+        "slug": "go-scheduler-epoll-starvation-preemption-blindspots",
+        "language": "Go",
+        "code": "Scheduler",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/go-scheduler-epoll-starvation-preemption-blindspots.js",
+        "tags": [
+            "Go",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789306475,
+        "title": "Spark Shuffle Fetch Failures & Netty Off-Heap Leaks",
+        "slug": "spark-shuffle-fetch-failures-netty-off-heap-leaks",
+        "language": "Java",
+        "code": "Shuffle",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/spark-shuffle-fetch-failures-netty-off-heap-leaks.js",
+        "tags": [
+            "Java",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789306476,
+        "title": "WiredTiger: Cache Eviction Inversion & Checkpoint Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-inversion-checkpoint-stalls-write-skew",
+        "language": "SQL",
+        "code": "Cache",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-eviction-inversion-checkpoint-stalls-write-skew.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789306477,
+        "title": "Boost Your RTX 30 Series: DLSS Frame Generation on Unsupported GPUs",
+        "slug": "dlssg-for-sm86-rtx30-series-dlss-frame-generation",
+        "language": "C++",
+        "code": "Trend",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/dlssg-for-sm86-rtx30-series-dlss-frame-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend"
+        ]
+    },
+    {
         "id": 1789285780,
         "title": "PostgreSQL XID Wraparound Lockouts & Autovacuum Starvation",
         "slug": "postgresql-xid-wraparound-lockouts-autovacuum-starvation",
