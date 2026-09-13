@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1789285780,
+        "title": "PostgreSQL XID Wraparound Lockouts & Autovacuum Starvation",
+        "slug": "postgresql-xid-wraparound-lockouts-autovacuum-starvation",
+        "language": "PostgreSQL, SQL",
+        "code": "XID Wraparound",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-lockouts-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789285781,
+        "title": "eBPF Verifier: Register Bounds & Tail-Call Overflows",
+        "slug": "linux-ebpf-verifier-register-bounds-tail-call-overflows",
+        "language": "eBPF, C",
+        "code": "eBPF Verifier Fail",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/linux-ebpf-verifier-register-bounds-tail-call-overflows.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789285782,
+        "title": "WebGPU: Async Buffer Mapping Races & Device Loss",
+        "slug": "webgpu-async-buffer-mapping-races-cascading-device-loss",
+        "language": "WebGPU, TypeScript",
+        "code": "WebGPU Device Loss",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/webgpu-async-buffer-mapping-races-cascading-device-loss.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789285783,
+        "title": "DLSSG for RTX 30 Series: Unofficial Frame Generation",
+        "slug": "dlssg-rtx30-series-unofficial-frame-generation",
+        "language": "C++, Modding",
+        "code": "Trend",
+        "date": "2026-09-13",
+        "path": "data/posts/2026-09/dlssg-rtx30-series-unofficial-frame-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Gaming",
+            "Modding",
+            "Backend"
+        ]
+    },
+    {
         "id": 1789265271,
         "title": "Fixing Haskell Space Leaks from Lazy Accumulators",
         "slug": "haskell-space-leaks-thunk-accumulation-heap-exhaustion",
