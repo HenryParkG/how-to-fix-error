@@ -1,5 +1,75 @@
 var postsIndex = [
     {
+        "id": 1789374753,
+        "title": "Rust Async: Pin Invariant Violations & Drop-Order UAF",
+        "slug": "rust-async-pin-invariant-violations-drop-order-use-after-free",
+        "language": "Rust",
+        "code": "Pin Invariant UAF",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/rust-async-pin-invariant-violations-drop-order-use-after-free.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Memory Safety",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789374754,
+        "title": "Istio: Cascading Outlier Ejection & Pool Starvation",
+        "slug": "istio-cascading-outlier-ejection-storms-and-upstream-pool-starvation",
+        "language": "Istio, Envoy",
+        "code": "Outlier Ejection Storm",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/istio-cascading-outlier-ejection-storms-and-upstream-pool-starvation.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Microservices",
+            "Infra",
+            "Resilience",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789374755,
+        "title": "Cassandra: Tombstone Saturation, Read Repair & GC",
+        "slug": "apache-cassandra-tombstone-saturation-read-repair-loops-jvm-gc-stalls",
+        "language": "Apache Cassandra, Java",
+        "code": "Tombstone Saturation",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/apache-cassandra-tombstone-saturation-read-repair-loops-jvm-gc-stalls.js",
+        "tags": [
+            "Apache Cassandra",
+            "NoSQL",
+            "JVM",
+            "Java",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789374756,
+        "title": "openai/NavierStokesAndEuler: Verified Fluid Dynamics",
+        "slug": "openai-navier-stokes-euler-lean-formal-verification",
+        "language": "Lean 4",
+        "code": "Trend",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/openai-navier-stokes-euler-lean-formal-verification.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Backend",
+            "Formal Verification",
+            "Mathematics",
+            "AI/ML"
+        ]
+    },
+    {
         "id": 1789352791,
         "title": "PyTorch DDP: NCCL Ring-AllReduce Deadlocks",
         "slug": "pytorch-ddp-nccl-deadlocks-dynamic-control-flow",
