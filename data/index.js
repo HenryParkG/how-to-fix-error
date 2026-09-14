@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1789352791,
+        "title": "PyTorch DDP: NCCL Ring-AllReduce Deadlocks",
+        "slug": "pytorch-ddp-nccl-deadlocks-dynamic-control-flow",
+        "language": "Python",
+        "code": "NCCL Deadlock",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/pytorch-ddp-nccl-deadlocks-dynamic-control-flow.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Training",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789352792,
+        "title": "Linux CFS Throttling: Micro-Burst Tail Latency",
+        "slug": "linux-cfs-throttling-micro-burst-tail-latency-cpu-starvation",
+        "language": "Linux Kernel",
+        "code": "CPU Starvation",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/linux-cfs-throttling-micro-burst-tail-latency-cpu-starvation.js",
+        "tags": [
+            "Linux",
+            "Containers",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789352793,
+        "title": "ClickHouse MergeTree: Mutation Amplification & Lockups",
+        "slug": "clickhouse-mergetree-mutation-amplification-part-lockups",
+        "language": "SQL",
+        "code": "CDC Bottleneck",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/clickhouse-mergetree-mutation-amplification-part-lockups.js",
+        "tags": [
+            "ClickHouse",
+            "Database",
+            "Real-time",
+            "CDC",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789352794,
+        "title": "OpenAI's NavierStokesAndEuler: Verified Fluid Dynamics",
+        "slug": "openai-navier-stokes-euler-lean-verification",
+        "language": "Lean",
+        "code": "Trend",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/openai-navier-stokes-euler-lean-verification.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Mathematics",
+            "Formal Verification",
+            "Lean",
+            "Python"
+        ]
+    },
+    {
         "id": 1789306474,
         "title": "Go Scheduler: Epoll Worker Starvation & Preemption Blindspots",
         "slug": "go-scheduler-epoll-starvation-preemption-blindspots",
