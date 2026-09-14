@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1789399969,
+        "title": "C++20 Coroutines: Awaitable Lifetime & Memory Leaks",
+        "slug": "cpp20-coroutines-lifetime-memory-leaks",
+        "language": "C++",
+        "code": "CoroutineLeak",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/cpp20-coroutines-lifetime-memory-leaks.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789399970,
+        "title": "Kafka: Rebalancing Storms & Data Duplication",
+        "slug": "kafka-rebalancing-storms-data-duplication",
+        "language": "Kafka",
+        "code": "DuplicateData",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/kafka-rebalancing-storms-data-duplication.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Data Integrity",
+            "Infra",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789399971,
+        "title": "Elasticsearch: Shard Rebalancing Storms & Split-Brain",
+        "slug": "elasticsearch-shard-storms-split-brain",
+        "language": "Elasticsearch",
+        "code": "ClusterInstability",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/elasticsearch-shard-storms-split-brain.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "High Availability",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789399972,
+        "title": "Lean Formal Verification: Navier-Stokes & Euler Results",
+        "slug": "lean-formal-verification-navier-stokes-euler",
+        "language": "Lean",
+        "code": "Trend",
+        "date": "2026-09-14",
+        "path": "data/posts/2026-09/lean-formal-verification-navier-stokes-euler.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Formal Verification",
+            "Mathematics",
+            "AI/ML Research",
+            "Backend"
+        ]
+    },
+    {
         "id": 1789374753,
         "title": "Rust Async: Pin Invariant Violations & Drop-Order UAF",
         "slug": "rust-async-pin-invariant-violations-drop-order-use-after-free",
