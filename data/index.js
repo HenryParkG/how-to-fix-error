@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1789460179,
+        "title": "PostgreSQL XID Wraparound & Autovacuum Freeze Starvation",
+        "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
+        "language": "PostgreSQL",
+        "code": "XIDWraparound",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-autovacuum-freeze-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789460180,
+        "title": "Haskell: Lazy Thunks & Hidden Space Leaks in Monad Transformers",
+        "slug": "haskell-lazy-thunk-accumulation-monad-transformer-space-leaks",
+        "language": "Haskell",
+        "code": "SpaceLeak",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/haskell-lazy-thunk-accumulation-monad-transformer-space-leaks.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789460181,
+        "title": "gRPC: HTTP/2 Flow Control Window Starvation & HoL Blocking",
+        "slug": "grpc-http2-flow-control-window-starvation-head-of-line-blocking",
+        "language": "gRPC",
+        "code": "FlowControl",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-window-starvation-head-of-line-blocking.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backend",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789460182,
+        "title": "Chuloo/mural: The Native iPhone Language Learning Companion Trending on GitHub",
+        "slug": "chuloo-mural-trending-github-language-app",
+        "language": "Swift, iOS",
+        "code": "Trend",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/chuloo-mural-trending-github-language-app.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Mobile Development",
+            "AI",
+            "Swift",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789439532,
         "title": "Zig: Comptime Evaluation Mismatches & Runtime ABI Incompatibilities",
         "slug": "zig-comptime-evaluation-mismatches-runtime-abi-incompatibilities",
