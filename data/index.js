@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1789439532,
+        "title": "Zig: Comptime Evaluation Mismatches & Runtime ABI Incompatibilities",
+        "slug": "zig-comptime-evaluation-mismatches-runtime-abi-incompatibilities",
+        "language": "Zig",
+        "code": "ABI Mismatch",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/zig-comptime-evaluation-mismatches-runtime-abi-incompatibilities.js",
+        "tags": [
+            "Zig",
+            "Comptime",
+            "ABI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789439533,
+        "title": "Kubernetes: StatefulSet PVC Orphanage & Data Corruption on Node Failure",
+        "slug": "kubernetes-statefulset-pvc-orphanage-data-corruption-node-failure",
+        "language": "Kubernetes",
+        "code": "PVC Orphan",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/kubernetes-statefulset-pvc-orphanage-data-corruption-node-failure.js",
+        "tags": [
+            "Kubernetes",
+            "StatefulSet",
+            "PVC",
+            "Data Integrity",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789439534,
+        "title": "React Native: JSI Bridge Serialization Overheads & Native Module Deadlocks",
+        "slug": "react-native-jsi-bridge-serialization-overheads-native-module-deadlocks",
+        "language": "React Native",
+        "code": "JSI Deadlock",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/react-native-jsi-bridge-serialization-overheads-native-module-deadlocks.js",
+        "tags": [
+            "React Native",
+            "JSI",
+            "JavaScript",
+            "Native Modules",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789439535,
+        "title": "Mac-Duo: Bringing iPhone's Dynamic Island to MacBook",
+        "slug": "mac-duo-iphone-dynamic-island-macbook",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-09-15",
+        "path": "data/posts/2026-09/mac-duo-iphone-dynamic-island-macbook.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "macOS",
+            "UX",
+            "Swift",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789399969,
         "title": "C++20 Coroutines: Awaitable Lifetime & Memory Leaks",
         "slug": "cpp20-coroutines-lifetime-memory-leaks",
