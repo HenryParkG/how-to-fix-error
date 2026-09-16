@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1789546591,
+        "title": "Go Goroutine Leaks & Scheduler Starvation Fix",
+        "slug": "go-goroutine-leaks-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/go-goroutine-leaks-scheduler-starvation-fix.js",
+        "tags": [
+            "Concurrency",
+            "Performance",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789546592,
+        "title": "PyTorch CUDA OOM & Mixed Precision Instability",
+        "slug": "pytorch-cuda-oom-mixed-precision-instability",
+        "language": "Python",
+        "code": "CUDA_OOM_NaN",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/pytorch-cuda-oom-mixed-precision-instability.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789546593,
+        "title": "MongoDB WiredTiger Oplog Bloat & Cache Stalls",
+        "slug": "mongodb-wiredtiger-oplog-bloat-cache-stalls",
+        "language": "MongoDB",
+        "code": "WiredTigerCacheStall",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-oplog-bloat-cache-stalls.js",
+        "tags": [
+            "Database",
+            "Performance",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789546594,
+        "title": "Inside Mural: The Language App You Eventually Delete",
+        "slug": "chuloo-mural-native-ios-language-app",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/chuloo-mural-native-ios-language-app.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1789525501,
         "title": "Redis CoW & Latency: THP's BGSAVE Impact",
         "slug": "redis-cow-latency-thp-bgsave",
