@@ -1,5 +1,87 @@
 var postsIndex = [
     {
+        "id": 1789525501,
+        "title": "Redis CoW & Latency: THP's BGSAVE Impact",
+        "slug": "redis-cow-latency-thp-bgsave",
+        "language": "Redis",
+        "code": "Memory Amplification",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/redis-cow-latency-thp-bgsave.js",
+        "tags": [
+            "Redis",
+            "Performance",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789525502,
+        "title": "Elixir OTP: Unbounded Mailbox Flooding & Cascading Failure",
+        "slug": "elixir-otp-mailbox-flooding-cascading-failure",
+        "language": "Elixir",
+        "code": "Resource Exhaustion",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/elixir-otp-mailbox-flooding-cascading-failure.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789525503,
+        "title": "Vector DB HNSW Recall Degradation: High-Churn Deletions",
+        "slug": "vector-db-hnsw-recall-degradation-soft-deletions",
+        "language": "Vector Databases",
+        "code": "Index Corruption",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/vector-db-hnsw-recall-degradation-soft-deletions.js",
+        "tags": [
+            "Vector Databases",
+            "HNSW",
+            "Search",
+            "AI/ML",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789525504,
+        "title": "Chuloo/mural: The AI-Powered Language Learning App",
+        "slug": "chuloo-mural-trending-github-ai-language",
+        "language": "Swift, AI/ML",
+        "code": "Trend",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/chuloo-mural-trending-github-ai-language.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Mobile",
+            "AI/ML",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789525505,
+        "title": "Chuloo/mural: The AI-Powered Language Learning App",
+        "slug": "chuloo-mural-trending-github-ai-language",
+        "language": "Swift, AI/ML",
+        "code": "Trend",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/chuloo-mural-trending-github-ai-language.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Mobile",
+            "AI/ML",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789460179,
         "title": "PostgreSQL XID Wraparound & Autovacuum Freeze Starvation",
         "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
