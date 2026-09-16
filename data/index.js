@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1789566880,
+        "title": "Rust: Unsound `unsafe` Blocks & Data Races in FFI/Concurrency",
+        "slug": "rust-unsound-unsafe-blocks-data-races-ffi-concurrency",
+        "language": "Rust",
+        "code": "UnsafeUnsoundness",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/rust-unsound-unsafe-blocks-data-races-ffi-concurrency.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "FFI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789566881,
+        "title": "Spark: Shuffle Service Bottlenecks & Skewed Data",
+        "slug": "spark-shuffle-service-bottlenecks-skewed-data",
+        "language": "Spark",
+        "code": "ShuffleFailure",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/spark-shuffle-service-bottlenecks-skewed-data.js",
+        "tags": [
+            "Spark",
+            "BigData",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789566882,
+        "title": "CockroachDB: Transaction Retries & Serializable Isolation Issues",
+        "slug": "cockroachdb-transaction-retries-serializable-isolation-failures-high-contention",
+        "language": "CockroachDB",
+        "code": "TxnRetryStorm",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/cockroachdb-transaction-retries-serializable-isolation-failures-high-contention.js",
+        "tags": [
+            "CockroachDB",
+            "SQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789566883,
+        "title": "Chuloo/mural: The Native iPhone Language Learning App",
+        "slug": "chuloo-mural-trending-language-app",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-09-16",
+        "path": "data/posts/2026-09/chuloo-mural-trending-language-app.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "iOS",
+            "Swift",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789546591,
         "title": "Go Goroutine Leaks & Scheduler Starvation Fix",
         "slug": "go-goroutine-leaks-scheduler-starvation-fix",
