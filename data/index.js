@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1789633440,
+        "title": "C++20 Coroutines: HALO Failure & Dangling Promise Lifetime Bugs",
+        "slug": "cpp20-coroutines-halo-dangling-promise-lifetime",
+        "language": "C++",
+        "code": "CoroutineLifetime",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/cpp20-coroutines-halo-dangling-promise-lifetime.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Coroutines",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789633441,
+        "title": "Kafka Rebalance Storms from GC Pauses & max.poll.interval.ms",
+        "slug": "kafka-rebalance-gc-pauses-max-poll-interval-ms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/kafka-rebalance-gc-pauses-max-poll-interval-ms.js",
+        "tags": [
+            "Kafka",
+            "Java",
+            "Distributed Systems",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789633442,
+        "title": "Elasticsearch: Fielddata Circuit Breaker & Lucene Merge Starvation",
+        "slug": "elasticsearch-fielddata-circuit-breaker-lucene-merge-starvation",
+        "language": "Elasticsearch",
+        "code": "ResourceExhaustion",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/elasticsearch-fielddata-circuit-breaker-lucene-merge-starvation.js",
+        "tags": [
+            "Elasticsearch",
+            "Lucene",
+            "Java",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789633443,
+        "title": "ai-sucks-butt/ai-sucks-butt: The Anti-AI Sentiment on GitHub",
+        "slug": "ai-sucks-butt-github-trend-analysis",
+        "language": "Community / Humor",
+        "code": "Trend",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/ai-sucks-butt-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Community",
+            "AI Ethics",
+            "Humor"
+        ]
+    },
+    {
         "id": 1789566880,
         "title": "Rust: Unsound `unsafe` Blocks & Data Races in FFI/Concurrency",
         "slug": "rust-unsound-unsafe-blocks-data-races-ffi-concurrency",
