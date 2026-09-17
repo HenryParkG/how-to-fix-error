@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1789653478,
+        "title": "eBPF Verifier: Stack Limits & Loop State Explosion",
+        "slug": "ebpf-verifier-stack-limits-loop-state-explosion",
+        "language": "C, eBPF",
+        "code": "eBPF Verifier Error",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/ebpf-verifier-stack-limits-loop-state-explosion.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789653479,
+        "title": "K8s: CFS Throttling & Multi-Core P99 Latency",
+        "slug": "kubernetes-cfs-throttling-p99-latency",
+        "language": "Kubernetes, Linux Cgroups",
+        "code": "CPU Throttling",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/kubernetes-cfs-throttling-p99-latency.js",
+        "tags": [
+            "Kubernetes",
+            "Performance",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789653480,
+        "title": "WebGPU: UBO Alignment & CPU-GPU Stalls",
+        "slug": "webgpu-uniform-buffer-alignment-stalls",
+        "language": "WebGPU, JavaScript",
+        "code": "GPU Pipeline Stall",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/webgpu-uniform-buffer-alignment-stalls.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "JavaScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789653481,
+        "title": "ai-sucks-butt: The Anti-AI Sentiment Repo",
+        "slug": "ai-sucks-butt-github-trend",
+        "language": "Community/Culture (GitHub)",
+        "code": "Trend",
+        "date": "2026-09-17",
+        "path": "data/posts/2026-09/ai-sucks-butt-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1789633440,
         "title": "C++20 Coroutines: HALO Failure & Dangling Promise Lifetime Bugs",
         "slug": "cpp20-coroutines-halo-dangling-promise-lifetime",
