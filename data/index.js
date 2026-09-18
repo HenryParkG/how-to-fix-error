@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1789737516,
+        "title": "Rust: Borrow Checker & Lifetime Errors in Async Code",
+        "slug": "rust-borrow-checker-lifetime-async-errors",
+        "language": "Rust",
+        "code": "BorrowChecker",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/rust-borrow-checker-lifetime-async-errors.js",
+        "tags": [
+            "Rust",
+            "Asynchronous Programming",
+            "Concurrency",
+            "Error Fix",
+            "Backend"
+        ]
+    },
+    {
+        "id": 1789737517,
+        "title": "Elixir/Erlang OTP: GenServer State Leaks & Supervisor Failures",
+        "slug": "elixir-erlang-otp-genserver-state-supervisor-failures",
+        "language": "Elixir/Erlang",
+        "code": "OTPFailure",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/elixir-erlang-otp-genserver-state-supervisor-failures.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "OTP",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789737518,
+        "title": "React Native: JS Bridge Serialization & UI Jitter",
+        "slug": "react-native-js-bridge-serialization-ui-jitter",
+        "language": "React Native",
+        "code": "BridgeOverhead",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/react-native-js-bridge-serialization-ui-jitter.js",
+        "tags": [
+            "React Native",
+            "JavaScript",
+            "Mobile Development",
+            "Performance",
+            "Frontend",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789737519,
+        "title": "Jev-Ultrafast: (i. am. speed.) - Blazing Fast Browser Utilities",
+        "slug": "jev-ultrafast-browser-use-trend",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/jev-ultrafast-browser-use-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Performance",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789697689,
         "title": "Linux Kernel: Scheduler Starvation from RT Priorities",
         "slug": "linux-kernel-scheduler-starvation-realtime-cgroups",
