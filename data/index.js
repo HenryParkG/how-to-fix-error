@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1789697689,
+        "title": "Linux Kernel: Scheduler Starvation from RT Priorities",
+        "slug": "linux-kernel-scheduler-starvation-realtime-cgroups",
+        "language": "Linux Kernel",
+        "code": "SchedulerStarvation",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/linux-kernel-scheduler-starvation-realtime-cgroups.js",
+        "tags": [
+            "Linux",
+            "Kernel",
+            "Scheduler",
+            "cgroups",
+            "Real-time",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789697690,
+        "title": "Terraform: State Drift & Concurrent Apply Deadlocks",
+        "slug": "terraform-state-drift-concurrent-apply-deadlocks-remote-backends",
+        "language": "Terraform",
+        "code": "StateDriftDeadlock",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/terraform-state-drift-concurrent-apply-deadlocks-remote-backends.js",
+        "tags": [
+            "Terraform",
+            "DevOps",
+            "IaC",
+            "AWS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789697691,
+        "title": "PostgreSQL: Transaction ID Wraparound & Autovacuum",
+        "slug": "postgresql-transaction-id-wraparound-autovacuum-misconfiguration",
+        "language": "PostgreSQL",
+        "code": "XIDWraparound",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/postgresql-transaction-id-wraparound-autovacuum-misconfiguration.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789697692,
+        "title": "jev-ultrafast: Ultra-Fast JavaScript Event Listener",
+        "slug": "jev-ultrafast-javascript-event-listener-tech-trend",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-18",
+        "path": "data/posts/2026-09/jev-ultrafast-javascript-event-listener-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789653478,
         "title": "eBPF Verifier: Stack Limits & Loop State Explosion",
         "slug": "ebpf-verifier-stack-limits-loop-state-explosion",
