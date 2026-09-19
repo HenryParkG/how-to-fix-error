@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1789822073,
+        "title": "C++20 Coroutines: Unwinding & Lifetime Fixes",
+        "slug": "cpp20-coroutines-unwinding-lifetime-fix",
+        "language": "C++",
+        "code": "Coroutine Error",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/cpp20-coroutines-unwinding-lifetime-fix.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789822074,
+        "title": "Kafka: Mitigating Rebalancing Storms & Loss",
+        "slug": "kafka-consumer-group-rebalancing-storms-message-loss",
+        "language": "Kafka",
+        "code": "Rebalance Error",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/kafka-consumer-group-rebalancing-storms-message-loss.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789822075,
+        "title": "gRPC: HOL Blocking & LB Inconsistencies Fix",
+        "slug": "grpc-head-of-line-blocking-load-balancing-inconsistencies-fix",
+        "language": "gRPC",
+        "code": "Network Performance",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/grpc-head-of-line-blocking-load-balancing-inconsistencies-fix.js",
+        "tags": [
+            "gRPC",
+            "Network",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789822076,
+        "title": "Jev-Ultrafast: The Hyper-Optimized JavaScript Engine (i. am. speed.)",
+        "slug": "jev-ultrafast-github-trend",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/jev-ultrafast-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "JavaScript"
+        ]
+    },
+    {
         "id": 1789803879,
         "title": "Redis BGSAVE: Fork Latency & CoW Spikes Under Pressure",
         "slug": "redis-bgsave-fork-latency-cow-spikes",
