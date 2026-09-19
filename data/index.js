@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1789784269,
+        "title": "PyTorch: CUDA OOM & Mixed Precision Instability",
+        "slug": "pytorch-cuda-oom-mixed-precision-instability",
+        "language": "PyTorch, CUDA",
+        "code": "CUDA OOM",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/pytorch-cuda-oom-mixed-precision-instability.js",
+        "tags": [
+            "PyTorch",
+            "Deep Learning",
+            "CUDA",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789784270,
+        "title": "Istio: Envoy Policy Mismatches & mTLS Failures",
+        "slug": "istio-envoy-policy-mismatches-mtls-failures",
+        "language": "Istio, Envoy, Kubernetes",
+        "code": "mTLS Failure",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/istio-envoy-policy-mismatches-mtls-failures.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "mTLS",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789784271,
+        "title": "Go: Goroutine Leaks & Context Cancellation",
+        "slug": "go-goroutine-leakage-context-cancellation-deadlocks",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/go-goroutine-leakage-context-cancellation-deadlocks.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789784272,
+        "title": "Jev-Ultrafast: Beyond Async/Await in JavaScript",
+        "slug": "jev-ultrafast-browser-use-speed-javascript",
+        "language": "JavaScript, TypeScript",
+        "code": "Trend",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/jev-ultrafast-browser-use-speed-javascript.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789737516,
         "title": "Rust: Borrow Checker & Lifetime Errors in Async Code",
         "slug": "rust-borrow-checker-lifetime-async-errors",
