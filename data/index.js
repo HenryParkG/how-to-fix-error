@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1789803879,
+        "title": "Redis BGSAVE: Fork Latency & CoW Spikes Under Pressure",
+        "slug": "redis-bgsave-fork-latency-cow-spikes",
+        "language": "Redis",
+        "code": "CoW Spike",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/redis-bgsave-fork-latency-cow-spikes.js",
+        "tags": [
+            "Redis",
+            "Persistence",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789803880,
+        "title": "Spark: Shuffle Fetch Failed & Partition Skew OOMs",
+        "slug": "spark-shuffle-failures-partition-skew-ooms",
+        "language": "Apache Spark",
+        "code": "Shuffle Fetch Failed",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/spark-shuffle-failures-partition-skew-ooms.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789803881,
+        "title": "Haskell Space Leaks: Lazy Thunk Accumulation OOMs",
+        "slug": "haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/haskell-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Memory Management",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789803882,
+        "title": "Trend: browser-use/jev-ultrafast (i. am. speed.)",
+        "slug": "github-trend-jev-ultrafast-i-am-speed",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-19",
+        "path": "data/posts/2026-09/github-trend-jev-ultrafast-i-am-speed.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789784269,
         "title": "PyTorch: CUDA OOM & Mixed Precision Instability",
         "slug": "pytorch-cuda-oom-mixed-precision-instability",
