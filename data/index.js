@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1789871176,
+        "title": "eBPF: Program Verification Failures & Kernel Panics",
+        "slug": "ebpf-verification-failures-kernel-panics",
+        "language": "C",
+        "code": "eBPF_VERIFICATION_FAILURE",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/ebpf-verification-failures-kernel-panics.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789871177,
+        "title": "Kubernetes: CrashLoopBackOff & Probe Misconfigurations",
+        "slug": "kubernetes-crashloopbackoff-probe-misconfiguration",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/kubernetes-crashloopbackoff-probe-misconfiguration.js",
+        "tags": [
+            "Kubernetes",
+            "Probes",
+            "YAML",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789871178,
+        "title": "Elasticsearch: Shard Relocation Failures & Cluster Red State",
+        "slug": "elasticsearch-shard-relocation-failures-cluster-red-state",
+        "language": "Elasticsearch",
+        "code": "CLUSTER_RED_STATE",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/elasticsearch-shard-relocation-failures-cluster-red-state.js",
+        "tags": [
+            "Elasticsearch",
+            "Cluster",
+            "Monitoring",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789871179,
+        "title": "JEV-ULTRAFAST: Browser Speed Redefined (i. am. speed.)",
+        "slug": "jev-ultrafast-browser-speed-redefined",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/jev-ultrafast-browser-speed-redefined.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend",
+            "Performance"
+        ]
+    },
+    {
         "id": 1789822073,
         "title": "C++20 Coroutines: Unwinding & Lifetime Fixes",
         "slug": "cpp20-coroutines-unwinding-lifetime-fix",
