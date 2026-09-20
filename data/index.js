@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1789910529,
+        "title": "Rust: Async Cancellation & State Invariants in Tokio Select",
+        "slug": "rust-async-cancellation-state-invariants-tokio-select",
+        "language": "Rust",
+        "code": "CancellationHazard",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/rust-async-cancellation-state-invariants-tokio-select.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Concurrency",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789910530,
+        "title": "MongoDB: WiredTiger Cache Stalls & Read/Write Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-stalls-read-write-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "CacheStalls",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-stalls-read-write-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "Infra",
+            "Database",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789910531,
+        "title": "vLLM: PagedAttention KV-Cache Fragmentation & Preemption",
+        "slug": "vllm-pagedattention-kv-cache-fragmentation-request-preemption-cascades",
+        "language": "Python",
+        "code": "KV_CacheFragmentation",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/vllm-pagedattention-kv-cache-fragmentation-request-preemption-cascades.js",
+        "tags": [
+            "Python",
+            "AI/ML",
+            "Performance",
+            "LLM",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789910532,
+        "title": "Trending: 'jev-ultrafast' (i. am. speed.) - The Fast Event Stream",
+        "slug": "trending-jev-ultrafast-the-fast-event-stream",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/trending-jev-ultrafast-the-fast-event-stream.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "JavaScript",
+            "Performance",
+            "Eventing"
+        ]
+    },
+    {
         "id": 1789891548,
         "title": "PostgreSQL: XID Wraparound & Aggressive Autovacuum Starvation",
         "slug": "postgresql-xid-wraparound-autovacuum-starvation",
