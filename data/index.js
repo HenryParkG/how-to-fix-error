@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1789891548,
+        "title": "PostgreSQL: XID Wraparound & Aggressive Autovacuum Starvation",
+        "slug": "postgresql-xid-wraparound-autovacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "XID Wraparound",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789891549,
+        "title": "Airflow: Scheduler Heartbeat Starvation & Zombie Task Cascades",
+        "slug": "airflow-scheduler-heartbeat-starvation-zombie-tasks",
+        "language": "Airflow",
+        "code": "Scheduler Starvation",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/airflow-scheduler-heartbeat-starvation-zombie-tasks.js",
+        "tags": [
+            "Airflow",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789891550,
+        "title": "WebGPU: Pipeline Stalls & Unsynchronized Buffer Race Hazards",
+        "slug": "webgpu-pipeline-stalls-buffer-mapping-race-hazards",
+        "language": "WebGPU",
+        "code": "GPU Stalls / Race Hazards",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/webgpu-pipeline-stalls-buffer-mapping-race-hazards.js",
+        "tags": [
+            "WebGPU",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789891551,
+        "title": "JEV-Ultrafast: The \"I Am Speed\" of JSON Processing in JS",
+        "slug": "jev-ultrafast-github-trend-json-speed",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-20",
+        "path": "data/posts/2026-09/jev-ultrafast-github-trend-json-speed.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "JavaScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789871176,
         "title": "eBPF: Program Verification Failures & Kernel Panics",
         "slug": "ebpf-verification-failures-kernel-panics",
