@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1789957518,
+        "title": "Go: Goroutine Leaks & Scheduler Exhaustion",
+        "slug": "go-goroutine-leaks-scheduler-exhaustion",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/go-goroutine-leaks-scheduler-exhaustion.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789957519,
+        "title": "PyTorch: CUDA OOMs & Kernel Launch Failures",
+        "slug": "pytorch-cuda-ooms-kernel-launch-failures",
+        "language": "PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/pytorch-cuda-ooms-kernel-launch-failures.js",
+        "tags": [
+            "Python",
+            "Backend",
+            "AI/ML",
+            "GPU",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789957520,
+        "title": "MySQL: InnoDB Deadlocks & Gap Locks",
+        "slug": "mysql-innodb-deadlocks-gap-locks",
+        "language": "MySQL",
+        "code": "InnoDB Deadlock",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/mysql-innodb-deadlocks-gap-locks.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "Database",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789957521,
+        "title": "browser-use/jev-ultrafast: The Need for Speed in Browsers",
+        "slug": "jev-ultrafast-github-trend-analysis",
+        "language": "JavaScript / Web",
+        "code": "Trend",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/jev-ultrafast-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend",
+            "Performance",
+            "JavaScript"
+        ]
+    },
+    {
         "id": 1789910529,
         "title": "Rust: Async Cancellation & State Invariants in Tokio Select",
         "slug": "rust-async-cancellation-state-invariants-tokio-select",
