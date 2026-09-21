@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1789979389,
+        "title": "Redis: CoW Memory Amplification & Latency Spikes During Persistence",
+        "slug": "redis-cow-memory-amplification-latency-spikes",
+        "language": "Redis",
+        "code": "CoW Amplification",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/redis-cow-memory-amplification-latency-spikes.js",
+        "tags": [
+            "Redis",
+            "Performance",
+            "Persistence",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789979390,
+        "title": "Spark: Partition Skew, Shuffle Spill & Executor OOM Cascades",
+        "slug": "spark-partition-skew-shuffle-spill-oom",
+        "language": "Apache Spark",
+        "code": "OOM & Performance Degradation",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/spark-partition-skew-shuffle-spill-oom.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789979391,
+        "title": "Elixir GenServer: Mailbox Overflow & Backpressure Collapse",
+        "slug": "elixir-genserver-mailbox-overflow-backpressure-collapse",
+        "language": "Elixir",
+        "code": "Mailbox Overflow",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/elixir-genserver-mailbox-overflow-backpressure-collapse.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1789979392,
+        "title": "Jev-Ultrafast: The Hyper-Optimized Browser Automation Library",
+        "slug": "jev-ultrafast-browser-automation-trend",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/jev-ultrafast-browser-automation-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1789957518,
         "title": "Go: Goroutine Leaks & Scheduler Exhaustion",
         "slug": "go-goroutine-leaks-scheduler-exhaustion",
