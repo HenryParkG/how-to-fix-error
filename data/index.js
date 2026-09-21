@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1790004605,
+        "title": "C++20: Coroutine Stack Unwinding & Lifetime Issues",
+        "slug": "cpp20-coroutine-stack-unwinding-lifetime-issues",
+        "language": "C++",
+        "code": "CoroutineLifetime",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/cpp20-coroutine-stack-unwinding-lifetime-issues.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790004606,
+        "title": "AWS Lambda: Cold Start Latency & Provisioned Concurrency",
+        "slug": "aws-lambda-cold-start-provisioned-concurrency",
+        "language": "AWS Lambda",
+        "code": "PerformanceLatency",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/aws-lambda-cold-start-provisioned-concurrency.js",
+        "tags": [
+            "AWS",
+            "Serverless",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790004607,
+        "title": "Haskell: Monad Transformer Stack & Error Handling",
+        "slug": "haskell-monad-transformer-stack-error-handling",
+        "language": "Haskell",
+        "code": "TypeComplexity",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/haskell-monad-transformer-stack-error-handling.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790004608,
+        "title": "Jev Ultrafast: The Web's Fastest & Cheapest Agent",
+        "slug": "jev-ultrafast-web-agent-trend",
+        "language": "TypeScript / JavaScript",
+        "code": "Trend",
+        "date": "2026-09-21",
+        "path": "data/posts/2026-09/jev-ultrafast-web-agent-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1789979389,
         "title": "Redis: CoW Memory Amplification & Latency Spikes During Persistence",
         "slug": "redis-cow-memory-amplification-latency-spikes",
