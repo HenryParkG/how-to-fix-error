@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1790044109,
+        "title": "Rust FFI: Unsafe Memory Safety Violations Across Boundaries",
+        "slug": "rust-ffi-memory-safety-violations",
+        "language": "Rust",
+        "code": "FFI Memory Error",
+        "date": "2026-09-22",
+        "path": "data/posts/2026-09/rust-ffi-memory-safety-violations.js",
+        "tags": [
+            "Rust",
+            "Memory Safety",
+            "FFI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790044110,
+        "title": "Kafka: Rebalancing Storms & Consumer Lag Spikes",
+        "slug": "kafka-rebalancing-storms-consumer-lag-spikes",
+        "language": "Kafka",
+        "code": "Consumer Rebalance",
+        "date": "2026-09-22",
+        "path": "data/posts/2026-09/kafka-rebalancing-storms-consumer-lag-spikes.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Message Queue",
+            "Infra",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790044111,
+        "title": "Next.js: Hydration Mismatch Errors & SEO Degradation",
+        "slug": "nextjs-hydration-mismatch-seo-degradation",
+        "language": "Next.js",
+        "code": "Hydration Mismatch",
+        "date": "2026-09-22",
+        "path": "data/posts/2026-09/nextjs-hydration-mismatch-seo-degradation.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "SEO",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790044112,
+        "title": "browser-use/jev-ultrafast: The Fastest, Cheapest Web Agent",
+        "slug": "jev-ultrafast-github-trend",
+        "language": "Node.js",
+        "code": "Trend",
+        "date": "2026-09-22",
+        "path": "data/posts/2026-09/jev-ultrafast-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Web Scraping",
+            "Automation",
+            "AI",
+            "Node.js"
+        ]
+    },
+    {
         "id": 1790004605,
         "title": "C++20: Coroutine Stack Unwinding & Lifetime Issues",
         "slug": "cpp20-coroutine-stack-unwinding-lifetime-issues",
