@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1790150883,
+        "title": "Linux Kernel: Race Conditions in Concurrency Primitives",
+        "slug": "linux-kernel-race-conditions-concurrency-primitives",
+        "language": "C",
+        "code": "Race Condition",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/linux-kernel-race-conditions-concurrency-primitives.js",
+        "tags": [
+            "Linux",
+            "Kernel",
+            "Concurrency",
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790150884,
+        "title": "React Native: Native Bridge Serialization & UI Jank",
+        "slug": "react-native-native-bridge-serialization-ui-jank",
+        "language": "React Native",
+        "code": "Performance Degradation",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/react-native-native-bridge-serialization-ui-jank.js",
+        "tags": [
+            "React Native",
+            "JavaScript",
+            "Mobile",
+            "Performance",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790150885,
+        "title": "Elasticsearch: Shard Rebalancing & Split-Brain",
+        "slug": "elasticsearch-shard-rebalancing-split-brain",
+        "language": "Elasticsearch",
+        "code": "Cluster Instability",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/elasticsearch-shard-rebalancing-split-brain.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed System",
+            "Clustering",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790150886,
+        "title": "Laya: A Fast Non-Autoregressive Decision Engine",
+        "slug": "laya-non-autoregressive-decision-engine",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/laya-non-autoregressive-decision-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "NLP",
+            "Python"
+        ]
+    },
+    {
         "id": 1790130508,
         "title": "eBPF Verifier State Space Explosion & Tail-Call Overflows",
         "slug": "ebpf-verifier-state-space-explosion-tail-call-overflows",
