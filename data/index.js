@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1790130508,
+        "title": "eBPF Verifier State Space Explosion & Tail-Call Overflows",
+        "slug": "ebpf-verifier-state-space-explosion-tail-call-overflows",
+        "language": "C, eBPF",
+        "code": "VerifierExplosion, TailCallOverflow",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/ebpf-verifier-state-space-explosion-tail-call-overflows.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Performance",
+            "C",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790130509,
+        "title": "PostgreSQL XID Wraparound & Emergency Freezing",
+        "slug": "postgresql-xid-wraparound-emergency-autovacuum-freezing",
+        "language": "PostgreSQL, SQL",
+        "code": "XIDWraparound",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-emergency-autovacuum-freezing.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Maintenance",
+            "SQL",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790130510,
+        "title": "gRPC: HTTP/2 Flow Control Deadlocks & GOAWAY Race Conditions",
+        "slug": "grpc-http2-flow-control-deadlocks-goaway-race-conditions",
+        "language": "Go, gRPC, HTTP/2",
+        "code": "FlowControlDeadlock, GOAWAYRace",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-deadlocks-goaway-race-conditions.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790130511,
+        "title": "Laya: Simplifying Web Scraping with Modern Go",
+        "slug": "laya-web-scraping-go-github-trend",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/laya-web-scraping-go-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Web Scraping",
+            "Go",
+            "Backend"
+        ]
+    },
+    {
         "id": 1790044109,
         "title": "Rust FFI: Unsafe Memory Safety Violations Across Boundaries",
         "slug": "rust-ffi-memory-safety-violations",
