@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1790171982,
+        "title": "Go: Goroutine Leaks & Context Cancellation Fails",
+        "slug": "go-goroutine-leaks-context-cancellation-failures",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/go-goroutine-leaks-context-cancellation-failures.js",
+        "tags": [
+            "Concurrency",
+            "Context",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790171983,
+        "title": "PyTorch CUDA: Memory Fragmentation & OOM",
+        "slug": "pytorch-cuda-memory-fragmentation-oom-dynamic-graph",
+        "language": "PyTorch",
+        "code": "CUDAMemoryError",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/pytorch-cuda-memory-fragmentation-oom-dynamic-graph.js",
+        "tags": [
+            "Deep Learning",
+            "GPU",
+            "PyTorch",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790171984,
+        "title": "Istio: mTLS Handshake & Policy Debugging",
+        "slug": "istio-mtls-handshake-failures-policy-debugging",
+        "language": "Istio",
+        "code": "mTLSError",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/istio-mtls-handshake-failures-policy-debugging.js",
+        "tags": [
+            "Service Mesh",
+            "Kubernetes",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790171985,
+        "title": "Laya: The Multilingual Non-Autoregressive Decision Engine",
+        "slug": "nandhakishorm-laya-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-23",
+        "path": "data/posts/2026-09/nandhakishorm-laya-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "NLP",
+            "Machine Learning",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1790150883,
         "title": "Linux Kernel: Race Conditions in Concurrency Primitives",
         "slug": "linux-kernel-race-conditions-concurrency-primitives",
