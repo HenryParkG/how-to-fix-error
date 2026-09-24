@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix Spark Shuffle Skew and Off-Heap OOM Errors",
+    "slug": "spark-shuffle-skew-off-heap-memory-exhaustion",
+    "language": "Java",
+    "code": "ContainerKilledException",
+    "tags": [
+        "Apache Spark",
+        "Big Data",
+        "Java",
+        "Error Fix"
+    ],
+    "analysis": "<p>During large-scale distributed shuffle stages, uneven key distribution causes specific shuffle partitions to ingest an excessive fraction of the total dataset. When executing stateful operations or wide transformations such as <code>groupByKey</code>, <code>join</code>, or windowed aggregations, an Apache Spark executor processes disproportionately high record volumes in a single task thread.</p><p>Spark uses Project Tungsten for memory management, allocating off-heap memory through <code>sun.misc.Unsafe</code> to bypass JVM garbage collection overhead. However, when a skewed partition overflows the executor's budgeted shuffle memory fraction, Tungsten page allocators attempt to acquire contiguous off-heap memory blocks. If total off-heap usage exceeds the physical boundaries enforced by YARN, Kubernetes, or Mesos, the container orchestrator terminates the executor with <code>Container killed by YARN for exceeding memory limits</code> or emits a native <code>OutOfMemoryError: Direct buffer memory</code>.</p>",
+    "root_cause": "Severe key distribution skew forces a single shuffle partition into an executor, exhausting spark.memory.offHeap.size and breaching the host cgroup/container physical memory limits.",
+    "bad_code": "Dataset<Row> transactions = spark.read().parquet(\"s3a://data/transactions\");\nDataset<Row> accounts = spark.read().parquet(\"s3a://data/accounts\");\n\n// tenant_id contains 85% nulls or a single dominant 'default' tenant\nDataset<Row> enriched = transactions.join(\n    accounts,\n    transactions.col(\"tenant_id\").equalTo(accounts.col(\"tenant_id\")),\n    \"inner\"\n);\n\nenriched.write().format(\"parquet\").mode(SaveMode.Overwrite).save(\"s3a://data/output\");",
+    "solution_desc": "Mitigate the skew architecturally by isolating hot keys using dynamic salting or configuring Spark Adaptive Query Execution (AQE). Salting distributes hot keys uniformly across intermediate partitions by appending a pseudo-random integer suffix before the shuffle, followed by an unsalted second-stage aggregation or join. In addition, properly sizing executor memory overhead (<code>spark.executor.memoryOverhead</code>) provides sufficient buffer for off-heap allocations.",
+    "good_code": "import org.apache.spark.sql.functions;\nimport static org.apache.spark.sql.functions.*;\n\nint SALT_FACTOR = 32;\n\n// Enable Adaptive Query Execution for skew joining\nspark.conf().set(\"spark.sql.adaptive.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"5\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"268435456\");\n\n// Dynamic key salting for deterministic key distribution\nDataset<Row> saltedTransactions = transactions.withColumn(\n    \"salt\",\n    when(col(\"tenant_id\").isNull().or(col(\"tenant_id\").equalTo(\"default\")),\n         floor(rand().multiply(SALT_FACTOR))\n    ).otherwise(lit(0))\n);\n\nDataset<Row> replicatedAccounts = accounts.withColumn(\n    \"salt_array\",\n    when(col(\"tenant_id\").isNull().or(col(\"tenant_id\").equalTo(\"default\")),\n         array(sequence(lit(0), lit(SALT_FACTOR - 1)))\n    ).otherwise(array(lit(0)))\n).withColumn(\"salt\", explode(col(\"salt_array\"))).drop(\"salt_array\");\n\nDataset<Row> enriched = saltedTransactions.join(\n    replicatedAccounts,\n    saltedTransactions.col(\"tenant_id\").equalTo(replicatedAccounts.col(\"tenant_id\"))\n        .and(saltedTransactions.col(\"salt\").equalTo(replicatedAccounts.col(\"salt\"))),\n    \"inner\"\n).drop(\"salt\");",
+    "verification": "Check the Spark Web UI Stage detail page. Inspect the 'Summary Metrics for Tasks' table to confirm that Shuffle Read Size and GC Time across min, median, and max percentiles are evenly balanced. Ensure no task duration deviates by more than 2x from the median.",
+    "date": "2026-09-24",
+    "id": 1790216227,
+    "type": "error"
+});

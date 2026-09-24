@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1790216227,
+        "title": "Fix Spark Shuffle Skew and Off-Heap OOM Errors",
+        "slug": "spark-shuffle-skew-off-heap-memory-exhaustion",
+        "language": "Java",
+        "code": "ContainerKilledException",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/spark-shuffle-skew-off-heap-memory-exhaustion.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790216228,
+        "title": "Mitigate Redis Fork Latency & Copy-on-Write OOM",
+        "slug": "redis-fork-latency-cow-memory-exhaustion-bgsave",
+        "language": "Docker",
+        "code": "MISCONF / OOMKilled",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/redis-fork-latency-cow-memory-exhaustion-bgsave.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790216229,
+        "title": "Fix GenServer Mailbox Congestion & Cascading Timeouts",
+        "slug": "elixir-otp-mailbox-congestion-genserver-timeouts",
+        "language": "Go",
+        "code": "GenServer.call Timeout",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/elixir-otp-mailbox-congestion-genserver-timeouts.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790216230,
+        "title": "Laya: Sub-Millisecond Non-Autoregressive System 1 AI",
+        "slug": "laya-non-autoregressive-system-1-decision-engine",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/laya-non-autoregressive-system-1-decision-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1790171982,
         "title": "Go: Goroutine Leaks & Context Cancellation Fails",
         "slug": "go-goroutine-leaks-context-cancellation-failures",
