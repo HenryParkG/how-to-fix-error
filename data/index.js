@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1790258134,
+        "title": "C++20 Coroutines: Lifetime & Exception Safety Pitfalls",
+        "slug": "cpp20-coroutines-lifetime-exception-safety-pitfalls",
+        "language": "C++",
+        "code": "Coroutine Safety",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/cpp20-coroutines-lifetime-exception-safety-pitfalls.js",
+        "tags": [
+            "C++",
+            "Coroutines",
+            "Lifetime",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790258135,
+        "title": "MongoDB WiredTiger: Cache, Journaling, & Replication Lag",
+        "slug": "mongodb-wiredtiger-cache-journaling-replication-lag",
+        "language": "MongoDB",
+        "code": "Performance Issues",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-journaling-replication-lag.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Performance",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790258136,
+        "title": "Akka: Backpressure & Deadlock Scenarios",
+        "slug": "scala-akka-actor-system-backpressure-deadlock-scenarios",
+        "language": "Scala",
+        "code": "Concurrency Issues",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/scala-akka-actor-system-backpressure-deadlock-scenarios.js",
+        "tags": [
+            "Scala",
+            "Akka",
+            "Concurrency",
+            "Backpressure",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790258137,
+        "title": "NandhaKishorM/laya: The Fast, Multilingual Decision Engine",
+        "slug": "nandhakishorm-laya-fast-multilingual-decision-engine",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-24",
+        "path": "data/posts/2026-09/nandhakishorm-laya-fast-multilingual-decision-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "NLP",
+            "Python"
+        ]
+    },
+    {
         "id": 1790216227,
         "title": "Fix Spark Shuffle Skew and Off-Heap OOM Errors",
         "slug": "spark-shuffle-skew-off-heap-memory-exhaustion",
