@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790303678,
+        "title": "Rust: Stacked Borrows & Unsafe Pin Aliasing Hazards",
+        "slug": "rust-stacked-borrows-unsafe-pin-aliasing",
+        "language": "Rust",
+        "code": "Stacked Borrows",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/rust-stacked-borrows-unsafe-pin-aliasing.js",
+        "tags": [
+            "Memory Safety",
+            "Concurrency",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790303679,
+        "title": "Kafka: Consumer Group Rebalance Storms & Heartbeat Starvation",
+        "slug": "kafka-consumer-rebalance-storms-heartbeat-starvation",
+        "language": "Apache Kafka",
+        "code": "Rebalance Storms",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/kafka-consumer-rebalance-storms-heartbeat-starvation.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Infra",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790303680,
+        "title": "Haskell: Space Leaks & Thunk Accumulation in Lazy Pipelines",
+        "slug": "haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "Space Leaks",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/haskell-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Backend",
+            "Functional Programming",
+            "Memory Management",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790303681,
+        "title": "ZCode: Z.ai's Powerful & Extensible AI Coding Agent Harness",
+        "slug": "zcode-ai-coding-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/zcode-ai-coding-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Developer Tools"
+        ]
+    },
+    {
         "id": 1790258134,
         "title": "C++20 Coroutines: Lifetime & Exception Safety Pitfalls",
         "slug": "cpp20-coroutines-lifetime-exception-safety-pitfalls",
