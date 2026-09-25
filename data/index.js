@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1790324549,
+        "title": "eBPF Verifier Rejection & Kernel Interaction Issues",
+        "slug": "ebpf-verifier-rejection-kernel-interaction",
+        "language": "C / eBPF",
+        "code": "eBPF Rejection",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/ebpf-verifier-rejection-kernel-interaction.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790324550,
+        "title": "Airflow: Zombie Tasks & DAG Deadlocks Explained",
+        "slug": "airflow-zombie-tasks-dag-deadlocks",
+        "language": "Python",
+        "code": "Airflow Zombies/Deadlocks",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/airflow-zombie-tasks-dag-deadlocks.js",
+        "tags": [
+            "Airflow",
+            "DAGs",
+            "Orchestration",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790324551,
+        "title": "Kubernetes: CrashLoopBackOff - Liveness/Readiness Probes",
+        "slug": "kubernetes-crashloopbackoff-liveness-readiness-probes",
+        "language": "Kubernetes / YAML",
+        "code": "CrashLoopBackOff",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/kubernetes-crashloopbackoff-liveness-readiness-probes.js",
+        "tags": [
+            "Kubernetes",
+            "Probes",
+            "Microservices",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790324552,
+        "title": "ZCode: The Rise of AI-Powered Coding Agents",
+        "slug": "zcode-ai-coding-agent-harness-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/zcode-ai-coding-agent-harness-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Developer Tools",
+            "LLM"
+        ]
+    },
+    {
         "id": 1790303678,
         "title": "Rust: Stacked Borrows & Unsafe Pin Aliasing Hazards",
         "slug": "rust-stacked-borrows-unsafe-pin-aliasing",
