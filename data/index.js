@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1790345928,
+        "title": "PostgreSQL XID Wraparound & Freeze Starvation",
+        "slug": "postgresql-xid-wraparound-freeze-starvation",
+        "language": "SQL",
+        "code": "ERR_XID_WRAPAROUND",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-freeze-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790345929,
+        "title": "gRPC HTTP/2 Flow-Control Window Exhaustion & Stream Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlock",
+        "language": "Go",
+        "code": "DEADLINE_EXCEEDED",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/grpc-http2-flow-control-deadlock.js",
+        "tags": [
+            "gRPC",
+            "HTTP2",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790345930,
+        "title": "WebGPU Pipeline Binding Clashes & Device Loss",
+        "slug": "webgpu-binding-clash-device-loss-cascade",
+        "language": "TypeScript",
+        "code": "GPUPipelineError",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/webgpu-binding-clash-device-loss-cascade.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790345931,
+        "title": "Inside ZCode: Z.ai's Next-Gen Coding Agent Harness",
+        "slug": "zai-org-zcode-agent-harness-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-25",
+        "path": "data/posts/2026-09/zai-org-zcode-agent-harness-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1790324549,
         "title": "eBPF Verifier Rejection & Kernel Interaction Issues",
         "slug": "ebpf-verifier-rejection-kernel-interaction",
