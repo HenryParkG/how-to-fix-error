@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790390168,
+        "title": "Fix PyTorch CUDA Graph Invalidation and Memory Thrashing",
+        "slug": "pytorch-cuda-graph-invalidation-dynamic-shapes",
+        "language": "Python",
+        "code": "CUDAGraphCaptureError",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/pytorch-cuda-graph-invalidation-dynamic-shapes.js",
+        "tags": [
+            "Python",
+            "CUDA",
+            "PyTorch",
+            "DeepLearning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790390169,
+        "title": "Fix Envoy Sidecar Lifecycle Races & Egress Resets",
+        "slug": "istio-envoy-sidecar-lifecycle-race-egress-reset",
+        "language": "Go",
+        "code": "ECONNRESET",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/istio-envoy-sidecar-lifecycle-race-egress-reset.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Istio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790390170,
+        "title": "Mitigating RocksDB Write Stalls and Compaction Cascades",
+        "slug": "rocksdb-write-stall-compaction-debt-amplification",
+        "language": "Rust",
+        "code": "Status::Incomplete",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/rocksdb-write-stall-compaction-debt-amplification.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Storage",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790390171,
+        "title": "Inside ZCode: High-Performance Autonomous Coding Harness",
+        "slug": "trending-zai-org-zcode-agent-harness",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/trending-zai-org-zcode-agent-harness.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1790345928,
         "title": "PostgreSQL XID Wraparound & Freeze Starvation",
         "slug": "postgresql-xid-wraparound-freeze-starvation",
