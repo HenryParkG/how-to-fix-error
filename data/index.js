@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1790429381,
+        "title": "Fix C++20 Coroutine Frame Leaks & Dangling References",
+        "slug": "cpp20-coroutine-frame-leaks-dangling-promise",
+        "language": "C++20",
+        "code": "LifetimeError",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/cpp20-coroutine-frame-leaks-dangling-promise.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Memory Leak",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790429382,
+        "title": "Fix vLLM PagedAttention KV-Cache & Prefill Stalls",
+        "slug": "vllm-pagedattention-kv-cache-prefill-contention",
+        "language": "Python",
+        "code": "CUDA_OOM",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/vllm-pagedattention-kv-cache-prefill-contention.js",
+        "tags": [
+            "vLLM",
+            "LLM",
+            "Inference",
+            "Python",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790429383,
+        "title": "Resolve MongoDB WiredTiger Cache Stalls & Cascades",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls",
+        "language": "MongoDB",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/mongodb-wiredtiger-cache-eviction-stalls.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "Database",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790429384,
+        "title": "ZCode: Z.ai's Autonomous Agent Harness Explained",
+        "slug": "zai-zcode-coding-agent-harness-architecture",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/zai-zcode-coding-agent-harness-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1790410019,
         "title": "Fix Spark Shuffle FetchFailedException Cascades",
         "slug": "spark-shuffle-fetch-failed-exception-skew-oom",
