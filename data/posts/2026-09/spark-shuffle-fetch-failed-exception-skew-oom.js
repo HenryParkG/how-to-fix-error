@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix Spark Shuffle FetchFailedException Cascades",
+    "slug": "spark-shuffle-fetch-failed-exception-skew-oom",
+    "language": "Java",
+    "code": "FetchFailedException",
+    "tags": [
+        "Java",
+        "SQL",
+        "AWS",
+        "Error Fix"
+    ],
+    "analysis": "<p>In distributed Apache Spark jobs, wide transformations such as joins and aggregations trigger shuffle phases where map tasks write partition files to disk and reduce tasks pull partitions across the cluster network. When severe data skew exists, specific partitions receive exponentially more records than others. This causes the executor processing the oversized partition to exceed its JVM heap threshold, triggering aggressive garbage collection pauses followed by an OutOfMemoryError (OOM) crash.</p><p>When an executor dies while serving shuffle blocks, downstream tasks attempting to pull shuffle data encounter <code>org.apache.spark.shuffle.FetchFailedException</code>. By default, Spark flags the shuffle stage as compromised and attempts to retry the stage. In skewed workloads, retrying the stage re-executes the exact same deterministic partition mapping on a different executor, which in turn OOMs and crashes as well. This creates a cascading failure across the cluster, exhausting the maximum stage retry limit (<code>spark.stage.maxConsecutiveAttempts</code>) and aborting the entire Spark application.</p>",
+    "root_cause": "Severe partition key skew causes a single reducer task to consume disproportionate memory, leading to executor OOM and death. Subsequent downstream attempts to fetch shuffle blocks from the terminated executor trigger FetchFailedException cascades and stage abortion.",
+    "bad_code": "// Naive join on a severely skewed key (e.g., nulls or hot user IDs)\nDataset<Row> impressions = spark.read().parquet(\"s3://bucket/ad_impressions\");\nDataset<Row> users = spark.read().parquet(\"s3://bucket/users\");\n\n// Hot key 'user_id' causes one partition to exceed executor memory\nDataset<Row> joined = impressions.join(users, \"user_id\");\njoined.write().mode(SaveMode.Overwrite).parquet(\"s3://bucket/output\");",
+    "solution_desc": "Mitigate partition skew and shuffle transport crashes by enabling Adaptive Query Execution (AQE) with skew join optimization. For manual control or older Spark versions, isolate the skewed keys and apply key salting by appending a random integer suffix (0 to N-1) to the skewed key on the left dataset while replicating the corresponding rows N times on the right dataset before joining.",
+    "good_code": "// Enable AQE skew handling\nspark.conf().set(\"spark.sql.adaptive.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"5\");\nspark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"268435456\"); // 256MB\n\n// Alternative application-level fix: Salting the skewed key\nint SALT_BOUND = 10;\nDataset<Row> saltedImpressions = impressions.withColumn(\n    \"salted_user_id\",\n    functions.concat(functions.col(\"user_id\"), functions.lit(\"_\"), functions.floor(functions.rand().multiply(SALT_BOUND)))\n);\n\n// Explode user dimensions across salt ranges\nDataset<Row> saltedUsers = users.withColumn(\"salt\", functions.array(functions.sequence(functions.lit(0), functions.lit(SALT_BOUND - 1))))\n    .withColumn(\"salt_item\", functions.explode(functions.col(\"salt\")))\n    .withColumn(\"salted_user_id\", functions.concat(functions.col(\"user_id\"), functions.lit(\"_\"), functions.col(\"salt_item\")))\n    .drop(\"salt\", \"salt_item\");\n\nDataset<Row> joined = saltedImpressions.join(saltedUsers, \"salted_user_id\");",
+    "verification": "Monitor the Spark UI 'Stages' tab. Verify that the task duration distribution histogram is uniformly bounded, shuffle read sizes per task are balanced, and no executor nodes encounter exit code 137 (OOM killed) or throw FetchFailedException during the join stage.",
+    "date": "2026-09-26",
+    "id": 1790410019,
+    "type": "error"
+});

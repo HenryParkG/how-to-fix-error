@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1790410019,
+        "title": "Fix Spark Shuffle FetchFailedException Cascades",
+        "slug": "spark-shuffle-fetch-failed-exception-skew-oom",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/spark-shuffle-fetch-failed-exception-skew-oom.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790410020,
+        "title": "Resolving Elixir GenServer Selective Receive Bottlenecks",
+        "slug": "elixir-genserver-mailbox-overflow-selective-receive",
+        "language": "Rust",
+        "code": "ProcessMailboxOverflow",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/elixir-genserver-mailbox-overflow-selective-receive.js",
+        "tags": [
+            "Rust",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790410021,
+        "title": "Fix Redis BGSAVE Latency Spikes and Copy-on-Write OOM",
+        "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
+        "language": "Go",
+        "code": "RedisForkOOM",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/redis-bgsave-fork-latency-cow-memory-exhaustion.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790410022,
+        "title": "Inside ZCode: Next-Gen Autonomous AI Coding Agent Harness",
+        "slug": "zai-org-zcode-autonomous-coding-agent-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-26",
+        "path": "data/posts/2026-09/zai-org-zcode-autonomous-coding-agent-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1790390168,
         "title": "Fix PyTorch CUDA Graph Invalidation and Memory Thrashing",
         "slug": "pytorch-cuda-graph-invalidation-dynamic-shapes",
