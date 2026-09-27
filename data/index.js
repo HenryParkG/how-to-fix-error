@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1790519119,
+        "title": "Resolving eBPF Verifier Complexity Explosions",
+        "slug": "ebpf-verifier-path-complexity-bounded-loop-invalidation",
+        "language": "Rust",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/ebpf-verifier-path-complexity-bounded-loop-invalidation.js",
+        "tags": [
+            "Rust",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790519120,
+        "title": "Mitigating PostgreSQL XID Wraparound Stalls",
+        "slug": "postgresql-xid-wraparound-deadlocks-autovacuum-stalls",
+        "language": "PostgreSQL",
+        "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/postgresql-xid-wraparound-deadlocks-autovacuum-stalls.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790519121,
+        "title": "Fixing WebGPU Device Loss from Buffer Mapping",
+        "slug": "fix-webgpu-device-loss-async-buffer-mapping-contention",
+        "language": "TypeScript",
+        "code": "GPUDeviceLostInfo",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/fix-webgpu-device-loss-async-buffer-mapping-contention.js",
+        "tags": [
+            "TypeScript",
+            "Frontend",
+            "React",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790519122,
+        "title": "Inside jev-chat-jarvis: Non-Invasive Chat Co-Pilot",
+        "slug": "jev-chat-jarvis-non-invasive-ai-chat-copilot",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/jev-chat-jarvis-non-invasive-ai-chat-copilot.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1790498652,
         "title": "Go Goroutine Leakage & Scheduler Starvation",
         "slug": "go-goroutine-leakage-scheduler-starvation",
