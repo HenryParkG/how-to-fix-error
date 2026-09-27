@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Rust Async Drop Invalidation and Pin Invariants",
+    "slug": "fixing-rust-async-drop-invalidation-pin-safety",
+    "language": "Rust",
+    "code": "UndefinedBehavior",
+    "tags": [
+        "Rust",
+        "Backend",
+        "Async",
+        "Concurrency",
+        "Error Fix"
+    ],
+    "analysis": "<p>In asynchronous Rust, types that implement self-referential futures or register pointers into background executors require strict adherence to the <code>Pin</code> contract. A subtle yet catastrophic class of bugs occurs when a pinned struct initiates an asynchronous cleanup routine or handles cancellation during an incomplete poll cycle without preserving pinning guarantees across its <code>Drop</code> execution.</p><p>Because Rust lacks native asynchronous destructors (<code>AsyncDrop</code>), developers often attempt to implement synchronous <code>Drop</code> that schedules an asynchronous task, moves internal references, or pulls raw pointers from an already pinned struct. Moving data out of a pinned wrapper or deallocating resources asynchronously while synchronous pointers remain aliased directly violates the Pin drop guarantee: memory cannot be reused or invalidated until <code>drop</code> completes its run without moving pinned fields.</p>",
+    "root_cause": "Violating the Pin contract during synchronous Drop by deallocating or moving fields expected to remain stationary, or accessing raw self-referential pointers after partial field drops occur without proper structural pinning synchronization.",
+    "bad_code": "use std::pin::Pin;\nuse std::marker::PhantomPinned;\n\nstruct AsyncResource {\n    raw_ptr: *const String,\n    data: String,\n    _pin: PhantomPinned,\n}\n\nimpl AsyncResource {\n    pub fn new(val: String) -> Pin<Box<Self>> {\n        let mut res = Box::pin(AsyncResource {\n            raw_ptr: std::ptr::null(),\n            data: val,\n            _pin: PhantomPinned,\n        });\n        let ptr: *const String = &res.data;\n        unsafe {\n            let mut_ref = Pin::as_mut(&mut res);\n            Pin::get_unchecked_mut(mut_ref).raw_ptr = ptr;\n        }\n        res\n    }\n}\n\nimpl Drop for AsyncResource {\n    fn drop(&mut self) {\n        // Bug: Spawning detached background work while dereferencing raw_ptr\n        // after 'data' drops leads to use-after-free and violates Pin invariants.\n        let ptr = self.raw_ptr;\n        tokio::spawn(async move {\n            unsafe {\n                println!(\"Releasing: {}\", *ptr); // UB: self.data is deallocated concurrently\n            }\n        });\n    }\n}",
+    "solution_desc": "Maintain the Pin contract by ensuring asynchronous cancellation and cleanup occur via explicit asynchronous completion methods prior to destruction, or encapsulate pinned resources using synchronization primitives such as intrusive atomic lists and Arc-guarded handles that preserve memory location stability throughout asynchronous teardowns.",
+    "good_code": "use std::sync::Arc;\nuse tokio::sync::Mutex;\n\nstruct SharedResource {\n    data: String,\n}\n\npub struct ManagedResource {\n    inner: Arc<Mutex<Option<SharedResource>>>,\n}\n\nimpl ManagedResource {\n    pub fn new(val: String) -> Self {\n        Self {\n            inner: Arc::new(Mutex::new(Some(SharedResource { data: val }))),\n        }\n    }\n\n    pub async fn shutdown(&mut self) {\n        let mut guard = self.inner.lock().await;\n        if let Some(resource) = guard.take() {\n            tokio::task::spawn_blocking(move || {\n                // Cleanly consume and invalidate resource without pointer invalidation\n                drop(resource);\n            }).await.ok();\n        }\n    }\n}\n\nimpl Drop for ManagedResource {\n    fn drop(&mut self) {\n        let inner = Arc::clone(&self.inner);\n        tokio::spawn(async move {\n            let mut guard = inner.lock().await;\n            guard.take(); // Idempotent teardown safely avoiding dangling borrows\n        });\n    }\n}",
+    "verification": "Compile with Miri using `cargo miri test` and execute under Tokio's multi-threaded runtime with Loom stress testing to verify zero pointer dereference violations during abrupt future cancellation.",
+    "date": "2026-09-27",
+    "id": 1790476459,
+    "type": "error"
+});

@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790476459,
+        "title": "Fixing Rust Async Drop Invalidation and Pin Invariants",
+        "slug": "fixing-rust-async-drop-invalidation-pin-safety",
+        "language": "Rust",
+        "code": "UndefinedBehavior",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/fixing-rust-async-drop-invalidation-pin-safety.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Async",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790476460,
+        "title": "Fixing Kafka Consumer Rebalance Storms and Deadlocks",
+        "slug": "kafka-consumer-rebalance-storms-heartbeat-deadlocks",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/kafka-consumer-rebalance-storms-heartbeat-deadlocks.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kafka",
+            "DistributedSystems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790476461,
+        "title": "Resolving ClickHouse Mutation Backpressure and Part Cascades",
+        "slug": "clickhouse-mergetree-mutation-backpressure-part-cascades",
+        "language": "SQL",
+        "code": "TOO_MANY_PARTS",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/clickhouse-mergetree-mutation-backpressure-part-cascades.js",
+        "tags": [
+            "SQL",
+            "Infra",
+            "ClickHouse",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790476462,
+        "title": "Inside jev-chat-jarvis: AI Copilot for Mobile Messengers",
+        "slug": "inside-jev-chat-jarvis-mobile-ai-chat-copilot",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/inside-jev-chat-jarvis-mobile-ai-chat-copilot.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Android"
+        ]
+    },
+    {
         "id": 1790429381,
         "title": "Fix C++20 Coroutine Frame Leaks & Dangling References",
         "slug": "cpp20-coroutine-frame-leaks-dangling-promise",
