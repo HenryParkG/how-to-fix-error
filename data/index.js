@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1790498652,
+        "title": "Go Goroutine Leakage & Scheduler Starvation",
+        "slug": "go-goroutine-leakage-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/go-goroutine-leakage-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790498653,
+        "title": "Airflow DAG Deadlocks from Mutex Contention",
+        "slug": "airflow-dag-deadlocks-mutex-contention-executors",
+        "language": "Python",
+        "code": "DAGDeadlock",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/airflow-dag-deadlocks-mutex-contention-executors.js",
+        "tags": [
+            "Python",
+            "Airflow",
+            "Distributed Systems",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790498654,
+        "title": "K8s CrashLoopBackOff Cascades & Readiness Probe Failures",
+        "slug": "kubernetes-crashloopbackoff-cascades-readiness-probe-failures",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/kubernetes-crashloopbackoff-cascades-readiness-probe-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Cloud Native",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790498655,
+        "title": "Jev-Chat Jarvis: Your AI Co-Pilot for Messaging Apps",
+        "slug": "jev-chat-jarvis-ai-copilot-messaging-apps-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-27",
+        "path": "data/posts/2026-09/jev-chat-jarvis-ai-copilot-messaging-apps-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Mobile Assistant"
+        ]
+    },
+    {
         "id": 1790476459,
         "title": "Fixing Rust Async Drop Invalidation and Pin Invariants",
         "slug": "fixing-rust-async-drop-invalidation-pin-safety",
