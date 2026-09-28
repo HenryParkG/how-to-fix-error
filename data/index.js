@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1790586521,
+        "title": "Fixing PyTorch NCCL Collective Deadlocks & Desynchronization",
+        "slug": "pytorch-nccl-deadlock-desynchronization-fix",
+        "language": "PyTorch",
+        "code": "NCCL Deadlock",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/pytorch-nccl-deadlock-desynchronization-fix.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Training",
+            "Deep Learning",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790586522,
+        "title": "Mitigating Redis BGSAVE Latency & Memory Bloat from THP",
+        "slug": "redis-bgsave-thp-latency-fix",
+        "language": "Redis",
+        "code": "BGSAVE Latency",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/redis-bgsave-thp-latency-fix.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790586523,
+        "title": "Diagnosing Elixir GenServer Mailbox Explosions & Stalls",
+        "slug": "elixir-genserver-mailbox-explosion-stalls-fix",
+        "language": "Elixir",
+        "code": "Mailbox Explosion",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/elixir-genserver-mailbox-explosion-stalls-fix.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790586524,
+        "title": "Contrastive-LM/CLM: Unlocking Better Language Models with Contrastive Learning",
+        "slug": "contrastive-lm-clm-tech-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/contrastive-lm-clm-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Deep Learning",
+            "Natural Language Processing",
+            "Python"
+        ]
+    },
+    {
         "id": 1790563097,
         "title": "Debugging Envoy Pool Exhaustion & Istio 503 UC Cascades",
         "slug": "debugging-envoy-connection-pool-exhaustion-istio-503-uc-cascades",
