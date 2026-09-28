@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790563097,
+        "title": "Debugging Envoy Pool Exhaustion & Istio 503 UC Cascades",
+        "slug": "debugging-envoy-connection-pool-exhaustion-istio-503-uc-cascades",
+        "language": "Envoy, Istio, Kubernetes",
+        "code": "503 UC (Upstream Connect)",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/debugging-envoy-connection-pool-exhaustion-istio-503-uc-cascades.js",
+        "tags": [
+            "Envoy",
+            "Istio",
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790563098,
+        "title": "Haskell Space Leaks: Unbounded Thunk Accumulation",
+        "slug": "diagnosing-haskell-lazy-evaluation-space-leaks-unbounded-thunk-accumulation",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/diagnosing-haskell-lazy-evaluation-space-leaks-unbounded-thunk-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790563099,
+        "title": "Mitigating Cassandra TombstoneOverwhelming & Read Timeout Spikes",
+        "slug": "mitigating-apache-cassandra-tombstoneoverwhelmingexception-read-timeout-spikes",
+        "language": "Apache Cassandra",
+        "code": "TombstoneOverwhelmingException",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/mitigating-apache-cassandra-tombstoneoverwhelmingexception-read-timeout-spikes.js",
+        "tags": [
+            "Apache Cassandra",
+            "NoSQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790563100,
+        "title": "Contrastive-LM/CLM: Advancing Language Models",
+        "slug": "analyze-trending-contrastive-lm-clm",
+        "language": "Python, ML/AI",
+        "code": "Trend",
+        "date": "2026-09-28",
+        "path": "data/posts/2026-09/analyze-trending-contrastive-lm-clm.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Machine Learning",
+            "Python"
+        ]
+    },
+    {
         "id": 1790519119,
         "title": "Resolving eBPF Verifier Complexity Explosions",
         "slug": "ebpf-verifier-path-complexity-bounded-loop-invalidation",
