@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790768254,
+        "title": "C++20 Coroutine Lifetime Mismatches & Unwinding Errors",
+        "slug": "cpp20-coroutine-lifetime-mismatch-stack-unwinding",
+        "language": "C++",
+        "code": "CoroutineLifetime",
+        "date": "2026-09-30",
+        "path": "data/posts/2026-09/cpp20-coroutine-lifetime-mismatch-stack-unwinding.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790768255,
+        "title": "Spark OOMs: Leaks & Shuffle Spills Demystified",
+        "slug": "spark-oom-memory-leaks-shuffle-spills",
+        "language": "Spark / Java",
+        "code": "OutOfMemoryError",
+        "date": "2026-09-30",
+        "path": "data/posts/2026-09/spark-oom-memory-leaks-shuffle-spills.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Java",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790768256,
+        "title": "gRPC Bidirectional Streaming Deadlocks & Flow Control",
+        "slug": "grpc-bidirectional-streaming-deadlock-flow-control",
+        "language": "gRPC / Go",
+        "code": "GrpcDeadlock",
+        "date": "2026-09-30",
+        "path": "data/posts/2026-09/grpc-bidirectional-streaming-deadlock-flow-control.js",
+        "tags": [
+            "gRPC",
+            "Concurrency",
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790768257,
+        "title": "KKKKhazix/AIHOT: Your Custom AI-Powered Trend Tracker",
+        "slug": "kkkkhazix-aihot-ai-trend-tracker",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-09-30",
+        "path": "data/posts/2026-09/kkkkhazix-aihot-ai-trend-tracker.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python",
+            "Web Scraping"
+        ]
+    },
+    {
         "id": 1790586521,
         "title": "Fixing PyTorch NCCL Collective Deadlocks & Desynchronization",
         "slug": "pytorch-nccl-deadlock-desynchronization-fix",
