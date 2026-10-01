@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1790856331,
+        "title": "Rust Async Cancellation: Invariant Hazards Across Await",
+        "slug": "rust-async-cancellation-invariants",
+        "language": "Rust",
+        "code": "AsyncCancellation",
+        "date": "2026-10-01",
+        "path": "data/posts/2026-10/rust-async-cancellation-invariants.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790856332,
+        "title": "Kafka Consumer Rebalance Storms & Heartbeat Starvation",
+        "slug": "kafka-consumer-rebalance-storms",
+        "language": "Kafka",
+        "code": "RebalanceStorm",
+        "date": "2026-10-01",
+        "path": "data/posts/2026-10/kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Messaging",
+            "Distributed Systems",
+            "Backend",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790856333,
+        "title": "MongoDB WiredTiger Cache Eviction Stalls & Tickets",
+        "slug": "mongodb-wiredtiger-cache-stalls",
+        "language": "MongoDB",
+        "code": "CacheEvictionStall",
+        "date": "2026-10-01",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-cache-stalls.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Performance",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790856334,
+        "title": "KKKKhazix/AIHOT: AI-Powered Trending News Aggregator Framework",
+        "slug": "kkkkhazix-aihot-github-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-01",
+        "path": "data/posts/2026-10/kkkkhazix-aihot-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Web Scraping",
+            "Python",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1790768254,
         "title": "C++20 Coroutine Lifetime Mismatches & Unwinding Errors",
         "slug": "cpp20-coroutine-lifetime-mismatch-stack-unwinding",
