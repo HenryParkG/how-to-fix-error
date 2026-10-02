@@ -1,0 +1,23 @@
+window.onPostDataLoaded({
+    "title": "PostgreSQL TXID Wraparound Panics & Autovacuum Freeze Starvation",
+    "slug": "postgresql-txid-wraparound-panics-autovacuum-freeze-starvation",
+    "language": "PostgreSQL",
+    "code": "TXIDWraparound",
+    "tags": [
+        "PostgreSQL",
+        "Database",
+        "Performance",
+        "Infra",
+        "SQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>PostgreSQL uses a 32-bit Transaction ID (TXID) counter for concurrency control (MVCC). Every transaction is assigned a unique TXID. To prevent TXID wraparound (where the counter loops back to a previously used ID, causing data corruption due to incorrect visibility rules), PostgreSQL marks old transactions as 'frozen'. This process is primarily handled by the `autovacuum` daemon, specifically its 'freeze' component. If `autovacuum` fails to freeze old transactions fast enough, the system can approach the TXID wraparound limit (2 billion transactions before a critical panic).</p><p>When the database approaches this limit, PostgreSQL enters an emergency 'antixid_freeze' mode, attempting to freeze all remaining old transactions. If this still isn't enough, it eventually enters read-only mode, and finally, if the situation is not resolved, it will panic and shut down to prevent data corruption. This 'autovacuum freeze starvation' is a critical operational issue, often triggered by misconfigured autovacuum, very high transaction rates on certain tables, or long-running transactions preventing vacuuming.</p>",
+    "root_cause": "The specific technical reason for failure is the exhaustion of PostgreSQL's 32-bit Transaction ID (TXID) space. This occurs when `autovacuum` cannot keep up with marking old transactions as 'frozen' before the `datfrozenxid` for a database reaches `autovacuum_freeze_max_age` (default 200 million transactions). Long-running transactions or queries that hold locks, heavily updated tables without proper `autovacuum` tuning, or insufficient `autovacuum` worker resources can all contribute to this starvation.",
+    "bad_code": "While not 'bad code' in the traditional sense, this situation often arises from a lack of monitoring and suboptimal configuration. A database administrator might neglect to monitor the `datfrozenxid` or have overly restrictive `autovacuum` settings, leading to slow or non-existent freezing operations. For example, setting `autovacuum = off` or having `autovacuum_vacuum_cost_delay` too high without other compensations, especially on frequently updated tables.",
+    "solution_desc": "The primary solution involves proactive monitoring and proper `autovacuum` tuning. Regularly check the `datfrozenxid` of databases using `SELECT datname, age(datfrozenxid) FROM pg_database;`. If any database is approaching `autovacuum_freeze_max_age`, immediate action is required. This includes ensuring `autovacuum` is enabled and adequately configured for the workload. For critical situations, manually run `VACUUM FREEZE` on problematic tables or the entire database. Identify and terminate long-running transactions that might be blocking `autovacuum`. Consider increasing `autovacuum_max_workers` and decreasing `autovacuum_vacuum_cost_delay` or `autovacuum_vacuum_cost_limit` for specific tables or globally, if resources allow. Partitioning large, frequently updated tables can also help manage vacuuming scope.",
+    "good_code": "To check `datfrozenxid` age:\n```sql\nSELECT datname, age(datfrozenxid) AS transactions_since_freeze\nFROM pg_database\nORDER BY transactions_since_freeze DESC;\n```\n\nTo explicitly vacuum and freeze a problematic table (e.g., `my_large_table`):\n```sql\nVACUUM FREEZE VERBOSE my_large_table;\n```\n\nTo adjust `autovacuum` settings for a specific table (e.g., increasing frequency for `my_large_table`):\n```sql\nALTER TABLE my_large_table SET (autovacuum_freeze_max_age = 100000000, autovacuum_vacuum_scale_factor = 0.05);\n```\n\nTo globally adjust `autovacuum_freeze_max_age` (requires restart for global settings):\n```sql\nALTER SYSTEM SET autovacuum_freeze_max_age = 150000000;\n-- Then restart PostgreSQL\n```",
+    "verification": "After applying fixes, regularly monitor the `datfrozenxid` age for all databases. The `transactions_since_freeze` value should consistently stay well below `autovacuum_freeze_max_age`. Check PostgreSQL logs for `autovacuum` activity and any warnings related to TXID wraparound or slow vacuuming. Use `pg_stat_all_tables` to observe `n_dead_tuples` and `last_autovacuum` to ensure tables are being vacuumed effectively. Ensure system stability and no further TXID-related panics.",
+    "date": "2026-10-02",
+    "id": 1790941518,
+    "type": "error"
+});

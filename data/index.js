@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1790941518,
+        "title": "PostgreSQL TXID Wraparound Panics & Autovacuum Freeze Starvation",
+        "slug": "postgresql-txid-wraparound-panics-autovacuum-freeze-starvation",
+        "language": "PostgreSQL",
+        "code": "TXIDWraparound",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/postgresql-txid-wraparound-panics-autovacuum-freeze-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790941519,
+        "title": "Go Non-Cooperative Preemption Failures & Cgo Starvation",
+        "slug": "go-non-cooperative-preemption-cgo-starvation",
+        "language": "Go",
+        "code": "GoroutineStarvation",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/go-non-cooperative-preemption-cgo-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790941520,
+        "title": "WebGPU Pipeline Desync & Buffer Mapping Deadlocks",
+        "slug": "webgpu-pipeline-desynchronization-asynchronous-buffer-mapping-deadlocks",
+        "language": "WebGPU",
+        "code": "WebGPUDedlock",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/webgpu-pipeline-desynchronization-asynchronous-buffer-mapping-deadlocks.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790941521,
+        "title": "AIHOT: Automated Trending Topic & Report Generation",
+        "slug": "aihot-automated-trending-topic-report-generation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/aihot-automated-trending-topic-report-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "NLP",
+            "Python"
+        ]
+    },
+    {
         "id": 1790910693,
         "title": "Fix Silent Packet Drops: Kube Conntrack Table Exhaustion",
         "slug": "kubernetes-silent-packet-drops-conntrack-exhaustion",
