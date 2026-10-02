@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1790910693,
+        "title": "Fix Silent Packet Drops: Kube Conntrack Table Exhaustion",
+        "slug": "kubernetes-silent-packet-drops-conntrack-exhaustion",
+        "language": "Kubernetes",
+        "code": "NF_CONNTRACK_DROP",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/kubernetes-silent-packet-drops-conntrack-exhaustion.js",
+        "tags": [
+            "Kubernetes",
+            "Linux",
+            "Docker",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790910694,
+        "title": "React Native Fabric: JSI Thread Contention & State Desync",
+        "slug": "react-native-fabric-jsi-thread-contention-desync",
+        "language": "React Native",
+        "code": "JSIStateMismatchError",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/react-native-fabric-jsi-thread-contention-desync.js",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Frontend",
+            "Mobile",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790910695,
+        "title": "Vector DB: HNSW Lock Contention During Streaming Ingestion",
+        "slug": "vector-db-hnsw-degradation-streaming-ingestion",
+        "language": "Rust",
+        "code": "HNSWIndexLockContention",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/vector-db-hnsw-degradation-streaming-ingestion.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Python",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790910696,
+        "title": "AIHOT: Autonomous AI Daily Briefing & Trending Aggregator",
+        "slug": "aihot-autonomous-trending-news-framework",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-02",
+        "path": "data/posts/2026-10/aihot-autonomous-trending-news-framework.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI"
+        ]
+    },
+    {
         "id": 1790856331,
         "title": "Rust Async Cancellation: Invariant Hazards Across Await",
         "slug": "rust-async-cancellation-invariants",
