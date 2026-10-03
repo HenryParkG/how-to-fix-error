@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1791036335,
+        "title": "eBPF Verifier: State Explosion & Tail Call Invalidation",
+        "slug": "ebpf-verifier-state-explosion-tail-call-invalidation",
+        "language": "eBPF/C",
+        "code": "Verifier State Explosion",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/ebpf-verifier-state-explosion-tail-call-invalidation.js",
+        "tags": [
+            "eBPF",
+            "Kernel",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791036336,
+        "title": "Apache Spark: Shuffle Skew & ExternalAppendOnlyMap Thrashing",
+        "slug": "apache-spark-shuffle-skew-externalappendonlymap-thrashing",
+        "language": "Apache Spark",
+        "code": "Shuffle Spill Thrashing",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/apache-spark-shuffle-skew-externalappendonlymap-thrashing.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Performance",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791036337,
+        "title": "gRPC HTTP/2: Flow Control Exhaustion & BDP Stalls",
+        "slug": "grpc-http2-flow-control-exhaustion-bdp-stalls",
+        "language": "gRPC/Go",
+        "code": "Flow Control Stalls",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/grpc-http2-flow-control-exhaustion-bdp-stalls.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Network",
+            "Performance",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791036338,
+        "title": "AIHOT: Automated AI-Powered Hot Topic & Report Generation",
+        "slug": "aihot-automated-ai-powered-hot-topic-report-generation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/aihot-automated-ai-powered-hot-topic-report-generation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Web Development"
+        ]
+    },
+    {
         "id": 1791017864,
         "title": "PyTorch DDP: NCCL Collective Call Deadlocks & Silent Desync",
         "slug": "pytorch-ddp-nccl-deadlocks-desync",
