@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1791017864,
+        "title": "PyTorch DDP: NCCL Collective Call Deadlocks & Silent Desync",
+        "slug": "pytorch-ddp-nccl-deadlocks-desync",
+        "language": "Python",
+        "code": "NCCL Deadlock",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/pytorch-ddp-nccl-deadlocks-desync.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Training",
+            "Deep Learning",
+            "Python",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791017865,
+        "title": "Elixir BEAM: Unbounded Mailbox Floods & Selective Receive Latency",
+        "slug": "elixir-beam-mailbox-floods-receive-latency",
+        "language": "Elixir",
+        "code": "Mailbox Flood",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/elixir-beam-mailbox-floods-receive-latency.js",
+        "tags": [
+            "Elixir",
+            "Erlang BEAM",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791017866,
+        "title": "Redis BGSAVE: THP Contention & CoW Memory Spikes",
+        "slug": "redis-bgsave-thp-cow-memory-spikes",
+        "language": "Redis",
+        "code": "Memory Spike",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/redis-bgsave-thp-cow-memory-spikes.js",
+        "tags": [
+            "Redis",
+            "Caching",
+            "Database",
+            "Linux Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791017867,
+        "title": "AIHOT: Your Personalized Industry Hotspot News Feed",
+        "slug": "aihot-trending-github-ai-news-feed",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/aihot-trending-github-ai-news-feed.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "News Aggregation",
+            "Python",
+            "Backend"
+        ]
+    },
+    {
         "id": 1790996260,
         "title": "io_uring SQPOLL Contention & CQE Ring Buffer Drops",
         "slug": "linux-iouring-sqpoll-contention-cqe-ring-buffer-drops",
