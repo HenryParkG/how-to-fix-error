@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1790996260,
+        "title": "io_uring SQPOLL Contention & CQE Ring Buffer Drops",
+        "slug": "linux-iouring-sqpoll-contention-cqe-ring-buffer-drops",
+        "language": "C/C++, Linux Kernel",
+        "code": "IOURING_SQPOLL_CONTENTION",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/linux-iouring-sqpoll-contention-cqe-ring-buffer-drops.js",
+        "tags": [
+            "Linux",
+            "Infra",
+            "C/C++",
+            "Performance",
+            "Systems Programming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790996261,
+        "title": "ClickHouse 'Too Many Parts' & Merge Bottlenecks",
+        "slug": "clickhouse-too-many-parts-ingestion-stalls-background-merge-bottlenecks",
+        "language": "ClickHouse, SQL",
+        "code": "TOO_MANY_PARTS",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/clickhouse-too-many-parts-ingestion-stalls-background-merge-bottlenecks.js",
+        "tags": [
+            "Infra",
+            "SQL",
+            "ClickHouse",
+            "Database",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790996262,
+        "title": "Haskell Thunk Accumulation & Silent Space Leaks",
+        "slug": "haskell-thunk-accumulation-silent-space-leaks-state-monad-stacks",
+        "language": "Haskell",
+        "code": "THUNK_LEAK",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/haskell-thunk-accumulation-silent-space-leaks-state-monad-stacks.js",
+        "tags": [
+            "Haskell",
+            "Backend",
+            "Functional Programming",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1790996263,
+        "title": "AIHOT: AI-Powered Trend Analysis & Reporting",
+        "slug": "aihot-ai-powered-trend-analysis-reporting-github-trend",
+        "language": "Python, AI, Web Development",
+        "code": "Trend",
+        "date": "2026-10-03",
+        "path": "data/posts/2026-10/aihot-ai-powered-trend-analysis-reporting-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI",
+            "Web Development"
+        ]
+    },
+    {
         "id": 1790941518,
         "title": "PostgreSQL TXID Wraparound Panics & Autovacuum Freeze Starvation",
         "slug": "postgresql-txid-wraparound-panics-autovacuum-freeze-starvation",
