@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1791084416,
+        "title": "C++20 Coroutine Symmetric Transfer Dangling Frames & UAF",
+        "slug": "cpp20-coroutine-symmetric-transfer-uaf",
+        "language": "C++20",
+        "code": "CoroutineFrameUAF",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/cpp20-coroutine-symmetric-transfer-uaf.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791084417,
+        "title": "MongoDB WiredTiger Cache Eviction & Checkpoint Stalls",
+        "slug": "mongodb-wiredtiger-cache-eviction-checkpoint-stall",
+        "language": "MongoDB",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-checkpoint-stall.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791084418,
+        "title": "Istio Envoy Route Cache Bloat & Drain Deadlocks",
+        "slug": "istio-envoy-xds-route-cache-drain-deadlock",
+        "language": "Envoy",
+        "code": "XDS_CONFIG_STALL",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/istio-envoy-xds-route-cache-drain-deadlock.js",
+        "tags": [
+            "Istio",
+            "Envoy",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791084419,
+        "title": "AIHOT: Automated Hotspot Tracking & Daily Digest Engine",
+        "slug": "aihot-automated-hotspot-daily-digest-engine",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/aihot-automated-hotspot-daily-digest-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1791036335,
         "title": "eBPF Verifier: State Explosion & Tail Call Invalidation",
         "slug": "ebpf-verifier-state-explosion-tail-call-invalidation",
