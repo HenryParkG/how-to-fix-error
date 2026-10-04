@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791113566,
+        "title": "Rust Async: Unsound Pin Projection & Drop-Order Violations",
+        "slug": "rust-async-unsound-pin-projection-drop-order",
+        "language": "Rust",
+        "code": "UndefinedBehavior",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/rust-async-unsound-pin-projection-drop-order.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Memory Safety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791113567,
+        "title": "vLLM PagedAttention: KV Cache Fragmentation & Preemption",
+        "slug": "vllm-pagedattention-kv-cache-preemption-thrashing",
+        "language": "Python",
+        "code": "KVCacheOOM",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/vllm-pagedattention-kv-cache-preemption-thrashing.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791113568,
+        "title": "Kubernetes IPVS: Conntrack Table Exhaustion & DNS Drops",
+        "slug": "k8s-ipvs-conntrack-exhaustion-silent-dns-drops",
+        "language": "Go",
+        "code": "NF_CONNTRACK_FULL",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/k8s-ipvs-conntrack-exhaustion-silent-dns-drops.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791113569,
+        "title": "AIHOT: Autonomous AI-Driven Daily Tech Intelligence Engine",
+        "slug": "aihot-automated-news-aggregator-trend-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-04",
+        "path": "data/posts/2026-10/aihot-automated-news-aggregator-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791084416,
         "title": "C++20 Coroutine Symmetric Transfer Dangling Frames & UAF",
         "slug": "cpp20-coroutine-symmetric-transfer-uaf",
