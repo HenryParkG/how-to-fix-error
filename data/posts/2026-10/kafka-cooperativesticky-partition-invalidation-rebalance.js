@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Kafka CooperativeStickyAssignor Partition Invalidation Storm",
+    "slug": "kafka-cooperativesticky-partition-invalidation-rebalance",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "tags": [
+        "Kafka",
+        "Distributed Systems",
+        "Java",
+        "Error Fix"
+    ],
+    "analysis": "<p>Kafka 2.4+ introduced the <code>CooperativeStickyAssignor</code> (KIP-429) to eliminate stop-the-world rebalance pauses by migrating partitions across consumer members incrementally. Unlike eager assignment protocols where all partitions are revoked simultaneously, cooperative rebalancing allows unaffected consumers to continue reading from intact assignments while migrating individual partitions in phased assignments.</p><p>However, rebalance storms and <code>CommitFailedException</code> occurrences still emerge when consumer record-processing times exceed <code>max.poll.interval.ms</code> or when asynchronous revocation listeners fail to commit partition state before handoff. If a consumer thread takes too long to drain an oversized batch, the group coordinator marks it dead, evicting its partitions. When that consumer belatedly returns to the poll loop, its attempted commit is rejected, triggering another assignment invalidation phase and causing continuous cascade rebalances across the cluster.</p>",
+    "root_cause": "Synchronous consumer loop blocking causes record processing to exceed max.poll.interval.ms, triggering coordinator heartbeat expiration, partition reassignment, and subsequent CommitFailedException loops during cooperative migration.",
+    "bad_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, CooperativeStickyAssignor.class.getName());\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 300000); // 5 mins\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 5000); // 5000 heavy items\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"telemetry\"));\n\nwhile (running) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));\n    for (ConsumerRecord<String, String> record : records) {\n        // Heavy external HTTP call taking 150ms per record\n        // 5000 * 150ms = 750s (> max.poll.interval.ms of 300s)\n        processRemoteApiCall(record);\n    }\n    consumer.commitSync(); // Throws CommitFailedException\n}",
+    "solution_desc": "Decouple partition fetching from processing using an executor pipeline, implement a CooperativeRebalanceListener to handle partition revocations cleanly, and constrain max.poll.records while appropriately sizing max.poll.interval.ms.",
+    "good_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, CooperativeStickyAssignor.class.getName());\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100); // Sized to batch duration\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 60000);\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nMap<TopicPartition, OffsetAndMetadata> pendingOffsets = new ConcurrentHashMap<>();\n\nconsumer.subscribe(Collections.singletonList(\"telemetry\"), new ConsumerRebalanceListener() {\n    @Override\n    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {\n        // Commit offsets for revoked partitions synchronously before ownership transitions\n        Map<TopicPartition, OffsetAndMetadata> revokedCommits = new HashMap<>();\n        partitions.forEach(tp -> Optional.ofNullable(pendingOffsets.remove(tp))\n            .ifPresent(offset -> revokedCommits.put(tp, offset)));\n        if (!revokedCommits.isEmpty()) consumer.commitSync(revokedCommits);\n    }\n    @Override public void onPartitionsAssigned(Collection<TopicPartition> partitions) {}\n});",
+    "verification": "Monitor JVM JMX metric `kafka.consumer:type=consumer-coordinator-metrics,client-id=*` and assert `rebalance-rate` drops to near-zero and `commit-latency-avg` stays within expected boundaries under variable ingestion loads.",
+    "date": "2026-10-05",
+    "id": 1791169718,
+    "type": "error"
+});

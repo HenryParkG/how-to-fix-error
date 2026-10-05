@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791169717,
+        "title": "Fixing PostgreSQL XID Wraparound & Autovacuum Starvation",
+        "slug": "postgres-xid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "ERR_XID_WRAPAROUND",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/postgres-xid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791169718,
+        "title": "Kafka CooperativeStickyAssignor Partition Invalidation Storm",
+        "slug": "kafka-cooperativesticky-partition-invalidation-rebalance",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/kafka-cooperativesticky-partition-invalidation-rebalance.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791169719,
+        "title": "WebGPU Dynamic Uniform Buffer Alignment Panics & Hazards",
+        "slug": "webgpu-dynamic-uniform-buffer-alignment-layout-hazards",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/webgpu-dynamic-uniform-buffer-alignment-layout-hazards.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791169720,
+        "title": "Universal Modder: Reverse Engineering & AI Modding Engine",
+        "slug": "universal-modder-claude-code-reverse-engineering",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/universal-modder-claude-code-reverse-engineering.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791113566,
         "title": "Rust Async: Unsound Pin Projection & Drop-Order Violations",
         "slug": "rust-async-unsound-pin-projection-drop-order",
