@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791205469,
+        "title": "Next.js Hydration Mismatches & Client-Side Flashes",
+        "slug": "nextjs-hydration-mismatches-client-side-re-render-flashes",
+        "language": "Next.js",
+        "code": "Hydration Mismatch",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/nextjs-hydration-mismatches-client-side-re-render-flashes.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791205470,
+        "title": "Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "Goroutine Leak",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791205471,
+        "title": "Elasticsearch Split-Brain: Cluster State Inconsistencies",
+        "slug": "elasticsearch-split-brain-cluster-state-inconsistencies-data-divergence",
+        "language": "Elasticsearch",
+        "code": "Split-Brain",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/elasticsearch-split-brain-cluster-state-inconsistencies-data-divergence.js",
+        "tags": [
+            "Elasticsearch",
+            "Infra",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791205472,
+        "title": "Universal Modder: AI-Powered Game Modding with Claude",
+        "slug": "universal-modder-rehan-remade-claude-game-modding-tech-trend",
+        "language": "Python, AI/LLM",
+        "code": "Trend",
+        "date": "2026-10-05",
+        "path": "data/posts/2026-10/universal-modder-rehan-remade-claude-game-modding-tech-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Python"
+        ]
+    },
+    {
         "id": 1791169717,
         "title": "Fixing PostgreSQL XID Wraparound & Autovacuum Starvation",
         "slug": "postgres-xid-wraparound-autovacuum-starvation",
