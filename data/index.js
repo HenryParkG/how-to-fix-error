@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1791258966,
+        "title": "PyTorch DDP: Fix NCCL AllReduce Deadlocks",
+        "slug": "pytorch-ddp-nccl-deadlock-cuda-streams",
+        "language": "Python",
+        "code": "RuntimeError: NCCL error",
+        "date": "2026-10-06",
+        "path": "data/posts/2026-10/pytorch-ddp-nccl-deadlock-cuda-streams.js",
+        "tags": [
+            "PyTorch",
+            "NCCL",
+            "Distributed",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791258967,
+        "title": "Redis BGSAVE: Fix CoW Latency & THP Memory Bloat",
+        "slug": "redis-bgsave-cow-latency-thp-memory-bloat",
+        "language": "Redis / Linux",
+        "code": "OOM-Killer / Latency Spike",
+        "date": "2026-10-06",
+        "path": "data/posts/2026-10/redis-bgsave-cow-latency-thp-memory-bloat.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Performance",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791258968,
+        "title": "Elixir GenStage: Fix Demand Starvation & OOM Flooding",
+        "slug": "elixir-genstage-demand-starvation-mailbox-flooding",
+        "language": "Elixir",
+        "code": "SystemLimitError / OOM",
+        "date": "2026-10-06",
+        "path": "data/posts/2026-10/elixir-genstage-demand-starvation-mailbox-flooding.js",
+        "tags": [
+            "Elixir",
+            "GenStage",
+            "Concurrency",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791258969,
+        "title": "Universal Modder: AI Agent Game Modding with Claude",
+        "slug": "universal-modder-claude-agent-game-modding",
+        "language": "TypeScript / Python",
+        "code": "Trend",
+        "date": "2026-10-06",
+        "path": "data/posts/2026-10/universal-modder-claude-agent-game-modding.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Python"
+        ]
+    },
+    {
         "id": 1791205469,
         "title": "Next.js Hydration Mismatches & Client-Side Flashes",
         "slug": "nextjs-hydration-mismatches-client-side-re-render-flashes",
