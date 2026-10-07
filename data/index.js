@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1791376828,
+        "title": "C++20 Coroutines: Asymmetric Resume Pitfalls",
+        "slug": "cpp20-coroutines-asymmetric-resume-pitfalls",
+        "language": "C++",
+        "code": "CoroutineMisuse",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/cpp20-coroutines-asymmetric-resume-pitfalls.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Coroutines",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791376829,
+        "title": "Istio: Sidecar Injection & Envoy Configuration Mismatches",
+        "slug": "istio-sidecar-injection-envoy-mismatches",
+        "language": "Kubernetes, Istio",
+        "code": "InjectionFailure",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/istio-sidecar-injection-envoy-mismatches.js",
+        "tags": [
+            "Kubernetes",
+            "Istio",
+            "Envoy",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791376830,
+        "title": "MongoDB WiredTiger: Write Conflicts & Snapshot Anomalies",
+        "slug": "mongodb-wiredtiger-write-conflicts-snapshot-anomalies",
+        "language": "MongoDB",
+        "code": "WriteConflict",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-write-conflicts-snapshot-anomalies.js",
+        "tags": [
+            "MongoDB",
+            "NoSQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791376831,
+        "title": "OpenAI's Math Repository: Revolutionizing Mathematical AI",
+        "slug": "openai-math-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/openai-math-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Machine Learning",
+            "Python"
+        ]
+    },
+    {
         "id": 1791343699,
         "title": "Linux eBPF: Verifier 32-Bit Sub-Register & Stack Spill Issues",
         "slug": "linux-ebpf-verifier-32bit-subreg-stack-spill",
