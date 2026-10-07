@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1791343699,
+        "title": "Linux eBPF: Verifier 32-Bit Sub-Register & Stack Spill Issues",
+        "slug": "linux-ebpf-verifier-32bit-subreg-stack-spill",
+        "language": "eBPF, Linux Kernel",
+        "code": "eBPFVerifierError",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/linux-ebpf-verifier-32bit-subreg-stack-spill.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kernel",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791343700,
+        "title": "Spark: Netty Off-Heap OOM & Shuffle FetchFailed Cascades",
+        "slug": "apache-spark-netty-offheap-oom-shuffle-fetchfailed",
+        "language": "Apache Spark, Java, Scala",
+        "code": "SparkOOMError",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/apache-spark-netty-offheap-oom-shuffle-fetchfailed.js",
+        "tags": [
+            "Apache Spark",
+            "Netty",
+            "OOM",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791343701,
+        "title": "Haskell Space Leaks: Lazy Record Fields & WHNF Retention",
+        "slug": "haskell-space-leaks-lazy-record-fields-whnf-accumulator",
+        "language": "Haskell",
+        "code": "HaskellSpaceLeak",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/haskell-space-leaks-lazy-record-fields-whnf-accumulator.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Lazy Evaluation",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791343702,
+        "title": "Trending GitHub: openai/math - Revolutionizing Mathematical AI",
+        "slug": "trending-github-openai-math-analysis",
+        "language": "Python, Machine Learning, AI",
+        "code": "Trend",
+        "date": "2026-10-07",
+        "path": "data/posts/2026-10/trending-github-openai-math-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Machine Learning",
+            "AI"
+        ]
+    },
+    {
         "id": 1791258966,
         "title": "PyTorch DDP: Fix NCCL AllReduce Deadlocks",
         "slug": "pytorch-ddp-nccl-deadlock-cuda-streams",
