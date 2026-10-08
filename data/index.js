@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1791430864,
+        "title": "Rust: UB via Unsound Pin Projections",
+        "slug": "rust-pin-projection-undefined-behavior",
+        "language": "Rust",
+        "code": "UB",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/rust-pin-projection-undefined-behavior.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Safety",
+            "Undefined Behavior",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791430865,
+        "title": "vLLM PagedAttention: KV Cache Fragmentation & OOM Thrashing",
+        "slug": "vllm-pagedattention-kv-cache-fragmentation-oom",
+        "language": "Python",
+        "code": "OOM",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/vllm-pagedattention-kv-cache-fragmentation-oom.js",
+        "tags": [
+            "Python",
+            "LLM",
+            "Deep Learning",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791430866,
+        "title": "gRPC: HTTP/2 Flow-Control Window Exhaustion",
+        "slug": "grpc-http2-flow-control-window-exhaustion",
+        "language": "Go",
+        "code": "Deadlock",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion.js",
+        "tags": [
+            "Go",
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791430867,
+        "title": "OpenAI Math: AI for Formal Mathematics",
+        "slug": "openai-math-ai-formal-mathematics",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/openai-math-ai-formal-mathematics.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Mathematics",
+            "Python"
+        ]
+    },
+    {
         "id": 1791376828,
         "title": "C++20 Coroutines: Asymmetric Resume Pitfalls",
         "slug": "cpp20-coroutines-asymmetric-resume-pitfalls",
