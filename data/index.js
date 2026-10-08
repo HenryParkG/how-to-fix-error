@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1791462911,
+        "title": "PostgreSQL: TXID Wraparound & Autovacuum Starvation",
+        "slug": "postgresql-txid-wraparound-autovacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "TXID Wraparound",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/postgresql-txid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Infra",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791462912,
+        "title": "Kafka: Rebalance Storms & Zombie Epoch Fencing",
+        "slug": "kafka-consumer-group-rebalance-storms-zombie-epoch-fencing",
+        "language": "Kafka",
+        "code": "Rebalance Storms",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/kafka-consumer-group-rebalance-storms-zombie-epoch-fencing.js",
+        "tags": [
+            "Kafka",
+            "Messaging",
+            "Distributed Systems",
+            "Backend",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791462913,
+        "title": "WebGPU: Compute Memory Barriers & GPU Loss (TDR)",
+        "slug": "webgpu-compute-pipeline-memory-barrier-hazards-gpu-device-loss-tdr",
+        "language": "WebGPU",
+        "code": "GPU Device Loss (TDR)",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/webgpu-compute-pipeline-memory-barrier-hazards-gpu-device-loss-tdr.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "Compute",
+            "Frontend",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791462914,
+        "title": "OpenAI Math: LLMs Meet Formal Verification",
+        "slug": "openai-math-llms-formal-verification-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-08",
+        "path": "data/posts/2026-10/openai-math-llms-formal-verification-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Machine Learning",
+            "Python"
+        ]
+    },
+    {
         "id": 1791430864,
         "title": "Rust: UB via Unsound Pin Projections",
         "slug": "rust-pin-projection-undefined-behavior",
