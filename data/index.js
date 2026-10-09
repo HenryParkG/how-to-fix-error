@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791548546,
+        "title": "Fix Go GC Safe-Point Stalls and Goroutine Starvation",
+        "slug": "go-gc-safepoint-goroutine-starvation-tight-loops",
+        "language": "Go",
+        "code": "GCStarvation",
+        "date": "2026-10-09",
+        "path": "data/posts/2026-10/go-gc-safepoint-goroutine-starvation-tight-loops.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791548547,
+        "title": "Resolving Elasticsearch Fielddata Heap Circuit Breakers",
+        "slug": "elasticsearch-fielddata-circuit-breaker-heap-exhaustion",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-10-09",
+        "path": "data/posts/2026-10/elasticsearch-fielddata-circuit-breaker-heap-exhaustion.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791548548,
+        "title": "Fix Kubernetes Cgroup v2 OOMKills from Page Cache Thrash",
+        "slug": "kubernetes-cgroupv2-silent-oomkill-page-cache-thrashing",
+        "language": "Kubernetes",
+        "code": "OOMKilledExitCode137",
+        "date": "2026-10-09",
+        "path": "data/posts/2026-10/kubernetes-cgroupv2-silent-oomkill-page-cache-thrashing.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791548549,
+        "title": "OpenAI Math: Benchmarking Frontier AI Reasoning",
+        "slug": "openai-math-evaluating-mathematical-reasoning-models",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-09",
+        "path": "data/posts/2026-10/openai-math-evaluating-mathematical-reasoning-models.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791462911,
         "title": "PostgreSQL: TXID Wraparound & Autovacuum Starvation",
         "slug": "postgresql-txid-wraparound-autovacuum-starvation",
