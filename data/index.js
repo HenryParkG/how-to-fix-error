@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1791602698,
+        "title": "Fixing NCCL Desync Deadlocks in PyTorch DDP",
+        "slug": "pytorch-ddp-nccl-ring-allreduce-deadlock",
+        "language": "Python",
+        "code": "DistCollectiveTimeout",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/pytorch-ddp-nccl-ring-allreduce-deadlock.js",
+        "tags": [
+            "Python",
+            "Docker",
+            "PyTorch",
+            "NCCL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791602699,
+        "title": "Mitigating Redis BGSAVE CoW Memory Bloat & Latency",
+        "slug": "redis-bg-save-cow-memory-bloat-tail-latency",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/redis-bg-save-cow-memory-bloat-tail-latency.js",
+        "tags": [
+            "Docker",
+            "AWS",
+            "Redis",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791602700,
+        "title": "Resolving Elixir GenServer Selective Receive Leaks",
+        "slug": "elixir-otp-selective-receive-mailbox-runaway",
+        "language": "Docker",
+        "code": "ProcessOutOfMemory",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/elixir-otp-selective-receive-mailbox-runaway.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Elixir",
+            "OTP",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791602701,
+        "title": "Inside openai/math: Reasoning Evaluation Toolkit",
+        "slug": "openai-math-benchmarking-reasoning-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/openai-math-benchmarking-reasoning-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791548546,
         "title": "Fix Go GC Safe-Point Stalls and Goroutine Starvation",
         "slug": "go-gc-safepoint-goroutine-starvation-tight-loops",
