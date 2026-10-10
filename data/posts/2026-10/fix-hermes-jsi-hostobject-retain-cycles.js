@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix Hermes JSI HostObject Native Memory Leaks",
+    "slug": "fix-hermes-jsi-hostobject-retain-cycles",
+    "language": "C++ / React Native",
+    "code": "HostObjectRetainCycle",
+    "tags": [
+        "React Native",
+        "Hermes",
+        "React",
+        "TypeScript",
+        "Error Fix"
+    ],
+    "analysis": "<p>When implementing high-performance native modules in React Native using Hermes and the JavaScript Interface (JSI), custom C++ classes inherit from <code>facebook::jsi::HostObject</code>. A critical leak occurs when native objects retain references to JavaScript functions (such as event listeners or promise callbacks) via <code>jsi::Value</code> or <code>jsi::Function</code> while the JavaScript runtime retains the <code>HostObject</code> instance.</p><p>Hermes uses a generational garbage collector (Hades) that tracks objects allocated on the JS heap. However, the Hermes GC does not scan native C++ shared pointer graphs. If a <code>HostObject</code> stores a strong <code>jsi::Function</code> reference inside a <code>std::shared_ptr</code>, and that JS callback captures a reference back to the host object (either directly or via React component scope closures), a cross-boundary retain cycle is created. Neither Hermes GC nor the native runtime can collect the memory, leading to continuous native heap growth and out-of-memory (OOM) crashes during screen unmount cycles.</p>",
+    "root_cause": "Cross-boundary circular reference between the Hermes JavaScript heap and native C++ smart pointers, where a native HostObject strongly retains a JS callback that captures the HostObject instance.",
+    "bad_code": "#include <jsi/jsi.h>\nusing namespace facebook;\n\nclass BadNativeEmitter : public jsi::HostObject {\n    std::shared_ptr<jsi::Function> callback_;\n\npublic:\n    jsi::Value get(jsi::Runtime &rt, const jsi::PropNameID &name) override {\n        if (name.utf8(rt) == \"setListener\") {\n            return jsi::Function::createFromHostFunction(\n                rt, name, 1,\n                [this](jsi::Runtime &rt, const jsi::Value &, const jsi::Value *args, size_t) {\n                    // BAD: Storing strong jsi::Function pointer indefinitely inside HostObject\n                    callback_ = std::make_shared<jsi::Function>(args[0].asObject(rt).asFunction(rt));\n                    return jsi::Value::undefined();\n                });\n        }\n        return jsi::Value::undefined();\n    }\n};",
+    "solution_desc": "Break the retain cycle by decoupling lifecycle ownership: 1) Use `jsi::WeakObject` for callbacks retained natively, or 2) Expose an explicit unbind/teardown method invoked from React's `useEffect` cleanup hook, ensuring native callback pointers are nullified when the component unmounts.",
+    "good_code": "#include <jsi/jsi.h>\n#include <memory>\nusing namespace facebook;\n\nclass GoodNativeEmitter : public jsi::HostObject {\n    std::unique_ptr<jsi::Value> callbackRef_;\n\npublic:\n    jsi::Value get(jsi::Runtime &rt, const jsi::PropNameID &name) override {\n        std::string prop = name.utf8(rt);\n        if (prop == \"setListener\") {\n            return jsi::Function::createFromHostFunction(\n                rt, name, 1,\n                [this](jsi::Runtime &rt, const jsi::Value &, const jsi::Value *args, size_t count) {\n                    if (count > 0 && args[0].isObject() && args[0].getObject(rt).isFunction(rt)) {\n                        callbackRef_ = std::make_unique<jsi::Value>(rt, args[0]);\n                    }\n                    return jsi::Value::undefined();\n                });\n        } else if (prop == \"cleanup\") {\n            return jsi::Function::createFromHostFunction(\n                rt, name, 0,\n                [this](jsi::Runtime &, const jsi::Value &, const jsi::Value *, size_t) {\n                    callbackRef_.reset(); // Nullify strong JS reference\n                    return jsi::Value::undefined();\n                });\n        }\n        return jsi::Value::undefined();\n    }\n};",
+    "verification": "Profile the React Native application using Xcode Instruments (Allocations & Leaks) or Android Studio Memory Profiler. Navigate back and forth between screens 50 times; verify that HostObject allocation counts decrement to zero and native memory remains flat.",
+    "date": "2026-10-10",
+    "id": 1791632240,
+    "type": "error"
+});

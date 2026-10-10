@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1791632238,
+        "title": "Fix eBPF Verifier Explosion & Stack Limit",
+        "slug": "fix-ebpf-verifier-state-explosion-stack-spill",
+        "language": "C / eBPF",
+        "code": "BPF_VERIFIER_ERROR",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/fix-ebpf-verifier-state-explosion-stack-spill.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kubernetes",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791632239,
+        "title": "Fix Spark Shuffle FetchFailed & Heartbeat Loss",
+        "slug": "fix-spark-shuffle-fetchfailed-heartbeat-starvation",
+        "language": "Java / Spark",
+        "code": "FetchFailedException",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/fix-spark-shuffle-fetchfailed-heartbeat-starvation.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Java",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791632240,
+        "title": "Fix Hermes JSI HostObject Native Memory Leaks",
+        "slug": "fix-hermes-jsi-hostobject-retain-cycles",
+        "language": "C++ / React Native",
+        "code": "HostObjectRetainCycle",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/fix-hermes-jsi-hostobject-retain-cycles.js",
+        "tags": [
+            "React Native",
+            "Hermes",
+            "React",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791632241,
+        "title": "Inside openai/math: Evaluating LLM Math Reasoning",
+        "slug": "openai-math-eval-benchmark-deep-dive",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-10",
+        "path": "data/posts/2026-10/openai-math-eval-benchmark-deep-dive.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791602698,
         "title": "Fixing NCCL Desync Deadlocks in PyTorch DDP",
         "slug": "pytorch-ddp-nccl-ring-allreduce-deadlock",
