@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791712089,
+        "title": "Fix Rust Lifetime Mismatches & Deadlocks",
+        "slug": "rust-borrow-checker-lifetime-deadlock-fix",
+        "language": "Rust",
+        "code": "E0499 / Deadlock",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/rust-borrow-checker-lifetime-deadlock-fix.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Memory Safety",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791712090,
+        "title": "PyTorch QAT: Fix Calibration Skew & Accuracy Drop",
+        "slug": "pytorch-qat-calibration-skew-accuracy-drop",
+        "language": "Python",
+        "code": "QuantizationError",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/pytorch-qat-calibration-skew-accuracy-drop.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Machine Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791712091,
+        "title": "Fix Istio Envoy Readiness & Init Container Traps",
+        "slug": "istio-envoy-readiness-init-container-traps",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/istio-envoy-readiness-init-container-traps.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791712092,
+        "title": "Inside openai/math: Benchmarking LLM Reasoning",
+        "slug": "openai-math-dataset-reasoning-benchmark-trends",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/openai-math-dataset-reasoning-benchmark-trends.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791687482,
         "title": "C++20 Coroutines: Dangling Frames & Lambda UAFs",
         "slug": "cpp20-coroutine-dangling-frame-lambda-uaf",
