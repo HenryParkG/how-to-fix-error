@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "C++20 Coroutines: Dangling Frames & Lambda UAFs",
+    "slug": "cpp20-coroutine-dangling-frame-lambda-uaf",
+    "language": "C++20",
+    "code": "SIGSEGV / UAF",
+    "tags": [
+        "C++20",
+        "Coroutines",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines decouple function execution across suspension points via <code>co_await</code> or <code>co_yield</code>. When a coroutine is instantiated, the compiler allocates a coroutine frame on the heap containing local variables, parameters, and promise objects.</p><p>A critical pitfall occurs when invoking a coroutine implemented as a lambda expression that captures variables by reference, or when the lambda closure object itself is a temporary (rvalue). The lambda closure object is destroyed at the end of the full-expression enclosing the call. If the coroutine suspends at its initial suspend point or upon the first asynchronous I/O operation, the closure object is deallocated while the coroutine frame still references it. Upon resumption, accessing captured state produces a silent Use-After-Free (UAF) or an immediate segmentation fault.</p>",
+    "root_cause": "The temporary lambda closure object is destroyed at the end of the enclosing full-expression, leaving captured references or implicit 'this' pointers in the heap-allocated coroutine frame pointing to deallocated stack memory after initial suspension.",
+    "bad_code": "#include <coroutine>\n#include <iostream>\n#include <string>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void return_void() {}\n        void unhandled_exception() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\nvoid trigger_uaf() {\n    std::string payload = \"sensitive_telemetry_data\";\n    \n    // Bug: Temporary lambda invoked immediately.\n    // The lambda closure object is destroyed at the semicolon,\n    // but the coroutine suspends at initial_suspend.\n    auto task = [&payload]() -> Task {\n        co_await std::suspend_always{};\n        // UAF: 'payload' reference is invalidated if outer frame terminates,\n        // or implicit closure reference is dangling.\n        std::cout << payload << std::endl;\n    }();\n\n    // Resuming corrupted frame\n    task.handle.resume(); \n    task.handle.destroy();\n}",
+    "solution_desc": "Eliminate reference captures in coroutine lambdas. Refactor the coroutine into a standalone function or member function where parameters are passed strictly by value. When by-value parameters are passed to a coroutine, C++ guarantees that the arguments are copied or moved into the heap-allocated coroutine frame, ensuring their lifetime matches that of the coroutine execution.",
+    "good_code": "#include <coroutine>\n#include <iostream>\n#include <string>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void return_void() {}\n        void unhandled_exception() {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// Safe: 'payload' is moved/copied directly into the coroutine frame\nTask process_safely(std::string payload) {\n    co_await std::suspend_always{};\n    std::cout << payload << std::endl;\n}\n\nvoid execute() {\n    std::string payload = \"sensitive_telemetry_data\";\n    Task task = process_safely(std::move(payload));\n\n    task.handle.resume();\n    task.handle.destroy();\n}",
+    "verification": "Compile with Clang/GCC using `-fsanitize=address -fsanitize=undefined -Wall -Wextra`. ASan will intercept any stack or heap read past the deallocated frame and output clean stack traces confirming no illegal dereference occurs.",
+    "date": "2026-10-11",
+    "id": 1791687482,
+    "type": "error"
+});

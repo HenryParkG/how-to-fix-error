@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791687482,
+        "title": "C++20 Coroutines: Dangling Frames & Lambda UAFs",
+        "slug": "cpp20-coroutine-dangling-frame-lambda-uaf",
+        "language": "C++20",
+        "code": "SIGSEGV / UAF",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/cpp20-coroutine-dangling-frame-lambda-uaf.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791687483,
+        "title": "WiredTiger Cache Eviction Stalls & Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+        "tags": [
+            "MongoDB",
+            "WiredTiger",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791687484,
+        "title": "Envoy 503 UC Drops via K8s Pod Termination Races",
+        "slug": "envoy-503-uc-k8s-pod-termination-race",
+        "language": "Envoy Proxy",
+        "code": "503 UC",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/envoy-503-uc-k8s-pod-termination-race.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Envoy",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791687485,
+        "title": "OpenAI Math: Standardizing Reasoning & Verification",
+        "slug": "openai-math-benchmark-reasoning-evaluation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-11",
+        "path": "data/posts/2026-10/openai-math-benchmark-reasoning-evaluation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791632238,
         "title": "Fix eBPF Verifier Explosion & Stack Limit",
         "slug": "fix-ebpf-verifier-state-explosion-stack-spill",
