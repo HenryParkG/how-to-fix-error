@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1791813405,
+        "title": "Resolving Go Netpoller Epoll Starvation & Preemption Latency",
+        "slug": "resolving-go-netpoller-epoll-starvation-goroutine-preemption",
+        "language": "Go",
+        "code": "EpollStarvation",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/resolving-go-netpoller-epoll-starvation-goroutine-preemption.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Runtime",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791813406,
+        "title": "Mitigating gRPC HTTP/2 Flow-Control Deadlocks",
+        "slug": "mitigating-grpc-http2-flow-control-deadlocks",
+        "language": "gRPC, HTTP/2",
+        "code": "FlowControlDeadlock",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/mitigating-grpc-http2-flow-control-deadlocks.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Networking",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791813407,
+        "title": "Debugging RocksDB Write Stalls: Compaction Debt",
+        "slug": "debugging-rocksdb-write-stalls-compaction-debt",
+        "language": "RocksDB",
+        "code": "WriteStall",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/debugging-rocksdb-write-stalls-compaction-debt.js",
+        "tags": [
+            "RocksDB",
+            "Database",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791813408,
+        "title": "The Hypothetical Buzz: Unpacking 'openai/math' and AI's Math Prowess",
+        "slug": "the-hypothetical-buzz-openai-math-ai-math-prowess",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/the-hypothetical-buzz-openai-math-ai-math-prowess.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI/ML",
+            "Python"
+        ]
+    },
+    {
         "id": 1791775636,
         "title": "Fixing PostgreSQL TXID Wraparound and Autovacuum Stalls",
         "slug": "postgresql-txid-wraparound-autovacuum-freeze-stalls",
