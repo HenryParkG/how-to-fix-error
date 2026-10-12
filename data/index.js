@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791775636,
+        "title": "Fixing PostgreSQL TXID Wraparound and Autovacuum Stalls",
+        "slug": "postgresql-txid-wraparound-autovacuum-freeze-stalls",
+        "language": "PostgreSQL",
+        "code": "ERR_TXID_WRAPAROUND",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/postgresql-txid-wraparound-autovacuum-freeze-stalls.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791775637,
+        "title": "Resolving Kafka Rebalance Storms and Poll Starvation",
+        "slug": "kafka-consumer-rebalance-storms-max-poll-starvation",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/kafka-consumer-rebalance-storms-max-poll-starvation.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791775638,
+        "title": "Debugging WebGPU Pipeline Stalls and Bind Group Invalidation",
+        "slug": "webgpu-pipeline-compilation-stalls-bindgroup-invalidation",
+        "language": "WebGPU",
+        "code": "GPUValidationError",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/webgpu-pipeline-compilation-stalls-bindgroup-invalidation.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791775639,
+        "title": "Exploring openai/math: Automated Reasoning Benchmarks",
+        "slug": "exploring-openai-math-automated-reasoning-benchmark",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-12",
+        "path": "data/posts/2026-10/exploring-openai-math-automated-reasoning-benchmark.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1791712089,
         "title": "Fix Rust Lifetime Mismatches & Deadlocks",
         "slug": "rust-borrow-checker-lifetime-deadlock-fix",
