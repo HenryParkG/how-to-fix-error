@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1791897173,
+        "title": "eBPF Verifier Rejection & Unintended Kernel Side Effects",
+        "slug": "ebpf-verifier-rejection-unintended-kernel-side-effects",
+        "language": "C/eBPF",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/ebpf-verifier-rejection-unintended-kernel-side-effects.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Security",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791897174,
+        "title": "Akka Cluster Split-Brain Resolution & Downing Failures",
+        "slug": "akka-cluster-split-brain-resolution-downing-strategy-failures",
+        "language": "Scala/Akka",
+        "code": "SplitBrain",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/akka-cluster-split-brain-resolution-downing-strategy-failures.js",
+        "tags": [
+            "Akka",
+            "Scala",
+            "Distributed Systems",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791897175,
+        "title": "Elasticsearch Shard Storms & Disk Watermark Breaches",
+        "slug": "elasticsearch-shard-relocation-storms-disk-watermark-breaches",
+        "language": "Elasticsearch/Java",
+        "code": "DiskWatermark",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/elasticsearch-shard-relocation-storms-disk-watermark-breaches.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "Data Storage",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791897176,
+        "title": "Wordcraft: Reimagining Word Processing in Rust",
+        "slug": "wordcraft-rust-microsoft-word-reimplementation",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/wordcraft-rust-microsoft-word-reimplementation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Desktop Applications",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1791866197,
         "title": "Diagnosing io_uring CQE Overflows & SQPOLL Thread Stalls",
         "slug": "linux-io-uring-cqe-overflow-sqpoll-stalls",
