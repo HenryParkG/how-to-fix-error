@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1791866197,
+        "title": "Diagnosing io_uring CQE Overflows & SQPOLL Thread Stalls",
+        "slug": "linux-io-uring-cqe-overflow-sqpoll-stalls",
+        "language": "C, Linux Kernel",
+        "code": "io_uring Overflow",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/linux-io-uring-cqe-overflow-sqpoll-stalls.js",
+        "tags": [
+            "io_uring",
+            "Linux",
+            "Performance",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791866198,
+        "title": "Elixir GenServer Mailbox Bloat & Selective Receive Traps",
+        "slug": "elixir-genserver-mailbox-bloat-selective-receive",
+        "language": "Elixir, Erlang/OTP",
+        "code": "Mailbox Bloat",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/elixir-genserver-mailbox-bloat-selective-receive.js",
+        "tags": [
+            "Elixir",
+            "Erlang",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791866199,
+        "title": "Mitigating Redis BGSAVE Fork Latency & THP Bloat",
+        "slug": "redis-bgsave-fork-latency-thp-bloat",
+        "language": "Redis, Linux Kernel",
+        "code": "BGSAVE Latency",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/redis-bgsave-fork-latency-thp-bloat.js",
+        "tags": [
+            "Redis",
+            "Caching",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791866200,
+        "title": "Wordcraft: A Modern Rust Reimplementation of Word",
+        "slug": "wordcraft-rust-microsoft-word-reimplementation",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-10-13",
+        "path": "data/posts/2026-10/wordcraft-rust-microsoft-word-reimplementation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1791813405,
         "title": "Resolving Go Netpoller Epoll Starvation & Preemption Latency",
         "slug": "resolving-go-netpoller-epoll-starvation-goroutine-preemption",
