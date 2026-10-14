@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1791946117,
+        "title": "C++20 Coroutine Lifetime Traps: Dangling References",
+        "slug": "cpp20-coroutine-lifetime-dangling-references-symmetric-transfer",
+        "language": "C++",
+        "code": "DanglingRef",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/cpp20-coroutine-lifetime-dangling-references-symmetric-transfer.js",
+        "tags": [
+            "C++",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791946118,
+        "title": "Spark OOMs: Mitigating Shuffle Skew & Disk-Spill",
+        "slug": "apache-spark-executor-ooms-shuffle-skew-disk-spill",
+        "language": "Apache Spark",
+        "code": "OOM",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/apache-spark-executor-ooms-shuffle-skew-disk-spill.js",
+        "tags": [
+            "Apache Spark",
+            "Big Data",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791946119,
+        "title": "MongoDB WiredTiger: Ticket Exhaustion & Livelocks",
+        "slug": "mongodb-wiredtiger-ticket-exhaustion-dirty-cache-livelocks",
+        "language": "MongoDB",
+        "code": "Livelock",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-ticket-exhaustion-dirty-cache-livelocks.js",
+        "tags": [
+            "MongoDB",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791946120,
+        "title": "WASI: Universal Binaries Beyond the Browser",
+        "slug": "webassembly-system-interface-wasi-universal-binaries",
+        "language": "WebAssembly",
+        "code": "Trend",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/webassembly-system-interface-wasi-universal-binaries.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Infra"
+        ]
+    },
+    {
         "id": 1791897173,
         "title": "eBPF Verifier Rejection & Unintended Kernel Side Effects",
         "slug": "ebpf-verifier-rejection-unintended-kernel-side-effects",
