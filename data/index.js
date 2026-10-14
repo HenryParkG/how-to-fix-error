@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1791965928,
+        "title": "PyTorch DDP Hangs: NCCL Timeouts & Graph Asymmetry",
+        "slug": "pytorch-ddp-hangs-nccl-timeouts-graph-asymmetry",
+        "language": "PyTorch",
+        "code": "DDP Timeout",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/pytorch-ddp-hangs-nccl-timeouts-graph-asymmetry.js",
+        "tags": [
+            "PyTorch",
+            "Distributed Training",
+            "Python",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791965929,
+        "title": "K8s cgroup v2 Memory Throttling: PSI Spikes & Reclaim Stalls",
+        "slug": "kubernetes-cgroup-v2-memory-throttling-psi-spikes-kernel-reclaim",
+        "language": "Kubernetes",
+        "code": "Memory Throttling",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/kubernetes-cgroup-v2-memory-throttling-psi-spikes-kernel-reclaim.js",
+        "tags": [
+            "Kubernetes",
+            "cgroupv2",
+            "Linux",
+            "Infra",
+            "Memory",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791965930,
+        "title": "Haskell Space Leaks: Thunk Accumulation in Lazy State Monads",
+        "slug": "haskell-space-leaks-thunk-accumulation-lazy-state-monads",
+        "language": "Haskell",
+        "code": "Space Leak",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/haskell-space-leaks-thunk-accumulation-lazy-state-monads.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Lazy Evaluation",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1791965931,
+        "title": "Anatomy: AI-Powered Isometric Illustrations",
+        "slug": "anatomy-ai-isometric-illustrations-github-trend",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-14",
+        "path": "data/posts/2026-10/anatomy-ai-isometric-illustrations-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "Generative Art",
+            "SVG",
+            "3D Graphics",
+            "Python"
+        ]
+    },
+    {
         "id": 1791946117,
         "title": "C++20 Coroutine Lifetime Traps: Dangling References",
         "slug": "cpp20-coroutine-lifetime-dangling-references-symmetric-transfer",
