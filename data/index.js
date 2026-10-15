@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792051030,
+        "title": "Fixing Go Non-Cooperative Preemption & STW Spikes",
+        "slug": "fixing-go-non-cooperative-preemption-stw-spikes",
+        "language": "Go",
+        "code": "STWLatencySpike",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/fixing-go-non-cooperative-preemption-stw-spikes.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792051031,
+        "title": "Mitigating vLLM PagedAttention KV-Cache OOM Cascades",
+        "slug": "mitigating-vllm-pagedattention-kv-cache-oom-cascades",
+        "language": "Python",
+        "code": "CUDA_OUT_OF_MEMORY",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/mitigating-vllm-pagedattention-kv-cache-oom-cascades.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "AI",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792051032,
+        "title": "Resolving Istio Envoy HTTP/2 RST_STREAM Storms",
+        "slug": "resolving-istio-envoy-http2-rst-stream-storms",
+        "language": "Go",
+        "code": "HTTP2_ENHANCE_YOUR_CALM",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/resolving-istio-envoy-http2-rst-stream-storms.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792051033,
+        "title": "Craft App Launcher: The Next-Gen Modular Productivity Engine",
+        "slug": "craft-app-launcher-modular-productivity-engine",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/craft-app-launcher-modular-productivity-engine.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1792031082,
         "title": "Fixing PostgreSQL XID Wraparound and Multixact Exhaustion",
         "slug": "postgres-xid-wraparound-emergency-autovacuum-fix",
