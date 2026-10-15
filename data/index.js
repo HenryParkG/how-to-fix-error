@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792072094,
+        "title": "Fixing Tokio Worker Starvation from CPU Tasks",
+        "slug": "tokio-worker-starvation-cpu-blocking",
+        "language": "Rust",
+        "code": "WorkerStarvation",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/tokio-worker-starvation-cpu-blocking.js",
+        "tags": [
+            "Tokio",
+            "Concurrency",
+            "Performance",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792072095,
+        "title": "Resolving Redis BGSAVE Fork Spikes & THP Cascades",
+        "slug": "redis-bgsave-fork-latency-thp-memory",
+        "language": "Redis",
+        "code": "ForkLatencySpike",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/redis-bgsave-fork-latency-thp-memory.js",
+        "tags": [
+            "Redis",
+            "Memory",
+            "Linux",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792072096,
+        "title": "Fixing Elixir GenServer Mailbox Floods & Receive Traps",
+        "slug": "elixir-genserver-mailbox-flooding-selective-receive",
+        "language": "Elixir",
+        "code": "MailboxOverflow",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/elixir-genserver-mailbox-flooding-selective-receive.js",
+        "tags": [
+            "Elixir",
+            "OTP",
+            "Concurrency",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792072097,
+        "title": "d2r-mobile: Native Diablo II Resurrected on Apple Devices",
+        "slug": "d2r-mobile-diablo-2-ios-macos-compatibility",
+        "language": "C++ / Swift",
+        "code": "Trend",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/d2r-mobile-diablo-2-ios-macos-compatibility.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1792051030,
         "title": "Fixing Go Non-Cooperative Preemption & STW Spikes",
         "slug": "fixing-go-non-cooperative-preemption-stw-spikes",
