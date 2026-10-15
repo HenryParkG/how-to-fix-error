@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1792031082,
+        "title": "Fixing PostgreSQL XID Wraparound and Multixact Exhaustion",
+        "slug": "postgres-xid-wraparound-emergency-autovacuum-fix",
+        "language": "PostgreSQL",
+        "code": "ERR_XID_WRAPAROUND",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/postgres-xid-wraparound-emergency-autovacuum-fix.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792031083,
+        "title": "Resolving Kafka Consumer Group Rebalance Storm Cascades",
+        "slug": "kafka-consumer-rebalance-storms-max-poll-interval",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/kafka-consumer-rebalance-storms-max-poll-interval.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792031084,
+        "title": "Fixing WebGPU Dynamic Offset Misalignments & Device Loss",
+        "slug": "webgpu-dynamic-offset-misalignment-device-loss",
+        "language": "TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/webgpu-dynamic-offset-misalignment-device-loss.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "TypeScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792031085,
+        "title": "Craft Launcher: Modern Extensible App Launcher Trend",
+        "slug": "craft-launcher-modern-app-launcher-trend",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-10-15",
+        "path": "data/posts/2026-10/craft-launcher-modern-app-launcher-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React"
+        ]
+    },
+    {
         "id": 1791965928,
         "title": "PyTorch DDP Hangs: NCCL Timeouts & Graph Asymmetry",
         "slug": "pytorch-ddp-hangs-nccl-timeouts-graph-asymmetry",
