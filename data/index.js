@@ -1,5 +1,62 @@
 var postsIndex = [
     {
+        "id": 1792117128,
+        "title": "Fixing Rust Borrow Checker Deadlocks & Lifetime Violations",
+        "slug": "rust-borrow-checker-deadlocks-lifetime-violations",
+        "language": "Rust",
+        "code": "BorrowCheck",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/rust-borrow-checker-deadlocks-lifetime-violations.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792117129,
+        "title": "Resolving K8s CrashLoopBackOff from Init Container Failures",
+        "slug": "kubernetes-crashloopbackoff-init-container-failures",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/kubernetes-crashloopbackoff-init-container-failures.js",
+        "tags": [
+            "Kubernetes",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792117130,
+        "title": "Mitigating Next.js Hydration Mismatches & Client-Side Renders",
+        "slug": "nextjs-hydration-mismatches-client-side-renders",
+        "language": "Next.js",
+        "code": "HydrationMismatch",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/nextjs-hydration-mismatches-client-side-renders.js",
+        "tags": [
+            "Next.js",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792117131,
+        "title": "Unpacking 'jhaizhou-ops/d2r-mobile': Diablo II on iOS/macOS",
+        "slug": "d2r-mobile-github-trend-analysis",
+        "language": "C++, Swift",
+        "code": "Trend",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/d2r-mobile-github-trend-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "C++",
+            "Gaming"
+        ]
+    },
+    {
         "id": 1792072094,
         "title": "Fixing Tokio Worker Starvation from CPU Tasks",
         "slug": "tokio-worker-starvation-cpu-blocking",
