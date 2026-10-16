@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1792136502,
+        "title": "Fixing eBPF Verifier Complexity Exhaustion Traps",
+        "slug": "fixing-ebpf-verifier-complexity-exhaustion",
+        "language": "C",
+        "code": "BPF_VERIFIER_E2BIG",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-exhaustion.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "eBPF",
+            "Linux",
+            "C",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792136503,
+        "title": "Resolving WiredTiger Dirty Cache Stalls in MongoDB",
+        "slug": "resolving-mongodb-wiredtiger-eviction-stalls",
+        "language": "Go",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/resolving-mongodb-wiredtiger-eviction-stalls.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Kubernetes",
+            "SQL",
+            "MongoDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792136504,
+        "title": "Mitigating Spark Shuffle FetchFailed Cascades",
+        "slug": "mitigating-spark-shuffle-fetchfailed-cascades",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/mitigating-spark-shuffle-fetchfailed-cascades.js",
+        "tags": [
+            "Java",
+            "Backend",
+            "Kubernetes",
+            "AWS",
+            "Spark",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792136505,
+        "title": "Inside d2r-mobile: Native Diablo II on iOS and macOS",
+        "slug": "inside-d2r-mobile-diablo-2-ios-macos",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-10-16",
+        "path": "data/posts/2026-10/inside-d2r-mobile-diablo-2-ios-macos.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1792117128,
         "title": "Fixing Rust Borrow Checker Deadlocks & Lifetime Violations",
         "slug": "rust-borrow-checker-deadlocks-lifetime-violations",
