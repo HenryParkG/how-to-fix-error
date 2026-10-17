@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792240524,
+        "title": "Fix Elixir GenServer Mailbox Starvation & Bloat",
+        "slug": "fix-elixir-genserver-mailbox-starvation-bloat",
+        "language": "Elixir",
+        "code": "SystemLimitError",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-starvation-bloat.js",
+        "tags": [
+            "Elixir",
+            "BEAM",
+            "Concurrency",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792240525,
+        "title": "Fix Redis BGSAVE Fork Latency Spikes and CoW OOM",
+        "slug": "fix-redis-bgsave-fork-latency-spikes-cow-oom",
+        "language": "Redis",
+        "code": "MISCONF / ForkLatency",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/fix-redis-bgsave-fork-latency-spikes-cow-oom.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Docker",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792240526,
+        "title": "Fix WebGPU Dynamic Uniform Buffer Alignment Panics",
+        "slug": "fix-webgpu-dynamic-uniform-buffer-alignment-panics",
+        "language": "WebGPU / TypeScript",
+        "code": "GPUValidationError",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment-panics.js",
+        "tags": [
+            "TypeScript",
+            "Rust",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792240527,
+        "title": "D2R-Mobile: Diablo II Resurrected on iOS & macOS",
+        "slug": "d2r-mobile-diablo-ii-resurrected-ios-macos-layer",
+        "language": "Swift / C++",
+        "code": "Trend",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/d2r-mobile-diablo-ii-resurrected-ios-macos-layer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1792221610,
         "title": "Fixing Go Safe-Point Traps in Tight CPU Loops",
         "slug": "go-non-cooperative-preemption-latency-spikes",
