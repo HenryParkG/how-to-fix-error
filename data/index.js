@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1792203050,
+        "title": "Preventing PostgreSQL XID Wraparound and Autovacuum Stalls",
+        "slug": "postgresql-xid-wraparound-autovacuum-stalls",
+        "language": "PostgreSQL",
+        "code": "ERR_XID_WRAPAROUND",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/postgresql-xid-wraparound-autovacuum-stalls.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Autovacuum",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792203051,
+        "title": "Taming Kafka Consumer Rebalance Storms and Zombie Fencing",
+        "slug": "kafka-rebalance-storms-zombie-fencing",
+        "language": "Apache Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/kafka-rebalance-storms-zombie-fencing.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Concurrency",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792203052,
+        "title": "Hunting Haskell Space Leaks: Thunk Accumulation in Lazy Evaluation Pipelines",
+        "slug": "hunting-haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "OutOfMemoryError",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/hunting-haskell-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Haskell",
+            "Functional Programming",
+            "Performance",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792203053,
+        "title": "D2R Mobile: Native Diablo II Resurrected on iOS & Mac",
+        "slug": "d2r-mobile-ios-macos-compatibility-layer",
+        "language": "Swift / C++",
+        "code": "Trend",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Gaming",
+            "iOS",
+            "Rust"
+        ]
+    },
+    {
         "id": 1792157921,
         "title": "Debugging C++20 Coroutine Suspension Points",
         "slug": "debugging-cpp20-coroutine-suspension-points-stackless-mismatches",
