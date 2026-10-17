@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792221610,
+        "title": "Fixing Go Safe-Point Traps in Tight CPU Loops",
+        "slug": "go-non-cooperative-preemption-latency-spikes",
+        "language": "Go",
+        "code": "STWLatencySpike",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/go-non-cooperative-preemption-latency-spikes.js",
+        "tags": [
+            "Go",
+            "Performance",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792221611,
+        "title": "Fixing gRPC HTTP/2 Flow-Control Window Deadlocks",
+        "slug": "grpc-http2-flow-control-window-exhaustion-deadlocks",
+        "language": "Go",
+        "code": "HTTP2_FLOW_CONTROL_ERROR",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion-deadlocks.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792221612,
+        "title": "Resolving RocksDB Write Stalls from L0 Backpressure",
+        "slug": "rocksdb-write-stalls-l0-compaction-backpressure",
+        "language": "Rust",
+        "code": "Status::Busy(WriteStall)",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/rocksdb-write-stalls-l0-compaction-backpressure.js",
+        "tags": [
+            "Rust",
+            "SQL",
+            "Databases",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792221613,
+        "title": "D2R-Mobile: Diablo II Resurrected on iOS and macOS",
+        "slug": "d2r-mobile-diablo-2-resurrected-ios-macos-layer",
+        "language": "C++ / Metal",
+        "code": "Trend",
+        "date": "2026-10-17",
+        "path": "data/posts/2026-10/d2r-mobile-diablo-2-resurrected-ios-macos-layer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792203050,
         "title": "Preventing PostgreSQL XID Wraparound and Autovacuum Stalls",
         "slug": "postgresql-xid-wraparound-autovacuum-stalls",
