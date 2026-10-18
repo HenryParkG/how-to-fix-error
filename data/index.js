@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792308849,
+        "title": "Fixing eBPF Verifier Complexity & Spill Failures",
+        "slug": "fixing-ebpf-verifier-complexity-spill-failures",
+        "language": "C / eBPF",
+        "code": "BPF_VERIFIER_ERR",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-spill-failures.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Kernel",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792308850,
+        "title": "Mitigate ClickHouse Too Many Parts Write Stalls",
+        "slug": "clickhouse-too-many-parts-write-stalls",
+        "language": "ClickHouse / SQL",
+        "code": "TOO_MANY_PARTS",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/clickhouse-too-many-parts-write-stalls.js",
+        "tags": [
+            "ClickHouse",
+            "SQL",
+            "Database",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792308851,
+        "title": "Fixing Spark AQE Join Skew & Disk Spill OOM",
+        "slug": "spark-join-skew-oom-disk-spilling",
+        "language": "Apache Spark / Python",
+        "code": "SparkOOMDiskSpill",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/spark-join-skew-oom-disk-spilling.js",
+        "tags": [
+            "Spark",
+            "Python",
+            "SQL",
+            "BigData",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792308852,
+        "title": "d2r-mobile: Native D2R Compatibility on Apple Silicon",
+        "slug": "d2r-mobile-ios-macos-compatibility-layer",
+        "language": "Swift / C++ / Metal",
+        "code": "Trend",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1792289495,
         "title": "Fixing Rust Async Cancellation Safety & Inconsistent Drop",
         "slug": "rust-async-cancellation-safety-drop-inconsistencies",
