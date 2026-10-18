@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792289495,
+        "title": "Fixing Rust Async Cancellation Safety & Inconsistent Drop",
+        "slug": "rust-async-cancellation-safety-drop-inconsistencies",
+        "language": "Rust",
+        "code": "AsyncCancellationLeak",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/rust-async-cancellation-safety-drop-inconsistencies.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "Tokio",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792289496,
+        "title": "Resolving Envoy Connection Exhaustion & UC 503 Cascades",
+        "slug": "resolving-envoy-connection-exhaustion-uc-503-cascades",
+        "language": "Kubernetes",
+        "code": "Envoy503UC",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/resolving-envoy-connection-exhaustion-uc-503-cascades.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792289497,
+        "title": "Mitigating Milvus HNSW Vector Recall Decay Under Upserts",
+        "slug": "mitigating-milvus-hnsw-graph-recall-decay",
+        "language": "Python",
+        "code": "MilvusRecallDecay",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/mitigating-milvus-hnsw-graph-recall-decay.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "VectorDB",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792289498,
+        "title": "Exploring jhaizhou-ops/d2r-mobile: D2R on iOS and macOS",
+        "slug": "exploring-d2r-mobile-ios-macos-compatibility-layer",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/exploring-d2r-mobile-ios-macos-compatibility-layer.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1792240524,
         "title": "Fix Elixir GenServer Mailbox Starvation & Bloat",
         "slug": "fix-elixir-genserver-mailbox-starvation-bloat",
