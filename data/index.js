@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792327985,
+        "title": "Fixing PyTorch DDP Deadlocks from Graph Divergence",
+        "slug": "pytorch-ddp-deadlocks-bucketing-graph-divergence",
+        "language": "PyTorch",
+        "code": "RuntimeError",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/pytorch-ddp-deadlocks-bucketing-graph-divergence.js",
+        "tags": [
+            "Python",
+            "Machine Learning",
+            "Distributed Systems",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792327986,
+        "title": "Mitigating WiredTiger Cache Stalls and Checkpoint Pinning",
+        "slug": "mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning",
+        "language": "MongoDB",
+        "code": "WT_CACHE_FULL",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning.js",
+        "tags": [
+            "Go",
+            "SQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792327987,
+        "title": "Fixing Kubernetes Silent CFS Bandwidth Throttling",
+        "slug": "kubernetes-silent-cfs-throttling-multithreaded-runtimes",
+        "language": "Kubernetes",
+        "code": "CPUThrottled",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/kubernetes-silent-cfs-throttling-multithreaded-runtimes.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792327988,
+        "title": "eBPF-Powered Observability and Kernel Networking",
+        "slug": "ebpf-zero-instrumentation-observability-networking",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-10-18",
+        "path": "data/posts/2026-10/ebpf-zero-instrumentation-observability-networking.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust"
+        ]
+    },
+    {
         "id": 1792308849,
         "title": "Fixing eBPF Verifier Complexity & Spill Failures",
         "slug": "fixing-ebpf-verifier-complexity-spill-failures",
