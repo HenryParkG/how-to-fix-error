@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix Kafka Consumer Rebalance from Heartbeat Starvation",
+    "slug": "fix-kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Kafka",
+    "code": "CommitFailedException",
+    "tags": [
+        "Kafka",
+        "Distributed Systems",
+        "Java",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Apache Kafka consumer architectures, consumer groups use heartbeats to detect member liveness. Since KIP-62, heartbeats run in a dedicated background thread, decoupling network heartbeats from data processing. However, consumer liveness also depends on regular calls to <code>KafkaConsumer.poll()</code>, governed by <code>max.poll.interval.ms</code>.</p><p>When a worker thread in the consumer loop processes large record batches or encounters downstream synchronous blocking I/O (such as slow database writes or third-party HTTP timeouts), the main poll loop is starved. Once the elapsed time between consecutive <code>poll()</code> calls exceeds <code>max.poll.interval.ms</code>, the consumer coordinator assumes the consumer has hung, sends a LeaveGroup request, and triggers a consumer group rebalance. This leads to cascading rebalance storms, duplicate message processing, and <code>CommitFailedException</code> when the kicked consumer attempts offset commits.</p>",
+    "root_cause": "Synchronous processing of a poll batch takes longer than max.poll.interval.ms, causing the consumer to voluntarily leave the group and trigger continuous rebalance storms.",
+    "bad_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"kafka:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"order-processor\");\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 300000); // 5 minutes\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 5000); // Too high for slow I/O\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"orders\"));\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // BUG: Blocking external HTTP call taking 200ms per record\n        // 5000 records * 200ms = 1000s > max.poll.interval.ms (300s)\n        callExternalInventoryService(record.value());\n    }\n    consumer.commitSync();\n}",
+    "solution_desc": "Tune max.poll.records to limit batch sizes, switch to CooperativeStickyAssignor to prevent stop-the-world partitions reassignment, and decouple record consumption from processing using an asynchronous bounded worker pool with backpressure pausing.",
+    "good_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"kafka:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"order-processor\");\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100); // Bounded batch\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 600000); // 10 minutes\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n          CooperativeStickyAssignor.class.getName());\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"orders\"));\n\nThreadPoolExecutor executor = new ThreadPoolExecutor(8, 8, 0L, TimeUnit.MILLISECONDS,\n        new ArrayBlockingQueue<>(200), new ThreadPoolExecutor.CallerRunsPolicy());\n\nwhile (running) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));\n    if (!records.isEmpty()) {\n        for (ConsumerRecord<String, String> record : records) {\n            executor.submit(() -> processRecord(record));\n        }\n        consumer.commitAsync();\n    }\n}",
+    "verification": "Monitor JMX metrics `kafka.consumer:type=consumer-coordinator-metrics,name=rebalance-rate-per-hour` and verify that rebalance counts remain flat at zero during burst traffic.",
+    "date": "2026-10-19",
+    "id": 1792376812,
+    "type": "error"
+});

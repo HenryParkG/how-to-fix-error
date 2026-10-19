@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792376810,
+        "title": "Fix Postgres Transaction ID Wraparound Freeze",
+        "slug": "fix-postgres-txid-wraparound-freeze",
+        "language": "PostgreSQL",
+        "code": "ERR_TXID_WRAPAROUND",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/fix-postgres-txid-wraparound-freeze.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792376811,
+        "title": "Prevent C++20 Coroutine Frame Lifetime Invalidation",
+        "slug": "prevent-cpp20-coroutine-frame-lifetime-invalidation",
+        "language": "C++20",
+        "code": "DanglingReference",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/prevent-cpp20-coroutine-frame-lifetime-invalidation.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792376812,
+        "title": "Fix Kafka Consumer Rebalance from Heartbeat Starvation",
+        "slug": "fix-kafka-consumer-rebalance-heartbeat-starvation",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/fix-kafka-consumer-rebalance-heartbeat-starvation.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792376813,
+        "title": "Analyzing Qwen2.1 NSFW Pose Skill: VNCCS Puppet Control",
+        "slug": "analyzing-qwen21-nsfw-pose-skill-vnccs",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/analyzing-qwen21-nsfw-pose-skill-vnccs.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792327985,
         "title": "Fixing PyTorch DDP Deadlocks from Graph Divergence",
         "slug": "pytorch-ddp-deadlocks-bucketing-graph-divergence",
