@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792397893,
+        "title": "Fixing io_uring CQE Overflow and Worker Stalls",
+        "slug": "fixing-io-uring-cqe-overflow-worker-thread-stalls",
+        "language": "Rust",
+        "code": "CQE_OVERFLOW",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/fixing-io-uring-cqe-overflow-worker-thread-stalls.js",
+        "tags": [
+            "Linux",
+            "Async",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792397894,
+        "title": "Fixing vLLM KV-Cache Exhaustion in Chunked Prefill",
+        "slug": "vllm-kv-cache-exhaustion-chunked-prefill",
+        "language": "Python",
+        "code": "OOM_PREEMPTION",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/vllm-kv-cache-exhaustion-chunked-prefill.js",
+        "tags": [
+            "Python",
+            "Kubernetes",
+            "AWS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792397895,
+        "title": "Fixing Cassandra Tombstone Overwhelmed Exceptions",
+        "slug": "fixing-cassandra-tombstone-overwhelmed-exceptions",
+        "language": "Java",
+        "code": "TombstoneOverwhelmedException",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/fixing-cassandra-tombstone-overwhelmed-exceptions.js",
+        "tags": [
+            "Cassandra",
+            "SQL",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792397896,
+        "title": "Qwen2.1 NSFW Pose Skill: 136 VNCCS Control",
+        "slug": "qwen21-nsfw-pose-skill-vnccs-puppet-control",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-19",
+        "path": "data/posts/2026-10/qwen21-nsfw-pose-skill-vnccs-puppet-control.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792376810,
         "title": "Fix Postgres Transaction ID Wraparound Freeze",
         "slug": "fix-postgres-txid-wraparound-freeze",

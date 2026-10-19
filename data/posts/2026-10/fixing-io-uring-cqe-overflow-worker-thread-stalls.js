@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fixing io_uring CQE Overflow and Worker Stalls",
+    "slug": "fixing-io-uring-cqe-overflow-worker-thread-stalls",
+    "language": "Rust",
+    "code": "CQE_OVERFLOW",
+    "tags": [
+        "Linux",
+        "Async",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>When pushing high-throughput asynchronous I/O via Linux <code>io_uring</code>, user-space applications often decouple submission rates from completion processing. If completions are generated faster than the user space thread can reap them from the Completion Queue (CQ), the kernel triggers CQ ring overflow handling.</p><p>By default, if the CQ ring fills up, the kernel places new completions into an internal kernel backlog linked list. Under intense backpressure, this backlog allocates kernel memory and stalls <code>io-wq</code> async worker threads that attempt to acquire ring locks. Consequently, asynchronous filesystem or network calls block, leading to catastrophic thread starvation, kernel memory pressure, and degraded throughput.</p>",
+    "root_cause": "The CQ ring size was configured identically to the Submission Queue (SQ) size without enabling IORING_SETUP_CQSIZE or accounting for multi-completion commands (such as multishot accepts or poll add), while the application submitted requests in an unbounded loop without tracking pending in-flight SQEs against ring capacity.",
+    "bad_code": "use io_uring::{opcode, IoUring};\n\nfn run_unbounded_loop(ring: &mut IoUring, fds: &[i32]) {\n    // Ring created with default CQ size (often equal to SQ size)\n    for &fd in fds {\n        let read_e = opcode::Read::new(opcode::types::Fd(fd), [0u8; 4096].as_mut_ptr(), 4096)\n            .build()\n            .user_data(fd as u64);\n\n        // Unbounded submission: pushed without checking in-flight CQE limits\n        unsafe { ring.submission().push(&read_e).expect(\"SQ is full\"); }\n        let _ = ring.submit(); // Causes CQ backlog overflow under high load\n    }\n}",
+    "solution_desc": "Architecturally configure the CQ ring with double the SQ capacity using IORING_SETUP_CQSIZE and track inflight operations with an asynchronous counting semaphore or token bucket. Implement backpressure to yield or drain the CQ before pushing new operations when inflight requests reach safe capacity thresholds.",
+    "good_code": "use io_uring::{opcode, IoUring};\nuse std::sync::atomic::{AtomicUsize, Ordering};\n\npub struct BoundedRing {\n    ring: IoUring,\n    inflight: AtomicUsize,\n    max_inflight: usize,\n}\n\nimpl BoundedRing {\n    pub fn new(entries: u32) -> Result<Self, Box<dyn std::error::Error>> {\n        // Allocate CQ with 2x SQ depth to mitigate CQE bursts\n        let ring = IoUring::builder()\n            .setup_cqsize(entries * 2)\n            .build(entries)?;\n        \n        Ok(Self {\n            ring,\n            inflight: AtomicUsize::new(0),\n            max_inflight: (entries - 16) as usize,\n        })\n    }\n\n    pub fn submit_read(&mut self, fd: i32, buf: &mut [u8]) -> Result<(), Box<dyn std::error::Error>> {\n        // Enforce backpressure before pushing SQEs\n        while self.inflight.load(Ordering::Acquire) >= self.max_inflight {\n            self.drain_completions()?;\n        }\n\n        let read_op = opcode::Read::new(opcode::types::Fd(fd), buf.as_mut_ptr(), buf.len() as _)\n            .build()\n            .user_data(fd as u64);\n\n        unsafe { self.ring.submission().push(&read_op)?; }\n        self.ring.submit()?;\n        self.inflight.fetch_add(1, Ordering::Release);\n        Ok(())\n    }\n\n    fn drain_completions(&mut self) -> Result<(), std::io::Error> {\n        self.ring.submit_and_wait(1)?;\n        let mut cq = self.ring.completion();\n        while let Some(_cqe) = cq.next() {\n            self.inflight.fetch_sub(1, Ordering::Release);\n        }\n        Ok(())\n    }\n}",
+    "verification": "Inspect `/proc/sys/fs/epoll` and `bpftrace -e 'tracepoint:io_uring:io_uring_cqe_overflow { printf(\"Overflow detected\\n\"); }'` during load tests. Ensure zero overflow events and verified flat memory consumption in `io_wq` kernel workers.",
+    "date": "2026-10-19",
+    "id": 1792397893,
+    "type": "error"
+});
