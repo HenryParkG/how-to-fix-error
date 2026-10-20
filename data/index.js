@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792483587,
+        "title": "Fixing gRPC HTTP/2 Stream Flow-Control Deadlocks",
+        "slug": "grpc-http2-flow-control-window-starvation",
+        "language": "Go",
+        "code": "RESOURCE_EXHAUSTED",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/grpc-http2-flow-control-window-starvation.js",
+        "tags": [
+            "Go",
+            "Networking",
+            "gRPC",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792483588,
+        "title": "Fixing Redis BGSAVE CoW Spikes and Kernel THP Traps",
+        "slug": "redis-bgsave-cow-memory-spikes-thp-latency",
+        "language": "Docker",
+        "code": "OOMKilled",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/redis-bgsave-cow-memory-spikes-thp-latency.js",
+        "tags": [
+            "Docker",
+            "Redis",
+            "Infra",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792483589,
+        "title": "Fixing Elixir GenServer Mailbox Explosions",
+        "slug": "elixir-genserver-mailbox-explosion-backpressure",
+        "language": "Docker",
+        "code": "ProcessQueueOverflow",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/elixir-genserver-mailbox-explosion-backpressure.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Backend",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792483590,
+        "title": "Gathin23/cleanyourtv: Debloat Android & Google TV",
+        "slug": "gathin23-cleanyourtv-debloat-android-google-tv",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/gathin23-cleanyourtv-debloat-android-google-tv.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792397893,
         "title": "Fixing io_uring CQE Overflow and Worker Stalls",
         "slug": "fixing-io-uring-cqe-overflow-worker-thread-stalls",
