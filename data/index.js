@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792505204,
+        "title": "Fixing Async Cancellation Safety & Guard Leaks in Rust",
+        "slug": "rust-async-cancellation-safety-raii-leaks",
+        "language": "Rust",
+        "code": "AsyncCancellationError",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/rust-async-cancellation-safety-raii-leaks.js",
+        "tags": [
+            "Rust",
+            "Tokio",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792505205,
+        "title": "Fixing CoreDNS UDP Drops via Linux Conntrack Races",
+        "slug": "k8s-coredns-conntrack-race-packet-drops",
+        "language": "Kubernetes",
+        "code": "ConntrackDropRace",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/k8s-coredns-conntrack-race-packet-drops.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Linux",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792505206,
+        "title": "Mitigating RocksDB Write Stalls from L0 File Accumulation",
+        "slug": "rocksdb-write-stalls-l0-compaction-debt",
+        "language": "SQL",
+        "code": "Status::Incomplete",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/rocksdb-write-stalls-l0-compaction-debt.js",
+        "tags": [
+            "SQL",
+            "Rust",
+            "Backend",
+            "Storage",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792505207,
+        "title": "CleanYourTV: Debloating Android and Google TV via ADB",
+        "slug": "cleanyourtv-android-google-tv-debloat-apple-tv-style",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-20",
+        "path": "data/posts/2026-10/cleanyourtv-android-google-tv-debloat-apple-tv-style.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792483587,
         "title": "Fixing gRPC HTTP/2 Stream Flow-Control Deadlocks",
         "slug": "grpc-http2-flow-control-window-starvation",

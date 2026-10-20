@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fixing Async Cancellation Safety & Guard Leaks in Rust",
+    "slug": "rust-async-cancellation-safety-raii-leaks",
+    "language": "Rust",
+    "code": "AsyncCancellationError",
+    "tags": [
+        "Rust",
+        "Tokio",
+        "Concurrency",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>In asynchronous Rust, futures are polled cooperatively to completion. However, when a future is dropped before reaching completion\u2014such as when wrapped in <code>tokio::select!</code> or <code>tokio::time::timeout</code>\u2014execution halts abruptly at the nearest <code>.await</code> yield point. This behavior is called async cancellation.</p><p>Unlike synchronous execution, where scopes unwind sequentially via stack unwinding or normal return, dropping an active future immediately drops all local variables currently held across the yield point. If an algorithm relies on multi-step invariant modifications, holding an RAII lock guard across an <code>.await</code> or partially mutating shared state before a network call can permanently corrupt application state or drop resources prematurely without cleanup.</p>",
+    "root_cause": "Dropping a future at an await suspension point terminates its execution branch instantly, triggering RAII destructors on in-flight variables while bypassing the remainder of the routine. When multi-step operations or state mutations span across yield points without transactional rollback guarantees, dropped futures result in inconsistent state and missing cleanup transitions.",
+    "bad_code": "use tokio::sync::mpsc;\n\npub struct QueueWorker {\n    tx: mpsc::Sender<String>,\n}\n\nimpl QueueWorker {\n    pub async fn process_job(&self, job_id: String) -> Result<(), &'static str> {\n        // BUG: In Tokio select!, if timeout strikes during `reserve().await` or\n        // during the subsequent processing, the slot is abandoned, or state is\n        // left inconsistent without notification.\n        tokio::select! {\n            permit = self.tx.reserve() => {\n                let permit = permit.map_err(|_| \"Channel closed\")?;\n                // Asynchronous I/O occurs after partial state acquisition\n                tokio::time::sleep(tokio::time::Duration::from_millis(50)).await;\n                permit.send(job_id);\n                Ok(())\n            }\n            _ = tokio::time::sleep(tokio::time::Duration::from_millis(20)) => {\n                Err(\"Operation timed out - task cancelled mid-operation\")\n            }\n        }\n    }\n}",
+    "solution_desc": "Design cancellation-safe abstractions by separating asynchronous suspension points from non-atomic state mutations. Ensure all I/O or yield points complete before acquiring resource permits, or encapsulate partial operations inside an explicit RAII guard struct whose `Drop` implementation detects aborted progress and executes necessary rollbacks or notifications.",
+    "good_code": "use tokio::sync::mpsc;\n\npub struct QueueWorker {\n    tx: mpsc::Sender<String>,\n}\n\nimpl QueueWorker {\n    pub async fn process_job(&self, job_id: String) -> Result<(), &'static str> {\n        // Perform all fallible / cancellable asynchronous operations FIRST\n        let payload = match tokio::time::timeout(\n            tokio::time::Duration::from_millis(20),\n            Self::fetch_metadata(job_id)\n        ).await {\n            Ok(Ok(data)) => data,\n            Ok(Err(_)) => return Err(\"Fetch failure\"),\n            Err(_) => return Err(\"Operation timed out\"),\n        };\n\n        // Synchronous / atomic state transfer: reserve and immediately complete\n        // without further suspension points that could be dropped\n        let permit = self.tx.reserve().await.map_err(|_| \"Channel closed\")?;\n        permit.send(payload);\n        Ok(())\n    }\n\n    async fn fetch_metadata(id: String) -> Result<String, ()> {\n        tokio::time::sleep(tokio::time::Duration::from_millis(10)).await;\n        Ok(format!(\"processed_{}\", id))\n    }\n}",
+    "verification": "Test cancellation safety by writing unit tests with `tokio_test::task::spawn`. Poll the future partially, simulate cancellation by manually dropping the task before completion, and verify via assertion that channel buffer invariants and shared locks remain uncorrupted.",
+    "date": "2026-10-20",
+    "id": 1792505204,
+    "type": "error"
+});
