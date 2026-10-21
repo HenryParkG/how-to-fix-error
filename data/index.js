@@ -1,5 +1,71 @@
 var postsIndex = [
     {
+        "id": 1792570108,
+        "title": "Debugging eBPF Verifier & JIT Issues",
+        "slug": "ebpf-verifier-jit-debugging",
+        "language": "Linux Kernel",
+        "code": "EBPF_VERIFIER_ERR",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/ebpf-verifier-jit-debugging.js",
+        "tags": [
+            "eBPF",
+            "Linux Kernel",
+            "Observability",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792570109,
+        "title": "Mitigating PyTorch CUDA OOMs: Fragmentation & Backprop",
+        "slug": "pytorch-cuda-oom-fragmentation-nondeterminism",
+        "language": "Python",
+        "code": "CUDA_OOM",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/pytorch-cuda-oom-fragmentation-nondeterminism.js",
+        "tags": [
+            "PyTorch",
+            "CUDA",
+            "Deep Learning",
+            "Memory Management",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792570110,
+        "title": "Elasticsearch: Shard Relocation & Data Inconsistency",
+        "slug": "elasticsearch-shard-relocation-data-inconsistency",
+        "language": "Java",
+        "code": "ES_SHARD_RELOCATION_FAILURE",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/elasticsearch-shard-relocation-data-inconsistency.js",
+        "tags": [
+            "Elasticsearch",
+            "Distributed Systems",
+            "Data Integrity",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792570111,
+        "title": "DeepInfer: High-Performance LLM Inference from DeepSeek",
+        "slug": "deepinfer-deepseek-llm-inference",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/deepinfer-deepseek-llm-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "AI",
+            "LLM",
+            "Inference",
+            "Python"
+        ]
+    },
+    {
         "id": 1792550054,
         "title": "Fix Go STW Preemption Starvation in CPU Loops",
         "slug": "fix-go-runtime-stw-preemption-starvation",
