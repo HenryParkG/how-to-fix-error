@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1792592098,
+        "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
+        "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
+        "language": "C++",
+        "code": "DanglingReferenceUB",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/cpp20-coroutine-dangling-reference-lifetime-fix.js",
+        "tags": [
+            "C++20",
+            "Coroutines",
+            "Memory Safety",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792592099,
+        "title": "Mitigate PostgreSQL TXID Wraparound Vacuum Starvation",
+        "slug": "postgres-txid-wraparound-vacuum-starvation",
+        "language": "PostgreSQL",
+        "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/postgres-txid-wraparound-vacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "Performance",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792592100,
+        "title": "Fix Kafka Consumer Group max.poll.interval.ms Storms",
+        "slug": "kafka-consumer-rebalance-max-poll-interval-ms",
+        "language": "Kafka",
+        "code": "CommitFailedException",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/kafka-consumer-rebalance-max-poll-interval-ms.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Concurrency",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792592101,
+        "title": "DeepInfer: High-Scale DeepSeek Model Inference Engine",
+        "slug": "deepinfer-deepseek-high-performance-inference",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792570108,
         "title": "Debugging eBPF Verifier & JIT Issues",
         "slug": "ebpf-verifier-jit-debugging",

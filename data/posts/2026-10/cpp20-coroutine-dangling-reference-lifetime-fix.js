@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
+    "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
+    "language": "C++",
+    "code": "DanglingReferenceUB",
+    "tags": [
+        "C++20",
+        "Coroutines",
+        "Memory Safety",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>C++20 coroutines decouple execution from the standard call stack by allocating a coroutine frame on the heap. When parameters are passed to a coroutine by reference (<code>const T&amp;</code>, <code>T&amp;</code>, or <code>T&amp;&amp;</code>), the coroutine frame copies the reference pointer, not the referenced object itself. If a caller passes a temporary or a stack-allocated variable whose lifetime ends before the coroutine completes its initial or subsequent suspension points (<code>co_await</code>), the frame holds a dangling reference.</p><p>This causes subtle, non-deterministic memory corruption, segmentation faults, or silent data invalidation when the coroutine resumes execution on a thread pool after the originating stack frame has collapsed.</p>",
+    "root_cause": "Coroutine parameters passed by reference store a reference inside the heap-allocated coroutine frame, binding to temporary or stack-allocated variables that are destroyed at the end of the caller's full-expression or stack scope.",
+    "bad_code": "#include <coroutine>\n#include <iostream>\n#include <string>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void return_void() {}\n        void unhandled_exception() { std::terminate(); }\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// BUG: 'data' is passed by reference. If passed a temporary, \n// the temporary is destroyed when the initial call returns.\nTask process_payload_async(const std::string& data) {\n    co_await std::suspend_always{};\n    // Dangling reference access on resumption!\n    std::cout << \"Length: \" << data.length() << std::endl;\n}\n\nvoid trigger() {\n    // std::string temporary destroyed immediately after process_payload_async returns Task\n    auto task = process_payload_async(std::string(\"transient_request_body\"));\n    task.handle.resume(); // Undefined Behavior: reads freed memory\n}",
+    "solution_desc": "Enforce value semantics for all coroutine parameter signatures. When parameters are accepted by value, the compiler moves or copies the actual object into the coroutine frame, ensuring its lifetime is bound directly to the lifetime of the frame itself. Alternatively, wrap inputs in shared ownership structures (such as `std::shared_ptr`) if copies are too expensive.",
+    "good_code": "#include <coroutine>\n#include <iostream>\n#include <string>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_always initial_suspend() noexcept { return {}; }\n        std::suspend_always final_suspend() noexcept { return {}; }\n        void return_void() {}\n        void unhandled_exception() { std::terminate(); }\n    };\n    std::coroutine_handle<promise_type> handle;\n    ~Task() { if (handle) handle.destroy(); }\n};\n\n// FIXED: Passing by value moves the string directly into the coroutine frame\nTask process_payload_async(std::string data) {\n    co_await std::suspend_always{};\n    // Safe: 'data' is preserved inside the coroutine frame\n    std::cout << \"Length: \" << data.length() << std::endl;\n}\n\nvoid trigger() {\n    auto task = process_payload_async(std::string(\"transient_request_body\"));\n    task.handle.resume(); // Guaranteed safe\n}",
+    "verification": "Compile with AddressSanitizer (`-fsanitize=address,undefined -g`) and run the test suite. AddressSanitizer will immediately intercept and log any `stack-use-after-scope` or heap-use-after-free violations during coroutine resumption.",
+    "date": "2026-10-21",
+    "id": 1792592098,
+    "type": "error"
+});
