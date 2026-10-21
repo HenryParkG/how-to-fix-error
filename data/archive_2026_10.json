@@ -1,0 +1,2805 @@
+[
+  {
+    "id": 1792592098,
+    "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
+    "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
+    "language": "C++",
+    "code": "DanglingReferenceUB",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/cpp20-coroutine-dangling-reference-lifetime-fix.js",
+    "tags": [
+      "C++20",
+      "Coroutines",
+      "Memory Safety",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792592099,
+    "title": "Mitigate PostgreSQL TXID Wraparound Vacuum Starvation",
+    "slug": "postgres-txid-wraparound-vacuum-starvation",
+    "language": "PostgreSQL",
+    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/postgres-txid-wraparound-vacuum-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792592100,
+    "title": "Fix Kafka Consumer Group max.poll.interval.ms Storms",
+    "slug": "kafka-consumer-rebalance-max-poll-interval-ms",
+    "language": "Kafka",
+    "code": "CommitFailedException",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-max-poll-interval-ms.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Concurrency",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792592101,
+    "title": "DeepInfer: High-Scale DeepSeek Model Inference Engine",
+    "slug": "deepinfer-deepseek-high-performance-inference",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792570108,
+    "title": "Debugging eBPF Verifier & JIT Issues",
+    "slug": "ebpf-verifier-jit-debugging",
+    "language": "Linux Kernel",
+    "code": "EBPF_VERIFIER_ERR",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/ebpf-verifier-jit-debugging.js",
+    "tags": [
+      "eBPF",
+      "Linux Kernel",
+      "Observability",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792570109,
+    "title": "Mitigating PyTorch CUDA OOMs: Fragmentation & Backprop",
+    "slug": "pytorch-cuda-oom-fragmentation-nondeterminism",
+    "language": "Python",
+    "code": "CUDA_OOM",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/pytorch-cuda-oom-fragmentation-nondeterminism.js",
+    "tags": [
+      "PyTorch",
+      "CUDA",
+      "Deep Learning",
+      "Memory Management",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792570110,
+    "title": "Elasticsearch: Shard Relocation & Data Inconsistency",
+    "slug": "elasticsearch-shard-relocation-data-inconsistency",
+    "language": "Java",
+    "code": "ES_SHARD_RELOCATION_FAILURE",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/elasticsearch-shard-relocation-data-inconsistency.js",
+    "tags": [
+      "Elasticsearch",
+      "Distributed Systems",
+      "Data Integrity",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792570111,
+    "title": "DeepInfer: High-Performance LLM Inference from DeepSeek",
+    "slug": "deepinfer-deepseek-llm-inference",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/deepinfer-deepseek-llm-inference.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "LLM",
+      "Inference",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792550054,
+    "title": "Fix Go STW Preemption Starvation in CPU Loops",
+    "slug": "fix-go-runtime-stw-preemption-starvation",
+    "language": "Go",
+    "code": "STWStarvation",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/fix-go-runtime-stw-preemption-starvation.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792550055,
+    "title": "Mitigate HNSW Vector Index Bloat from Deletes",
+    "slug": "mitigate-hnsw-vector-index-fragmentation-bloat",
+    "language": "Rust",
+    "code": "HNSWFragmentation",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/mitigate-hnsw-vector-index-fragmentation-bloat.js",
+    "tags": [
+      "Rust",
+      "VectorDB",
+      "AI",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792550056,
+    "title": "Fix WebGPU Dynamic Uniform Buffer Alignment",
+    "slug": "fix-webgpu-dynamic-uniform-buffer-alignment",
+    "language": "TypeScript",
+    "code": "WebGPUAlignmentError",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment.js",
+    "tags": [
+      "TypeScript",
+      "WebGPU",
+      "Frontend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792550057,
+    "title": "DeepInfer: High-Performance DeepSeek Inference",
+    "slug": "deepinfer-deepseek-high-performance-inference",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-21",
+    "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792505204,
+    "title": "Fixing Async Cancellation Safety & Guard Leaks in Rust",
+    "slug": "rust-async-cancellation-safety-raii-leaks",
+    "language": "Rust",
+    "code": "AsyncCancellationError",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/rust-async-cancellation-safety-raii-leaks.js",
+    "tags": [
+      "Rust",
+      "Tokio",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792505205,
+    "title": "Fixing CoreDNS UDP Drops via Linux Conntrack Races",
+    "slug": "k8s-coredns-conntrack-race-packet-drops",
+    "language": "Kubernetes",
+    "code": "ConntrackDropRace",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/k8s-coredns-conntrack-race-packet-drops.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Linux",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792505206,
+    "title": "Mitigating RocksDB Write Stalls from L0 File Accumulation",
+    "slug": "rocksdb-write-stalls-l0-compaction-debt",
+    "language": "SQL",
+    "code": "Status::Incomplete",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/rocksdb-write-stalls-l0-compaction-debt.js",
+    "tags": [
+      "SQL",
+      "Rust",
+      "Backend",
+      "Storage",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792505207,
+    "title": "CleanYourTV: Debloating Android and Google TV via ADB",
+    "slug": "cleanyourtv-android-google-tv-debloat-apple-tv-style",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/cleanyourtv-android-google-tv-debloat-apple-tv-style.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792483587,
+    "title": "Fixing gRPC HTTP/2 Stream Flow-Control Deadlocks",
+    "slug": "grpc-http2-flow-control-window-starvation",
+    "language": "Go",
+    "code": "RESOURCE_EXHAUSTED",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/grpc-http2-flow-control-window-starvation.js",
+    "tags": [
+      "Go",
+      "Networking",
+      "gRPC",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792483588,
+    "title": "Fixing Redis BGSAVE CoW Spikes and Kernel THP Traps",
+    "slug": "redis-bgsave-cow-memory-spikes-thp-latency",
+    "language": "Docker",
+    "code": "OOMKilled",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/redis-bgsave-cow-memory-spikes-thp-latency.js",
+    "tags": [
+      "Docker",
+      "Redis",
+      "Infra",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792483589,
+    "title": "Fixing Elixir GenServer Mailbox Explosions",
+    "slug": "elixir-genserver-mailbox-explosion-backpressure",
+    "language": "Docker",
+    "code": "ProcessQueueOverflow",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/elixir-genserver-mailbox-explosion-backpressure.js",
+    "tags": [
+      "Docker",
+      "Kubernetes",
+      "Backend",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792483590,
+    "title": "Gathin23/cleanyourtv: Debloat Android & Google TV",
+    "slug": "gathin23-cleanyourtv-debloat-android-google-tv",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-20",
+    "path": "data/posts/2026-10/gathin23-cleanyourtv-debloat-android-google-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792397893,
+    "title": "Fixing io_uring CQE Overflow and Worker Stalls",
+    "slug": "fixing-io-uring-cqe-overflow-worker-thread-stalls",
+    "language": "Rust",
+    "code": "CQE_OVERFLOW",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/fixing-io-uring-cqe-overflow-worker-thread-stalls.js",
+    "tags": [
+      "Linux",
+      "Async",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792397894,
+    "title": "Fixing vLLM KV-Cache Exhaustion in Chunked Prefill",
+    "slug": "vllm-kv-cache-exhaustion-chunked-prefill",
+    "language": "Python",
+    "code": "OOM_PREEMPTION",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/vllm-kv-cache-exhaustion-chunked-prefill.js",
+    "tags": [
+      "Python",
+      "Kubernetes",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792397895,
+    "title": "Fixing Cassandra Tombstone Overwhelmed Exceptions",
+    "slug": "fixing-cassandra-tombstone-overwhelmed-exceptions",
+    "language": "Java",
+    "code": "TombstoneOverwhelmedException",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/fixing-cassandra-tombstone-overwhelmed-exceptions.js",
+    "tags": [
+      "Cassandra",
+      "SQL",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792397896,
+    "title": "Qwen2.1 NSFW Pose Skill: 136 VNCCS Control",
+    "slug": "qwen21-nsfw-pose-skill-vnccs-puppet-control",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/qwen21-nsfw-pose-skill-vnccs-puppet-control.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792376810,
+    "title": "Fix Postgres Transaction ID Wraparound Freeze",
+    "slug": "fix-postgres-txid-wraparound-freeze",
+    "language": "PostgreSQL",
+    "code": "ERR_TXID_WRAPAROUND",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/fix-postgres-txid-wraparound-freeze.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792376811,
+    "title": "Prevent C++20 Coroutine Frame Lifetime Invalidation",
+    "slug": "prevent-cpp20-coroutine-frame-lifetime-invalidation",
+    "language": "C++20",
+    "code": "DanglingReference",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/prevent-cpp20-coroutine-frame-lifetime-invalidation.js",
+    "tags": [
+      "C++20",
+      "Coroutines",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792376812,
+    "title": "Fix Kafka Consumer Rebalance from Heartbeat Starvation",
+    "slug": "fix-kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Kafka",
+    "code": "CommitFailedException",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/fix-kafka-consumer-rebalance-heartbeat-starvation.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792376813,
+    "title": "Analyzing Qwen2.1 NSFW Pose Skill: VNCCS Puppet Control",
+    "slug": "analyzing-qwen21-nsfw-pose-skill-vnccs",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-19",
+    "path": "data/posts/2026-10/analyzing-qwen21-nsfw-pose-skill-vnccs.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792327985,
+    "title": "Fixing PyTorch DDP Deadlocks from Graph Divergence",
+    "slug": "pytorch-ddp-deadlocks-bucketing-graph-divergence",
+    "language": "PyTorch",
+    "code": "RuntimeError",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/pytorch-ddp-deadlocks-bucketing-graph-divergence.js",
+    "tags": [
+      "Python",
+      "Machine Learning",
+      "Distributed Systems",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792327986,
+    "title": "Mitigating WiredTiger Cache Stalls and Checkpoint Pinning",
+    "slug": "mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning",
+    "language": "MongoDB",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning.js",
+    "tags": [
+      "Go",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792327987,
+    "title": "Fixing Kubernetes Silent CFS Bandwidth Throttling",
+    "slug": "kubernetes-silent-cfs-throttling-multithreaded-runtimes",
+    "language": "Kubernetes",
+    "code": "CPUThrottled",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/kubernetes-silent-cfs-throttling-multithreaded-runtimes.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792327988,
+    "title": "eBPF-Powered Observability and Kernel Networking",
+    "slug": "ebpf-zero-instrumentation-observability-networking",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/ebpf-zero-instrumentation-observability-networking.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1792308849,
+    "title": "Fixing eBPF Verifier Complexity & Spill Failures",
+    "slug": "fixing-ebpf-verifier-complexity-spill-failures",
+    "language": "C / eBPF",
+    "code": "BPF_VERIFIER_ERR",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-spill-failures.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792308850,
+    "title": "Mitigate ClickHouse Too Many Parts Write Stalls",
+    "slug": "clickhouse-too-many-parts-write-stalls",
+    "language": "ClickHouse / SQL",
+    "code": "TOO_MANY_PARTS",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/clickhouse-too-many-parts-write-stalls.js",
+    "tags": [
+      "ClickHouse",
+      "SQL",
+      "Database",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792308851,
+    "title": "Fixing Spark AQE Join Skew & Disk Spill OOM",
+    "slug": "spark-join-skew-oom-disk-spilling",
+    "language": "Apache Spark / Python",
+    "code": "SparkOOMDiskSpill",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/spark-join-skew-oom-disk-spilling.js",
+    "tags": [
+      "Spark",
+      "Python",
+      "SQL",
+      "BigData",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792308852,
+    "title": "d2r-mobile: Native D2R Compatibility on Apple Silicon",
+    "slug": "d2r-mobile-ios-macos-compatibility-layer",
+    "language": "Swift / C++ / Metal",
+    "code": "Trend",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1792289495,
+    "title": "Fixing Rust Async Cancellation Safety & Inconsistent Drop",
+    "slug": "rust-async-cancellation-safety-drop-inconsistencies",
+    "language": "Rust",
+    "code": "AsyncCancellationLeak",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/rust-async-cancellation-safety-drop-inconsistencies.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "Tokio",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792289496,
+    "title": "Resolving Envoy Connection Exhaustion & UC 503 Cascades",
+    "slug": "resolving-envoy-connection-exhaustion-uc-503-cascades",
+    "language": "Kubernetes",
+    "code": "Envoy503UC",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/resolving-envoy-connection-exhaustion-uc-503-cascades.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792289497,
+    "title": "Mitigating Milvus HNSW Vector Recall Decay Under Upserts",
+    "slug": "mitigating-milvus-hnsw-graph-recall-decay",
+    "language": "Python",
+    "code": "MilvusRecallDecay",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/mitigating-milvus-hnsw-graph-recall-decay.js",
+    "tags": [
+      "Python",
+      "Kubernetes",
+      "VectorDB",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792289498,
+    "title": "Exploring jhaizhou-ops/d2r-mobile: D2R on iOS and macOS",
+    "slug": "exploring-d2r-mobile-ios-macos-compatibility-layer",
+    "language": "Swift",
+    "code": "Trend",
+    "date": "2026-10-18",
+    "path": "data/posts/2026-10/exploring-d2r-mobile-ios-macos-compatibility-layer.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1792240524,
+    "title": "Fix Elixir GenServer Mailbox Starvation & Bloat",
+    "slug": "fix-elixir-genserver-mailbox-starvation-bloat",
+    "language": "Elixir",
+    "code": "SystemLimitError",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-starvation-bloat.js",
+    "tags": [
+      "Elixir",
+      "BEAM",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792240525,
+    "title": "Fix Redis BGSAVE Fork Latency Spikes and CoW OOM",
+    "slug": "fix-redis-bgsave-fork-latency-spikes-cow-oom",
+    "language": "Redis",
+    "code": "MISCONF / ForkLatency",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/fix-redis-bgsave-fork-latency-spikes-cow-oom.js",
+    "tags": [
+      "Redis",
+      "Linux",
+      "Docker",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792240526,
+    "title": "Fix WebGPU Dynamic Uniform Buffer Alignment Panics",
+    "slug": "fix-webgpu-dynamic-uniform-buffer-alignment-panics",
+    "language": "WebGPU / TypeScript",
+    "code": "GPUValidationError",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment-panics.js",
+    "tags": [
+      "TypeScript",
+      "Rust",
+      "WebGPU",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792240527,
+    "title": "D2R-Mobile: Diablo II Resurrected on iOS & macOS",
+    "slug": "d2r-mobile-diablo-ii-resurrected-ios-macos-layer",
+    "language": "Swift / C++",
+    "code": "Trend",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/d2r-mobile-diablo-ii-resurrected-ios-macos-layer.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 1792221610,
+    "title": "Fixing Go Safe-Point Traps in Tight CPU Loops",
+    "slug": "go-non-cooperative-preemption-latency-spikes",
+    "language": "Go",
+    "code": "STWLatencySpike",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/go-non-cooperative-preemption-latency-spikes.js",
+    "tags": [
+      "Go",
+      "Performance",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792221611,
+    "title": "Fixing gRPC HTTP/2 Flow-Control Window Deadlocks",
+    "slug": "grpc-http2-flow-control-window-exhaustion-deadlocks",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_ERROR",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion-deadlocks.js",
+    "tags": [
+      "Go",
+      "Docker",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792221612,
+    "title": "Resolving RocksDB Write Stalls from L0 Backpressure",
+    "slug": "rocksdb-write-stalls-l0-compaction-backpressure",
+    "language": "Rust",
+    "code": "Status::Busy(WriteStall)",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/rocksdb-write-stalls-l0-compaction-backpressure.js",
+    "tags": [
+      "Rust",
+      "SQL",
+      "Databases",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792221613,
+    "title": "D2R-Mobile: Diablo II Resurrected on iOS and macOS",
+    "slug": "d2r-mobile-diablo-2-resurrected-ios-macos-layer",
+    "language": "C++ / Metal",
+    "code": "Trend",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/d2r-mobile-diablo-2-resurrected-ios-macos-layer.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1792203050,
+    "title": "Preventing PostgreSQL XID Wraparound and Autovacuum Stalls",
+    "slug": "postgresql-xid-wraparound-autovacuum-stalls",
+    "language": "PostgreSQL",
+    "code": "ERR_XID_WRAPAROUND",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/postgresql-xid-wraparound-autovacuum-stalls.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Autovacuum",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792203051,
+    "title": "Taming Kafka Consumer Rebalance Storms and Zombie Fencing",
+    "slug": "kafka-rebalance-storms-zombie-fencing",
+    "language": "Apache Kafka",
+    "code": "CommitFailedException",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/kafka-rebalance-storms-zombie-fencing.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Concurrency",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792203052,
+    "title": "Hunting Haskell Space Leaks: Thunk Accumulation in Lazy Evaluation Pipelines",
+    "slug": "hunting-haskell-space-leaks-thunk-accumulation",
+    "language": "Haskell",
+    "code": "OutOfMemoryError",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/hunting-haskell-space-leaks-thunk-accumulation.js",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Performance",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792203053,
+    "title": "D2R Mobile: Native Diablo II Resurrected on iOS & Mac",
+    "slug": "d2r-mobile-ios-macos-compatibility-layer",
+    "language": "Swift / C++",
+    "code": "Trend",
+    "date": "2026-10-17",
+    "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "iOS",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1792157921,
+    "title": "Debugging C++20 Coroutine Suspension Points",
+    "slug": "debugging-cpp20-coroutine-suspension-points-stackless-mismatches",
+    "language": "C++",
+    "code": "Coroutine Debugging",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/debugging-cpp20-coroutine-suspension-points-stackless-mismatches.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Coroutines",
+      "Debugging",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792157922,
+    "title": "Resolving PyTorch CUDA OOM & Mixed Precision Artifacts",
+    "slug": "resolving-pytorch-cuda-oom-mixed-precision-quantization-artifacts",
+    "language": "Python",
+    "code": "CUDA OOM",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/resolving-pytorch-cuda-oom-mixed-precision-quantization-artifacts.js",
+    "tags": [
+      "PyTorch",
+      "CUDA",
+      "AI/ML",
+      "Optimization",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792157923,
+    "title": "Tackling Elasticsearch Shard Rebalancing Failures",
+    "slug": "tackling-elasticsearch-shard-rebalancing-failures-high-cardinality-field-explosions",
+    "language": "Elasticsearch",
+    "code": "Shard Imbalance",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/tackling-elasticsearch-shard-rebalancing-failures-high-cardinality-field-explosions.js",
+    "tags": [
+      "Elasticsearch",
+      "Distributed Systems",
+      "Database",
+      "Observability",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792157924,
+    "title": "D2R Mobile: Diablo II: Resurrected on iOS/macOS",
+    "slug": "jhaizhou-ops-d2r-mobile-tech-trend",
+    "language": "C++/Swift",
+    "code": "Trend",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/jhaizhou-ops-d2r-mobile-tech-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Reverse Engineering",
+      "Gaming",
+      "iOS",
+      "macOS",
+      "Frontend"
+    ]
+  },
+  {
+    "id": 1792136502,
+    "title": "Fixing eBPF Verifier Complexity Exhaustion Traps",
+    "slug": "fixing-ebpf-verifier-complexity-exhaustion",
+    "language": "C",
+    "code": "BPF_VERIFIER_E2BIG",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-exhaustion.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "eBPF",
+      "Linux",
+      "C",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792136503,
+    "title": "Resolving WiredTiger Dirty Cache Stalls in MongoDB",
+    "slug": "resolving-mongodb-wiredtiger-eviction-stalls",
+    "language": "Go",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/resolving-mongodb-wiredtiger-eviction-stalls.js",
+    "tags": [
+      "Go",
+      "Backend",
+      "Kubernetes",
+      "SQL",
+      "MongoDB",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792136504,
+    "title": "Mitigating Spark Shuffle FetchFailed Cascades",
+    "slug": "mitigating-spark-shuffle-fetchfailed-cascades",
+    "language": "Java",
+    "code": "FetchFailedException",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/mitigating-spark-shuffle-fetchfailed-cascades.js",
+    "tags": [
+      "Java",
+      "Backend",
+      "Kubernetes",
+      "AWS",
+      "Spark",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792136505,
+    "title": "Inside d2r-mobile: Native Diablo II on iOS and macOS",
+    "slug": "inside-d2r-mobile-diablo-2-ios-macos",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/inside-d2r-mobile-diablo-2-ios-macos.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 1792117128,
+    "title": "Fixing Rust Borrow Checker Deadlocks & Lifetime Violations",
+    "slug": "rust-borrow-checker-deadlocks-lifetime-violations",
+    "language": "Rust",
+    "code": "BorrowCheck",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/rust-borrow-checker-deadlocks-lifetime-violations.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792117129,
+    "title": "Resolving K8s CrashLoopBackOff from Init Container Failures",
+    "slug": "kubernetes-crashloopbackoff-init-container-failures",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/kubernetes-crashloopbackoff-init-container-failures.js",
+    "tags": [
+      "Kubernetes",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792117130,
+    "title": "Mitigating Next.js Hydration Mismatches & Client-Side Renders",
+    "slug": "nextjs-hydration-mismatches-client-side-renders",
+    "language": "Next.js",
+    "code": "HydrationMismatch",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/nextjs-hydration-mismatches-client-side-renders.js",
+    "tags": [
+      "Next.js",
+      "Frontend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792117131,
+    "title": "Unpacking 'jhaizhou-ops/d2r-mobile': Diablo II on iOS/macOS",
+    "slug": "d2r-mobile-github-trend-analysis",
+    "language": "C++, Swift",
+    "code": "Trend",
+    "date": "2026-10-16",
+    "path": "data/posts/2026-10/d2r-mobile-github-trend-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "C++",
+      "Gaming"
+    ]
+  },
+  {
+    "id": 1792072094,
+    "title": "Fixing Tokio Worker Starvation from CPU Tasks",
+    "slug": "tokio-worker-starvation-cpu-blocking",
+    "language": "Rust",
+    "code": "WorkerStarvation",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/tokio-worker-starvation-cpu-blocking.js",
+    "tags": [
+      "Tokio",
+      "Concurrency",
+      "Performance",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792072095,
+    "title": "Resolving Redis BGSAVE Fork Spikes & THP Cascades",
+    "slug": "redis-bgsave-fork-latency-thp-memory",
+    "language": "Redis",
+    "code": "ForkLatencySpike",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/redis-bgsave-fork-latency-thp-memory.js",
+    "tags": [
+      "Redis",
+      "Memory",
+      "Linux",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792072096,
+    "title": "Fixing Elixir GenServer Mailbox Floods & Receive Traps",
+    "slug": "elixir-genserver-mailbox-flooding-selective-receive",
+    "language": "Elixir",
+    "code": "MailboxOverflow",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/elixir-genserver-mailbox-flooding-selective-receive.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792072097,
+    "title": "d2r-mobile: Native Diablo II Resurrected on Apple Devices",
+    "slug": "d2r-mobile-diablo-2-ios-macos-compatibility",
+    "language": "C++ / Swift",
+    "code": "Trend",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/d2r-mobile-diablo-2-ios-macos-compatibility.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1792051030,
+    "title": "Fixing Go Non-Cooperative Preemption & STW Spikes",
+    "slug": "fixing-go-non-cooperative-preemption-stw-spikes",
+    "language": "Go",
+    "code": "STWLatencySpike",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/fixing-go-non-cooperative-preemption-stw-spikes.js",
+    "tags": [
+      "Go",
+      "Performance",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792051031,
+    "title": "Mitigating vLLM PagedAttention KV-Cache OOM Cascades",
+    "slug": "mitigating-vllm-pagedattention-kv-cache-oom-cascades",
+    "language": "Python",
+    "code": "CUDA_OUT_OF_MEMORY",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/mitigating-vllm-pagedattention-kv-cache-oom-cascades.js",
+    "tags": [
+      "Python",
+      "Kubernetes",
+      "AI",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792051032,
+    "title": "Resolving Istio Envoy HTTP/2 RST_STREAM Storms",
+    "slug": "resolving-istio-envoy-http2-rst-stream-storms",
+    "language": "Go",
+    "code": "HTTP2_ENHANCE_YOUR_CALM",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/resolving-istio-envoy-http2-rst-stream-storms.js",
+    "tags": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792051033,
+    "title": "Craft App Launcher: The Next-Gen Modular Productivity Engine",
+    "slug": "craft-app-launcher-modular-productivity-engine",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/craft-app-launcher-modular-productivity-engine.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 1792031082,
+    "title": "Fixing PostgreSQL XID Wraparound and Multixact Exhaustion",
+    "slug": "postgres-xid-wraparound-emergency-autovacuum-fix",
+    "language": "PostgreSQL",
+    "code": "ERR_XID_WRAPAROUND",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/postgres-xid-wraparound-emergency-autovacuum-fix.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792031083,
+    "title": "Resolving Kafka Consumer Group Rebalance Storm Cascades",
+    "slug": "kafka-consumer-rebalance-storms-max-poll-interval",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-storms-max-poll-interval.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792031084,
+    "title": "Fixing WebGPU Dynamic Offset Misalignments & Device Loss",
+    "slug": "webgpu-dynamic-offset-misalignment-device-loss",
+    "language": "TypeScript",
+    "code": "GPUValidationError",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/webgpu-dynamic-offset-misalignment-device-loss.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "TypeScript",
+      "Frontend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792031085,
+    "title": "Craft Launcher: Modern Extensible App Launcher Trend",
+    "slug": "craft-launcher-modern-app-launcher-trend",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-10-15",
+    "path": "data/posts/2026-10/craft-launcher-modern-app-launcher-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "React"
+    ]
+  },
+  {
+    "id": 1791965928,
+    "title": "PyTorch DDP Hangs: NCCL Timeouts & Graph Asymmetry",
+    "slug": "pytorch-ddp-hangs-nccl-timeouts-graph-asymmetry",
+    "language": "PyTorch",
+    "code": "DDP Timeout",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/pytorch-ddp-hangs-nccl-timeouts-graph-asymmetry.js",
+    "tags": [
+      "PyTorch",
+      "Distributed Training",
+      "Python",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791965929,
+    "title": "K8s cgroup v2 Memory Throttling: PSI Spikes & Reclaim Stalls",
+    "slug": "kubernetes-cgroup-v2-memory-throttling-psi-spikes-kernel-reclaim",
+    "language": "Kubernetes",
+    "code": "Memory Throttling",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/kubernetes-cgroup-v2-memory-throttling-psi-spikes-kernel-reclaim.js",
+    "tags": [
+      "Kubernetes",
+      "cgroupv2",
+      "Linux",
+      "Infra",
+      "Memory",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791965930,
+    "title": "Haskell Space Leaks: Thunk Accumulation in Lazy State Monads",
+    "slug": "haskell-space-leaks-thunk-accumulation-lazy-state-monads",
+    "language": "Haskell",
+    "code": "Space Leak",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/haskell-space-leaks-thunk-accumulation-lazy-state-monads.js",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Lazy Evaluation",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791965931,
+    "title": "Anatomy: AI-Powered Isometric Illustrations",
+    "slug": "anatomy-ai-isometric-illustrations-github-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/anatomy-ai-isometric-illustrations-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Generative Art",
+      "SVG",
+      "3D Graphics",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791946117,
+    "title": "C++20 Coroutine Lifetime Traps: Dangling References",
+    "slug": "cpp20-coroutine-lifetime-dangling-references-symmetric-transfer",
+    "language": "C++",
+    "code": "DanglingRef",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/cpp20-coroutine-lifetime-dangling-references-symmetric-transfer.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791946118,
+    "title": "Spark OOMs: Mitigating Shuffle Skew & Disk-Spill",
+    "slug": "apache-spark-executor-ooms-shuffle-skew-disk-spill",
+    "language": "Apache Spark",
+    "code": "OOM",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/apache-spark-executor-ooms-shuffle-skew-disk-spill.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791946119,
+    "title": "MongoDB WiredTiger: Ticket Exhaustion & Livelocks",
+    "slug": "mongodb-wiredtiger-ticket-exhaustion-dirty-cache-livelocks",
+    "language": "MongoDB",
+    "code": "Livelock",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-ticket-exhaustion-dirty-cache-livelocks.js",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791946120,
+    "title": "WASI: Universal Binaries Beyond the Browser",
+    "slug": "webassembly-system-interface-wasi-universal-binaries",
+    "language": "WebAssembly",
+    "code": "Trend",
+    "date": "2026-10-14",
+    "path": "data/posts/2026-10/webassembly-system-interface-wasi-universal-binaries.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Infra"
+    ]
+  },
+  {
+    "id": 1791897173,
+    "title": "eBPF Verifier Rejection & Unintended Kernel Side Effects",
+    "slug": "ebpf-verifier-rejection-unintended-kernel-side-effects",
+    "language": "C/eBPF",
+    "code": "BPF_VERIFIER_ERR",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/ebpf-verifier-rejection-unintended-kernel-side-effects.js",
+    "tags": [
+      "eBPF",
+      "Linux Kernel",
+      "Security",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791897174,
+    "title": "Akka Cluster Split-Brain Resolution & Downing Failures",
+    "slug": "akka-cluster-split-brain-resolution-downing-strategy-failures",
+    "language": "Scala/Akka",
+    "code": "SplitBrain",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/akka-cluster-split-brain-resolution-downing-strategy-failures.js",
+    "tags": [
+      "Akka",
+      "Scala",
+      "Distributed Systems",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791897175,
+    "title": "Elasticsearch Shard Storms & Disk Watermark Breaches",
+    "slug": "elasticsearch-shard-relocation-storms-disk-watermark-breaches",
+    "language": "Elasticsearch/Java",
+    "code": "DiskWatermark",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/elasticsearch-shard-relocation-storms-disk-watermark-breaches.js",
+    "tags": [
+      "Elasticsearch",
+      "Distributed Systems",
+      "Data Storage",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791897176,
+    "title": "Wordcraft: Reimagining Word Processing in Rust",
+    "slug": "wordcraft-rust-microsoft-word-reimplementation",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/wordcraft-rust-microsoft-word-reimplementation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust",
+      "Desktop Applications",
+      "Frontend"
+    ]
+  },
+  {
+    "id": 1791866197,
+    "title": "Diagnosing io_uring CQE Overflows & SQPOLL Thread Stalls",
+    "slug": "linux-io-uring-cqe-overflow-sqpoll-stalls",
+    "language": "C, Linux Kernel",
+    "code": "io_uring Overflow",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/linux-io-uring-cqe-overflow-sqpoll-stalls.js",
+    "tags": [
+      "io_uring",
+      "Linux",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791866198,
+    "title": "Elixir GenServer Mailbox Bloat & Selective Receive Traps",
+    "slug": "elixir-genserver-mailbox-bloat-selective-receive",
+    "language": "Elixir, Erlang/OTP",
+    "code": "Mailbox Bloat",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/elixir-genserver-mailbox-bloat-selective-receive.js",
+    "tags": [
+      "Elixir",
+      "Erlang",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791866199,
+    "title": "Mitigating Redis BGSAVE Fork Latency & THP Bloat",
+    "slug": "redis-bgsave-fork-latency-thp-bloat",
+    "language": "Redis, Linux Kernel",
+    "code": "BGSAVE Latency",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/redis-bgsave-fork-latency-thp-bloat.js",
+    "tags": [
+      "Redis",
+      "Caching",
+      "Database",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791866200,
+    "title": "Wordcraft: A Modern Rust Reimplementation of Word",
+    "slug": "wordcraft-rust-microsoft-word-reimplementation",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-10-13",
+    "path": "data/posts/2026-10/wordcraft-rust-microsoft-word-reimplementation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
+    "id": 1791813405,
+    "title": "Resolving Go Netpoller Epoll Starvation & Preemption Latency",
+    "slug": "resolving-go-netpoller-epoll-starvation-goroutine-preemption",
+    "language": "Go",
+    "code": "EpollStarvation",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/resolving-go-netpoller-epoll-starvation-goroutine-preemption.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Runtime",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791813406,
+    "title": "Mitigating gRPC HTTP/2 Flow-Control Deadlocks",
+    "slug": "mitigating-grpc-http2-flow-control-deadlocks",
+    "language": "gRPC, HTTP/2",
+    "code": "FlowControlDeadlock",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/mitigating-grpc-http2-flow-control-deadlocks.js",
+    "tags": [
+      "gRPC",
+      "HTTP/2",
+      "Networking",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791813407,
+    "title": "Debugging RocksDB Write Stalls: Compaction Debt",
+    "slug": "debugging-rocksdb-write-stalls-compaction-debt",
+    "language": "RocksDB",
+    "code": "WriteStall",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/debugging-rocksdb-write-stalls-compaction-debt.js",
+    "tags": [
+      "RocksDB",
+      "Database",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791813408,
+    "title": "The Hypothetical Buzz: Unpacking 'openai/math' and AI's Math Prowess",
+    "slug": "the-hypothetical-buzz-openai-math-ai-math-prowess",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/the-hypothetical-buzz-openai-math-ai-math-prowess.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI/ML",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791775636,
+    "title": "Fixing PostgreSQL TXID Wraparound and Autovacuum Stalls",
+    "slug": "postgresql-txid-wraparound-autovacuum-freeze-stalls",
+    "language": "PostgreSQL",
+    "code": "ERR_TXID_WRAPAROUND",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/postgresql-txid-wraparound-autovacuum-freeze-stalls.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791775637,
+    "title": "Resolving Kafka Rebalance Storms and Poll Starvation",
+    "slug": "kafka-consumer-rebalance-storms-max-poll-starvation",
+    "language": "Kafka",
+    "code": "CommitFailedException",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-storms-max-poll-starvation.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791775638,
+    "title": "Debugging WebGPU Pipeline Stalls and Bind Group Invalidation",
+    "slug": "webgpu-pipeline-compilation-stalls-bindgroup-invalidation",
+    "language": "WebGPU",
+    "code": "GPUValidationError",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/webgpu-pipeline-compilation-stalls-bindgroup-invalidation.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791775639,
+    "title": "Exploring openai/math: Automated Reasoning Benchmarks",
+    "slug": "exploring-openai-math-automated-reasoning-benchmark",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-12",
+    "path": "data/posts/2026-10/exploring-openai-math-automated-reasoning-benchmark.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791712089,
+    "title": "Fix Rust Lifetime Mismatches & Deadlocks",
+    "slug": "rust-borrow-checker-lifetime-deadlock-fix",
+    "language": "Rust",
+    "code": "E0499 / Deadlock",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/rust-borrow-checker-lifetime-deadlock-fix.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "Memory Safety",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791712090,
+    "title": "PyTorch QAT: Fix Calibration Skew & Accuracy Drop",
+    "slug": "pytorch-qat-calibration-skew-accuracy-drop",
+    "language": "Python",
+    "code": "QuantizationError",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/pytorch-qat-calibration-skew-accuracy-drop.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "Machine Learning",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791712091,
+    "title": "Fix Istio Envoy Readiness & Init Container Traps",
+    "slug": "istio-envoy-readiness-init-container-traps",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/istio-envoy-readiness-init-container-traps.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791712092,
+    "title": "Inside openai/math: Benchmarking LLM Reasoning",
+    "slug": "openai-math-dataset-reasoning-benchmark-trends",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/openai-math-dataset-reasoning-benchmark-trends.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791687482,
+    "title": "C++20 Coroutines: Dangling Frames & Lambda UAFs",
+    "slug": "cpp20-coroutine-dangling-frame-lambda-uaf",
+    "language": "C++20",
+    "code": "SIGSEGV / UAF",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/cpp20-coroutine-dangling-frame-lambda-uaf.js",
+    "tags": [
+      "C++20",
+      "Coroutines",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791687483,
+    "title": "WiredTiger Cache Eviction Stalls & Ticket Exhaustion",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "MongoDB",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "MongoDB",
+      "WiredTiger",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791687484,
+    "title": "Envoy 503 UC Drops via K8s Pod Termination Races",
+    "slug": "envoy-503-uc-k8s-pod-termination-race",
+    "language": "Envoy Proxy",
+    "code": "503 UC",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/envoy-503-uc-k8s-pod-termination-race.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Envoy",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791687485,
+    "title": "OpenAI Math: Standardizing Reasoning & Verification",
+    "slug": "openai-math-benchmark-reasoning-evaluation",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-11",
+    "path": "data/posts/2026-10/openai-math-benchmark-reasoning-evaluation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791632238,
+    "title": "Fix eBPF Verifier Explosion & Stack Limit",
+    "slug": "fix-ebpf-verifier-state-explosion-stack-spill",
+    "language": "C / eBPF",
+    "code": "BPF_VERIFIER_ERROR",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/fix-ebpf-verifier-state-explosion-stack-spill.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kubernetes",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791632239,
+    "title": "Fix Spark Shuffle FetchFailed & Heartbeat Loss",
+    "slug": "fix-spark-shuffle-fetchfailed-heartbeat-starvation",
+    "language": "Java / Spark",
+    "code": "FetchFailedException",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/fix-spark-shuffle-fetchfailed-heartbeat-starvation.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Java",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791632240,
+    "title": "Fix Hermes JSI HostObject Native Memory Leaks",
+    "slug": "fix-hermes-jsi-hostobject-retain-cycles",
+    "language": "C++ / React Native",
+    "code": "HostObjectRetainCycle",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/fix-hermes-jsi-hostobject-retain-cycles.js",
+    "tags": [
+      "React Native",
+      "Hermes",
+      "React",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791632241,
+    "title": "Inside openai/math: Evaluating LLM Math Reasoning",
+    "slug": "openai-math-eval-benchmark-deep-dive",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/openai-math-eval-benchmark-deep-dive.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791602698,
+    "title": "Fixing NCCL Desync Deadlocks in PyTorch DDP",
+    "slug": "pytorch-ddp-nccl-ring-allreduce-deadlock",
+    "language": "Python",
+    "code": "DistCollectiveTimeout",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/pytorch-ddp-nccl-ring-allreduce-deadlock.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "PyTorch",
+      "NCCL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791602699,
+    "title": "Mitigating Redis BGSAVE CoW Memory Bloat & Latency",
+    "slug": "redis-bg-save-cow-memory-bloat-tail-latency",
+    "language": "Docker",
+    "code": "OOMKilled",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/redis-bg-save-cow-memory-bloat-tail-latency.js",
+    "tags": [
+      "Docker",
+      "AWS",
+      "Redis",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791602700,
+    "title": "Resolving Elixir GenServer Selective Receive Leaks",
+    "slug": "elixir-otp-selective-receive-mailbox-runaway",
+    "language": "Docker",
+    "code": "ProcessOutOfMemory",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/elixir-otp-selective-receive-mailbox-runaway.js",
+    "tags": [
+      "Docker",
+      "Kubernetes",
+      "Elixir",
+      "OTP",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791602701,
+    "title": "Inside openai/math: Reasoning Evaluation Toolkit",
+    "slug": "openai-math-benchmarking-reasoning-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-10",
+    "path": "data/posts/2026-10/openai-math-benchmarking-reasoning-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791548546,
+    "title": "Fix Go GC Safe-Point Stalls and Goroutine Starvation",
+    "slug": "go-gc-safepoint-goroutine-starvation-tight-loops",
+    "language": "Go",
+    "code": "GCStarvation",
+    "date": "2026-10-09",
+    "path": "data/posts/2026-10/go-gc-safepoint-goroutine-starvation-tight-loops.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791548547,
+    "title": "Resolving Elasticsearch Fielddata Heap Circuit Breakers",
+    "slug": "elasticsearch-fielddata-circuit-breaker-heap-exhaustion",
+    "language": "Java",
+    "code": "CircuitBreakingException",
+    "date": "2026-10-09",
+    "path": "data/posts/2026-10/elasticsearch-fielddata-circuit-breaker-heap-exhaustion.js",
+    "tags": [
+      "Java",
+      "SQL",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791548548,
+    "title": "Fix Kubernetes Cgroup v2 OOMKills from Page Cache Thrash",
+    "slug": "kubernetes-cgroupv2-silent-oomkill-page-cache-thrashing",
+    "language": "Kubernetes",
+    "code": "OOMKilledExitCode137",
+    "date": "2026-10-09",
+    "path": "data/posts/2026-10/kubernetes-cgroupv2-silent-oomkill-page-cache-thrashing.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791548549,
+    "title": "OpenAI Math: Benchmarking Frontier AI Reasoning",
+    "slug": "openai-math-evaluating-mathematical-reasoning-models",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-09",
+    "path": "data/posts/2026-10/openai-math-evaluating-mathematical-reasoning-models.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791462911,
+    "title": "PostgreSQL: TXID Wraparound & Autovacuum Starvation",
+    "slug": "postgresql-txid-wraparound-autovacuum-starvation",
+    "language": "PostgreSQL",
+    "code": "TXID Wraparound",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/postgresql-txid-wraparound-autovacuum-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Infra",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791462912,
+    "title": "Kafka: Rebalance Storms & Zombie Epoch Fencing",
+    "slug": "kafka-consumer-group-rebalance-storms-zombie-epoch-fencing",
+    "language": "Kafka",
+    "code": "Rebalance Storms",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/kafka-consumer-group-rebalance-storms-zombie-epoch-fencing.js",
+    "tags": [
+      "Kafka",
+      "Messaging",
+      "Distributed Systems",
+      "Backend",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791462913,
+    "title": "WebGPU: Compute Memory Barriers & GPU Loss (TDR)",
+    "slug": "webgpu-compute-pipeline-memory-barrier-hazards-gpu-device-loss-tdr",
+    "language": "WebGPU",
+    "code": "GPU Device Loss (TDR)",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/webgpu-compute-pipeline-memory-barrier-hazards-gpu-device-loss-tdr.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "Compute",
+      "Frontend",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791462914,
+    "title": "OpenAI Math: LLMs Meet Formal Verification",
+    "slug": "openai-math-llms-formal-verification-github-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/openai-math-llms-formal-verification-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Machine Learning",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791430864,
+    "title": "Rust: UB via Unsound Pin Projections",
+    "slug": "rust-pin-projection-undefined-behavior",
+    "language": "Rust",
+    "code": "UB",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/rust-pin-projection-undefined-behavior.js",
+    "tags": [
+      "Rust",
+      "Async",
+      "Safety",
+      "Undefined Behavior",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791430865,
+    "title": "vLLM PagedAttention: KV Cache Fragmentation & OOM Thrashing",
+    "slug": "vllm-pagedattention-kv-cache-fragmentation-oom",
+    "language": "Python",
+    "code": "OOM",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/vllm-pagedattention-kv-cache-fragmentation-oom.js",
+    "tags": [
+      "Python",
+      "LLM",
+      "Deep Learning",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791430866,
+    "title": "gRPC: HTTP/2 Flow-Control Window Exhaustion",
+    "slug": "grpc-http2-flow-control-window-exhaustion",
+    "language": "Go",
+    "code": "Deadlock",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion.js",
+    "tags": [
+      "Go",
+      "gRPC",
+      "HTTP/2",
+      "Networking",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791430867,
+    "title": "OpenAI Math: AI for Formal Mathematics",
+    "slug": "openai-math-ai-formal-mathematics",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-08",
+    "path": "data/posts/2026-10/openai-math-ai-formal-mathematics.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Mathematics",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791376828,
+    "title": "C++20 Coroutines: Asymmetric Resume Pitfalls",
+    "slug": "cpp20-coroutines-asymmetric-resume-pitfalls",
+    "language": "C++",
+    "code": "CoroutineMisuse",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/cpp20-coroutines-asymmetric-resume-pitfalls.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Coroutines",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791376829,
+    "title": "Istio: Sidecar Injection & Envoy Configuration Mismatches",
+    "slug": "istio-sidecar-injection-envoy-mismatches",
+    "language": "Kubernetes, Istio",
+    "code": "InjectionFailure",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/istio-sidecar-injection-envoy-mismatches.js",
+    "tags": [
+      "Kubernetes",
+      "Istio",
+      "Envoy",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791376830,
+    "title": "MongoDB WiredTiger: Write Conflicts & Snapshot Anomalies",
+    "slug": "mongodb-wiredtiger-write-conflicts-snapshot-anomalies",
+    "language": "MongoDB",
+    "code": "WriteConflict",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-write-conflicts-snapshot-anomalies.js",
+    "tags": [
+      "MongoDB",
+      "NoSQL",
+      "Database",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791376831,
+    "title": "OpenAI's Math Repository: Revolutionizing Mathematical AI",
+    "slug": "openai-math-github-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/openai-math-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Machine Learning",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791343699,
+    "title": "Linux eBPF: Verifier 32-Bit Sub-Register & Stack Spill Issues",
+    "slug": "linux-ebpf-verifier-32bit-subreg-stack-spill",
+    "language": "eBPF, Linux Kernel",
+    "code": "eBPFVerifierError",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/linux-ebpf-verifier-32bit-subreg-stack-spill.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791343700,
+    "title": "Spark: Netty Off-Heap OOM & Shuffle FetchFailed Cascades",
+    "slug": "apache-spark-netty-offheap-oom-shuffle-fetchfailed",
+    "language": "Apache Spark, Java, Scala",
+    "code": "SparkOOMError",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/apache-spark-netty-offheap-oom-shuffle-fetchfailed.js",
+    "tags": [
+      "Apache Spark",
+      "Netty",
+      "OOM",
+      "Java",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791343701,
+    "title": "Haskell Space Leaks: Lazy Record Fields & WHNF Retention",
+    "slug": "haskell-space-leaks-lazy-record-fields-whnf-accumulator",
+    "language": "Haskell",
+    "code": "HaskellSpaceLeak",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/haskell-space-leaks-lazy-record-fields-whnf-accumulator.js",
+    "tags": [
+      "Haskell",
+      "Functional Programming",
+      "Lazy Evaluation",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791343702,
+    "title": "Trending GitHub: openai/math - Revolutionizing Mathematical AI",
+    "slug": "trending-github-openai-math-analysis",
+    "language": "Python, Machine Learning, AI",
+    "code": "Trend",
+    "date": "2026-10-07",
+    "path": "data/posts/2026-10/trending-github-openai-math-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Machine Learning",
+      "AI"
+    ]
+  },
+  {
+    "id": 1791258966,
+    "title": "PyTorch DDP: Fix NCCL AllReduce Deadlocks",
+    "slug": "pytorch-ddp-nccl-deadlock-cuda-streams",
+    "language": "Python",
+    "code": "RuntimeError: NCCL error",
+    "date": "2026-10-06",
+    "path": "data/posts/2026-10/pytorch-ddp-nccl-deadlock-cuda-streams.js",
+    "tags": [
+      "PyTorch",
+      "NCCL",
+      "Distributed",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791258967,
+    "title": "Redis BGSAVE: Fix CoW Latency & THP Memory Bloat",
+    "slug": "redis-bgsave-cow-latency-thp-memory-bloat",
+    "language": "Redis / Linux",
+    "code": "OOM-Killer / Latency Spike",
+    "date": "2026-10-06",
+    "path": "data/posts/2026-10/redis-bgsave-cow-latency-thp-memory-bloat.js",
+    "tags": [
+      "Redis",
+      "Linux",
+      "Performance",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791258968,
+    "title": "Elixir GenStage: Fix Demand Starvation & OOM Flooding",
+    "slug": "elixir-genstage-demand-starvation-mailbox-flooding",
+    "language": "Elixir",
+    "code": "SystemLimitError / OOM",
+    "date": "2026-10-06",
+    "path": "data/posts/2026-10/elixir-genstage-demand-starvation-mailbox-flooding.js",
+    "tags": [
+      "Elixir",
+      "GenStage",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791258969,
+    "title": "Universal Modder: AI Agent Game Modding with Claude",
+    "slug": "universal-modder-claude-agent-game-modding",
+    "language": "TypeScript / Python",
+    "code": "Trend",
+    "date": "2026-10-06",
+    "path": "data/posts/2026-10/universal-modder-claude-agent-game-modding.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791205469,
+    "title": "Next.js Hydration Mismatches & Client-Side Flashes",
+    "slug": "nextjs-hydration-mismatches-client-side-re-render-flashes",
+    "language": "Next.js",
+    "code": "Hydration Mismatch",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/nextjs-hydration-mismatches-client-side-re-render-flashes.js",
+    "tags": [
+      "Next.js",
+      "React",
+      "Frontend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791205470,
+    "title": "Go Goroutine Leaks & Scheduler Starvation",
+    "slug": "go-goroutine-leaks-scheduler-starvation",
+    "language": "Go",
+    "code": "Goroutine Leak",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/go-goroutine-leaks-scheduler-starvation.js",
+    "tags": [
+      "Go",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791205471,
+    "title": "Elasticsearch Split-Brain: Cluster State Inconsistencies",
+    "slug": "elasticsearch-split-brain-cluster-state-inconsistencies-data-divergence",
+    "language": "Elasticsearch",
+    "code": "Split-Brain",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/elasticsearch-split-brain-cluster-state-inconsistencies-data-divergence.js",
+    "tags": [
+      "Elasticsearch",
+      "Infra",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791205472,
+    "title": "Universal Modder: AI-Powered Game Modding with Claude",
+    "slug": "universal-modder-rehan-remade-claude-game-modding-tech-trend",
+    "language": "Python, AI/LLM",
+    "code": "Trend",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/universal-modder-rehan-remade-claude-game-modding-tech-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791169717,
+    "title": "Fixing PostgreSQL XID Wraparound & Autovacuum Starvation",
+    "slug": "postgres-xid-wraparound-autovacuum-starvation",
+    "language": "SQL",
+    "code": "ERR_XID_WRAPAROUND",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/postgres-xid-wraparound-autovacuum-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791169718,
+    "title": "Kafka CooperativeStickyAssignor Partition Invalidation Storm",
+    "slug": "kafka-cooperativesticky-partition-invalidation-rebalance",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/kafka-cooperativesticky-partition-invalidation-rebalance.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791169719,
+    "title": "WebGPU Dynamic Uniform Buffer Alignment Panics & Hazards",
+    "slug": "webgpu-dynamic-uniform-buffer-alignment-layout-hazards",
+    "language": "TypeScript",
+    "code": "GPUValidationError",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/webgpu-dynamic-uniform-buffer-alignment-layout-hazards.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791169720,
+    "title": "Universal Modder: Reverse Engineering & AI Modding Engine",
+    "slug": "universal-modder-claude-code-reverse-engineering",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-05",
+    "path": "data/posts/2026-10/universal-modder-claude-code-reverse-engineering.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791113566,
+    "title": "Rust Async: Unsound Pin Projection & Drop-Order Violations",
+    "slug": "rust-async-unsound-pin-projection-drop-order",
+    "language": "Rust",
+    "code": "UndefinedBehavior",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/rust-async-unsound-pin-projection-drop-order.js",
+    "tags": [
+      "Rust",
+      "Async",
+      "Memory Safety",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791113567,
+    "title": "vLLM PagedAttention: KV Cache Fragmentation & Preemption",
+    "slug": "vllm-pagedattention-kv-cache-preemption-thrashing",
+    "language": "Python",
+    "code": "KVCacheOOM",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/vllm-pagedattention-kv-cache-preemption-thrashing.js",
+    "tags": [
+      "Python",
+      "Kubernetes",
+      "AI",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791113568,
+    "title": "Kubernetes IPVS: Conntrack Table Exhaustion & DNS Drops",
+    "slug": "k8s-ipvs-conntrack-exhaustion-silent-dns-drops",
+    "language": "Go",
+    "code": "NF_CONNTRACK_FULL",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/k8s-ipvs-conntrack-exhaustion-silent-dns-drops.js",
+    "tags": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791113569,
+    "title": "AIHOT: Autonomous AI-Driven Daily Tech Intelligence Engine",
+    "slug": "aihot-automated-news-aggregator-trend-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/aihot-automated-news-aggregator-trend-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1791084416,
+    "title": "C++20 Coroutine Symmetric Transfer Dangling Frames & UAF",
+    "slug": "cpp20-coroutine-symmetric-transfer-uaf",
+    "language": "C++20",
+    "code": "CoroutineFrameUAF",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/cpp20-coroutine-symmetric-transfer-uaf.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791084417,
+    "title": "MongoDB WiredTiger Cache Eviction & Checkpoint Stalls",
+    "slug": "mongodb-wiredtiger-cache-eviction-checkpoint-stall",
+    "language": "MongoDB",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-checkpoint-stall.js",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791084418,
+    "title": "Istio Envoy Route Cache Bloat & Drain Deadlocks",
+    "slug": "istio-envoy-xds-route-cache-drain-deadlock",
+    "language": "Envoy",
+    "code": "XDS_CONFIG_STALL",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/istio-envoy-xds-route-cache-drain-deadlock.js",
+    "tags": [
+      "Istio",
+      "Envoy",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791084419,
+    "title": "AIHOT: Automated Hotspot Tracking & Daily Digest Engine",
+    "slug": "aihot-automated-hotspot-daily-digest-engine",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-10-04",
+    "path": "data/posts/2026-10/aihot-automated-hotspot-daily-digest-engine.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "Next.js"
+    ]
+  },
+  {
+    "id": 1791036335,
+    "title": "eBPF Verifier: State Explosion & Tail Call Invalidation",
+    "slug": "ebpf-verifier-state-explosion-tail-call-invalidation",
+    "language": "eBPF/C",
+    "code": "Verifier State Explosion",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/ebpf-verifier-state-explosion-tail-call-invalidation.js",
+    "tags": [
+      "eBPF",
+      "Kernel",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791036336,
+    "title": "Apache Spark: Shuffle Skew & ExternalAppendOnlyMap Thrashing",
+    "slug": "apache-spark-shuffle-skew-externalappendonlymap-thrashing",
+    "language": "Apache Spark",
+    "code": "Shuffle Spill Thrashing",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/apache-spark-shuffle-skew-externalappendonlymap-thrashing.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Performance",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791036337,
+    "title": "gRPC HTTP/2: Flow Control Exhaustion & BDP Stalls",
+    "slug": "grpc-http2-flow-control-exhaustion-bdp-stalls",
+    "language": "gRPC/Go",
+    "code": "Flow Control Stalls",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/grpc-http2-flow-control-exhaustion-bdp-stalls.js",
+    "tags": [
+      "gRPC",
+      "HTTP/2",
+      "Network",
+      "Performance",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791036338,
+    "title": "AIHOT: Automated AI-Powered Hot Topic & Report Generation",
+    "slug": "aihot-automated-ai-powered-hot-topic-report-generation",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/aihot-automated-ai-powered-hot-topic-report-generation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI",
+      "Web Development"
+    ]
+  },
+  {
+    "id": 1791017864,
+    "title": "PyTorch DDP: NCCL Collective Call Deadlocks & Silent Desync",
+    "slug": "pytorch-ddp-nccl-deadlocks-desync",
+    "language": "Python",
+    "code": "NCCL Deadlock",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/pytorch-ddp-nccl-deadlocks-desync.js",
+    "tags": [
+      "PyTorch",
+      "Distributed Training",
+      "Deep Learning",
+      "Python",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791017865,
+    "title": "Elixir BEAM: Unbounded Mailbox Floods & Selective Receive Latency",
+    "slug": "elixir-beam-mailbox-floods-receive-latency",
+    "language": "Elixir",
+    "code": "Mailbox Flood",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/elixir-beam-mailbox-floods-receive-latency.js",
+    "tags": [
+      "Elixir",
+      "Erlang BEAM",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791017866,
+    "title": "Redis BGSAVE: THP Contention & CoW Memory Spikes",
+    "slug": "redis-bgsave-thp-cow-memory-spikes",
+    "language": "Redis",
+    "code": "Memory Spike",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/redis-bgsave-thp-cow-memory-spikes.js",
+    "tags": [
+      "Redis",
+      "Caching",
+      "Database",
+      "Linux Kernel",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1791017867,
+    "title": "AIHOT: Your Personalized Industry Hotspot News Feed",
+    "slug": "aihot-trending-github-ai-news-feed",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/aihot-trending-github-ai-news-feed.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "News Aggregation",
+      "Python",
+      "Backend"
+    ]
+  },
+  {
+    "id": 1790996260,
+    "title": "io_uring SQPOLL Contention & CQE Ring Buffer Drops",
+    "slug": "linux-iouring-sqpoll-contention-cqe-ring-buffer-drops",
+    "language": "C/C++, Linux Kernel",
+    "code": "IOURING_SQPOLL_CONTENTION",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/linux-iouring-sqpoll-contention-cqe-ring-buffer-drops.js",
+    "tags": [
+      "Linux",
+      "Infra",
+      "C/C++",
+      "Performance",
+      "Systems Programming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790996261,
+    "title": "ClickHouse 'Too Many Parts' & Merge Bottlenecks",
+    "slug": "clickhouse-too-many-parts-ingestion-stalls-background-merge-bottlenecks",
+    "language": "ClickHouse, SQL",
+    "code": "TOO_MANY_PARTS",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/clickhouse-too-many-parts-ingestion-stalls-background-merge-bottlenecks.js",
+    "tags": [
+      "Infra",
+      "SQL",
+      "ClickHouse",
+      "Database",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790996262,
+    "title": "Haskell Thunk Accumulation & Silent Space Leaks",
+    "slug": "haskell-thunk-accumulation-silent-space-leaks-state-monad-stacks",
+    "language": "Haskell",
+    "code": "THUNK_LEAK",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/haskell-thunk-accumulation-silent-space-leaks-state-monad-stacks.js",
+    "tags": [
+      "Haskell",
+      "Backend",
+      "Functional Programming",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790996263,
+    "title": "AIHOT: AI-Powered Trend Analysis & Reporting",
+    "slug": "aihot-ai-powered-trend-analysis-reporting-github-trend",
+    "language": "Python, AI, Web Development",
+    "code": "Trend",
+    "date": "2026-10-03",
+    "path": "data/posts/2026-10/aihot-ai-powered-trend-analysis-reporting-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI",
+      "Web Development"
+    ]
+  },
+  {
+    "id": 1790941518,
+    "title": "PostgreSQL TXID Wraparound Panics & Autovacuum Freeze Starvation",
+    "slug": "postgresql-txid-wraparound-panics-autovacuum-freeze-starvation",
+    "language": "PostgreSQL",
+    "code": "TXIDWraparound",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/postgresql-txid-wraparound-panics-autovacuum-freeze-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Performance",
+      "Infra",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790941519,
+    "title": "Go Non-Cooperative Preemption Failures & Cgo Starvation",
+    "slug": "go-non-cooperative-preemption-cgo-starvation",
+    "language": "Go",
+    "code": "GoroutineStarvation",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/go-non-cooperative-preemption-cgo-starvation.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Performance",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790941520,
+    "title": "WebGPU Pipeline Desync & Buffer Mapping Deadlocks",
+    "slug": "webgpu-pipeline-desynchronization-asynchronous-buffer-mapping-deadlocks",
+    "language": "WebGPU",
+    "code": "WebGPUDedlock",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/webgpu-pipeline-desynchronization-asynchronous-buffer-mapping-deadlocks.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "Frontend",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790941521,
+    "title": "AIHOT: Automated Trending Topic & Report Generation",
+    "slug": "aihot-automated-trending-topic-report-generation",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/aihot-automated-trending-topic-report-generation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "NLP",
+      "Python"
+    ]
+  },
+  {
+    "id": 1790910693,
+    "title": "Fix Silent Packet Drops: Kube Conntrack Table Exhaustion",
+    "slug": "kubernetes-silent-packet-drops-conntrack-exhaustion",
+    "language": "Kubernetes",
+    "code": "NF_CONNTRACK_DROP",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/kubernetes-silent-packet-drops-conntrack-exhaustion.js",
+    "tags": [
+      "Kubernetes",
+      "Linux",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790910694,
+    "title": "React Native Fabric: JSI Thread Contention & State Desync",
+    "slug": "react-native-fabric-jsi-thread-contention-desync",
+    "language": "React Native",
+    "code": "JSIStateMismatchError",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/react-native-fabric-jsi-thread-contention-desync.js",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Frontend",
+      "Mobile",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790910695,
+    "title": "Vector DB: HNSW Lock Contention During Streaming Ingestion",
+    "slug": "vector-db-hnsw-degradation-streaming-ingestion",
+    "language": "Rust",
+    "code": "HNSWIndexLockContention",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/vector-db-hnsw-degradation-streaming-ingestion.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Python",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790910696,
+    "title": "AIHOT: Autonomous AI Daily Briefing & Trending Aggregator",
+    "slug": "aihot-autonomous-trending-news-framework",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-02",
+    "path": "data/posts/2026-10/aihot-autonomous-trending-news-framework.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI"
+    ]
+  },
+  {
+    "id": 1790856331,
+    "title": "Rust Async Cancellation: Invariant Hazards Across Await",
+    "slug": "rust-async-cancellation-invariants",
+    "language": "Rust",
+    "code": "AsyncCancellation",
+    "date": "2026-10-01",
+    "path": "data/posts/2026-10/rust-async-cancellation-invariants.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "Async",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790856332,
+    "title": "Kafka Consumer Rebalance Storms & Heartbeat Starvation",
+    "slug": "kafka-consumer-rebalance-storms",
+    "language": "Kafka",
+    "code": "RebalanceStorm",
+    "date": "2026-10-01",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-storms.js",
+    "tags": [
+      "Kafka",
+      "Messaging",
+      "Distributed Systems",
+      "Backend",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790856333,
+    "title": "MongoDB WiredTiger Cache Eviction Stalls & Tickets",
+    "slug": "mongodb-wiredtiger-cache-stalls",
+    "language": "MongoDB",
+    "code": "CacheEvictionStall",
+    "date": "2026-10-01",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-stalls.js",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "Performance",
+      "Infra",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1790856334,
+    "title": "KKKKhazix/AIHOT: AI-Powered Trending News Aggregator Framework",
+    "slug": "kkkkhazix-aihot-github-trend-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-01",
+    "path": "data/posts/2026-10/kkkkhazix-aihot-github-trend-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Web Scraping",
+      "Python",
+      "Frontend"
+    ]
+  }
+]

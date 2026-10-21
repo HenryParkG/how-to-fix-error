@@ -290,7 +290,57 @@ def update_index_file(new_entries):
             
         with open(INDEX_FILE, 'w', encoding='utf-8') as f:
             f.write(f"var postsIndex = {json.dumps(data, indent=4, ensure_ascii=False)};")
-        print(f"✅ Index updated with {len(new_entries)} items.")
+        
+        # 1. Update data/latest.js (top 60 for ultra-fast initial load)
+        data_dir = os.path.dirname(INDEX_FILE)
+        latest_file = os.path.join(data_dir, "latest.js")
+        latest_posts = data[:60]
+        with open(latest_file, "w", encoding="utf-8") as f:
+            f.write(f"var postsLatest = {json.dumps(latest_posts, indent=2, ensure_ascii=False)};\n")
+            f.write("var postsIndex = postsLatest;\n")
+
+        # 2. Update current month's archive (data/archive_YYYY_MM.json)
+        now_dt = datetime.datetime.now()
+        cur_month_id = now_dt.strftime("%Y_%m")
+        cur_archive_file = os.path.join(data_dir, f"archive_{cur_month_id}.json")
+        try:
+            with open(cur_archive_file, "r", encoding="utf-8") as f:
+                cur_month_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            cur_month_data = []
+
+        for entry in reversed(new_entries):
+            cur_month_data.insert(0, entry)
+
+        with open(cur_archive_file, "w", encoding="utf-8") as f:
+            json.dump(cur_month_data, f, indent=2, ensure_ascii=False)
+
+        # 3. Update data/archive_index.json
+        archive_index_path = os.path.join(data_dir, "archive_index.json")
+        try:
+            with open(archive_index_path, "r", encoding="utf-8") as f:
+                archive_index = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            archive_index = []
+
+        found = False
+        for entry in archive_index:
+            if entry.get("id") == cur_month_id:
+                entry["count"] = len(cur_month_data)
+                found = True
+                break
+        if not found:
+            archive_index.insert(0, {
+                "id": cur_month_id,
+                "name": f"{now_dt.year}년 {now_dt.month}월",
+                "count": len(cur_month_data),
+                "filename": f"archive_{cur_month_id}.json"
+            })
+
+        with open(archive_index_path, "w", encoding="utf-8") as f:
+            json.dump(archive_index, f, indent=2, ensure_ascii=False)
+
+        print(f"✅ Index & Partitioned Archives updated with {len(new_entries)} items.")
     except Exception as e: print(f"❌ Index failure: {e}")
 
 def update_sitemap():

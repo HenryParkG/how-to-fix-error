@@ -1,0 +1,56 @@
+[
+  {
+    "id": "2026_10",
+    "name": "2026년 10월",
+    "count": 180,
+    "filename": "archive_2026_10.json"
+  },
+  {
+    "id": "2026_09",
+    "name": "2026년 9월",
+    "count": 301,
+    "filename": "archive_2026_09.json"
+  },
+  {
+    "id": "2026_08",
+    "name": "2026년 8월",
+    "count": 393,
+    "filename": "archive_2026_08.json"
+  },
+  {
+    "id": "2026_07",
+    "name": "2026년 7월",
+    "count": 388,
+    "filename": "archive_2026_07.json"
+  },
+  {
+    "id": "2026_06",
+    "name": "2026년 6월",
+    "count": 308,
+    "filename": "archive_2026_06.json"
+  },
+  {
+    "id": "2026_05",
+    "name": "2026년 5월",
+    "count": 408,
+    "filename": "archive_2026_05.json"
+  },
+  {
+    "id": "2026_04",
+    "name": "2026년 4월",
+    "count": 480,
+    "filename": "archive_2026_04.json"
+  },
+  {
+    "id": "2026_03",
+    "name": "2026년 3월",
+    "count": 488,
+    "filename": "archive_2026_03.json"
+  },
+  {
+    "id": "2026_02",
+    "name": "2026년 2월",
+    "count": 289,
+    "filename": "archive_2026_02.json"
+  }
+]
