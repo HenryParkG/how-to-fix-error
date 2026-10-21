@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792550054,
+        "title": "Fix Go STW Preemption Starvation in CPU Loops",
+        "slug": "fix-go-runtime-stw-preemption-starvation",
+        "language": "Go",
+        "code": "STWStarvation",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/fix-go-runtime-stw-preemption-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792550055,
+        "title": "Mitigate HNSW Vector Index Bloat from Deletes",
+        "slug": "mitigate-hnsw-vector-index-fragmentation-bloat",
+        "language": "Rust",
+        "code": "HNSWFragmentation",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/mitigate-hnsw-vector-index-fragmentation-bloat.js",
+        "tags": [
+            "Rust",
+            "VectorDB",
+            "AI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792550056,
+        "title": "Fix WebGPU Dynamic Uniform Buffer Alignment",
+        "slug": "fix-webgpu-dynamic-uniform-buffer-alignment",
+        "language": "TypeScript",
+        "code": "WebGPUAlignmentError",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment.js",
+        "tags": [
+            "TypeScript",
+            "WebGPU",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792550057,
+        "title": "DeepInfer: High-Performance DeepSeek Inference",
+        "slug": "deepinfer-deepseek-high-performance-inference",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-21",
+        "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1792505204,
         "title": "Fixing Async Cancellation Safety & Guard Leaks in Rust",
         "slug": "rust-async-cancellation-safety-raii-leaks",
