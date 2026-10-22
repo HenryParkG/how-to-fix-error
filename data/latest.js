@@ -1,5 +1,66 @@
 var postsLatest = [
   {
+    "id": 1792678470,
+    "title": "Fix Istio 503 UC Connection Resets on Idle Timeouts",
+    "slug": "fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch",
+    "language": "Kubernetes",
+    "code": "503 UC upstream_reset_before_response_started",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Go",
+      "Networking",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678471,
+    "title": "Resolve Haskell Space Leaks from StateT Thunks",
+    "slug": "resolve-haskell-space-leaks-statet-thunk-accumulation",
+    "language": "Haskell",
+    "code": "Space Leak (OutOfMemory)",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/resolve-haskell-space-leaks-statet-thunk-accumulation.js",
+    "tags": [
+      "Backend",
+      "Rust",
+      "Haskell",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678472,
+    "title": "Fix Rust Async Cancellation Invariant Violations",
+    "slug": "fix-rust-async-cancellation-invariant-violations",
+    "language": "Rust",
+    "code": "AsyncCancellationSafety",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-rust-async-cancellation-invariant-violations.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678473,
+    "title": "CleanYourTV: Wireless Debloating & Apple TV UX on Android",
+    "slug": "cleanyourtv-debloat-android-google-tv-apple-tv-launcher",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-apple-tv-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792656526,
     "title": "Mitigate GenServer Starvation from Selective Receive",
     "slug": "mitigate-elixir-genserver-selective-receive-starvation",
@@ -848,70 +909,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1792203050,
-    "title": "Preventing PostgreSQL XID Wraparound and Autovacuum Stalls",
-    "slug": "postgresql-xid-wraparound-autovacuum-stalls",
-    "language": "PostgreSQL",
-    "code": "ERR_XID_WRAPAROUND",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/postgresql-xid-wraparound-autovacuum-stalls.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "Autovacuum",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792203051,
-    "title": "Taming Kafka Consumer Rebalance Storms and Zombie Fencing",
-    "slug": "kafka-rebalance-storms-zombie-fencing",
-    "language": "Apache Kafka",
-    "code": "CommitFailedException",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/kafka-rebalance-storms-zombie-fencing.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Concurrency",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792203052,
-    "title": "Hunting Haskell Space Leaks: Thunk Accumulation in Lazy Evaluation Pipelines",
-    "slug": "hunting-haskell-space-leaks-thunk-accumulation",
-    "language": "Haskell",
-    "code": "OutOfMemoryError",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/hunting-haskell-space-leaks-thunk-accumulation.js",
-    "tags": [
-      "Haskell",
-      "Functional Programming",
-      "Performance",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792203053,
-    "title": "D2R Mobile: Native Diablo II Resurrected on iOS & Mac",
-    "slug": "d2r-mobile-ios-macos-compatibility-layer",
-    "language": "Swift / C++",
-    "code": "Trend",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Gaming",
-      "iOS",
-      "Rust"
     ]
   }
 ];

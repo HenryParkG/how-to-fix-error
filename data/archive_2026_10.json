@@ -1,5 +1,66 @@
 [
   {
+    "id": 1792678470,
+    "title": "Fix Istio 503 UC Connection Resets on Idle Timeouts",
+    "slug": "fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch",
+    "language": "Kubernetes",
+    "code": "503 UC upstream_reset_before_response_started",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Go",
+      "Networking",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678471,
+    "title": "Resolve Haskell Space Leaks from StateT Thunks",
+    "slug": "resolve-haskell-space-leaks-statet-thunk-accumulation",
+    "language": "Haskell",
+    "code": "Space Leak (OutOfMemory)",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/resolve-haskell-space-leaks-statet-thunk-accumulation.js",
+    "tags": [
+      "Backend",
+      "Rust",
+      "Haskell",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678472,
+    "title": "Fix Rust Async Cancellation Invariant Violations",
+    "slug": "fix-rust-async-cancellation-invariant-violations",
+    "language": "Rust",
+    "code": "AsyncCancellationSafety",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-rust-async-cancellation-invariant-violations.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792678473,
+    "title": "CleanYourTV: Wireless Debloating & Apple TV UX on Android",
+    "slug": "cleanyourtv-debloat-android-google-tv-apple-tv-launcher",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-apple-tv-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792656526,
     "title": "Mitigate GenServer Starvation from Selective Receive",
     "slug": "mitigate-elixir-genserver-selective-receive-starvation",
