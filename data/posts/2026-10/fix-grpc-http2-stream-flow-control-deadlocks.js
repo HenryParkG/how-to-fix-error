@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix gRPC Stream Deadlocks from Flow Control Starvation",
+    "slug": "fix-grpc-http2-stream-flow-control-deadlocks",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
+    "tags": [
+        "gRPC",
+        "HTTP/2",
+        "FlowControl",
+        "Go",
+        "Error Fix"
+    ],
+    "analysis": "<p>HTTP/2 streaming RPCs rely on credit-based flow control at both the connection and stream layers. Each receiver advertises an initial window size (defaulting to 64KB). When the sender dispatches <code>DATA</code> frames, both the stream-level and connection-level available credit are decremented. Credit is restored only when the receiver issues <code>WINDOW_UPDATE</code> frames upon reading and consuming frames from the network buffers.</p><p>In high-throughput bidirectional gRPC streams written in Go, a deadlock occurs when a client pauses or blocks reads on its streaming receiver (e.g., executing slow synchronous database transactions or acquiring internal locks) while concurrently attempting to write to the server. If the server exhaustively sends data up to the client's flow-control limit, the server suspends writing and halts further stream processing until it receives a <code>WINDOW_UPDATE</code>. If the client writer is concurrently blocked awaiting a response from the server, neither side can proceed, freezing the stream indefinitely.</p>",
+    "root_cause": "Client consumer routines blocking the gRPC stream read loop, preventing `WINDOW_UPDATE` frame generation while the remote peer exhausts its stream/connection flow-control window, causing bidirectional stalls.",
+    "bad_code": "func ProcessStream(client pb.DataServiceClient) error {\n    // ANTI-PATTERN: Default 64KB window sizes with synchronous processing inside Recv loop\n    stream, err := client.BidirectionalStream(context.Background())\n    if err != nil { return err }\n\n    for {\n        resp, err := stream.Recv()\n        if err == io.EOF { break }\n        if err != nil { return err }\n\n        // Long synchronous lock and blocking I/O stops Recv() from reading TCP buffers.\n        // No WINDOW_UPDATE frames are emitted; the server exhausts its window and stops.\n        globalMutex.Lock()\n        time.Sleep(500 * time.Millisecond)\n        stream.Send(&pb.DataRequest{Payload: resp.Id})\n        globalMutex.Unlock()\n    }\n    return nil\n}",
+    "solution_desc": "First, configure larger HTTP/2 transport flow-control windows using `grpc.WithInitialWindowSize` and `grpc.WithInitialConnWindowSize` (e.g., 1MB\u20134MB) to provide adequate headroom for bursty streams. Second, decouple frame reading from business logic by running a dedicated goroutine that immediately drains `stream.Recv()` into a buffered channel, guaranteeing continuous receipt of frames and prompt generation of `WINDOW_UPDATE` tokens.",
+    "good_code": "func CreateTunedClient(target string) (*grpc.ClientConn, error) {\n    return grpc.Dial(target,\n        grpc.WithInsecure(),\n        // Expand HTTP/2 stream and connection flow control windows to 4MB\n        grpc.WithInitialWindowSize(4*1024*1024),\n        grpc.WithInitialConnWindowSize(8*1024*1024),\n    )\n}\n\nfunc ProcessStreamDecoupled(stream pb.DataService_BidirectionalStreamClient) error {\n    dataChan := make(chan *pb.DataResponse, 100)\n    errChan := make(chan error, 1)\n\n    // Dedicated fast receiver loop guarantees continuous WINDOW_UPDATE generation\n    go func() {\n        for {\n            resp, err := stream.Recv()\n            if err != nil {\n                errChan <- err\n                close(dataChan)\n                return\n            }\n            dataChan <- resp\n        }\n    }()\n\n    // Processing runs independently from the transport receive loop\n    for resp := range dataChan {\n        if err := handleItemAsync(stream, resp); err != nil {\n            return err\n        }\n    }\n    return <-errChan\n}",
+    "verification": "Enable gRPC HTTP/2 tracing via `GODEBUG=http2debug=2` to verify continuous transmission of `WINDOW_UPDATE` frames without hitting zero-window stalls. Run continuous load tests and inspect network traces to verify TCP/HTTP2 buffer consumption.",
+    "date": "2026-10-22",
+    "id": 1792656527,
+    "type": "error"
+});

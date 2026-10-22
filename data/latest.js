@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1792656526,
+    "title": "Mitigate GenServer Starvation from Selective Receive",
+    "slug": "mitigate-elixir-genserver-selective-receive-starvation",
+    "language": "Elixir",
+    "code": "BEAM_MAILBOX_STARVATION",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/mitigate-elixir-genserver-selective-receive-starvation.js",
+    "tags": [
+      "Elixir",
+      "BEAM",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792656527,
+    "title": "Fix gRPC Stream Deadlocks from Flow Control Starvation",
+    "slug": "fix-grpc-http2-stream-flow-control-deadlocks",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-grpc-http2-stream-flow-control-deadlocks.js",
+    "tags": [
+      "gRPC",
+      "HTTP/2",
+      "FlowControl",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792656528,
+    "title": "Mitigate Redis BGSAVE Spikes from THP CoW Amplification",
+    "slug": "mitigate-redis-bgsave-thp-cow-latency-spikes",
+    "language": "Redis / Linux",
+    "code": "THP_COW_AMPLIFICATION",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/mitigate-redis-bgsave-thp-cow-latency-spikes.js",
+    "tags": [
+      "Redis",
+      "Linux",
+      "Performance",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792656529,
+    "title": "CleanYourTV: Debloating Android TV via Wireless ADB",
+    "slug": "cleanyourtv-debloat-android-google-tv-streamline",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-streamline.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792636422,
     "title": "Fix Envoy Memory Exhaustion from High-Churn EDS",
     "slug": "fix-istio-envoy-memory-exhaustion-eds-churn",
@@ -850,75 +912,6 @@ var postsLatest = [
       "Gaming",
       "iOS",
       "Rust"
-    ]
-  },
-  {
-    "id": 1792157921,
-    "title": "Debugging C++20 Coroutine Suspension Points",
-    "slug": "debugging-cpp20-coroutine-suspension-points-stackless-mismatches",
-    "language": "C++",
-    "code": "Coroutine Debugging",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/debugging-cpp20-coroutine-suspension-points-stackless-mismatches.js",
-    "tags": [
-      "C++",
-      "Concurrency",
-      "Coroutines",
-      "Debugging",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792157922,
-    "title": "Resolving PyTorch CUDA OOM & Mixed Precision Artifacts",
-    "slug": "resolving-pytorch-cuda-oom-mixed-precision-quantization-artifacts",
-    "language": "Python",
-    "code": "CUDA OOM",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/resolving-pytorch-cuda-oom-mixed-precision-quantization-artifacts.js",
-    "tags": [
-      "PyTorch",
-      "CUDA",
-      "AI/ML",
-      "Optimization",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792157923,
-    "title": "Tackling Elasticsearch Shard Rebalancing Failures",
-    "slug": "tackling-elasticsearch-shard-rebalancing-failures-high-cardinality-field-explosions",
-    "language": "Elasticsearch",
-    "code": "Shard Imbalance",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/tackling-elasticsearch-shard-rebalancing-failures-high-cardinality-field-explosions.js",
-    "tags": [
-      "Elasticsearch",
-      "Distributed Systems",
-      "Database",
-      "Observability",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792157924,
-    "title": "D2R Mobile: Diablo II: Resurrected on iOS/macOS",
-    "slug": "jhaizhou-ops-d2r-mobile-tech-trend",
-    "language": "C++/Swift",
-    "code": "Trend",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/jhaizhou-ops-d2r-mobile-tech-trend.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Reverse Engineering",
-      "Gaming",
-      "iOS",
-      "macOS",
-      "Frontend"
     ]
   }
 ];

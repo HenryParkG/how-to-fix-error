@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Mitigate GenServer Starvation from Selective Receive",
+    "slug": "mitigate-elixir-genserver-selective-receive-starvation",
+    "language": "Elixir",
+    "code": "BEAM_MAILBOX_STARVATION",
+    "tags": [
+        "Elixir",
+        "BEAM",
+        "Concurrency",
+        "Docker",
+        "Error Fix"
+    ],
+    "analysis": "<p>In the BEAM virtual machine, each Erlang or Elixir process possesses a single unbounded mailbox. Standard <code>GenServer</code> callbacks (such as <code>handle_call/3</code>, <code>handle_cast/2</code>, and <code>handle_info/2</code>) dequeue messages sequentially from the head of the message queue in $O(1)$ time. However, invoking an explicit <code>receive do ... end</code> block or synchronous wrappers like <code>Task.await/2</code> inside a GenServer callback initiates a selective receive scan.</p><p>When a selective receive is executed, the BEAM scheduler must traverse the entire process mailbox from oldest to newest message looking for a pattern match. If a busy GenServer has accumulated thousands of pending casts or info messages, each selective receive triggers an $O(N)$ traversal over non-matching messages. This causes CPU reduction exhaustion, stalls the BEAM scheduler thread, and starves the GenServer from processing its regular message queue, creating catastrophic cascade latency across callers.</p>",
+    "root_cause": "Invoking a nested or selective `receive` block within an active GenServer callback. BEAM iterates through all pending mailbox messages that fail the pattern clause, turning constant-time queue reads into an $O(N)$ search per incoming event.",
+    "bad_code": "defmodule CoreService.Worker do\n  use GenServer\n\n  def handle_call({:process_data, item}, _from, state) do\n    # ANTI-PATTERN: Spawns an async task and uses Task.await inside the GenServer.\n    # Task.await uses a selective receive: `receive do {^ref, reply} -> ... end`\n    # If the mailbox has 50,000 pending casts, the BEAM scans all 50,000 items.\n    task = Task.async(fn -> HeavyCompute.run(item) end)\n    result = Task.await(task, 5000)\n\n    {:reply, result, state}\n  end\n\n  def handle_cast({:enqueue_metric, _metric}, state) do\n    # High volume casting fills the mailbox rapidly\n    {:noreply, state}\n  end\nend",
+    "solution_desc": "Decouple synchronous subtasks from the GenServer execution context. Instead of executing selective `receive` or `Task.await/2` inside a callback, use `Task.Supervisor.async_nolink/2` paired with `handle_info/2` to receive the task completion message asynchronously. Alternatively, offload heavy operations directly to dedicated worker pools (like `NimblePool`) so the GenServer's internal mailbox remains near zero length.",
+    "good_code": "defmodule CoreService.Worker do\n  use GenServer\n\n  def handle_call({:process_data, item}, from, state) do\n    # Non-blocking async dispatch; no selective receive in this process context\n    task = Task.Supervisor.async_nolink(CoreService.TaskSupervisor, fn ->\n      HeavyCompute.run(item)\n    end)\n\n    # Track pending callers mapped by Task reference\n    new_callers = Map.put(state.callers, task.ref, from)\n    {:noreply, %{state | callers: new_callers}}\n  end\n\n  # Task results arrive as standard messages processed at head of queue in O(1)\n  def handle_info({ref, result}, state) when is_reference(ref) do\n    Process.demonitor(ref, [:flush])\n    {from, remaining_callers} = Map.pop(state.callers, ref)\n    if from, do: GenServer.reply(from, result)\n    {:noreply, %{state | callers: remaining_callers}}\n  end\n\n  def handle_info({:DOWN, ref, :process, _pid, reason}, state) do\n    {from, remaining_callers} = Map.pop(state.callers, ref)\n    if from, do: GenServer.reply(from, {:error, reason})\n    {:noreply, %{state | callers: remaining_callers}}\n  end\nend",
+    "verification": "Inspect mailbox queue length during high-throughput benchmarks via `:erlang.process_info(pid, :message_queue_len)`. Monitor reduction consumption rates with `:erlang.process_info(pid, :reductions)` to confirm that message retrieval overhead remains strictly constant ($O(1)$).",
+    "date": "2026-10-22",
+    "id": 1792656526,
+    "type": "error"
+});
