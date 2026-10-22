@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1792636422,
+    "title": "Fix Envoy Memory Exhaustion from High-Churn EDS",
+    "slug": "fix-istio-envoy-memory-exhaustion-eds-churn",
+    "language": "Kubernetes",
+    "code": "OOMKilled",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-istio-envoy-memory-exhaustion-eds-churn.js",
+    "tags": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636423,
+    "title": "Fix Spark Executor OOM from Shuffle Spill Serialization",
+    "slug": "fix-spark-executor-oom-shuffle-spill-serialization",
+    "language": "Java",
+    "code": "OutOfMemoryError",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-spark-executor-oom-shuffle-spill-serialization.js",
+    "tags": [
+      "Java",
+      "Kubernetes",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636424,
+    "title": "Mitigate MongoDB WiredTiger Eviction Stalls on Updates",
+    "slug": "fix-mongodb-wiredtiger-cache-eviction-stalls",
+    "language": "Docker",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-mongodb-wiredtiger-cache-eviction-stalls.js",
+    "tags": [
+      "Docker",
+      "Python",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636425,
+    "title": "CleanYourTV: Debloat Android & Google TV Over Wi-Fi",
+    "slug": "analyze-cleanyourtv-debloat-android-google-tv",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/analyze-cleanyourtv-debloat-android-google-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792592098,
     "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
     "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
@@ -860,72 +919,6 @@ var postsLatest = [
       "iOS",
       "macOS",
       "Frontend"
-    ]
-  },
-  {
-    "id": 1792136502,
-    "title": "Fixing eBPF Verifier Complexity Exhaustion Traps",
-    "slug": "fixing-ebpf-verifier-complexity-exhaustion",
-    "language": "C",
-    "code": "BPF_VERIFIER_E2BIG",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-exhaustion.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "eBPF",
-      "Linux",
-      "C",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792136503,
-    "title": "Resolving WiredTiger Dirty Cache Stalls in MongoDB",
-    "slug": "resolving-mongodb-wiredtiger-eviction-stalls",
-    "language": "Go",
-    "code": "WT_CACHE_FULL",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/resolving-mongodb-wiredtiger-eviction-stalls.js",
-    "tags": [
-      "Go",
-      "Backend",
-      "Kubernetes",
-      "SQL",
-      "MongoDB",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792136504,
-    "title": "Mitigating Spark Shuffle FetchFailed Cascades",
-    "slug": "mitigating-spark-shuffle-fetchfailed-cascades",
-    "language": "Java",
-    "code": "FetchFailedException",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/mitigating-spark-shuffle-fetchfailed-cascades.js",
-    "tags": [
-      "Java",
-      "Backend",
-      "Kubernetes",
-      "AWS",
-      "Spark",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792136505,
-    "title": "Inside d2r-mobile: Native Diablo II on iOS and macOS",
-    "slug": "inside-d2r-mobile-diablo-2-ios-macos",
-    "language": "Rust",
-    "code": "Trend",
-    "date": "2026-10-16",
-    "path": "data/posts/2026-10/inside-d2r-mobile-diablo-2-ios-macos.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust",
-      "TypeScript"
     ]
   }
 ];

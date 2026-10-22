@@ -1,5 +1,64 @@
 [
   {
+    "id": 1792636422,
+    "title": "Fix Envoy Memory Exhaustion from High-Churn EDS",
+    "slug": "fix-istio-envoy-memory-exhaustion-eds-churn",
+    "language": "Kubernetes",
+    "code": "OOMKilled",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-istio-envoy-memory-exhaustion-eds-churn.js",
+    "tags": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636423,
+    "title": "Fix Spark Executor OOM from Shuffle Spill Serialization",
+    "slug": "fix-spark-executor-oom-shuffle-spill-serialization",
+    "language": "Java",
+    "code": "OutOfMemoryError",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-spark-executor-oom-shuffle-spill-serialization.js",
+    "tags": [
+      "Java",
+      "Kubernetes",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636424,
+    "title": "Mitigate MongoDB WiredTiger Eviction Stalls on Updates",
+    "slug": "fix-mongodb-wiredtiger-cache-eviction-stalls",
+    "language": "Docker",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/fix-mongodb-wiredtiger-cache-eviction-stalls.js",
+    "tags": [
+      "Docker",
+      "Python",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792636425,
+    "title": "CleanYourTV: Debloat Android & Google TV Over Wi-Fi",
+    "slug": "analyze-cleanyourtv-debloat-android-google-tv",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-22",
+    "path": "data/posts/2026-10/analyze-cleanyourtv-debloat-android-google-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792592098,
     "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
     "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
