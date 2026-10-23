@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1792743236,
+    "title": "Fix eBPF Variable-Offset Pointer Math in XDP",
+    "slug": "fix-ebpf-variable-offset-pointer-math-xdp",
+    "language": "C",
+    "code": "R2 variable-offset dereference disallowed",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/fix-ebpf-variable-offset-pointer-math-xdp.js",
+    "tags": [
+      "eBPF",
+      "XDP",
+      "Linux",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743237,
+    "title": "Fix NCCL Watchdog Timeouts in Multi-Node FSDP",
+    "slug": "fix-nccl-watchdog-timeouts-fsdp",
+    "language": "Python",
+    "code": "Watchdog caught collective operation timeout",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/fix-nccl-watchdog-timeouts-fsdp.js",
+    "tags": [
+      "PyTorch",
+      "NCCL",
+      "Distributed",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743238,
+    "title": "Resolve ClickHouse 'Too Many Parts' Write Stalls",
+    "slug": "resolve-clickhouse-too-many-parts-stalls",
+    "language": "SQL",
+    "code": "DB::Exception: Too many parts in all data parts in table",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/resolve-clickhouse-too-many-parts-stalls.js",
+    "tags": [
+      "ClickHouse",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743239,
+    "title": "CleanYourTV: Debloat Android & Google TV via Wi-Fi",
+    "slug": "cleanyourtv-debloat-android-google-tv-wifi",
+    "language": "Shell",
+    "code": "Trend",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-wifi.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792722980,
     "title": "Fix RocksDB L0 Compaction Write Stalls",
     "slug": "fix-rocksdb-l0-compaction-write-stalls",
@@ -847,68 +909,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Rust"
-    ]
-  },
-  {
-    "id": 1792240524,
-    "title": "Fix Elixir GenServer Mailbox Starvation & Bloat",
-    "slug": "fix-elixir-genserver-mailbox-starvation-bloat",
-    "language": "Elixir",
-    "code": "SystemLimitError",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-starvation-bloat.js",
-    "tags": [
-      "Elixir",
-      "BEAM",
-      "Concurrency",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792240525,
-    "title": "Fix Redis BGSAVE Fork Latency Spikes and CoW OOM",
-    "slug": "fix-redis-bgsave-fork-latency-spikes-cow-oom",
-    "language": "Redis",
-    "code": "MISCONF / ForkLatency",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/fix-redis-bgsave-fork-latency-spikes-cow-oom.js",
-    "tags": [
-      "Redis",
-      "Linux",
-      "Docker",
-      "AWS",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792240526,
-    "title": "Fix WebGPU Dynamic Uniform Buffer Alignment Panics",
-    "slug": "fix-webgpu-dynamic-uniform-buffer-alignment-panics",
-    "language": "WebGPU / TypeScript",
-    "code": "GPUValidationError",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment-panics.js",
-    "tags": [
-      "TypeScript",
-      "Rust",
-      "WebGPU",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792240527,
-    "title": "D2R-Mobile: Diablo II Resurrected on iOS & macOS",
-    "slug": "d2r-mobile-diablo-ii-resurrected-ios-macos-layer",
-    "language": "Swift / C++",
-    "code": "Trend",
-    "date": "2026-10-17",
-    "path": "data/posts/2026-10/d2r-mobile-diablo-ii-resurrected-ios-macos-layer.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust",
-      "TypeScript"
     ]
   }
 ];

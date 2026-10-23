@@ -1,5 +1,67 @@
 [
   {
+    "id": 1792743236,
+    "title": "Fix eBPF Variable-Offset Pointer Math in XDP",
+    "slug": "fix-ebpf-variable-offset-pointer-math-xdp",
+    "language": "C",
+    "code": "R2 variable-offset dereference disallowed",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/fix-ebpf-variable-offset-pointer-math-xdp.js",
+    "tags": [
+      "eBPF",
+      "XDP",
+      "Linux",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743237,
+    "title": "Fix NCCL Watchdog Timeouts in Multi-Node FSDP",
+    "slug": "fix-nccl-watchdog-timeouts-fsdp",
+    "language": "Python",
+    "code": "Watchdog caught collective operation timeout",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/fix-nccl-watchdog-timeouts-fsdp.js",
+    "tags": [
+      "PyTorch",
+      "NCCL",
+      "Distributed",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743238,
+    "title": "Resolve ClickHouse 'Too Many Parts' Write Stalls",
+    "slug": "resolve-clickhouse-too-many-parts-stalls",
+    "language": "SQL",
+    "code": "DB::Exception: Too many parts in all data parts in table",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/resolve-clickhouse-too-many-parts-stalls.js",
+    "tags": [
+      "ClickHouse",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792743239,
+    "title": "CleanYourTV: Debloat Android & Google TV via Wi-Fi",
+    "slug": "cleanyourtv-debloat-android-google-tv-wifi",
+    "language": "Shell",
+    "code": "Trend",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-wifi.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1792722980,
     "title": "Fix RocksDB L0 Compaction Write Stalls",
     "slug": "fix-rocksdb-l0-compaction-write-stalls",

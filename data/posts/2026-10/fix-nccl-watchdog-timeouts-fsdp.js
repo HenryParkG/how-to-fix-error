@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix NCCL Watchdog Timeouts in Multi-Node FSDP",
+    "slug": "fix-nccl-watchdog-timeouts-fsdp",
+    "language": "Python",
+    "code": "Watchdog caught collective operation timeout",
+    "tags": [
+        "PyTorch",
+        "NCCL",
+        "Distributed",
+        "Python",
+        "Error Fix"
+    ],
+    "analysis": "<p>In multi-node distributed training using PyTorch Fully Sharded Data Parallel (FSDP), developers frequently encounter unhandled NCCL watchdog timeouts during all-gather or reduce-scatter collectives. The failure is typically reported as <code>[E ProcessGroupNCCL.cpp] Watchdog caught collective operation timeout</code>.</p><p>While this issue is often misdiagnosed as an underlying InfiniBand or RoCE fabric drop, the primary application-level cause is rank desynchronization. Because FSDP schedules communication hooks lazily during the forward and backward passes, any divergence in the execution path across ranks (such as dynamic token sequence lengths, uneven batch dropouts, or rank-specific evaluation logic) causes unparticipating ranks to stall the collective pipeline until the watchdog deadline triggers.</p>",
+    "root_cause": "FSDP relies on a synchronous sequence of collective calls executed across all participating ranks in lockstep. If rank 0 executes CPU-bound operations (such as uneven data preprocessing, un-synced validation, or non-deterministic dynamic shape iteration) while other ranks hit `all_gather` for an FSDP forward sub-module, the collective hangs. Once the elapsed duration exceeds `TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC` or NCCL's default 1800-second barrier, the watchdog terminates the process.",
+    "bad_code": "import torch\nfrom torch.distributed.fsdp import FullyShardedDataParallel as FSDP\n\nmodel = FSDP(MyTransformer().cuda())\noptimizer = torch.optim.AdamW(model.parameters())\n\nfor epoch in range(epochs):\n    for step, batch in enumerate(dataloader):\n        # BUG: Divergent rank logic blocks FSDP collective execution\n        if step % 100 == 0 and torch.distributed.get_rank() == 0:\n            # Rank 0 performs expensive disk logging while other ranks enter forward()\n            run_checkpoint_evaluation(model)\n\n        # BUG: dataloader yields variable batch sizes across ranks without drop_last\n        inputs = batch['input_ids'].cuda()\n        loss = model(inputs).sum()\n        loss.backward()\n        optimizer.step()\n        optimizer.zero_grad()",
+    "solution_desc": "Ensure strict synchronization and uniform execution steps across all ranks. Set `drop_last=True` on `DistributedSampler` to avoid hanging on final unequal batches. Avoid rank-isolated model operations; when rank-specific work is required, wrap the section with `torch.distributed.barrier()` and disable gradient sync hooks or perform state operations across all ranks synchronously.",
+    "good_code": "import os\nimport torch\nfrom torch.utils.data.distributed import DistributedSampler\nfrom torch.distributed.fsdp import FullyShardedDataParallel as FSDP\n\n# Configure diagnostic flags and timeouts\nos.environ[\"TORCH_DISTRIBUTED_DEBUG\"] = \"DETAIL\"\nos.environ[\"NCCL_ASYNC_ERROR_HANDLING\"] = \"1\"\n\nsampler = DistributedSampler(dataset, shuffle=True, drop_last=True)\ndataloader = DataLoader(dataset, batch_size=32, sampler=sampler)\n\nmodel = FSDP(MyTransformer().cuda())\noptimizer = torch.optim.AdamW(model.parameters())\n\nfor epoch in range(epochs):\n    sampler.set_epoch(epoch)\n    for step, batch in enumerate(dataloader):\n        inputs = batch['input_ids'].cuda()\n        \n        # Synchronized step execution\n        loss = model(inputs).sum()\n        loss.backward()\n        optimizer.step()\n        optimizer.zero_grad()\n        \n        # Evaluation must be collective or gated behind collective barriers\n        if step % 100 == 0:\n            torch.distributed.barrier()\n            if torch.distributed.get_rank() == 0:\n                save_checkpoint(model.module if hasattr(model, 'module') else model)\n            torch.distributed.barrier()",
+    "verification": "Run distributed jobs with `TORCH_DISTRIBUTED_DEBUG=DETAIL` and check that all ranks proceed monotonically through execution barriers. Confirm that all ranks complete the exact same number of training iterations using structured metrics logging.",
+    "date": "2026-10-23",
+    "id": 1792743237,
+    "type": "error"
+});
