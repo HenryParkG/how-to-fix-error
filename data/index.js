@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1792763848,
+        "title": "Fix C++20 Coroutine Frame Use-After-Free in Schedulers",
+        "slug": "fix-cpp20-coroutine-frame-use-after-free",
+        "language": "C++20",
+        "code": "SEGV_MAPERR",
+        "date": "2026-10-23",
+        "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-use-after-free.js",
+        "tags": [
+            "Rust",
+            "Concurrency",
+            "C++20",
+            "Async",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792763849,
+        "title": "Mitigate PostgreSQL MultiXact ID Wraparound Halts",
+        "slug": "mitigate-postgresql-multixact-id-wraparound-halts",
+        "language": "SQL",
+        "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+        "date": "2026-10-23",
+        "path": "data/posts/2026-10/mitigate-postgresql-multixact-id-wraparound-halts.js",
+        "tags": [
+            "PostgreSQL",
+            "SQL",
+            "Database",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792763850,
+        "title": "Resolve PyTorch CUDA OOM from Allocator Fragmentation",
+        "slug": "resolve-pytorch-cuda-oom-allocator-fragmentation",
+        "language": "Python",
+        "code": "CUDA out of memory",
+        "date": "2026-10-23",
+        "path": "data/posts/2026-10/resolve-pytorch-cuda-oom-allocator-fragmentation.js",
+        "tags": [
+            "Python",
+            "CUDA",
+            "PyTorch",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792763851,
+        "title": "Inside cleanyourtv: Debloat Android TV Over Wi-Fi",
+        "slug": "clean-your-tv-android-debloat-apple-tv-experience",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-10-23",
+        "path": "data/posts/2026-10/clean-your-tv-android-debloat-apple-tv-experience.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Docker"
+        ]
+    },
+    {
         "id": 1792743236,
         "title": "Fix eBPF Variable-Offset Pointer Math in XDP",
         "slug": "fix-ebpf-variable-offset-pointer-math-xdp",

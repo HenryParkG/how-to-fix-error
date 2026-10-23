@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1792763848,
+    "title": "Fix C++20 Coroutine Frame Use-After-Free in Schedulers",
+    "slug": "fix-cpp20-coroutine-frame-use-after-free",
+    "language": "C++20",
+    "code": "SEGV_MAPERR",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-use-after-free.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "C++20",
+      "Async",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792763849,
+    "title": "Mitigate PostgreSQL MultiXact ID Wraparound Halts",
+    "slug": "mitigate-postgresql-multixact-id-wraparound-halts",
+    "language": "SQL",
+    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/mitigate-postgresql-multixact-id-wraparound-halts.js",
+    "tags": [
+      "PostgreSQL",
+      "SQL",
+      "Database",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792763850,
+    "title": "Resolve PyTorch CUDA OOM from Allocator Fragmentation",
+    "slug": "resolve-pytorch-cuda-oom-allocator-fragmentation",
+    "language": "Python",
+    "code": "CUDA out of memory",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/resolve-pytorch-cuda-oom-allocator-fragmentation.js",
+    "tags": [
+      "Python",
+      "CUDA",
+      "PyTorch",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792763851,
+    "title": "Inside cleanyourtv: Debloat Android TV Over Wi-Fi",
+    "slug": "clean-your-tv-android-debloat-apple-tv-experience",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-23",
+    "path": "data/posts/2026-10/clean-your-tv-android-debloat-apple-tv-experience.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
     "id": 1792743236,
     "title": "Fix eBPF Variable-Offset Pointer Math in XDP",
     "slug": "fix-ebpf-variable-offset-pointer-math-xdp",
@@ -846,65 +909,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-18",
     "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust"
-    ]
-  },
-  {
-    "id": 1792289495,
-    "title": "Fixing Rust Async Cancellation Safety & Inconsistent Drop",
-    "slug": "rust-async-cancellation-safety-drop-inconsistencies",
-    "language": "Rust",
-    "code": "AsyncCancellationLeak",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/rust-async-cancellation-safety-drop-inconsistencies.js",
-    "tags": [
-      "Rust",
-      "Concurrency",
-      "Tokio",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792289496,
-    "title": "Resolving Envoy Connection Exhaustion & UC 503 Cascades",
-    "slug": "resolving-envoy-connection-exhaustion-uc-503-cascades",
-    "language": "Kubernetes",
-    "code": "Envoy503UC",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/resolving-envoy-connection-exhaustion-uc-503-cascades.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "DevOps",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792289497,
-    "title": "Mitigating Milvus HNSW Vector Recall Decay Under Upserts",
-    "slug": "mitigating-milvus-hnsw-graph-recall-decay",
-    "language": "Python",
-    "code": "MilvusRecallDecay",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/mitigating-milvus-hnsw-graph-recall-decay.js",
-    "tags": [
-      "Python",
-      "Kubernetes",
-      "VectorDB",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792289498,
-    "title": "Exploring jhaizhou-ops/d2r-mobile: D2R on iOS and macOS",
-    "slug": "exploring-d2r-mobile-ios-macos-compatibility-layer",
-    "language": "Swift",
-    "code": "Trend",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/exploring-d2r-mobile-ios-macos-compatibility-layer.js",
     "tags": [
       "Tech Trend",
       "GitHub",
