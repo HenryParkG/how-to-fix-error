@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1792847058,
+    "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
+    "slug": "resolve-io-uring-cqe-ring-overflow",
+    "language": "C",
+    "code": "IORING_CQ_EVENTFD_DISABLED",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/resolve-io-uring-cqe-ring-overflow.js",
+    "tags": [
+      "Rust",
+      "Linux",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792847059,
+    "title": "Fix Envoy Upstream Starvation from Orphaned H2 Streams",
+    "slug": "fix-envoy-upstream-orphaned-h2-streams",
+    "language": "Envoy",
+    "code": "upstream_cx_max_requests",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/fix-envoy-upstream-orphaned-h2-streams.js",
+    "tags": [
+      "Go",
+      "Kubernetes",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792847060,
+    "title": "Resolve Spark Executor OOM from Broadcast Hash Join Skew",
+    "slug": "resolve-spark-executor-oom-broadcast-skew",
+    "language": "Spark",
+    "code": "OutOfMemoryError: Java heap space",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/resolve-spark-executor-oom-broadcast-skew.js",
+    "tags": [
+      "Java",
+      "SQL",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792847061,
+    "title": "Clean TV Experience: pengchujin/aerial-tv Launcher",
+    "slug": "pengchujin-aerial-tv-android-launcher",
+    "language": "Kotlin",
+    "code": "Trend",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/pengchujin-aerial-tv-android-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1792828268,
     "title": "Fix Elixir GenServer Mailbox Bloat in Selective Receive",
     "slug": "fix-elixir-genserver-mailbox-selective-receive-bloat",
@@ -851,65 +910,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-19",
     "path": "data/posts/2026-10/qwen21-nsfw-pose-skill-vnccs-puppet-control.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792376810,
-    "title": "Fix Postgres Transaction ID Wraparound Freeze",
-    "slug": "fix-postgres-txid-wraparound-freeze",
-    "language": "PostgreSQL",
-    "code": "ERR_TXID_WRAPAROUND",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/fix-postgres-txid-wraparound-freeze.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792376811,
-    "title": "Prevent C++20 Coroutine Frame Lifetime Invalidation",
-    "slug": "prevent-cpp20-coroutine-frame-lifetime-invalidation",
-    "language": "C++20",
-    "code": "DanglingReference",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/prevent-cpp20-coroutine-frame-lifetime-invalidation.js",
-    "tags": [
-      "C++20",
-      "Coroutines",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792376812,
-    "title": "Fix Kafka Consumer Rebalance from Heartbeat Starvation",
-    "slug": "fix-kafka-consumer-rebalance-heartbeat-starvation",
-    "language": "Kafka",
-    "code": "CommitFailedException",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/fix-kafka-consumer-rebalance-heartbeat-starvation.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792376813,
-    "title": "Analyzing Qwen2.1 NSFW Pose Skill: VNCCS Puppet Control",
-    "slug": "analyzing-qwen21-nsfw-pose-skill-vnccs",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/analyzing-qwen21-nsfw-pose-skill-vnccs.js",
     "tags": [
       "Tech Trend",
       "GitHub",

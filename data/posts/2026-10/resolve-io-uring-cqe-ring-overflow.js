@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
+    "slug": "resolve-io-uring-cqe-ring-overflow",
+    "language": "C",
+    "code": "IORING_CQ_EVENTFD_DISABLED",
+    "tags": [
+        "Rust",
+        "Linux",
+        "Performance",
+        "Error Fix"
+    ],
+    "analysis": "<p>When an application pushes requests through a Linux <code>io_uring</code> instance faster than it reaps completions, the Completion Queue (CQ) can saturate. In modern kernels (v5.5+), <code>io_uring</code> allocates an internal overflow backlog to preserve CQEs instead of dropping them immediately. However, when the internal kernel allocation limits are reached or when <code>IORING_FEAT_NODROP</code> is unavailable, completions are dropped, leading to lost tracking state, stalled application logic, or silent data truncation.</p><p>A common mistake in high-throughput network or disk poll workers is sizing the SQ and CQ ring uniformly without accounting for multi-completion operations (e.g., multishot accepts or multishot receives). When the CQ fills up, the kernel stops posting new completions to the ring buffer, increments the ring's <code>overflow</code> counter, and sets the <code>IORING_SQ_CQ_OVERFLOW</code> flag in <code>io_sq_ring::flags</code>. If user-space continues submitting SQEs without backpressure or without draining completions, memory pressure escalates, causing kernel allocation failures and unrecoverable event drops.</p>",
+    "root_cause": "The completion queue capacity was underprovisioned relative to the submission queue and multishot operations, while the submission loop lacked backpressure against the kernel's IORING_SQ_CQ_OVERFLOW flag.",
+    "bad_code": "struct io_uring ring;\n// Underprovisioned CQ: CQ size defaults to SQ size (1024)\nio_uring_queue_init(1024, &ring, 0);\n\nwhile (keep_running) {\n    struct io_uring_sqe *sqe = io_uring_get_sqe(&ring);\n    io_uring_prep_read(sqe, fd, buf, BUF_SZ, offset);\n    // Unconditionally submits without checking if CQ is saturated\n    io_uring_submit(&ring);\n    \n    // Lazy completion harvesting: processes only 1 CQE per submit\n    struct io_uring_cqe *cqe;\n    if (io_uring_peek_cqe(&ring, &cqe) == 0) {\n        process_completion(cqe);\n        io_uring_cqe_seen(&ring, cqe);\n    }\n}",
+    "solution_desc": "Configure the ring with `IORING_SETUP_CQSIZE` to size the completion queue substantially larger than the submission queue (e.g., 2x to 4x, especially when multishot requests are used). Implement adaptive backpressure by inspecting `*ring.sq.kflags & IORING_SQ_CQ_OVERFLOW` prior to new submissions, immediately flushing pending CQEs with `io_uring_cq_advance()` or batched reaping via `io_uring_submit_and_wait()`.",
+    "good_code": "struct io_uring ring;\nstruct io_uring_params params;\nmemset(&params, 0, sizeof(params));\nparams.flags = IORING_SETUP_CQSIZE;\nparams.cq_entries = 4096; // 4x headroom over SQ entries\n\nif (io_uring_queue_init_params(1024, &ring, &params) < 0) {\n    perror(\"io_uring_queue_init_params\");\n    exit(EXIT_FAILURE);\n}\n\nwhile (keep_running) {\n    // Backpressure: If kernel signaled overflow, aggressively drain before submitting\n    if (*ring.sq.kflags & IORING_SQ_CQ_OVERFLOW) {\n        struct io_uring_cqe *cqes[64];\n        unsigned count = io_uring_peek_batch_cqe(&ring, cqes, 64);\n        for (unsigned i = 0; i < count; i++) {\n            process_completion(cqes[i]);\n        }\n        io_uring_cq_advance(&ring, count);\n        // Flush overflowed items into the newly freed CQ slots\n        io_uring_get_events(&ring);\n    }\n\n    struct io_uring_sqe *sqe = io_uring_get_sqe(&ring);\n    if (!sqe) {\n        // SQ full; flush and wait for at least 1 CQE\n        io_uring_submit_and_wait(&ring, 1);\n        continue;\n    }\n    io_uring_prep_read(sqe, fd, buf, BUF_SZ, offset);\n    io_uring_submit(&ring);\n}",
+    "verification": "Monitor the CQ overflow counter via `ring.cq.koverflow` or `bpftrace -e 'tracepoint:io_uring:io_uring_cqe_overflow { printf(\"Overflow event on ring %p\\n\", args->ctx); }'`. Under synthetic load spikes, verify that `overflow` stays at 0 and processing latency remains bounded.",
+    "date": "2026-10-24",
+    "id": 1792847058,
+    "type": "error"
+});

@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792847058,
+        "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
+        "slug": "resolve-io-uring-cqe-ring-overflow",
+        "language": "C",
+        "code": "IORING_CQ_EVENTFD_DISABLED",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/resolve-io-uring-cqe-ring-overflow.js",
+        "tags": [
+            "Rust",
+            "Linux",
+            "Performance",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792847059,
+        "title": "Fix Envoy Upstream Starvation from Orphaned H2 Streams",
+        "slug": "fix-envoy-upstream-orphaned-h2-streams",
+        "language": "Envoy",
+        "code": "upstream_cx_max_requests",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/fix-envoy-upstream-orphaned-h2-streams.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792847060,
+        "title": "Resolve Spark Executor OOM from Broadcast Hash Join Skew",
+        "slug": "resolve-spark-executor-oom-broadcast-skew",
+        "language": "Spark",
+        "code": "OutOfMemoryError: Java heap space",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/resolve-spark-executor-oom-broadcast-skew.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792847061,
+        "title": "Clean TV Experience: pengchujin/aerial-tv Launcher",
+        "slug": "pengchujin-aerial-tv-android-launcher",
+        "language": "Kotlin",
+        "code": "Trend",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/pengchujin-aerial-tv-android-launcher.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Java"
+        ]
+    },
+    {
         "id": 1792828268,
         "title": "Fix Elixir GenServer Mailbox Bloat in Selective Receive",
         "slug": "fix-elixir-genserver-mailbox-selective-receive-bloat",
