@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1792809355,
+    "title": "Fix Go GC Mark Termination Spikes from Tiny Alloc",
+    "slug": "go-gc-mark-termination-tiny-allocator",
+    "language": "Go",
+    "code": "GC-STW-LATENCY",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/go-gc-mark-termination-tiny-allocator.js",
+    "tags": [
+      "Go",
+      "Performance",
+      "MemoryManagement",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792809356,
+    "title": "Fix Kafka CooperativeSticky Rebalance Storms",
+    "slug": "kafka-cooperativesticky-rebalance-storms",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/kafka-cooperativesticky-rebalance-storms.js",
+    "tags": [
+      "Java",
+      "Kafka",
+      "DistributedSystems",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792809357,
+    "title": "Fix MongoDB WiredTiger Cache Eviction Deadlocks",
+    "slug": "mongodb-wiredtiger-cache-eviction-deadlocks",
+    "language": "Python",
+    "code": "WT_CACHE_FULL",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-deadlocks.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792809358,
+    "title": "Free My TV: Fast Ad-Free Smart TV Launcher",
+    "slug": "free-my-tv-ad-free-smart-tv-launcher",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/free-my-tv-ad-free-smart-tv-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript"
+    ]
+  },
+  {
     "id": 1792763848,
     "title": "Fix C++20 Coroutine Frame Use-After-Free in Schedulers",
     "slug": "fix-cpp20-coroutine-frame-use-after-free",
@@ -847,68 +906,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-18",
     "path": "data/posts/2026-10/ebpf-zero-instrumentation-observability-networking.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust"
-    ]
-  },
-  {
-    "id": 1792308849,
-    "title": "Fixing eBPF Verifier Complexity & Spill Failures",
-    "slug": "fixing-ebpf-verifier-complexity-spill-failures",
-    "language": "C / eBPF",
-    "code": "BPF_VERIFIER_ERR",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/fixing-ebpf-verifier-complexity-spill-failures.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Kernel",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792308850,
-    "title": "Mitigate ClickHouse Too Many Parts Write Stalls",
-    "slug": "clickhouse-too-many-parts-write-stalls",
-    "language": "ClickHouse / SQL",
-    "code": "TOO_MANY_PARTS",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/clickhouse-too-many-parts-write-stalls.js",
-    "tags": [
-      "ClickHouse",
-      "SQL",
-      "Database",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792308851,
-    "title": "Fixing Spark AQE Join Skew & Disk Spill OOM",
-    "slug": "spark-join-skew-oom-disk-spilling",
-    "language": "Apache Spark / Python",
-    "code": "SparkOOMDiskSpill",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/spark-join-skew-oom-disk-spilling.js",
-    "tags": [
-      "Spark",
-      "Python",
-      "SQL",
-      "BigData",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792308852,
-    "title": "d2r-mobile: Native D2R Compatibility on Apple Silicon",
-    "slug": "d2r-mobile-ios-macos-compatibility-layer",
-    "language": "Swift / C++ / Metal",
-    "code": "Trend",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/d2r-mobile-ios-macos-compatibility-layer.js",
     "tags": [
       "Tech Trend",
       "GitHub",
