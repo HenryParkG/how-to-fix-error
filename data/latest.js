@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1792828268,
+    "title": "Fix Elixir GenServer Mailbox Bloat in Selective Receive",
+    "slug": "fix-elixir-genserver-mailbox-selective-receive-bloat",
+    "language": "Elixir",
+    "code": "ProcessMailboxOverflow",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-selective-receive-bloat.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Elixir",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792828269,
+    "title": "Fix gRPC Deadlocks Caused by HTTP/2 Flow-Control Starvation",
+    "slug": "fix-grpc-deadlock-http2-flow-control-starvation",
+    "language": "Go",
+    "code": "StreamFlowControlDeadlock",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/fix-grpc-deadlock-http2-flow-control-starvation.js",
+    "tags": [
+      "Go",
+      "Kubernetes",
+      "Backend",
+      "gRPC",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792828270,
+    "title": "Resolve Redis BGSAVE Fork OOM Under Copy-on-Write Mutation",
+    "slug": "resolve-redis-bgsave-fork-oom-copy-on-write",
+    "language": "Redis",
+    "code": "OutdatedCowForkOOM",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/resolve-redis-bgsave-fork-oom-copy-on-write.js",
+    "tags": [
+      "Docker",
+      "Kubernetes",
+      "Infra",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792828271,
+    "title": "Analyze Trending Repository: pengchujin/aerial-tv",
+    "slug": "analyze-pengchujin-aerial-tv-clean-tvos-launcher",
+    "language": "Kotlin",
+    "code": "Trend",
+    "date": "2026-10-24",
+    "path": "data/posts/2026-10/analyze-pengchujin-aerial-tv-clean-tvos-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "Frontend"
+    ]
+  },
+  {
     "id": 1792809355,
     "title": "Fix Go GC Mark Termination Spikes from Tiny Alloc",
     "slug": "go-gc-mark-termination-tiny-allocator",
@@ -851,65 +914,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1792327985,
-    "title": "Fixing PyTorch DDP Deadlocks from Graph Divergence",
-    "slug": "pytorch-ddp-deadlocks-bucketing-graph-divergence",
-    "language": "PyTorch",
-    "code": "RuntimeError",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/pytorch-ddp-deadlocks-bucketing-graph-divergence.js",
-    "tags": [
-      "Python",
-      "Machine Learning",
-      "Distributed Systems",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792327986,
-    "title": "Mitigating WiredTiger Cache Stalls and Checkpoint Pinning",
-    "slug": "mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning",
-    "language": "MongoDB",
-    "code": "WT_CACHE_FULL",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-stalls-checkpoint-pinning.js",
-    "tags": [
-      "Go",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792327987,
-    "title": "Fixing Kubernetes Silent CFS Bandwidth Throttling",
-    "slug": "kubernetes-silent-cfs-throttling-multithreaded-runtimes",
-    "language": "Kubernetes",
-    "code": "CPUThrottled",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/kubernetes-silent-cfs-throttling-multithreaded-runtimes.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792327988,
-    "title": "eBPF-Powered Observability and Kernel Networking",
-    "slug": "ebpf-zero-instrumentation-observability-networking",
-    "language": "Rust",
-    "code": "Trend",
-    "date": "2026-10-18",
-    "path": "data/posts/2026-10/ebpf-zero-instrumentation-observability-networking.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust"
     ]
   }
 ];

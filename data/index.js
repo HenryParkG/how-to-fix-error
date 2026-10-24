@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1792828268,
+        "title": "Fix Elixir GenServer Mailbox Bloat in Selective Receive",
+        "slug": "fix-elixir-genserver-mailbox-selective-receive-bloat",
+        "language": "Elixir",
+        "code": "ProcessMailboxOverflow",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-selective-receive-bloat.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Elixir",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792828269,
+        "title": "Fix gRPC Deadlocks Caused by HTTP/2 Flow-Control Starvation",
+        "slug": "fix-grpc-deadlock-http2-flow-control-starvation",
+        "language": "Go",
+        "code": "StreamFlowControlDeadlock",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/fix-grpc-deadlock-http2-flow-control-starvation.js",
+        "tags": [
+            "Go",
+            "Kubernetes",
+            "Backend",
+            "gRPC",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792828270,
+        "title": "Resolve Redis BGSAVE Fork OOM Under Copy-on-Write Mutation",
+        "slug": "resolve-redis-bgsave-fork-oom-copy-on-write",
+        "language": "Redis",
+        "code": "OutdatedCowForkOOM",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/resolve-redis-bgsave-fork-oom-copy-on-write.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Infra",
+            "Python",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792828271,
+        "title": "Analyze Trending Repository: pengchujin/aerial-tv",
+        "slug": "analyze-pengchujin-aerial-tv-clean-tvos-launcher",
+        "language": "Kotlin",
+        "code": "Trend",
+        "date": "2026-10-24",
+        "path": "data/posts/2026-10/analyze-pengchujin-aerial-tv-clean-tvos-launcher.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1792809355,
         "title": "Fix Go GC Mark Termination Spikes from Tiny Alloc",
         "slug": "go-gc-mark-termination-tiny-allocator",
