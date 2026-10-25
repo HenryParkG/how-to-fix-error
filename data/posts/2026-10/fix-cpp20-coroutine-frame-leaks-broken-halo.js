@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix C++20 Coroutine Frame Leaks from Broken HALO",
+    "slug": "fix-cpp20-coroutine-frame-leaks-broken-halo",
+    "language": "C++",
+    "code": "MemoryLeak (HALO Failure)",
+    "tags": [
+        "Rust",
+        "Backend",
+        "C++",
+        "Systems",
+        "Error Fix"
+    ],
+    "analysis": "<p>In C++20, coroutines dynamically allocate their coroutine frame on the heap via <code>operator new</code> unless the compiler applies Heap Allocation Elision Optimization (HALO). HALO replaces dynamic allocation by inlining the coroutine frame directly into the caller's stack frame when the coroutine's lifetime is strictly nested inside the caller.</p><p>However, HALO is not guaranteed by the C++ standard; it is an optimization pass performed by compilers like Clang and GCC. If the coroutine object escapes the immediate scope, is wrapped inside dynamic polymorphism (such as type-erased <code>std::function</code>), or if promise destructor inlining fails, the compiler silently falls back to heap allocation. If custom memory management assumes frames are elided or if lifetimes are miscalculated across asynchronous boundaries, memory leaks rapidly accumulate.</p>",
+    "root_cause": "The coroutine promise or return object escapes local caller scope via type-erasure or non-inlined caller boundaries, breaking the compiler's strict escape analysis and disabling Heap Allocation Elision (HALO).",
+    "bad_code": "#include <coroutine>\n#include <functional>\n#include <iostream>\n\nstruct Task {\n    struct promise_type {\n        Task get_return_object() { return Task{std::coroutine_handle<promise_type>::from_promise(*this)}; }\n        std::suspend_never initial_suspend() noexcept { return {}; }\n        std::suspend_never final_suspend() noexcept { return {}; }\n        void return_void() noexcept {}\n        void unhandled_exception() noexcept {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\nTask worker() {\n    co_return;\n}\n\n// Type-erasure in std::function prevents compiler from proving lifetime containment\nvoid execute(std::function<Task()> fn) {\n    fn(); // Compiler fails HALO escape analysis; dynamic heap allocation occurs\n}\n\nint main() {\n    for (int i = 0; i < 1000000; ++i) {\n        execute(worker); // 1M small allocations bypass elision\n    }\n}",
+    "solution_desc": "Design coroutines with custom allocation overrides in promise_type (e.g., using a thread-local arena or slab allocator) to handle fallback cases gracefully. Ensure caller functions accept concrete coroutine types by value or universal reference and mark promise member functions `always_inline` to allow the compiler to verify lifetime encapsulation.",
+    "good_code": "#include <coroutine>\n#include <memory_resource>\n#include <iostream>\n\n// Monotonic buffer prevents system allocator overhead when HALO fails\nstatic thread_local std::pmr::monotonic_buffer_resource mem_pool(1024 * 1024);\n\nstruct InlinedTask {\n    struct promise_type {\n        // Overload operator new to control fallback allocations\n        void* operator new(std::size_t size) {\n            return mem_pool.allocate(size);\n        }\n        void operator delete(void* ptr, std::size_t size) noexcept {\n            mem_pool.deallocate(ptr, size);\n        }\n\n        __attribute__((always_inline)) InlinedTask get_return_object() {\n            return InlinedTask{std::coroutine_handle<promise_type>::from_promise(*this)};\n        }\n        std::suspend_never initial_suspend() noexcept { return {}; }\n        std::suspend_never final_suspend() noexcept { return {}; }\n        void return_void() noexcept {}\n        void unhandled_exception() noexcept {}\n    };\n    std::coroutine_handle<promise_type> handle;\n};\n\n// Use templates to maintain concrete types and allow aggressive compiler inlining\ntemplate <typename F>\n__attribute__((always_inline)) void execute(F&& fn) {\n    fn(); // Lifetime is provably strictly nested; Clang successfully elides heap frame\n}\n\nInlinedTask worker() {\n    co_return;\n}\n\nint main() {\n    for (int i = 0; i < 1000000; ++i) {\n        execute(worker);\n    }\n    return 0;\n}",
+    "verification": "Compile with `-O3 -Rpass=coro-elide` on Clang to verify compiler output: `optimized: elide coroutine ... inlining`. Run under Valgrind/ASan to verify 0 dynamic heap allocations occurred.",
+    "date": "2026-10-25",
+    "id": 1792935354,
+    "type": "error"
+});

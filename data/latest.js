@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1792935352,
+    "title": "Fix PyTorch CUDA OOM from Allocator Fragmentation",
+    "slug": "pytorch-cuda-oom-native-caching-allocator-fragmentation",
+    "language": "Python",
+    "code": "torch.cuda.OutOfMemoryError",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/pytorch-cuda-oom-native-caching-allocator-fragmentation.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "Deep Learning",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935353,
+    "title": "Prevent Postgres Shutdowns from MultiXactId Wraparound",
+    "slug": "prevent-postgresql-multixactid-wraparound-shutdowns",
+    "language": "SQL",
+    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/prevent-postgresql-multixactid-wraparound-shutdowns.js",
+    "tags": [
+      "SQL",
+      "PostgreSQL",
+      "Database",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935354,
+    "title": "Fix C++20 Coroutine Frame Leaks from Broken HALO",
+    "slug": "fix-cpp20-coroutine-frame-leaks-broken-halo",
+    "language": "C++",
+    "code": "MemoryLeak (HALO Failure)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-leaks-broken-halo.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "C++",
+      "Systems",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935355,
+    "title": "Clean TV Launcher Trend: Analyzing pengchujin/aerial-tv",
+    "slug": "clean-tv-launcher-trend-aerial-tv",
+    "language": "Kotlin",
+    "code": "Trend",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/clean-tv-launcher-trend-aerial-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java",
+      "Android"
+    ]
+  },
+  {
     "id": 1792915200,
     "title": "Fix eBPF Verifier Failures from Path State Pruning",
     "slug": "resolve-ebpf-verifier-path-dependent-state-pruning",
@@ -848,68 +911,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-21",
     "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792505204,
-    "title": "Fixing Async Cancellation Safety & Guard Leaks in Rust",
-    "slug": "rust-async-cancellation-safety-raii-leaks",
-    "language": "Rust",
-    "code": "AsyncCancellationError",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/rust-async-cancellation-safety-raii-leaks.js",
-    "tags": [
-      "Rust",
-      "Tokio",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792505205,
-    "title": "Fixing CoreDNS UDP Drops via Linux Conntrack Races",
-    "slug": "k8s-coredns-conntrack-race-packet-drops",
-    "language": "Kubernetes",
-    "code": "ConntrackDropRace",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/k8s-coredns-conntrack-race-packet-drops.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Linux",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792505206,
-    "title": "Mitigating RocksDB Write Stalls from L0 File Accumulation",
-    "slug": "rocksdb-write-stalls-l0-compaction-debt",
-    "language": "SQL",
-    "code": "Status::Incomplete",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/rocksdb-write-stalls-l0-compaction-debt.js",
-    "tags": [
-      "SQL",
-      "Rust",
-      "Backend",
-      "Storage",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792505207,
-    "title": "CleanYourTV: Debloating Android and Google TV via ADB",
-    "slug": "cleanyourtv-android-google-tv-debloat-apple-tv-style",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/cleanyourtv-android-google-tv-debloat-apple-tv-style.js",
     "tags": [
       "Tech Trend",
       "GitHub",

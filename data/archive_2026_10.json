@@ -1,5 +1,68 @@
 [
   {
+    "id": 1792935352,
+    "title": "Fix PyTorch CUDA OOM from Allocator Fragmentation",
+    "slug": "pytorch-cuda-oom-native-caching-allocator-fragmentation",
+    "language": "Python",
+    "code": "torch.cuda.OutOfMemoryError",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/pytorch-cuda-oom-native-caching-allocator-fragmentation.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "Deep Learning",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935353,
+    "title": "Prevent Postgres Shutdowns from MultiXactId Wraparound",
+    "slug": "prevent-postgresql-multixactid-wraparound-shutdowns",
+    "language": "SQL",
+    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/prevent-postgresql-multixactid-wraparound-shutdowns.js",
+    "tags": [
+      "SQL",
+      "PostgreSQL",
+      "Database",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935354,
+    "title": "Fix C++20 Coroutine Frame Leaks from Broken HALO",
+    "slug": "fix-cpp20-coroutine-frame-leaks-broken-halo",
+    "language": "C++",
+    "code": "MemoryLeak (HALO Failure)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-leaks-broken-halo.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "C++",
+      "Systems",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792935355,
+    "title": "Clean TV Launcher Trend: Analyzing pengchujin/aerial-tv",
+    "slug": "clean-tv-launcher-trend-aerial-tv",
+    "language": "Kotlin",
+    "code": "Trend",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/clean-tv-launcher-trend-aerial-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java",
+      "Android"
+    ]
+  },
+  {
     "id": 1792915200,
     "title": "Fix eBPF Verifier Failures from Path State Pruning",
     "slug": "resolve-ebpf-verifier-path-dependent-state-pruning",
