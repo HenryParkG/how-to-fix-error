@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1792894930,
+        "title": "Fix Rust Async Cancellation in Multiplexed Drivers",
+        "slug": "fix-rust-async-cancellation-hazards-multiplexed-stream",
+        "language": "Rust",
+        "code": "AsyncCancelDrop",
+        "date": "2026-10-25",
+        "path": "data/posts/2026-10/fix-rust-async-cancellation-hazards-multiplexed-stream.js",
+        "tags": [
+            "Rust",
+            "Async",
+            "Networking",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792894931,
+        "title": "Resolve WebGPU Device Loss from Buffer Aliasing",
+        "slug": "resolve-webgpu-device-loss-compute-pass-buffer-aliasing",
+        "language": "TypeScript",
+        "code": "GPUDeviceLost",
+        "date": "2026-10-25",
+        "path": "data/posts/2026-10/resolve-webgpu-device-loss-compute-pass-buffer-aliasing.js",
+        "tags": [
+            "TypeScript",
+            "Next.js",
+            "WebGPU",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792894932,
+        "title": "Mitigate Elasticsearch Breaker Trips on Lucene Aggs",
+        "slug": "mitigate-elasticsearch-circuit-breaker-lucene-aggs",
+        "language": "Java",
+        "code": "CircuitBreakingException",
+        "date": "2026-10-25",
+        "path": "data/posts/2026-10/mitigate-elasticsearch-circuit-breaker-lucene-aggs.js",
+        "tags": [
+            "Java",
+            "Elasticsearch",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1792894933,
+        "title": "Aerial TV: A Clean tvOS-Style Launcher for Android TV",
+        "slug": "pengchujin-aerial-tv-clean-android-launcher",
+        "language": "Java",
+        "code": "Trend",
+        "date": "2026-10-25",
+        "path": "data/posts/2026-10/pengchujin-aerial-tv-clean-android-launcher.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Java"
+        ]
+    },
+    {
         "id": 1792847058,
         "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
         "slug": "resolve-io-uring-cqe-ring-overflow",

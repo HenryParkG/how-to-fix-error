@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1792894930,
+    "title": "Fix Rust Async Cancellation in Multiplexed Drivers",
+    "slug": "fix-rust-async-cancellation-hazards-multiplexed-stream",
+    "language": "Rust",
+    "code": "AsyncCancelDrop",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/fix-rust-async-cancellation-hazards-multiplexed-stream.js",
+    "tags": [
+      "Rust",
+      "Async",
+      "Networking",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792894931,
+    "title": "Resolve WebGPU Device Loss from Buffer Aliasing",
+    "slug": "resolve-webgpu-device-loss-compute-pass-buffer-aliasing",
+    "language": "TypeScript",
+    "code": "GPUDeviceLost",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/resolve-webgpu-device-loss-compute-pass-buffer-aliasing.js",
+    "tags": [
+      "TypeScript",
+      "Next.js",
+      "WebGPU",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792894932,
+    "title": "Mitigate Elasticsearch Breaker Trips on Lucene Aggs",
+    "slug": "mitigate-elasticsearch-circuit-breaker-lucene-aggs",
+    "language": "Java",
+    "code": "CircuitBreakingException",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/mitigate-elasticsearch-circuit-breaker-lucene-aggs.js",
+    "tags": [
+      "Java",
+      "Elasticsearch",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792894933,
+    "title": "Aerial TV: A Clean tvOS-Style Launcher for Android TV",
+    "slug": "pengchujin-aerial-tv-clean-android-launcher",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/pengchujin-aerial-tv-clean-android-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1792847058,
     "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
     "slug": "resolve-io-uring-cqe-ring-overflow",
@@ -851,65 +910,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-20",
     "path": "data/posts/2026-10/gathin23-cleanyourtv-debloat-android-google-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792397893,
-    "title": "Fixing io_uring CQE Overflow and Worker Stalls",
-    "slug": "fixing-io-uring-cqe-overflow-worker-thread-stalls",
-    "language": "Rust",
-    "code": "CQE_OVERFLOW",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/fixing-io-uring-cqe-overflow-worker-thread-stalls.js",
-    "tags": [
-      "Linux",
-      "Async",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792397894,
-    "title": "Fixing vLLM KV-Cache Exhaustion in Chunked Prefill",
-    "slug": "vllm-kv-cache-exhaustion-chunked-prefill",
-    "language": "Python",
-    "code": "OOM_PREEMPTION",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/vllm-kv-cache-exhaustion-chunked-prefill.js",
-    "tags": [
-      "Python",
-      "Kubernetes",
-      "AWS",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792397895,
-    "title": "Fixing Cassandra Tombstone Overwhelmed Exceptions",
-    "slug": "fixing-cassandra-tombstone-overwhelmed-exceptions",
-    "language": "Java",
-    "code": "TombstoneOverwhelmedException",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/fixing-cassandra-tombstone-overwhelmed-exceptions.js",
-    "tags": [
-      "Cassandra",
-      "SQL",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792397896,
-    "title": "Qwen2.1 NSFW Pose Skill: 136 VNCCS Control",
-    "slug": "qwen21-nsfw-pose-skill-vnccs-puppet-control",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-19",
-    "path": "data/posts/2026-10/qwen21-nsfw-pose-skill-vnccs-puppet-control.js",
     "tags": [
       "Tech Trend",
       "GitHub",
