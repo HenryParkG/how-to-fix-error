@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1792915200,
+    "title": "Fix eBPF Verifier Failures from Path State Pruning",
+    "slug": "resolve-ebpf-verifier-path-dependent-state-pruning",
+    "language": "Rust",
+    "code": "EINVAL (BPF_VERIFIER_PRUNING)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/resolve-ebpf-verifier-path-dependent-state-pruning.js",
+    "tags": [
+      "Rust",
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915201,
+    "title": "Fix Haskell Space Leaks in StateT Accumulators",
+    "slug": "debug-haskell-space-leaks-statet-accumulators",
+    "language": "Haskell",
+    "code": "Heap Exhaustion (Space Leak)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/debug-haskell-space-leaks-statet-accumulators.js",
+    "tags": [
+      "Rust",
+      "Haskell",
+      "Backend",
+      "Memory",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915202,
+    "title": "Mitigate RocksDB L0 Compaction Write Stalls",
+    "slug": "mitigate-rocksdb-l0-compaction-write-stalls",
+    "language": "RocksDB / C++",
+    "code": "Status::Busy (Write Stall)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/mitigate-rocksdb-l0-compaction-write-stalls.js",
+    "tags": [
+      "SQL",
+      "Database",
+      "Performance",
+      "Storage",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915203,
+    "title": "Aerial TV: Clean Open-Source tvOS Launcher for Android TV",
+    "slug": "aerial-tv-open-source-tvos-launcher-android-tv",
+    "language": "Kotlin / Android",
+    "code": "Trend",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/aerial-tv-open-source-tvos-launcher-android-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1792894930,
     "title": "Fix Rust Async Cancellation in Multiplexed Drivers",
     "slug": "fix-rust-async-cancellation-hazards-multiplexed-stream",
@@ -848,68 +910,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-20",
     "path": "data/posts/2026-10/cleanyourtv-android-google-tv-debloat-apple-tv-style.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792483587,
-    "title": "Fixing gRPC HTTP/2 Stream Flow-Control Deadlocks",
-    "slug": "grpc-http2-flow-control-window-starvation",
-    "language": "Go",
-    "code": "RESOURCE_EXHAUSTED",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/grpc-http2-flow-control-window-starvation.js",
-    "tags": [
-      "Go",
-      "Networking",
-      "gRPC",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792483588,
-    "title": "Fixing Redis BGSAVE CoW Spikes and Kernel THP Traps",
-    "slug": "redis-bgsave-cow-memory-spikes-thp-latency",
-    "language": "Docker",
-    "code": "OOMKilled",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/redis-bgsave-cow-memory-spikes-thp-latency.js",
-    "tags": [
-      "Docker",
-      "Redis",
-      "Infra",
-      "Linux",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792483589,
-    "title": "Fixing Elixir GenServer Mailbox Explosions",
-    "slug": "elixir-genserver-mailbox-explosion-backpressure",
-    "language": "Docker",
-    "code": "ProcessQueueOverflow",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/elixir-genserver-mailbox-explosion-backpressure.js",
-    "tags": [
-      "Docker",
-      "Kubernetes",
-      "Backend",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792483590,
-    "title": "Gathin23/cleanyourtv: Debloat Android & Google TV",
-    "slug": "gathin23-cleanyourtv-debloat-android-google-tv",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-20",
-    "path": "data/posts/2026-10/gathin23-cleanyourtv-debloat-android-google-tv.js",
     "tags": [
       "Tech Trend",
       "GitHub",

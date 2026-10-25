@@ -1,5 +1,67 @@
 [
   {
+    "id": 1792915200,
+    "title": "Fix eBPF Verifier Failures from Path State Pruning",
+    "slug": "resolve-ebpf-verifier-path-dependent-state-pruning",
+    "language": "Rust",
+    "code": "EINVAL (BPF_VERIFIER_PRUNING)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/resolve-ebpf-verifier-path-dependent-state-pruning.js",
+    "tags": [
+      "Rust",
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915201,
+    "title": "Fix Haskell Space Leaks in StateT Accumulators",
+    "slug": "debug-haskell-space-leaks-statet-accumulators",
+    "language": "Haskell",
+    "code": "Heap Exhaustion (Space Leak)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/debug-haskell-space-leaks-statet-accumulators.js",
+    "tags": [
+      "Rust",
+      "Haskell",
+      "Backend",
+      "Memory",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915202,
+    "title": "Mitigate RocksDB L0 Compaction Write Stalls",
+    "slug": "mitigate-rocksdb-l0-compaction-write-stalls",
+    "language": "RocksDB / C++",
+    "code": "Status::Busy (Write Stall)",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/mitigate-rocksdb-l0-compaction-write-stalls.js",
+    "tags": [
+      "SQL",
+      "Database",
+      "Performance",
+      "Storage",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792915203,
+    "title": "Aerial TV: Clean Open-Source tvOS Launcher for Android TV",
+    "slug": "aerial-tv-open-source-tvos-launcher-android-tv",
+    "language": "Kotlin / Android",
+    "code": "Trend",
+    "date": "2026-10-25",
+    "path": "data/posts/2026-10/aerial-tv-open-source-tvos-launcher-android-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1792894930,
     "title": "Fix Rust Async Cancellation in Multiplexed Drivers",
     "slug": "fix-rust-async-cancellation-hazards-multiplexed-stream",
