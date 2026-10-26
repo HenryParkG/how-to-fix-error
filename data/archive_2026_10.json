@@ -1,5 +1,69 @@
 [
   {
+    "id": 1793002887,
+    "title": "Prevent BEAM Scheduler Collapse from Dirty NIFs",
+    "slug": "beam-scheduler-collapse-unpreempted-dirty-nif",
+    "language": "Rust",
+    "code": "ERL_NIF_DIRTY_SCHEDULER_COLLAPSE",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/beam-scheduler-collapse-unpreempted-dirty-nif.js",
+    "tags": [
+      "Rust",
+      "Erlang",
+      "Elixir",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002888,
+    "title": "Resolve gRPC Deadlocks from HTTP/2 Flow-Control Window",
+    "slug": "grpc-deadlock-http2-flow-control-window-exhaustion",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_EXHAUSTION",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/grpc-deadlock-http2-flow-control-window-exhaustion.js",
+    "tags": [
+      "Go",
+      "Microservices",
+      "Networking",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002889,
+    "title": "Mitigate Redis Latency Spikes from THP During BGSAVE",
+    "slug": "redis-latency-spikes-transparent-hugepages-bgsave",
+    "language": "Docker",
+    "code": "KERNEL_THP_COW_LATENCY",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/redis-latency-spikes-transparent-hugepages-bgsave.js",
+    "tags": [
+      "Docker",
+      "Linux",
+      "Kubernetes",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002890,
+    "title": "pengchujin/aerial-tv: Clean tvOS-Style Android TV Desktop",
+    "slug": "aerial-tv-clean-tvos-launcher-for-android-tv",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/aerial-tv-clean-tvos-launcher-for-android-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java",
+      "Infra"
+    ]
+  },
+  {
     "id": 1792981592,
     "title": "Fix Kafka Rebalance Storms and Heartbeat Starvation",
     "slug": "fix-kafka-rebalance-storms-heartbeat-starvation",

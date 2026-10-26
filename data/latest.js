@@ -1,5 +1,69 @@
 var postsLatest = [
   {
+    "id": 1793002887,
+    "title": "Prevent BEAM Scheduler Collapse from Dirty NIFs",
+    "slug": "beam-scheduler-collapse-unpreempted-dirty-nif",
+    "language": "Rust",
+    "code": "ERL_NIF_DIRTY_SCHEDULER_COLLAPSE",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/beam-scheduler-collapse-unpreempted-dirty-nif.js",
+    "tags": [
+      "Rust",
+      "Erlang",
+      "Elixir",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002888,
+    "title": "Resolve gRPC Deadlocks from HTTP/2 Flow-Control Window",
+    "slug": "grpc-deadlock-http2-flow-control-window-exhaustion",
+    "language": "Go",
+    "code": "HTTP2_FLOW_CONTROL_EXHAUSTION",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/grpc-deadlock-http2-flow-control-window-exhaustion.js",
+    "tags": [
+      "Go",
+      "Microservices",
+      "Networking",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002889,
+    "title": "Mitigate Redis Latency Spikes from THP During BGSAVE",
+    "slug": "redis-latency-spikes-transparent-hugepages-bgsave",
+    "language": "Docker",
+    "code": "KERNEL_THP_COW_LATENCY",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/redis-latency-spikes-transparent-hugepages-bgsave.js",
+    "tags": [
+      "Docker",
+      "Linux",
+      "Kubernetes",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793002890,
+    "title": "pengchujin/aerial-tv: Clean tvOS-Style Android TV Desktop",
+    "slug": "aerial-tv-clean-tvos-launcher-for-android-tv",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/aerial-tv-clean-tvos-launcher-for-android-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java",
+      "Infra"
+    ]
+  },
+  {
     "id": 1792981592,
     "title": "Fix Kafka Rebalance Storms and Heartbeat Starvation",
     "slug": "fix-kafka-rebalance-storms-heartbeat-starvation",
@@ -848,72 +912,6 @@ var postsLatest = [
     "tags": [
       "Tech Trend",
       "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792570108,
-    "title": "Debugging eBPF Verifier & JIT Issues",
-    "slug": "ebpf-verifier-jit-debugging",
-    "language": "Linux Kernel",
-    "code": "EBPF_VERIFIER_ERR",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/ebpf-verifier-jit-debugging.js",
-    "tags": [
-      "eBPF",
-      "Linux Kernel",
-      "Observability",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792570109,
-    "title": "Mitigating PyTorch CUDA OOMs: Fragmentation & Backprop",
-    "slug": "pytorch-cuda-oom-fragmentation-nondeterminism",
-    "language": "Python",
-    "code": "CUDA_OOM",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/pytorch-cuda-oom-fragmentation-nondeterminism.js",
-    "tags": [
-      "PyTorch",
-      "CUDA",
-      "Deep Learning",
-      "Memory Management",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792570110,
-    "title": "Elasticsearch: Shard Relocation & Data Inconsistency",
-    "slug": "elasticsearch-shard-relocation-data-inconsistency",
-    "language": "Java",
-    "code": "ES_SHARD_RELOCATION_FAILURE",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/elasticsearch-shard-relocation-data-inconsistency.js",
-    "tags": [
-      "Elasticsearch",
-      "Distributed Systems",
-      "Data Integrity",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792570111,
-    "title": "DeepInfer: High-Performance LLM Inference from DeepSeek",
-    "slug": "deepinfer-deepseek-llm-inference",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/deepinfer-deepseek-llm-inference.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "AI",
-      "LLM",
-      "Inference",
       "Python"
     ]
   }
