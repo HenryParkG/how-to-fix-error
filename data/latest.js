@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1792981592,
+    "title": "Fix Kafka Rebalance Storms and Heartbeat Starvation",
+    "slug": "fix-kafka-rebalance-storms-heartbeat-starvation",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/fix-kafka-rebalance-storms-heartbeat-starvation.js",
+    "tags": [
+      "Kafka",
+      "Java",
+      "Distributed Systems",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792981593,
+    "title": "Diagnose Silent TCP Packet Drops from Conntrack Exhaustion",
+    "slug": "diagnose-k8s-conntrack-exhaustion-packet-drops",
+    "language": "Kubernetes",
+    "code": "NF_CONNTRACK_FULL",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/diagnose-k8s-conntrack-exhaustion-packet-drops.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Networking",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792981594,
+    "title": "Fix WiredTiger Ticket Exhaustion During Checkpoints",
+    "slug": "fix-mongodb-wiredtiger-ticket-exhaustion-checkpoints",
+    "language": "Go",
+    "code": "WT_TICKET_EXHAUSTION",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/fix-mongodb-wiredtiger-ticket-exhaustion-checkpoints.js",
+    "tags": [
+      "Go",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1792981595,
+    "title": "Aerial TV: Clean tvOS Launcher for Android TVs",
+    "slug": "aerial-tv-clean-apple-tvos-launcher-android-tv",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/aerial-tv-clean-apple-tvos-launcher-android-tv.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1792935352,
     "title": "Fix PyTorch CUDA OOM from Allocator Fragmentation",
     "slug": "pytorch-cuda-oom-native-caching-allocator-fragmentation",
@@ -855,65 +914,6 @@ var postsLatest = [
       "AI",
       "LLM",
       "Inference",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792550054,
-    "title": "Fix Go STW Preemption Starvation in CPU Loops",
-    "slug": "fix-go-runtime-stw-preemption-starvation",
-    "language": "Go",
-    "code": "STWStarvation",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/fix-go-runtime-stw-preemption-starvation.js",
-    "tags": [
-      "Go",
-      "Concurrency",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792550055,
-    "title": "Mitigate HNSW Vector Index Bloat from Deletes",
-    "slug": "mitigate-hnsw-vector-index-fragmentation-bloat",
-    "language": "Rust",
-    "code": "HNSWFragmentation",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/mitigate-hnsw-vector-index-fragmentation-bloat.js",
-    "tags": [
-      "Rust",
-      "VectorDB",
-      "AI",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792550056,
-    "title": "Fix WebGPU Dynamic Uniform Buffer Alignment",
-    "slug": "fix-webgpu-dynamic-uniform-buffer-alignment",
-    "language": "TypeScript",
-    "code": "WebGPUAlignmentError",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/fix-webgpu-dynamic-uniform-buffer-alignment.js",
-    "tags": [
-      "TypeScript",
-      "WebGPU",
-      "Frontend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792550057,
-    "title": "DeepInfer: High-Performance DeepSeek Inference",
-    "slug": "deepinfer-deepseek-high-performance-inference",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
       "Python"
     ]
   }

@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix WiredTiger Ticket Exhaustion During Checkpoints",
+    "slug": "fix-mongodb-wiredtiger-ticket-exhaustion-checkpoints",
+    "language": "Go",
+    "code": "WT_TICKET_EXHAUSTION",
+    "tags": [
+        "Go",
+        "SQL",
+        "Database",
+        "Error Fix"
+    ],
+    "analysis": "<p>In high-throughput write workloads on MongoDB, application queries often abruptly stall, reporting driver timeout errors such as <code>context deadline exceeded</code>. When inspecting MongoDB's internal metrics, <code>wiredTiger.concurrentTransactions.write.available</code> drops to 0, signaling complete exhaustion of concurrency tickets.</p><p>By default, WiredTiger allocates 128 read and 128 write concurrency tickets. Every 60 seconds (or after 2GB of transaction data), WiredTiger performs an atomic checkpoint to synchronize in-memory dirty cache pages to disk via <code>fsync</code>. If disk write latency increases or the dirty cache volume surpasses 20%, foreground client threads are co-opted to assist with page eviction while simultaneously waiting for checkpoint lock reconciliation. This starves client operations of execution tickets, causing cascading latencies and query timeouts.</p>",
+    "root_cause": "Aggressive background checkpoints combined with heavy dirty page accumulation consume all available WiredTiger read/write tickets, causing client operations to block indefinitely waiting for transaction slots.",
+    "bad_code": "package main\n\nimport (\n\t\"context\"\n\t\"time\"\n\t\"go.mongodb.org/mongo-driver/mongo\"\n\t\"go.mongodb.org/mongo-driver/mongo/options\"\n)\n\nfunc main() {\n\t// BUG: Large un-throttled batch writes with unbounded connection pool\n\tclientOpts := options.Client().\n\t\tApplyURI(\"mongodb://mongodb.prod:27017\").\n\t\tSetMaxPoolSize(1000). // Floods mongod with concurrent worker threads\n\t\tSetTimeout(2 * time.Second)\n\n\tclient, _ := mongo.Connect(context.Background(), clientOpts)\n\tcoll := client.Database(\"telemetry\").Collection(\"events\")\n\n\t// Floods engine without backpressure; exhausts 128 write tickets during 60s checkpoint\n\tfor i := 0; i < 50000; i++ {\n\t\tgo func() {\n\t\t\t_, err := coll.InsertOne(context.Background(), map[string]interface{}{\"ts\": time.Now()})\n\t\t\tif err != nil {\n\t\t\t\t// Throws: command error: context deadline exceeded (WiredTiger ticket starvation)\n\t\t\t\tpanic(err)\n\t\t\t}\n\t\t}()\n\t}\n}",
+    "solution_desc": "Mitigate ticket exhaustion by pacing WiredTiger checkpoints, tuning dirty cache eviction trigger levels, right-sizing client driver connection pools, and using rate-limited batch writes with backpressure.",
+    "good_code": "// 1. Tune WiredTiger engine runtime eviction & checkpoint parameters via mongosh:\n// db.adminCommand({\n//   setParameter: 1,\n//   wiredTigerEngineRuntimeConfig: \"eviction=(threads_min=4,threads_max=8),checkpoint=(wait=30)\"\n// });\n\npackage main\n\nimport (\n\t\"context\"\n\t\"time\"\n\t\"go.mongodb.org/mongo-driver/mongo\"\n\t\"go.mongodb.org/mongo-driver/mongo/options\"\n\t\"golang.org/x/sync/semaphore\"\n)\n\nfunc main() {\n\tclientOpts := options.Client().\n\t\tApplyURI(\"mongodb://mongodb.prod:27017\").\n\t\tSetMaxPoolSize(64). // Constrain pool to prevent ticket flooding\n\t\tSetMinPoolSize(10).\n\t\tSetTimeout(10 * time.Second)\n\n\tclient, _ := mongo.Connect(context.Background(), clientOpts)\n\tcoll := client.Database(\"telemetry\").Collection(\"events\")\n\n\t// Application-side concurrency limiter matching storage capacity\n\tsem := semaphore.NewWeighted(64)\n\tfor i := 0; i < 50000; i++ {\n\t\t_ = sem.Acquire(context.Background(), 1)\n\t\tgo func() {\n\t\t\tdefer sem.Release(1)\n\t\t\tctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)\n\t\t\tdefer cancel()\n\t\t\t_, _ = coll.InsertOne(ctx, map[string]interface{}{\"ts\": time.Now()})\n\t\t}()\n\t}\n}",
+    "verification": "Run 'db.serverStatus().wiredTiger.concurrentTransactions' in mongosh under peak load. Ensure 'write.available' and 'read.available' remain above 0 and dirty cache stays under 20% in 'wiredTiger.cache.tracked dirty bytes in the cache'.",
+    "date": "2026-10-26",
+    "id": 1792981594,
+    "type": "error"
+});
