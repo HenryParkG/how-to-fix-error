@@ -1,5 +1,70 @@
 var postsLatest = [
   {
+    "id": 1793029741,
+    "title": "Kubernetes: Diagnosing Persistent CrashLoopBackOff from Startup Probes",
+    "slug": "kubernetes-diagnosing-crashloopbackoff-startup-probes",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/kubernetes-diagnosing-crashloopbackoff-startup-probes.js",
+    "tags": [
+      "Kubernetes",
+      "Troubleshooting",
+      "Containerization",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793029742,
+    "title": "Spark: Debugging OOM Errors with Shuffle Spill & Tungsten Memory",
+    "slug": "spark-debugging-oom-shuffle-spill-tungsten-memory",
+    "language": "Spark",
+    "code": "OOM Error",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/spark-debugging-oom-shuffle-spill-tungsten-memory.js",
+    "tags": [
+      "Spark",
+      "Big Data",
+      "Performance",
+      "JVM",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793029743,
+    "title": "Rust: Resolving Lifetime Errors with Self-Referential Structs & Pinning",
+    "slug": "rust-lifetime-errors-self-referential-structs-pinning",
+    "language": "Rust",
+    "code": "Lifetime Error",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/rust-lifetime-errors-self-referential-structs-pinning.js",
+    "tags": [
+      "Rust",
+      "Memory Safety",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793029744,
+    "title": "Aerial TV: A Clean, Ad-Free Android TV Launcher",
+    "slug": "aerial-tv-clean-ad-free-android-tv-launcher",
+    "language": "Android",
+    "code": "Trend",
+    "date": "2026-10-26",
+    "path": "data/posts/2026-10/aerial-tv-clean-ad-free-android-tv-launcher.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Android",
+      "Mobile Development",
+      "Frontend"
+    ]
+  },
+  {
     "id": 1793002887,
     "title": "Prevent BEAM Scheduler Collapse from Dirty NIFs",
     "slug": "beam-scheduler-collapse-unpreempted-dirty-nif",
@@ -847,68 +912,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-22",
     "path": "data/posts/2026-10/analyze-cleanyourtv-debloat-android-google-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792592098,
-    "title": "Fix C++20 Coroutine Frame Reference Lifetime Bugs",
-    "slug": "cpp20-coroutine-dangling-reference-lifetime-fix",
-    "language": "C++",
-    "code": "DanglingReferenceUB",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/cpp20-coroutine-dangling-reference-lifetime-fix.js",
-    "tags": [
-      "C++20",
-      "Coroutines",
-      "Memory Safety",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792592099,
-    "title": "Mitigate PostgreSQL TXID Wraparound Vacuum Starvation",
-    "slug": "postgres-txid-wraparound-vacuum-starvation",
-    "language": "PostgreSQL",
-    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/postgres-txid-wraparound-vacuum-starvation.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "Performance",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792592100,
-    "title": "Fix Kafka Consumer Group max.poll.interval.ms Storms",
-    "slug": "kafka-consumer-rebalance-max-poll-interval-ms",
-    "language": "Kafka",
-    "code": "CommitFailedException",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/kafka-consumer-rebalance-max-poll-interval-ms.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Concurrency",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792592101,
-    "title": "DeepInfer: High-Scale DeepSeek Model Inference Engine",
-    "slug": "deepinfer-deepseek-high-performance-inference",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-21",
-    "path": "data/posts/2026-10/deepinfer-deepseek-high-performance-inference.js",
     "tags": [
       "Tech Trend",
       "GitHub",

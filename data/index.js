@@ -1,5 +1,70 @@
 var postsIndex = [
     {
+        "id": 1793029741,
+        "title": "Kubernetes: Diagnosing Persistent CrashLoopBackOff from Startup Probes",
+        "slug": "kubernetes-diagnosing-crashloopbackoff-startup-probes",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-10-26",
+        "path": "data/posts/2026-10/kubernetes-diagnosing-crashloopbackoff-startup-probes.js",
+        "tags": [
+            "Kubernetes",
+            "Troubleshooting",
+            "Containerization",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793029742,
+        "title": "Spark: Debugging OOM Errors with Shuffle Spill & Tungsten Memory",
+        "slug": "spark-debugging-oom-shuffle-spill-tungsten-memory",
+        "language": "Spark",
+        "code": "OOM Error",
+        "date": "2026-10-26",
+        "path": "data/posts/2026-10/spark-debugging-oom-shuffle-spill-tungsten-memory.js",
+        "tags": [
+            "Spark",
+            "Big Data",
+            "Performance",
+            "JVM",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793029743,
+        "title": "Rust: Resolving Lifetime Errors with Self-Referential Structs & Pinning",
+        "slug": "rust-lifetime-errors-self-referential-structs-pinning",
+        "language": "Rust",
+        "code": "Lifetime Error",
+        "date": "2026-10-26",
+        "path": "data/posts/2026-10/rust-lifetime-errors-self-referential-structs-pinning.js",
+        "tags": [
+            "Rust",
+            "Memory Safety",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793029744,
+        "title": "Aerial TV: A Clean, Ad-Free Android TV Launcher",
+        "slug": "aerial-tv-clean-ad-free-android-tv-launcher",
+        "language": "Android",
+        "code": "Trend",
+        "date": "2026-10-26",
+        "path": "data/posts/2026-10/aerial-tv-clean-ad-free-android-tv-launcher.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Android",
+            "Mobile Development",
+            "Frontend"
+        ]
+    },
+    {
         "id": 1793002887,
         "title": "Prevent BEAM Scheduler Collapse from Dirty NIFs",
         "slug": "beam-scheduler-collapse-unpreempted-dirty-nif",
