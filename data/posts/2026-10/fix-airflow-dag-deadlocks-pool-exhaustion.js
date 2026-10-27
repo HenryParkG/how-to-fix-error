@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix Airflow DAG Deadlocks & Pool Exhaustion",
+    "slug": "fix-airflow-dag-deadlocks-pool-exhaustion",
+    "language": "Python",
+    "code": "AirflowPoolDeadlock",
+    "tags": [
+        "Python",
+        "Docker",
+        "AWS",
+        "Error Fix"
+    ],
+    "analysis": "<p>In Apache Airflow, DAG deadlocks frequently manifest when task instances enter an unresolvable waiting state while exhausting worker concurrency pools. This issue commonly surfaces in high-frequency data pipelines featuring complex cross-DAG dependencies, upstream sensors, or dynamic task mapping. When a task pool is depleted, no new tasks can be scheduled to run until running tasks release their allocated pool slots.</p><p>The classic deadlock scenario happens when downstream tasks or external data producers require worker capacity to finish processing, but worker pool slots are completely monopolized by upstream `SmartSensor` or `BaseSensorOperator` tasks operating in `poke` mode. Because standard `poke` sensors hold their execution thread and occupied pool slot continuously throughout their sleep intervals, they starve worker executors (such as Celery or Kubernetes workers) and cause a fatal cyclical dependency where waiting tasks prevent the arrival of data that would unblock them.</p>",
+    "root_cause": "Blocking sensors operating in `mode='poke'` occupy 100% of available Airflow pool slots, preventing downstream and upstream producer tasks from being scheduled and resulting in scheduler starvation.",
+    "bad_code": "from datetime import datetime\nfrom airflow import DAG\nfrom airflow.sensors.filesystem import FileSensor\nfrom airflow.operators.python import PythonOperator\n\nwith DAG(\n    dag_id=\"deadlock_prone_pipeline\",\n    start_date=datetime(2024, 1, 1),\n    schedule_interval=\"@hourly\",\n    max_active_runs=16, # High active runs\n) as dag:\n    # BUG: Sensor defaults to mode='poke' within a small pool.\n    # 16 DAG runs * 1 sensor = 16 occupied slots, exhausting 'default_pool'.\n    wait_for_input = FileSensor(\n        task_id=\"wait_for_input\",\n        filepath=\"/tmp/incoming_data.csv\",\n        poke_interval=60,\n        timeout=3600,\n        pool=\"default_pool\",\n        mode=\"poke\", # Keeps worker slot occupied while sleeping\n    )\n\n    process_data = PythonOperator(\n        task_id=\"process_data\",\n        python_callable=lambda: print(\"Processing...\"),\n        pool=\"default_pool\",\n    )\n\n    wait_for_input >> process_data",
+    "solution_desc": "Convert blocking sensors to `mode='reschedule'`, which frees the worker slot between intervals. Define dedicated Airflow pools to segregate sensors from transformation tasks, and set strict `max_active_runs` and `max_active_tasks_per_dag` limits to prevent concurrency starvation.",
+    "good_code": "from datetime import datetime, timedelta\nfrom airflow import DAG\nfrom airflow.sensors.filesystem import FileSensor\nfrom airflow.operators.python import PythonOperator\n\nwith DAG(\n    dag_id=\"resilient_pipeline\",\n    start_date=datetime(2024, 1, 1),\n    schedule_interval=\"@hourly\",\n    max_active_runs=2, # Restrict concurrent runs\n    catchup=False,\n) as dag:\n    # Reschedule mode releases worker slot during wait cycles\n    wait_for_input = FileSensor(\n        task_id=\"wait_for_input\",\n        filepath=\"/tmp/incoming_data.csv\",\n        poke_interval=120,\n        timeout=1800,\n        mode=\"reschedule\", # Relinquishes worker thread & pool slot between checks\n        pool=\"sensor_pool\", # Isolated pool for sensors\n        execution_timeout=timedelta(minutes=45),\n    )\n\n    process_data = PythonOperator(\n        task_id=\"process_data\",\n        python_callable=lambda: print(\"Processing...\"),\n        pool=\"compute_pool\", # Compute tasks never compete with sensors\n        execution_timeout=timedelta(minutes=15),\n    )\n\n    wait_for_input >> process_data",
+    "verification": "Execute `airflow pools list` from the CLI to observe slot allocations under load. Verify in the Airflow UI Gantt view that sensor tasks enter `up_for_reschedule` status rather than monopolizing `running` slots.",
+    "date": "2026-10-27",
+    "id": 1793090757,
+    "type": "error"
+});

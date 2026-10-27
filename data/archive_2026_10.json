@@ -1,5 +1,65 @@
 [
   {
+    "id": 1793090755,
+    "title": "Diagnose Goroutine Leaks & Go Scheduler Contention",
+    "slug": "diagnose-goroutine-leaks-scheduler-contention-go",
+    "language": "Go",
+    "code": "GoroutineLeak",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/diagnose-goroutine-leaks-scheduler-contention-go.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Profiling",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090756,
+    "title": "Fix Elasticsearch Yellow Status & Shard Allocation",
+    "slug": "fix-elasticsearch-yellow-status-shard-allocation",
+    "language": "Elasticsearch",
+    "code": "ElasticsearchYellowStatus",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/fix-elasticsearch-yellow-status-shard-allocation.js",
+    "tags": [
+      "Java",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090757,
+    "title": "Fix Airflow DAG Deadlocks & Pool Exhaustion",
+    "slug": "fix-airflow-dag-deadlocks-pool-exhaustion",
+    "language": "Python",
+    "code": "AirflowPoolDeadlock",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/fix-airflow-dag-deadlocks-pool-exhaustion.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090758,
+    "title": "Android Ad Cleaner: Debloat OEM Systems with AI & ADB",
+    "slug": "android-ad-cleaner-ai-oem-debloat-adb",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/android-ad-cleaner-ai-oem-debloat-adb.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793070230,
     "title": "Envoy/Istio: Debugging 503 UC Cascades",
     "slug": "envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts",

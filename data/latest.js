@@ -1,5 +1,65 @@
 var postsLatest = [
   {
+    "id": 1793090755,
+    "title": "Diagnose Goroutine Leaks & Go Scheduler Contention",
+    "slug": "diagnose-goroutine-leaks-scheduler-contention-go",
+    "language": "Go",
+    "code": "GoroutineLeak",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/diagnose-goroutine-leaks-scheduler-contention-go.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Profiling",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090756,
+    "title": "Fix Elasticsearch Yellow Status & Shard Allocation",
+    "slug": "fix-elasticsearch-yellow-status-shard-allocation",
+    "language": "Elasticsearch",
+    "code": "ElasticsearchYellowStatus",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/fix-elasticsearch-yellow-status-shard-allocation.js",
+    "tags": [
+      "Java",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090757,
+    "title": "Fix Airflow DAG Deadlocks & Pool Exhaustion",
+    "slug": "fix-airflow-dag-deadlocks-pool-exhaustion",
+    "language": "Python",
+    "code": "AirflowPoolDeadlock",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/fix-airflow-dag-deadlocks-pool-exhaustion.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "AWS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793090758,
+    "title": "Android Ad Cleaner: Debloat OEM Systems with AI & ADB",
+    "slug": "android-ad-cleaner-ai-oem-debloat-adb",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/android-ad-cleaner-ai-oem-debloat-adb.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793070230,
     "title": "Envoy/Istio: Debugging 503 UC Cascades",
     "slug": "envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts",
@@ -859,68 +919,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-22",
     "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-apple-tv-launcher.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792656526,
-    "title": "Mitigate GenServer Starvation from Selective Receive",
-    "slug": "mitigate-elixir-genserver-selective-receive-starvation",
-    "language": "Elixir",
-    "code": "BEAM_MAILBOX_STARVATION",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/mitigate-elixir-genserver-selective-receive-starvation.js",
-    "tags": [
-      "Elixir",
-      "BEAM",
-      "Concurrency",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792656527,
-    "title": "Fix gRPC Stream Deadlocks from Flow Control Starvation",
-    "slug": "fix-grpc-http2-stream-flow-control-deadlocks",
-    "language": "Go",
-    "code": "HTTP2_FLOW_CONTROL_DEADLOCK",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-grpc-http2-stream-flow-control-deadlocks.js",
-    "tags": [
-      "gRPC",
-      "HTTP/2",
-      "FlowControl",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792656528,
-    "title": "Mitigate Redis BGSAVE Spikes from THP CoW Amplification",
-    "slug": "mitigate-redis-bgsave-thp-cow-latency-spikes",
-    "language": "Redis / Linux",
-    "code": "THP_COW_AMPLIFICATION",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/mitigate-redis-bgsave-thp-cow-latency-spikes.js",
-    "tags": [
-      "Redis",
-      "Linux",
-      "Performance",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792656529,
-    "title": "CleanYourTV: Debloating Android TV via Wireless ADB",
-    "slug": "cleanyourtv-debloat-android-google-tv-streamline",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-streamline.js",
     "tags": [
       "Tech Trend",
       "GitHub",
