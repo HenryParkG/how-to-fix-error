@@ -1,5 +1,72 @@
 var postsLatest = [
   {
+    "id": 1793113361,
+    "title": "C++20 Coroutines: Debugging Memory Leaks & Suspension Pitfalls",
+    "slug": "cpp20-coroutines-memory-leaks-suspension-pitfalls",
+    "language": "C++",
+    "code": "Coroutine Error",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/cpp20-coroutines-memory-leaks-suspension-pitfalls.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Memory Management",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793113362,
+    "title": "PyTorch: Resolving CUDA OOM from Hidden Memory Allocations",
+    "slug": "pytorch-cuda-oom-hidden-memory-allocations-fragmentation",
+    "language": "PyTorch, Python, CUDA",
+    "code": "CUDA OOM",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/pytorch-cuda-oom-hidden-memory-allocations-fragmentation.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "Deep Learning",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793113363,
+    "title": "PostgreSQL: Diagnosing XID Wraparound & Mitigating Aggressive Autovacuum",
+    "slug": "postgresql-xid-wraparound-aggressive-autovacuum",
+    "language": "PostgreSQL",
+    "code": "XID Wraparound",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/postgresql-xid-wraparound-aggressive-autovacuum.js",
+    "tags": [
+      "SQL",
+      "Database",
+      "Maintenance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793113364,
+    "title": "Why 'gpu-unlock-ada' is Trending: Unlocking RTX 4090/4070 Ti SUPER Tensor Cores",
+    "slug": "gpu-unlock-ada-trending-rtx-4090-4070-ti-super-tensor-cores",
+    "language": "NVIDIA CUDA, GPU Firmware",
+    "code": "Trend",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/gpu-unlock-ada-trending-rtx-4090-4070-ti-super-tensor-cores.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "GPU Computing",
+      "NVIDIA",
+      "Firmware",
+      "AI/ML",
+      "Infra"
+    ]
+  },
+  {
     "id": 1793090755,
     "title": "Diagnose Goroutine Leaks & Go Scheduler Contention",
     "slug": "diagnose-goroutine-leaks-scheduler-contention-go",
@@ -858,67 +925,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-23",
     "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792678470,
-    "title": "Fix Istio 503 UC Connection Resets on Idle Timeouts",
-    "slug": "fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch",
-    "language": "Kubernetes",
-    "code": "503 UC upstream_reset_before_response_started",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-istio-503-uc-tcp-keepalive-idle-timeout-mismatch.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Go",
-      "Networking",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792678471,
-    "title": "Resolve Haskell Space Leaks from StateT Thunks",
-    "slug": "resolve-haskell-space-leaks-statet-thunk-accumulation",
-    "language": "Haskell",
-    "code": "Space Leak (OutOfMemory)",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/resolve-haskell-space-leaks-statet-thunk-accumulation.js",
-    "tags": [
-      "Backend",
-      "Rust",
-      "Haskell",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792678472,
-    "title": "Fix Rust Async Cancellation Invariant Violations",
-    "slug": "fix-rust-async-cancellation-invariant-violations",
-    "language": "Rust",
-    "code": "AsyncCancellationSafety",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-rust-async-cancellation-invariant-violations.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792678473,
-    "title": "CleanYourTV: Wireless Debloating & Apple TV UX on Android",
-    "slug": "cleanyourtv-debloat-android-google-tv-apple-tv-launcher",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-apple-tv-launcher.js",
     "tags": [
       "Tech Trend",
       "GitHub",
