@@ -1,5 +1,73 @@
 var postsIndex = [
     {
+        "id": 1793070230,
+        "title": "Envoy/Istio: Debugging 503 UC Cascades",
+        "slug": "envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts",
+        "language": "Envoy, Istio",
+        "code": "503 UC (Upstream Connection)",
+        "date": "2026-10-27",
+        "path": "data/posts/2026-10/envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts.js",
+        "tags": [
+            "Envoy",
+            "Istio",
+            "TCP",
+            "Networking",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793070231,
+        "title": "WebGPU: Eliminating Render Pipeline Stalls",
+        "slug": "webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment",
+        "language": "WebGPU, JavaScript",
+        "code": "Alignment Error",
+        "date": "2026-10-27",
+        "path": "data/posts/2026-10/webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment.js",
+        "tags": [
+            "WebGPU",
+            "Graphics",
+            "JavaScript",
+            "Frontend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793070232,
+        "title": "Qdrant: HNSW Degradation & Memory Bloat",
+        "slug": "qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts",
+        "language": "Qdrant, Vector Database",
+        "code": "HNSW Degrade",
+        "date": "2026-10-27",
+        "path": "data/posts/2026-10/qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts.js",
+        "tags": [
+            "Qdrant",
+            "Vector Database",
+            "HNSW",
+            "Database",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793070233,
+        "title": "GPU-Unlock-Ada: Unlocking NVIDIA Ada Lovelace Tensor Cores",
+        "slug": "gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090",
+        "language": "Firmware, C/C++, Python",
+        "code": "Trend",
+        "date": "2026-10-27",
+        "path": "data/posts/2026-10/gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "GPU",
+            "AI/ML",
+            "Hardware",
+            "Linux",
+            "Backend"
+        ]
+    },
+    {
         "id": 1793029741,
         "title": "Kubernetes: Diagnosing Persistent CrashLoopBackOff from Startup Probes",
         "slug": "kubernetes-diagnosing-crashloopbackoff-startup-probes",

@@ -1,5 +1,73 @@
 var postsLatest = [
   {
+    "id": 1793070230,
+    "title": "Envoy/Istio: Debugging 503 UC Cascades",
+    "slug": "envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts",
+    "language": "Envoy, Istio",
+    "code": "503 UC (Upstream Connection)",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts.js",
+    "tags": [
+      "Envoy",
+      "Istio",
+      "TCP",
+      "Networking",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793070231,
+    "title": "WebGPU: Eliminating Render Pipeline Stalls",
+    "slug": "webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment",
+    "language": "WebGPU, JavaScript",
+    "code": "Alignment Error",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment.js",
+    "tags": [
+      "WebGPU",
+      "Graphics",
+      "JavaScript",
+      "Frontend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793070232,
+    "title": "Qdrant: HNSW Degradation & Memory Bloat",
+    "slug": "qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts",
+    "language": "Qdrant, Vector Database",
+    "code": "HNSW Degrade",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts.js",
+    "tags": [
+      "Qdrant",
+      "Vector Database",
+      "HNSW",
+      "Database",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793070233,
+    "title": "GPU-Unlock-Ada: Unlocking NVIDIA Ada Lovelace Tensor Cores",
+    "slug": "gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090",
+    "language": "Firmware, C/C++, Python",
+    "code": "Trend",
+    "date": "2026-10-27",
+    "path": "data/posts/2026-10/gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "GPU",
+      "AI/ML",
+      "Hardware",
+      "Linux",
+      "Backend"
+    ]
+  },
+  {
     "id": 1793029741,
     "title": "Kubernetes: Diagnosing Persistent CrashLoopBackOff from Startup Probes",
     "slug": "kubernetes-diagnosing-crashloopbackoff-startup-probes",
@@ -853,65 +921,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-22",
     "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-streamline.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792636422,
-    "title": "Fix Envoy Memory Exhaustion from High-Churn EDS",
-    "slug": "fix-istio-envoy-memory-exhaustion-eds-churn",
-    "language": "Kubernetes",
-    "code": "OOMKilled",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-istio-envoy-memory-exhaustion-eds-churn.js",
-    "tags": [
-      "Kubernetes",
-      "Go",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792636423,
-    "title": "Fix Spark Executor OOM from Shuffle Spill Serialization",
-    "slug": "fix-spark-executor-oom-shuffle-spill-serialization",
-    "language": "Java",
-    "code": "OutOfMemoryError",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-spark-executor-oom-shuffle-spill-serialization.js",
-    "tags": [
-      "Java",
-      "Kubernetes",
-      "AWS",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792636424,
-    "title": "Mitigate MongoDB WiredTiger Eviction Stalls on Updates",
-    "slug": "fix-mongodb-wiredtiger-cache-eviction-stalls",
-    "language": "Docker",
-    "code": "WT_CACHE_FULL",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/fix-mongodb-wiredtiger-cache-eviction-stalls.js",
-    "tags": [
-      "Docker",
-      "Python",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792636425,
-    "title": "CleanYourTV: Debloat Android & Google TV Over Wi-Fi",
-    "slug": "analyze-cleanyourtv-debloat-android-google-tv",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-22",
-    "path": "data/posts/2026-10/analyze-cleanyourtv-debloat-android-google-tv.js",
     "tags": [
       "Tech Trend",
       "GitHub",
