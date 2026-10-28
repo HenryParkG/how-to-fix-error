@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1793188557,
+    "title": "Fixing eBPF Unbounded Loops & Stack Spill Limits",
+    "slug": "ebpf-verifier-unbounded-loops-map-spill-fix",
+    "language": "C / Rust",
+    "code": "BPF_VERIFIER_ERR_LOOP",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/ebpf-verifier-unbounded-loops-map-spill-fix.js",
+    "tags": [
+      "Rust",
+      "Kernel",
+      "eBPF",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188558,
+    "title": "Resolving Kafka Rebalance Storms & Starvation",
+    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-heartbeat-starvation.js",
+    "tags": [
+      "Java",
+      "Distributed Systems",
+      "Kafka",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188559,
+    "title": "Mitigating WiredTiger Cache Stalls & Ticket Exhaustion",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "MongoDB / Python",
+    "code": "WT_TICKET_EXHAUSTION",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "Database",
+      "MongoDB",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188560,
+    "title": "Inside gpu-unlock-ada: Unlocking RTX 40-Series Compute",
+    "slug": "gpu-unlock-ada-rtx-4090-tensor-firmware-patch",
+    "language": "Python / C++",
+    "code": "Trend",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/gpu-unlock-ada-rtx-4090-tensor-firmware-patch.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
     "id": 1793113361,
     "title": "C++20 Coroutines: Debugging Memory Leaks & Suspension Pitfalls",
     "slug": "cpp20-coroutines-memory-leaks-suspension-pitfalls",
@@ -866,65 +929,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-23",
     "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-wifi.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1792722980,
-    "title": "Fix RocksDB L0 Compaction Write Stalls",
-    "slug": "fix-rocksdb-l0-compaction-write-stalls",
-    "language": "Rust",
-    "code": "ROCKSDB_WRITE_STALL",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-rocksdb-l0-compaction-write-stalls.js",
-    "tags": [
-      "Rust",
-      "RocksDB",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792722981,
-    "title": "Fix vLLM KV-Cache Fragmentation Under Skew",
-    "slug": "fix-vllm-kv-cache-fragmentation",
-    "language": "Python",
-    "code": "OutOfMemoryError",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-vllm-kv-cache-fragmentation.js",
-    "tags": [
-      "Python",
-      "Backend",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792722982,
-    "title": "Fix WebGPU Device Lost from Async Buffer Mapping",
-    "slug": "fix-webgpu-device-lost-async-buffer-mapping",
-    "language": "TypeScript",
-    "code": "GPUValidationError",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-webgpu-device-lost-async-buffer-mapping.js",
-    "tags": [
-      "TypeScript",
-      "Frontend",
-      "Next.js",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792722983,
-    "title": "CleanYourTV: Debloat Android and Google TV",
-    "slug": "cleanyourtv-debloat-android-google-tv",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv.js",
     "tags": [
       "Tech Trend",
       "GitHub",

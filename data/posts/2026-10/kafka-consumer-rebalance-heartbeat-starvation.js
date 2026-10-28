@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Resolving Kafka Rebalance Storms & Starvation",
+    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "tags": [
+        "Java",
+        "Distributed Systems",
+        "Kafka",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>Kafka consumer group rebalance storms occur when multiple consumers repeatedly drop out of and rejoin the cluster, causing cluster-wide partition reallocation pauses. In the standard Java consumer client, long message processing phases in the consumer thread block subsequent calls to <code>poll()</code>. If processing latency exceeds <code>max.poll.interval.ms</code>, or garbage collection pauses exceed <code>session.timeout.ms</code>, the Group Coordinator broker assumes the consumer is dead, kicks it out, and reassigns its partitions. When the stalled consumer recovers and attempts to commit offsets, it encounters a <code>CommitFailedException</code>, prompting cascading group rebalances across all workers.</p>",
+    "root_cause": "Synchronous, slow payload processing on the main consumer polling thread blocks execution beyond `max.poll.interval.ms`. Alternatively, aggressive heartbeat starvation triggers false-positive dead node detection, exacerbated by eager rebalance assignor algorithms.",
+    "bad_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"broker:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"batch-processor\");\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"5000\"); // High batch size\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"30000\"); // 30s timeout\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"telemetry\"));\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));\n    for (ConsumerRecord<String, String> record : records) {\n        // Blocking network RPC inside poll thread triggers starvation\n        executeSlowDatabaseRpc(record.value());\n    }\n    consumer.commitSync(); // Throws CommitFailedException after timeout\n}",
+    "solution_desc": "Decouple partition polling from execution using an asynchronous worker pool or reduce `max.poll.records` to ensure processing completes well within `max.poll.interval.ms`. Switch partition assignment strategies from the disruptive default eager strategy to `CooperativeStickyAssignor`, which prevents stop-the-world partition revocations during scale events.",
+    "good_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, \"broker:9092\");\nprops.put(ConsumerConfig.GROUP_ID_CONFIG, \"batch-processor\");\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, \"100\"); // Calibrated batch size\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, \"300000\"); // 5 minutes\nprops.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, \"45000\");\nprops.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, \"15000\");\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG,\n    Collections.singletonList(CooperativeStickyAssignor.class.getName()));\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"telemetry\"));\nExecutorService workers = Executors.newFixedThreadPool(8);\n\nwhile (true) {\n    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(500));\n    if (!records.isEmpty()) {\n        List<CompletableFuture<Void>> futures = new ArrayList<>();\n        for (ConsumerRecord<String, String> record : records) {\n            futures.add(CompletableFuture.runAsync(() -> processRecord(record), workers));\n        }\n        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();\n        consumer.commitSync();\n    }\n}",
+    "verification": "Monitor JMX metrics `kafka.consumer:type=consumer-coordinator-metrics,client-id=*` for `rebalance-rate-per-hour` and `last-rebalance-seconds-ago`. Ensure rebalance counts drop to near zero and verify `CommitFailedException` no longer appears in application log sinks.",
+    "date": "2026-10-28",
+    "id": 1793188558,
+    "type": "error"
+});

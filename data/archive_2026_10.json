@@ -1,5 +1,68 @@
 [
   {
+    "id": 1793188557,
+    "title": "Fixing eBPF Unbounded Loops & Stack Spill Limits",
+    "slug": "ebpf-verifier-unbounded-loops-map-spill-fix",
+    "language": "C / Rust",
+    "code": "BPF_VERIFIER_ERR_LOOP",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/ebpf-verifier-unbounded-loops-map-spill-fix.js",
+    "tags": [
+      "Rust",
+      "Kernel",
+      "eBPF",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188558,
+    "title": "Resolving Kafka Rebalance Storms & Starvation",
+    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/kafka-consumer-rebalance-heartbeat-starvation.js",
+    "tags": [
+      "Java",
+      "Distributed Systems",
+      "Kafka",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188559,
+    "title": "Mitigating WiredTiger Cache Stalls & Ticket Exhaustion",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "MongoDB / Python",
+    "code": "WT_TICKET_EXHAUSTION",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "Database",
+      "MongoDB",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793188560,
+    "title": "Inside gpu-unlock-ada: Unlocking RTX 40-Series Compute",
+    "slug": "gpu-unlock-ada-rtx-4090-tensor-firmware-patch",
+    "language": "Python / C++",
+    "code": "Trend",
+    "date": "2026-10-28",
+    "path": "data/posts/2026-10/gpu-unlock-ada-rtx-4090-tensor-firmware-patch.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
     "id": 1793113361,
     "title": "C++20 Coroutines: Debugging Memory Leaks & Suspension Pitfalls",
     "slug": "cpp20-coroutines-memory-leaks-suspension-pitfalls",
