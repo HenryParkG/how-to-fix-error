@@ -1,5 +1,63 @@
 var postsLatest = [
   {
+    "id": 1793275590,
+    "title": "Mitigating Redis BGSAVE Copy-on-Write Latency Spikes",
+    "slug": "redis-mitigating-bgsave-cow-memory-fork-latency",
+    "language": "Redis",
+    "code": "ERR_FORK_OOM_LATENCY",
+    "date": "2026-10-29",
+    "path": "data/posts/2026-10/redis-mitigating-bgsave-cow-memory-fork-latency.js",
+    "tags": [
+      "Docker",
+      "Kubernetes",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793275591,
+    "title": "Diagnosing GenServer Mailbox Saturation & Starvation",
+    "slug": "elixir-otp-genserver-mailbox-saturation-starvation",
+    "language": "Elixir",
+    "code": "SystemLimitError",
+    "date": "2026-10-29",
+    "path": "data/posts/2026-10/elixir-otp-genserver-mailbox-saturation-starvation.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793275592,
+    "title": "Resolving gRPC HTTP/2 Flow-Control Window Deadlocks",
+    "slug": "grpc-http2-flow-control-window-exhaustion-deadlocks",
+    "language": "Go",
+    "code": "RESOURCE_EXHAUSTED",
+    "date": "2026-10-29",
+    "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion-deadlocks.js",
+    "tags": [
+      "Go",
+      "Kubernetes",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793275593,
+    "title": "Clean Chinese Android Systems with android-ad-cleaner",
+    "slug": "android-ad-cleaner-ai-debloater-trend",
+    "language": "Shell",
+    "code": "Trend",
+    "date": "2026-10-29",
+    "path": "data/posts/2026-10/android-ad-cleaner-ai-debloater-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793188557,
     "title": "Fixing eBPF Unbounded Loops & Stack Spill Limits",
     "slug": "ebpf-verifier-unbounded-loops-map-spill-fix",
@@ -871,68 +929,6 @@ var postsLatest = [
       "GitHub",
       "Python",
       "Docker"
-    ]
-  },
-  {
-    "id": 1792743236,
-    "title": "Fix eBPF Variable-Offset Pointer Math in XDP",
-    "slug": "fix-ebpf-variable-offset-pointer-math-xdp",
-    "language": "C",
-    "code": "R2 variable-offset dereference disallowed",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-ebpf-variable-offset-pointer-math-xdp.js",
-    "tags": [
-      "eBPF",
-      "XDP",
-      "Linux",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792743237,
-    "title": "Fix NCCL Watchdog Timeouts in Multi-Node FSDP",
-    "slug": "fix-nccl-watchdog-timeouts-fsdp",
-    "language": "Python",
-    "code": "Watchdog caught collective operation timeout",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-nccl-watchdog-timeouts-fsdp.js",
-    "tags": [
-      "PyTorch",
-      "NCCL",
-      "Distributed",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792743238,
-    "title": "Resolve ClickHouse 'Too Many Parts' Write Stalls",
-    "slug": "resolve-clickhouse-too-many-parts-stalls",
-    "language": "SQL",
-    "code": "DB::Exception: Too many parts in all data parts in table",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/resolve-clickhouse-too-many-parts-stalls.js",
-    "tags": [
-      "ClickHouse",
-      "Database",
-      "Performance",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792743239,
-    "title": "CleanYourTV: Debloat Android & Google TV via Wi-Fi",
-    "slug": "cleanyourtv-debloat-android-google-tv-wifi",
-    "language": "Shell",
-    "code": "Trend",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/cleanyourtv-debloat-android-google-tv-wifi.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];

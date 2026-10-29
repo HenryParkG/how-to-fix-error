@@ -1,21 +1,21 @@
 window.onPostDataLoaded({
-    "title": "Fixing gRPC HTTP/2 Flow-Control Window Deadlocks",
+    "title": "Resolving gRPC HTTP/2 Flow-Control Window Deadlocks",
     "slug": "grpc-http2-flow-control-window-exhaustion-deadlocks",
     "language": "Go",
-    "code": "HTTP2_FLOW_CONTROL_ERROR",
+    "code": "RESOURCE_EXHAUSTED",
     "tags": [
         "Go",
-        "Docker",
         "Kubernetes",
+        "Backend",
         "Error Fix"
     ],
-    "analysis": "<p>gRPC multiplexes multiple concurrent RPC streams across a single persistent TCP connection using the HTTP/2 framing layer. HTTP/2 enforces flow control at two distinct levels: per-stream flow control and connection-level flow control (via <code>WINDOW_UPDATE</code> frames).</p><p>When a server transmits large streaming payloads across multiple multiplexed streams, but a single downstream client stream consumes bytes slowly or stalls on downstream disk/network I/O, the connection-level window is rapidly consumed by unacknowledged frames. Because connection-level flow control is shared across all concurrent RPC streams on that transport, the entire connection window hits zero. Even fast, independent RPC streams multiplexed over that same connection are blocked from transmitting data, leading to head-of-line blocking and cascading microservice deadlocks.</p>",
-    "root_cause": "The HTTP/2 transport connection-level window (defaulting to 64KB in unoptimized gRPC stacks) is exhausted because a slow stream fails to consume data and trigger WINDOW_UPDATE frames, starving all other multiplexed streams sharing the single transport connection.",
-    "bad_code": "package main\n\nimport (\n\t\"google.golang.org/grpc\"\n\t\"log\"\n\t\"net\"\n)\n\nfunc main() {\n\tlis, err := net.Listen(\"tcp\", \":50051\")\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\t// Default settings allocate 64KB connection and stream windows.\n\t// Highly multiplexed, unbalanced streams will exhaust the transport window.\n\tsrv := grpc.NewServer()\n\tlog.Fatal(srv.Serve(lis))\n}",
-    "solution_desc": "Increase both stream and connection flow-control windows via InitialWindowSize and InitialConnWindowSize. Decouple stream reading on the receiver using asynchronous worker channels to drain transport buffers rapidly and emit WINDOW_UPDATE frames immediately.",
-    "good_code": "package main\n\nimport (\n\t\"google.golang.org/grpc\"\n\t\"google.golang.org/grpc/keepalive\"\n\t\"log\"\n\t\"net\"\n\t\"time\"\n)\n\nfunc main() {\n\tlis, err := net.Listen(\"tcp\", \":50051\")\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tsrv := grpc.NewServer(\n\t\t// Expand HTTP/2 windows based on BDP (Bandwidth-Delay Product)\n\t\tgrpc.InitialWindowSize(4 * 1024 * 1024),     // 4MB per-stream window\n\t\tgrpc.InitialConnWindowSize(16 * 1024 * 1024), // 16MB connection-wide window\n\t\tgrpc.KeepaliveParams(keepalive.ServerParameters{\n\t\t\tMaxConnectionIdle: 15 * time.Minute,\n\t\t\tTimeout:           10 * time.Second,\n\t\t}),\n\t)\n\n\tlog.Fatal(srv.Serve(lis))\n}",
-    "verification": "Collect network traces via Wireshark or use `GODEBUG=http2debug=2` to observe HTTP/2 frame transactions. Confirm that `WINDOW_UPDATE` frames scale dynamically and that connection-level available credits remain positive under heavy asynchronous stream multiplexing.",
-    "date": "2026-10-17",
-    "id": 1792221611,
+    "analysis": "<p>gRPC transports multiplexed streams across a single long-lived TCP connection via HTTP/2 frames. HTTP/2 maintains two distinct flow-control credit limits: a stream-level window (governing payload consumption on individual RPC streams) and a connection-level window (governing payload across the multiplexed socket). By default, standard HTTP/2 initial window size is 65,535 bytes.</p><p>When a client initiates multiple concurrent streaming RPCs over the same transport and fails to continuously read or consume frames from one slow stream, the server continues sending DATA frames until the shared connection-level window is completely exhausted (credit drops to zero). Consequently, healthy streams multiplexed over that same connection cannot transmit or receive WINDOW_UPDATE frames, creating a transport-wide deadlock where all multiplexed RPCs stall indefinitely.</p>",
+    "root_cause": "The shared HTTP/2 connection-level flow control window is consumed by slow or stalled consumer streams on a multiplexed transport, blocking all other streams due to absent WINDOW_UPDATE credits.",
+    "bad_code": "// Client configured with standard default windows and slow consumption\nconn, err := grpc.Dial(\"backend.service:50051\", \n    grpc.WithInsecure(),\n    // Omitting flow control parameters leaves default 64KB window\n)\n\nstream, err := client.StreamLogs(ctx, &LogRequest{})\nfor {\n    msg, err := stream.Recv()\n    // Heavy synchronous block halts frame consumption without buffer release\n    time.Sleep(500 * time.Millisecond)\n    process(msg)\n}",
+    "solution_desc": "Tune stream and connection flow control parameters (`InitialWindowSize` and `InitialConnWindowSize`) using keepalive client parameters. Offload message processing into asynchronous worker channels to immediately consume frames and emit HTTP/2 WINDOW_UPDATE frames back to the sender.",
+    "good_code": "// Optimized gRPC Client with custom HTTP/2 flow-control buffer windows\nconn, err := grpc.Dial(\"backend.service:50051\",\n    grpc.WithTransportCredentials(insecure.NewCredentials()),\n    grpc.WithInitialWindowSize(1 * 1024 * 1024),     // 1MB per stream\n    grpc.WithInitialConnWindowSize(4 * 1024 * 1024), // 4MB per connection\n)\n\nmsgChan := make(chan *LogResponse, 1000)\ngo func() {\n    for msg := range msgChan {\n        process(msg)\n    }\n}()\n\n// Fast consumption loop keeps HTTP/2 stream and connection credits replenished\nfor {\n    msg, err := stream.Recv()\n    if err != nil { break }\n    msgChan <- msg\n}",
+    "verification": "Enable gRPC trace logging via `GRPC_GO_LOG_SEVERITY_LEVEL=info` and `GODEBUG=http2debug=2`. Inspect window update logs to verify `WINDOW_UPDATE` frames are sent immediately and credit allocations do not dip to 0 under sustained 100MB/s stream load.",
+    "date": "2026-10-29",
+    "id": 1793275592,
     "type": "error"
 });
