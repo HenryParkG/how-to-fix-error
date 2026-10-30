@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Fix Tokio Async Cancellation Safety Violations",
+    "slug": "fix-tokio-async-cancellation-safety-violations",
+    "language": "Rust",
+    "code": "DataLossOnCancel",
+    "tags": [
+        "Rust",
+        "Tokio",
+        "Concurrency",
+        "Error Fix"
+    ],
+    "analysis": "<p>In asynchronous Rust pipelines using Tokio, cancellation safety is a critical yet subtle correctness guarantee. A future in Rust is cancelled simply by dropping it before it completes its execution. When macros such as <code>tokio::select!</code> evaluate multiple branches concurrently, the first branch that completes causes all remaining pending branches to be instantly dropped.</p><p>If a dropped branch was in the middle of executing an operation that modified persistent or shared buffer state across an <code>.await</code> boundary\u2014such as partially consuming bytes from a stream via <code>AsyncReadExt::read_exact</code>\u2014those partially processed bytes are discarded. This leads to frame desynchronization, truncated socket reads, and unrecoverable protocol corruption in high-throughput network pipelines.</p>",
+    "root_cause": "Invoking cancellation-unsafe async methods (such as AsyncReadExt::read_exact or reading off framed streams without persistent intermediate buffer state) directly within tokio::select! branches, discarding in-flight state upon branch cancellation.",
+    "bad_code": "use tokio::io::{self, AsyncReadExt, AsyncWriteExt};\nuse tokio::net::TcpStream;\n\npub async fn process_frames(mut socket: TcpStream) -> io::Result<()> {\n    let mut header = [0u8; 4];\n    loop {\n        tokio::select! {\n            // read_exact is NOT cancellation safe: if cancelled midway,\n            // partially read bytes are lost forever from the socket buffer.\n            res = socket.read_exact(&mut header) => {\n                res?;\n                let len = u32::from_be_bytes(header) as usize;\n                let mut body = vec![0u8; len];\n                socket.read_exact(&mut body).await?;\n                println!(\"Received frame: {:?}\", body);\n            }\n            _ = tokio::signal::ctrl_c() => {\n                println!(\"Shutdown signal received\");\n                return Ok(());\n            }\n        }\n    }\n}",
+    "solution_desc": "Refactor I/O pipelines to use cancellation-safe framing abstractions such as `tokio_util::codec::FramedRead` or `BytesMut` with retained read buffers. Alternatively, isolate socket reading to a dedicated Tokio task that communicates over an unbuffered or buffered bounded `mpsc` channel, ensuring reading is never aborted mid-frame by an external select branch.",
+    "good_code": "use bytes::BytesMut;\nuse tokio::io::{self, AsyncReadExt};\nuse tokio::net::TcpStream;\n\npub async fn process_frames_safe(mut socket: TcpStream) -> io::Result<()> {\n    let mut buf = BytesMut::with_capacity(4096);\n\n    loop {\n        tokio::select! {\n            // read_buf is cancellation-safe: any bytes received before\n            // cancellation remain appended to `buf`.\n            res = socket.read_buf(&mut buf) => {\n                let bytes_read = res?;\n                if bytes_read == 0 {\n                    return Ok(()); // EOF\n                }\n                // Parse complete frames from accumulated buffer\n                while buf.len() >= 4 {\n                    let len = u32::from_be_bytes(buf[..4].try_into().unwrap()) as usize;\n                    if buf.len() < 4 + len {\n                        break; // Wait for full payload\n                    }\n                    buf.advance(4);\n                    let frame = buf.split_to(len);\n                    println!(\"Safely received frame: {:?}\", frame);\n                }\n            }\n            _ = tokio::signal::ctrl_c() => {\n                println!(\"Clean shutdown\");\n                return Ok(());\n            }\n        }\n    }\n}",
+    "verification": "Construct an integration test injecting artificial socket chunking using `tokio::io::duplex`. Trigger cancellation via a timeout branch in `tokio::select!` while transmitting partial byte sequences, then resume reading to verify no bytes are dropped and frame boundaries remain intact.",
+    "date": "2026-10-30",
+    "id": 1793331560,
+    "type": "error"
+});

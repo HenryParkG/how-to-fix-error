@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Resolving Spark Shuffle Spill OOMs and Skew",
+    "slug": "resolving-spark-shuffle-spill-ooms-and-skew",
+    "language": "Java",
+    "code": "OutOfMemoryError: Container killed",
+    "tags": [
+        "Java",
+        "Spark",
+        "SQL",
+        "Error Fix"
+    ],
+    "analysis": "<p>In distributed Apache Spark pipelines, shuffle stages require partitioning data by key across cluster executors. When key distributions suffer from heavy data skew (e.g., null keys, default constants, or ultra-frequent entity IDs), certain shuffle partitions receive orders of magnitude more records than others.</p><p>As these skewed partitions exceed executor execution memory limits, Spark attempts to spill intermediate shuffle state to local disk (<code>Shuffle Spill (Memory)</code> to <code>Shuffle Spill (Disk)</code>). Under extreme skew, the serialization overhead and disk thrashing trigger excessive JVM garbage collection pauses, leading to executor heartbeat timeouts, task retries, and eventual <code>Container killed by YARN/K8s for exceeding memory limits</code> failures.</p>",
+    "root_cause": "Severe key distribution skew during join or groupBy stages causing uneven partition memory consumption, overwhelming executor JVM heap and failing to mitigate memory pressure despite spilling.",
+    "bad_code": "import org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\nimport org.apache.spark.sql.SparkSession;\n\npublic class SkewedJoin {\n    public static void runUnsafeJoin(SparkSession spark, Dataset<Row> largeOrders, Dataset<Row> customers) {\n        // Skewed keys (e.g., null customer_ids or large enterprise accounts)\n        // cause huge partition stragglers and heap exhaustion during shuffle.\n        Dataset<Row> joined = largeOrders.join(\n            customers,\n            largeOrders.col(\"customer_id\").equalTo(customers.col(\"id\")),\n            \"inner\"\n        );\n        joined.write().format(\"parquet\").save(\"/data/output/orders_enriched\");\n    }\n}",
+    "solution_desc": "Address shuffle skew by enabling Spark Adaptive Query Execution (AQE) with skew join handling. For static workloads or older Spark runtimes, apply manual two-phase key salting to uniformly distribute hot keys across randomized sub-partitions before performing the shuffle join.",
+    "good_code": "import org.apache.spark.sql.Dataset;\nimport org.apache.spark.sql.Row;\nimport org.apache.spark.sql.SparkSession;\nimport static org.apache.spark.sql.functions.*;\n\npublic class SaltingJoinSolution {\n    public static void runOptimizedJoin(SparkSession spark, Dataset<Row> largeOrders, Dataset<Row> customers) {\n        // 1. Enable Adaptive Query Execution for dynamic skew handling\n        spark.conf().set(\"spark.sql.adaptive.enabled\", \"true\");\n        spark.conf().set(\"spark.sql.adaptive.skewJoin.enabled\", \"true\");\n        spark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionFactor\", \"5\");\n        spark.conf().set(\"spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes\", \"256MB\");\n\n        // 2. Programmatic salting fallback for deterministic skew protection\n        int saltFactor = 16;\n        Dataset<Row> saltedOrders = largeOrders.withColumn(\n            \"salted_key\",\n            concat(col(\"customer_id\"), lit(\"_\"), pmod(rand().multiply(1000).cast(\"int\"), lit(saltFactor)))\n        );\n\n        Dataset<Row> explodedCustomers = customers.withColumn(\n            \"salt_val\",\n            explode(sequence(lit(0), lit(saltFactor - 1)))\n        ).withColumn(\n            \"salted_key\",\n            concat(col(\"id\"), lit(\"_\"), col(\"salt_val\"))\n        );\n\n        Dataset<Row> joined = saltedOrders.join(\n            explodedCustomers,\n            \"salted_key\"\n        ).drop(\"salted_key\", \"salt_val\");\n\n        joined.write().format(\"parquet\").save(\"/data/output/orders_enriched\");\n    }\n}",
+    "verification": "Inspect the Spark UI 'Stages' tab for the join step. Verify that maximum task run time is within 1.5x of the 75th percentile task time, and check that 'Shuffle Spill (Memory)' and 'Shuffle Spill (Disk)' have dropped to zero or negligible values.",
+    "date": "2026-10-30",
+    "id": 1793331561,
+    "type": "error"
+});

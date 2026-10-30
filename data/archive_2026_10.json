@@ -1,5 +1,64 @@
 [
   {
+    "id": 1793331560,
+    "title": "Fix Tokio Async Cancellation Safety Violations",
+    "slug": "fix-tokio-async-cancellation-safety-violations",
+    "language": "Rust",
+    "code": "DataLossOnCancel",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/fix-tokio-async-cancellation-safety-violations.js",
+    "tags": [
+      "Rust",
+      "Tokio",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331561,
+    "title": "Resolving Spark Shuffle Spill OOMs and Skew",
+    "slug": "resolving-spark-shuffle-spill-ooms-and-skew",
+    "language": "Java",
+    "code": "OutOfMemoryError: Container killed",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/resolving-spark-shuffle-spill-ooms-and-skew.js",
+    "tags": [
+      "Java",
+      "Spark",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331562,
+    "title": "Mitigate RocksDB Write Stalls & Compaction Debt",
+    "slug": "mitigate-rocksdb-write-stalls-compaction-debt",
+    "language": "Rust",
+    "code": "Status::Incomplete(WriteStall)",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/mitigate-rocksdb-write-stalls-compaction-debt.js",
+    "tags": [
+      "Rust",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331563,
+    "title": "Inside unclebob/ub-mode: Clean Code in Emacs",
+    "slug": "inside-unclebob-ub-mode-clean-code-emacs",
+    "language": "Emacs Lisp",
+    "code": "Trend",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/inside-unclebob-ub-mode-clean-code-emacs.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1793275590,
     "title": "Mitigating Redis BGSAVE Copy-on-Write Latency Spikes",
     "slug": "redis-mitigating-bgsave-cow-memory-fork-latency",

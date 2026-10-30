@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1793331560,
+    "title": "Fix Tokio Async Cancellation Safety Violations",
+    "slug": "fix-tokio-async-cancellation-safety-violations",
+    "language": "Rust",
+    "code": "DataLossOnCancel",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/fix-tokio-async-cancellation-safety-violations.js",
+    "tags": [
+      "Rust",
+      "Tokio",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331561,
+    "title": "Resolving Spark Shuffle Spill OOMs and Skew",
+    "slug": "resolving-spark-shuffle-spill-ooms-and-skew",
+    "language": "Java",
+    "code": "OutOfMemoryError: Container killed",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/resolving-spark-shuffle-spill-ooms-and-skew.js",
+    "tags": [
+      "Java",
+      "Spark",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331562,
+    "title": "Mitigate RocksDB Write Stalls & Compaction Debt",
+    "slug": "mitigate-rocksdb-write-stalls-compaction-debt",
+    "language": "Rust",
+    "code": "Status::Incomplete(WriteStall)",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/mitigate-rocksdb-write-stalls-compaction-debt.js",
+    "tags": [
+      "Rust",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793331563,
+    "title": "Inside unclebob/ub-mode: Clean Code in Emacs",
+    "slug": "inside-unclebob-ub-mode-clean-code-emacs",
+    "language": "Emacs Lisp",
+    "code": "Trend",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/inside-unclebob-ub-mode-clean-code-emacs.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1793275590,
     "title": "Mitigating Redis BGSAVE Copy-on-Write Latency Spikes",
     "slug": "redis-mitigating-bgsave-cow-memory-fork-latency",
@@ -866,69 +925,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "TypeScript"
-    ]
-  },
-  {
-    "id": 1792763848,
-    "title": "Fix C++20 Coroutine Frame Use-After-Free in Schedulers",
-    "slug": "fix-cpp20-coroutine-frame-use-after-free",
-    "language": "C++20",
-    "code": "SEGV_MAPERR",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-use-after-free.js",
-    "tags": [
-      "Rust",
-      "Concurrency",
-      "C++20",
-      "Async",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792763849,
-    "title": "Mitigate PostgreSQL MultiXact ID Wraparound Halts",
-    "slug": "mitigate-postgresql-multixact-id-wraparound-halts",
-    "language": "SQL",
-    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/mitigate-postgresql-multixact-id-wraparound-halts.js",
-    "tags": [
-      "PostgreSQL",
-      "SQL",
-      "Database",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792763850,
-    "title": "Resolve PyTorch CUDA OOM from Allocator Fragmentation",
-    "slug": "resolve-pytorch-cuda-oom-allocator-fragmentation",
-    "language": "Python",
-    "code": "CUDA out of memory",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/resolve-pytorch-cuda-oom-allocator-fragmentation.js",
-    "tags": [
-      "Python",
-      "CUDA",
-      "PyTorch",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792763851,
-    "title": "Inside cleanyourtv: Debloat Android TV Over Wi-Fi",
-    "slug": "clean-your-tv-android-debloat-apple-tv-experience",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-23",
-    "path": "data/posts/2026-10/clean-your-tv-android-debloat-apple-tv-experience.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "Docker"
     ]
   }
 ];
