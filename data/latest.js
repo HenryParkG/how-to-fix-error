@@ -1,5 +1,66 @@
 var postsLatest = [
   {
+    "id": 1793361401,
+    "title": "Fixing io_uring CQE Drops and Worker Exhaustion",
+    "slug": "linux-iouring-cqe-drops-worker-exhaustion",
+    "language": "Rust",
+    "code": "EBUSY / IORING_CQ_EVENTFD_DISABLED",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/linux-iouring-cqe-drops-worker-exhaustion.js",
+    "tags": [
+      "Rust",
+      "Linux",
+      "Async",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793361402,
+    "title": "Fixing Istio Envoy 503 UC Flaky Connection Resets",
+    "slug": "istio-envoy-503-uc-tcp-half-close-race",
+    "language": "Go",
+    "code": "503 UC (upstream_connection_termination)",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/istio-envoy-503-uc-tcp-half-close-race.js",
+    "tags": [
+      "Kubernetes",
+      "Go",
+      "Docker",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793361403,
+    "title": "Mitigating Vector HNSW Index Bloat & Recall Drift",
+    "slug": "vector-db-hnsw-bloat-recall-drift-mitigation",
+    "language": "Python",
+    "code": "ERR_INDEX_DEGRADATION",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/vector-db-hnsw-bloat-recall-drift-mitigation.js",
+    "tags": [
+      "Python",
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793361404,
+    "title": "Trending: unclebob/ub-mode for Emacs Clean Coding",
+    "slug": "unclebob-ub-mode-emacs-clean-code",
+    "language": "Go",
+    "code": "Trend",
+    "date": "2026-10-30",
+    "path": "data/posts/2026-10/unclebob-ub-mode-emacs-clean-code.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Go"
+    ]
+  },
+  {
     "id": 1793331560,
     "title": "Fix Tokio Async Cancellation Safety Violations",
     "slug": "fix-tokio-async-cancellation-safety-violations",
@@ -866,65 +927,6 @@ var postsLatest = [
       "GitHub",
       "TypeScript",
       "Frontend"
-    ]
-  },
-  {
-    "id": 1792809355,
-    "title": "Fix Go GC Mark Termination Spikes from Tiny Alloc",
-    "slug": "go-gc-mark-termination-tiny-allocator",
-    "language": "Go",
-    "code": "GC-STW-LATENCY",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/go-gc-mark-termination-tiny-allocator.js",
-    "tags": [
-      "Go",
-      "Performance",
-      "MemoryManagement",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792809356,
-    "title": "Fix Kafka CooperativeSticky Rebalance Storms",
-    "slug": "kafka-cooperativesticky-rebalance-storms",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/kafka-cooperativesticky-rebalance-storms.js",
-    "tags": [
-      "Java",
-      "Kafka",
-      "DistributedSystems",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792809357,
-    "title": "Fix MongoDB WiredTiger Cache Eviction Deadlocks",
-    "slug": "mongodb-wiredtiger-cache-eviction-deadlocks",
-    "language": "Python",
-    "code": "WT_CACHE_FULL",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-deadlocks.js",
-    "tags": [
-      "Python",
-      "Docker",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792809358,
-    "title": "Free My TV: Fast Ad-Free Smart TV Launcher",
-    "slug": "free-my-tv-ad-free-smart-tv-launcher",
-    "language": "TypeScript",
-    "code": "Trend",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/free-my-tv-ad-free-smart-tv-launcher.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "TypeScript"
     ]
   }
 ];

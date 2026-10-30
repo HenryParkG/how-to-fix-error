@@ -1,5 +1,66 @@
 var postsIndex = [
     {
+        "id": 1793361401,
+        "title": "Fixing io_uring CQE Drops and Worker Exhaustion",
+        "slug": "linux-iouring-cqe-drops-worker-exhaustion",
+        "language": "Rust",
+        "code": "EBUSY / IORING_CQ_EVENTFD_DISABLED",
+        "date": "2026-10-30",
+        "path": "data/posts/2026-10/linux-iouring-cqe-drops-worker-exhaustion.js",
+        "tags": [
+            "Rust",
+            "Linux",
+            "Async",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793361402,
+        "title": "Fixing Istio Envoy 503 UC Flaky Connection Resets",
+        "slug": "istio-envoy-503-uc-tcp-half-close-race",
+        "language": "Go",
+        "code": "503 UC (upstream_connection_termination)",
+        "date": "2026-10-30",
+        "path": "data/posts/2026-10/istio-envoy-503-uc-tcp-half-close-race.js",
+        "tags": [
+            "Kubernetes",
+            "Go",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793361403,
+        "title": "Mitigating Vector HNSW Index Bloat & Recall Drift",
+        "slug": "vector-db-hnsw-bloat-recall-drift-mitigation",
+        "language": "Python",
+        "code": "ERR_INDEX_DEGRADATION",
+        "date": "2026-10-30",
+        "path": "data/posts/2026-10/vector-db-hnsw-bloat-recall-drift-mitigation.js",
+        "tags": [
+            "Python",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793361404,
+        "title": "Trending: unclebob/ub-mode for Emacs Clean Coding",
+        "slug": "unclebob-ub-mode-emacs-clean-code",
+        "language": "Go",
+        "code": "Trend",
+        "date": "2026-10-30",
+        "path": "data/posts/2026-10/unclebob-ub-mode-emacs-clean-code.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Go"
+        ]
+    },
+    {
         "id": 1793331560,
         "title": "Fix Tokio Async Cancellation Safety Violations",
         "slug": "fix-tokio-async-cancellation-safety-violations",
