@@ -1,5 +1,63 @@
 [
   {
+    "id": 1793417256,
+    "title": "Fix CoreDNS Latency & Conntrack Table Exhaustion",
+    "slug": "kubernetes-coredns-conntrack-table-exhaustion-fix",
+    "language": "Kubernetes",
+    "code": "nf_conntrack: table full",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/kubernetes-coredns-conntrack-table-exhaustion-fix.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417257,
+    "title": "Fix Lucene Merge Storms & Write Threadpool Starvation",
+    "slug": "elasticsearch-lucene-merge-storms-threadpool-starvation",
+    "language": "Java",
+    "code": "EsRejectedExecutionException",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/elasticsearch-lucene-merge-storms-threadpool-starvation.js",
+    "tags": [
+      "Java",
+      "Docker",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417258,
+    "title": "Resolving WebGPU Dynamic Offset & Barrier Crashes",
+    "slug": "webgpu-dynamic-offset-misalignment-barrier-crashes",
+    "language": "TypeScript",
+    "code": "GPUValidationError",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/webgpu-dynamic-offset-misalignment-barrier-crashes.js",
+    "tags": [
+      "TypeScript",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417259,
+    "title": "Uncle Bob's ub-mode: Clean Code Principles in Emacs",
+    "slug": "unclebob-ub-mode-clean-code-emacs",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/unclebob-ub-mode-clean-code-emacs.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1793361401,
     "title": "Fixing io_uring CQE Drops and Worker Exhaustion",
     "slug": "linux-iouring-cqe-drops-worker-exhaustion",

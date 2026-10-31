@@ -1,5 +1,63 @@
 var postsLatest = [
   {
+    "id": 1793417256,
+    "title": "Fix CoreDNS Latency & Conntrack Table Exhaustion",
+    "slug": "kubernetes-coredns-conntrack-table-exhaustion-fix",
+    "language": "Kubernetes",
+    "code": "nf_conntrack: table full",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/kubernetes-coredns-conntrack-table-exhaustion-fix.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417257,
+    "title": "Fix Lucene Merge Storms & Write Threadpool Starvation",
+    "slug": "elasticsearch-lucene-merge-storms-threadpool-starvation",
+    "language": "Java",
+    "code": "EsRejectedExecutionException",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/elasticsearch-lucene-merge-storms-threadpool-starvation.js",
+    "tags": [
+      "Java",
+      "Docker",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417258,
+    "title": "Resolving WebGPU Dynamic Offset & Barrier Crashes",
+    "slug": "webgpu-dynamic-offset-misalignment-barrier-crashes",
+    "language": "TypeScript",
+    "code": "GPUValidationError",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/webgpu-dynamic-offset-misalignment-barrier-crashes.js",
+    "tags": [
+      "TypeScript",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793417259,
+    "title": "Uncle Bob's ub-mode: Clean Code Principles in Emacs",
+    "slug": "unclebob-ub-mode-clean-code-emacs",
+    "language": "Java",
+    "code": "Trend",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/unclebob-ub-mode-clean-code-emacs.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Java"
+    ]
+  },
+  {
     "id": 1793361401,
     "title": "Fixing io_uring CQE Drops and Worker Exhaustion",
     "slug": "linux-iouring-cqe-drops-worker-exhaustion",
@@ -864,69 +922,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Java"
-    ]
-  },
-  {
-    "id": 1792828268,
-    "title": "Fix Elixir GenServer Mailbox Bloat in Selective Receive",
-    "slug": "fix-elixir-genserver-mailbox-selective-receive-bloat",
-    "language": "Elixir",
-    "code": "ProcessMailboxOverflow",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/fix-elixir-genserver-mailbox-selective-receive-bloat.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "Elixir",
-      "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792828269,
-    "title": "Fix gRPC Deadlocks Caused by HTTP/2 Flow-Control Starvation",
-    "slug": "fix-grpc-deadlock-http2-flow-control-starvation",
-    "language": "Go",
-    "code": "StreamFlowControlDeadlock",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/fix-grpc-deadlock-http2-flow-control-starvation.js",
-    "tags": [
-      "Go",
-      "Kubernetes",
-      "Backend",
-      "gRPC",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792828270,
-    "title": "Resolve Redis BGSAVE Fork OOM Under Copy-on-Write Mutation",
-    "slug": "resolve-redis-bgsave-fork-oom-copy-on-write",
-    "language": "Redis",
-    "code": "OutdatedCowForkOOM",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/resolve-redis-bgsave-fork-oom-copy-on-write.js",
-    "tags": [
-      "Docker",
-      "Kubernetes",
-      "Infra",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792828271,
-    "title": "Analyze Trending Repository: pengchujin/aerial-tv",
-    "slug": "analyze-pengchujin-aerial-tv-clean-tvos-launcher",
-    "language": "Kotlin",
-    "code": "Trend",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/analyze-pengchujin-aerial-tv-clean-tvos-launcher.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "TypeScript",
-      "Frontend"
     ]
   }
 ];
