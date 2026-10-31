@@ -1,5 +1,73 @@
 var postsLatest = [
   {
+    "id": 1793446102,
+    "title": "Diagnosing Rust async fn Lifetime & Borrow Checker Violations",
+    "slug": "rust-async-fn-lifetime-borrow-checker-violations",
+    "language": "Rust",
+    "code": "Lifetime Error",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/rust-async-fn-lifetime-borrow-checker-violations.js",
+    "tags": [
+      "Rust",
+      "Async",
+      "Borrow Checker",
+      "Lifetime",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793446103,
+    "title": "Mitigating PyTorch CUDA OOMs: Grad Checkpointing & Quantization Mismatches",
+    "slug": "pytorch-cuda-ooms-gradient-checkpointing-quantization-mismatches",
+    "language": "PyTorch",
+    "code": "CUDA OOM",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/pytorch-cuda-ooms-gradient-checkpointing-quantization-mismatches.js",
+    "tags": [
+      "PyTorch",
+      "Python",
+      "ML",
+      "CUDA",
+      "OOM",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793446104,
+    "title": "Debugging Terraform State Lock Contention & Partial Apply Failures",
+    "slug": "debugging-terraform-state-lock-contention-partial-apply-failures",
+    "language": "Terraform",
+    "code": "State Lock",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/debugging-terraform-state-lock-contention-partial-apply-failures.js",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "DevOps",
+      "IaC",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793446105,
+    "title": "Unpacking 'unclebob/ub-mode': An Editor Extension for Clean Code",
+    "slug": "unclebob-ub-mode-editor-extension-clean-code",
+    "language": "Editor Extension",
+    "code": "Developer Tool",
+    "date": "2026-10-31",
+    "path": "data/posts/2026-10/unclebob-ub-mode-editor-extension-clean-code.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Developer Tools",
+      "Clean Code",
+      "Backend"
+    ]
+  },
+  {
     "id": 1793417256,
     "title": "Fix CoreDNS Latency & Conntrack Table Exhaustion",
     "slug": "kubernetes-coredns-conntrack-table-exhaustion-fix",
@@ -859,65 +927,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-25",
     "path": "data/posts/2026-10/pengchujin-aerial-tv-clean-android-launcher.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java"
-    ]
-  },
-  {
-    "id": 1792847058,
-    "title": "Fix io_uring CQE Drops Under Saturating Ring Overflow",
-    "slug": "resolve-io-uring-cqe-ring-overflow",
-    "language": "C",
-    "code": "IORING_CQ_EVENTFD_DISABLED",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/resolve-io-uring-cqe-ring-overflow.js",
-    "tags": [
-      "Rust",
-      "Linux",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792847059,
-    "title": "Fix Envoy Upstream Starvation from Orphaned H2 Streams",
-    "slug": "fix-envoy-upstream-orphaned-h2-streams",
-    "language": "Envoy",
-    "code": "upstream_cx_max_requests",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/fix-envoy-upstream-orphaned-h2-streams.js",
-    "tags": [
-      "Go",
-      "Kubernetes",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792847060,
-    "title": "Resolve Spark Executor OOM from Broadcast Hash Join Skew",
-    "slug": "resolve-spark-executor-oom-broadcast-skew",
-    "language": "Spark",
-    "code": "OutOfMemoryError: Java heap space",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/resolve-spark-executor-oom-broadcast-skew.js",
-    "tags": [
-      "Java",
-      "SQL",
-      "Kubernetes",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792847061,
-    "title": "Clean TV Experience: pengchujin/aerial-tv Launcher",
-    "slug": "pengchujin-aerial-tv-android-launcher",
-    "language": "Kotlin",
-    "code": "Trend",
-    "date": "2026-10-24",
-    "path": "data/posts/2026-10/pengchujin-aerial-tv-android-launcher.js",
     "tags": [
       "Tech Trend",
       "GitHub",
