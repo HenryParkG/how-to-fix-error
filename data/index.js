@@ -1,5 +1,65 @@
 var postsIndex = [
     {
+        "id": 1793503326,
+        "title": "Resolving eBPF Verifier Bounds Violations & State Pruning",
+        "slug": "resolving-ebpf-verifier-bounds-state-pruning",
+        "language": "Rust",
+        "code": "BpfVerifierBoundsViolation",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/resolving-ebpf-verifier-bounds-state-pruning.js",
+        "tags": [
+            "eBPF",
+            "Linux",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793503327,
+        "title": "Mitigating Kafka Consumer Rebalance Storms and Thrashing",
+        "slug": "mitigating-kafka-consumer-rebalance-storms",
+        "language": "Java",
+        "code": "CommitFailedException",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/mitigating-kafka-consumer-rebalance-storms.js",
+        "tags": [
+            "Kafka",
+            "Distributed Systems",
+            "Java",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793503328,
+        "title": "Preventing PostgreSQL Transaction ID Wraparound Outages",
+        "slug": "postgresql-xid-wraparound-autovacuum-starvation",
+        "language": "SQL",
+        "code": "XIDWraparoundEmergency",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-starvation.js",
+        "tags": [
+            "PostgreSQL",
+            "Database",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793503329,
+        "title": "Inside anhao/ai-pose-gallery-zh: Zero-Dep AI Pose Library",
+        "slug": "anhao-ai-pose-gallery-zh-pose-reference-guide",
+        "language": "JavaScript",
+        "code": "Trend",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/anhao-ai-pose-gallery-zh-pose-reference-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "CSS",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1793446102,
         "title": "Diagnosing Rust async fn Lifetime & Borrow Checker Violations",
         "slug": "rust-async-fn-lifetime-borrow-checker-violations",

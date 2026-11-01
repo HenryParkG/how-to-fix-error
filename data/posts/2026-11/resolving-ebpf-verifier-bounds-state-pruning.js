@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Resolving eBPF Verifier Bounds Violations & State Pruning",
+    "slug": "resolving-ebpf-verifier-bounds-state-pruning",
+    "language": "Rust",
+    "code": "BpfVerifierBoundsViolation",
+    "tags": [
+        "eBPF",
+        "Linux",
+        "Rust",
+        "Error Fix"
+    ],
+    "analysis": "<p>The Linux kernel eBPF verifier uses abstract interpretation to simulate all possible execution paths, tracking min/max register bounds (scalar ranges) and pointer provenance to ensure memory safety. A common failure occurs in programs with subprograms or non-inlined functions (<code>bpf2bpf</code> calls): when passing scalar integers representing offsets or buffer lengths across function boundaries, compiler register allocation and spills into stack slots often decouple the verifier's bounds tracking from the actual conditional jump logic.</p><p>Furthermore, the verifier's state pruning engine aggressively attempts to cache verified states to avoid state space explosions. If a subprogram returns a register that was bounded inside a branch, but the verifier prunes the equivalent state without preserving the tight scalar bounds, subsequent pointer arithmetic in the caller fails with <code>R0 invalid mem access 'inv'</code> or <code>math between ctx pointer and register with unbounded min value</code>.</p>",
+    "root_cause": "The clang compiler spilled a bounded scalar to the BPF stack across a subprogram boundary without preserving verifier register range invariants, causing the verifier to widen the scalar range to [0, U64_MAX] upon stack reloading, which fails subsequent packet pointer arithmetic checks.",
+    "bad_code": "static __attribute__((noinline)) int parse_header(struct __sk_buff *skb, __u32 *offset) {\n    void *data = (void *)(long)skb->data;\n    void *data_end = (void *)(long)skb->data_end;\n    \n    // Compiler spills *offset across this non-inlined call\n    if (data + *offset + sizeof(__u32) > data_end)\n        return -1;\n    \n    *offset += sizeof(__u32);\n    return 0;\n}\n\nSEC(\"tc\")\nint filter_packet(struct __sk_buff *skb) {\n    __u32 off = 0;\n    if (parse_header(skb, &off) < 0) // Bounds lost across call\n        return TC_ACT_SHOT;\n    \n    void *data = (void *)(long)skb->data;\n    void *data_end = (void *)(long)skb->data_end;\n    // Verifier error: R2 unbounded min value, cannot add to ctx pointer\n    if (data + off > data_end)\n        return TC_ACT_SHOT;\n    return TC_ACT_OK;\n}",
+    "solution_desc": "Guarantee scalar bounds preservation across subprograms by using explicit compiler barriers (inline assembly `asm volatile(\"\" : \"+r\"(var))`) or enforcing strict bitwise masking (`off &= 0x0FFF`) immediately before memory indexing. Alternatively, mark subprograms as `__always_inline` if call overhead or register spilling degrades range tracking, and ensure subprogram return types explicitly bound returned integers.",
+    "good_code": "static __always_inline int parse_header(struct __sk_buff *skb, __u32 *offset) {\n    void *data = (void *)(long)skb->data;\n    void *data_end = (void *)(long)skb->data_end;\n    \n    __u32 cur = *offset;\n    /* Enforce an architectural upper bound to satisfy verifier scalar ranges */\n    cur &= 0x0FFF;\n    if (data + cur + sizeof(__u32) > data_end)\n        return -1;\n    \n    cur += sizeof(__u32);\n    /* Compiler barrier ensures clang does not optimize away bounds check */\n    asm volatile(\"\" : \"+r\"(cur));\n    *offset = cur;\n    return 0;\n}\n\nSEC(\"tc\")\nint filter_packet(struct __sk_buff *skb) {\n    __u32 off = 0;\n    if (parse_header(skb, &off) < 0)\n        return TC_ACT_SHOT;\n    \n    /* Clamp range before pointer arithmetic */\n    off &= 0x0FFF;\n    void *data = (void *)(long)skb->data;\n    void *data_end = (void *)(long)skb->data_end;\n    if (data + off > data_end)\n        return TC_ACT_SHOT;\n        \n    return TC_ACT_OK;\n}",
+    "verification": "Load the BPF object file using `bpftool prog load filter.o /sys/fs/bpf/filter -d` and inspect the verifier log level 2 output. Verify that registers involved in arithmetic contain precise scalar intervals (e.g., `R2_w=scalar(smin=0,smax=4095)`) instead of `unbounded`.",
+    "date": "2026-11-01",
+    "id": 1793503326,
+    "type": "error"
+});

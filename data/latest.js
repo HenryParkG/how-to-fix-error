@@ -1,5 +1,65 @@
 var postsLatest = [
   {
+    "id": 1793503326,
+    "title": "Resolving eBPF Verifier Bounds Violations & State Pruning",
+    "slug": "resolving-ebpf-verifier-bounds-state-pruning",
+    "language": "Rust",
+    "code": "BpfVerifierBoundsViolation",
+    "date": "2026-11-01",
+    "path": "data/posts/2026-11/resolving-ebpf-verifier-bounds-state-pruning.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793503327,
+    "title": "Mitigating Kafka Consumer Rebalance Storms and Thrashing",
+    "slug": "mitigating-kafka-consumer-rebalance-storms",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-11-01",
+    "path": "data/posts/2026-11/mitigating-kafka-consumer-rebalance-storms.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793503328,
+    "title": "Preventing PostgreSQL Transaction ID Wraparound Outages",
+    "slug": "postgresql-xid-wraparound-autovacuum-starvation",
+    "language": "SQL",
+    "code": "XIDWraparoundEmergency",
+    "date": "2026-11-01",
+    "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793503329,
+    "title": "Inside anhao/ai-pose-gallery-zh: Zero-Dep AI Pose Library",
+    "slug": "anhao-ai-pose-gallery-zh-pose-reference-guide",
+    "language": "JavaScript",
+    "code": "Trend",
+    "date": "2026-11-01",
+    "path": "data/posts/2026-11/anhao-ai-pose-gallery-zh-pose-reference-guide.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "CSS",
+      "TypeScript"
+    ]
+  },
+  {
     "id": 1793446102,
     "title": "Diagnosing Rust async fn Lifetime & Borrow Checker Violations",
     "slug": "rust-async-fn-lifetime-borrow-checker-violations",
@@ -868,65 +928,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-10-25",
     "path": "data/posts/2026-10/aerial-tv-open-source-tvos-launcher-android-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java"
-    ]
-  },
-  {
-    "id": 1792894930,
-    "title": "Fix Rust Async Cancellation in Multiplexed Drivers",
-    "slug": "fix-rust-async-cancellation-hazards-multiplexed-stream",
-    "language": "Rust",
-    "code": "AsyncCancelDrop",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/fix-rust-async-cancellation-hazards-multiplexed-stream.js",
-    "tags": [
-      "Rust",
-      "Async",
-      "Networking",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792894931,
-    "title": "Resolve WebGPU Device Loss from Buffer Aliasing",
-    "slug": "resolve-webgpu-device-loss-compute-pass-buffer-aliasing",
-    "language": "TypeScript",
-    "code": "GPUDeviceLost",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/resolve-webgpu-device-loss-compute-pass-buffer-aliasing.js",
-    "tags": [
-      "TypeScript",
-      "Next.js",
-      "WebGPU",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792894932,
-    "title": "Mitigate Elasticsearch Breaker Trips on Lucene Aggs",
-    "slug": "mitigate-elasticsearch-circuit-breaker-lucene-aggs",
-    "language": "Java",
-    "code": "CircuitBreakingException",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/mitigate-elasticsearch-circuit-breaker-lucene-aggs.js",
-    "tags": [
-      "Java",
-      "Elasticsearch",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792894933,
-    "title": "Aerial TV: A Clean tvOS-Style Launcher for Android TV",
-    "slug": "pengchujin-aerial-tv-clean-android-launcher",
-    "language": "Java",
-    "code": "Trend",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/pengchujin-aerial-tv-clean-android-launcher.js",
     "tags": [
       "Tech Trend",
       "GitHub",
