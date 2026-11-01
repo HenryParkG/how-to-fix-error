@@ -1,5 +1,67 @@
 var postsIndex = [
     {
+        "id": 1793535864,
+        "title": "Fix C++20 Coroutine Frame Leaks & Dangling Promises",
+        "slug": "cpp20-coroutine-frame-leaks-dangling-promises",
+        "language": "C++20",
+        "code": "CoroutineFrameLeak",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/cpp20-coroutine-frame-leaks-dangling-promises.js",
+        "tags": [
+            "C++20",
+            "Concurrency",
+            "Memory",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793535865,
+        "title": "Mitigate Elixir GenServer Mailbox Saturation & Timeouts",
+        "slug": "elixir-genserver-mailbox-saturation-timeouts",
+        "language": "Elixir",
+        "code": "GenServerTimeout",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/elixir-genserver-mailbox-saturation-timeouts.js",
+        "tags": [
+            "Elixir",
+            "Concurrency",
+            "BEAM",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793535866,
+        "title": "Resolve Redis BGSAVE Fork Latency & CoW Spikes",
+        "slug": "redis-bgsave-fork-latency-cow-spikes",
+        "language": "Redis",
+        "code": "ForkLatencyMemorySpike",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/redis-bgsave-fork-latency-cow-spikes.js",
+        "tags": [
+            "Redis",
+            "Linux",
+            "Performance",
+            "Docker",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793535867,
+        "title": "DeepSeek SuperAgent Prototype: Autonomous Agents",
+        "slug": "deepseek-dsh-superagent-prototype-analysis",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-01",
+        "path": "data/posts/2026-11/deepseek-dsh-superagent-prototype-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1793503326,
         "title": "Resolving eBPF Verifier Bounds Violations & State Pruning",
         "slug": "resolving-ebpf-verifier-bounds-state-pruning",
