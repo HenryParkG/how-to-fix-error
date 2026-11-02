@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1793629218,
+    "title": "Fixing Go Goroutine Leaks & Scheduler Starvation",
+    "slug": "go-goroutine-leak-scheduler-starvation",
+    "language": "Go",
+    "code": "GoroutineLeak",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation.js",
+    "tags": [
+      "Go",
+      "Backend",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793629219,
+    "title": "Fixing Spark Shuffle Spills & Network Congestion",
+    "slug": "spark-shuffle-spill-network-congestion-joins",
+    "language": "Java",
+    "code": "FetchFailedException",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/spark-shuffle-spill-network-congestion-joins.js",
+    "tags": [
+      "Java",
+      "SQL",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793629220,
+    "title": "Fix K8s Init Container Deadlock & Probe Flaps",
+    "slug": "k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793629221,
+    "title": "DeepSeek SuperAgent: Autonomous Agent System",
+    "slug": "deepseek-superagent-autonomous-system-prototype",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-prototype.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793590706,
     "title": "Mitigating NCCL Watchdog Timeouts & Ring Deadlocks",
     "slug": "nccl-watchdog-timeouts-ring-allreduce-deadlocks",
@@ -869,65 +928,6 @@ var postsLatest = [
       "GitHub",
       "Java",
       "Infra"
-    ]
-  },
-  {
-    "id": 1792981592,
-    "title": "Fix Kafka Rebalance Storms and Heartbeat Starvation",
-    "slug": "fix-kafka-rebalance-storms-heartbeat-starvation",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/fix-kafka-rebalance-storms-heartbeat-starvation.js",
-    "tags": [
-      "Kafka",
-      "Java",
-      "Distributed Systems",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792981593,
-    "title": "Diagnose Silent TCP Packet Drops from Conntrack Exhaustion",
-    "slug": "diagnose-k8s-conntrack-exhaustion-packet-drops",
-    "language": "Kubernetes",
-    "code": "NF_CONNTRACK_FULL",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/diagnose-k8s-conntrack-exhaustion-packet-drops.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Networking",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792981594,
-    "title": "Fix WiredTiger Ticket Exhaustion During Checkpoints",
-    "slug": "fix-mongodb-wiredtiger-ticket-exhaustion-checkpoints",
-    "language": "Go",
-    "code": "WT_TICKET_EXHAUSTION",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/fix-mongodb-wiredtiger-ticket-exhaustion-checkpoints.js",
-    "tags": [
-      "Go",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792981595,
-    "title": "Aerial TV: Clean tvOS Launcher for Android TVs",
-    "slug": "aerial-tv-clean-apple-tvos-launcher-android-tv",
-    "language": "Java",
-    "code": "Trend",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/aerial-tv-clean-apple-tvos-launcher-android-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java"
     ]
   }
 ];

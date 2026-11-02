@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1793629218,
+        "title": "Fixing Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leak-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-11-02",
+        "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Backend",
+            "Concurrency",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793629219,
+        "title": "Fixing Spark Shuffle Spills & Network Congestion",
+        "slug": "spark-shuffle-spill-network-congestion-joins",
+        "language": "Java",
+        "code": "FetchFailedException",
+        "date": "2026-11-02",
+        "path": "data/posts/2026-11/spark-shuffle-spill-network-congestion-joins.js",
+        "tags": [
+            "Java",
+            "SQL",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793629220,
+        "title": "Fix K8s Init Container Deadlock & Probe Flaps",
+        "slug": "k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-11-02",
+        "path": "data/posts/2026-11/k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793629221,
+        "title": "DeepSeek SuperAgent: Autonomous Agent System",
+        "slug": "deepseek-superagent-autonomous-system-prototype",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-02",
+        "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-prototype.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1793590706,
         "title": "Mitigating NCCL Watchdog Timeouts & Ring Deadlocks",
         "slug": "nccl-watchdog-timeouts-ring-allreduce-deadlocks",
