@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Mitigating NCCL Watchdog Timeouts & Ring Deadlocks",
+    "slug": "nccl-watchdog-timeouts-ring-allreduce-deadlocks",
+    "language": "Python",
+    "code": "RuntimeError: NCCL error: unhandled system error",
+    "tags": [
+        "Python",
+        "Kubernetes",
+        "Docker",
+        "Error Fix"
+    ],
+    "analysis": "<p>In distributed deep learning clusters running PyTorch DistributedDataParallel (DDP) or Megatron-LM over multi-node GPU instances, workers frequently terminate with <code>Watchdog caught collective operation timeout</code>. Ring-AllReduce collectives require all participating ranks to reach identical barrier synchronization points in lockstep. When one node encounters an unhandled OS thread preemption, CUDA kernel launch desynchronization, unindexed data loader bottleneck, or dropped InfiniBand/RoCE packet, the remaining nodes in the ring wait indefinitely until the hardware watchdog triggers an unrecoverable teardown.</p><p>Standard error reporting often points to an arbitrary rank that simply timed out waiting on its neighbor in the logical ring, masking the true root cause occurring on a completely different rank or network switch.</p>",
+    "root_cause": "Ring AllReduce collectives deadlock when asynchronous CUDA streams diverge due to uneven batch dispatch, dynamic graph execution calling collectives conditionally on a subset of ranks, or silent InfiniBand pause frame storms causing inter-node socket timeouts without proper async error handling.",
+    "bad_code": "import torch\nimport torch.distributed as dist\n\ndef train_step(model, inputs, target, rank):\n    output = model(inputs)\n    loss = torch.nn.functional.cross_entropy(output, target)\n    loss.backward()\n    \n    # BUG: Dynamic conditional collective execution causes ring deadlock\n    # If rank 0 skips or enters a different branch, all other ranks block indefinitely\n    if rank == 0 and loss.item() > 2.0:\n        dist.all_reduce(loss) \n    elif rank != 0:\n        dist.all_reduce(loss)\n        \n    # Default init without async error handling or network interface pinning\n    # dist.init_process_group(backend=\"nccl\")",
+    "solution_desc": "Configure NCCL environment variables to prevent silent hangs: export `TORCH_NCCL_ASYNC_ERROR_HANDLING=1` and set explicit collective timeouts. Pin `NCCL_SOCKET_IFNAME` to the exact high-speed fabric interface to avoid fallback to virtual bridges. Eliminate dynamic conditional collective operations, ensuring every rank executes identical collectives over uniform tensor sizes, and wrap data loaders with non-blocking transfers and synchronized timeouts.",
+    "good_code": "import os\nimport datetime\nimport torch\nimport torch.distributed as dist\n\ndef init_distributed():\n    # Enforce non-blocking async error recovery and pin high-throughput NIC\n    os.environ[\"TORCH_NCCL_ASYNC_ERROR_HANDLING\"] = \"1\"\n    os.environ[\"NCCL_SOCKET_IFNAME\"] = \"eth0,bond0\"\n    os.environ[\"NCCL_IB_DISABLE\"] = \"0\"\n    os.environ[\"NCCL_BLOCKING_WAIT\"] = \"1\"\n    \n    dist.init_process_group(\n        backend=\"nccl\",\n        init_method=\"env://\",\n        timeout=datetime.timedelta(seconds=1800)\n    )\n\ndef train_step(model, inputs, target, rank):\n    output = model(inputs)\n    loss = torch.nn.functional.cross_entropy(output, target)\n    loss.backward()\n    \n    # Synchronized uniform reduction: all ranks execute collectively\n    synced_loss = loss.detach().clone()\n    dist.all_reduce(synced_loss, op=dist.ReduceOp.AVG)\n    return synced_loss",
+    "verification": "Enable `NCCL_DEBUG=INFO` and `NCCL_DEBUG_SUBSYS=COLL,NET`. Run multi-node synthetic benchmark via `torchrun --nnodes=2 --nproc_per_node=8`. Verify that network interfaces initialize over RoCE/InfiniBand without falling back to slow sockets, and collective timeouts fail gracefully with actionable traceback identifying the stalled rank.",
+    "date": "2026-11-02",
+    "id": 1793590706,
+    "type": "error"
+});

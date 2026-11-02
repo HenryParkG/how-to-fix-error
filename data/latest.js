@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1793590706,
+    "title": "Mitigating NCCL Watchdog Timeouts & Ring Deadlocks",
+    "slug": "nccl-watchdog-timeouts-ring-allreduce-deadlocks",
+    "language": "Python",
+    "code": "RuntimeError: NCCL error: unhandled system error",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/nccl-watchdog-timeouts-ring-allreduce-deadlocks.js",
+    "tags": [
+      "Python",
+      "Kubernetes",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793590707,
+    "title": "Resolving WiredTiger Cache Eviction & Ticket Exhaustion",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "Python",
+    "code": "WriteConflict / Available tickets: 0",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "Python",
+      "Docker",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793590708,
+    "title": "Fixing Haskell Space Leaks in Lazy State Monad Chains",
+    "slug": "haskell-space-leaks-lazy-state-monads",
+    "language": "Haskell",
+    "code": "OutOfMemory / HeapOverflow",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/haskell-space-leaks-lazy-state-monads.js",
+    "tags": [
+      "Docker",
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793590709,
+    "title": "DeepSeek SuperAgent: Autonomous Multi-Step Architecture",
+    "slug": "deepseek-superagent-autonomous-system-architecture",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-02",
+    "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-architecture.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793535864,
     "title": "Fix C++20 Coroutine Frame Leaks & Dangling Promises",
     "slug": "cpp20-coroutine-frame-leaks-dangling-promises",
@@ -869,69 +928,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Java"
-    ]
-  },
-  {
-    "id": 1792935352,
-    "title": "Fix PyTorch CUDA OOM from Allocator Fragmentation",
-    "slug": "pytorch-cuda-oom-native-caching-allocator-fragmentation",
-    "language": "Python",
-    "code": "torch.cuda.OutOfMemoryError",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/pytorch-cuda-oom-native-caching-allocator-fragmentation.js",
-    "tags": [
-      "Python",
-      "PyTorch",
-      "CUDA",
-      "Deep Learning",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792935353,
-    "title": "Prevent Postgres Shutdowns from MultiXactId Wraparound",
-    "slug": "prevent-postgresql-multixactid-wraparound-shutdowns",
-    "language": "SQL",
-    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/prevent-postgresql-multixactid-wraparound-shutdowns.js",
-    "tags": [
-      "SQL",
-      "PostgreSQL",
-      "Database",
-      "DevOps",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792935354,
-    "title": "Fix C++20 Coroutine Frame Leaks from Broken HALO",
-    "slug": "fix-cpp20-coroutine-frame-leaks-broken-halo",
-    "language": "C++",
-    "code": "MemoryLeak (HALO Failure)",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/fix-cpp20-coroutine-frame-leaks-broken-halo.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "C++",
-      "Systems",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1792935355,
-    "title": "Clean TV Launcher Trend: Analyzing pengchujin/aerial-tv",
-    "slug": "clean-tv-launcher-trend-aerial-tv",
-    "language": "Kotlin",
-    "code": "Trend",
-    "date": "2026-10-25",
-    "path": "data/posts/2026-10/clean-tv-launcher-trend-aerial-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java",
-      "Android"
     ]
   }
 ];
