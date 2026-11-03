@@ -1,5 +1,74 @@
 [
   {
+    "id": 1793711981,
+    "title": "Debugging Linux Kernel Panics: Device Driver Race Conditions",
+    "slug": "debugging-linux-kernel-panics-race-conditions",
+    "language": "C",
+    "code": "Kernel Panic",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/debugging-linux-kernel-panics-race-conditions.js",
+    "tags": [
+      "Linux",
+      "Kernel",
+      "Device Driver",
+      "Race Condition",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711982,
+    "title": "Istio mTLS Failures: Handshake & Policy Mismatches",
+    "slug": "istio-mtls-handshake-policy-mismatches-failures",
+    "language": "Kubernetes",
+    "code": "mTLS Failure",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/istio-mtls-handshake-policy-mismatches-failures.js",
+    "tags": [
+      "Istio",
+      "Kubernetes",
+      "mTLS",
+      "Service Mesh",
+      "Security",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711983,
+    "title": "Elasticsearch Red Status: Shard Allocation & Disk",
+    "slug": "elasticsearch-red-status-shard-allocation-disk-watermarks",
+    "language": "Elasticsearch",
+    "code": "Cluster Red",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/elasticsearch-red-status-shard-allocation-disk-watermarks.js",
+    "tags": [
+      "Elasticsearch",
+      "Distributed System",
+      "Monitoring",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711984,
+    "title": "DeepSeek-AI's SuperAgent Prototype: Towards Autonomous Agents",
+    "slug": "deepseek-ai-superagent-prototype-autonomous-agents",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/deepseek-ai-superagent-prototype-autonomous-agents.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Agents",
+      "Autonomous Systems",
+      "Python"
+    ]
+  },
+  {
     "id": 1793629218,
     "title": "Fixing Go Goroutine Leaks & Scheduler Starvation",
     "slug": "go-goroutine-leak-scheduler-starvation",

@@ -1,5 +1,74 @@
 var postsLatest = [
   {
+    "id": 1793711981,
+    "title": "Debugging Linux Kernel Panics: Device Driver Race Conditions",
+    "slug": "debugging-linux-kernel-panics-race-conditions",
+    "language": "C",
+    "code": "Kernel Panic",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/debugging-linux-kernel-panics-race-conditions.js",
+    "tags": [
+      "Linux",
+      "Kernel",
+      "Device Driver",
+      "Race Condition",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711982,
+    "title": "Istio mTLS Failures: Handshake & Policy Mismatches",
+    "slug": "istio-mtls-handshake-policy-mismatches-failures",
+    "language": "Kubernetes",
+    "code": "mTLS Failure",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/istio-mtls-handshake-policy-mismatches-failures.js",
+    "tags": [
+      "Istio",
+      "Kubernetes",
+      "mTLS",
+      "Service Mesh",
+      "Security",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711983,
+    "title": "Elasticsearch Red Status: Shard Allocation & Disk",
+    "slug": "elasticsearch-red-status-shard-allocation-disk-watermarks",
+    "language": "Elasticsearch",
+    "code": "Cluster Red",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/elasticsearch-red-status-shard-allocation-disk-watermarks.js",
+    "tags": [
+      "Elasticsearch",
+      "Distributed System",
+      "Monitoring",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793711984,
+    "title": "DeepSeek-AI's SuperAgent Prototype: Towards Autonomous Agents",
+    "slug": "deepseek-ai-superagent-prototype-autonomous-agents",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-03",
+    "path": "data/posts/2026-11/deepseek-ai-superagent-prototype-autonomous-agents.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "AI",
+      "Agents",
+      "Autonomous Systems",
+      "Python"
+    ]
+  },
+  {
     "id": 1793629218,
     "title": "Fixing Go Goroutine Leaks & Scheduler Starvation",
     "slug": "go-goroutine-leak-scheduler-starvation",
@@ -864,70 +933,6 @@ var postsLatest = [
       "Android",
       "Mobile Development",
       "Frontend"
-    ]
-  },
-  {
-    "id": 1793002887,
-    "title": "Prevent BEAM Scheduler Collapse from Dirty NIFs",
-    "slug": "beam-scheduler-collapse-unpreempted-dirty-nif",
-    "language": "Rust",
-    "code": "ERL_NIF_DIRTY_SCHEDULER_COLLAPSE",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/beam-scheduler-collapse-unpreempted-dirty-nif.js",
-    "tags": [
-      "Rust",
-      "Erlang",
-      "Elixir",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793002888,
-    "title": "Resolve gRPC Deadlocks from HTTP/2 Flow-Control Window",
-    "slug": "grpc-deadlock-http2-flow-control-window-exhaustion",
-    "language": "Go",
-    "code": "HTTP2_FLOW_CONTROL_EXHAUSTION",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/grpc-deadlock-http2-flow-control-window-exhaustion.js",
-    "tags": [
-      "Go",
-      "Microservices",
-      "Networking",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793002889,
-    "title": "Mitigate Redis Latency Spikes from THP During BGSAVE",
-    "slug": "redis-latency-spikes-transparent-hugepages-bgsave",
-    "language": "Docker",
-    "code": "KERNEL_THP_COW_LATENCY",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/redis-latency-spikes-transparent-hugepages-bgsave.js",
-    "tags": [
-      "Docker",
-      "Linux",
-      "Kubernetes",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793002890,
-    "title": "pengchujin/aerial-tv: Clean tvOS-Style Android TV Desktop",
-    "slug": "aerial-tv-clean-tvos-launcher-for-android-tv",
-    "language": "Java",
-    "code": "Trend",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/aerial-tv-clean-tvos-launcher-for-android-tv.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java",
-      "Infra"
     ]
   }
 ];
