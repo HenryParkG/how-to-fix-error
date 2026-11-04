@@ -1,5 +1,72 @@
 var postsLatest = [
   {
+    "id": 1793764942,
+    "title": "Debugging Rust's Lifetimes in Async Code",
+    "slug": "debugging-rust-lifetimes-ownership-async",
+    "language": "Rust",
+    "code": "Lifetime/Ownership",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/debugging-rust-lifetimes-ownership-async.js",
+    "tags": [
+      "Rust",
+      "Asynchronous Programming",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793764943,
+    "title": "Fixing Next.js Hydration Mismatches & SSR Desync",
+    "slug": "resolving-nextjs-hydration-mismatches-ssr-desync",
+    "language": "Next.js",
+    "code": "Hydration Mismatch",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/resolving-nextjs-hydration-mismatches-ssr-desync.js",
+    "tags": [
+      "Next.js",
+      "React",
+      "Frontend",
+      "SSR",
+      "Debugging",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793764944,
+    "title": "Troubleshooting PyTorch CUDA OOM & Mixed-Precision",
+    "slug": "pytorch-cuda-oom-mixed-precision-errors",
+    "language": "PyTorch",
+    "code": "CUDA OOM",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-errors.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "Machine Learning",
+      "GPU",
+      "Deep Learning",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793764945,
+    "title": "DeepSeek-AI's dsh-superagent-prototype: Autonomous Agents",
+    "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI Agents",
+      "Large Language Models",
+      "Autonomous Systems"
+    ]
+  },
+  {
     "id": 1793711981,
     "title": "Debugging Linux Kernel Panics: Device Driver Race Conditions",
     "slug": "debugging-linux-kernel-panics-race-conditions",
@@ -868,71 +935,6 @@ var postsLatest = [
       "Hardware",
       "Linux",
       "Backend"
-    ]
-  },
-  {
-    "id": 1793029741,
-    "title": "Kubernetes: Diagnosing Persistent CrashLoopBackOff from Startup Probes",
-    "slug": "kubernetes-diagnosing-crashloopbackoff-startup-probes",
-    "language": "Kubernetes",
-    "code": "CrashLoopBackOff",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/kubernetes-diagnosing-crashloopbackoff-startup-probes.js",
-    "tags": [
-      "Kubernetes",
-      "Troubleshooting",
-      "Containerization",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793029742,
-    "title": "Spark: Debugging OOM Errors with Shuffle Spill & Tungsten Memory",
-    "slug": "spark-debugging-oom-shuffle-spill-tungsten-memory",
-    "language": "Spark",
-    "code": "OOM Error",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/spark-debugging-oom-shuffle-spill-tungsten-memory.js",
-    "tags": [
-      "Spark",
-      "Big Data",
-      "Performance",
-      "JVM",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793029743,
-    "title": "Rust: Resolving Lifetime Errors with Self-Referential Structs & Pinning",
-    "slug": "rust-lifetime-errors-self-referential-structs-pinning",
-    "language": "Rust",
-    "code": "Lifetime Error",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/rust-lifetime-errors-self-referential-structs-pinning.js",
-    "tags": [
-      "Rust",
-      "Memory Safety",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793029744,
-    "title": "Aerial TV: A Clean, Ad-Free Android TV Launcher",
-    "slug": "aerial-tv-clean-ad-free-android-tv-launcher",
-    "language": "Android",
-    "code": "Trend",
-    "date": "2026-10-26",
-    "path": "data/posts/2026-10/aerial-tv-clean-ad-free-android-tv-launcher.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Android",
-      "Mobile Development",
-      "Frontend"
     ]
   }
 ];

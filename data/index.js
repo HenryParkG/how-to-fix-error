@@ -1,5 +1,72 @@
 var postsIndex = [
     {
+        "id": 1793764942,
+        "title": "Debugging Rust's Lifetimes in Async Code",
+        "slug": "debugging-rust-lifetimes-ownership-async",
+        "language": "Rust",
+        "code": "Lifetime/Ownership",
+        "date": "2026-11-04",
+        "path": "data/posts/2026-11/debugging-rust-lifetimes-ownership-async.js",
+        "tags": [
+            "Rust",
+            "Asynchronous Programming",
+            "Concurrency",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793764943,
+        "title": "Fixing Next.js Hydration Mismatches & SSR Desync",
+        "slug": "resolving-nextjs-hydration-mismatches-ssr-desync",
+        "language": "Next.js",
+        "code": "Hydration Mismatch",
+        "date": "2026-11-04",
+        "path": "data/posts/2026-11/resolving-nextjs-hydration-mismatches-ssr-desync.js",
+        "tags": [
+            "Next.js",
+            "React",
+            "Frontend",
+            "SSR",
+            "Debugging",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793764944,
+        "title": "Troubleshooting PyTorch CUDA OOM & Mixed-Precision",
+        "slug": "pytorch-cuda-oom-mixed-precision-errors",
+        "language": "PyTorch",
+        "code": "CUDA OOM",
+        "date": "2026-11-04",
+        "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-errors.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "Machine Learning",
+            "GPU",
+            "Deep Learning",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793764945,
+        "title": "DeepSeek-AI's dsh-superagent-prototype: Autonomous Agents",
+        "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-04",
+        "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "AI Agents",
+            "Large Language Models",
+            "Autonomous Systems"
+        ]
+    },
+    {
         "id": 1793711981,
         "title": "Debugging Linux Kernel Panics: Device Driver Race Conditions",
         "slug": "debugging-linux-kernel-panics-race-conditions",
