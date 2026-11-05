@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1793852401,
+    "title": "Resolving PostgreSQL TXID Wraparound Starvation",
+    "slug": "postgresql-txid-wraparound-autovacuum-starvation",
+    "language": "SQL",
+    "code": "TXIDWraparound",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/postgresql-txid-wraparound-autovacuum-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793852402,
+    "title": "Fixing eBPF Verifier Complexity & Unbounded Loops",
+    "slug": "debugging-ebpf-verifier-complexity-unbounded-loops",
+    "language": "Rust",
+    "code": "VerifierRejection",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/debugging-ebpf-verifier-complexity-unbounded-loops.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Rust",
+      "Kernel",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793852403,
+    "title": "Kafka Rebalance Storms & Heartbeat Starvation",
+    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/kafka-consumer-rebalance-heartbeat-starvation.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793852404,
+    "title": "DeepSeek Superagent Prototype: Autonomous AI",
+    "slug": "deepseek-ai-dsh-superagent-prototype-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI"
+    ]
+  },
+  {
     "id": 1793764942,
     "title": "Debugging Rust's Lifetimes in Async Code",
     "slug": "debugging-rust-lifetimes-ownership-async",
@@ -867,74 +930,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1793070230,
-    "title": "Envoy/Istio: Debugging 503 UC Cascades",
-    "slug": "envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts",
-    "language": "Envoy, Istio",
-    "code": "503 UC (Upstream Connection)",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/envoy-istio-debug-503-uc-cascades-mismatched-tcp-timeouts.js",
-    "tags": [
-      "Envoy",
-      "Istio",
-      "TCP",
-      "Networking",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793070231,
-    "title": "WebGPU: Eliminating Render Pipeline Stalls",
-    "slug": "webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment",
-    "language": "WebGPU, JavaScript",
-    "code": "Alignment Error",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/webgpu-render-pipeline-stalls-dynamic-uniform-buffer-alignment.js",
-    "tags": [
-      "WebGPU",
-      "Graphics",
-      "JavaScript",
-      "Frontend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793070232,
-    "title": "Qdrant: HNSW Degradation & Memory Bloat",
-    "slug": "qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts",
-    "language": "Qdrant, Vector Database",
-    "code": "HNSW Degrade",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/qdrant-hnsw-degradation-memory-bloat-high-velocity-upserts.js",
-    "tags": [
-      "Qdrant",
-      "Vector Database",
-      "HNSW",
-      "Database",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793070233,
-    "title": "GPU-Unlock-Ada: Unlocking NVIDIA Ada Lovelace Tensor Cores",
-    "slug": "gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090",
-    "language": "Firmware, C/C++, Python",
-    "code": "Trend",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/gpu-unlock-ada-trending-github-repo-tensor-cores-rtx-4090.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "GPU",
-      "AI/ML",
-      "Hardware",
-      "Linux",
-      "Backend"
     ]
   }
 ];
