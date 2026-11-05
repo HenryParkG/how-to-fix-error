@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1793887077,
+    "title": "Fix C++20 Coroutine Leaks & Cancellation Deadlocks",
+    "slug": "fix-cpp20-coroutine-leaks-cancellation-deadlocks",
+    "language": "C++20",
+    "code": "COROUTINE_LEAK",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-cpp20-coroutine-leaks-cancellation-deadlocks.js",
+    "tags": [
+      "C++20",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887078,
+    "title": "Fix Elixir OTP Supervisor Storms & GenServer Overload",
+    "slug": "fix-elixir-supervisor-storms-genserver-backpressure",
+    "language": "Elixir",
+    "code": "MAX_RESTART_REACHED",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-elixir-supervisor-storms-genserver-backpressure.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887079,
+    "title": "Fix Vector DB Index Corruption & Recall Degradation",
+    "slug": "fix-vector-db-index-corruption-recall-degradation",
+    "language": "Python",
+    "code": "INDEX_DEGRADATION",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-vector-db-index-corruption-recall-degradation.js",
+    "tags": [
+      "Python",
+      "VectorDB",
+      "HNSW",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887080,
+    "title": "DeepSeek SuperAgent Prototype: Autonomous Agents",
+    "slug": "deepseek-superagent-prototype-autonomous-agent",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793852401,
     "title": "Resolving PostgreSQL TXID Wraparound Starvation",
     "slug": "postgresql-txid-wraparound-autovacuum-starvation",
@@ -870,66 +929,6 @@ var postsLatest = [
       "Firmware",
       "AI/ML",
       "Infra"
-    ]
-  },
-  {
-    "id": 1793090755,
-    "title": "Diagnose Goroutine Leaks & Go Scheduler Contention",
-    "slug": "diagnose-goroutine-leaks-scheduler-contention-go",
-    "language": "Go",
-    "code": "GoroutineLeak",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/diagnose-goroutine-leaks-scheduler-contention-go.js",
-    "tags": [
-      "Go",
-      "Concurrency",
-      "Profiling",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793090756,
-    "title": "Fix Elasticsearch Yellow Status & Shard Allocation",
-    "slug": "fix-elasticsearch-yellow-status-shard-allocation",
-    "language": "Elasticsearch",
-    "code": "ElasticsearchYellowStatus",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/fix-elasticsearch-yellow-status-shard-allocation.js",
-    "tags": [
-      "Java",
-      "Docker",
-      "DevOps",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793090757,
-    "title": "Fix Airflow DAG Deadlocks & Pool Exhaustion",
-    "slug": "fix-airflow-dag-deadlocks-pool-exhaustion",
-    "language": "Python",
-    "code": "AirflowPoolDeadlock",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/fix-airflow-dag-deadlocks-pool-exhaustion.js",
-    "tags": [
-      "Python",
-      "Docker",
-      "AWS",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793090758,
-    "title": "Android Ad Cleaner: Debloat OEM Systems with AI & ADB",
-    "slug": "android-ad-cleaner-ai-oem-debloat-adb",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/android-ad-cleaner-ai-oem-debloat-adb.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];

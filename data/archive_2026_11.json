@@ -1,5 +1,64 @@
 [
   {
+    "id": 1793887077,
+    "title": "Fix C++20 Coroutine Leaks & Cancellation Deadlocks",
+    "slug": "fix-cpp20-coroutine-leaks-cancellation-deadlocks",
+    "language": "C++20",
+    "code": "COROUTINE_LEAK",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-cpp20-coroutine-leaks-cancellation-deadlocks.js",
+    "tags": [
+      "C++20",
+      "Concurrency",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887078,
+    "title": "Fix Elixir OTP Supervisor Storms & GenServer Overload",
+    "slug": "fix-elixir-supervisor-storms-genserver-backpressure",
+    "language": "Elixir",
+    "code": "MAX_RESTART_REACHED",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-elixir-supervisor-storms-genserver-backpressure.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887079,
+    "title": "Fix Vector DB Index Corruption & Recall Degradation",
+    "slug": "fix-vector-db-index-corruption-recall-degradation",
+    "language": "Python",
+    "code": "INDEX_DEGRADATION",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-vector-db-index-corruption-recall-degradation.js",
+    "tags": [
+      "Python",
+      "VectorDB",
+      "HNSW",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793887080,
+    "title": "DeepSeek SuperAgent Prototype: Autonomous Agents",
+    "slug": "deepseek-superagent-prototype-autonomous-agent",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793852401,
     "title": "Resolving PostgreSQL TXID Wraparound Starvation",
     "slug": "postgresql-txid-wraparound-autovacuum-starvation",
