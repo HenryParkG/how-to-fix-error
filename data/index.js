@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1793938807,
+        "title": "Fixing WiredTiger Cache Stalls & Ticket Exhaustion",
+        "slug": "mongodb-wiredtiger-cache-stalls-ticket-exhaustion",
+        "language": "MongoDB",
+        "code": "WiredTigerTicketExhaustion",
+        "date": "2026-11-06",
+        "path": "data/posts/2026-11/mongodb-wiredtiger-cache-stalls-ticket-exhaustion.js",
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "SQL",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793938808,
+        "title": "Debugging Haskell Space Leaks & Thunk Accumulation",
+        "slug": "debugging-haskell-space-leaks-thunk-accumulation",
+        "language": "Haskell",
+        "code": "SpaceLeakOutOfMemory",
+        "date": "2026-11-06",
+        "path": "data/posts/2026-11/debugging-haskell-space-leaks-thunk-accumulation.js",
+        "tags": [
+            "Docker",
+            "Rust",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793938809,
+        "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+        "slug": "grpc-http2-flow-control-deadlocks-window-starvation",
+        "language": "Go",
+        "code": "FlowControlStarvation",
+        "date": "2026-11-06",
+        "path": "data/posts/2026-11/grpc-http2-flow-control-deadlocks-window-starvation.js",
+        "tags": [
+            "Go",
+            "Docker",
+            "Kubernetes",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1793938810,
+        "title": "DeepSeek SuperAgent: Autonomous Multi-Agent System",
+        "slug": "deepseek-superagent-prototype-autonomous-agent",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-06",
+        "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1793887077,
         "title": "Fix C++20 Coroutine Leaks & Cancellation Deadlocks",
         "slug": "fix-cpp20-coroutine-leaks-cancellation-deadlocks",

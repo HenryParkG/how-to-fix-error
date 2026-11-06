@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1793938807,
+    "title": "Fixing WiredTiger Cache Stalls & Ticket Exhaustion",
+    "slug": "mongodb-wiredtiger-cache-stalls-ticket-exhaustion",
+    "language": "MongoDB",
+    "code": "WiredTigerTicketExhaustion",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-stalls-ticket-exhaustion.js",
+    "tags": [
+      "Docker",
+      "Kubernetes",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793938808,
+    "title": "Debugging Haskell Space Leaks & Thunk Accumulation",
+    "slug": "debugging-haskell-space-leaks-thunk-accumulation",
+    "language": "Haskell",
+    "code": "SpaceLeakOutOfMemory",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/debugging-haskell-space-leaks-thunk-accumulation.js",
+    "tags": [
+      "Docker",
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793938809,
+    "title": "Fixing gRPC HTTP/2 Flow Control Deadlocks",
+    "slug": "grpc-http2-flow-control-deadlocks-window-starvation",
+    "language": "Go",
+    "code": "FlowControlStarvation",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/grpc-http2-flow-control-deadlocks-window-starvation.js",
+    "tags": [
+      "Go",
+      "Docker",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793938810,
+    "title": "DeepSeek SuperAgent: Autonomous Multi-Agent System",
+    "slug": "deepseek-superagent-prototype-autonomous-agent",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793887077,
     "title": "Fix C++20 Coroutine Leaks & Cancellation Deadlocks",
     "slug": "fix-cpp20-coroutine-leaks-cancellation-deadlocks",
@@ -862,73 +921,6 @@ var postsLatest = [
       "GitHub",
       "Python",
       "Docker"
-    ]
-  },
-  {
-    "id": 1793113361,
-    "title": "C++20 Coroutines: Debugging Memory Leaks & Suspension Pitfalls",
-    "slug": "cpp20-coroutines-memory-leaks-suspension-pitfalls",
-    "language": "C++",
-    "code": "Coroutine Error",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/cpp20-coroutines-memory-leaks-suspension-pitfalls.js",
-    "tags": [
-      "C++",
-      "Concurrency",
-      "Memory Management",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793113362,
-    "title": "PyTorch: Resolving CUDA OOM from Hidden Memory Allocations",
-    "slug": "pytorch-cuda-oom-hidden-memory-allocations-fragmentation",
-    "language": "PyTorch, Python, CUDA",
-    "code": "CUDA OOM",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/pytorch-cuda-oom-hidden-memory-allocations-fragmentation.js",
-    "tags": [
-      "Python",
-      "PyTorch",
-      "CUDA",
-      "Deep Learning",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793113363,
-    "title": "PostgreSQL: Diagnosing XID Wraparound & Mitigating Aggressive Autovacuum",
-    "slug": "postgresql-xid-wraparound-aggressive-autovacuum",
-    "language": "PostgreSQL",
-    "code": "XID Wraparound",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/postgresql-xid-wraparound-aggressive-autovacuum.js",
-    "tags": [
-      "SQL",
-      "Database",
-      "Maintenance",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793113364,
-    "title": "Why 'gpu-unlock-ada' is Trending: Unlocking RTX 4090/4070 Ti SUPER Tensor Cores",
-    "slug": "gpu-unlock-ada-trending-rtx-4090-4070-ti-super-tensor-cores",
-    "language": "NVIDIA CUDA, GPU Firmware",
-    "code": "Trend",
-    "date": "2026-10-27",
-    "path": "data/posts/2026-10/gpu-unlock-ada-trending-rtx-4090-4070-ti-super-tensor-cores.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "GPU Computing",
-      "NVIDIA",
-      "Firmware",
-      "AI/ML",
-      "Infra"
     ]
   }
 ];
