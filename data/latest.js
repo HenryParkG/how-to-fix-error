@@ -1,5 +1,69 @@
 var postsLatest = [
   {
+    "id": 1793972206,
+    "title": "Debugging K8s CrashLoopBackOff: Causes & Fixes",
+    "slug": "debugging-kubernetes-crashloopbackoff-root-causes-remediation",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/debugging-kubernetes-crashloopbackoff-root-causes-remediation.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Containerization",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972207,
+    "title": "Untangling Akka Actor Deadlocks & Message Ordering Issues",
+    "slug": "untangling-scala-akka-actor-system-deadlocks-message-ordering",
+    "language": "Scala, Akka",
+    "code": "Deadlock",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/untangling-scala-akka-actor-system-deadlocks-message-ordering.js",
+    "tags": [
+      "Scala",
+      "Akka",
+      "Backend",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972208,
+    "title": "Detecting & Preventing Go Goroutine Leaks",
+    "slug": "detecting-preventing-go-goroutine-leaks-concurrent-services",
+    "language": "Go",
+    "code": "GoroutineLeak",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/detecting-preventing-go-goroutine-leaks-concurrent-services.js",
+    "tags": [
+      "Go",
+      "Backend",
+      "Concurrency",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972209,
+    "title": "DeepSeek AI's SuperAgent Prototype: Autonomous Agents",
+    "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI",
+      "Agents"
+    ]
+  },
+  {
     "id": 1793938807,
     "title": "Fixing WiredTiger Cache Stalls & Ticket Exhaustion",
     "slug": "mongodb-wiredtiger-cache-stalls-ticket-exhaustion",
@@ -858,69 +922,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1793188557,
-    "title": "Fixing eBPF Unbounded Loops & Stack Spill Limits",
-    "slug": "ebpf-verifier-unbounded-loops-map-spill-fix",
-    "language": "C / Rust",
-    "code": "BPF_VERIFIER_ERR_LOOP",
-    "date": "2026-10-28",
-    "path": "data/posts/2026-10/ebpf-verifier-unbounded-loops-map-spill-fix.js",
-    "tags": [
-      "Rust",
-      "Kernel",
-      "eBPF",
-      "Linux",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793188558,
-    "title": "Resolving Kafka Rebalance Storms & Starvation",
-    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-10-28",
-    "path": "data/posts/2026-10/kafka-consumer-rebalance-heartbeat-starvation.js",
-    "tags": [
-      "Java",
-      "Distributed Systems",
-      "Kafka",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793188559,
-    "title": "Mitigating WiredTiger Cache Stalls & Ticket Exhaustion",
-    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
-    "language": "MongoDB / Python",
-    "code": "WT_TICKET_EXHAUSTION",
-    "date": "2026-10-28",
-    "path": "data/posts/2026-10/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
-    "tags": [
-      "Python",
-      "Docker",
-      "Database",
-      "MongoDB",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793188560,
-    "title": "Inside gpu-unlock-ada: Unlocking RTX 40-Series Compute",
-    "slug": "gpu-unlock-ada-rtx-4090-tensor-firmware-patch",
-    "language": "Python / C++",
-    "code": "Trend",
-    "date": "2026-10-28",
-    "path": "data/posts/2026-10/gpu-unlock-ada-rtx-4090-tensor-firmware-patch.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "Docker"
     ]
   }
 ];
