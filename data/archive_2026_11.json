@@ -1,5 +1,68 @@
 [
   {
+    "id": 1794053261,
+    "title": "Debugging Rust Borrow Checker Lifetime Errors & Ownership Violations",
+    "slug": "rust-borrow-checker-lifetime-errors-ownership-violations",
+    "language": "Rust",
+    "code": "Borrowing Error",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/rust-borrow-checker-lifetime-errors-ownership-violations.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Memory Management",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053262,
+    "title": "Resolving PyTorch CUDA Out-of-Memory & Mixed Precision Training",
+    "slug": "pytorch-cuda-oom-mixed-precision-instability",
+    "language": "Python",
+    "code": "CUDA OOM",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-instability.js",
+    "tags": [
+      "Python",
+      "Backend",
+      "Deep Learning",
+      "PyTorch",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053263,
+    "title": "Troubleshooting Istio Sidecar Injection & Traffic Policy Gaps",
+    "slug": "istio-sidecar-injection-traffic-policy-failures",
+    "language": "Kubernetes",
+    "code": "Sidecar Failure",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/istio-sidecar-injection-traffic-policy-failures.js",
+    "tags": [
+      "Kubernetes",
+      "Infra",
+      "Service Mesh",
+      "Istio",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053264,
+    "title": "Agent Autoloop: Enabling Autonomous CLI Agents for Seamless Workflows",
+    "slug": "kkkkkhazix-agent-autoloop-github-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/kkkkkhazix-agent-autoloop-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI Agents",
+      "Automation"
+    ]
+  },
+  {
     "id": 1794023322,
     "title": "Resolving Spark FetchFailedException & Skew Partition OOM",
     "slug": "resolving-spark-fetchfailed-skew-partition-oom",

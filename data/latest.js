@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1794053261,
+    "title": "Debugging Rust Borrow Checker Lifetime Errors & Ownership Violations",
+    "slug": "rust-borrow-checker-lifetime-errors-ownership-violations",
+    "language": "Rust",
+    "code": "Borrowing Error",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/rust-borrow-checker-lifetime-errors-ownership-violations.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Memory Management",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053262,
+    "title": "Resolving PyTorch CUDA Out-of-Memory & Mixed Precision Training",
+    "slug": "pytorch-cuda-oom-mixed-precision-instability",
+    "language": "Python",
+    "code": "CUDA OOM",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-instability.js",
+    "tags": [
+      "Python",
+      "Backend",
+      "Deep Learning",
+      "PyTorch",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053263,
+    "title": "Troubleshooting Istio Sidecar Injection & Traffic Policy Gaps",
+    "slug": "istio-sidecar-injection-traffic-policy-failures",
+    "language": "Kubernetes",
+    "code": "Sidecar Failure",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/istio-sidecar-injection-traffic-policy-failures.js",
+    "tags": [
+      "Kubernetes",
+      "Infra",
+      "Service Mesh",
+      "Istio",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053264,
+    "title": "Agent Autoloop: Enabling Autonomous CLI Agents for Seamless Workflows",
+    "slug": "kkkkkhazix-agent-autoloop-github-trend",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/kkkkkhazix-agent-autoloop-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI Agents",
+      "Automation"
+    ]
+  },
+  {
     "id": 1794023322,
     "title": "Resolving Spark FetchFailedException & Skew Partition OOM",
     "slug": "resolving-spark-fetchfailed-skew-partition-oom",
@@ -863,65 +926,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Go"
-    ]
-  },
-  {
-    "id": 1793331560,
-    "title": "Fix Tokio Async Cancellation Safety Violations",
-    "slug": "fix-tokio-async-cancellation-safety-violations",
-    "language": "Rust",
-    "code": "DataLossOnCancel",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/fix-tokio-async-cancellation-safety-violations.js",
-    "tags": [
-      "Rust",
-      "Tokio",
-      "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793331561,
-    "title": "Resolving Spark Shuffle Spill OOMs and Skew",
-    "slug": "resolving-spark-shuffle-spill-ooms-and-skew",
-    "language": "Java",
-    "code": "OutOfMemoryError: Container killed",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/resolving-spark-shuffle-spill-ooms-and-skew.js",
-    "tags": [
-      "Java",
-      "Spark",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793331562,
-    "title": "Mitigate RocksDB Write Stalls & Compaction Debt",
-    "slug": "mitigate-rocksdb-write-stalls-compaction-debt",
-    "language": "Rust",
-    "code": "Status::Incomplete(WriteStall)",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/mitigate-rocksdb-write-stalls-compaction-debt.js",
-    "tags": [
-      "Rust",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793331563,
-    "title": "Inside unclebob/ub-mode: Clean Code in Emacs",
-    "slug": "inside-unclebob-ub-mode-clean-code-emacs",
-    "language": "Emacs Lisp",
-    "code": "Trend",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/inside-unclebob-ub-mode-clean-code-emacs.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java"
     ]
   }
 ];
