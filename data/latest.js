@@ -1,5 +1,63 @@
 var postsLatest = [
   {
+    "id": 1794023322,
+    "title": "Resolving Spark FetchFailedException & Skew Partition OOM",
+    "slug": "resolving-spark-fetchfailed-skew-partition-oom",
+    "language": "Spark / Scala",
+    "code": "FetchFailedException",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/resolving-spark-fetchfailed-skew-partition-oom.js",
+    "tags": [
+      "Java",
+      "SQL",
+      "Kubernetes",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794023323,
+    "title": "Mitigating Redis BGSAVE Fork Latency & CoW Memory Bloat",
+    "slug": "mitigating-redis-bgsave-fork-latency-cow-memory-bloat",
+    "language": "Redis / C",
+    "code": "ForkLatencySpike",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/mitigating-redis-bgsave-fork-latency-cow-memory-bloat.js",
+    "tags": [
+      "Docker",
+      "Go",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794023324,
+    "title": "Handling WebGPU Device Loss & Pipeline Compilation Stalls",
+    "slug": "handling-webgpu-device-loss-pipeline-compilation-stalls",
+    "language": "TypeScript",
+    "code": "GPUDeviceLostInfo",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/handling-webgpu-device-loss-pipeline-compilation-stalls.js",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794023325,
+    "title": "Agent-Autoloop: Autonomous Background CLI Orchestration",
+    "slug": "agent-autoloop-autonomous-background-cli-orchestration",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-orchestration.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1793972206,
     "title": "Debugging K8s CrashLoopBackOff: Causes & Fixes",
     "slug": "debugging-kubernetes-crashloopbackoff-root-causes-remediation",
@@ -864,64 +922,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Java"
-    ]
-  },
-  {
-    "id": 1793275590,
-    "title": "Mitigating Redis BGSAVE Copy-on-Write Latency Spikes",
-    "slug": "redis-mitigating-bgsave-cow-memory-fork-latency",
-    "language": "Redis",
-    "code": "ERR_FORK_OOM_LATENCY",
-    "date": "2026-10-29",
-    "path": "data/posts/2026-10/redis-mitigating-bgsave-cow-memory-fork-latency.js",
-    "tags": [
-      "Docker",
-      "Kubernetes",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793275591,
-    "title": "Diagnosing GenServer Mailbox Saturation & Starvation",
-    "slug": "elixir-otp-genserver-mailbox-saturation-starvation",
-    "language": "Elixir",
-    "code": "SystemLimitError",
-    "date": "2026-10-29",
-    "path": "data/posts/2026-10/elixir-otp-genserver-mailbox-saturation-starvation.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793275592,
-    "title": "Resolving gRPC HTTP/2 Flow-Control Window Deadlocks",
-    "slug": "grpc-http2-flow-control-window-exhaustion-deadlocks",
-    "language": "Go",
-    "code": "RESOURCE_EXHAUSTED",
-    "date": "2026-10-29",
-    "path": "data/posts/2026-10/grpc-http2-flow-control-window-exhaustion-deadlocks.js",
-    "tags": [
-      "Go",
-      "Kubernetes",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793275593,
-    "title": "Clean Chinese Android Systems with android-ad-cleaner",
-    "slug": "android-ad-cleaner-ai-debloater-trend",
-    "language": "Shell",
-    "code": "Trend",
-    "date": "2026-10-29",
-    "path": "data/posts/2026-10/android-ad-cleaner-ai-debloater-trend.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];
