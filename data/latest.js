@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1794108543,
+    "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
+    "slug": "ebpf-verifier-rejection-instruction-limit",
+    "language": "Rust",
+    "code": "BPF_PROG_LOAD_EPERM",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/ebpf-verifier-rejection-instruction-limit.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794108544,
+    "title": "Debugging Kafka Rebalance Storms & Heartbeats",
+    "slug": "kafka-consumer-rebalance-storm-heartbeat-timeout",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/kafka-consumer-rebalance-storm-heartbeat-timeout.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794108545,
+    "title": "Mitigating PostgreSQL XID Wraparound Lockups",
+    "slug": "mitigating-postgresql-xid-wraparound-autovacuum",
+    "language": "SQL",
+    "code": "XID_WRAPAROUND_FATAL",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/mitigating-postgresql-xid-wraparound-autovacuum.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794108546,
+    "title": "Inside agent-autoloop: Autonomous CLI Agents",
+    "slug": "agent-autoloop-autonomous-cli-agent",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/agent-autoloop-autonomous-cli-agent.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1794053261,
     "title": "Debugging Rust Borrow Checker Lifetime Errors & Ownership Violations",
     "slug": "rust-borrow-checker-lifetime-errors-ownership-violations",
@@ -865,67 +924,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Java"
-    ]
-  },
-  {
-    "id": 1793361401,
-    "title": "Fixing io_uring CQE Drops and Worker Exhaustion",
-    "slug": "linux-iouring-cqe-drops-worker-exhaustion",
-    "language": "Rust",
-    "code": "EBUSY / IORING_CQ_EVENTFD_DISABLED",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/linux-iouring-cqe-drops-worker-exhaustion.js",
-    "tags": [
-      "Rust",
-      "Linux",
-      "Async",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793361402,
-    "title": "Fixing Istio Envoy 503 UC Flaky Connection Resets",
-    "slug": "istio-envoy-503-uc-tcp-half-close-race",
-    "language": "Go",
-    "code": "503 UC (upstream_connection_termination)",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/istio-envoy-503-uc-tcp-half-close-race.js",
-    "tags": [
-      "Kubernetes",
-      "Go",
-      "Docker",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793361403,
-    "title": "Mitigating Vector HNSW Index Bloat & Recall Drift",
-    "slug": "vector-db-hnsw-bloat-recall-drift-mitigation",
-    "language": "Python",
-    "code": "ERR_INDEX_DEGRADATION",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/vector-db-hnsw-bloat-recall-drift-mitigation.js",
-    "tags": [
-      "Python",
-      "Rust",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793361404,
-    "title": "Trending: unclebob/ub-mode for Emacs Clean Coding",
-    "slug": "unclebob-ub-mode-emacs-clean-code",
-    "language": "Go",
-    "code": "Trend",
-    "date": "2026-10-30",
-    "path": "data/posts/2026-10/unclebob-ub-mode-emacs-clean-code.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Go"
     ]
   }
 ];
