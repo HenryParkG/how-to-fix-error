@@ -1,5 +1,65 @@
 var postsLatest = [
   {
+    "id": 1794140993,
+    "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
+    "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
+    "language": "Elixir, OTP",
+    "code": "Crash/Corruption",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/debugging-elixir-otp-supervisor-crashes-genserve-state-corruption.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140994,
+    "title": "Resolving Terraform State Lock Contention & Plan Drift",
+    "slug": "resolving-terraform-state-lock-contention-plan-drift",
+    "language": "Terraform, IaC",
+    "code": "Lock/Drift",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/resolving-terraform-state-lock-contention-plan-drift.js",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140995,
+    "title": "Untangling C++20 Coroutine Asymmetry & Resource Leaks",
+    "slug": "untangling-cpp20-coroutine-asymmetry-resource-leaks",
+    "language": "C++, C++20 Coroutines",
+    "code": "Leak/Asymmetry",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/untangling-cpp20-coroutine-asymmetry-resource-leaks.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140996,
+    "title": "KKKKhazix/agent-autoloop: Autonomous CLI Agents for Background Tasks",
+    "slug": "kkkkhazix-agent-autoloop-github-trend",
+    "language": "Python, Shell scripting",
+    "code": "Trend",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/kkkkhazix-agent-autoloop-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI Agent"
+    ]
+  },
+  {
     "id": 1794108543,
     "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
     "slug": "ebpf-verifier-rejection-instruction-limit",
@@ -866,64 +926,6 @@ var postsLatest = [
       "Developer Tools",
       "Clean Code",
       "Backend"
-    ]
-  },
-  {
-    "id": 1793417256,
-    "title": "Fix CoreDNS Latency & Conntrack Table Exhaustion",
-    "slug": "kubernetes-coredns-conntrack-table-exhaustion-fix",
-    "language": "Kubernetes",
-    "code": "nf_conntrack: table full",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/kubernetes-coredns-conntrack-table-exhaustion-fix.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793417257,
-    "title": "Fix Lucene Merge Storms & Write Threadpool Starvation",
-    "slug": "elasticsearch-lucene-merge-storms-threadpool-starvation",
-    "language": "Java",
-    "code": "EsRejectedExecutionException",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/elasticsearch-lucene-merge-storms-threadpool-starvation.js",
-    "tags": [
-      "Java",
-      "Docker",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793417258,
-    "title": "Resolving WebGPU Dynamic Offset & Barrier Crashes",
-    "slug": "webgpu-dynamic-offset-misalignment-barrier-crashes",
-    "language": "TypeScript",
-    "code": "GPUValidationError",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/webgpu-dynamic-offset-misalignment-barrier-crashes.js",
-    "tags": [
-      "TypeScript",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793417259,
-    "title": "Uncle Bob's ub-mode: Clean Code Principles in Emacs",
-    "slug": "unclebob-ub-mode-clean-code-emacs",
-    "language": "Java",
-    "code": "Trend",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/unclebob-ub-mode-clean-code-emacs.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Java"
     ]
   }
 ];

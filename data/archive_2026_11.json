@@ -1,5 +1,65 @@
 [
   {
+    "id": 1794140993,
+    "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
+    "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
+    "language": "Elixir, OTP",
+    "code": "Crash/Corruption",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/debugging-elixir-otp-supervisor-crashes-genserve-state-corruption.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140994,
+    "title": "Resolving Terraform State Lock Contention & Plan Drift",
+    "slug": "resolving-terraform-state-lock-contention-plan-drift",
+    "language": "Terraform, IaC",
+    "code": "Lock/Drift",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/resolving-terraform-state-lock-contention-plan-drift.js",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140995,
+    "title": "Untangling C++20 Coroutine Asymmetry & Resource Leaks",
+    "slug": "untangling-cpp20-coroutine-asymmetry-resource-leaks",
+    "language": "C++, C++20 Coroutines",
+    "code": "Leak/Asymmetry",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/untangling-cpp20-coroutine-asymmetry-resource-leaks.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140996,
+    "title": "KKKKhazix/agent-autoloop: Autonomous CLI Agents for Background Tasks",
+    "slug": "kkkkhazix-agent-autoloop-github-trend",
+    "language": "Python, Shell scripting",
+    "code": "Trend",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/kkkkhazix-agent-autoloop-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI Agent"
+    ]
+  },
+  {
     "id": 1794108543,
     "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
     "slug": "ebpf-verifier-rejection-instruction-limit",
