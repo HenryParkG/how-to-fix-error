@@ -1,5 +1,68 @@
 [
   {
+    "id": 1794196213,
+    "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
+    "slug": "vllm-pagedattention-kv-cache-desync-oom",
+    "language": "Python",
+    "code": "CUDA_OOM",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/vllm-pagedattention-kv-cache-desync-oom.js",
+    "tags": [
+      "vLLM",
+      "CUDA",
+      "LLM",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196214,
+    "title": "Fix gRPC HTTP/2 Flow Control Starvation & Deadlock",
+    "slug": "grpc-http2-flow-control-window-starvation",
+    "language": "Go",
+    "code": "DEADLINE_EXCEEDED",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
+    "tags": [
+      "gRPC",
+      "HTTP2",
+      "Go",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196215,
+    "title": "Fix MongoDB WiredTiger Eviction Stalls & Read Tickets",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "SQL",
+    "code": "TICKETS_EXHAUSTED",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "MongoDB",
+      "WiredTiger",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196216,
+    "title": "Agent-Autoloop: Background Autonomous CLI Agents",
+    "slug": "agent-autoloop-autonomous-background-cli-agents",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-agents.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI"
+    ]
+  },
+  {
     "id": 1794140993,
     "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
     "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",

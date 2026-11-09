@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1794196213,
+    "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
+    "slug": "vllm-pagedattention-kv-cache-desync-oom",
+    "language": "Python",
+    "code": "CUDA_OOM",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/vllm-pagedattention-kv-cache-desync-oom.js",
+    "tags": [
+      "vLLM",
+      "CUDA",
+      "LLM",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196214,
+    "title": "Fix gRPC HTTP/2 Flow Control Starvation & Deadlock",
+    "slug": "grpc-http2-flow-control-window-starvation",
+    "language": "Go",
+    "code": "DEADLINE_EXCEEDED",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
+    "tags": [
+      "gRPC",
+      "HTTP2",
+      "Go",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196215,
+    "title": "Fix MongoDB WiredTiger Eviction Stalls & Read Tickets",
+    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
+    "language": "SQL",
+    "code": "TICKETS_EXHAUSTED",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
+    "tags": [
+      "MongoDB",
+      "WiredTiger",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794196216,
+    "title": "Agent-Autoloop: Background Autonomous CLI Agents",
+    "slug": "agent-autoloop-autonomous-background-cli-agents",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-agents.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI"
+    ]
+  },
+  {
     "id": 1794140993,
     "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
     "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
@@ -858,74 +921,6 @@ var postsLatest = [
       "GitHub",
       "CSS",
       "TypeScript"
-    ]
-  },
-  {
-    "id": 1793446102,
-    "title": "Diagnosing Rust async fn Lifetime & Borrow Checker Violations",
-    "slug": "rust-async-fn-lifetime-borrow-checker-violations",
-    "language": "Rust",
-    "code": "Lifetime Error",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/rust-async-fn-lifetime-borrow-checker-violations.js",
-    "tags": [
-      "Rust",
-      "Async",
-      "Borrow Checker",
-      "Lifetime",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793446103,
-    "title": "Mitigating PyTorch CUDA OOMs: Grad Checkpointing & Quantization Mismatches",
-    "slug": "pytorch-cuda-ooms-gradient-checkpointing-quantization-mismatches",
-    "language": "PyTorch",
-    "code": "CUDA OOM",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/pytorch-cuda-ooms-gradient-checkpointing-quantization-mismatches.js",
-    "tags": [
-      "PyTorch",
-      "Python",
-      "ML",
-      "CUDA",
-      "OOM",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793446104,
-    "title": "Debugging Terraform State Lock Contention & Partial Apply Failures",
-    "slug": "debugging-terraform-state-lock-contention-partial-apply-failures",
-    "language": "Terraform",
-    "code": "State Lock",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/debugging-terraform-state-lock-contention-partial-apply-failures.js",
-    "tags": [
-      "Terraform",
-      "AWS",
-      "DevOps",
-      "IaC",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793446105,
-    "title": "Unpacking 'unclebob/ub-mode': An Editor Extension for Clean Code",
-    "slug": "unclebob-ub-mode-editor-extension-clean-code",
-    "language": "Editor Extension",
-    "code": "Developer Tool",
-    "date": "2026-10-31",
-    "path": "data/posts/2026-10/unclebob-ub-mode-editor-extension-clean-code.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Developer Tools",
-      "Clean Code",
-      "Backend"
     ]
   }
 ];
