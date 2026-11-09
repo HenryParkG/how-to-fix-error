@@ -1,5 +1,68 @@
 [
   {
+    "id": 1794236117,
+    "title": "Diagnose Haskell Lazy Space Leaks and Thunks",
+    "slug": "diagnosing-haskell-space-leaks-thunk-accumulation",
+    "language": "Haskell",
+    "code": "SpaceLeak",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/diagnosing-haskell-space-leaks-thunk-accumulation.js",
+    "tags": [
+      "Haskell",
+      "Rust",
+      "Backend",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236118,
+    "title": "Fix Cassandra Tombstone Read Timeout Cascades",
+    "slug": "cassandra-tombstone-read-timeout-cascades",
+    "language": "Cassandra",
+    "code": "ReadTimeoutException",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/cassandra-tombstone-read-timeout-cascades.js",
+    "tags": [
+      "Cassandra",
+      "Java",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236119,
+    "title": "Debug Kubernetes cgroup v2 Throttling and Silent OOM",
+    "slug": "kubernetes-cgroupv2-cfs-throttling-silent-oomkill",
+    "language": "Kubernetes",
+    "code": "OOMKilled",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/kubernetes-cgroupv2-cfs-throttling-silent-oomkill.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236120,
+    "title": "Minireel HGhub: Modern YellowFruit Third-Party Client",
+    "slug": "minireel-hghub-yellowfruit-client-analysis",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/minireel-hghub-yellowfruit-client-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "React"
+    ]
+  },
+  {
     "id": 1794196213,
     "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
     "slug": "vllm-pagedattention-kv-cache-desync-oom",

@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1794236117,
+    "title": "Diagnose Haskell Lazy Space Leaks and Thunks",
+    "slug": "diagnosing-haskell-space-leaks-thunk-accumulation",
+    "language": "Haskell",
+    "code": "SpaceLeak",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/diagnosing-haskell-space-leaks-thunk-accumulation.js",
+    "tags": [
+      "Haskell",
+      "Rust",
+      "Backend",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236118,
+    "title": "Fix Cassandra Tombstone Read Timeout Cascades",
+    "slug": "cassandra-tombstone-read-timeout-cascades",
+    "language": "Cassandra",
+    "code": "ReadTimeoutException",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/cassandra-tombstone-read-timeout-cascades.js",
+    "tags": [
+      "Cassandra",
+      "Java",
+      "SQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236119,
+    "title": "Debug Kubernetes cgroup v2 Throttling and Silent OOM",
+    "slug": "kubernetes-cgroupv2-cfs-throttling-silent-oomkill",
+    "language": "Kubernetes",
+    "code": "OOMKilled",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/kubernetes-cgroupv2-cfs-throttling-silent-oomkill.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794236120,
+    "title": "Minireel HGhub: Modern YellowFruit Third-Party Client",
+    "slug": "minireel-hghub-yellowfruit-client-analysis",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-11-09",
+    "path": "data/posts/2026-11/minireel-hghub-yellowfruit-client-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "React"
+    ]
+  },
+  {
     "id": 1794196213,
     "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
     "slug": "vllm-pagedattention-kv-cache-desync-oom",
@@ -861,66 +924,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1793503326,
-    "title": "Resolving eBPF Verifier Bounds Violations & State Pruning",
-    "slug": "resolving-ebpf-verifier-bounds-state-pruning",
-    "language": "Rust",
-    "code": "BpfVerifierBoundsViolation",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/resolving-ebpf-verifier-bounds-state-pruning.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793503327,
-    "title": "Mitigating Kafka Consumer Rebalance Storms and Thrashing",
-    "slug": "mitigating-kafka-consumer-rebalance-storms",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/mitigating-kafka-consumer-rebalance-storms.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793503328,
-    "title": "Preventing PostgreSQL Transaction ID Wraparound Outages",
-    "slug": "postgresql-xid-wraparound-autovacuum-starvation",
-    "language": "SQL",
-    "code": "XIDWraparoundEmergency",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-starvation.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793503329,
-    "title": "Inside anhao/ai-pose-gallery-zh: Zero-Dep AI Pose Library",
-    "slug": "anhao-ai-pose-gallery-zh-pose-reference-guide",
-    "language": "JavaScript",
-    "code": "Trend",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/anhao-ai-pose-gallery-zh-pose-reference-guide.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "CSS",
-      "TypeScript"
     ]
   }
 ];
