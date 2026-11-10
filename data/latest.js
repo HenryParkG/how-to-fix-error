@@ -1,5 +1,73 @@
 var postsLatest = [
   {
+    "id": 1794319155,
+    "title": "Rust Async Lifetime Mismatches: Solving Borrow Checker Errors",
+    "slug": "rust-async-lifetime-mismatches-borrow-checker",
+    "language": "Rust",
+    "code": "LifetimeMismatch",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/rust-async-lifetime-mismatches-borrow-checker.js",
+    "tags": [
+      "Rust",
+      "Asynchronous Programming",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794319156,
+    "title": "PyTorch CUDA OOM & Mixed Precision Gradient Underflow",
+    "slug": "pytorch-cuda-oom-mixed-precision-gradient-underflow",
+    "language": "Python",
+    "code": "CUDA OOM/Underflow",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-gradient-underflow.js",
+    "tags": [
+      "PyTorch",
+      "Deep Learning",
+      "GPU",
+      "Machine Learning",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794319157,
+    "title": "Istio mTLS Deadlock: Ingress/Egress Proxy Hangs",
+    "slug": "istio-mtls-deadlock-ingress-egress-proxy-hangs",
+    "language": "Kubernetes",
+    "code": "Deadlock",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/istio-mtls-deadlock-ingress-egress-proxy-hangs.js",
+    "tags": [
+      "Istio",
+      "Kubernetes",
+      "mTLS",
+      "Service Mesh",
+      "Network",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794319158,
+    "title": "NotRexed/Hookshot: Ocarina of Time's Native Switch 2 Remake",
+    "slug": "notrexed-hookshot-zelda-oot-switch2-remake",
+    "language": "C++",
+    "code": "Trend",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/notrexed-hookshot-zelda-oot-switch2-remake.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Game Development",
+      "Retro Gaming",
+      "C++",
+      "Backend"
+    ]
+  },
+  {
     "id": 1794288202,
     "title": "io_uring Ring Buffer Overflows & SQPOLL Starvation",
     "slug": "debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation",
@@ -868,65 +936,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-11-02",
     "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-prototype.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1793590706,
-    "title": "Mitigating NCCL Watchdog Timeouts & Ring Deadlocks",
-    "slug": "nccl-watchdog-timeouts-ring-allreduce-deadlocks",
-    "language": "Python",
-    "code": "RuntimeError: NCCL error: unhandled system error",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/nccl-watchdog-timeouts-ring-allreduce-deadlocks.js",
-    "tags": [
-      "Python",
-      "Kubernetes",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793590707,
-    "title": "Resolving WiredTiger Cache Eviction & Ticket Exhaustion",
-    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
-    "language": "Python",
-    "code": "WriteConflict / Available tickets: 0",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
-    "tags": [
-      "Python",
-      "Docker",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793590708,
-    "title": "Fixing Haskell Space Leaks in Lazy State Monad Chains",
-    "slug": "haskell-space-leaks-lazy-state-monads",
-    "language": "Haskell",
-    "code": "OutOfMemory / HeapOverflow",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/haskell-space-leaks-lazy-state-monads.js",
-    "tags": [
-      "Docker",
-      "Rust",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793590709,
-    "title": "DeepSeek SuperAgent: Autonomous Multi-Step Architecture",
-    "slug": "deepseek-superagent-autonomous-system-architecture",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-architecture.js",
     "tags": [
       "Tech Trend",
       "GitHub",
