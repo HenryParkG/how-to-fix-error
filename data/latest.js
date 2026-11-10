@@ -1,5 +1,74 @@
 var postsLatest = [
   {
+    "id": 1794288202,
+    "title": "io_uring Ring Buffer Overflows & SQPOLL Starvation",
+    "slug": "debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation",
+    "language": "C/Linux Kernel API",
+    "code": "io_uring_overflow",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation.js",
+    "tags": [
+      "Linux",
+      "io_uring",
+      "Asynchronous I/O",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288203,
+    "title": "Spark Data Skew & Shuffle Spill Memory Exhaustion",
+    "slug": "mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion",
+    "language": "Apache Spark / Scala / Python",
+    "code": "SparkOOM",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Performance",
+      "Data Engineering",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288204,
+    "title": "WebGPU Workgroup Memory Race & Alignment Violations",
+    "slug": "diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations",
+    "language": "WebGPU / WGSL / JavaScript",
+    "code": "WebGPURaceCondition",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations.js",
+    "tags": [
+      "WebGPU",
+      "WGSL",
+      "Graphics",
+      "Compute",
+      "Frontend",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288205,
+    "title": "NotRexed/Hookshot: Ocarina of Time Recompilation",
+    "slug": "notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake",
+    "language": "C/C++",
+    "code": "Trend",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Reverse Engineering",
+      "Game Development",
+      "C++",
+      "Backend"
+    ]
+  },
+  {
     "id": 1794236117,
     "title": "Diagnose Haskell Lazy Space Leaks and Thunks",
     "slug": "diagnosing-haskell-space-leaks-thunk-accumulation",
@@ -858,68 +927,6 @@ var postsLatest = [
     "code": "Trend",
     "date": "2026-11-02",
     "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-architecture.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1793535864,
-    "title": "Fix C++20 Coroutine Frame Leaks & Dangling Promises",
-    "slug": "cpp20-coroutine-frame-leaks-dangling-promises",
-    "language": "C++20",
-    "code": "CoroutineFrameLeak",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/cpp20-coroutine-frame-leaks-dangling-promises.js",
-    "tags": [
-      "C++20",
-      "Concurrency",
-      "Memory",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793535865,
-    "title": "Mitigate Elixir GenServer Mailbox Saturation & Timeouts",
-    "slug": "elixir-genserver-mailbox-saturation-timeouts",
-    "language": "Elixir",
-    "code": "GenServerTimeout",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/elixir-genserver-mailbox-saturation-timeouts.js",
-    "tags": [
-      "Elixir",
-      "Concurrency",
-      "BEAM",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793535866,
-    "title": "Resolve Redis BGSAVE Fork Latency & CoW Spikes",
-    "slug": "redis-bgsave-fork-latency-cow-spikes",
-    "language": "Redis",
-    "code": "ForkLatencyMemorySpike",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/redis-bgsave-fork-latency-cow-spikes.js",
-    "tags": [
-      "Redis",
-      "Linux",
-      "Performance",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793535867,
-    "title": "DeepSeek SuperAgent Prototype: Autonomous Agents",
-    "slug": "deepseek-dsh-superagent-prototype-analysis",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-01",
-    "path": "data/posts/2026-11/deepseek-dsh-superagent-prototype-analysis.js",
     "tags": [
       "Tech Trend",
       "GitHub",

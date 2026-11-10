@@ -1,5 +1,74 @@
 [
   {
+    "id": 1794288202,
+    "title": "io_uring Ring Buffer Overflows & SQPOLL Starvation",
+    "slug": "debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation",
+    "language": "C/Linux Kernel API",
+    "code": "io_uring_overflow",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation.js",
+    "tags": [
+      "Linux",
+      "io_uring",
+      "Asynchronous I/O",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288203,
+    "title": "Spark Data Skew & Shuffle Spill Memory Exhaustion",
+    "slug": "mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion",
+    "language": "Apache Spark / Scala / Python",
+    "code": "SparkOOM",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Performance",
+      "Data Engineering",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288204,
+    "title": "WebGPU Workgroup Memory Race & Alignment Violations",
+    "slug": "diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations",
+    "language": "WebGPU / WGSL / JavaScript",
+    "code": "WebGPURaceCondition",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations.js",
+    "tags": [
+      "WebGPU",
+      "WGSL",
+      "Graphics",
+      "Compute",
+      "Frontend",
+      "TypeScript",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794288205,
+    "title": "NotRexed/Hookshot: Ocarina of Time Recompilation",
+    "slug": "notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake",
+    "language": "C/C++",
+    "code": "Trend",
+    "date": "2026-11-10",
+    "path": "data/posts/2026-11/notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Reverse Engineering",
+      "Game Development",
+      "C++",
+      "Backend"
+    ]
+  },
+  {
     "id": 1794236117,
     "title": "Diagnose Haskell Lazy Space Leaks and Thunks",
     "slug": "diagnosing-haskell-space-leaks-thunk-accumulation",
