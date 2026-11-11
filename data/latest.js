@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1794403677,
+    "title": "C++20 Coroutine Frame Leaks & Dangling Promise Pointers",
+    "slug": "cpp20-coroutine-frame-leaks-dangling-promise-references",
+    "language": "C++20",
+    "code": "SEGV / Memory Leak",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/cpp20-coroutine-frame-leaks-dangling-promise-references.js",
+    "tags": [
+      "C++",
+      "Memory Management",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794403678,
+    "title": "Elixir OTP Mailbox Flooding & GenServer Call Timeouts",
+    "slug": "elixir-otp-mailbox-flooding-cascading-timeouts",
+    "language": "Elixir",
+    "code": "GenServer Timeout (:timeout)",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/elixir-otp-mailbox-flooding-cascading-timeouts.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Concurrency",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794403679,
+    "title": "Redis BGSAVE Fork Latency & COW Memory Exhaustion",
+    "slug": "redis-bgsave-cow-memory-exhaustion-fork-latency",
+    "language": "Redis",
+    "code": "OOM Command / Latency Spike",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/redis-bgsave-cow-memory-exhaustion-fork-latency.js",
+    "tags": [
+      "Redis",
+      "Memory",
+      "Linux",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794403680,
+    "title": "Hookshot: Native Recompilation of Zelda Ocarina of Time",
+    "slug": "hookshot-native-recompilation-zelda-switch-pc",
+    "language": "C++",
+    "code": "Trend",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/hookshot-native-recompilation-zelda-switch-pc.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Reverse Engineering",
+      "Rust"
+    ]
+  },
+  {
     "id": 1794368966,
     "title": "Debugging eBPF Verifier Limits & Map Race Conditions",
     "slug": "debugging-ebpf-verifier-limits-map-concurrency-races",
@@ -874,75 +936,6 @@ var postsLatest = [
       "AI Agents",
       "Large Language Models",
       "Autonomous Systems"
-    ]
-  },
-  {
-    "id": 1793711981,
-    "title": "Debugging Linux Kernel Panics: Device Driver Race Conditions",
-    "slug": "debugging-linux-kernel-panics-race-conditions",
-    "language": "C",
-    "code": "Kernel Panic",
-    "date": "2026-11-03",
-    "path": "data/posts/2026-11/debugging-linux-kernel-panics-race-conditions.js",
-    "tags": [
-      "Linux",
-      "Kernel",
-      "Device Driver",
-      "Race Condition",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793711982,
-    "title": "Istio mTLS Failures: Handshake & Policy Mismatches",
-    "slug": "istio-mtls-handshake-policy-mismatches-failures",
-    "language": "Kubernetes",
-    "code": "mTLS Failure",
-    "date": "2026-11-03",
-    "path": "data/posts/2026-11/istio-mtls-handshake-policy-mismatches-failures.js",
-    "tags": [
-      "Istio",
-      "Kubernetes",
-      "mTLS",
-      "Service Mesh",
-      "Security",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793711983,
-    "title": "Elasticsearch Red Status: Shard Allocation & Disk",
-    "slug": "elasticsearch-red-status-shard-allocation-disk-watermarks",
-    "language": "Elasticsearch",
-    "code": "Cluster Red",
-    "date": "2026-11-03",
-    "path": "data/posts/2026-11/elasticsearch-red-status-shard-allocation-disk-watermarks.js",
-    "tags": [
-      "Elasticsearch",
-      "Distributed System",
-      "Monitoring",
-      "Performance",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793711984,
-    "title": "DeepSeek-AI's SuperAgent Prototype: Towards Autonomous Agents",
-    "slug": "deepseek-ai-superagent-prototype-autonomous-agents",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-03",
-    "path": "data/posts/2026-11/deepseek-ai-superagent-prototype-autonomous-agents.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "AI",
-      "Agents",
-      "Autonomous Systems",
-      "Python"
     ]
   }
 ];
