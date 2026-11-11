@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1794368966,
+    "title": "Debugging eBPF Verifier Limits & Map Race Conditions",
+    "slug": "debugging-ebpf-verifier-limits-map-concurrency-races",
+    "language": "Rust",
+    "code": "BPF_VERIFIER_E2BIG",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/debugging-ebpf-verifier-limits-map-concurrency-races.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794368967,
+    "title": "Fixing Postgres TXID Wraparound Vacuum Starvation",
+    "slug": "postgresql-txid-wraparound-vacuum-freeze-starvation",
+    "language": "SQL",
+    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/postgresql-txid-wraparound-vacuum-freeze-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794368968,
+    "title": "Fixing Kafka Rebalance Storms & Partition Deadlocks",
+    "slug": "kafka-consumer-rebalance-storms-assignment-deadlocks",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/kafka-consumer-rebalance-storms-assignment-deadlocks.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Concurrency",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794368969,
+    "title": "Hookshot: Native Zelda OoT Recompilation Deep Dive",
+    "slug": "notrexed-hookshot-oot-native-recompilation-switch-2",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-11-11",
+    "path": "data/posts/2026-11/notrexed-hookshot-oot-native-recompilation-switch-2.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust"
+    ]
+  },
+  {
     "id": 1794319155,
     "title": "Rust Async Lifetime Mismatches: Solving Borrow Checker Errors",
     "slug": "rust-async-lifetime-mismatches-borrow-checker",
@@ -880,65 +942,6 @@ var postsLatest = [
       "AI",
       "Agents",
       "Autonomous Systems",
-      "Python"
-    ]
-  },
-  {
-    "id": 1793629218,
-    "title": "Fixing Go Goroutine Leaks & Scheduler Starvation",
-    "slug": "go-goroutine-leak-scheduler-starvation",
-    "language": "Go",
-    "code": "GoroutineLeak",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation.js",
-    "tags": [
-      "Go",
-      "Backend",
-      "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793629219,
-    "title": "Fixing Spark Shuffle Spills & Network Congestion",
-    "slug": "spark-shuffle-spill-network-congestion-joins",
-    "language": "Java",
-    "code": "FetchFailedException",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/spark-shuffle-spill-network-congestion-joins.js",
-    "tags": [
-      "Java",
-      "SQL",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793629220,
-    "title": "Fix K8s Init Container Deadlock & Probe Flaps",
-    "slug": "k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps",
-    "language": "Kubernetes",
-    "code": "CrashLoopBackOff",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/k8s-pod-crashloopbackoff-init-deadlock-readiness-flaps.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793629221,
-    "title": "DeepSeek SuperAgent: Autonomous Agent System",
-    "slug": "deepseek-superagent-autonomous-system-prototype",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-02",
-    "path": "data/posts/2026-11/deepseek-superagent-autonomous-system-prototype.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
       "Python"
     ]
   }
