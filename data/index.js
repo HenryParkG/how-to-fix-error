@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1794493754,
+        "title": "Fixing RocksDB Write Stalls & Compaction Debt",
+        "slug": "rocksdb-write-stalls-compaction-debt",
+        "language": "C++ / Rust",
+        "code": "WriteStall",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/rocksdb-write-stalls-compaction-debt.js",
+        "tags": [
+            "RocksDB",
+            "Storage",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794493755,
+        "title": "Resolving gRPC HTTP/2 Flow-Control Window Stalls",
+        "slug": "grpc-http2-flow-control-window-starvation",
+        "language": "Go",
+        "code": "StreamDeadlock",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
+        "tags": [
+            "gRPC",
+            "HTTP/2",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794493756,
+        "title": "Fixing Haskell Space Leaks in Fold Accumulators",
+        "slug": "haskell-space-leaks-thunk-exhaustion",
+        "language": "Haskell",
+        "code": "HeapExhaustion",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/haskell-space-leaks-thunk-exhaustion.js",
+        "tags": [
+            "Haskell",
+            "Memory",
+            "Rust",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794493757,
+        "title": "GestaltX: Next-Gen iOS MobileGestalt Tweaks",
+        "slug": "gestaltx-ios-mobilegestalt-editor",
+        "language": "Swift / TypeScript",
+        "code": "Trend",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript"
+        ]
+    },
+    {
         "id": 1794460691,
         "title": "Go Goroutine Leaks & Scheduler Starvation: A Concurrency Pitfall",
         "slug": "go-goroutine-leaks-scheduler-starvation",

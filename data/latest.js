@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1794493754,
+    "title": "Fixing RocksDB Write Stalls & Compaction Debt",
+    "slug": "rocksdb-write-stalls-compaction-debt",
+    "language": "C++ / Rust",
+    "code": "WriteStall",
+    "date": "2026-11-12",
+    "path": "data/posts/2026-11/rocksdb-write-stalls-compaction-debt.js",
+    "tags": [
+      "RocksDB",
+      "Storage",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794493755,
+    "title": "Resolving gRPC HTTP/2 Flow-Control Window Stalls",
+    "slug": "grpc-http2-flow-control-window-starvation",
+    "language": "Go",
+    "code": "StreamDeadlock",
+    "date": "2026-11-12",
+    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
+    "tags": [
+      "gRPC",
+      "HTTP/2",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794493756,
+    "title": "Fixing Haskell Space Leaks in Fold Accumulators",
+    "slug": "haskell-space-leaks-thunk-exhaustion",
+    "language": "Haskell",
+    "code": "HeapExhaustion",
+    "date": "2026-11-12",
+    "path": "data/posts/2026-11/haskell-space-leaks-thunk-exhaustion.js",
+    "tags": [
+      "Haskell",
+      "Memory",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794493757,
+    "title": "GestaltX: Next-Gen iOS MobileGestalt Tweaks",
+    "slug": "gestaltx-ios-mobilegestalt-editor",
+    "language": "Swift / TypeScript",
+    "code": "Trend",
+    "date": "2026-11-12",
+    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript"
+    ]
+  },
+  {
     "id": 1794460691,
     "title": "Go Goroutine Leaks & Scheduler Starvation: A Concurrency Pitfall",
     "slug": "go-goroutine-leaks-scheduler-starvation",
@@ -869,69 +928,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1793852401,
-    "title": "Resolving PostgreSQL TXID Wraparound Starvation",
-    "slug": "postgresql-txid-wraparound-autovacuum-starvation",
-    "language": "SQL",
-    "code": "TXIDWraparound",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/postgresql-txid-wraparound-autovacuum-starvation.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "SQL",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793852402,
-    "title": "Fixing eBPF Verifier Complexity & Unbounded Loops",
-    "slug": "debugging-ebpf-verifier-complexity-unbounded-loops",
-    "language": "Rust",
-    "code": "VerifierRejection",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/debugging-ebpf-verifier-complexity-unbounded-loops.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Rust",
-      "Kernel",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793852403,
-    "title": "Kafka Rebalance Storms & Heartbeat Starvation",
-    "slug": "kafka-consumer-rebalance-heartbeat-starvation",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/kafka-consumer-rebalance-heartbeat-starvation.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793852404,
-    "title": "DeepSeek Superagent Prototype: Autonomous AI",
-    "slug": "deepseek-ai-dsh-superagent-prototype-analysis",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI"
     ]
   }
 ];
