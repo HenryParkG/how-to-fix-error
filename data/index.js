@@ -1,5 +1,68 @@
 var postsIndex = [
     {
+        "id": 1794460691,
+        "title": "Go Goroutine Leaks & Scheduler Starvation: A Concurrency Pitfall",
+        "slug": "go-goroutine-leaks-scheduler-starvation",
+        "language": "Go",
+        "code": "GoroutineLeak",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/go-goroutine-leaks-scheduler-starvation.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Performance",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794460692,
+        "title": "Kubernetes Operator Deadlocks & CRD Schema Drift Issues",
+        "slug": "kubernetes-operator-deadlocks-crd-schema-drift",
+        "language": "Kubernetes",
+        "code": "OperatorDeadlock",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/kubernetes-operator-deadlocks-crd-schema-drift.js",
+        "tags": [
+            "Kubernetes",
+            "CRD",
+            "CloudNative",
+            "Infra",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794460693,
+        "title": "MongoDB WiredTiger Journal Consistency & Document Bloat",
+        "slug": "mongodb-wiredtiger-journal-consistency-document-bloat",
+        "language": "MongoDB",
+        "code": "DataConsistency",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/mongodb-wiredtiger-journal-consistency-document-bloat.js",
+        "tags": [
+            "MongoDB",
+            "NoSQL",
+            "Database",
+            "Backend",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794460694,
+        "title": "GestaltX: The Trending iOS MobileGestalt Editor for iOS 17.x",
+        "slug": "gestaltx-ios-mobilegestalt-editor-trending",
+        "language": "iOS / C / Objective-C",
+        "code": "Trend",
+        "date": "2026-11-12",
+        "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Mobile",
+            "Backend"
+        ]
+    },
+    {
         "id": 1794403677,
         "title": "C++20 Coroutine Frame Leaks & Dangling Promise Pointers",
         "slug": "cpp20-coroutine-frame-leaks-dangling-promise-references",
