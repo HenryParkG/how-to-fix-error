@@ -1,5 +1,76 @@
 [
   {
+    "id": 1794577941,
+    "title": "PyTorch DDP All-Reduce Desync & CUDA Fragmentation",
+    "slug": "pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation",
+    "language": "Python, PyTorch, CUDA",
+    "code": "DDPDesync",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation.js",
+    "tags": [
+      "PyTorch",
+      "Distributed Training",
+      "CUDA",
+      "Fragmentation",
+      "Python",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794577942,
+    "title": "Istio Envoy Connection Pool Starvation & HTTP/2 Resets",
+    "slug": "istio-envoy-connection-pool-starvation-http2-reset-stream-storms",
+    "language": "Kubernetes, Istio, Envoy, HTTP/2",
+    "code": "ConnPoolStarvation",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/istio-envoy-connection-pool-starvation-http2-reset-stream-storms.js",
+    "tags": [
+      "Istio",
+      "Envoy",
+      "Kubernetes",
+      "HTTP/2",
+      "Microservices",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794577943,
+    "title": "React Native JSI HostObject Dangling Refs & GC Desync",
+    "slug": "react-native-jsi-hostobject-dangling-references-turbomodule-gc-desync",
+    "language": "React Native, JSI, C++, JavaScript",
+    "code": "JSI_GC_Desync",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/react-native-jsi-hostobject-dangling-references-turbomodule-gc-desync.js",
+    "tags": [
+      "React Native",
+      "JSI",
+      "C++",
+      "JavaScript",
+      "Mobile",
+      "React",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794577944,
+    "title": "GestaltX: iOS MobileGestalt Editor for Device Tweaks",
+    "slug": "gestaltx-ios-mobilegestalt-editor-device-tweaks",
+    "language": "iOS, Objective-C/Swift",
+    "code": "Trend",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-device-tweaks.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "iOS",
+      "Jailbreak",
+      "Mobile",
+      "Reverse Engineering",
+      "Frontend"
+    ]
+  },
+  {
     "id": 1794544081,
     "title": "Linux io_uring SQPOLL Deadlocks & Submission Queue Overflows",
     "slug": "linux-io-uring-sqpoll-deadlocks-submission-queue-overflows",
