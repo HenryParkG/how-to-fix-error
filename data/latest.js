@@ -1,5 +1,72 @@
 var postsLatest = [
   {
+    "id": 1794544081,
+    "title": "Linux io_uring SQPOLL Deadlocks & Submission Queue Overflows",
+    "slug": "linux-io-uring-sqpoll-deadlocks-submission-queue-overflows",
+    "language": "C/C++",
+    "code": "SQPOLL Deadlock",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/linux-io-uring-sqpoll-deadlocks-submission-queue-overflows.js",
+    "tags": [
+      "io_uring",
+      "Linux Kernel",
+      "Performance",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794544082,
+    "title": "Resolving Spark Shuffle FetchFailed & Memory Spill OOMs",
+    "slug": "resolving-apache-spark-shuffle-fetchfailed-memory-spill-ooms",
+    "language": "Scala/Java",
+    "code": "Shuffle FetchFailed",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/resolving-apache-spark-shuffle-fetchfailed-memory-spill-ooms.js",
+    "tags": [
+      "Apache Spark",
+      "Big Data",
+      "Performance",
+      "Infra",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794544083,
+    "title": "Mitigating Elasticsearch CircuitBreaker & Fielddata Cascades",
+    "slug": "mitigating-elasticsearch-circuitbreaker-fielddata-eviction-cascades",
+    "language": "Java",
+    "code": "CircuitBreakerException",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/mitigating-elasticsearch-circuitbreaker-fielddata-eviction-cascades.js",
+    "tags": [
+      "Elasticsearch",
+      "Search",
+      "JVM",
+      "Infra",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794544084,
+    "title": "GestaltX: MobileGestalt Editor for iOS 27.x - Analysis",
+    "slug": "gestaltx-mobilegestalt-editor-ios-27x-analysis",
+    "language": "Swift/Objective-C",
+    "code": "Trend",
+    "date": "2026-11-13",
+    "path": "data/posts/2026-11/gestaltx-mobilegestalt-editor-ios-27x-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "iOS",
+      "Security",
+      "Reverse Engineering",
+      "Mobile"
+    ]
+  },
+  {
     "id": 1794493754,
     "title": "Fixing RocksDB Write Stalls & Compaction Debt",
     "slug": "rocksdb-write-stalls-compaction-debt",
@@ -864,65 +931,6 @@ var postsLatest = [
     "language": "Python",
     "code": "Trend",
     "date": "2026-11-06",
-    "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1793887077,
-    "title": "Fix C++20 Coroutine Leaks & Cancellation Deadlocks",
-    "slug": "fix-cpp20-coroutine-leaks-cancellation-deadlocks",
-    "language": "C++20",
-    "code": "COROUTINE_LEAK",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/fix-cpp20-coroutine-leaks-cancellation-deadlocks.js",
-    "tags": [
-      "C++20",
-      "Concurrency",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793887078,
-    "title": "Fix Elixir OTP Supervisor Storms & GenServer Overload",
-    "slug": "fix-elixir-supervisor-storms-genserver-backpressure",
-    "language": "Elixir",
-    "code": "MAX_RESTART_REACHED",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/fix-elixir-supervisor-storms-genserver-backpressure.js",
-    "tags": [
-      "Elixir",
-      "OTP",
-      "Kubernetes",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793887079,
-    "title": "Fix Vector DB Index Corruption & Recall Degradation",
-    "slug": "fix-vector-db-index-corruption-recall-degradation",
-    "language": "Python",
-    "code": "INDEX_DEGRADATION",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/fix-vector-db-index-corruption-recall-degradation.js",
-    "tags": [
-      "Python",
-      "VectorDB",
-      "HNSW",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793887080,
-    "title": "DeepSeek SuperAgent Prototype: Autonomous Agents",
-    "slug": "deepseek-superagent-prototype-autonomous-agent",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-05",
     "path": "data/posts/2026-11/deepseek-superagent-prototype-autonomous-agent.js",
     "tags": [
       "Tech Trend",
