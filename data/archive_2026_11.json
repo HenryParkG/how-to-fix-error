@@ -1,5 +1,69 @@
 [
   {
+    "id": 1794662105,
+    "title": "Elixir Mailbox Flooding & GenServer Timeout Cascades",
+    "slug": "elixir-mailbox-flooding-genserver-timeout-cascades",
+    "language": "Elixir",
+    "code": "MailboxFlooding",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/elixir-mailbox-flooding-genserver-timeout-cascades.js",
+    "tags": [
+      "Elixir",
+      "Erlang/OTP",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662106,
+    "title": "Rust Async Drop & Pin Projection Memory Leaks",
+    "slug": "rust-async-drop-pin-projection-memory-leaks",
+    "language": "Rust",
+    "code": "MemoryLeak",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/rust-async-drop-pin-projection-memory-leaks.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "Memory Safety",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662107,
+    "title": "Redis BGSAVE Latency & CoW Memory Exhaustion",
+    "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
+    "language": "Redis",
+    "code": "CoWExhaustion",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/redis-bgsave-fork-latency-cow-memory-exhaustion.js",
+    "tags": [
+      "Redis",
+      "Database",
+      "Caching",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662108,
+    "title": "GestaltX: iOS 27.x MobileGestalt Editor",
+    "slug": "gestaltx-ios-27x-mobilegestalt-editor",
+    "language": "iOS / Swift / Objective-C",
+    "code": "Trend",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/gestaltx-ios-27x-mobilegestalt-editor.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "iOS",
+      "Security",
+      "Backend"
+    ]
+  },
+  {
     "id": 1794629635,
     "title": "PostgreSQL XID Wraparound & Freeze Starvation",
     "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",

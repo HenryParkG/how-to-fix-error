@@ -1,5 +1,69 @@
 var postsLatest = [
   {
+    "id": 1794662105,
+    "title": "Elixir Mailbox Flooding & GenServer Timeout Cascades",
+    "slug": "elixir-mailbox-flooding-genserver-timeout-cascades",
+    "language": "Elixir",
+    "code": "MailboxFlooding",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/elixir-mailbox-flooding-genserver-timeout-cascades.js",
+    "tags": [
+      "Elixir",
+      "Erlang/OTP",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662106,
+    "title": "Rust Async Drop & Pin Projection Memory Leaks",
+    "slug": "rust-async-drop-pin-projection-memory-leaks",
+    "language": "Rust",
+    "code": "MemoryLeak",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/rust-async-drop-pin-projection-memory-leaks.js",
+    "tags": [
+      "Rust",
+      "Concurrency",
+      "Memory Safety",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662107,
+    "title": "Redis BGSAVE Latency & CoW Memory Exhaustion",
+    "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
+    "language": "Redis",
+    "code": "CoWExhaustion",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/redis-bgsave-fork-latency-cow-memory-exhaustion.js",
+    "tags": [
+      "Redis",
+      "Database",
+      "Caching",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794662108,
+    "title": "GestaltX: iOS 27.x MobileGestalt Editor",
+    "slug": "gestaltx-ios-27x-mobilegestalt-editor",
+    "language": "iOS / Swift / Objective-C",
+    "code": "Trend",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/gestaltx-ios-27x-mobilegestalt-editor.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "iOS",
+      "Security",
+      "Backend"
+    ]
+  },
+  {
     "id": 1794629635,
     "title": "PostgreSQL XID Wraparound & Freeze Starvation",
     "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
@@ -889,64 +953,6 @@ var postsLatest = [
       "Python",
       "AI Agents",
       "Automation"
-    ]
-  },
-  {
-    "id": 1794023322,
-    "title": "Resolving Spark FetchFailedException & Skew Partition OOM",
-    "slug": "resolving-spark-fetchfailed-skew-partition-oom",
-    "language": "Spark / Scala",
-    "code": "FetchFailedException",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/resolving-spark-fetchfailed-skew-partition-oom.js",
-    "tags": [
-      "Java",
-      "SQL",
-      "Kubernetes",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794023323,
-    "title": "Mitigating Redis BGSAVE Fork Latency & CoW Memory Bloat",
-    "slug": "mitigating-redis-bgsave-fork-latency-cow-memory-bloat",
-    "language": "Redis / C",
-    "code": "ForkLatencySpike",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/mitigating-redis-bgsave-fork-latency-cow-memory-bloat.js",
-    "tags": [
-      "Docker",
-      "Go",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794023324,
-    "title": "Handling WebGPU Device Loss & Pipeline Compilation Stalls",
-    "slug": "handling-webgpu-device-loss-pipeline-compilation-stalls",
-    "language": "TypeScript",
-    "code": "GPUDeviceLostInfo",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/handling-webgpu-device-loss-pipeline-compilation-stalls.js",
-    "tags": [
-      "TypeScript",
-      "React",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794023325,
-    "title": "Agent-Autoloop: Autonomous Background CLI Orchestration",
-    "slug": "agent-autoloop-autonomous-background-cli-orchestration",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-orchestration.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];
