@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Kafka Rebalance Storms & Cooperative Sticky Deadlock",
+    "slug": "kafka-rebalance-storms-cooperative-sticky-deadlocks",
+    "language": "Kafka / Java",
+    "code": "REBALANCE_FAILED",
+    "tags": [
+        "Kafka",
+        "Distributed Systems",
+        "Java",
+        "Backend",
+        "Error Fix"
+    ],
+    "analysis": "<p>Apache Kafka's <code>CooperativeStickyAssignor</code> was designed to eliminate the stop-the-world pauses of the traditional eager <code>RangeAssignor</code> by reassigning partitions incrementally across two distinct rebalance rounds. During phase one, consumers revoke ownership of specific partitions slated for relocation while keeping unaffected partition pipelines open.</p><p>Deadlocks and rebalance storms occur when synchronous partition commit operations inside custom <code>ConsumerRebalanceListener.onPartitionsRevoked()</code> callbacks block on shared application locks while worker threads wait on Kafka consumer access. Furthermore, if message processing latency exceeds <code>max.poll.interval.ms</code> during the reassignment phase, the Group Coordinator evicts the slow consumer node. This triggers continuous cyclical rebalances, keeping the consumer group in a non-converging state.</p>",
+    "root_cause": "Blocking operations inside onPartitionsRevoked() combined with synchronous long-running message batches exceeding max.poll.interval.ms, causing the broker coordinator to declare consumers dead mid-rebalance.",
+    "bad_code": "// Buggy consumer setup causing rebalance cascade\nProperties props = new Properties();\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    CooperativeStickyAssignor.class.getName());\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 10000); // Too low: 10 seconds\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"telemetry\"), new ConsumerRebalanceListener() {\n    @Override\n    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {\n        // DEADLOCK: Blocking synchronous commit while holding lock\n        synchronized (sharedLock) {\n            consumer.commitSync(); // Blocks until coordinator resolves, causing timeout\n        }\n    }\n    @Override\n    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {}\n});",
+    "solution_desc": "Decouple poll processing from message execution by using an asynchronous bounded worker pool. Tune max.poll.interval.ms and max.poll.records to ensure poll loops complete well within thresholds. Implement non-blocking state cleanups in the rebalance listener.",
+    "good_code": "Properties props = new Properties();\nprops.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, \n    CooperativeStickyAssignor.class.getName());\nprops.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 300000); // 5 minutes\nprops.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 100);        // Bounded batch size\n\nKafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);\nconsumer.subscribe(Collections.singletonList(\"telemetry\"), new ConsumerRebalanceListener() {\n    @Override\n    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {\n        // Non-blocking drain and asynchronous commit to avoid coordinator deadlocks\n        workerPool.pauseProcessing(partitions);\n        consumer.commitAsync((offsets, ex) -> {\n            if (ex != null) {\n                log.warn(\"Asynchronous commit encountered error during revocation\", ex);\n            }\n        });\n    }\n    @Override\n    public void onPartitionsLost(Collection<TopicPartition> partitions) {\n        workerPool.abortTasks(partitions);\n    }\n    @Override\n    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {\n        workerPool.resumeProcessing(partitions);\n    }\n});",
+    "verification": "Monitor JMX consumer metrics: verify that kafka.consumer:type=consumer-coordinator-metrics,client-id=*,attribute=rebalance-rate-per-hour drops near zero after warmup and consumer group state in kafka-consumer-groups.sh stays 'Stable'.",
+    "date": "2026-11-14",
+    "id": 1794629637,
+    "type": "error"
+});

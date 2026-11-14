@@ -1,5 +1,68 @@
 [
   {
+    "id": 1794629635,
+    "title": "PostgreSQL XID Wraparound & Freeze Starvation",
+    "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
+    "language": "PostgreSQL",
+    "code": "ERR_XID_WRAPAROUND",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-freeze-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629636,
+    "title": "eBPF Verifier Path Explosion & Ring Buffer Drops",
+    "slug": "ebpf-verifier-path-explosion-ring-buffer-dropped-events",
+    "language": "C / eBPF",
+    "code": "BPF_VERIFIER_ERR",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/ebpf-verifier-path-explosion-ring-buffer-dropped-events.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629637,
+    "title": "Kafka Rebalance Storms & Cooperative Sticky Deadlock",
+    "slug": "kafka-rebalance-storms-cooperative-sticky-deadlocks",
+    "language": "Kafka / Java",
+    "code": "REBALANCE_FAILED",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/kafka-rebalance-storms-cooperative-sticky-deadlocks.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629638,
+    "title": "GestaltX: iOS MobileGestalt Customization Engine",
+    "slug": "gestaltsx-ios-mobilegestalt-editor-deep-dive",
+    "language": "Python / Swift",
+    "code": "Trend",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/gestaltsx-ios-mobilegestalt-editor-deep-dive.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Mobile"
+    ]
+  },
+  {
     "id": 1794577941,
     "title": "PyTorch DDP All-Reduce Desync & CUDA Fragmentation",
     "slug": "pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation",

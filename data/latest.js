@@ -1,5 +1,68 @@
 var postsLatest = [
   {
+    "id": 1794629635,
+    "title": "PostgreSQL XID Wraparound & Freeze Starvation",
+    "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
+    "language": "PostgreSQL",
+    "code": "ERR_XID_WRAPAROUND",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-freeze-starvation.js",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Performance",
+      "SQL",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629636,
+    "title": "eBPF Verifier Path Explosion & Ring Buffer Drops",
+    "slug": "ebpf-verifier-path-explosion-ring-buffer-dropped-events",
+    "language": "C / eBPF",
+    "code": "BPF_VERIFIER_ERR",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/ebpf-verifier-path-explosion-ring-buffer-dropped-events.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Kernel",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629637,
+    "title": "Kafka Rebalance Storms & Cooperative Sticky Deadlock",
+    "slug": "kafka-rebalance-storms-cooperative-sticky-deadlocks",
+    "language": "Kafka / Java",
+    "code": "REBALANCE_FAILED",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/kafka-rebalance-storms-cooperative-sticky-deadlocks.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794629638,
+    "title": "GestaltX: iOS MobileGestalt Customization Engine",
+    "slug": "gestaltsx-ios-mobilegestalt-editor-deep-dive",
+    "language": "Python / Swift",
+    "code": "Trend",
+    "date": "2026-11-14",
+    "path": "data/posts/2026-11/gestaltsx-ios-mobilegestalt-editor-deep-dive.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Mobile"
+    ]
+  },
+  {
     "id": 1794577941,
     "title": "PyTorch DDP All-Reduce Desync & CUDA Fragmentation",
     "slug": "pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation",
@@ -884,70 +947,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1793972206,
-    "title": "Debugging K8s CrashLoopBackOff: Causes & Fixes",
-    "slug": "debugging-kubernetes-crashloopbackoff-root-causes-remediation",
-    "language": "Kubernetes",
-    "code": "CrashLoopBackOff",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/debugging-kubernetes-crashloopbackoff-root-causes-remediation.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Infra",
-      "Containerization",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972207,
-    "title": "Untangling Akka Actor Deadlocks & Message Ordering Issues",
-    "slug": "untangling-scala-akka-actor-system-deadlocks-message-ordering",
-    "language": "Scala, Akka",
-    "code": "Deadlock",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/untangling-scala-akka-actor-system-deadlocks-message-ordering.js",
-    "tags": [
-      "Scala",
-      "Akka",
-      "Backend",
-      "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972208,
-    "title": "Detecting & Preventing Go Goroutine Leaks",
-    "slug": "detecting-preventing-go-goroutine-leaks-concurrent-services",
-    "language": "Go",
-    "code": "GoroutineLeak",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/detecting-preventing-go-goroutine-leaks-concurrent-services.js",
-    "tags": [
-      "Go",
-      "Backend",
-      "Concurrency",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972209,
-    "title": "DeepSeek AI's SuperAgent Prototype: Autonomous Agents",
-    "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI",
-      "Agents"
     ]
   }
 ];
