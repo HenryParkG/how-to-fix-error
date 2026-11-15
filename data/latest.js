@@ -1,5 +1,64 @@
 var postsLatest = [
   {
+    "id": 1794749046,
+    "title": "Go Goroutine Leaks & Scheduler Starvation",
+    "slug": "go-goroutine-leak-scheduler-starvation-fix",
+    "language": "Go",
+    "code": "ERR_GOROUTINE_LEAK",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation-fix.js",
+    "tags": [
+      "Go",
+      "Concurrency",
+      "Profiling",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794749047,
+    "title": "Fixing K8s Probe Failures & Cascading Rollouts",
+    "slug": "k8s-probe-misconfig-cascading-rollout-failure",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/k8s-probe-misconfig-cascading-rollout-failure.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "DevOps",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794749048,
+    "title": "Fixing Postgres Logical Replication Slot WAL Bloat",
+    "slug": "postgres-logical-replication-slot-wal-bloat",
+    "language": "SQL",
+    "code": "PG_WAL_DISK_EXHAUSTION",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/postgres-logical-replication-slot-wal-bloat.js",
+    "tags": [
+      "SQL",
+      "PostgreSQL",
+      "Database",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794749049,
+    "title": "GestaltX: Modern iOS MobileGestalt Customization",
+    "slug": "gestaltx-ios-mobilegestalt-editor-analysis",
+    "language": "Swift",
+    "code": "Trend",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1794714885,
     "title": "C++20 Coroutine Frame Lifetime & Destruction Violations",
     "slug": "cpp20-coroutine-frame-destruction-promise-lifespan",
@@ -893,65 +952,6 @@ var postsLatest = [
       "GitHub",
       "Python",
       "AI Agent"
-    ]
-  },
-  {
-    "id": 1794108543,
-    "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
-    "slug": "ebpf-verifier-rejection-instruction-limit",
-    "language": "Rust",
-    "code": "BPF_PROG_LOAD_EPERM",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/ebpf-verifier-rejection-instruction-limit.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794108544,
-    "title": "Debugging Kafka Rebalance Storms & Heartbeats",
-    "slug": "kafka-consumer-rebalance-storm-heartbeat-timeout",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/kafka-consumer-rebalance-storm-heartbeat-timeout.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794108545,
-    "title": "Mitigating PostgreSQL XID Wraparound Lockups",
-    "slug": "mitigating-postgresql-xid-wraparound-autovacuum",
-    "language": "SQL",
-    "code": "XID_WRAPAROUND_FATAL",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/mitigating-postgresql-xid-wraparound-autovacuum.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794108546,
-    "title": "Inside agent-autoloop: Autonomous CLI Agents",
-    "slug": "agent-autoloop-autonomous-cli-agent",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/agent-autoloop-autonomous-cli-agent.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];

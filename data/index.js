@@ -1,5 +1,64 @@
 var postsIndex = [
     {
+        "id": 1794749046,
+        "title": "Go Goroutine Leaks & Scheduler Starvation",
+        "slug": "go-goroutine-leak-scheduler-starvation-fix",
+        "language": "Go",
+        "code": "ERR_GOROUTINE_LEAK",
+        "date": "2026-11-15",
+        "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation-fix.js",
+        "tags": [
+            "Go",
+            "Concurrency",
+            "Profiling",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794749047,
+        "title": "Fixing K8s Probe Failures & Cascading Rollouts",
+        "slug": "k8s-probe-misconfig-cascading-rollout-failure",
+        "language": "Kubernetes",
+        "code": "CrashLoopBackOff",
+        "date": "2026-11-15",
+        "path": "data/posts/2026-11/k8s-probe-misconfig-cascading-rollout-failure.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "DevOps",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794749048,
+        "title": "Fixing Postgres Logical Replication Slot WAL Bloat",
+        "slug": "postgres-logical-replication-slot-wal-bloat",
+        "language": "SQL",
+        "code": "PG_WAL_DISK_EXHAUSTION",
+        "date": "2026-11-15",
+        "path": "data/posts/2026-11/postgres-logical-replication-slot-wal-bloat.js",
+        "tags": [
+            "SQL",
+            "PostgreSQL",
+            "Database",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794749049,
+        "title": "GestaltX: Modern iOS MobileGestalt Customization",
+        "slug": "gestaltx-ios-mobilegestalt-editor-analysis",
+        "language": "Swift",
+        "code": "Trend",
+        "date": "2026-11-15",
+        "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-analysis.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1794714885,
         "title": "C++20 Coroutine Frame Lifetime & Destruction Violations",
         "slug": "cpp20-coroutine-frame-destruction-promise-lifespan",
