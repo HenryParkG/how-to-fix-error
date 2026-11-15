@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "WebGPU Device Loss & Buffer Mapping Under VRAM Pressure",
+    "slug": "webgpu-device-loss-buffer-mapping-invalidation",
+    "language": "WebGPU",
+    "code": "GPUDeviceLostError",
+    "tags": [
+        "TypeScript",
+        "Frontend",
+        "React",
+        "Graphics",
+        "Error Fix"
+    ],
+    "analysis": "<p>In WebGPU, host-device memory synchronization relies on asynchronous buffer mapping via <code>GPUBuffer.mapAsync()</code>. Unlike WebGL, WebGPU exposes fine-grained explicit memory allocation. When the host application allocates substantial VRAM or queues multiple mapping requests under system VRAM contention, the underlying graphics driver (e.g., Vulkan, D3D12, or Metal) may fail the allocation or encounter a GPU Timeout Detection and Recovery (TDR) event.</p><p>When a TDR occurs, the browser immediately marks the <code>GPUDevice</code> as lost and invokes its <code>device.lost</code> promise. Any in-flight <code>mapAsync()</code> calls reject immediately with an uncatchable exception if not guarded by rejection handlers. Furthermore, attempting to access mapped memory ranges via <code>getMappedRange()</code> on an invalidated buffer or after device destruction causes immediate runtime halts. Applications lacking structured recovery fail to clean up mapped promises and freeze the rendering pipeline.</p>",
+    "root_cause": "Excessive simultaneous buffer allocations trigger hardware-level TDR or out-of-memory driver crashes, transitioning the GPUDevice to 'lost' and immediately invalidating all pending and active GPUBuffer mapAsync promises.",
+    "bad_code": "export async function uploadVolumetricData(device: GPUDevice, data: Float32Array): Promise<GPUBuffer> {\n    // BUG: Creating large staging buffers directly without checking device validity\n    // or handling potential allocation failure under VRAM starvation\n    const stagingBuffer = device.createBuffer({\n        size: data.byteLength,\n        usage: GPUBufferUsage.MAP_WRITE | GPUBufferUsage.COPY_SRC,\n    });\n\n    // If device is lost or VRAM is exhausted, mapAsync rejects without recovery logic\n    await stagingBuffer.mapAsync(GPUMapMode.WRITE);\n    \n    // Throws TypeError: Cannot perform getMappedRange on a detached or invalid buffer\n    const arrayBuffer = stagingBuffer.getMappedRange();\n    new Float32Array(arrayBuffer).set(data);\n    stagingBuffer.unmap();\n\n    return stagingBuffer;\n}",
+    "solution_desc": "Implement a device loss lifecycle listener on `device.lost`, manage VRAM consumption using bounded ring-buffer staging allocators instead of ad-hoc allocations, and wrap `mapAsync()` calls with explicit exception handling and fallbacks.",
+    "good_code": "export class SafeGPUUploader {\n    private isLost = false;\n\n    constructor(private device: GPUDevice) {\n        this.device.lost.then((info) => {\n            console.error(`GPUDevice lost (${info.reason}): ${info.message}`);\n            this.isLost = true;\n        });\n    }\n\n    async uploadDataSafe(data: Float32Array): Promise<GPUBuffer | null> {\n        if (this.isLost) {\n            throw new Error(\"Cannot allocate: GPUDevice is in lost state.\");\n        }\n\n        let stagingBuffer: GPUBuffer | null = null;\n        try {\n            stagingBuffer = this.device.createBuffer({\n                size: data.byteLength,\n                usage: GPUBufferUsage.MAP_WRITE | GPUBufferUsage.COPY_SRC,\n            });\n\n            await stagingBuffer.mapAsync(GPUMapMode.WRITE);\n            \n            if (this.isLost) {\n                throw new Error(\"Device lost during buffer mapping\");\n            }\n\n            const mappedRange = stagingBuffer.getMappedRange();\n            new Float32Array(mappedRange).set(data);\n            stagingBuffer.unmap();\n\n            return stagingBuffer;\n        } catch (err) {\n            if (stagingBuffer) {\n                stagingBuffer.destroy();\n            }\n            console.warn(\"Buffer upload failed or interrupted by VRAM exhaustion:\", err);\n            return null;\n        }\n    }\n}",
+    "verification": "Induce synthetic GPU device loss in Chrome via `chrome://flags/#force-webgpu-compat` or by invoking `device.destroy()`. Verify that pending uploads gracefully reject without unhandled promise rejections and that resources are freed.",
+    "date": "2026-11-15",
+    "id": 1794714887,
+    "type": "error"
+});

@@ -1,5 +1,67 @@
 var postsLatest = [
   {
+    "id": 1794714885,
+    "title": "C++20 Coroutine Frame Lifetime & Destruction Violations",
+    "slug": "cpp20-coroutine-frame-destruction-promise-lifespan",
+    "language": "C++20",
+    "code": "CoroutineDanglingPromise",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/cpp20-coroutine-frame-destruction-promise-lifespan.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Memory Safety",
+      "C++20",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794714886,
+    "title": "WiredTiger Cache Inversion & Ticket Exhaustion Cascades",
+    "slug": "mongodb-wiredtiger-cache-inversion-ticket-exhaustion",
+    "language": "MongoDB",
+    "code": "WT_TICKET_EXHAUSTION",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-inversion-ticket-exhaustion.js",
+    "tags": [
+      "Docker",
+      "Python",
+      "Database",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794714887,
+    "title": "WebGPU Device Loss & Buffer Mapping Under VRAM Pressure",
+    "slug": "webgpu-device-loss-buffer-mapping-invalidation",
+    "language": "WebGPU",
+    "code": "GPUDeviceLostError",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/webgpu-device-loss-buffer-mapping-invalidation.js",
+    "tags": [
+      "TypeScript",
+      "Frontend",
+      "React",
+      "Graphics",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794714888,
+    "title": "GestaltX: iOS MobileGestalt Config Engine",
+    "slug": "gestaltx-ios-mobilegestalt-editor-analysis",
+    "language": "Swift",
+    "code": "Trend",
+    "date": "2026-11-15",
+    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1794662105,
     "title": "Elixir Mailbox Flooding & GenServer Timeout Cascades",
     "slug": "elixir-mailbox-flooding-genserver-timeout-cascades",
@@ -890,69 +952,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1794053261,
-    "title": "Debugging Rust Borrow Checker Lifetime Errors & Ownership Violations",
-    "slug": "rust-borrow-checker-lifetime-errors-ownership-violations",
-    "language": "Rust",
-    "code": "Borrowing Error",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/rust-borrow-checker-lifetime-errors-ownership-violations.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "Memory Management",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794053262,
-    "title": "Resolving PyTorch CUDA Out-of-Memory & Mixed Precision Training",
-    "slug": "pytorch-cuda-oom-mixed-precision-instability",
-    "language": "Python",
-    "code": "CUDA OOM",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-instability.js",
-    "tags": [
-      "Python",
-      "Backend",
-      "Deep Learning",
-      "PyTorch",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794053263,
-    "title": "Troubleshooting Istio Sidecar Injection & Traffic Policy Gaps",
-    "slug": "istio-sidecar-injection-traffic-policy-failures",
-    "language": "Kubernetes",
-    "code": "Sidecar Failure",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/istio-sidecar-injection-traffic-policy-failures.js",
-    "tags": [
-      "Kubernetes",
-      "Infra",
-      "Service Mesh",
-      "Istio",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794053264,
-    "title": "Agent Autoloop: Enabling Autonomous CLI Agents for Seamless Workflows",
-    "slug": "kkkkkhazix-agent-autoloop-github-trend",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/kkkkkhazix-agent-autoloop-github-trend.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI Agents",
-      "Automation"
     ]
   }
 ];
