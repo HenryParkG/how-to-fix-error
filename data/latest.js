@@ -1,5 +1,66 @@
 var postsLatest = [
   {
+    "id": 1794801466,
+    "title": "Resolving Spark FetchFailed Cascades and Executor OOMs",
+    "slug": "spark-shuffle-fetchfailed-cascades-executor-oom",
+    "language": "Java",
+    "code": "FetchFailedException",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/spark-shuffle-fetchfailed-cascades-executor-oom.js",
+    "tags": [
+      "Java",
+      "Kubernetes",
+      "AWS",
+      "Big Data",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794801467,
+    "title": "Fixing Haskell Space Leaks in State Monad Pipelines",
+    "slug": "haskell-space-leaks-thunk-accumulation-state-monad",
+    "language": "Rust",
+    "code": "OutOfMemoryError",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/haskell-space-leaks-thunk-accumulation-state-monad.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794801468,
+    "title": "Resolving gRPC HTTP/2 Flow-Control and BDP Starvation",
+    "slug": "grpc-http2-stream-flow-control-bdp-starvation",
+    "language": "Go",
+    "code": "RESOURCE_EXHAUSTED",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/grpc-http2-stream-flow-control-bdp-starvation.js",
+    "tags": [
+      "Go",
+      "Kubernetes",
+      "Docker",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794801469,
+    "title": "DeepSeek Chat Demo: Architecture and Deployment Analysis",
+    "slug": "deepseek-chat-demo-architecture-deployment-trend",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/deepseek-chat-demo-architecture-deployment-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "Next.js",
+      "Python"
+    ]
+  },
+  {
     "id": 1794749046,
     "title": "Go Goroutine Leaks & Scheduler Starvation",
     "slug": "go-goroutine-leak-scheduler-starvation-fix",
@@ -892,66 +953,6 @@ var postsLatest = [
       "GitHub",
       "Python",
       "AI"
-    ]
-  },
-  {
-    "id": 1794140993,
-    "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
-    "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
-    "language": "Elixir, OTP",
-    "code": "Crash/Corruption",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/debugging-elixir-otp-supervisor-crashes-genserve-state-corruption.js",
-    "tags": [
-      "Elixir",
-      "OTP",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794140994,
-    "title": "Resolving Terraform State Lock Contention & Plan Drift",
-    "slug": "resolving-terraform-state-lock-contention-plan-drift",
-    "language": "Terraform, IaC",
-    "code": "Lock/Drift",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/resolving-terraform-state-lock-contention-plan-drift.js",
-    "tags": [
-      "Terraform",
-      "AWS",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794140995,
-    "title": "Untangling C++20 Coroutine Asymmetry & Resource Leaks",
-    "slug": "untangling-cpp20-coroutine-asymmetry-resource-leaks",
-    "language": "C++, C++20 Coroutines",
-    "code": "Leak/Asymmetry",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/untangling-cpp20-coroutine-asymmetry-resource-leaks.js",
-    "tags": [
-      "C++",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794140996,
-    "title": "KKKKhazix/agent-autoloop: Autonomous CLI Agents for Background Tasks",
-    "slug": "kkkkhazix-agent-autoloop-github-trend",
-    "language": "Python, Shell scripting",
-    "code": "Trend",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/kkkkhazix-agent-autoloop-github-trend.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI Agent"
     ]
   }
 ];
