@@ -1,5 +1,69 @@
 var postsIndex = [
     {
+        "id": 1794839327,
+        "title": "Fixing PyTorch FSDP Deadlocks and CUDA Allocation Memory",
+        "slug": "pytorch-fsdp-deadlocks-cuda-fragmentation",
+        "language": "Python",
+        "code": "RuntimeError: CUDA out of memory / NCCL Timeout",
+        "date": "2026-11-16",
+        "path": "data/posts/2026-11/pytorch-fsdp-deadlocks-cuda-fragmentation.js",
+        "tags": [
+            "Python",
+            "PyTorch",
+            "CUDA",
+            "Distributed",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794839328,
+        "title": "Mitigating RocksDB Write Stalls and LSM Compaction Debt",
+        "slug": "rocksdb-write-stall-lsm-compaction-debt",
+        "language": "Rust",
+        "code": "Status::Incomplete (Write Stall)",
+        "date": "2026-11-16",
+        "path": "data/posts/2026-11/rocksdb-write-stall-lsm-compaction-debt.js",
+        "tags": [
+            "Rust",
+            "Backend",
+            "Database",
+            "Storage",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794839329,
+        "title": "Fix Istio Envoy Connection Pool Exhaustion and 503 UC",
+        "slug": "istio-envoy-upstream-pool-exhaustion-503-uc",
+        "language": "Kubernetes",
+        "code": "503 UC (Upstream Connection Failure)",
+        "date": "2026-11-16",
+        "path": "data/posts/2026-11/istio-envoy-upstream-pool-exhaustion-503-uc.js",
+        "tags": [
+            "Kubernetes",
+            "Docker",
+            "Infra",
+            "Go",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794839330,
+        "title": "DeepSeek Chat Demo: Lightweight LLM UI Architecture",
+        "slug": "deepseek-chat-demo-lightweight-ui-architecture",
+        "language": "TypeScript",
+        "code": "Trend",
+        "date": "2026-11-16",
+        "path": "data/posts/2026-11/deepseek-chat-demo-lightweight-ui-architecture.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "TypeScript",
+            "React",
+            "Next.js"
+        ]
+    },
+    {
         "id": 1794801466,
         "title": "Resolving Spark FetchFailed Cascades and Executor OOMs",
         "slug": "spark-shuffle-fetchfailed-cascades-executor-oom",

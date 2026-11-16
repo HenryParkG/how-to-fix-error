@@ -1,5 +1,69 @@
 var postsLatest = [
   {
+    "id": 1794839327,
+    "title": "Fixing PyTorch FSDP Deadlocks and CUDA Allocation Memory",
+    "slug": "pytorch-fsdp-deadlocks-cuda-fragmentation",
+    "language": "Python",
+    "code": "RuntimeError: CUDA out of memory / NCCL Timeout",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/pytorch-fsdp-deadlocks-cuda-fragmentation.js",
+    "tags": [
+      "Python",
+      "PyTorch",
+      "CUDA",
+      "Distributed",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794839328,
+    "title": "Mitigating RocksDB Write Stalls and LSM Compaction Debt",
+    "slug": "rocksdb-write-stall-lsm-compaction-debt",
+    "language": "Rust",
+    "code": "Status::Incomplete (Write Stall)",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/rocksdb-write-stall-lsm-compaction-debt.js",
+    "tags": [
+      "Rust",
+      "Backend",
+      "Database",
+      "Storage",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794839329,
+    "title": "Fix Istio Envoy Connection Pool Exhaustion and 503 UC",
+    "slug": "istio-envoy-upstream-pool-exhaustion-503-uc",
+    "language": "Kubernetes",
+    "code": "503 UC (Upstream Connection Failure)",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/istio-envoy-upstream-pool-exhaustion-503-uc.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Go",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794839330,
+    "title": "DeepSeek Chat Demo: Lightweight LLM UI Architecture",
+    "slug": "deepseek-chat-demo-lightweight-ui-architecture",
+    "language": "TypeScript",
+    "code": "Trend",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/deepseek-chat-demo-lightweight-ui-architecture.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "TypeScript",
+      "React",
+      "Next.js"
+    ]
+  },
+  {
     "id": 1794801466,
     "title": "Resolving Spark FetchFailed Cascades and Executor OOMs",
     "slug": "spark-shuffle-fetchfailed-cascades-executor-oom",
@@ -890,69 +954,6 @@ var postsLatest = [
       "GitHub",
       "TypeScript",
       "React"
-    ]
-  },
-  {
-    "id": 1794196213,
-    "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
-    "slug": "vllm-pagedattention-kv-cache-desync-oom",
-    "language": "Python",
-    "code": "CUDA_OOM",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/vllm-pagedattention-kv-cache-desync-oom.js",
-    "tags": [
-      "vLLM",
-      "CUDA",
-      "LLM",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794196214,
-    "title": "Fix gRPC HTTP/2 Flow Control Starvation & Deadlock",
-    "slug": "grpc-http2-flow-control-window-starvation",
-    "language": "Go",
-    "code": "DEADLINE_EXCEEDED",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
-    "tags": [
-      "gRPC",
-      "HTTP2",
-      "Go",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794196215,
-    "title": "Fix MongoDB WiredTiger Eviction Stalls & Read Tickets",
-    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
-    "language": "SQL",
-    "code": "TICKETS_EXHAUSTED",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
-    "tags": [
-      "MongoDB",
-      "WiredTiger",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794196216,
-    "title": "Agent-Autoloop: Background Autonomous CLI Agents",
-    "slug": "agent-autoloop-autonomous-background-cli-agents",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-agents.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI"
     ]
   }
 ];

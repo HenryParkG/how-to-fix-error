@@ -1,0 +1,22 @@
+window.onPostDataLoaded({
+    "title": "Fix Istio Envoy Connection Pool Exhaustion and 503 UC",
+    "slug": "istio-envoy-upstream-pool-exhaustion-503-uc",
+    "language": "Kubernetes",
+    "code": "503 UC (Upstream Connection Failure)",
+    "tags": [
+        "Kubernetes",
+        "Docker",
+        "Infra",
+        "Go",
+        "Error Fix"
+    ],
+    "analysis": "<p>In an Istio-managed Kubernetes service mesh, upstream services under concurrent load frequently return HTTP <code>503 UC</code> (Upstream Connection Termination / Connection Failure) errors to callers. This issue typically stems from misconfigured connection pools and mismatched TCP/HTTP keep-alive lifecycles between Envoy proxies and upstream service pods.</p><p>When a downstream Envoy sidecar routes traffic to an upstream workload, it manages an upstream connection pool dictated by the corresponding <code>DestinationRule</code>. By default, Envoy configures tight circuit breaking thresholds, including <code>maxConnections</code>, <code>http1MaxPendingRequests</code>, and <code>maxRequestsPerConnection</code>. If a spike in concurrent requests exceeds the pool's capacity, Envoy instantly rejects the pending connections and returns a <code>503 UC</code> response flag.</p><p>Furthermore, a silent race condition occurs when upstream application servers (e.g., Go, Node.js, Python servers) enforce an idle TCP keep-alive timeout shorter than Envoy's upstream idle timeout. The upstream server closes the half-duplex socket with a <code>FIN</code> packet precisely as Envoy dispatches a newly arrived HTTP request onto what it assumes is a valid pooled connection. The resulting TCP reset (RST) forces Envoy to terminate the request with <code>503 UC</code> unless retry policies are explicitly configured.</p>",
+    "root_cause": "Envoy circuit breaker connection pools saturate under load, and mismatched idle keep-alive timeouts cause Envoy to dispatch requests into upstream sockets that have already been closed by the target container.",
+    "bad_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: order-service-dr\n  namespace: default\nspec:\n  host: order-service.default.svc.cluster.local\n  trafficPolicy:\n    connectionPool:\n      tcp:\n        maxConnections: 10 # Far too low for concurrent microservices\n      http:\n        http1MaxPendingRequests: 1 # Instantly exhausts queue on burst\n        maxRequestsPerConnection: 10\n    # Missing timeout alignment; upstream app closes at 30s, Envoy defaults higher",
+    "solution_desc": "Scale upstream circuit breaker limits to match expected peak concurrency, adjust HTTP/TCP connection pool settings, and ensure Envoy's `idleTimeout` is strictly lower than the upstream application's HTTP keep-alive timeout. In addition, configure a resilient retry policy in the corresponding `VirtualService` targeting `connect-failure`, `refused-stream`, and `503` statuses.",
+    "good_code": "apiVersion: networking.istio.io/v1alpha3\nkind: DestinationRule\nmetadata:\n  name: order-service-dr\n  namespace: default\nspec:\n  host: order-service.default.svc.cluster.local\n  trafficPolicy:\n    connectionPool:\n      tcp:\n        maxConnections: 4096\n        connectTimeout: 500ms\n        tcpKeepalive:\n          time: 60s\n          interval: 10s\n      http:\n        http1MaxPendingRequests: 1024\n        maxRequestsPerConnection: 1024\n        # Must be shorter than upstream application idle timeout (e.g., app=60s)\n        idleTimeout: 45s\n---\napiVersion: networking.istio.io/v1alpha3\nkind: VirtualService\nmetadata:\n  name: order-service-vs\n  namespace: default\nspec:\n  hosts:\n    - order-service.default.svc.cluster.local\n  http:\n    - route:\n        - destination:\n            host: order-service.default.svc.cluster.local\n      retries:\n        attempts: 3\n        perTryTimeout: 2s\n        retryOn: \"connect-failure,refused-stream,503\"",
+    "verification": "Run a load test against the service using `fortio` or `k6` with concurrent virtual users. Query Envoy metrics via Prometheus: `sum(rate(envoy_cluster_upstream_cx_overflow[1m]))` and `sum(rate(envoy_cluster_upstream_rq_xx{response_code_class=\"5\"}[1m]))`. Ensure both metrics remain at zero during traffic spikes.",
+    "date": "2026-11-16",
+    "id": 1794839329,
+    "type": "error"
+});
