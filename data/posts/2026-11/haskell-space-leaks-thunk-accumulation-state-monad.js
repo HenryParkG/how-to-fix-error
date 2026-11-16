@@ -1,10 +1,10 @@
 window.onPostDataLoaded({
     "title": "Fixing Haskell Space Leaks in State Monad Pipelines",
     "slug": "haskell-space-leaks-thunk-accumulation-state-monad",
-    "language": "Rust",
+    "language": "Haskell",
     "code": "OutOfMemoryError",
     "tags": [
-        "Rust",
+        "Haskell",
         "Backend",
         "Error Fix"
     ],

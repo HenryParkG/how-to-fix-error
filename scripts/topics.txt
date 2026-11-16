@@ -1,6 +1,385 @@
-C++ Segmentation Fault debugging
-Python "ImportError: cannot import name"
-Docker "standard_init_linux.go:228: exec user process caused: exec format error"
-Git "fatal: refusing to merge unrelated histories"
-CSS "z-index not working"
-SQL "syntax error near to"
+# [1] Windows Keyboard, Mouse, Input & Display Errors
+Windows 10/11 Korean/English IME input switching not working (ctfmon.exe restart & IME repair)
+Keyboard arrow keys swapped with WASD keys on Windows (Fn + W unlock fix)
+Laptop keyboard numeric keypad or specific keys not typing (NumLock, Filter Keys & driver fix)
+Windows key (Win) stopped working on keyboard (Gaming mode lock & Scancode Map registry fix)
+Keyboard typing wrong characters or symbols (US vs international layout & Sticky Keys fix)
+Mechanical keyboard double typing or key chatter issue on Windows 10/11
+Windows Caps Lock stuck or indicator light inverted fix
+Windows 11/10 Touchpad and Fn hotkeys stopped working after Windows Update
+Mouse double-clicking on single click or cursor freezing and stuttering on Windows
+Mouse scroll wheel scrolling backwards or jumping erratically on Windows 10/11
+Windows second monitor not detected via HDMI, DisplayPort, or USB-C fix
+Monitor refresh rate stuck at 60Hz instead of 144Hz or 240Hz on Windows 11/10
+Blurry text or oversized UI scaling on dual monitors with mixed DPI (1080p and 4K)
+Windows HDR screen looks washed out or Night Light stuck on yellow tint fix
+Screen flickering on Windows 11/10 (Refresh rate, DWM & graphics driver conflict)
+Windows Search bar in taskbar won't accept keyboard input (SearchHost.exe & ctfmon fix)
+Windows clipboard history (Win + V) and Snipping Tool (Win + Shift + S) not working
+Alt + Tab shortcut not switching windows or lagging on Windows 11
+On-Screen Keyboard popping up automatically on login or Windows tablet mode stuck
+Right-click context menu freezing or spinning slowly on Windows 11 desktop
+Multi-monitor taskbar missing or desktop icons rearranging after sleep mode
+Windows screen rotation flipped sideways or upside down (Ctrl + Alt + Arrow fix)
+Laptop lid close action ignoring "Do nothing" setting and still going to sleep
+Touch screen phantom ghost touches or unresponsive digitizer calibration on Windows
+Drawing tablet (Wacom / Huion) pen pressure not working with Windows Ink
+External monitor showing "Out of Range" or black screen after resolution change
+
+# [2] Windows System, Boot, Update, DLL & Performance Fixes
+"The code execution cannot proceed because VCRUNTIME140.dll or MSVCP140.dll was not found" error on Windows
+Windows application error 0xc000007b "The application was unable to start correctly" fix
+Missing d3dcompiler_47.dll or api-ms-win-crt-runtime-l1-1-0.dll error on Windows
+Windows taskbar and Start menu frozen or unresponsive (explorer.exe restart & ShellExperienceHost fix)
+Windows File Explorer keeps crashing or hanging with endless green loading bar fix
+Windows Update error 0x80070005 or 0x80070002 (SoftwareDistribution cache reset)
+Windows Update error 0x800f081f or 0x80240034 failing to install cumulative updates
+Windows 100% disk usage in Task Manager (SysMain, Windows Search & StorAHCI fix)
+High RAM or non-paged pool memory leak on Windows (Antimalware Service & ntoskrnl fix)
+Windows "We can't sign into your account" temporary user profile error fix
+Windows BSOD CRITICAL_PROCESS_DIED or INACCESSIBLE_BOOT_DEVICE troubleshooting
+Windows BSOD MEMORY_MANAGEMENT or IRQL_NOT_LESS_OR_EQUAL crash diagnosis
+Windows Display driver stopped responding and has recovered (TDR Timeout TdrDelay fix)
+Windows 10/11 Sleep mode wakes up immediately or modern standby battery drain (powercfg wake_armed)
+Windows "You'll need a new app to open this ms-windows-store link" Microsoft Store missing fix
+Windows "This file does not have an app associated with it for performing this action" error
+Windows "The action can't be completed because the file is open in another program" locked file fix
+Windows Defender "Your IT administrator has limited access to some areas of this app" fix
+Windows clock showing wrong time after dual-booting Linux (UTC vs localtime registry fix)
+Windows startup slowdown and disabling hidden background services safely
+Windows C: drive filling up fast (WinSxS component cleanup, hiberfil.sys & pagefile.sys)
+Windows BitLocker recovery key prompt loop after BIOS or TPM firmware update
+Windows PIN login error 0x80090016 ("Something happened and your PIN isn't available") fix
+Windows "Automatic Repair couldn't repair your PC" (SrtTrail.txt boot loop fix)
+Windows Desktop Window Manager (dwm.exe) high GPU or memory usage leak fix
+Windows "The User Profile Service failed the sign-in" registry ProfileList .bak repair
+
+# [3] CMD, PowerShell & Windows Terminal Troubleshooting
+CMD "'xxx' is not recognized as an internal or external command, operable program or batch file" (System PATH variable fix)
+PowerShell "running scripts is disabled on this system" (Set-ExecutionPolicy RemoteSigned fix)
+Find and kill a process using a specific port (8080, 3000) in Windows CMD and PowerShell (netstat -ano & taskkill)
+Repair corrupted Windows system files via CMD (DISM /Restorehealth and sfc /scannow)
+Complete Windows network stack reset in CMD for internet and DNS issues (ipconfig /flushdns & netsh winsock reset)
+Fix broken Korean and UTF-8 characters in Windows CMD and PowerShell terminal (chcp 65001)
+Fix CMD "Access is denied" using administrator prompt, takeown, and icacls permissions
+Repair external hard drive or USB "The file or directory is corrupted and unreadable" using chkdsk /f /r
+Schedule and cancel Windows shutdown or prevent forced restart using CMD (shutdown -s -t & shutdown -a)
+Force delete undeletable files or "Could not find this item" folders in Windows CMD (rd /s /q \\?\path)
+CMD "The syntax of the command is incorrect" in Windows batch (.bat) file loops and quotes
+Windows environment variables set with setx truncated at 1024 characters or not refreshing in CMD
+PowerShell "Invoke-WebRequest : The request was aborted: Could not create SSL/TLS secure channel" fix
+CMD "The system cannot find the path specified" when running scripts with spaces or special characters
+Check Windows crash logs, uptime, and battery health report via CMD (powercfg /batteryreport & systeminfo)
+Fix "winget is not recognized" or App Installer failure in Windows 10/11 PowerShell
+Windows CMD robocopy exit codes and fixing permission errors during large file backups
+Fix PowerShell "The term 'conda' is not recognized" Anaconda initialization issue
+Kill frozen Windows applications from CMD when Task Manager is unresponsive (taskkill /F /IM)
+CMD "Error: Unable to access jarfile" or wrong Java version selected in Windows PATH
+Fix Windows "Path too long" (MAX_PATH 260 character limit) error in CMD and PowerShell
+Windows net use "System error 53 has occurred" or "Multiple connections to a server or shared resource" fix
+PowerShell Out-File creates UTF-16 files that break scripts (Force UTF8NoBOM encoding)
+Fix Windows "bootrec /fixboot Access is denied" EFI boot repair in Recovery CMD
+Windows symbolic link error "You do not have sufficient privilege to perform this operation" (mklink Developer Mode fix)
+PowerShell blocked downloaded script error vs ExecutionPolicy (Unblock-File Zone.Identifier fix)
+
+# [4] Audio, Bluetooth, USB, Printer & Hardware Peripherals
+"No Audio Output Device Is Installed" or sudden no sound in Windows 10/11 fix
+Bluetooth headphones connected to Windows with no sound or stuck in muffled Hands-Free mode
+Bluetooth toggle switch disappeared from Windows Settings and Device Manager
+Bluetooth keyboard or mouse keeps disconnecting or lagging on Windows (Power Management fix)
+Microphone not picking up voice or muted across apps despite being connected on Windows
+Realtek HD Audio Manager missing or front panel 3.5mm headphone jack not detecting
+Audio crackling, popping, or DPC latency stutter during playback on Windows 11/10
+Windows USB Device Manager Error Code 43 ("Device Descriptor Request Failed") fix
+"Unknown USB Device (Port Reset Failed)" or USB 3.0 ports dropping power on Windows
+External HDD or SSD showing as RAW filesystem or prompting "You need to format the disk"
+External hard drive spins up with LED on but doesn't show drive letter in Explorer (diskmgmt.msc)
+USB flash drive shows "The disk is write protected" when copying or formatting (diskpart readonly clear)
+Safely eject USB drive fails with "This device is currently in use" handle lock fix
+Windows Print Spooler error 0x0000011b "Windows cannot connect to the printer" fix
+Network printer stuck in "Offline" status or print queue job stuck at "Deleting"
+Laptop webcam error 0xA00F4244 ("NoCamerasAreAttached") or black camera preview fix
+Laptop battery stuck at "Plugged in, not charging" or rapid battery percentage drop
+Laptop cooling fan running at 100% loud noise at idle (Power plan & thermal throttling fix)
+Built-in SD card reader not detecting memory cards on Windows laptop
+USB Wi-Fi adapter disconnecting under heavy download or gaming load on Windows
+Thunderbolt or USB-C docking station monitors and Ethernet not waking from sleep
+SSD or NVMe slow write speeds check and TRIM optimization (fsutil behavior)
+Sound playing through laptop speakers even when 3.5mm headphones are plugged in
+HDMI or DisplayPort monitor audio output missing from Windows playback devices list
+Headset microphone static buzz or electrical ground loop hum troubleshooting
+Printer "Driver is unavailable" error after Windows 11 upgrade
+
+# [5] macOS & MacBook Everyday & Terminal Fixes
+macOS "App is damaged and can't be opened. You should move it to the Trash" (xattr -cr fix)
+macOS Gatekeeper "cannot be opened because the developer cannot be verified" bypass safely
+Homebrew "zsh: command not found: brew" on Apple Silicon Macs (/opt/homebrew/bin PATH fix)
+macOS "xcrun: error: invalid active developer path" after macOS update (xcode-select --install)
+macOS Caps Lock Hangul/ABC language toggle delay and input source freeze fix
+macOS external hard drive formatted in NTFS is read-only (mount & exFAT solutions)
+macOS "System Data" storage ballooning (Time Machine local snapshots & cache cleanup)
+Mac Spotlight mds_stores or mds process consuming 100% CPU and draining battery
+macOS Terminal: identify and terminate busy TCP port listener via lsof -i and kill -9
+macOS Finder sluggish, frozen, or Desktop icons disappeared (killall Finder fix)
+macOS Touch Bar, Control Strip, or Dock frozen (killall Dock & ControlStrip fix)
+Mac Wi-Fi connected with self-assigned IP or dropping connection after waking from sleep
+macOS Bluetooth audio stuttering or Magic Mouse and Keyboard failing to reconnect
+macOS Keychain keeps asking for login password repeatedly after changing password
+MacBook battery stuck at 80% "Charging On Hold" or "Service Recommended" check
+macOS flush local DNS cache via Terminal (dscacheutil -flushcache & mDNSResponder)
+Mac Terminal "Operation not permitted" caused by macOS Full Disk Access TCC privacy blocks
+macOS Rosetta 2 missing when running Intel x86_64 apps on M1/M2/M3/M4 Apple Silicon
+Mac .DS_Store clutter in shared folders and disabling creation on network volumes
+macOS screenshot save folder change and disabling window drop shadow via defaults write
+Mac app frozen and Force Quit unresponsive (killall & Activity Monitor fix)
+macOS Python 3 "command not found: python" or Apple Command Line Tools mismatch
+External monitor blurry text on macOS with non-Retina 1080p or 1440p displays (HiDPI fix)
+macOS "dyld: Library not loaded" or incompatible architecture (arm64 vs x86_64) fix
+macOS AirDrop not finding nearby iPhone or MacBook devices troubleshooting
+Mac iCloud Drive stuck on "Uploading" or "Waiting to Upload" (bird daemon restart)
+
+# [6] Linux, Ubuntu & WSL2 System & Shell Fixes
+Ubuntu "Could not get lock /var/lib/dpkg/lock-frontend" apt package lock fix
+Linux "sudo: command not found" or "user is not in the sudoers file" recovery
+SSH "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED" host key mismatch (ssh-keygen -R)
+Linux systemd service failing to start (systemctl status & journalctl -xe debugging)
+Linux systemd unit failing with status=203/EXEC or Unit not found error fix
+Linux chmod and chown "Permission denied" fixing script execution and web root ownership
+Ubuntu apt update "NO_PUBKEY" or expired GPG repository signature error fix
+Linux "Too many open files" error (ulimit -n & /etc/security/limits.conf tuning)
+Keep Linux background tasks alive after closing SSH session (nohup, tmux & screen)
+Ubuntu "E: Unable to locate package" or unmet dependencies (apt --fix-broken install)
+Linux tar extraction errors and preserving permissions in compressed backups
+Linux cron job not executing (missing PATH environment, permissions & syslog debugging)
+Linux swap memory tuning (vm.swappiness) and creating a swapfile on low-RAM servers
+Ubuntu ufw firewall blocking SSH or web ports and safely recovering remote access
+Ubuntu black screen after NVIDIA driver update (nomodeset & ubuntu-drivers autoinstall)
+Linux shell "Argument list too long" when deleting or moving files (find & xargs fix)
+Linux NTFS drive mounting read-only because of Windows Fast Startup (ntfsfix repair)
+WSL2 "WslRegisterDistribution failed with error: 0x800701bc" or "0x80370102" virtualization error
+WSL2 VHDX virtual disk eating huge Windows C: drive space (Optimize-VHD / diskpart compact)
+WSL2 no internet access or DNS resolution failure inside Ubuntu on Windows
+WSL2 "System has not been booted with systemd" enabling systemd in /etc/wsl.conf
+WSL2 slow file I/O on /mnt/c Windows mounts vs native ext4 filesystem fix
+WSL2 vmmem process consuming excessive Windows RAM (.wslconfig memory limit fix)
+Linux bash script failing with "$'\r': command not found" CRLF line ending error (dos2unix)
+Linux zombie processes and uninterruptible D-state process troubleshooting
+Ubuntu desktop audio missing showing "Dummy Output" (PulseAudio & PipeWire restart)
+
+# [7] Web Browser, Network, Wi-Fi, VPN & DNS Errors
+Chrome "DNS_PROBE_FINISHED_NXDOMAIN" site can't be reached error fix
+Chrome and Edge "ERR_CONNECTION_REFUSED" and "ERR_CONNECTION_TIMED_OUT" troubleshooting
+Browser "ERR_CERT_COMMON_NAME_INVALID" and "NET::ERR_CERT_DATE_INVALID" SSL certificate error fix
+Windows Wi-Fi "No Internet, Secured" causes and step-by-step fixes
+Windows hosts file (C:\Windows\System32\drivers\etc\hosts) changes not saving or not taking effect
+Chrome "ERR_TOO_MANY_REDIRECTS" redirect loop error troubleshooting
+Browser "ERR_CACHE_MISS" and "400 Bad Request - Request Header Or Cookie Too Large" fix
+Windows Ethernet "Unidentified network" or "Ethernet doesn't have a valid IP configuration" (169.254 APIPA fix)
+Chrome "STATUS_ACCESS_VIOLATION" or "Aw, Snap! Out of Memory" tab crash fix
+Browser "NET::ERR_CERT_AUTHORITY_INVALID" behind corporate proxy or antivirus HTTPS scanning
+Chrome "ERR_BLOCKED_BY_CLIENT" or adblocker breaking web application requests
+Windows VPN connected but cannot access internet or local LAN (Split tunneling & DNS leak fix)
+Chrome and Edge high RAM usage and hardware acceleration black screen flickering fix
+Windows "The remote device or resource won't accept the connection" proxy server settings error
+Browser "403 Forbidden" and "429 Too Many Requests" troubleshooting
+Windows stale local DNS resolution and ipconfig /displaydns cache inspection
+Chrome "Your connection is not private" HSTS localhost redirect (.dev / .app) fix
+Windows SMB network share error blocking unauthenticated guest access in Windows 11/10
+Slow Wi-Fi speed only on Windows 11/10 laptop (802.11ax, DNS over HTTPS & TCP Auto-Tuning fix)
+Browser "WebSocket connection failed: Error during WebSocket handshake" behind Nginx or reverse proxy
+Windows Firewall blocking local development server (localhost / 0.0.0.0) from LAN devices
+Curl and Git "SSL certificate problem: unable to get local issuer certificate" on Windows
+Chrome "ERR_SSL_VERSION_OR_CIPHER_MISMATCH" on older routers or internal admin panels
+Chrome "ERR_QUIC_PROTOCOL_ERROR" failing on restricted networks or firewalls
+Diagnosing packet loss, high jitter, and routing drops with ping, tracert, and pathping
+Browser SameSite cookie login redirect loops across subdomains and iframes
+
+# [8] Microsoft Office (Excel, Word, PowerPoint), CSV & PDF Fixes
+Excel opens UTF-8 CSV files with broken Korean or accented characters (BOM & Power Query fix)
+Excel removes leading zeros (010...) and converts long IDs to scientific notation (1.23E+11) in CSV
+Excel formulas showing as literal text (=SUM(A1:A5)) instead of calculating result
+Excel "We found a problem with some content in workbook.xlsx" corrupted file recovery
+Excel #VALUE!, #REF!, #NAME?, and #N/A formula errors debugging guide
+Excel "There are one or more circular references" warning locating and fixing
+Excel file locked for editing by another user (phantom ~$ temp lock file cleanup)
+Excel "Microsoft Excel is waiting for another application to complete an OLE action" freeze fix
+Excel "Out of memory" or "Not enough system resources to display completely" in large spreadsheets
+Excel VLOOKUP and XLOOKUP returning #N/A due to hidden spaces or text-vs-number types
+Excel Pivot Table not updating source data or failing to group dates properly
+Word stubborn horizontal line under header or paragraph border that cannot be deleted
+Word layout shifting and broken fonts when opened on another computer (Font embedding fix)
+Word "The file appears to be corrupted" and recovering unsaved .asd AutoRecover drafts
+Word blank extra page at the end of a document caused by trailing table or section break
+PowerPoint "Some of your fonts cannot be saved with the presentation" error fix
+PowerPoint embedded video or audio shows "Cannot play media" on another PC
+PowerPoint file size too large due to uncompressed high-resolution images and videos
+Microsoft Office "Product Activation Failed" or Office repair error troubleshooting
+Outlook "Cannot start Microsoft Outlook. Cannot open the Outlook window" (/resetnavpane fix)
+Outlook stuck on "Loading Profile" or search returning zero results (Index rebuild)
+PDF text turns into garbled boxes when printing or exporting from Word or Chrome
+PDF "The document could not be printed" or spooler hang in Adobe Acrobat and Edge
+Owner-locked PDF files failing to merge or print and safe re-export solutions
+Excel Macros blocked ("SECURITY RISK: Microsoft has blocked macros from running") Unblock fix
+
+# [9] PC Gaming, Steam, DirectX, GPU Driver & Discord Fixes
+NVIDIA and AMD DXGI_ERROR_DEVICE_REMOVED and DXGI_ERROR_DEVICE_HUNG game crash fix
+Missing XINPUT1_3.dll, d3dx9_43.dll, or DirectX runtime errors when launching PC games
+Steam stuck on "App Running" even after exiting game (Zombie process & overlay fix)
+Steam "Disk Write Error" or "Content File Locked" during game download or update
+Steam "Missing File Privileges" and download speed dropping to 0 MB/s on Windows
+Valorant VAN 9003 "This build of Vanguard requires TPM 2.0 and Secure Boot" on Windows 11
+Discord screen share or stream has no audio on Windows 10/11 fix
+Discord microphone not transmitting voice or cutting out (Input sensitivity & Krisp fix)
+Discord stuck on "Update Failed - Retrying" infinite startup loop fix
+PC game stuttering and Alt-Tab black screen delay (Fullscreen Optimizations & MPO disable)
+NVIDIA Control Panel missing or "NVIDIA Display settings are not available" error
+AMD Adrenalin Software "The version of AMD Software you have launched is not compatible" Windows Update fix
+PC game crashing with EXCEPTION_ACCESS_VIOLATION (0xc0000005) memory error
+Xbox Game Bar (Win + G) or NVIDIA ShadowPlay recording greyed out or missing audio
+High ping, packet loss, and rubberbanding in online games (Bufferbloat, QoS & IPv6 fixes)
+Xbox Game Pass PC / Microsoft Store games stuck at 0% or failing with error 0x80073d0d
+PS5 DualSense or Xbox controller not recognized in Steam or causing double-input bug
+Unreal Engine "Out of video memory trying to allocate a rendering resource" crash fix
+Easy Anti-Cheat "Untrusted system file" or "Error Code 30005: CreateFile failed with 32"
+Minecraft Exit Code 1 or "GLFW error 65542: WGL: The driver does not appear to support OpenGL"
+League of Legends Vanguard critical error or client black screen fix
+Low FPS in games on gaming laptop (Game running on Integrated iGPU instead of RTX dGPU)
+Screen tearing in games without V-Sync input lag (G-Sync / FreeSync & frame rate cap)
+Game audio breaking when Bluetooth headset switches to Hands-Free AG Audio profile
+Steam Cloud "Unable to sync" conflict resolution without overwriting local saves
+
+# [10] Mobile, Cloud Sync (OneDrive, iCloud, Google Drive) & Desktop Apps
+Windows OneDrive stuck on "Processing changes" or showing red X sync error
+Unlink Windows Desktop and Documents folders from OneDrive without losing local files
+Google Drive for Desktop missing virtual drive letter (G:) or sync paused error
+iCloud for Windows photos stuck downloading or throwing error 0x80070005
+iPhone to Windows PC photo transfer fails with "A device attached to the system is not functioning"
+Windows cannot open iPhone .HEIC photos or .MOV videos natively (Free codec & conversion fix)
+Android adb devices shows "unauthorized" or empty list on Windows (USB Debugging & driver fix)
+Android phone connected via USB charges only and does not show MTP file transfer
+KakaoTalk PC high CPU usage, image upload failure, or login network error on Windows
+Slack or Notion desktop app stuck on blank white or black screen (Cache clear & GPU acceleration)
+Zoom microphone/camera blocked or "Zoom quit unexpectedly" crash troubleshooting
+Windows Phone Link (Link to Windows) failing to pair or sync SMS notifications
+OneDrive or Dropbox duplicate "conflicted copy" files cleanup and prevention
+iPhone Personal Hotspot not appearing in Wi-Fi list or disconnecting on Windows laptop
+Google Chrome or Edge "Your profile could not be opened correctly" (Web Data lock fix)
+Adobe Creative Cloud or Acrobat installer stuck at percentage or failing with error 183
+OBS Studio black screen on Display Capture on dual-GPU laptops
+7-Zip or Windows File Explorer ZIP showing broken Korean filenames (CP949 vs UTF-8 encoding)
+Notion, Obsidian, or Electron desktop apps lagging due to Hardware Acceleration on Windows 11
+Spotify or Apple Music Windows app "No internet connection detected" despite working browser
+Google Drive "Download quota exceeded for this file" safe copy workaround
+Windows Remote Desktop (mstsc) "An authentication error has occurred (CredSSP)" fix
+TeamViewer or AnyDesk "Display waiting for image" or black screen on headless monitor PC
+Samsung DeX or Smart Switch failing to detect Galaxy phone over USB-C on Windows
+Telegram or WhatsApp Desktop media download failing and local cache bloat cleanup
+
+# [11] Git, GitHub, VS Code & IDE Productivity Fixes
+Git "fatal: refusing to merge unrelated histories" cause and fix
+Git .gitignore not ignoring already tracked files (git rm -r --cached . fix)
+Git "warning: in the working copy of '...', LF will be replaced by CRLF" line ending fix
+Git displaying Korean or Unicode filenames as octal escape sequences like \355\225 (core.quotepath false)
+Git "Permission denied (publickey)" SSH authentication troubleshooting on Windows & macOS
+Git "You are in 'detached HEAD' state" how to safely recover commits without losing work
+Git "fatal: unable to access ... The requested URL returned error: 403" credential manager reset on Windows
+Git "error: failed to push some refs" non-fast-forward pull rebase fix
+Git "Filename too long" error on Windows (git config --system core.longpaths true)
+GitHub push rejected "GH001: Large files detected (>100MB)" (git filter-repo & Git LFS fix)
+Git interactive rebase conflict gone wrong: safely aborting and recovering with git reflog
+Git "fatal: Unable to create '.git/index.lock': File exists" stale lock fix
+Git "fatal: detected dubious ownership in repository" (safe.directory configuration fix)
+VS Code integrated terminal changing default shell between PowerShell, CMD, and Git Bash & fixing garbled font
+VS Code "Cannot edit in read-only editor" or slow file watcher (ENOSPC & Windows Defender exclusions)
+VS Code Prettier or ESLint not formatting on save (defaultFormatter & conflict fix)
+VS Code Remote-SSH stuck on "Setting up SSH Host... Downloading VS Code Server"
+VS Code Source Control panel showing thousands of untracked files (node_modules & .venv)
+VS Code Python extension failing to auto-detect workspace .venv interpreter
+IntelliJ IDEA or Android Studio "Gradle sync failed" cache invalidation & daemon lock fix
+IntelliJ IDEA or WebStorm running out of memory (OutOfMemoryError: Java heap space -Xmx)
+VS Code or JetBrains debugger failing to attach or "Port already in use" on restart
+GitHub Actions workflow failing with "Resource not accessible by integration (403)" permissions fix
+Git merge conflicts in binary or lockfiles choosing ours or theirs cleanly
+Git cloned repository has empty submodule folders (--recurse-submodules & update --init)
+VS Code Extension Host crashing or consuming high CPU (Extension Bisect troubleshooting)
+
+# [12] Python, AI/CUDA, PyTorch & Data Science Environment Fixes
+Python "'pip' is not recognized as an internal or external command" & python -m pip fix
+Python "UnicodeDecodeError: 'cp949' codec can't decode byte" on Windows file reading
+Python venv Activate.ps1 blocked or wrong global pip used after activation
+Python "ModuleNotFoundError: No module named" even though package is installed via pip
+Python "error: Microsoft Visual C++ 14.0 or greater is required" when installing pip packages on Windows
+Python "error: externally-managed-environment" (PEP 668) on Ubuntu 24.04 & macOS Homebrew
+PyTorch "CUDA out of memory. Tried to allocate..." batch size, AMP & empty_cache fixes
+PyTorch "torch.cuda.is_available()" returns False despite having an NVIDIA GPU
+PyTorch or TensorFlow "RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED" fix
+Matplotlib and Seaborn Korean characters rendering as empty squares (□□□) fix
+Pandas "DtypeWarning: Columns have mixed types" and MemoryError on huge CSV files
+Pandas "SettingWithCopyWarning: A value is trying to be set on a copy of a slice" fix
+Jupyter Notebook "The kernel appears to have died. It will restart automatically" crash fix
+Conda "Solving environment: failed" or slow dependency resolution (libmamba solver fix)
+Python "ImportError: cannot import name ... from partially initialized module" circular import fix
+Python "ssl.SSLCertVerificationError: certificate verify failed" behind corporate proxy or macOS
+FastAPI or Uvicorn reload failing on Windows multiprocessing (if __name__ == "__main__": guard)
+Python "TypeError: Object of type datetime or ndarray is not JSON serializable" fix
+Hugging Face Transformers "OSError: Can't load tokenizer" or blocked cache download fix
+OpenCV cv2.imread() returning None silently on paths with Korean or Unicode characters
+Python pip install failing with HashMismatch or corrupted wheel cache (--no-cache-dir)
+NumPy 2.0 upgrade breaking legacy Python libraries (AttributeError & ABI mismatch fix)
+Selenium or Playwright "SessionNotCreatedException: This version of ChromeDriver only supports..."
+Python "IndentationError: unindent does not match any outer indentation level" (Mixed tabs vs spaces)
+Streamlit or Gradio local web UI inaccessible from LAN or port binding conflict
+
+# [13] JavaScript, TypeScript, React, Next.js & Web Frontend Fixes
+Node.js "Error: listen EADDRINUSE: address already in use :::3000" fix on Windows and Mac/Linux
+npm "ERESOLVE unable to resolve dependency tree" peer dependency conflict resolution
+npm "ERR! code EACCES" or Windows EPERM unlink file lock error during npm install
+Node.js "FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory"
+Browser "Access to fetch has been blocked by CORS policy: No 'Access-Control-Allow-Origin'" fix
+React "Hydration failed because the initial UI does not match what was rendered on the server"
+React "Error: Too many re-renders" or infinite useEffect loop debugging
+React useState direct array or object mutation failing to trigger component re-render
+Next.js "Error: Functions cannot be passed directly to Client Components" ('use client' boundary)
+Next.js Image component "missing required width property" or unconfigured remotePatterns
+TypeScript "TS2307: Cannot find module or its corresponding type declarations" fix
+TypeScript "TS7053: Element implicitly has an 'any' type" dynamic object key indexing fix
+Vite or Next.js environment variables (VITE_* / NEXT_PUBLIC_*) returning undefined in browser
+"ReferenceError: window is not defined" or "document is not defined" in Next.js SSR
+Tailwind CSS utility classes not applying or missing in production build (content glob config)
+CSS "position: sticky" not sticking inside overflow: hidden or flex containers
+CSS Flexbox or Grid child overflowing parent container width (min-width: 0 fix)
+nvm (Node Version Manager) "nvm is not recognized" or switching Node versions failing on Windows
+ESLint or Prettier configuration parsing errors after flat config migration
+JavaScript fetch() ignoring HTTP 404/500 errors and throwing "Unexpected token '<'" JSON parse error
+Vite or Webpack "ChunkLoadError: Loading chunk failed" after deploying updated frontend
+Browser localStorage "QuotaExceededError" or Safari Private mode storage failure
+React state stale inside setInterval or event listener closures (functional updater & ref fix)
+pnpm or yarn Corepack version mismatch and frozen-lockfile CI failures
+Static assets, images, or favicon returning 404 on Vercel or GitHub Pages subpaths
+
+# [14] Backend, Database (MySQL, PostgreSQL, Redis), Docker & Nginx/Cloud Fixes
+Docker Desktop "Docker Engine stopped" or stuck on "Starting the Docker Engine" (wsl --shutdown & service reset)
+Docker on Windows "mounts denied" or bind mount path conversion issues in Git Bash/MINGW (MSYS_NO_PATHCONV)
+Docker "no space left on device" clean up dangling images, build cache, and WSL2 virtual disk
+Docker "Bind for 0.0.0.0:8080 failed: port is already allocated" troubleshooting
+Docker container "exec format error" running ARM64 images on x86_64 (--platform linux/amd64)
+Docker Compose container failing to reach host localhost service (host.docker.internal fix)
+MySQL/MariaDB "Access denied for user 'root'@'localhost'" or port 3306 already in use on Windows
+MySQL 8 "Client does not support authentication protocol (caching_sha2_password)" fix
+MySQL "Too many connections (Error 1040)" diagnosing connection leaks and max_connections
+PostgreSQL "psql: error: connection to server at 'localhost' failed" service not running on Windows
+PostgreSQL "FATAL: remaining connection slots are reserved for non-replication superuser"
+PostgreSQL "ERROR: permission denied for schema public" on PostgreSQL 15 and newer
+Redis "MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist"
+Redis "NOAUTH Authentication required" or protected-mode refusing remote connections
+Nginx "502 Bad Gateway" upstream socket or backend port connection debugging
+Nginx "504 Gateway Time-out" slow upstream response tuning (proxy_read_timeout)
+Nginx "413 Request Entity Too Large" file upload limit fix (client_max_body_size)
+Nginx and Certbot Let's Encrypt SSL certificate renewal failing on port 80
+Java "JAVA_HOME is not set" and "UnsupportedClassVersionError: compiled by a more recent version of Java Runtime"
+Spring Boot "Whitelabel Error Page" and "HikariPool-1 - Connection is not available" timeout
+AWS EC2 SSH "WARNING: UNPROTECTED PRIVATE KEY FILE!" (chmod 400 & Windows icacls key permissions)
+AWS S3 "AccessDenied (403)" or CORS error blocking browser direct file uploads
+Vercel deployment "404: NOT_FOUND" on client-side SPA routes (vercel.json rewrites fix)
+Kubernetes "ImagePullBackOff" and "ErrImagePull" private registry authentication debugging
+JWT "TokenExpiredError" or "401 Unauthorized" clock skew and HttpOnly cookie troubleshooting

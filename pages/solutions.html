@@ -132,8 +132,31 @@
                 </div>
 
                 <div class="filter-group">
-                    <span class="filter-label">Frontend</span>
+                    <span class="filter-label">OS &amp; CLI</span>
                     <div class="filter-tags">
+                        <button class="filter-btn" data-filter="windows">Windows</button>
+                        <button class="filter-btn" data-filter="macos">macOS</button>
+                        <button class="filter-btn" data-filter="linux">Linux</button>
+                        <button class="filter-btn" data-filter="cmd">CMD</button>
+                        <button class="filter-btn" data-filter="powershell">PowerShell</button>
+                        <button class="filter-btn" data-filter="hardware">Hardware</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Apps &amp; Network</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="office">Office</button>
+                        <button class="filter-btn" data-filter="gaming">Gaming</button>
+                        <button class="filter-btn" data-filter="browser">Browser</button>
+                        <button class="filter-btn" data-filter="network">Network</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <span class="filter-label">Frontend &amp; Dev</span>
+                    <div class="filter-tags">
+                        <button class="filter-btn" data-filter="git">Git</button>
                         <button class="filter-btn" data-filter="react">React</button>
                         <button class="filter-btn" data-filter="vue">Vue</button>
                         <button class="filter-btn" data-filter="next.js">Next.js</button>
@@ -143,19 +166,13 @@
                 </div>
 
                 <div class="filter-group">
-                    <span class="filter-label">Backend</span>
+                    <span class="filter-label">Backend &amp; Infra</span>
                     <div class="filter-tags">
                         <button class="filter-btn" data-filter="python">Python</button>
                         <button class="filter-btn" data-filter="node.js">Node.js</button>
                         <button class="filter-btn" data-filter="go">Go</button>
                         <button class="filter-btn" data-filter="rust">Rust</button>
                         <button class="filter-btn" data-filter="java">Java/Spring</button>
-                    </div>
-                </div>
-
-                <div class="filter-group">
-                    <span class="filter-label">Infra/DB</span>
-                    <div class="filter-tags">
                         <button class="filter-btn" data-filter="docker">Docker</button>
                         <button class="filter-btn" data-filter="kubernetes">K8s</button>
                         <button class="filter-btn" data-filter="sql">SQL/DB</button>
@@ -167,6 +184,7 @@
             <div class="posts-grid" id="postsGrid">
                 <!-- Data injected by JS -->
             </div>
+            <div id="loadMoreContainer" style="text-align: center; margin: 3rem 0 1rem;"></div>
         </section>
     </main>
 

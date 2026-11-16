@@ -1,0 +1,8 @@
+[
+  "Windows 10/11 Korean/English IME input switching not working (ctfmon.exe restart & IME repair)",
+  "CMD \"'xxx' is not recognized as an internal or external command, operable program or batch file\" (System PATH variable fix)",
+  "Chrome \"DNS_PROBE_FINISHED_NXDOMAIN\" site can't be reached error fix",
+  "\"The code execution cannot proceed because VCRUNTIME140.dll or MSVCP140.dll was not found\" error on Windows",
+  "\"No Audio Output Device Is Installed\" or sudden no sound in Windows 10/11 fix",
+  "macOS \"App is damaged and can't be opened. You should move it to the Trash\" (xattr -cr fix)"
+]

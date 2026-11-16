@@ -1,5 +1,122 @@
 var postsLatest = [
   {
+    "id": 1794817842,
+    "title": "Fix VCRUNTIME140.dll and MSVCP140.dll Not Found in Windows",
+    "slug": "fix-vcruntime140-msvcp140-missing-windows",
+    "language": "Windows",
+    "code": "STATUS_DLL_NOT_FOUND",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-vcruntime140-msvcp140-missing-windows.js",
+    "tags": [
+      "Windows",
+      "Gaming",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794817843,
+    "title": "Fix No Audio Output Device Is Installed on Windows 10/11",
+    "slug": "fix-no-audio-output-device-installed-windows",
+    "language": "Windows",
+    "code": "AUDIO_NO_DEVICE",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-no-audio-output-device-installed-windows.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "PowerShell",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794817844,
+    "title": "Fix App Is Damaged and Can't Be Opened on macOS",
+    "slug": "fix-macos-app-damaged-cant-be-opened-xattr",
+    "language": "macOS",
+    "code": "ERR_GATEKEEPER_QUARANTINE",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-macos-app-damaged-cant-be-opened-xattr.js",
+    "tags": [
+      "macOS",
+      "Browser",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794817845,
+    "title": "Exploring Erosion-CN: Bootloop-Safe MobileGestalt Toolbox",
+    "slug": "erosion-cn-mobilegestalt-ios-safe-toolbox",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/erosion-cn-mobilegestalt-ios-safe-toolbox.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
+    "id": 1794803971,
+    "title": "Fix Windows 10/11 Korean/English IME Switching Freeze",
+    "slug": "fix-windows-korean-ime-input-switching-ctfmon",
+    "language": "Windows",
+    "code": "IME_FREEZE",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-windows-korean-ime-input-switching-ctfmon.js",
+    "tags": [
+      "Windows",
+      "PowerShell",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794803972,
+    "title": "Fix CMD 'not recognized as an internal or external command'",
+    "slug": "fix-cmd-command-not-recognized-system-path",
+    "language": "CMD",
+    "code": "ERR_CMD_NOT_FOUND",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-cmd-command-not-recognized-system-path.js",
+    "tags": [
+      "CMD",
+      "Windows",
+      "PowerShell",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794803973,
+    "title": "Fix Chrome DNS_PROBE_FINISHED_NXDOMAIN Site Error",
+    "slug": "fix-chrome-dns-probe-finished-nxdomain",
+    "language": "Network",
+    "code": "DNS_PROBE_FINISHED_NXDOMAIN",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/fix-chrome-dns-probe-finished-nxdomain.js",
+    "tags": [
+      "Network",
+      "Windows",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794803974,
+    "title": "Apex Neural Rendering (ANR): High-Performance NeRF & 3DGS",
+    "slug": "apex-neural-rendering-anr-trending-repo-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-16",
+    "path": "data/posts/2026-11/apex-neural-rendering-anr-trending-repo-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1794801466,
     "title": "Resolving Spark FetchFailed Cascades and Executor OOMs",
     "slug": "spark-shuffle-fetchfailed-cascades-executor-oom",
@@ -19,12 +136,12 @@ var postsLatest = [
     "id": 1794801467,
     "title": "Fixing Haskell Space Leaks in State Monad Pipelines",
     "slug": "haskell-space-leaks-thunk-accumulation-state-monad",
-    "language": "Rust",
+    "language": "Haskell",
     "code": "OutOfMemoryError",
     "date": "2026-11-16",
     "path": "data/posts/2026-11/haskell-space-leaks-thunk-accumulation-state-monad.js",
     "tags": [
-      "Rust",
+      "Haskell",
       "Backend",
       "Error Fix"
     ]
@@ -168,20 +285,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794714888,
-    "title": "GestaltX: iOS MobileGestalt Config Engine",
-    "slug": "gestaltx-ios-mobilegestalt-editor-analysis",
-    "language": "Swift",
-    "code": "Trend",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
     "id": 1794662105,
     "title": "Elixir Mailbox Flooding & GenServer Timeout Cascades",
     "slug": "elixir-mailbox-flooding-genserver-timeout-cascades",
@@ -230,22 +333,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794662108,
-    "title": "GestaltX: iOS 27.x MobileGestalt Editor",
-    "slug": "gestaltx-ios-27x-mobilegestalt-editor",
-    "language": "iOS / Swift / Objective-C",
-    "code": "Trend",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/gestaltx-ios-27x-mobilegestalt-editor.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "iOS",
-      "Security",
-      "Backend"
-    ]
-  },
-  {
     "id": 1794629635,
     "title": "PostgreSQL XID Wraparound & Freeze Starvation",
     "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
@@ -291,21 +378,6 @@ var postsLatest = [
       "Java",
       "Backend",
       "Error Fix"
-    ]
-  },
-  {
-    "id": 1794629638,
-    "title": "GestaltX: iOS MobileGestalt Customization Engine",
-    "slug": "gestaltsx-ios-mobilegestalt-editor-deep-dive",
-    "language": "Python / Swift",
-    "code": "Trend",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/gestaltsx-ios-mobilegestalt-editor-deep-dive.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "Mobile"
     ]
   },
   {
@@ -362,24 +434,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794577944,
-    "title": "GestaltX: iOS MobileGestalt Editor for Device Tweaks",
-    "slug": "gestaltx-ios-mobilegestalt-editor-device-tweaks",
-    "language": "iOS, Objective-C/Swift",
-    "code": "Trend",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-device-tweaks.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "iOS",
-      "Jailbreak",
-      "Mobile",
-      "Reverse Engineering",
-      "Frontend"
-    ]
-  },
-  {
     "id": 1794544081,
     "title": "Linux io_uring SQPOLL Deadlocks & Submission Queue Overflows",
     "slug": "linux-io-uring-sqpoll-deadlocks-submission-queue-overflows",
@@ -392,23 +446,6 @@ var postsLatest = [
       "Linux Kernel",
       "Performance",
       "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794544082,
-    "title": "Resolving Spark Shuffle FetchFailed & Memory Spill OOMs",
-    "slug": "resolving-apache-spark-shuffle-fetchfailed-memory-spill-ooms",
-    "language": "Scala/Java",
-    "code": "Shuffle FetchFailed",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/resolving-apache-spark-shuffle-fetchfailed-memory-spill-ooms.js",
-    "tags": [
-      "Apache Spark",
-      "Big Data",
-      "Performance",
-      "Infra",
-      "Java",
       "Error Fix"
     ]
   },
@@ -430,23 +467,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794544084,
-    "title": "GestaltX: MobileGestalt Editor for iOS 27.x - Analysis",
-    "slug": "gestaltx-mobilegestalt-editor-ios-27x-analysis",
-    "language": "Swift/Objective-C",
-    "code": "Trend",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/gestaltx-mobilegestalt-editor-ios-27x-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "iOS",
-      "Security",
-      "Reverse Engineering",
-      "Mobile"
-    ]
-  },
-  {
     "id": 1794493754,
     "title": "Fixing RocksDB Write Stalls & Compaction Debt",
     "slug": "rocksdb-write-stalls-compaction-debt",
@@ -458,66 +478,6 @@ var postsLatest = [
       "RocksDB",
       "Storage",
       "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794493755,
-    "title": "Resolving gRPC HTTP/2 Flow-Control Window Stalls",
-    "slug": "grpc-http2-flow-control-window-starvation",
-    "language": "Go",
-    "code": "StreamDeadlock",
-    "date": "2026-11-12",
-    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
-    "tags": [
-      "gRPC",
-      "HTTP/2",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794493756,
-    "title": "Fixing Haskell Space Leaks in Fold Accumulators",
-    "slug": "haskell-space-leaks-thunk-exhaustion",
-    "language": "Haskell",
-    "code": "HeapExhaustion",
-    "date": "2026-11-12",
-    "path": "data/posts/2026-11/haskell-space-leaks-thunk-exhaustion.js",
-    "tags": [
-      "Haskell",
-      "Memory",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794493757,
-    "title": "GestaltX: Next-Gen iOS MobileGestalt Tweaks",
-    "slug": "gestaltx-ios-mobilegestalt-editor",
-    "language": "Swift / TypeScript",
-    "code": "Trend",
-    "date": "2026-11-12",
-    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "TypeScript"
-    ]
-  },
-  {
-    "id": 1794460691,
-    "title": "Go Goroutine Leaks & Scheduler Starvation: A Concurrency Pitfall",
-    "slug": "go-goroutine-leaks-scheduler-starvation",
-    "language": "Go",
-    "code": "GoroutineLeak",
-    "date": "2026-11-12",
-    "path": "data/posts/2026-11/go-goroutine-leaks-scheduler-starvation.js",
-    "tags": [
-      "Go",
-      "Concurrency",
-      "Performance",
-      "Backend",
       "Error Fix"
     ]
   },
@@ -554,68 +514,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794460694,
-    "title": "GestaltX: The Trending iOS MobileGestalt Editor for iOS 17.x",
-    "slug": "gestaltx-ios-mobilegestalt-editor-trending",
-    "language": "iOS / C / Objective-C",
-    "code": "Trend",
-    "date": "2026-11-12",
-    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-trending.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Mobile",
-      "Backend"
-    ]
-  },
-  {
-    "id": 1794403677,
-    "title": "C++20 Coroutine Frame Leaks & Dangling Promise Pointers",
-    "slug": "cpp20-coroutine-frame-leaks-dangling-promise-references",
-    "language": "C++20",
-    "code": "SEGV / Memory Leak",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/cpp20-coroutine-frame-leaks-dangling-promise-references.js",
-    "tags": [
-      "C++",
-      "Memory Management",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794403678,
-    "title": "Elixir OTP Mailbox Flooding & GenServer Call Timeouts",
-    "slug": "elixir-otp-mailbox-flooding-cascading-timeouts",
-    "language": "Elixir",
-    "code": "GenServer Timeout (:timeout)",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/elixir-otp-mailbox-flooding-cascading-timeouts.js",
-    "tags": [
-      "Elixir",
-      "OTP",
-      "Concurrency",
-      "Go",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794403679,
-    "title": "Redis BGSAVE Fork Latency & COW Memory Exhaustion",
-    "slug": "redis-bgsave-cow-memory-exhaustion-fork-latency",
-    "language": "Redis",
-    "code": "OOM Command / Latency Spike",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/redis-bgsave-cow-memory-exhaustion-fork-latency.js",
-    "tags": [
-      "Redis",
-      "Memory",
-      "Linux",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
     "id": 1794403680,
     "title": "Hookshot: Native Recompilation of Zelda Ocarina of Time",
     "slug": "hookshot-native-recompilation-zelda-switch-pc",
@@ -644,52 +542,6 @@ var postsLatest = [
       "Kernel",
       "Rust",
       "Error Fix"
-    ]
-  },
-  {
-    "id": 1794368967,
-    "title": "Fixing Postgres TXID Wraparound Vacuum Starvation",
-    "slug": "postgresql-txid-wraparound-vacuum-freeze-starvation",
-    "language": "SQL",
-    "code": "ERRCODE_PROGRAM_LIMIT_EXCEEDED",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/postgresql-txid-wraparound-vacuum-freeze-starvation.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "Performance",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794368968,
-    "title": "Fixing Kafka Rebalance Storms & Partition Deadlocks",
-    "slug": "kafka-consumer-rebalance-storms-assignment-deadlocks",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/kafka-consumer-rebalance-storms-assignment-deadlocks.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Concurrency",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794368969,
-    "title": "Hookshot: Native Zelda OoT Recompilation Deep Dive",
-    "slug": "notrexed-hookshot-oot-native-recompilation-switch-2",
-    "language": "Rust",
-    "code": "Trend",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/notrexed-hookshot-oot-native-recompilation-switch-2.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Rust"
     ]
   },
   {
@@ -744,40 +596,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794319158,
-    "title": "NotRexed/Hookshot: Ocarina of Time's Native Switch 2 Remake",
-    "slug": "notrexed-hookshot-zelda-oot-switch2-remake",
-    "language": "C++",
-    "code": "Trend",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/notrexed-hookshot-zelda-oot-switch2-remake.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Game Development",
-      "Retro Gaming",
-      "C++",
-      "Backend"
-    ]
-  },
-  {
-    "id": 1794288202,
-    "title": "io_uring Ring Buffer Overflows & SQPOLL Starvation",
-    "slug": "debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation",
-    "language": "C/Linux Kernel API",
-    "code": "io_uring_overflow",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/debugging-linux-io-uring-ring-buffer-overflows-sqpoll-starvation.js",
-    "tags": [
-      "Linux",
-      "io_uring",
-      "Asynchronous I/O",
-      "Performance",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
     "id": 1794288203,
     "title": "Spark Data Skew & Shuffle Spill Memory Exhaustion",
     "slug": "mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion",
@@ -809,39 +627,6 @@ var postsLatest = [
       "Compute",
       "Frontend",
       "TypeScript",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794288205,
-    "title": "NotRexed/Hookshot: Ocarina of Time Recompilation",
-    "slug": "notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake",
-    "language": "C/C++",
-    "code": "Trend",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/notrexed-hookshot-ocarina-of-time-nintendo-switch-2-remake.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Reverse Engineering",
-      "Game Development",
-      "C++",
-      "Backend"
-    ]
-  },
-  {
-    "id": 1794236117,
-    "title": "Diagnose Haskell Lazy Space Leaks and Thunks",
-    "slug": "diagnosing-haskell-space-leaks-thunk-accumulation",
-    "language": "Haskell",
-    "code": "SpaceLeak",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/diagnosing-haskell-space-leaks-thunk-accumulation.js",
-    "tags": [
-      "Haskell",
-      "Rust",
-      "Backend",
-      "Performance",
       "Error Fix"
     ]
   },
@@ -909,38 +694,6 @@ var postsLatest = [
     ]
   },
   {
-    "id": 1794196214,
-    "title": "Fix gRPC HTTP/2 Flow Control Starvation & Deadlock",
-    "slug": "grpc-http2-flow-control-window-starvation",
-    "language": "Go",
-    "code": "DEADLINE_EXCEEDED",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/grpc-http2-flow-control-window-starvation.js",
-    "tags": [
-      "gRPC",
-      "HTTP2",
-      "Go",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794196215,
-    "title": "Fix MongoDB WiredTiger Eviction Stalls & Read Tickets",
-    "slug": "mongodb-wiredtiger-cache-eviction-ticket-exhaustion",
-    "language": "SQL",
-    "code": "TICKETS_EXHAUSTED",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-eviction-ticket-exhaustion.js",
-    "tags": [
-      "MongoDB",
-      "WiredTiger",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
     "id": 1794196216,
     "title": "Agent-Autoloop: Background Autonomous CLI Agents",
     "slug": "agent-autoloop-autonomous-background-cli-agents",
@@ -953,6 +706,239 @@ var postsLatest = [
       "GitHub",
       "Python",
       "AI"
+    ]
+  },
+  {
+    "id": 1794140993,
+    "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
+    "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
+    "language": "Elixir, OTP",
+    "code": "Crash/Corruption",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/debugging-elixir-otp-supervisor-crashes-genserve-state-corruption.js",
+    "tags": [
+      "Elixir",
+      "OTP",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140994,
+    "title": "Resolving Terraform State Lock Contention & Plan Drift",
+    "slug": "resolving-terraform-state-lock-contention-plan-drift",
+    "language": "Terraform, IaC",
+    "code": "Lock/Drift",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/resolving-terraform-state-lock-contention-plan-drift.js",
+    "tags": [
+      "Terraform",
+      "AWS",
+      "Infra",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794140995,
+    "title": "Untangling C++20 Coroutine Asymmetry & Resource Leaks",
+    "slug": "untangling-cpp20-coroutine-asymmetry-resource-leaks",
+    "language": "C++, C++20 Coroutines",
+    "code": "Leak/Asymmetry",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/untangling-cpp20-coroutine-asymmetry-resource-leaks.js",
+    "tags": [
+      "C++",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794108543,
+    "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
+    "slug": "ebpf-verifier-rejection-instruction-limit",
+    "language": "Rust",
+    "code": "BPF_PROG_LOAD_EPERM",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/ebpf-verifier-rejection-instruction-limit.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Rust",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794108544,
+    "title": "Debugging Kafka Rebalance Storms & Heartbeats",
+    "slug": "kafka-consumer-rebalance-storm-heartbeat-timeout",
+    "language": "Java",
+    "code": "CommitFailedException",
+    "date": "2026-11-08",
+    "path": "data/posts/2026-11/kafka-consumer-rebalance-storm-heartbeat-timeout.js",
+    "tags": [
+      "Kafka",
+      "Distributed Systems",
+      "Java",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794053263,
+    "title": "Troubleshooting Istio Sidecar Injection & Traffic Policy Gaps",
+    "slug": "istio-sidecar-injection-traffic-policy-failures",
+    "language": "Kubernetes",
+    "code": "Sidecar Failure",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/istio-sidecar-injection-traffic-policy-failures.js",
+    "tags": [
+      "Kubernetes",
+      "Infra",
+      "Service Mesh",
+      "Istio",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794023324,
+    "title": "Handling WebGPU Device Loss & Pipeline Compilation Stalls",
+    "slug": "handling-webgpu-device-loss-pipeline-compilation-stalls",
+    "language": "TypeScript",
+    "code": "GPUDeviceLostInfo",
+    "date": "2026-11-07",
+    "path": "data/posts/2026-11/handling-webgpu-device-loss-pipeline-compilation-stalls.js",
+    "tags": [
+      "TypeScript",
+      "React",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972206,
+    "title": "Debugging K8s CrashLoopBackOff: Causes & Fixes",
+    "slug": "debugging-kubernetes-crashloopbackoff-root-causes-remediation",
+    "language": "Kubernetes",
+    "code": "CrashLoopBackOff",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/debugging-kubernetes-crashloopbackoff-root-causes-remediation.js",
+    "tags": [
+      "Kubernetes",
+      "Docker",
+      "Infra",
+      "Containerization",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972207,
+    "title": "Untangling Akka Actor Deadlocks & Message Ordering Issues",
+    "slug": "untangling-scala-akka-actor-system-deadlocks-message-ordering",
+    "language": "Scala, Akka",
+    "code": "Deadlock",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/untangling-scala-akka-actor-system-deadlocks-message-ordering.js",
+    "tags": [
+      "Scala",
+      "Akka",
+      "Backend",
+      "Concurrency",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972208,
+    "title": "Detecting & Preventing Go Goroutine Leaks",
+    "slug": "detecting-preventing-go-goroutine-leaks-concurrent-services",
+    "language": "Go",
+    "code": "GoroutineLeak",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/detecting-preventing-go-goroutine-leaks-concurrent-services.js",
+    "tags": [
+      "Go",
+      "Backend",
+      "Concurrency",
+      "Performance",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793972209,
+    "title": "DeepSeek AI's SuperAgent Prototype: Autonomous Agents",
+    "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-06",
+    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "AI",
+      "Agents"
+    ]
+  },
+  {
+    "id": 1793887079,
+    "title": "Fix Vector DB Index Corruption & Recall Degradation",
+    "slug": "fix-vector-db-index-corruption-recall-degradation",
+    "language": "Python",
+    "code": "INDEX_DEGRADATION",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/fix-vector-db-index-corruption-recall-degradation.js",
+    "tags": [
+      "Python",
+      "VectorDB",
+      "HNSW",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793852402,
+    "title": "Fixing eBPF Verifier Complexity & Unbounded Loops",
+    "slug": "debugging-ebpf-verifier-complexity-unbounded-loops",
+    "language": "Rust",
+    "code": "VerifierRejection",
+    "date": "2026-11-05",
+    "path": "data/posts/2026-11/debugging-ebpf-verifier-complexity-unbounded-loops.js",
+    "tags": [
+      "eBPF",
+      "Linux",
+      "Rust",
+      "Kernel",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793764942,
+    "title": "Debugging Rust's Lifetimes in Async Code",
+    "slug": "debugging-rust-lifetimes-ownership-async",
+    "language": "Rust",
+    "code": "Lifetime/Ownership",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/debugging-rust-lifetimes-ownership-async.js",
+    "tags": [
+      "Rust",
+      "Asynchronous Programming",
+      "Concurrency",
+      "Backend",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1793764943,
+    "title": "Fixing Next.js Hydration Mismatches & SSR Desync",
+    "slug": "resolving-nextjs-hydration-mismatches-ssr-desync",
+    "language": "Next.js",
+    "code": "Hydration Mismatch",
+    "date": "2026-11-04",
+    "path": "data/posts/2026-11/resolving-nextjs-hydration-mismatches-ssr-desync.js",
+    "tags": [
+      "Next.js",
+      "React",
+      "Frontend",
+      "SSR",
+      "Debugging",
+      "Error Fix"
     ]
   }
 ];

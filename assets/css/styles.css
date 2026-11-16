@@ -353,6 +353,32 @@ body {
     margin-bottom: 1.2rem;
 }
 
+.rich-text code {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: var(--primary-color);
+}
+
+.load-more-btn {
+    background: rgba(0, 255, 157, 0.1);
+    border: 1px solid rgba(0, 255, 157, 0.35);
+    color: var(--primary-color);
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.load-more-btn:hover {
+    background: var(--primary-color);
+    color: #0b0c10;
+}
+
 .code-header {
     font-size: 0.85rem;
     font-weight: 600;
