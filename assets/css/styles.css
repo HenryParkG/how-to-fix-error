@@ -505,3 +505,12 @@ footer {
         gap: 1rem;
     }
 }
+
+/* Google AdSense Slots */
+.ad-slot {
+    display: none;
+    margin: 2.5rem auto;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+}

@@ -198,14 +198,14 @@
 
     <main class="post-container">
         <!-- [ADSENSE] 상단 광고 -->
-        <div class="ad-box">AD_TOP_PLACEHOLDER</div>
+        <div class="ad-slot" data-ad-position="top"></div>
 
         <article id="postDetail">
             <div class="loading">이 아티클을 분석 중입니다...</div>
         </article>
 
         <!-- [ADSENSE] 하단 광고 -->
-        <div class="ad-box">AD_BOTTOM_PLACEHOLDER</div>
+        <div class="ad-slot" data-ad-position="bottom"></div>
     </main>
 
     <footer>
@@ -216,6 +216,7 @@
 
     <!-- Logic to load the post -->
     <script src="/data/index.js"></script>
+    <script src="/assets/js/adsense.js"></script>
     <script>
         // 상세 데이터가 로드되었을 때 실행되는 함수 (Ver 4.5)
         window.onPostDataLoaded = (post) => {
@@ -237,7 +238,7 @@
                             <div class="rich-text">${post.analysis || 'Analysis pending...'}</div>
                         </section>
     
-                        <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
+                        <div class="ad-slot" data-ad-position="middle"></div>
     
                         <section class="content-section">
                             <h3 style="color: #bf00ff;"><i class="fa-solid fa-star"></i> Key Features</h3>
@@ -261,7 +262,7 @@
                             <div class="rich-text">${post.analysis || 'Analysis pending...'}</div>
                         </section>
     
-                        <div class="ad-box">AD_MIDDLE_PLACEHOLDER</div>
+                        <div class="ad-slot" data-ad-position="middle"></div>
     
                         <section class="content-section">
                             <h3 style="color: #ff5f5f;"><i class="fa-solid fa-circle-xmark"></i> Root Cause</h3>
@@ -308,6 +309,10 @@
                         </div>
                     </div>
                 `;
+
+                if (window.renderAdSlots) {
+                    window.renderAdSlots(article);
+                }
 
                 // Related Articles 렌더링
                 const grid = document.getElementById('relatedGrid');
