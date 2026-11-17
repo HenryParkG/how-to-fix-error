@@ -1,5 +1,51 @@
 var postsIndex = [
     {
+        "id": 1794928858,
+        "title": "DXGI_ERROR_DEVICE_REMOVED/HUNG Game Crash Fix (NVIDIA/AMD)",
+        "slug": "dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd",
+        "language": "Gaming",
+        "code": "DXGI_ERROR_DEVICE_REMOVED, DXGI_ERROR_DEVICE_HUNG",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd.js",
+        "tags": [
+            "Windows",
+            "Hardware",
+            "Gaming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794928859,
+        "title": "OneDrive Stuck on 'Processing changes' or Red X Sync Error",
+        "slug": "onedrive-stuck-processing-changes-red-x-sync-error",
+        "language": "Windows",
+        "code": "Processing changes, Red X sync error",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/onedrive-stuck-processing-changes-red-x-sync-error.js",
+        "tags": [
+            "Windows",
+            "Office",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794928860,
+        "title": "Abyssal Garden: WebGPU's Minimalist Procedural Art Trend",
+        "slug": "abyssal-garden-webgpu-minimalist-procedural-art-trend",
+        "language": "Browser",
+        "code": "Trend",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/abyssal-garden-webgpu-minimalist-procedural-art-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Browser",
+            "WebGPU",
+            "JavaScript",
+            "HTML"
+        ]
+    },
+    {
         "id": 1794894572,
         "title": "Fix Ubuntu Could Not Get Lock /var/lib/dpkg/lock-frontend",
         "slug": "fix-ubuntu-could-not-get-lock-dpkg-frontend",

@@ -1,5 +1,51 @@
 var postsLatest = [
   {
+    "id": 1794928858,
+    "title": "DXGI_ERROR_DEVICE_REMOVED/HUNG Game Crash Fix (NVIDIA/AMD)",
+    "slug": "dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd",
+    "language": "Gaming",
+    "code": "DXGI_ERROR_DEVICE_REMOVED, DXGI_ERROR_DEVICE_HUNG",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794928859,
+    "title": "OneDrive Stuck on 'Processing changes' or Red X Sync Error",
+    "slug": "onedrive-stuck-processing-changes-red-x-sync-error",
+    "language": "Windows",
+    "code": "Processing changes, Red X sync error",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/onedrive-stuck-processing-changes-red-x-sync-error.js",
+    "tags": [
+      "Windows",
+      "Office",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794928860,
+    "title": "Abyssal Garden: WebGPU's Minimalist Procedural Art Trend",
+    "slug": "abyssal-garden-webgpu-minimalist-procedural-art-trend",
+    "language": "Browser",
+    "code": "Trend",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/abyssal-garden-webgpu-minimalist-procedural-art-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Browser",
+      "WebGPU",
+      "JavaScript",
+      "HTML"
+    ]
+  },
+  {
     "id": 1794894572,
     "title": "Fix Ubuntu Could Not Get Lock /var/lib/dpkg/lock-frontend",
     "slug": "fix-ubuntu-could-not-get-lock-dpkg-frontend",
@@ -884,53 +930,6 @@ var postsLatest = [
       "Akka",
       "Backend",
       "Concurrency",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972208,
-    "title": "Detecting & Preventing Go Goroutine Leaks",
-    "slug": "detecting-preventing-go-goroutine-leaks-concurrent-services",
-    "language": "Go",
-    "code": "GoroutineLeak",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/detecting-preventing-go-goroutine-leaks-concurrent-services.js",
-    "tags": [
-      "Go",
-      "Backend",
-      "Concurrency",
-      "Performance",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972209,
-    "title": "DeepSeek AI's SuperAgent Prototype: Autonomous Agents",
-    "slug": "deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/deepseek-ai-dsh-superagent-prototype-autonomous-agents-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI",
-      "Agents"
-    ]
-  },
-  {
-    "id": 1793887079,
-    "title": "Fix Vector DB Index Corruption & Recall Degradation",
-    "slug": "fix-vector-db-index-corruption-recall-degradation",
-    "language": "Python",
-    "code": "INDEX_DEGRADATION",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/fix-vector-db-index-corruption-recall-degradation.js",
-    "tags": [
-      "Python",
-      "VectorDB",
-      "HNSW",
       "Error Fix"
     ]
   }

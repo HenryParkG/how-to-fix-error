@@ -6,5 +6,7 @@
   "\"No Audio Output Device Is Installed\" or sudden no sound in Windows 10/11 fix",
   "macOS \"App is damaged and can't be opened. You should move it to the Trash\" (xattr -cr fix)",
   "Ubuntu \"Could not get lock /var/lib/dpkg/lock-frontend\" apt package lock fix",
-  "Excel opens UTF-8 CSV files with broken Korean or accented characters (BOM & Power Query fix)"
+  "Excel opens UTF-8 CSV files with broken Korean or accented characters (BOM & Power Query fix)",
+  "NVIDIA and AMD DXGI_ERROR_DEVICE_REMOVED and DXGI_ERROR_DEVICE_HUNG game crash fix",
+  "Windows OneDrive stuck on \"Processing changes\" or showing red X sync error"
 ]
