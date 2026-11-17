@@ -1,5 +1,47 @@
 var postsIndex = [
     {
+        "id": 1794894572,
+        "title": "Fix Ubuntu Could Not Get Lock /var/lib/dpkg/lock-frontend",
+        "slug": "fix-ubuntu-could-not-get-lock-dpkg-frontend",
+        "language": "Linux",
+        "code": "E_DPKG_LOCKED",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/fix-ubuntu-could-not-get-lock-dpkg-frontend.js",
+        "tags": [
+            "Linux",
+            "CMD",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794894573,
+        "title": "Fix Broken Korean & Accented Characters in Excel UTF-8 CSV",
+        "slug": "fix-excel-broken-korean-accented-characters-utf8-csv",
+        "language": "Office",
+        "code": "ENCODING_MOJIBAKE",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/fix-excel-broken-korean-accented-characters-utf8-csv.js",
+        "tags": [
+            "Office",
+            "Windows",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794894574,
+        "title": "Blender AI MCP Addon: LLM Copilot & MCP Server for 3D",
+        "slug": "blender-ai-mcp-addon-llm-copilot-3d-automation",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-17",
+        "path": "data/posts/2026-11/blender-ai-mcp-addon-llm-copilot-3d-automation.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1794817842,
         "title": "Fix VCRUNTIME140.dll and MSVCP140.dll Not Found in Windows",
         "slug": "fix-vcruntime140-msvcp140-missing-windows",

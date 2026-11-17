@@ -1,5 +1,47 @@
 var postsLatest = [
   {
+    "id": 1794894572,
+    "title": "Fix Ubuntu Could Not Get Lock /var/lib/dpkg/lock-frontend",
+    "slug": "fix-ubuntu-could-not-get-lock-dpkg-frontend",
+    "language": "Linux",
+    "code": "E_DPKG_LOCKED",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/fix-ubuntu-could-not-get-lock-dpkg-frontend.js",
+    "tags": [
+      "Linux",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794894573,
+    "title": "Fix Broken Korean & Accented Characters in Excel UTF-8 CSV",
+    "slug": "fix-excel-broken-korean-accented-characters-utf8-csv",
+    "language": "Office",
+    "code": "ENCODING_MOJIBAKE",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/fix-excel-broken-korean-accented-characters-utf8-csv.js",
+    "tags": [
+      "Office",
+      "Windows",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794894574,
+    "title": "Blender AI MCP Addon: LLM Copilot & MCP Server for 3D",
+    "slug": "blender-ai-mcp-addon-llm-copilot-3d-automation",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-17",
+    "path": "data/posts/2026-11/blender-ai-mcp-addon-llm-copilot-3d-automation.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1794817842,
     "title": "Fix VCRUNTIME140.dll and MSVCP140.dll Not Found in Windows",
     "slug": "fix-vcruntime140-msvcp140-missing-windows",
@@ -889,55 +931,6 @@ var postsLatest = [
       "Python",
       "VectorDB",
       "HNSW",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793852402,
-    "title": "Fixing eBPF Verifier Complexity & Unbounded Loops",
-    "slug": "debugging-ebpf-verifier-complexity-unbounded-loops",
-    "language": "Rust",
-    "code": "VerifierRejection",
-    "date": "2026-11-05",
-    "path": "data/posts/2026-11/debugging-ebpf-verifier-complexity-unbounded-loops.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Rust",
-      "Kernel",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793764942,
-    "title": "Debugging Rust's Lifetimes in Async Code",
-    "slug": "debugging-rust-lifetimes-ownership-async",
-    "language": "Rust",
-    "code": "Lifetime/Ownership",
-    "date": "2026-11-04",
-    "path": "data/posts/2026-11/debugging-rust-lifetimes-ownership-async.js",
-    "tags": [
-      "Rust",
-      "Asynchronous Programming",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793764943,
-    "title": "Fixing Next.js Hydration Mismatches & SSR Desync",
-    "slug": "resolving-nextjs-hydration-mismatches-ssr-desync",
-    "language": "Next.js",
-    "code": "Hydration Mismatch",
-    "date": "2026-11-04",
-    "path": "data/posts/2026-11/resolving-nextjs-hydration-mismatches-ssr-desync.js",
-    "tags": [
-      "Next.js",
-      "React",
-      "Frontend",
-      "SSR",
-      "Debugging",
       "Error Fix"
     ]
   }

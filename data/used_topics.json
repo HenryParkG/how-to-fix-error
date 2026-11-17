@@ -4,5 +4,7 @@
   "Chrome \"DNS_PROBE_FINISHED_NXDOMAIN\" site can't be reached error fix",
   "\"The code execution cannot proceed because VCRUNTIME140.dll or MSVCP140.dll was not found\" error on Windows",
   "\"No Audio Output Device Is Installed\" or sudden no sound in Windows 10/11 fix",
-  "macOS \"App is damaged and can't be opened. You should move it to the Trash\" (xattr -cr fix)"
+  "macOS \"App is damaged and can't be opened. You should move it to the Trash\" (xattr -cr fix)",
+  "Ubuntu \"Could not get lock /var/lib/dpkg/lock-frontend\" apt package lock fix",
+  "Excel opens UTF-8 CSV files with broken Korean or accented characters (BOM & Power Query fix)"
 ]
