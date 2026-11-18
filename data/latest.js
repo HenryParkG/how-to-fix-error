@@ -1,5 +1,54 @@
 var postsLatest = [
   {
+    "id": 1794978749,
+    "title": "Git: Merge Unrelated Histories Error Fix",
+    "slug": "git-merge-unrelated-histories-fix",
+    "language": "Git",
+    "code": "fatal: refusing to merge unrelated histories",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/git-merge-unrelated-histories-fix.js",
+    "tags": [
+      "Git",
+      "CMD",
+      "PowerShell",
+      "Linux",
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794978750,
+    "title": "Python: 'pip' Not Recognized Fix",
+    "slug": "python-pip-not-recognized-fix",
+    "language": "Python",
+    "code": "'pip' is not recognized",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/python-pip-not-recognized-fix.js",
+    "tags": [
+      "Python",
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1794978751,
+    "title": "Wireless Device Battery Monitor: Taskbar Levels, No Vendor Software",
+    "slug": "wireless-device-battery-monitor-github-trend",
+    "language": "Windows",
+    "code": "Trend",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/wireless-device-battery-monitor-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Windows",
+      "Hardware",
+      "Gaming"
+    ]
+  },
+  {
     "id": 1794928858,
     "title": "DXGI_ERROR_DEVICE_REMOVED/HUNG Game Crash Fix (NVIDIA/AMD)",
     "slug": "dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd",
@@ -884,52 +933,6 @@ var postsLatest = [
       "Infra",
       "Service Mesh",
       "Istio",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794023324,
-    "title": "Handling WebGPU Device Loss & Pipeline Compilation Stalls",
-    "slug": "handling-webgpu-device-loss-pipeline-compilation-stalls",
-    "language": "TypeScript",
-    "code": "GPUDeviceLostInfo",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/handling-webgpu-device-loss-pipeline-compilation-stalls.js",
-    "tags": [
-      "TypeScript",
-      "React",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972206,
-    "title": "Debugging K8s CrashLoopBackOff: Causes & Fixes",
-    "slug": "debugging-kubernetes-crashloopbackoff-root-causes-remediation",
-    "language": "Kubernetes",
-    "code": "CrashLoopBackOff",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/debugging-kubernetes-crashloopbackoff-root-causes-remediation.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Infra",
-      "Containerization",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1793972207,
-    "title": "Untangling Akka Actor Deadlocks & Message Ordering Issues",
-    "slug": "untangling-scala-akka-actor-system-deadlocks-message-ordering",
-    "language": "Scala, Akka",
-    "code": "Deadlock",
-    "date": "2026-11-06",
-    "path": "data/posts/2026-11/untangling-scala-akka-actor-system-deadlocks-message-ordering.js",
-    "tags": [
-      "Scala",
-      "Akka",
-      "Backend",
-      "Concurrency",
       "Error Fix"
     ]
   }

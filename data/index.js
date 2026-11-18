@@ -1,5 +1,54 @@
 var postsIndex = [
     {
+        "id": 1794978749,
+        "title": "Git: Merge Unrelated Histories Error Fix",
+        "slug": "git-merge-unrelated-histories-fix",
+        "language": "Git",
+        "code": "fatal: refusing to merge unrelated histories",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/git-merge-unrelated-histories-fix.js",
+        "tags": [
+            "Git",
+            "CMD",
+            "PowerShell",
+            "Linux",
+            "macOS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794978750,
+        "title": "Python: 'pip' Not Recognized Fix",
+        "slug": "python-pip-not-recognized-fix",
+        "language": "Python",
+        "code": "'pip' is not recognized",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/python-pip-not-recognized-fix.js",
+        "tags": [
+            "Python",
+            "Windows",
+            "CMD",
+            "PowerShell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1794978751,
+        "title": "Wireless Device Battery Monitor: Taskbar Levels, No Vendor Software",
+        "slug": "wireless-device-battery-monitor-github-trend",
+        "language": "Windows",
+        "code": "Trend",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/wireless-device-battery-monitor-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Windows",
+            "Hardware",
+            "Gaming"
+        ]
+    },
+    {
         "id": 1794928858,
         "title": "DXGI_ERROR_DEVICE_REMOVED/HUNG Game Crash Fix (NVIDIA/AMD)",
         "slug": "dxgi-error-device-removed-hung-game-crash-fix-nvidia-amd",
