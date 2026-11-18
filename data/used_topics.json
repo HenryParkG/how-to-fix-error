@@ -10,5 +10,7 @@
   "NVIDIA and AMD DXGI_ERROR_DEVICE_REMOVED and DXGI_ERROR_DEVICE_HUNG game crash fix",
   "Windows OneDrive stuck on \"Processing changes\" or showing red X sync error",
   "Git \"fatal: refusing to merge unrelated histories\" cause and fix",
-  "Python \"'pip' is not recognized as an internal or external command\" & python -m pip fix"
+  "Python \"'pip' is not recognized as an internal or external command\" & python -m pip fix",
+  "Node.js \"Error: listen EADDRINUSE: address already in use :::3000\" fix on Windows and Mac/Linux",
+  "Docker Desktop \"Docker Engine stopped\" or stuck on \"Starting the Docker Engine\" (wsl --shutdown & service reset)"
 ]

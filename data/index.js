@@ -1,5 +1,61 @@
 var postsIndex = [
     {
+        "id": 1795013770,
+        "title": "Node.js EADDRINUSE: Address Already in Use (Port 3000)",
+        "slug": "nodejs-eaddrinuse-address-already-in-use-port-3000",
+        "language": "Node.js",
+        "code": "EADDRINUSE",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/nodejs-eaddrinuse-address-already-in-use-port-3000.js",
+        "tags": [
+            "Node.js",
+            "Windows",
+            "macOS",
+            "Linux",
+            "CMD",
+            "PowerShell",
+            "Network",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795013771,
+        "title": "Docker Desktop: Engine Stopped/Stuck on Starting (WSL Fix)",
+        "slug": "docker-desktop-engine-stopped-stuck-wsl-fix",
+        "language": "Docker",
+        "code": "Docker Engine Stopped",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/docker-desktop-engine-stopped-stuck-wsl-fix.js",
+        "tags": [
+            "Docker",
+            "Windows",
+            "WSL",
+            "PowerShell",
+            "CMD",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795013772,
+        "title": "Rust-Anything: Gradual Rewrite to Rust with Behavioral Tests",
+        "slug": "rust-anything-gradual-rewrite-behavioral-tests",
+        "language": "Rust",
+        "code": "Trend",
+        "date": "2026-11-18",
+        "path": "data/posts/2026-11/rust-anything-gradual-rewrite-behavioral-tests.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Rust",
+            "Python",
+            "Node.js",
+            "Go",
+            "Java",
+            "TypeScript",
+            "C"
+        ]
+    },
+    {
         "id": 1794978749,
         "title": "Git: Merge Unrelated Histories Error Fix",
         "slug": "git-merge-unrelated-histories-fix",

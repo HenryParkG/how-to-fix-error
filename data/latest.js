@@ -1,5 +1,61 @@
 var postsLatest = [
   {
+    "id": 1795013770,
+    "title": "Node.js EADDRINUSE: Address Already in Use (Port 3000)",
+    "slug": "nodejs-eaddrinuse-address-already-in-use-port-3000",
+    "language": "Node.js",
+    "code": "EADDRINUSE",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/nodejs-eaddrinuse-address-already-in-use-port-3000.js",
+    "tags": [
+      "Node.js",
+      "Windows",
+      "macOS",
+      "Linux",
+      "CMD",
+      "PowerShell",
+      "Network",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795013771,
+    "title": "Docker Desktop: Engine Stopped/Stuck on Starting (WSL Fix)",
+    "slug": "docker-desktop-engine-stopped-stuck-wsl-fix",
+    "language": "Docker",
+    "code": "Docker Engine Stopped",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/docker-desktop-engine-stopped-stuck-wsl-fix.js",
+    "tags": [
+      "Docker",
+      "Windows",
+      "WSL",
+      "PowerShell",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795013772,
+    "title": "Rust-Anything: Gradual Rewrite to Rust with Behavioral Tests",
+    "slug": "rust-anything-gradual-rewrite-behavioral-tests",
+    "language": "Rust",
+    "code": "Trend",
+    "date": "2026-11-18",
+    "path": "data/posts/2026-11/rust-anything-gradual-rewrite-behavioral-tests.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Rust",
+      "Python",
+      "Node.js",
+      "Go",
+      "Java",
+      "TypeScript",
+      "C"
+    ]
+  },
+  {
     "id": 1794978749,
     "title": "Git: Merge Unrelated Histories Error Fix",
     "slug": "git-merge-unrelated-histories-fix",
@@ -887,52 +943,6 @@ var postsLatest = [
       "C++",
       "Concurrency",
       "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794108543,
-    "title": "Fix eBPF Verifier Instruction Limit Exhaustion",
-    "slug": "ebpf-verifier-rejection-instruction-limit",
-    "language": "Rust",
-    "code": "BPF_PROG_LOAD_EPERM",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/ebpf-verifier-rejection-instruction-limit.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794108544,
-    "title": "Debugging Kafka Rebalance Storms & Heartbeats",
-    "slug": "kafka-consumer-rebalance-storm-heartbeat-timeout",
-    "language": "Java",
-    "code": "CommitFailedException",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/kafka-consumer-rebalance-storm-heartbeat-timeout.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794053263,
-    "title": "Troubleshooting Istio Sidecar Injection & Traffic Policy Gaps",
-    "slug": "istio-sidecar-injection-traffic-policy-failures",
-    "language": "Kubernetes",
-    "code": "Sidecar Failure",
-    "date": "2026-11-07",
-    "path": "data/posts/2026-11/istio-sidecar-injection-traffic-policy-failures.js",
-    "tags": [
-      "Kubernetes",
-      "Infra",
-      "Service Mesh",
-      "Istio",
       "Error Fix"
     ]
   }
