@@ -1,5 +1,47 @@
 var postsIndex = [
     {
+        "id": 1795100462,
+        "title": "Fix PowerShell Running Scripts Is Disabled on This System",
+        "slug": "fix-powershell-running-scripts-is-disabled",
+        "language": "PowerShell",
+        "code": "PSSecurityException",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/fix-powershell-running-scripts-is-disabled.js",
+        "tags": [
+            "PowerShell",
+            "Windows",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795100463,
+        "title": "Fix Bluetooth Headphones Stuck in Muffled Hands-Free Mode",
+        "slug": "fix-windows-bluetooth-muffled-hands-free-audio",
+        "language": "Windows",
+        "code": "BTH_HANDSFREE_STUCK",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/fix-windows-bluetooth-muffled-hands-free-audio.js",
+        "tags": [
+            "Windows",
+            "Hardware",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795100464,
+        "title": "Exploring gylive/google-ultra: Unified Google AI Dev Tool",
+        "slug": "gylive-google-ultra-developer-tool-guide",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/gylive-google-ultra-developer-tool-guide.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python"
+        ]
+    },
+    {
         "id": 1795064670,
         "title": "Fix: Keyboard Arrows Swapped with WASD on Windows",
         "slug": "fix-keyboard-arrows-wasd-swap-windows",

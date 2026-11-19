@@ -1,5 +1,47 @@
 var postsLatest = [
   {
+    "id": 1795100462,
+    "title": "Fix PowerShell Running Scripts Is Disabled on This System",
+    "slug": "fix-powershell-running-scripts-is-disabled",
+    "language": "PowerShell",
+    "code": "PSSecurityException",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/fix-powershell-running-scripts-is-disabled.js",
+    "tags": [
+      "PowerShell",
+      "Windows",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795100463,
+    "title": "Fix Bluetooth Headphones Stuck in Muffled Hands-Free Mode",
+    "slug": "fix-windows-bluetooth-muffled-hands-free-audio",
+    "language": "Windows",
+    "code": "BTH_HANDSFREE_STUCK",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/fix-windows-bluetooth-muffled-hands-free-audio.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795100464,
+    "title": "Exploring gylive/google-ultra: Unified Google AI Dev Tool",
+    "slug": "gylive-google-ultra-developer-tool-guide",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/gylive-google-ultra-developer-tool-guide.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1795064670,
     "title": "Fix: Keyboard Arrows Swapped with WASD on Windows",
     "slug": "fix-keyboard-arrows-wasd-swap-windows",
@@ -896,52 +938,6 @@ var postsLatest = [
       "Infra",
       "Go",
       "Error Fix"
-    ]
-  },
-  {
-    "id": 1794236120,
-    "title": "Minireel HGhub: Modern YellowFruit Third-Party Client",
-    "slug": "minireel-hghub-yellowfruit-client-analysis",
-    "language": "TypeScript",
-    "code": "Trend",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/minireel-hghub-yellowfruit-client-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "TypeScript",
-      "React"
-    ]
-  },
-  {
-    "id": 1794196213,
-    "title": "Fix vLLM PagedAttention Desync & KV Cache OOM",
-    "slug": "vllm-pagedattention-kv-cache-desync-oom",
-    "language": "Python",
-    "code": "CUDA_OOM",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/vllm-pagedattention-kv-cache-desync-oom.js",
-    "tags": [
-      "vLLM",
-      "CUDA",
-      "LLM",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794196216,
-    "title": "Agent-Autoloop: Background Autonomous CLI Agents",
-    "slug": "agent-autoloop-autonomous-background-cli-agents",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/agent-autoloop-autonomous-background-cli-agents.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python",
-      "AI"
     ]
   }
 ];
