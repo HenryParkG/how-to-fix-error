@@ -1,5 +1,48 @@
 var postsIndex = [
     {
+        "id": 1795064670,
+        "title": "Fix: Keyboard Arrows Swapped with WASD on Windows",
+        "slug": "fix-keyboard-arrows-wasd-swap-windows",
+        "language": "Windows",
+        "code": "WASD_SWAP",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/fix-keyboard-arrows-wasd-swap-windows.js",
+        "tags": [
+            "Windows",
+            "Hardware",
+            "Gaming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795064671,
+        "title": "Fix: Windows Application Error 0xc000007b (Unable to Start)",
+        "slug": "fix-windows-application-error-0xc000007b-unable-to-start",
+        "language": "Windows",
+        "code": "0xc000007b",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/fix-windows-application-error-0xc000007b-unable-to-start.js",
+        "tags": [
+            "Windows",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795064672,
+        "title": "Trending: Muse.ai Protocol Research (HTTP Python)",
+        "slug": "trending-muse-ai-protocol-research-python",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-19",
+        "path": "data/posts/2026-11/trending-muse-ai-protocol-research-python.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "Network"
+        ]
+    },
+    {
         "id": 1795013770,
         "title": "Node.js EADDRINUSE: Address Already in Use (Port 3000)",
         "slug": "nodejs-eaddrinuse-address-already-in-use-port-3000",

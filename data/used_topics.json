@@ -12,5 +12,7 @@
   "Git \"fatal: refusing to merge unrelated histories\" cause and fix",
   "Python \"'pip' is not recognized as an internal or external command\" & python -m pip fix",
   "Node.js \"Error: listen EADDRINUSE: address already in use :::3000\" fix on Windows and Mac/Linux",
-  "Docker Desktop \"Docker Engine stopped\" or stuck on \"Starting the Docker Engine\" (wsl --shutdown & service reset)"
+  "Docker Desktop \"Docker Engine stopped\" or stuck on \"Starting the Docker Engine\" (wsl --shutdown & service reset)",
+  "Keyboard arrow keys swapped with WASD keys on Windows (Fn + W unlock fix)",
+  "Windows application error 0xc000007b \"The application was unable to start correctly\" fix"
 ]

@@ -1,5 +1,48 @@
 var postsLatest = [
   {
+    "id": 1795064670,
+    "title": "Fix: Keyboard Arrows Swapped with WASD on Windows",
+    "slug": "fix-keyboard-arrows-wasd-swap-windows",
+    "language": "Windows",
+    "code": "WASD_SWAP",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/fix-keyboard-arrows-wasd-swap-windows.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795064671,
+    "title": "Fix: Windows Application Error 0xc000007b (Unable to Start)",
+    "slug": "fix-windows-application-error-0xc000007b-unable-to-start",
+    "language": "Windows",
+    "code": "0xc000007b",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/fix-windows-application-error-0xc000007b-unable-to-start.js",
+    "tags": [
+      "Windows",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795064672,
+    "title": "Trending: Muse.ai Protocol Research (HTTP Python)",
+    "slug": "trending-muse-ai-protocol-research-python",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-19",
+    "path": "data/posts/2026-11/trending-muse-ai-protocol-research-python.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Network"
+    ]
+  },
+  {
     "id": 1795013770,
     "title": "Node.js EADDRINUSE: Address Already in Use (Port 3000)",
     "slug": "nodejs-eaddrinuse-address-already-in-use-port-3000",
@@ -899,51 +942,6 @@ var postsLatest = [
       "GitHub",
       "Python",
       "AI"
-    ]
-  },
-  {
-    "id": 1794140993,
-    "title": "Debugging Elixir OTP Supervisor Tree Crashes & GenServer State Corruption",
-    "slug": "debugging-elixir-otp-supervisor-crashes-genserve-state-corruption",
-    "language": "Elixir, OTP",
-    "code": "Crash/Corruption",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/debugging-elixir-otp-supervisor-crashes-genserve-state-corruption.js",
-    "tags": [
-      "Elixir",
-      "OTP",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794140994,
-    "title": "Resolving Terraform State Lock Contention & Plan Drift",
-    "slug": "resolving-terraform-state-lock-contention-plan-drift",
-    "language": "Terraform, IaC",
-    "code": "Lock/Drift",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/resolving-terraform-state-lock-contention-plan-drift.js",
-    "tags": [
-      "Terraform",
-      "AWS",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794140995,
-    "title": "Untangling C++20 Coroutine Asymmetry & Resource Leaks",
-    "slug": "untangling-cpp20-coroutine-asymmetry-resource-leaks",
-    "language": "C++, C++20 Coroutines",
-    "code": "Leak/Asymmetry",
-    "date": "2026-11-08",
-    "path": "data/posts/2026-11/untangling-cpp20-coroutine-asymmetry-resource-leaks.js",
-    "tags": [
-      "C++",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
     ]
   }
 ];
