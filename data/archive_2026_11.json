@@ -1,5 +1,47 @@
 [
   {
+    "id": 1795150490,
+    "title": "Fix macOS \"Developer Cannot Be Verified\" Gatekeeper Alert",
+    "slug": "macos-developer-cannot-be-verified-gatekeeper-bypass",
+    "language": "macOS",
+    "code": "OSX_GATEKEEPER_BLOCKED",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/macos-developer-cannot-be-verified-gatekeeper-bypass.js",
+    "tags": [
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795150491,
+    "title": "Fix \"sudo: command not found\" or \"not in sudoers file\"",
+    "slug": "linux-fix-sudo-command-not-found-sudoers-recovery",
+    "language": "Linux",
+    "code": "ERR_SUDOERS_AUTH",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/linux-fix-sudo-command-not-found-sudoers-recovery.js",
+    "tags": [
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795150492,
+    "title": "Hut-hzf/ung220z-tool: Optical Modem Credential Extractor",
+    "slug": "hut-hzf-ung220z-tool-optical-modem-credential-extractor",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/hut-hzf-ung220z-tool-optical-modem-credential-extractor.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Network",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795100462,
     "title": "Fix PowerShell Running Scripts Is Disabled on This System",
     "slug": "fix-powershell-running-scripts-is-disabled",

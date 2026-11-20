@@ -16,5 +16,7 @@
   "Keyboard arrow keys swapped with WASD keys on Windows (Fn + W unlock fix)",
   "Windows application error 0xc000007b \"The application was unable to start correctly\" fix",
   "PowerShell \"running scripts is disabled on this system\" (Set-ExecutionPolicy RemoteSigned fix)",
-  "Bluetooth headphones connected to Windows with no sound or stuck in muffled Hands-Free mode"
+  "Bluetooth headphones connected to Windows with no sound or stuck in muffled Hands-Free mode",
+  "macOS Gatekeeper \"cannot be opened because the developer cannot be verified\" bypass safely",
+  "Linux \"sudo: command not found\" or \"user is not in the sudoers file\" recovery"
 ]

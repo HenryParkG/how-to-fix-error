@@ -1,5 +1,47 @@
 var postsLatest = [
   {
+    "id": 1795150490,
+    "title": "Fix macOS \"Developer Cannot Be Verified\" Gatekeeper Alert",
+    "slug": "macos-developer-cannot-be-verified-gatekeeper-bypass",
+    "language": "macOS",
+    "code": "OSX_GATEKEEPER_BLOCKED",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/macos-developer-cannot-be-verified-gatekeeper-bypass.js",
+    "tags": [
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795150491,
+    "title": "Fix \"sudo: command not found\" or \"not in sudoers file\"",
+    "slug": "linux-fix-sudo-command-not-found-sudoers-recovery",
+    "language": "Linux",
+    "code": "ERR_SUDOERS_AUTH",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/linux-fix-sudo-command-not-found-sudoers-recovery.js",
+    "tags": [
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795150492,
+    "title": "Hut-hzf/ung220z-tool: Optical Modem Credential Extractor",
+    "slug": "hut-hzf-ung220z-tool-optical-modem-credential-extractor",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/hut-hzf-ung220z-tool-optical-modem-credential-extractor.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Network",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795100462,
     "title": "Fix PowerShell Running Scripts Is Disabled on This System",
     "slug": "fix-powershell-running-scripts-is-disabled",
@@ -887,56 +929,6 @@ var postsLatest = [
       "Performance",
       "Data Engineering",
       "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794288204,
-    "title": "WebGPU Workgroup Memory Race & Alignment Violations",
-    "slug": "diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations",
-    "language": "WebGPU / WGSL / JavaScript",
-    "code": "WebGPURaceCondition",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/diagnosing-webgpu-workgroup-memory-race-hazards-and-buffer-alignment-violations.js",
-    "tags": [
-      "WebGPU",
-      "WGSL",
-      "Graphics",
-      "Compute",
-      "Frontend",
-      "TypeScript",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794236118,
-    "title": "Fix Cassandra Tombstone Read Timeout Cascades",
-    "slug": "cassandra-tombstone-read-timeout-cascades",
-    "language": "Cassandra",
-    "code": "ReadTimeoutException",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/cassandra-tombstone-read-timeout-cascades.js",
-    "tags": [
-      "Cassandra",
-      "Java",
-      "SQL",
-      "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794236119,
-    "title": "Debug Kubernetes cgroup v2 Throttling and Silent OOM",
-    "slug": "kubernetes-cgroupv2-cfs-throttling-silent-oomkill",
-    "language": "Kubernetes",
-    "code": "OOMKilled",
-    "date": "2026-11-09",
-    "path": "data/posts/2026-11/kubernetes-cgroupv2-cfs-throttling-silent-oomkill.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "Infra",
-      "Go",
       "Error Fix"
     ]
   }
