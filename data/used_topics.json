@@ -18,5 +18,7 @@
   "PowerShell \"running scripts is disabled on this system\" (Set-ExecutionPolicy RemoteSigned fix)",
   "Bluetooth headphones connected to Windows with no sound or stuck in muffled Hands-Free mode",
   "macOS Gatekeeper \"cannot be opened because the developer cannot be verified\" bypass safely",
-  "Linux \"sudo: command not found\" or \"user is not in the sudoers file\" recovery"
+  "Linux \"sudo: command not found\" or \"user is not in the sudoers file\" recovery",
+  "Chrome and Edge \"ERR_CONNECTION_REFUSED\" and \"ERR_CONNECTION_TIMED_OUT\" troubleshooting",
+  "Excel removes leading zeros (010...) and converts long IDs to scientific notation (1.23E+11) in CSV"
 ]

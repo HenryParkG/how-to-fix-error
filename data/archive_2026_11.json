@@ -1,5 +1,51 @@
 [
   {
+    "id": 1795187001,
+    "title": "Fix ERR_CONNECTION_REFUSED/TIMED_OUT in Chrome/Edge",
+    "slug": "fix-err-connection-refused-timed-out-browser",
+    "language": "Browser, Network",
+    "code": "ERR_CONNECTION_REFUSED",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/fix-err-connection-refused-timed-out-browser.js",
+    "tags": [
+      "Browser",
+      "Network",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795187002,
+    "title": "Excel CSV: Preserve Leading Zeros & Long IDs",
+    "slug": "excel-csv-preserve-leading-zeros-long-ids",
+    "language": "Office",
+    "code": "Data Corruption, Scientific Notation",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/excel-csv-preserve-leading-zeros-long-ids.js",
+    "tags": [
+      "Office",
+      "Windows",
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795187003,
+    "title": "mdldm-maitian: Multi-Platform Media Content Hub",
+    "slug": "mdldm-maitian-multi-platform-media-content-hub",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/mdldm-maitian-multi-platform-media-content-hub.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1795150490,
     "title": "Fix macOS \"Developer Cannot Be Verified\" Gatekeeper Alert",
     "slug": "macos-developer-cannot-be-verified-gatekeeper-bypass",

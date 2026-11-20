@@ -1,5 +1,51 @@
 var postsLatest = [
   {
+    "id": 1795187001,
+    "title": "Fix ERR_CONNECTION_REFUSED/TIMED_OUT in Chrome/Edge",
+    "slug": "fix-err-connection-refused-timed-out-browser",
+    "language": "Browser, Network",
+    "code": "ERR_CONNECTION_REFUSED",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/fix-err-connection-refused-timed-out-browser.js",
+    "tags": [
+      "Browser",
+      "Network",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795187002,
+    "title": "Excel CSV: Preserve Leading Zeros & Long IDs",
+    "slug": "excel-csv-preserve-leading-zeros-long-ids",
+    "language": "Office",
+    "code": "Data Corruption, Scientific Notation",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/excel-csv-preserve-leading-zeros-long-ids.js",
+    "tags": [
+      "Office",
+      "Windows",
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795187003,
+    "title": "mdldm-maitian: Multi-Platform Media Content Hub",
+    "slug": "mdldm-maitian-multi-platform-media-content-hub",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-20",
+    "path": "data/posts/2026-11/mdldm-maitian-multi-platform-media-content-hub.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1795150490,
     "title": "Fix macOS \"Developer Cannot Be Verified\" Gatekeeper Alert",
     "slug": "macos-developer-cannot-be-verified-gatekeeper-bypass",
@@ -877,58 +923,6 @@ var postsLatest = [
       "Asynchronous Programming",
       "Concurrency",
       "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794319156,
-    "title": "PyTorch CUDA OOM & Mixed Precision Gradient Underflow",
-    "slug": "pytorch-cuda-oom-mixed-precision-gradient-underflow",
-    "language": "Python",
-    "code": "CUDA OOM/Underflow",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/pytorch-cuda-oom-mixed-precision-gradient-underflow.js",
-    "tags": [
-      "PyTorch",
-      "Deep Learning",
-      "GPU",
-      "Machine Learning",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794319157,
-    "title": "Istio mTLS Deadlock: Ingress/Egress Proxy Hangs",
-    "slug": "istio-mtls-deadlock-ingress-egress-proxy-hangs",
-    "language": "Kubernetes",
-    "code": "Deadlock",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/istio-mtls-deadlock-ingress-egress-proxy-hangs.js",
-    "tags": [
-      "Istio",
-      "Kubernetes",
-      "mTLS",
-      "Service Mesh",
-      "Network",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794288203,
-    "title": "Spark Data Skew & Shuffle Spill Memory Exhaustion",
-    "slug": "mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion",
-    "language": "Apache Spark / Scala / Python",
-    "code": "SparkOOM",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/mitigating-apache-spark-data-skew-and-shuffle-spill-memory-exhaustion.js",
-    "tags": [
-      "Apache Spark",
-      "Big Data",
-      "Performance",
-      "Data Engineering",
-      "Infra",
       "Error Fix"
     ]
   }
