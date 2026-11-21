@@ -1,5 +1,47 @@
 var postsLatest = [
   {
+    "id": 1795237221,
+    "title": "Unlink OneDrive Desktop/Documents from Sync (Keep Local Files)",
+    "slug": "unlink-onedrive-desktop-documents-keep-local-files",
+    "language": "Windows",
+    "code": "OneDrive Sync Issue",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/unlink-onedrive-desktop-documents-keep-local-files.js",
+    "tags": [
+      "Windows",
+      "Office",
+      "Network",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795237222,
+    "title": "Git .gitignore Not Ignoring Already Tracked Files Fix",
+    "slug": "git-gitignore-not-ignoring-tracked-files-fix",
+    "language": "Git",
+    "code": "GIT_IGNORED_TRACKED",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/git-gitignore-not-ignoring-tracked-files-fix.js",
+    "tags": [
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795237223,
+    "title": "LLM Inference Optimisation Skill: Speed Up Local LLMs",
+    "slug": "llm-inference-optimisation-skill",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/llm-inference-optimisation-skill.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1795187001,
     "title": "Fix ERR_CONNECTION_REFUSED/TIMED_OUT in Chrome/Edge",
     "slug": "fix-err-connection-refused-timed-out-browser",
@@ -875,53 +917,6 @@ var postsLatest = [
       "MongoDB",
       "NoSQL",
       "Database",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794403680,
-    "title": "Hookshot: Native Recompilation of Zelda Ocarina of Time",
-    "slug": "hookshot-native-recompilation-zelda-switch-pc",
-    "language": "C++",
-    "code": "Trend",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/hookshot-native-recompilation-zelda-switch-pc.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Reverse Engineering",
-      "Rust"
-    ]
-  },
-  {
-    "id": 1794368966,
-    "title": "Debugging eBPF Verifier Limits & Map Race Conditions",
-    "slug": "debugging-ebpf-verifier-limits-map-concurrency-races",
-    "language": "Rust",
-    "code": "BPF_VERIFIER_E2BIG",
-    "date": "2026-11-11",
-    "path": "data/posts/2026-11/debugging-ebpf-verifier-limits-map-concurrency-races.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Kernel",
-      "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794319155,
-    "title": "Rust Async Lifetime Mismatches: Solving Borrow Checker Errors",
-    "slug": "rust-async-lifetime-mismatches-borrow-checker",
-    "language": "Rust",
-    "code": "LifetimeMismatch",
-    "date": "2026-11-10",
-    "path": "data/posts/2026-11/rust-async-lifetime-mismatches-borrow-checker.js",
-    "tags": [
-      "Rust",
-      "Asynchronous Programming",
-      "Concurrency",
       "Backend",
       "Error Fix"
     ]

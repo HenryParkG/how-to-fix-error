@@ -1,5 +1,47 @@
 [
   {
+    "id": 1795237221,
+    "title": "Unlink OneDrive Desktop/Documents from Sync (Keep Local Files)",
+    "slug": "unlink-onedrive-desktop-documents-keep-local-files",
+    "language": "Windows",
+    "code": "OneDrive Sync Issue",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/unlink-onedrive-desktop-documents-keep-local-files.js",
+    "tags": [
+      "Windows",
+      "Office",
+      "Network",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795237222,
+    "title": "Git .gitignore Not Ignoring Already Tracked Files Fix",
+    "slug": "git-gitignore-not-ignoring-tracked-files-fix",
+    "language": "Git",
+    "code": "GIT_IGNORED_TRACKED",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/git-gitignore-not-ignoring-tracked-files-fix.js",
+    "tags": [
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795237223,
+    "title": "LLM Inference Optimisation Skill: Speed Up Local LLMs",
+    "slug": "llm-inference-optimisation-skill",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-21",
+    "path": "data/posts/2026-11/llm-inference-optimisation-skill.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python"
+    ]
+  },
+  {
     "id": 1795187001,
     "title": "Fix ERR_CONNECTION_REFUSED/TIMED_OUT in Chrome/Edge",
     "slug": "fix-err-connection-refused-timed-out-browser",

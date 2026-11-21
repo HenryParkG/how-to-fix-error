@@ -1,0 +1,21 @@
+window.onPostDataLoaded({
+    "title": "Unlink OneDrive Desktop/Documents from Sync (Keep Local Files)",
+    "slug": "unlink-onedrive-desktop-documents-keep-local-files",
+    "language": "Windows",
+    "code": "OneDrive Sync Issue",
+    "tags": [
+        "Windows",
+        "Office",
+        "Network",
+        "Error Fix"
+    ],
+    "analysis": "<p>Many Windows users encounter a situation where their Desktop and Documents folders are automatically synced with OneDrive. This integration, while useful for some, can lead to confusion, unwanted cloud storage usage, or the fear of losing local files if OneDrive is uninstalled or disconnected. The primary symptom is seeing the OneDrive cloud icon next to your Desktop or Documents folders in File Explorer, and sometimes finding that local files disappear or become inaccessible if OneDrive sync is abruptly stopped without proper decoupling.</p>",
+    "root_cause": "This behavior is caused by OneDrive's feature called <code>Known Folder Move</code> (KFM), which automatically backs up and syncs your Desktop, Documents, and Pictures folders to the cloud. While designed for convenience, it can inadvertently make these critical user folders dependent on OneDrive, moving their actual storage location into the OneDrive directory rather than your local user profile.",
+    "bad_code": "The symptom is that your <code>Desktop</code> and <code>Documents</code> folders have OneDrive icons overlaying them in File Explorer. You might also notice that when you navigate to <code>C:\\Users\\YourUsername\\</code>, the Desktop or Documents folders might appear as shortcuts or point directly into your OneDrive folder structure (e.g., <code>C:\\Users\\YourUsername\\OneDrive\\Desktop</code>).",
+    "solution_desc": "<p>To unlink these folders without losing your local files, you need to gracefully stop the Known Folder Move feature for each folder within OneDrive settings. After stopping the sync, OneDrive will typically prompt you to move the files back to their original local location. If it doesn't, you may need to manually move them.</p><ol><li>Right-click the <code>OneDrive cloud icon</code> in the system tray (bottom-right corner of your screen).</li><li>Click <code>Settings</code> to open the OneDrive settings window.</li><li>Go to the <code>Sync and backup</code> tab.</li><li>Click <code>Manage backup</code>.</li><li>You will see a list of folders (Desktop, Documents, Pictures). For each folder you want to unlink, click the <code>Stop backup</code> button.</li><li>A confirmation dialog will appear, asking if you want to stop backing up this folder. Click <code>Stop backup</code>.</li><li>OneDrive will then usually offer to restore your files to your PC's original locations. Confirm this action. If this option is not explicitly given or if you suspect files are still in the OneDrive folder, manually move them from <code>C:\\Users\\YourUsername\\OneDrive\\Desktop</code> (or Documents) to <code>C:\\Users\\YourUsername\\Desktop</code> (or Documents).</li><li>Repeat for all desired folders (Desktop, Documents, Pictures).</li><li>It's recommended to restart your computer after this process to ensure all path changes are correctly applied.</li></ol>",
+    "good_code": "Settings Path: <br><code>Right-click OneDrive icon -> Settings -> Sync and backup -> Manage backup</code><br><br>Manual File Move (if needed):<br><code>From: C:\\Users\\YourUsername\\OneDrive\\Desktop</code><br><code>To: C:\\Users\\YourUsername\\Desktop</code><br> (And similarly for <code>Documents</code>)",
+    "verification": "<p>Open <code>File Explorer</code> and navigate to <code>This PC</code>. Check your <code>Desktop</code> and <code>Documents</code> folders. The OneDrive cloud icons should no longer be present. Verify that the actual path of these folders (right-click folder -> Properties -> Location tab) points to your local user profile (e.g., <code>C:\\Users\\YourUsername\\Desktop</code>) and not to a OneDrive subfolder. Finally, open a few files from these locations to confirm they are accessible locally and not solely dependent on OneDrive.</p>",
+    "date": "2026-11-21",
+    "id": 1795237221,
+    "type": "error"
+});

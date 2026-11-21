@@ -20,5 +20,7 @@
   "macOS Gatekeeper \"cannot be opened because the developer cannot be verified\" bypass safely",
   "Linux \"sudo: command not found\" or \"user is not in the sudoers file\" recovery",
   "Chrome and Edge \"ERR_CONNECTION_REFUSED\" and \"ERR_CONNECTION_TIMED_OUT\" troubleshooting",
-  "Excel removes leading zeros (010...) and converts long IDs to scientific notation (1.23E+11) in CSV"
+  "Excel removes leading zeros (010...) and converts long IDs to scientific notation (1.23E+11) in CSV",
+  "Unlink Windows Desktop and Documents folders from OneDrive without losing local files",
+  "Git .gitignore not ignoring already tracked files (git rm -r --cached . fix)"
 ]
