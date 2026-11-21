@@ -1,5 +1,47 @@
 var postsIndex = [
     {
+        "id": 1795269878,
+        "title": "Python UnicodeDecodeError on Windows File Read",
+        "slug": "python-unicodedecodeerror-cp949-windows-file-read",
+        "language": "Python",
+        "code": "UnicodeDecodeError",
+        "date": "2026-11-21",
+        "path": "data/posts/2026-11/python-unicodedecodeerror-cp949-windows-file-read.js",
+        "tags": [
+            "Python",
+            "Windows",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795269879,
+        "title": "npm ERESOLVE: Unable to Resolve Dependency Tree Conflict",
+        "slug": "npm-eresolve-unable-to-resolve-dependency-tree-conflict",
+        "language": "Node.js",
+        "code": "ERESOLVE",
+        "date": "2026-11-21",
+        "path": "data/posts/2026-11/npm-eresolve-unable-to-resolve-dependency-tree-conflict.js",
+        "tags": [
+            "Node.js",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795269880,
+        "title": "NeonClipping: Local, Open-Source Video Clipping with LLMs",
+        "slug": "neonclipping-local-open-source-video-clipping-llm",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-21",
+        "path": "data/posts/2026-11/neonclipping-local-open-source-video-clipping-llm.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Python",
+            "LLM"
+        ]
+    },
+    {
         "id": 1795237221,
         "title": "Unlink OneDrive Desktop/Documents from Sync (Keep Local Files)",
         "slug": "unlink-onedrive-desktop-documents-keep-local-files",
