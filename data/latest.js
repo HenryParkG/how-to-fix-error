@@ -1,5 +1,48 @@
 var postsLatest = [
   {
+    "id": 1795320676,
+    "title": "Fix Docker Mounts Denied or Path Errors in Git Bash",
+    "slug": "docker-git-bash-mounts-denied-path-conversion",
+    "language": "Docker",
+    "code": "MSYS_PATH_CONV_ERR",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/docker-git-bash-mounts-denied-path-conversion.js",
+    "tags": [
+      "Docker",
+      "Windows",
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795320677,
+    "title": "Fix Laptop Keyboard Numpad or Keys Not Typing on Windows",
+    "slug": "fix-laptop-keyboard-numpad-keys-not-typing",
+    "language": "Windows",
+    "code": "KEYBOARD_INPUT_HALT",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/fix-laptop-keyboard-numpad-keys-not-typing.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795320678,
+    "title": "Fix Missing d3dcompiler_47.dll or api-ms-win-crt-runtime",
+    "slug": "fix-missing-d3dcompiler-47-api-ms-win-crt-runtime",
+    "language": "Windows",
+    "code": "ERR_MOD_NOT_FOUND_DLL",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/fix-missing-d3dcompiler-47-api-ms-win-crt-runtime.js",
+    "tags": [
+      "Windows",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
     "id": 1795269878,
     "title": "Python UnicodeDecodeError on Windows File Read",
     "slug": "python-unicodedecodeerror-cp949-windows-file-read",
@@ -862,57 +905,6 @@ var postsLatest = [
       "HTTP/2",
       "Microservices",
       "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794577943,
-    "title": "React Native JSI HostObject Dangling Refs & GC Desync",
-    "slug": "react-native-jsi-hostobject-dangling-references-turbomodule-gc-desync",
-    "language": "React Native, JSI, C++, JavaScript",
-    "code": "JSI_GC_Desync",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/react-native-jsi-hostobject-dangling-references-turbomodule-gc-desync.js",
-    "tags": [
-      "React Native",
-      "JSI",
-      "C++",
-      "JavaScript",
-      "Mobile",
-      "React",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794544081,
-    "title": "Linux io_uring SQPOLL Deadlocks & Submission Queue Overflows",
-    "slug": "linux-io-uring-sqpoll-deadlocks-submission-queue-overflows",
-    "language": "C/C++",
-    "code": "SQPOLL Deadlock",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/linux-io-uring-sqpoll-deadlocks-submission-queue-overflows.js",
-    "tags": [
-      "io_uring",
-      "Linux Kernel",
-      "Performance",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794544083,
-    "title": "Mitigating Elasticsearch CircuitBreaker & Fielddata Cascades",
-    "slug": "mitigating-elasticsearch-circuitbreaker-fielddata-eviction-cascades",
-    "language": "Java",
-    "code": "CircuitBreakerException",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/mitigating-elasticsearch-circuitbreaker-fielddata-eviction-cascades.js",
-    "tags": [
-      "Elasticsearch",
-      "Search",
-      "JVM",
-      "Infra",
-      "Java",
       "Error Fix"
     ]
   }

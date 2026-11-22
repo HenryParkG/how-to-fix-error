@@ -24,5 +24,8 @@
   "Unlink Windows Desktop and Documents folders from OneDrive without losing local files",
   "Git .gitignore not ignoring already tracked files (git rm -r --cached . fix)",
   "Python \"UnicodeDecodeError: 'cp949' codec can't decode byte\" on Windows file reading",
-  "npm \"ERESOLVE unable to resolve dependency tree\" peer dependency conflict resolution"
+  "npm \"ERESOLVE unable to resolve dependency tree\" peer dependency conflict resolution",
+  "Docker on Windows \"mounts denied\" or bind mount path conversion issues in Git Bash/MINGW (MSYS_NO_PATHCONV)",
+  "Laptop keyboard numeric keypad or specific keys not typing (NumLock, Filter Keys & driver fix)",
+  "Missing d3dcompiler_47.dll or api-ms-win-crt-runtime-l1-1-0.dll error on Windows"
 ]

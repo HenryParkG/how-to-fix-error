@@ -1,5 +1,48 @@
 var postsIndex = [
     {
+        "id": 1795320676,
+        "title": "Fix Docker Mounts Denied or Path Errors in Git Bash",
+        "slug": "docker-git-bash-mounts-denied-path-conversion",
+        "language": "Docker",
+        "code": "MSYS_PATH_CONV_ERR",
+        "date": "2026-11-22",
+        "path": "data/posts/2026-11/docker-git-bash-mounts-denied-path-conversion.js",
+        "tags": [
+            "Docker",
+            "Windows",
+            "Git",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795320677,
+        "title": "Fix Laptop Keyboard Numpad or Keys Not Typing on Windows",
+        "slug": "fix-laptop-keyboard-numpad-keys-not-typing",
+        "language": "Windows",
+        "code": "KEYBOARD_INPUT_HALT",
+        "date": "2026-11-22",
+        "path": "data/posts/2026-11/fix-laptop-keyboard-numpad-keys-not-typing.js",
+        "tags": [
+            "Windows",
+            "Hardware",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795320678,
+        "title": "Fix Missing d3dcompiler_47.dll or api-ms-win-crt-runtime",
+        "slug": "fix-missing-d3dcompiler-47-api-ms-win-crt-runtime",
+        "language": "Windows",
+        "code": "ERR_MOD_NOT_FOUND_DLL",
+        "date": "2026-11-22",
+        "path": "data/posts/2026-11/fix-missing-d3dcompiler-47-api-ms-win-crt-runtime.js",
+        "tags": [
+            "Windows",
+            "Gaming",
+            "Error Fix"
+        ]
+    },
+    {
         "id": 1795269878,
         "title": "Python UnicodeDecodeError on Windows File Read",
         "slug": "python-unicodedecodeerror-cp949-windows-file-read",
