@@ -1,5 +1,50 @@
 [
   {
+    "id": 1795355852,
+    "title": "Kill Process on Port (8080, 3000) in Windows CMD & PowerShell",
+    "slug": "kill-process-port-windows-cmd-powershell",
+    "language": "Windows",
+    "code": "EADDRINUSE",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/kill-process-port-windows-cmd-powershell.js",
+    "tags": [
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Network",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795355853,
+    "title": "Bluetooth Toggle Missing in Windows Settings & Device Manager",
+    "slug": "bluetooth-toggle-missing-windows-settings-device-manager",
+    "language": "Windows",
+    "code": "BLUETOOTH_GONE",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/bluetooth-toggle-missing-windows-settings-device-manager.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795355854,
+    "title": "Leonida: GTA 6 PC Recompilation Trend on GitHub",
+    "slug": "leonida-gta6-pc-recompilation-github-trend",
+    "language": "C++",
+    "code": "Trend",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/leonida-gta6-pc-recompilation-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "C++"
+    ]
+  },
+  {
     "id": 1795320676,
     "title": "Fix Docker Mounts Denied or Path Errors in Git Bash",
     "slug": "docker-git-bash-mounts-denied-path-conversion",

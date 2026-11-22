@@ -27,5 +27,7 @@
   "npm \"ERESOLVE unable to resolve dependency tree\" peer dependency conflict resolution",
   "Docker on Windows \"mounts denied\" or bind mount path conversion issues in Git Bash/MINGW (MSYS_NO_PATHCONV)",
   "Laptop keyboard numeric keypad or specific keys not typing (NumLock, Filter Keys & driver fix)",
-  "Missing d3dcompiler_47.dll or api-ms-win-crt-runtime-l1-1-0.dll error on Windows"
+  "Missing d3dcompiler_47.dll or api-ms-win-crt-runtime-l1-1-0.dll error on Windows",
+  "Find and kill a process using a specific port (8080, 3000) in Windows CMD and PowerShell (netstat -ano & taskkill)",
+  "Bluetooth toggle switch disappeared from Windows Settings and Device Manager"
 ]

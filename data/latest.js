@@ -1,5 +1,50 @@
 var postsLatest = [
   {
+    "id": 1795355852,
+    "title": "Kill Process on Port (8080, 3000) in Windows CMD & PowerShell",
+    "slug": "kill-process-port-windows-cmd-powershell",
+    "language": "Windows",
+    "code": "EADDRINUSE",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/kill-process-port-windows-cmd-powershell.js",
+    "tags": [
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Network",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795355853,
+    "title": "Bluetooth Toggle Missing in Windows Settings & Device Manager",
+    "slug": "bluetooth-toggle-missing-windows-settings-device-manager",
+    "language": "Windows",
+    "code": "BLUETOOTH_GONE",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/bluetooth-toggle-missing-windows-settings-device-manager.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795355854,
+    "title": "Leonida: GTA 6 PC Recompilation Trend on GitHub",
+    "slug": "leonida-gta6-pc-recompilation-github-trend",
+    "language": "C++",
+    "code": "Trend",
+    "date": "2026-11-22",
+    "path": "data/posts/2026-11/leonida-gta6-pc-recompilation-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "C++"
+    ]
+  },
+  {
     "id": 1795320676,
     "title": "Fix Docker Mounts Denied or Path Errors in Git Bash",
     "slug": "docker-git-bash-mounts-denied-path-conversion",
@@ -854,57 +899,6 @@ var postsLatest = [
       "Linux",
       "Kernel",
       "Rust",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794629637,
-    "title": "Kafka Rebalance Storms & Cooperative Sticky Deadlock",
-    "slug": "kafka-rebalance-storms-cooperative-sticky-deadlocks",
-    "language": "Kafka / Java",
-    "code": "REBALANCE_FAILED",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/kafka-rebalance-storms-cooperative-sticky-deadlocks.js",
-    "tags": [
-      "Kafka",
-      "Distributed Systems",
-      "Java",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794577941,
-    "title": "PyTorch DDP All-Reduce Desync & CUDA Fragmentation",
-    "slug": "pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation",
-    "language": "Python, PyTorch, CUDA",
-    "code": "DDPDesync",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/pytorch-ddp-all-reduce-desynchronization-cuda-fragmentation.js",
-    "tags": [
-      "PyTorch",
-      "Distributed Training",
-      "CUDA",
-      "Fragmentation",
-      "Python",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794577942,
-    "title": "Istio Envoy Connection Pool Starvation & HTTP/2 Resets",
-    "slug": "istio-envoy-connection-pool-starvation-http2-reset-stream-storms",
-    "language": "Kubernetes, Istio, Envoy, HTTP/2",
-    "code": "ConnPoolStarvation",
-    "date": "2026-11-13",
-    "path": "data/posts/2026-11/istio-envoy-connection-pool-starvation-http2-reset-stream-storms.js",
-    "tags": [
-      "Istio",
-      "Envoy",
-      "Kubernetes",
-      "HTTP/2",
-      "Microservices",
-      "Infra",
       "Error Fix"
     ]
   }
