@@ -1,5 +1,51 @@
 var postsLatest = [
   {
+    "id": 1795409311,
+    "title": "Homebrew 'command not found: brew' on Apple Silicon macOS",
+    "slug": "homebrew-command-not-found-apple-silicon-path-fix",
+    "language": "macOS",
+    "code": "ERR_CMD_NOT_FOUND",
+    "date": "2026-11-23",
+    "path": "data/posts/2026-11/homebrew-command-not-found-apple-silicon-path-fix.js",
+    "tags": [
+      "macOS",
+      "CLI",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795409312,
+    "title": "SSH \"WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED\" Fix",
+    "slug": "ssh-remote-host-identification-changed-fix",
+    "language": "Linux",
+    "code": "SSH_HOST_KEY_MISMATCH",
+    "date": "2026-11-23",
+    "path": "data/posts/2026-11/ssh-remote-host-identification-changed-fix.js",
+    "tags": [
+      "macOS",
+      "Linux",
+      "Network",
+      "CLI",
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795409313,
+    "title": "Fast-Anything: Boost Python/Node/Ruby with Native Code",
+    "slug": "fast-anything-github-trend-performance",
+    "language": "Python, Node.js, Ruby",
+    "code": "Trend",
+    "date": "2026-11-23",
+    "path": "data/posts/2026-11/fast-anything-github-trend-performance.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Node.js"
+    ]
+  },
+  {
     "id": 1795355852,
     "title": "Kill Process on Port (8080, 3000) in Windows CMD & PowerShell",
     "slug": "kill-process-port-windows-cmd-powershell",
@@ -851,54 +897,6 @@ var postsLatest = [
       "Concurrency",
       "Memory Safety",
       "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794662107,
-    "title": "Redis BGSAVE Latency & CoW Memory Exhaustion",
-    "slug": "redis-bgsave-fork-latency-cow-memory-exhaustion",
-    "language": "Redis",
-    "code": "CoWExhaustion",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/redis-bgsave-fork-latency-cow-memory-exhaustion.js",
-    "tags": [
-      "Redis",
-      "Database",
-      "Caching",
-      "Infra",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794629635,
-    "title": "PostgreSQL XID Wraparound & Freeze Starvation",
-    "slug": "postgresql-xid-wraparound-autovacuum-freeze-starvation",
-    "language": "PostgreSQL",
-    "code": "ERR_XID_WRAPAROUND",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/postgresql-xid-wraparound-autovacuum-freeze-starvation.js",
-    "tags": [
-      "PostgreSQL",
-      "Database",
-      "Performance",
-      "SQL",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794629636,
-    "title": "eBPF Verifier Path Explosion & Ring Buffer Drops",
-    "slug": "ebpf-verifier-path-explosion-ring-buffer-dropped-events",
-    "language": "C / eBPF",
-    "code": "BPF_VERIFIER_ERR",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/ebpf-verifier-path-explosion-ring-buffer-dropped-events.js",
-    "tags": [
-      "eBPF",
-      "Linux",
-      "Kernel",
-      "Rust",
       "Error Fix"
     ]
   }

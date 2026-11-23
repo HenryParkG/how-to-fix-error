@@ -29,5 +29,7 @@
   "Laptop keyboard numeric keypad or specific keys not typing (NumLock, Filter Keys & driver fix)",
   "Missing d3dcompiler_47.dll or api-ms-win-crt-runtime-l1-1-0.dll error on Windows",
   "Find and kill a process using a specific port (8080, 3000) in Windows CMD and PowerShell (netstat -ano & taskkill)",
-  "Bluetooth toggle switch disappeared from Windows Settings and Device Manager"
+  "Bluetooth toggle switch disappeared from Windows Settings and Device Manager",
+  "Homebrew \"zsh: command not found: brew\" on Apple Silicon Macs (/opt/homebrew/bin PATH fix)",
+  "SSH \"WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED\" host key mismatch (ssh-keygen -R)"
 ]
