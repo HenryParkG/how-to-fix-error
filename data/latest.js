@@ -1,5 +1,54 @@
 var postsLatest = [
   {
+    "id": 1795506517,
+    "title": "Fix Browser ERR_CERT_COMMON_NAME_INVALID / DATE_INVALID SSL Errors",
+    "slug": "fix-browser-ssl-cert-errors-common-name-date-invalid",
+    "language": "Browser",
+    "code": "ERR_CERT_COMMON_NAME_INVALID, NET::ERR_CERT_DATE_INVALID",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/fix-browser-ssl-cert-errors-common-name-date-invalid.js",
+    "tags": [
+      "Browser",
+      "Network",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795506518,
+    "title": "Excel Formulas Show as Text, Not Calculating Results",
+    "slug": "excel-formulas-show-as-text-fix",
+    "language": "Office",
+    "code": "Excel Formula Text",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/excel-formulas-show-as-text-fix.js",
+    "tags": [
+      "Office",
+      "Windows",
+      "macOS",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795506519,
+    "title": "GTA VI on PC? Analyzing the 'Marvisak/VIctory' GitHub Trend",
+    "slug": "gta-vi-pc-marvisak-victory-github-trend",
+    "language": "Gaming",
+    "code": "Trend",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/gta-vi-pc-marvisak-victory-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "Python",
+      "Windows",
+      "Linux"
+    ]
+  },
+  {
     "id": 1795409311,
     "title": "Homebrew 'command not found: brew' on Apple Silicon macOS",
     "slug": "homebrew-command-not-found-apple-silicon-path-fix",
@@ -848,54 +897,6 @@ var postsLatest = [
       "Docker",
       "Python",
       "Database",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794714887,
-    "title": "WebGPU Device Loss & Buffer Mapping Under VRAM Pressure",
-    "slug": "webgpu-device-loss-buffer-mapping-invalidation",
-    "language": "WebGPU",
-    "code": "GPUDeviceLostError",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/webgpu-device-loss-buffer-mapping-invalidation.js",
-    "tags": [
-      "TypeScript",
-      "Frontend",
-      "React",
-      "Graphics",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794662105,
-    "title": "Elixir Mailbox Flooding & GenServer Timeout Cascades",
-    "slug": "elixir-mailbox-flooding-genserver-timeout-cascades",
-    "language": "Elixir",
-    "code": "MailboxFlooding",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/elixir-mailbox-flooding-genserver-timeout-cascades.js",
-    "tags": [
-      "Elixir",
-      "Erlang/OTP",
-      "Concurrency",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794662106,
-    "title": "Rust Async Drop & Pin Projection Memory Leaks",
-    "slug": "rust-async-drop-pin-projection-memory-leaks",
-    "language": "Rust",
-    "code": "MemoryLeak",
-    "date": "2026-11-14",
-    "path": "data/posts/2026-11/rust-async-drop-pin-projection-memory-leaks.js",
-    "tags": [
-      "Rust",
-      "Concurrency",
-      "Memory Safety",
       "Backend",
       "Error Fix"
     ]

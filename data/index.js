@@ -1,5 +1,54 @@
 var postsIndex = [
     {
+        "id": 1795506517,
+        "title": "Fix Browser ERR_CERT_COMMON_NAME_INVALID / DATE_INVALID SSL Errors",
+        "slug": "fix-browser-ssl-cert-errors-common-name-date-invalid",
+        "language": "Browser",
+        "code": "ERR_CERT_COMMON_NAME_INVALID, NET::ERR_CERT_DATE_INVALID",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/fix-browser-ssl-cert-errors-common-name-date-invalid.js",
+        "tags": [
+            "Browser",
+            "Network",
+            "Windows",
+            "macOS",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795506518,
+        "title": "Excel Formulas Show as Text, Not Calculating Results",
+        "slug": "excel-formulas-show-as-text-fix",
+        "language": "Office",
+        "code": "Excel Formula Text",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/excel-formulas-show-as-text-fix.js",
+        "tags": [
+            "Office",
+            "Windows",
+            "macOS",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795506519,
+        "title": "GTA VI on PC? Analyzing the 'Marvisak/VIctory' GitHub Trend",
+        "slug": "gta-vi-pc-marvisak-victory-github-trend",
+        "language": "Gaming",
+        "code": "Trend",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/gta-vi-pc-marvisak-victory-github-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Gaming",
+            "Python",
+            "Windows",
+            "Linux"
+        ]
+    },
+    {
         "id": 1795409311,
         "title": "Homebrew 'command not found: brew' on Apple Silicon macOS",
         "slug": "homebrew-command-not-found-apple-silicon-path-fix",

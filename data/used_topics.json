@@ -31,5 +31,7 @@
   "Find and kill a process using a specific port (8080, 3000) in Windows CMD and PowerShell (netstat -ano & taskkill)",
   "Bluetooth toggle switch disappeared from Windows Settings and Device Manager",
   "Homebrew \"zsh: command not found: brew\" on Apple Silicon Macs (/opt/homebrew/bin PATH fix)",
-  "SSH \"WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED\" host key mismatch (ssh-keygen -R)"
+  "SSH \"WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED\" host key mismatch (ssh-keygen -R)",
+  "Browser \"ERR_CERT_COMMON_NAME_INVALID\" and \"NET::ERR_CERT_DATE_INVALID\" SSL certificate error fix",
+  "Excel formulas showing as literal text (=SUM(A1:A5)) instead of calculating result"
 ]
