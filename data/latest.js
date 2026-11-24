@@ -1,5 +1,48 @@
 var postsLatest = [
   {
+    "id": 1795550301,
+    "title": "Fix Missing XINPUT/DirectX DLLs in PC Games",
+    "slug": "fix-missing-xinput-directx-dlls-pc-games",
+    "language": "Gaming",
+    "code": "XINPUT1_3.dll",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/fix-missing-xinput-directx-dlls-pc-games.js",
+    "tags": [
+      "Windows",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795550302,
+    "title": "Fix Google Drive Desktop Missing G: Drive or Sync",
+    "slug": "fix-google-drive-desktop-missing-g-drive-sync",
+    "language": "Windows",
+    "code": "Drive Letter Missing",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/fix-google-drive-desktop-missing-g-drive-sync.js",
+    "tags": [
+      "Windows",
+      "Browser",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795550303,
+    "title": "xcl-dev/xcl: Xbox Series Compatibility Layer Trending",
+    "slug": "xcl-dev-xcl-xbox-series-compatibility-layer-trending",
+    "language": "Gaming",
+    "code": "Trend",
+    "date": "2026-11-24",
+    "path": "data/posts/2026-11/xcl-dev-xcl-xbox-series-compatibility-layer-trending.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "Windows"
+    ]
+  },
+  {
     "id": 1795506517,
     "title": "Fix Browser ERR_CERT_COMMON_NAME_INVALID / DATE_INVALID SSL Errors",
     "slug": "fix-browser-ssl-cert-errors-common-name-date-invalid",
@@ -852,52 +895,6 @@ var postsLatest = [
       "SQL",
       "PostgreSQL",
       "Database",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794749049,
-    "title": "GestaltX: Modern iOS MobileGestalt Customization",
-    "slug": "gestaltx-ios-mobilegestalt-editor-analysis",
-    "language": "Swift",
-    "code": "Trend",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/gestaltx-ios-mobilegestalt-editor-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1794714885,
-    "title": "C++20 Coroutine Frame Lifetime & Destruction Violations",
-    "slug": "cpp20-coroutine-frame-destruction-promise-lifespan",
-    "language": "C++20",
-    "code": "CoroutineDanglingPromise",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/cpp20-coroutine-frame-destruction-promise-lifespan.js",
-    "tags": [
-      "Rust",
-      "Backend",
-      "Memory Safety",
-      "C++20",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794714886,
-    "title": "WiredTiger Cache Inversion & Ticket Exhaustion Cascades",
-    "slug": "mongodb-wiredtiger-cache-inversion-ticket-exhaustion",
-    "language": "MongoDB",
-    "code": "WT_TICKET_EXHAUSTION",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/mongodb-wiredtiger-cache-inversion-ticket-exhaustion.js",
-    "tags": [
-      "Docker",
-      "Python",
-      "Database",
-      "Backend",
       "Error Fix"
     ]
   }

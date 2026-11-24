@@ -1,5 +1,48 @@
 var postsIndex = [
     {
+        "id": 1795550301,
+        "title": "Fix Missing XINPUT/DirectX DLLs in PC Games",
+        "slug": "fix-missing-xinput-directx-dlls-pc-games",
+        "language": "Gaming",
+        "code": "XINPUT1_3.dll",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/fix-missing-xinput-directx-dlls-pc-games.js",
+        "tags": [
+            "Windows",
+            "Gaming",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795550302,
+        "title": "Fix Google Drive Desktop Missing G: Drive or Sync",
+        "slug": "fix-google-drive-desktop-missing-g-drive-sync",
+        "language": "Windows",
+        "code": "Drive Letter Missing",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/fix-google-drive-desktop-missing-g-drive-sync.js",
+        "tags": [
+            "Windows",
+            "Browser",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795550303,
+        "title": "xcl-dev/xcl: Xbox Series Compatibility Layer Trending",
+        "slug": "xcl-dev-xcl-xbox-series-compatibility-layer-trending",
+        "language": "Gaming",
+        "code": "Trend",
+        "date": "2026-11-24",
+        "path": "data/posts/2026-11/xcl-dev-xcl-xbox-series-compatibility-layer-trending.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Gaming",
+            "Windows"
+        ]
+    },
+    {
         "id": 1795506517,
         "title": "Fix Browser ERR_CERT_COMMON_NAME_INVALID / DATE_INVALID SSL Errors",
         "slug": "fix-browser-ssl-cert-errors-common-name-date-invalid",

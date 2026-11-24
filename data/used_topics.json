@@ -33,5 +33,7 @@
   "Homebrew \"zsh: command not found: brew\" on Apple Silicon Macs (/opt/homebrew/bin PATH fix)",
   "SSH \"WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED\" host key mismatch (ssh-keygen -R)",
   "Browser \"ERR_CERT_COMMON_NAME_INVALID\" and \"NET::ERR_CERT_DATE_INVALID\" SSL certificate error fix",
-  "Excel formulas showing as literal text (=SUM(A1:A5)) instead of calculating result"
+  "Excel formulas showing as literal text (=SUM(A1:A5)) instead of calculating result",
+  "Missing XINPUT1_3.dll, d3dx9_43.dll, or DirectX runtime errors when launching PC games",
+  "Google Drive for Desktop missing virtual drive letter (G:) or sync paused error"
 ]
