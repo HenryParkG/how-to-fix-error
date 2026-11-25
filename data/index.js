@@ -1,5 +1,52 @@
 var postsIndex = [
     {
+        "id": 1795632883,
+        "title": "Git LF will be replaced by CRLF Warning Fix",
+        "slug": "git-lf-crlf-line-ending-warning-fix",
+        "language": "Git",
+        "code": "LF_CRLF_WARNING",
+        "date": "2026-11-25",
+        "path": "data/posts/2026-11/git-lf-crlf-line-ending-warning-fix.js",
+        "tags": [
+            "Git",
+            "Windows",
+            "macOS",
+            "Linux",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795632884,
+        "title": "Python venv Activate.ps1 Blocked or Wrong Pip Fix",
+        "slug": "python-venv-activate-ps1-blocked-wrong-pip-fix",
+        "language": "PowerShell",
+        "code": "VENV_ACTIVATE_BLOCKED",
+        "date": "2026-11-25",
+        "path": "data/posts/2026-11/python-venv-activate-ps1-blocked-wrong-pip-fix.js",
+        "tags": [
+            "Python",
+            "PowerShell",
+            "Windows",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795632885,
+        "title": "XNULinux: macOS Personality on ARM64 Linux Trend",
+        "slug": "xnulinux-macos-personality-arm64-linux-trend",
+        "language": "Linux",
+        "code": "Trend",
+        "date": "2026-11-25",
+        "path": "data/posts/2026-11/xnulinux-macos-personality-arm64-linux-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Linux",
+            "macOS",
+            "Hardware"
+        ]
+    },
+    {
         "id": 1795550301,
         "title": "Fix Missing XINPUT/DirectX DLLs in PC Games",
         "slug": "fix-missing-xinput-directx-dlls-pc-games",

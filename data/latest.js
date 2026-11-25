@@ -1,5 +1,52 @@
 var postsLatest = [
   {
+    "id": 1795632883,
+    "title": "Git LF will be replaced by CRLF Warning Fix",
+    "slug": "git-lf-crlf-line-ending-warning-fix",
+    "language": "Git",
+    "code": "LF_CRLF_WARNING",
+    "date": "2026-11-25",
+    "path": "data/posts/2026-11/git-lf-crlf-line-ending-warning-fix.js",
+    "tags": [
+      "Git",
+      "Windows",
+      "macOS",
+      "Linux",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795632884,
+    "title": "Python venv Activate.ps1 Blocked or Wrong Pip Fix",
+    "slug": "python-venv-activate-ps1-blocked-wrong-pip-fix",
+    "language": "PowerShell",
+    "code": "VENV_ACTIVATE_BLOCKED",
+    "date": "2026-11-25",
+    "path": "data/posts/2026-11/python-venv-activate-ps1-blocked-wrong-pip-fix.js",
+    "tags": [
+      "Python",
+      "PowerShell",
+      "Windows",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795632885,
+    "title": "XNULinux: macOS Personality on ARM64 Linux Trend",
+    "slug": "xnulinux-macos-personality-arm64-linux-trend",
+    "language": "Linux",
+    "code": "Trend",
+    "date": "2026-11-25",
+    "path": "data/posts/2026-11/xnulinux-macos-personality-arm64-linux-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Linux",
+      "macOS",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795550301,
     "title": "Fix Missing XINPUT/DirectX DLLs in PC Games",
     "slug": "fix-missing-xinput-directx-dlls-pc-games",
@@ -851,51 +898,6 @@ var postsLatest = [
       "TypeScript",
       "Next.js",
       "Python"
-    ]
-  },
-  {
-    "id": 1794749046,
-    "title": "Go Goroutine Leaks & Scheduler Starvation",
-    "slug": "go-goroutine-leak-scheduler-starvation-fix",
-    "language": "Go",
-    "code": "ERR_GOROUTINE_LEAK",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/go-goroutine-leak-scheduler-starvation-fix.js",
-    "tags": [
-      "Go",
-      "Concurrency",
-      "Profiling",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794749047,
-    "title": "Fixing K8s Probe Failures & Cascading Rollouts",
-    "slug": "k8s-probe-misconfig-cascading-rollout-failure",
-    "language": "Kubernetes",
-    "code": "CrashLoopBackOff",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/k8s-probe-misconfig-cascading-rollout-failure.js",
-    "tags": [
-      "Kubernetes",
-      "Docker",
-      "DevOps",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794749048,
-    "title": "Fixing Postgres Logical Replication Slot WAL Bloat",
-    "slug": "postgres-logical-replication-slot-wal-bloat",
-    "language": "SQL",
-    "code": "PG_WAL_DISK_EXHAUSTION",
-    "date": "2026-11-15",
-    "path": "data/posts/2026-11/postgres-logical-replication-slot-wal-bloat.js",
-    "tags": [
-      "SQL",
-      "PostgreSQL",
-      "Database",
-      "Error Fix"
     ]
   }
 ];
