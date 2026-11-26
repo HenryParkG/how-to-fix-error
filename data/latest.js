@@ -1,5 +1,52 @@
 var postsLatest = [
   {
+    "id": 1795710683,
+    "title": "Fix Frozen Windows Taskbar & Start Menu",
+    "slug": "fix-frozen-windows-taskbar-start-menu",
+    "language": "Windows",
+    "code": "TASKBAR_FREEZE",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/fix-frozen-windows-taskbar-start-menu.js",
+    "tags": [
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795710684,
+    "title": "Repair Corrupted Windows System Files via CMD",
+    "slug": "repair-corrupted-windows-system-files-cmd",
+    "language": "Windows",
+    "code": "SYSTEM_FILE_CORRUPT",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/repair-corrupted-windows-system-files-cmd.js",
+    "tags": [
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795710685,
+    "title": "GitHub Trend: xbox series game on PC (victory-fork)",
+    "slug": "github-trend-fxceless-victory-fork",
+    "language": "C++",
+    "code": "Trend",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/github-trend-fxceless-victory-fork.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "Windows",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795673366,
     "title": "npm EACCES/EPERM: Fix Permissions & File Lock Errors",
     "slug": "npm-eacces-eperm-fix-permissions-file-lock",
@@ -857,51 +904,6 @@ var postsLatest = [
       "CMD",
       "Windows",
       "PowerShell",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794803973,
-    "title": "Fix Chrome DNS_PROBE_FINISHED_NXDOMAIN Site Error",
-    "slug": "fix-chrome-dns-probe-finished-nxdomain",
-    "language": "Network",
-    "code": "DNS_PROBE_FINISHED_NXDOMAIN",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-chrome-dns-probe-finished-nxdomain.js",
-    "tags": [
-      "Network",
-      "Windows",
-      "CMD",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794803974,
-    "title": "Apex Neural Rendering (ANR): High-Performance NeRF & 3DGS",
-    "slug": "apex-neural-rendering-anr-trending-repo-analysis",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/apex-neural-rendering-anr-trending-repo-analysis.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1794801466,
-    "title": "Resolving Spark FetchFailed Cascades and Executor OOMs",
-    "slug": "spark-shuffle-fetchfailed-cascades-executor-oom",
-    "language": "Java",
-    "code": "FetchFailedException",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/spark-shuffle-fetchfailed-cascades-executor-oom.js",
-    "tags": [
-      "Java",
-      "Kubernetes",
-      "AWS",
-      "Big Data",
       "Error Fix"
     ]
   }
