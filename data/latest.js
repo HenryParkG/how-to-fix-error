@@ -1,5 +1,55 @@
 var postsLatest = [
   {
+    "id": 1795673366,
+    "title": "npm EACCES/EPERM: Fix Permissions & File Lock Errors",
+    "slug": "npm-eacces-eperm-fix-permissions-file-lock",
+    "language": "Node.js",
+    "code": "EACCES, EPERM",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/npm-eacces-eperm-fix-permissions-file-lock.js",
+    "tags": [
+      "Node.js",
+      "macOS",
+      "Linux",
+      "Windows",
+      "CMD",
+      "PowerShell",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795673367,
+    "title": "Docker \"No Space Left\": Clean Images, Cache & WSL2",
+    "slug": "docker-no-space-left-clean-wsl2",
+    "language": "Docker",
+    "code": "No space left on device",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/docker-no-space-left-clean-wsl2.js",
+    "tags": [
+      "Docker",
+      "Linux",
+      "Windows",
+      "PowerShell",
+      "CMD",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795673368,
+    "title": "GTA VI PC Tracker: Live Updates & Emulation Efforts (portwatch-vi)",
+    "slug": "gta-vi-pc-tracker-portwatch-vi",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-26",
+    "path": "data/posts/2026-11/gta-vi-pc-tracker-portwatch-vi.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Gaming",
+      "Python"
+    ]
+  },
+  {
     "id": 1795632883,
     "title": "Git LF will be replaced by CRLF Warning Fix",
     "slug": "git-lf-crlf-line-ending-warning-fix",
@@ -853,51 +903,6 @@ var postsLatest = [
       "AWS",
       "Big Data",
       "Error Fix"
-    ]
-  },
-  {
-    "id": 1794801467,
-    "title": "Fixing Haskell Space Leaks in State Monad Pipelines",
-    "slug": "haskell-space-leaks-thunk-accumulation-state-monad",
-    "language": "Haskell",
-    "code": "OutOfMemoryError",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/haskell-space-leaks-thunk-accumulation-state-monad.js",
-    "tags": [
-      "Haskell",
-      "Backend",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794801468,
-    "title": "Resolving gRPC HTTP/2 Flow-Control and BDP Starvation",
-    "slug": "grpc-http2-stream-flow-control-bdp-starvation",
-    "language": "Go",
-    "code": "RESOURCE_EXHAUSTED",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/grpc-http2-stream-flow-control-bdp-starvation.js",
-    "tags": [
-      "Go",
-      "Kubernetes",
-      "Docker",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794801469,
-    "title": "DeepSeek Chat Demo: Architecture and Deployment Analysis",
-    "slug": "deepseek-chat-demo-architecture-deployment-trend",
-    "language": "TypeScript",
-    "code": "Trend",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/deepseek-chat-demo-architecture-deployment-trend.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "TypeScript",
-      "Next.js",
-      "Python"
     ]
   }
 ];

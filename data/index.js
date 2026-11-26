@@ -1,5 +1,55 @@
 var postsIndex = [
     {
+        "id": 1795673366,
+        "title": "npm EACCES/EPERM: Fix Permissions & File Lock Errors",
+        "slug": "npm-eacces-eperm-fix-permissions-file-lock",
+        "language": "Node.js",
+        "code": "EACCES, EPERM",
+        "date": "2026-11-26",
+        "path": "data/posts/2026-11/npm-eacces-eperm-fix-permissions-file-lock.js",
+        "tags": [
+            "Node.js",
+            "macOS",
+            "Linux",
+            "Windows",
+            "CMD",
+            "PowerShell",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795673367,
+        "title": "Docker \"No Space Left\": Clean Images, Cache & WSL2",
+        "slug": "docker-no-space-left-clean-wsl2",
+        "language": "Docker",
+        "code": "No space left on device",
+        "date": "2026-11-26",
+        "path": "data/posts/2026-11/docker-no-space-left-clean-wsl2.js",
+        "tags": [
+            "Docker",
+            "Linux",
+            "Windows",
+            "PowerShell",
+            "CMD",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795673368,
+        "title": "GTA VI PC Tracker: Live Updates & Emulation Efforts (portwatch-vi)",
+        "slug": "gta-vi-pc-tracker-portwatch-vi",
+        "language": "Python",
+        "code": "Trend",
+        "date": "2026-11-26",
+        "path": "data/posts/2026-11/gta-vi-pc-tracker-portwatch-vi.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "Gaming",
+            "Python"
+        ]
+    },
+    {
         "id": 1795632883,
         "title": "Git LF will be replaced by CRLF Warning Fix",
         "slug": "git-lf-crlf-line-ending-warning-fix",
