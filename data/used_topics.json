@@ -41,5 +41,7 @@
   "npm \"ERR! code EACCES\" or Windows EPERM unlink file lock error during npm install",
   "Docker \"no space left on device\" clean up dangling images, build cache, and WSL2 virtual disk",
   "Windows taskbar and Start menu frozen or unresponsive (explorer.exe restart & ShellExperienceHost fix)",
-  "Repair corrupted Windows system files via CMD (DISM /Restorehealth and sfc /scannow)"
+  "Repair corrupted Windows system files via CMD (DISM /Restorehealth and sfc /scannow)",
+  "Bluetooth keyboard or mouse keeps disconnecting or lagging on Windows (Power Management fix)",
+  "macOS \"xcrun: error: invalid active developer path\" after macOS update (xcode-select --install)"
 ]

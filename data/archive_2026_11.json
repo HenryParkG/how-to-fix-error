@@ -1,5 +1,48 @@
 [
   {
+    "id": 1795758920,
+    "title": "Fix Bluetooth Mouse or Keyboard Disconnecting on Windows",
+    "slug": "fix-bluetooth-mouse-keyboard-disconnecting-lag-windows",
+    "language": "Windows",
+    "code": "BT_POWER_MGMT_LAG",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/fix-bluetooth-mouse-keyboard-disconnecting-lag-windows.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795758921,
+    "title": "Fix macOS xcrun: error: invalid active developer path",
+    "slug": "fix-macos-xcrun-error-invalid-active-developer-path",
+    "language": "macOS",
+    "code": "XCRUN_INVALID_PATH",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/fix-macos-xcrun-error-invalid-active-developer-path.js",
+    "tags": [
+      "macOS",
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795758922,
+    "title": "Belobug VIctory-Belobug-AMD: Open-Source AMD Optimization",
+    "slug": "belobug-victory-belobug-amd-overview",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/belobug-victory-belobug-amd-overview.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795710683,
     "title": "Fix Frozen Windows Taskbar & Start Menu",
     "slug": "fix-frozen-windows-taskbar-start-menu",

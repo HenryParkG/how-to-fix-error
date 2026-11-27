@@ -1,5 +1,48 @@
 var postsLatest = [
   {
+    "id": 1795758920,
+    "title": "Fix Bluetooth Mouse or Keyboard Disconnecting on Windows",
+    "slug": "fix-bluetooth-mouse-keyboard-disconnecting-lag-windows",
+    "language": "Windows",
+    "code": "BT_POWER_MGMT_LAG",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/fix-bluetooth-mouse-keyboard-disconnecting-lag-windows.js",
+    "tags": [
+      "Windows",
+      "Hardware",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795758921,
+    "title": "Fix macOS xcrun: error: invalid active developer path",
+    "slug": "fix-macos-xcrun-error-invalid-active-developer-path",
+    "language": "macOS",
+    "code": "XCRUN_INVALID_PATH",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/fix-macos-xcrun-error-invalid-active-developer-path.js",
+    "tags": [
+      "macOS",
+      "Git",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795758922,
+    "title": "Belobug VIctory-Belobug-AMD: Open-Source AMD Optimization",
+    "slug": "belobug-victory-belobug-amd-overview",
+    "language": "Python",
+    "code": "Trend",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/belobug-victory-belobug-amd-overview.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Python",
+      "Hardware"
+    ]
+  },
+  {
     "id": 1795710683,
     "title": "Fix Frozen Windows Taskbar & Start Menu",
     "slug": "fix-frozen-windows-taskbar-start-menu",
@@ -860,50 +903,6 @@ var postsLatest = [
     "tags": [
       "macOS",
       "Browser",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794817845,
-    "title": "Exploring Erosion-CN: Bootloop-Safe MobileGestalt Toolbox",
-    "slug": "erosion-cn-mobilegestalt-ios-safe-toolbox",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/erosion-cn-mobilegestalt-ios-safe-toolbox.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
-    ]
-  },
-  {
-    "id": 1794803971,
-    "title": "Fix Windows 10/11 Korean/English IME Switching Freeze",
-    "slug": "fix-windows-korean-ime-input-switching-ctfmon",
-    "language": "Windows",
-    "code": "IME_FREEZE",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-windows-korean-ime-input-switching-ctfmon.js",
-    "tags": [
-      "Windows",
-      "PowerShell",
-      "CMD",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794803972,
-    "title": "Fix CMD 'not recognized as an internal or external command'",
-    "slug": "fix-cmd-command-not-recognized-system-path",
-    "language": "CMD",
-    "code": "ERR_CMD_NOT_FOUND",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-cmd-command-not-recognized-system-path.js",
-    "tags": [
-      "CMD",
-      "Windows",
-      "PowerShell",
       "Error Fix"
     ]
   }
