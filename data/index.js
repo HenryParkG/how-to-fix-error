@@ -1,5 +1,50 @@
 var postsIndex = [
     {
+        "id": 1795795016,
+        "title": "Linux systemd Service Fails to Start: Debugging Guide",
+        "slug": "linux-systemd-service-failing-to-start-debug",
+        "language": "Linux",
+        "code": "SERVICE_FAILED",
+        "date": "2026-11-27",
+        "path": "data/posts/2026-11/linux-systemd-service-failing-to-start-debug.js",
+        "tags": [
+            "Linux",
+            "OS & CLI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795795017,
+        "title": "Windows Wi-Fi \"No Internet, Secured\" Fixes",
+        "slug": "windows-wifi-no-internet-secured-fix",
+        "language": "Windows",
+        "code": "NO_INTERNET_SECURED",
+        "date": "2026-11-27",
+        "path": "data/posts/2026-11/windows-wifi-no-internet-secured-fix.js",
+        "tags": [
+            "Windows",
+            "Network",
+            "OS & CLI",
+            "Error Fix"
+        ]
+    },
+    {
+        "id": 1795795018,
+        "title": "nospeaker: Macbook Trackpad Talks with Haptics",
+        "slug": "os6-nospeaker-macbook-trackpad-haptic-audio-trend",
+        "language": "macOS",
+        "code": "Trend",
+        "date": "2026-11-27",
+        "path": "data/posts/2026-11/os6-nospeaker-macbook-trackpad-haptic-audio-trend.js",
+        "tags": [
+            "Tech Trend",
+            "GitHub",
+            "macOS",
+            "Hardware",
+            "OS & CLI"
+        ]
+    },
+    {
         "id": 1795758920,
         "title": "Fix Bluetooth Mouse or Keyboard Disconnecting on Windows",
         "slug": "fix-bluetooth-mouse-keyboard-disconnecting-lag-windows",

@@ -43,5 +43,7 @@
   "Windows taskbar and Start menu frozen or unresponsive (explorer.exe restart & ShellExperienceHost fix)",
   "Repair corrupted Windows system files via CMD (DISM /Restorehealth and sfc /scannow)",
   "Bluetooth keyboard or mouse keeps disconnecting or lagging on Windows (Power Management fix)",
-  "macOS \"xcrun: error: invalid active developer path\" after macOS update (xcode-select --install)"
+  "macOS \"xcrun: error: invalid active developer path\" after macOS update (xcode-select --install)",
+  "Linux systemd service failing to start (systemctl status & journalctl -xe debugging)",
+  "Windows Wi-Fi \"No Internet, Secured\" causes and step-by-step fixes"
 ]

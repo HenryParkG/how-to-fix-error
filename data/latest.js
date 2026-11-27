@@ -1,5 +1,50 @@
 var postsLatest = [
   {
+    "id": 1795795016,
+    "title": "Linux systemd Service Fails to Start: Debugging Guide",
+    "slug": "linux-systemd-service-failing-to-start-debug",
+    "language": "Linux",
+    "code": "SERVICE_FAILED",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/linux-systemd-service-failing-to-start-debug.js",
+    "tags": [
+      "Linux",
+      "OS & CLI",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795795017,
+    "title": "Windows Wi-Fi \"No Internet, Secured\" Fixes",
+    "slug": "windows-wifi-no-internet-secured-fix",
+    "language": "Windows",
+    "code": "NO_INTERNET_SECURED",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/windows-wifi-no-internet-secured-fix.js",
+    "tags": [
+      "Windows",
+      "Network",
+      "OS & CLI",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795795018,
+    "title": "nospeaker: Macbook Trackpad Talks with Haptics",
+    "slug": "os6-nospeaker-macbook-trackpad-haptic-audio-trend",
+    "language": "macOS",
+    "code": "Trend",
+    "date": "2026-11-27",
+    "path": "data/posts/2026-11/os6-nospeaker-macbook-trackpad-haptic-audio-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "macOS",
+      "Hardware",
+      "OS & CLI"
+    ]
+  },
+  {
     "id": 1795758920,
     "title": "Fix Bluetooth Mouse or Keyboard Disconnecting on Windows",
     "slug": "fix-bluetooth-mouse-keyboard-disconnecting-lag-windows",
@@ -860,50 +905,6 @@ var postsLatest = [
       "Tech Trend",
       "GitHub",
       "Python"
-    ]
-  },
-  {
-    "id": 1794817842,
-    "title": "Fix VCRUNTIME140.dll and MSVCP140.dll Not Found in Windows",
-    "slug": "fix-vcruntime140-msvcp140-missing-windows",
-    "language": "Windows",
-    "code": "STATUS_DLL_NOT_FOUND",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-vcruntime140-msvcp140-missing-windows.js",
-    "tags": [
-      "Windows",
-      "Gaming",
-      "CMD",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794817843,
-    "title": "Fix No Audio Output Device Is Installed on Windows 10/11",
-    "slug": "fix-no-audio-output-device-installed-windows",
-    "language": "Windows",
-    "code": "AUDIO_NO_DEVICE",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-no-audio-output-device-installed-windows.js",
-    "tags": [
-      "Windows",
-      "Hardware",
-      "PowerShell",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794817844,
-    "title": "Fix App Is Damaged and Can't Be Opened on macOS",
-    "slug": "fix-macos-app-damaged-cant-be-opened-xattr",
-    "language": "macOS",
-    "code": "ERR_GATEKEEPER_QUARANTINE",
-    "date": "2026-11-16",
-    "path": "data/posts/2026-11/fix-macos-app-damaged-cant-be-opened-xattr.js",
-    "tags": [
-      "macOS",
-      "Browser",
-      "Error Fix"
     ]
   }
 ];

@@ -1,0 +1,20 @@
+window.onPostDataLoaded({
+    "title": "Linux systemd Service Fails to Start: Debugging Guide",
+    "slug": "linux-systemd-service-failing-to-start-debug",
+    "language": "Linux",
+    "code": "SERVICE_FAILED",
+    "tags": [
+        "Linux",
+        "OS & CLI",
+        "Error Fix"
+    ],
+    "analysis": "<p>When a <code>systemd</code> service fails to start on Linux, it typically manifests as the service being in a <code>failed</code> state according to <code>systemctl status</code>. This often means the service's main process couldn't initialize, exited prematurely, or encountered a critical error during startup. The system tries to execute the service unit file's instructions, but something prevents successful operation.</p>",
+    "root_cause": "<code>systemd</code> service failures are often due to incorrect paths in the unit file, missing dependencies, insufficient file permissions for the service user, syntax errors within the <code>.service</code> unit file itself, or resource limitations. Configuration issues within the application the service is trying to run are also common culprits.",
+    "bad_code": "$ systemctl status my-app.service\n\u25cf my-app.service - My Custom Application\n     Loaded: loaded (/etc/systemd/system/my-app.service; enabled; vendor preset: disabled)\n     Active: failed (Result: exit-code) since Mon 2023-10-27 10:00:00 UTC; 5s ago\n    Process: 1234 ExecStart=/usr/local/bin/my-app-binary (code=exited, status=1/FAILURE)\n   Main PID: 1234 (code=exited, status=1/FAILURE)",
+    "solution_desc": "<p>1. <b>Check Service Status:</b> First, use <code>systemctl status &lt;service_name&gt;</code> to get an overview. This will show the current state, any error messages, and the path to the unit file.</p><p>2. <b>Examine Logs with <code>journalctl</code>:</b> The most crucial step is to examine the system journal. Use <code>journalctl -xeu &lt;service_name&gt;</code> to view detailed logs for your service. The <code>-x</code> option provides explanations, and <code>-e</code> jumps to the end of the journal. Look for specific error messages, failed dependencies, or permission denied errors.</p><p>3. <b>Validate Unit File Syntax:</b> Ensure there are no typos or syntax errors in your <code>.service</code> file. Use <code>systemd-analyze verify &lt;path_to_service_file&gt;</code>. After any changes, run <code>sudo systemctl daemon-reload</code>.</p><p>4. <b>Check Permissions and Paths:</b> Verify that the <code>ExecStart</code> path points to the correct executable and that the user specified in the unit file (if any) has read/execute permissions for the binary and read/write permissions for any data directories.</p><p>5. <b>Test Dependencies:</b> If your service depends on others (<code>After=</code>, <code>Requires=</code>), ensure those services are running correctly.</p><p>6. <b>Run Manually (if possible):</b> Try running the <code>ExecStart</code> command directly from the shell as the service user to replicate the error without <code>systemd</code>.</p>",
+    "good_code": "$ systemctl status my-app.service\n$ journalctl -xeu my-app.service\n$ sudo systemctl daemon-reload\n$ sudo systemctl start my-app.service\n$ sudo systemctl enable my-app.service\n\n[Unit]\nDescription=My Custom Application\nAfter=network.target\n\n[Service]\nExecStart=/usr/local/bin/my-app-binary --config /etc/my-app/config.conf\nWorkingDirectory=/usr/local/bin\nRestart=always\nUser=myuser\nGroup=mygroup\n\n[Install]\nWantedBy=multi-user.target",
+    "verification": "<p>After applying fixes, run <code>sudo systemctl daemon-reload</code>, then <code>sudo systemctl start my-app.service</code>. Verify with <code>systemctl status my-app.service</code>. The output should show <code>Active: active (running)</code>.</p>",
+    "date": "2026-11-27",
+    "id": 1795795016,
+    "type": "error"
+});
