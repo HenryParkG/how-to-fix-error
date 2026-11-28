@@ -45,5 +45,7 @@
   "Bluetooth keyboard or mouse keeps disconnecting or lagging on Windows (Power Management fix)",
   "macOS \"xcrun: error: invalid active developer path\" after macOS update (xcode-select --install)",
   "Linux systemd service failing to start (systemctl status & journalctl -xe debugging)",
-  "Windows Wi-Fi \"No Internet, Secured\" causes and step-by-step fixes"
+  "Windows Wi-Fi \"No Internet, Secured\" causes and step-by-step fixes",
+  "Excel \"We found a problem with some content in workbook.xlsx\" corrupted file recovery",
+  "Steam stuck on \"App Running\" even after exiting game (Zombie process & overlay fix)"
 ]

@@ -1,5 +1,49 @@
 var postsLatest = [
   {
+    "id": 1795844039,
+    "title": "Excel 'We found a problem...' Corrupted File Fix",
+    "slug": "excel-corrupted-file-recovery-fix",
+    "language": "Office",
+    "code": "Content Problem",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/excel-corrupted-file-recovery-fix.js",
+    "tags": [
+      "Windows",
+      "Office",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795844040,
+    "title": "Steam 'App Running' Fix: Zombie Process & Overlay",
+    "slug": "steam-app-running-stuck-fix",
+    "language": "Gaming",
+    "code": "App Running",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/steam-app-running-stuck-fix.js",
+    "tags": [
+      "Windows",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795844041,
+    "title": "VIctory-NVIDIA: Xbox Series X Emulation on RTX Cards",
+    "slug": "victory-nvidia-github-trend",
+    "language": "Hardware",
+    "code": "Trend",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/victory-nvidia-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Hardware",
+      "Gaming",
+      "Windows"
+    ]
+  },
+  {
     "id": 1795795016,
     "title": "Linux systemd Service Fails to Start: Debugging Guide",
     "slug": "linux-systemd-service-failing-to-start-debug",
@@ -863,48 +907,6 @@ var postsLatest = [
       "WebGPU",
       "JavaScript",
       "HTML"
-    ]
-  },
-  {
-    "id": 1794894572,
-    "title": "Fix Ubuntu Could Not Get Lock /var/lib/dpkg/lock-frontend",
-    "slug": "fix-ubuntu-could-not-get-lock-dpkg-frontend",
-    "language": "Linux",
-    "code": "E_DPKG_LOCKED",
-    "date": "2026-11-17",
-    "path": "data/posts/2026-11/fix-ubuntu-could-not-get-lock-dpkg-frontend.js",
-    "tags": [
-      "Linux",
-      "CMD",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794894573,
-    "title": "Fix Broken Korean & Accented Characters in Excel UTF-8 CSV",
-    "slug": "fix-excel-broken-korean-accented-characters-utf8-csv",
-    "language": "Office",
-    "code": "ENCODING_MOJIBAKE",
-    "date": "2026-11-17",
-    "path": "data/posts/2026-11/fix-excel-broken-korean-accented-characters-utf8-csv.js",
-    "tags": [
-      "Office",
-      "Windows",
-      "Error Fix"
-    ]
-  },
-  {
-    "id": 1794894574,
-    "title": "Blender AI MCP Addon: LLM Copilot & MCP Server for 3D",
-    "slug": "blender-ai-mcp-addon-llm-copilot-3d-automation",
-    "language": "Python",
-    "code": "Trend",
-    "date": "2026-11-17",
-    "path": "data/posts/2026-11/blender-ai-mcp-addon-llm-copilot-3d-automation.js",
-    "tags": [
-      "Tech Trend",
-      "GitHub",
-      "Python"
     ]
   }
 ];

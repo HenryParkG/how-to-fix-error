@@ -1,5 +1,49 @@
 [
   {
+    "id": 1795844039,
+    "title": "Excel 'We found a problem...' Corrupted File Fix",
+    "slug": "excel-corrupted-file-recovery-fix",
+    "language": "Office",
+    "code": "Content Problem",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/excel-corrupted-file-recovery-fix.js",
+    "tags": [
+      "Windows",
+      "Office",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795844040,
+    "title": "Steam 'App Running' Fix: Zombie Process & Overlay",
+    "slug": "steam-app-running-stuck-fix",
+    "language": "Gaming",
+    "code": "App Running",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/steam-app-running-stuck-fix.js",
+    "tags": [
+      "Windows",
+      "Gaming",
+      "Error Fix"
+    ]
+  },
+  {
+    "id": 1795844041,
+    "title": "VIctory-NVIDIA: Xbox Series X Emulation on RTX Cards",
+    "slug": "victory-nvidia-github-trend",
+    "language": "Hardware",
+    "code": "Trend",
+    "date": "2026-11-28",
+    "path": "data/posts/2026-11/victory-nvidia-github-trend.js",
+    "tags": [
+      "Tech Trend",
+      "GitHub",
+      "Hardware",
+      "Gaming",
+      "Windows"
+    ]
+  },
+  {
     "id": 1795795016,
     "title": "Linux systemd Service Fails to Start: Debugging Guide",
     "slug": "linux-systemd-service-failing-to-start-debug",
